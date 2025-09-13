@@ -21,6 +21,71 @@ const {
   card9,
 } = mainContentData;
 
+// Generate extended hash games data (30 total)
+const generateHashGames = () => {
+  const baseGames = card9;
+  const extendedGames = [];
+  
+  // Add the original 5 games
+  extendedGames.push(...baseGames);
+  
+  // Generate 25 more hash games with variations
+  const gameTemplates = [
+    { title: "Dice Roll", chances: "1.95" },
+    { title: "Coin Flip", chances: "1.98" },
+    { title: "Number Guess", chances: "1.92" },
+    { title: "Color Pick", chances: "1.96" },
+    { title: "Card Draw", chances: "1.94" },
+    { title: "Lucky 7", chances: "1.97" },
+    { title: "High Low", chances: "1.93" },
+    { title: "Sum Total", chances: "1.91" },
+    { title: "Pattern Match", chances: "1.99" },
+    { title: "Random Pick", chances: "1.89" },
+    { title: "Double Up", chances: "1.88" },
+    { title: "Triple Win", chances: "1.87" },
+    { title: "Mega Roll", chances: "1.86" },
+    { title: "Super Flip", chances: "1.85" },
+    { title: "Ultra Guess", chances: "1.84" },
+    { title: "Pro Pick", chances: "1.83" },
+    { title: "Elite Draw", chances: "1.82" },
+    { title: "Master 7", chances: "1.81" },
+    { title: "Champion Low", chances: "1.80" },
+    { title: "Legend Sum", chances: "1.79" },
+    { title: "Hero Match", chances: "1.78" },
+    { title: "King Pick", chances: "1.77" },
+    { title: "Queen Up", chances: "1.76" },
+    { title: "Ace Win", chances: "1.75" },
+    { title: "Joker Roll", chances: "1.74" }
+  ];
+  
+  gameTemplates.forEach((template, index) => {
+    extendedGames.push({
+      title: template.title,
+      chances: template.chances,
+      background: "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
+      bettingAddress: "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
+      leftButtonLink: `/hashgames/${template.title.toLowerCase().replace(/\s+/g, '')}/active`,
+      rightButtonLink: `/hashgames/${template.title.toLowerCase().replace(/\s+/g, '')}/default`
+    });
+  });
+  
+  return extendedGames;
+};
+
+const extendedHashGames = generateHashGames();
+
+// Game Grid Component for dedicated pages
+const GameGrid: React.FC<{
+  data: any[];
+  renderCard: (item: any, index: number) => React.ReactNode;
+}> = ({ data, renderCard }) => {
+  return (
+    <div className="grid grid-cols-3 gap-1 p-1 xs:gap-1.5 xs:p-1.5 sm:gap-2 sm:p-2 md:gap-3 md:p-4">
+      {data.map((item, index) => renderCard(item, index))}
+    </div>
+  );
+};
+
 const bannerCards = [
   {
     button: "CLAIM NOW",
@@ -69,15 +134,6 @@ const bannerCards = [
   },
 ] as const;
 
-// Game Grid Component
-const GameGrid: React.FC<{
-  data: any[];
-  renderCard: (item: any, index: number) => React.ReactNode;
-}> = ({ data, renderCard }) => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4 gap-4">
-    {data.map((item, index) => renderCard(item, index))}
-  </div>
-);
 
 // Filtered Page Header Component
 const FilteredPageHeader: React.FC<{
@@ -306,11 +362,11 @@ export default function HashGamesPage() {
         <FilteredPageHeader
           title="Hash Games"
           icon="/icons/Hash.svg"
-          count={12}
+          count={extendedHashGames.length}
         />
 
         <GameGrid
-          data={card9}
+          data={extendedHashGames}
           renderCard={(card, index) => <HashCard key={index} {...card} />}
         />
       </div>
@@ -324,7 +380,7 @@ export default function HashGamesPage() {
             alt="hash"
           />
           <SwiperSlider
-            data={card9}
+            data={extendedHashGames}
             autoplay={false}
             renderSlide={(card, index) => <HashCard {...card} />}
             spaceBetween={12}

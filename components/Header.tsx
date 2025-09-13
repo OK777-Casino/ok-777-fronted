@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { AUTH_CHANGED_EVENT, getIsLoggedIn } from "@/lib/auth";
 import UserProfileDropdown from "./ui/notification/Profile";
 import { Button, UnifiedButton } from "./ui";
@@ -11,7 +11,6 @@ import { useProfile } from "../context/ProfileProvider";
 import { useOverlay } from "../context/OverlayProvider";
 import { useLanguage } from "../context/LanguageProvider";
 import { useI18n } from "../context/I18nProvider";
-import AuthModal from "./modals/AuthModal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { FreeMode } from "swiper/modules";
@@ -93,15 +92,9 @@ const NotificationBadge: React.FC = () => (
 const LeftSection: React.FC<{
   toggleSidebar: () => void;
   isCollapsed: boolean;
-  showMobileSearch: boolean;
-  onMobileSearchClick: () => void;
-  onMobileSearchClose: () => void;
 }> = ({
   toggleSidebar,
   isCollapsed,
-  showMobileSearch,
-  onMobileSearchClick,
-  onMobileSearchClose,
 }) => (
   <div className="flex items-center gap-2">
     <MenuButton onClick={toggleSidebar} isCollapsed={isCollapsed} />
@@ -255,7 +248,7 @@ const NotificationButton: React.FC<{ onClick?: () => void }> = ({
 
 const ProfileButton: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   const { isProfileOpen, setIsProfileOpen } = useProfile();
-  const { openProfile, closeOverlay } = useOverlay();
+  const { openProfile } = useOverlay();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -324,7 +317,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   const { t } = useI18n();
 
   // Game navigation tabs for mobile with translations
-  const gameNavTabs = [
+  const gameNavTabs = useMemo(() => [
     {
       id: "home",
       label: t("navigation.home"),
@@ -355,7 +348,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
       icon: "/icons/Sport.svg",
       active: false,
     },
-  ];
+  ], [t]);
 
   useEffect(() => {
     const index = gameNavTabs.findIndex((t) => t.id === activeTab);
@@ -396,13 +389,10 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
 };
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { toggleSidebar, toggleAuthModal, isCollapsed } =
     useSidebar();
   const [activeGameTab, setActiveGameTab] = useState("home");
-  const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { t } = useI18n();
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -418,48 +408,51 @@ const Header: React.FC = () => {
 
   // Update active tab based on URL query parameters
   useEffect(() => {
-    const tabsParam = searchParams.get('tabs');
-    if (tabsParam) {
-      setActiveGameTab(tabsParam);
+    const tabFromQuery = searchParams.get('tab');
+    if (tabFromQuery) {
+      // Validate the tab parameter
+      const validTabs = ['home', 'hash', 'slots', 'casino', 'sport'];
+      if (validTabs.includes(tabFromQuery)) {
+        setActiveGameTab(tabFromQuery);
+      } else {
+        setActiveGameTab("home");
+      }
     } else {
-      setActiveGameTab("home");
+      // Fallback to pathname-based detection if no query parameter
+      const path = window.location.pathname;
+      switch (path) {
+        case "/":
+          setActiveGameTab("home");
+          break;
+        case "/hash-games":
+          setActiveGameTab("hash");
+          break;
+        case "/slots":
+          setActiveGameTab("slots");
+          break;
+        case "/casino":
+          setActiveGameTab("casino");
+          break;
+        case "/sports":
+          setActiveGameTab("sport");
+          break;
+        default:
+          setActiveGameTab("home");
+      }
     }
   }, [searchParams]);
   
   const handleTabChange = (tabId: string) => {
     setActiveGameTab(tabId);
     
-    // Update URL with query parameter instead of navigating to different pages
+    // Create new URL with query parameter
     const currentPath = window.location.pathname;
-    if (tabId === "home") {
-      // Remove the tabs parameter for home
-      router.push(currentPath);
-    } else {
-      // Add or update the tabs parameter
-      router.push(`${currentPath}?tabs=${tabId}`);
-    }
+    const newUrl = `${currentPath}?tab=${tabId}`;
+    
+    // Use router.replace to update URL without adding to history
+    router.replace(newUrl);
   };
 
-  const handleMobileSearchClick = () => {
-    setShowMobileSearch(true);
-  };
-
-  const handleMobileSearchClose = () => {
-    setShowMobileSearch(false);
-  };
-
-  const LoginForm = () => {
-    return <AuthModal />;
-  };
-
-  const toggleNotification = () => {
-    console.log(isOpen);
-    setIsOpen(!isOpen);
-    const notificationPanel = document.getElementById("notification-panel");
-    if (notificationPanel) {
-      notificationPanel.style.display = isOpen ? "block" : "none";
-    }
-  };
 
   return (
     <>
@@ -477,9 +470,6 @@ const Header: React.FC = () => {
           <LeftSection
             toggleSidebar={toggleSidebar}
             isCollapsed={isCollapsed}
-            showMobileSearch={showMobileSearch}
-            onMobileSearchClick={handleMobileSearchClick}
-            onMobileSearchClose={handleMobileSearchClose}
           />
 
           {/* Center - empty space */}
