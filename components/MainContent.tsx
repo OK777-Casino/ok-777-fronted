@@ -382,7 +382,6 @@ const MainContent: React.FC<MainContentProps> = () => {
   const { t, locale } = useI18n();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenSearch, setIsOpenSearch] = useState(true);
 
   // Debug: Log when component re-renders with new locale
   console.log("MainContent re-rendered with locale:", locale);
@@ -394,9 +393,6 @@ const MainContent: React.FC<MainContentProps> = () => {
   const dispatch = useAppDispatch();
   const carouselState = useAppSelector((state) => state.carousel);
 
-  const toggleOpenSearch = () => {
-    setIsOpenSearch(!isOpenSearch);
-  };
 
   // Helper function to get category display labels
   const getCategoryLabel = (category: string) => {
@@ -413,9 +409,6 @@ const MainContent: React.FC<MainContentProps> = () => {
     return categoryLabels[category] || t("games.title");
   };
 
-  const toggleSearch = () => {
-    setIsOpenSearch(!isOpenSearch);
-  };
 
   // Carousel slide change handlers
   const handleMainBannerSlideChange = (swiper: SwiperType) => {
@@ -462,222 +455,10 @@ const MainContent: React.FC<MainContentProps> = () => {
     dispatch(setGameManufacturersSlide(swiper.realIndex ?? swiper.activeIndex));
   };
 
-  // Filtered Page Header Component
-  const FilteredPageHeader: React.FC<{
-    title: string;
-    count: number;
-    icon: string;
-  }> = ({ title, count, icon }) => (
-    <div className="p-4 pb-0 pt-0">
-      <div className="flex items-center justify-between mb-4   [@media(max-width:1024px)]:mt-[-4px] ">
-        <div className="bg-[rgba(255,255,255,0.08)] rounded-lg p-[7px]">
-          <h1 className="text-white text-[14px] font-bold flex items-center gap-2">
-            <img src={icon} className="w-6 hidden lg:block h-6" alt="game" />
-            {title}{" "}
-            <span className="text-[#2283F6] text-[12px] bg-[#111923] px-2 py-0.5 rounded-[4px] ">
-              {count}
-            </span>
-          </h1>
-        </div>
-        <div
-          onClick={toggleOpenSearch}
-          className="p-[10px] bg-[#111923] lg:hidden  lg:bg-[rgba(255,255,255,0.04)] flex gap-1 items-center lg:w-50 rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
-        >
-          {!isOpenSearch ? (
-            <X className="w-[18px] h-[18px] text-white" />
-          ) : (
-            <img
-              src="/icons/search.svg"
-              alt="search"
-              className="w-[18px] h-[18px]"
-            />
-          )}
-          <span className="text-[#A7B5CA] hidden lg:block text-sm">Search</span>
-        </div>
-        <div className="flex gap-4 [@media(max-width:1024px)]:hidden">
-          <div
-            onClick={openGameProviderModal}
-            className="hidden lg:flex w-50 items-center justify-between h-12 px-3  bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
-          >
-            <span className="text-[#A7B5CA] text-sm">Game provider</span>
-            <svg
-              className="w-4 h-4 text-[#A7B5CA]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </div>
 
-          <div
-            onClick={openChooseModal}
-            className=" hidden lg:flex w-50 items-center justify-between h-12  px-3  bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
-          >
-            <span className="text-[#A7B5CA] text-sm">All</span>
-            <svg
-              className="w-4 h-4 text-[#A7B5CA]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </div>
-          <div
-            onClick={toggleOpenSearch}
-            className="p-[10px] bg-[#111923]  lg:bg-[rgba(255,255,255,0.04)] flex gap-1 items-center lg:w-50 rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
-          >
-            <img
-              src="/icons/search.svg"
-              alt="search"
-              className="w-[18px] h-[18px]"
-            />
-            <span className="text-[#A7B5CA] hidden lg:block text-sm">
-              {t("app.search")}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex xl:hidden items-center gap-3">
-        {isOpenSearch ? (
-          <>
-            <div
-              onClick={openGameProviderModal}
-              className="flex w-[50%] items-center justify-between h-10 px-3  bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
-            >
-              <span className="text-[#A7B5CA] text-sm">
-                {t("games.providers")}
-              </span>
-              <svg
-                className="w-4 h-4 text-[#A7B5CA]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-
-            <div
-              onClick={openChooseModal}
-              className="flex w-[50%] items-center justify-between h-10  px-3  bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
-            >
-              <span className="text-[#A7B5CA] text-sm">All</span>
-              <svg
-                className="w-4 h-4 text-[#A7B5CA]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="flex w-full items-center gap-2 h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors">
-              <img
-                src="/icons/search.svg"
-                alt="search"
-                className="w-[18px] h-[18px] flex-shrink-0"
-              />
-              <input
-                type="text"
-                placeholder={t("app.search")}
-                className="flex-1 bg-transparent text-[#A7B5CA] text-sm placeholder:text-[#A7B5CA] border-none outline-none min-w-0"
-              />
-            </div>
-          </>
-        )}
-      </div>
-    </div>
-  );
-
-  // Function to determine which sections to show based on active category
+  // Function to determine which sections to show - now always show all sections for home page
   const shouldShowSection = (sectionType: string) => {
-    if (activeGameCategory === "home") return true;
-
-    const categoryMapping: { [key: string]: string[] } = {
-      slots: ["slots", "new-launches"],
-      casino: ["live-casino", "new-launches"],
-      hash: ["hash"],
-      sport: ["sport"],
-    };
-
-    return categoryMapping[activeGameCategory]?.includes(sectionType) || false;
-  };
-
-  // Scroll to top when switching category (mobile UX)
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [activeGameCategory]);
-
-  // Function to check if we should show the filtered page layout
-  const isFilteredView = () => {
-    return activeGameCategory !== "home";
-  };
-
-  // Get category data for filtered view
-  const getCategoryData = () => {
-    const categoryData: {
-      [key: string]: {
-        title: string;
-        count: number;
-        data: any[];
-        icon: string;
-      };
-    } = {
-      slots: {
-        title: "Slots",
-        count: 14,
-        data: card3,
-        icon: "/icons/Slots.svg",
-      },
-      casino: {
-        title: "Live Casino",
-        count: 104,
-        data: card2,
-        icon: "/icons/Casino1.svg",
-      },
-      hash: {
-        title: "Hash Games",
-        count: 12,
-        data: card10,
-        icon: "/icons/Hash.svg",
-      },
-      sport: {
-        title: "Sport",
-        count: 23,
-        data: card5,
-        icon: "/icons/Sport.svg",
-      },
-    };
-
-    return categoryData[activeGameCategory] || categoryData["slots"];
+    return true; // Always show all sections on home page
   };
 
   // Section header component
@@ -686,176 +467,20 @@ const MainContent: React.FC<MainContentProps> = () => {
     title: string;
     alt: string;
   }> = ({ icon, title, alt }) => {
-    if (!isFilteredView()) {
-      return (
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-4.5 font-bold flex items-center text-white   gap-2">
-            <img className="grayscale" src={icon} alt={alt} />
-            {title}
-          </h2>
-          <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-            <span>all 13</span>
-          </span>
-        </div>
-      );
-    }
+    return (
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-4.5 font-bold flex items-center text-white   gap-2">
+          <img className="grayscale" src={icon} alt={alt} />
+          {title}
+        </h2>
+        <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
+          <span>all 13</span>
+        </span>
+      </div>
+    );
   };
 
   const toggleContent = () => setIsExpanded(!isExpanded);
-
-  // Render filtered view (mobile only)
-  if (isFilteredView()) {
-    const categoryData = getCategoryData();
-
-    return (
-      <div
-        className="lg:px-6 px-1 py-6 pt-4 w-full max-w-[1920px] mx-auto overflow-x-hidden"
-        style={{ margin: "auto" }}
-      >
-        <SuccessForm isOpen={isOpen} />
-
-        <div className="mb-8 lg:mt-0 mt-[45px]">
-          <SwiperSlider
-            key="banner-swiper"
-            data={bannerCards}
-            renderSlide={(card, index) => <RewardCard {...card} />}
-            slidesPerView="auto"
-            autoplay={false}
-            spaceBetween={12}
-            slideClassName="!w-[min(486.76px,100%)]"
-            showProgressBars={true}
-            customPagination={true}
-            initialSlide={carouselState.mainBannerCurrentSlide}
-            onSlideChange={handleMainBannerSlideChange}
-            carouselId="main-banner"
-          />
-        </div>
-
-        {/* Mobile Filtered View */}
-        <div className="">
-          <FilteredPageHeader
-            title={categoryData.title}
-            icon={categoryData.icon}
-            count={categoryData.count}
-          />
-
-          <GameGrid
-            data={categoryData.data}
-            renderCard={(card, index) => <CasinoCard key={index} {...card} />}
-          />
-        </div>
-
-        {/* Desktop Slider View - Keep Original Functionality */}
-        <div className="hidden lg:block">
-          {/* Show appropriate section based on category */}
-          {activeGameCategory === "slots" && (
-            <div className="lg:mb-16 mb-8">
-              <SectionHeader
-                icon="/icons/Slots.svg"
-                title={t("games.slots")}
-                alt="slots"
-              />
-              <SwiperSlider
-                data={card3}
-                autoplayDelay={1000000}
-                grid={{ rows: 2, fill: "row" }}
-                renderSlide={(card, index) => <CasinoCard {...card} />}
-                slidesPerView={7}
-                spaceBetween={12}
-                slideClassName="mb-1"
-                breakpoints={{
-                  320: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-                  375: { slidesPerView: 3.5, grid: { rows: 2, fill: "row" } },
-                  425: { slidesPerView: 4.1, grid: { rows: 2, fill: "row" } },
-                  768: { slidesPerView: 4.3, grid: { rows: 2, fill: "row" } },
-                  1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 12,
-                    grid: { rows: 2, fill: "row" },
-                  },
-                  1440: { slidesPerView: 7, grid: { rows: 2, fill: "row" } },
-                }}
-              />
-            </div>
-          )}
-
-          {activeGameCategory === "casino" && (
-            <div className="lg:mb-16 mb-8">
-              <SectionHeader
-                icon="/icons/Casino1.svg"
-                title={t("games.live")}
-                alt="home"
-              />
-              <SwiperSlider
-                data={card2}
-                autoplayDelay={1000000}
-                grid={{ rows: 2, fill: "row" }}
-                renderSlide={(card, index) => <CasinoCard {...card} />}
-                slidesPerView={7}
-                spaceBetween={12}
-                slideClassName="mb-1"
-                breakpoints={{
-                  320: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-                  375: { slidesPerView: 3.5, grid: { rows: 2, fill: "row" } },
-                  425: { slidesPerView: 4.1, grid: { rows: 2, fill: "row" } },
-                  768: { slidesPerView: 4.3, grid: { rows: 2, fill: "row" } },
-                  1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 20,
-                    grid: { rows: 2, fill: "row" },
-                  },
-                  1440: { slidesPerView: 7, grid: { rows: 2, fill: "row" } },
-                }}
-              />
-            </div>
-          )}
-
-          {activeGameCategory === "hash" && (
-            <div className="lg:mb-16 mb-8">
-              <SectionHeader
-                icon="/icons/Hash.svg"
-                title={t("games.hashgames")}
-                alt="hash"
-              />
-              <SwiperSlider
-                data={card9}
-                autoplay={false}
-                renderSlide={(card, index) => <HashCard {...card} />}
-                spaceBetween={12}
-                slidesPerView="auto"
-                slideClassName="!w-[min(320px,100%)]"
-              />
-            </div>
-          )}
-
-          {activeGameCategory === "sport" && (
-            <div className="lg:mb-16 mb-8">
-              <SectionHeader
-                icon="/icons/Sport.svg"
-                title={t("games.sports")}
-                alt="Sport"
-              />
-              <SwiperSlider
-                data={card5}
-                autoplayDelay={1000000}
-                renderSlide={(card, index) => <CasinoCard {...card} />}
-                slidesPerView={7}
-                spaceBetween={12}
-                breakpoints={{
-                  320: { slidesPerView: 3.3 },
-                  375: { slidesPerView: 3.5 },
-                  425: { slidesPerView: 4.1 },
-                  768: { slidesPerView: 4.3 },
-                  1024: { slidesPerView: 5, spaceBetween: 20 },
-                  1440: { slidesPerView: 7.3 },
-                }}
-              />
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
 
   // Render home view
   return (

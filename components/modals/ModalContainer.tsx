@@ -105,17 +105,18 @@ export default function ModalContainer({
         positionClasses[position],
         backdropClassName
       )}
-      style={{ zIndex, overflowY: 'auto' }}
+      style={{ zIndex }}
       onClick={handleBackdropClick}
     >
       <div 
         className={cn(
-          "absolute z-[10001] mx-auto overflow-visible",
+          "modal-content-scroll",
+          "absolute z-[10001] mx-auto",
           // Position logic: responsive should be bottom on mobile, center on desktop
           position === 'responsive' 
-            ? "top-auto bottom-0 sm:top-1/2 sm:bottom-auto" 
+            ? "top-auto bottom-0 sm:top-1/2 sm:bottom-auto h-full sm:h-auto" 
             : position === 'bottom' 
-            ? "top-auto bottom-0"
+            ? "top-auto bottom-0 h-full sm:h-auto"
             : position === 'top'
             ? "top-0 bottom-auto"
             : "top-1/2 bottom-auto",
@@ -139,7 +140,9 @@ export default function ModalContainer({
         )}
         style={{
           maxWidth: width || undefined,
-          width: width || undefined
+          width: width || undefined,
+          maxHeight: '100vh',
+          overflowY: 'auto'
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -168,7 +171,7 @@ export default function ModalContainer({
 
           {/* Content */}
           <div className={cn(
-            "flex flex-col gap-6 p-4 w-full rounded-b-[0.875rem] bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem]",
+            "flex flex-col gap-6 p-4 w-full rounded-b-[0.875rem] bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem] min-h-0",
             contentClassName
           )}>
             {children}

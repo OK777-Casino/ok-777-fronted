@@ -11,8 +11,6 @@ import { useProfile } from "../context/ProfileProvider";
 import { useOverlay } from "../context/OverlayProvider";
 import { useLanguage } from "../context/LanguageProvider";
 import { useI18n } from "../context/I18nProvider";
-import Auth from "./auth/Auth";
-import AuthButton from "./ui/AuthButton";
 import AuthModal from "./modals/AuthModal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
@@ -399,7 +397,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { toggleSidebar, toggleAuthModal, setActiveGameCategory, isCollapsed } =
+  const { toggleSidebar, toggleAuthModal, isCollapsed } =
     useSidebar();
   const [activeGameTab, setActiveGameTab] = useState("home");
   const [showMobileSearch, setShowMobileSearch] = useState(false);
@@ -416,9 +414,56 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  // Update active tab based on current route
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const path = window.location.pathname;
+    switch (path) {
+      case "/":
+        setActiveGameTab("home");
+        break;
+      case "/hash-games":
+        setActiveGameTab("hash");
+        break;
+      case "/slots":
+        setActiveGameTab("slots");
+        break;
+      case "/casino":
+        setActiveGameTab("casino");
+        break;
+      case "/sports":
+        setActiveGameTab("sport");
+        break;
+      default:
+        setActiveGameTab("home");
+    }
+  }, []);
+
+  const router = useRouter();
+  
   const handleTabChange = (tabId: string) => {
     setActiveGameTab(tabId);
-    setActiveGameCategory(tabId);
+    
+    // Navigate to the appropriate page based on tab ID
+    switch (tabId) {
+      case "home":
+        router.push("/");
+        break;
+      case "hash":
+        router.push("/hash-games");
+        break;
+      case "slots":
+        router.push("/slots");
+        break;
+      case "casino":
+        router.push("/casino");
+        break;
+      case "sport":
+        router.push("/sports");
+        break;
+      default:
+        router.push("/");
+    }
   };
 
   const handleMobileSearchClick = () => {

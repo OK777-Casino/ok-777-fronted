@@ -96,17 +96,20 @@ export const gameCategories: SidebarItem[] = [
     id: "hash-games",
     icon: "/icons/bitcoin.svg",
     label: "Hash Games",
+    href: "/hash-games",
     hasHover: true,
   },
   {
     id: "slots",
     icon: "/icons/dice.svg",
     label: "Slots",
+    href: "/slots",
   },
   {
     id: "live-casino",
     icon: "/icons/casino.svg",
     label: "Live Casino",
+    href: "/casino",
   },
   {
     id: "futures",
@@ -122,11 +125,13 @@ export const gameCategories: SidebarItem[] = [
     id: "sport",
     icon: "/icons/football.svg",
     label: "Sport",
+    href: "/sports",
   },
   {
     id: "table-games",
     icon: "/icons/game.svg",
     label: "Table Games",
+    href: "/table-games",
   },
 ];
 
