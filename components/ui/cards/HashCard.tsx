@@ -31,7 +31,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
         background:
           `url('${background}') center/cover`,
       }}
-      className="relative rounded-[14px] w-[320px] h-[173px] p-[8px_10px_12px_10px] text-white overflow-hidden border border-gray-700/50 shadow-xl"
+      className="relative rounded-[14px] w-full h-[173px] p-[8px_10px_12px_10px] text-white overflow-hidden border border-gray-700/50 shadow-xl"
     >
       <div className="absolute w-full h-[173px] bg-gray-800 opacity-[80%] top-0 left-0" />
       <div className="relative z-10">
@@ -59,7 +59,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
             </span>
           </div>
           <div className="relative ">
-            <div className="bg-[#090c11] rounded-lg w-[300px] h-[36px] border flex items-center border-gray-600/50">
+            <div className="bg-[#090c11] rounded-lg w-full h-[36px] border flex items-center border-gray-600/50">
               <span className="text-gray-300 ml-[8px] text-[10px] font-mono">
                 {bettingAddress}
               </span>
