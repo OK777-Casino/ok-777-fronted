@@ -25,7 +25,7 @@ import SearchIcon from "./ui/icons/search";
 import TDButton from "./ui/Button/TDButton";
 import MessageDots2Icon from "./ui/icons/message-dots-2";
 import NotificationIcon from "./ui/icons/notification";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 // Game navigation tabs for mobile - will be created with translations
 
@@ -403,6 +403,8 @@ const Header: React.FC = () => {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { t } = useI18n();
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -414,55 +416,27 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  // Update active tab based on current route
+  // Update active tab based on URL query parameters
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const path = window.location.pathname;
-    switch (path) {
-      case "/":
-        setActiveGameTab("home");
-        break;
-      case "/hash-games":
-        setActiveGameTab("hash");
-        break;
-      case "/slots":
-        setActiveGameTab("slots");
-        break;
-      case "/casino":
-        setActiveGameTab("casino");
-        break;
-      case "/sports":
-        setActiveGameTab("sport");
-        break;
-      default:
-        setActiveGameTab("home");
+    const tabsParam = searchParams.get('tabs');
+    if (tabsParam) {
+      setActiveGameTab(tabsParam);
+    } else {
+      setActiveGameTab("home");
     }
-  }, []);
-
-  const router = useRouter();
+  }, [searchParams]);
   
   const handleTabChange = (tabId: string) => {
     setActiveGameTab(tabId);
     
-    // Navigate to the appropriate page based on tab ID
-    switch (tabId) {
-      case "home":
-        router.push("/");
-        break;
-      case "hash":
-        router.push("/hash-games");
-        break;
-      case "slots":
-        router.push("/slots");
-        break;
-      case "casino":
-        router.push("/casino");
-        break;
-      case "sport":
-        router.push("/sports");
-        break;
-      default:
-        router.push("/");
+    // Update URL with query parameter instead of navigating to different pages
+    const currentPath = window.location.pathname;
+    if (tabId === "home") {
+      // Remove the tabs parameter for home
+      router.push(currentPath);
+    } else {
+      // Add or update the tabs parameter
+      router.push(`${currentPath}?tabs=${tabId}`);
     }
   };
 
