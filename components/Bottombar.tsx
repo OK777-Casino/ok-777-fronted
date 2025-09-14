@@ -57,6 +57,37 @@ function BottombarContent() {
 
   const defaultTabs = [
     {
+      id: 'Home',
+      label: 'Home',
+      icon: (
+        <svg
+          width="19"
+          height="19"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-[1.2rem] h-[1.2rem] flex-shrink-0"
+        >
+          <g clipPath="url(#clip0_home)">
+            <path
+              opacity="0.4"
+              d="M10.0001 2.5L2.50012 8.75V17.5C2.50012 17.7761 2.72398 18 3.00012 18H6.00012C6.27626 18 6.50012 17.7761 6.50012 17.5V13.5C6.50012 13.2239 6.72398 13 7.00012 13H9.00012C9.27626 13 9.50012 13.2239 9.50012 13.5V17.5C9.50012 17.7761 9.72398 18 10.0001 18H13.0001C13.2763 18 13.5001 17.7761 13.5001 17.5V13.5C13.5001 13.2239 13.724 13 14.0001 13H16.0001C16.2763 13 16.5001 13.2239 16.5001 13.5V17.5C16.5001 17.7761 16.724 18 17.0001 18H20.0001C20.2763 18 20.5001 17.7761 20.5001 17.5V8.75L13.0001 2.5C12.4478 2.05228 11.5523 2.05228 11.0001 2.5Z"
+              fill="currentColor"
+            />
+            <path
+              d="M10.0001 1.5C9.17167 1.5 8.34326 1.82857 7.70776 2.48571L0.207764 9.48571C-0.0692359 9.75714 -0.0692359 10.1857 0.207764 10.4571C0.484764 10.7286 0.915764 10.7286 1.19276 10.4571L8.69276 3.45714C9.19276 2.97143 9.80776 2.97143 10.3078 3.45714L17.8078 10.4571C18.0848 10.7286 18.5158 10.7286 18.7928 10.4571C19.0698 10.1857 19.0698 9.75714 18.7928 9.48571L11.2928 2.48571C10.6573 1.82857 9.82886 1.5 10.0001 1.5Z"
+              fill="currentColor"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_home">
+              <rect width="20" height="20" fill="white" transform="translate(0.00012207 0)" />
+            </clipPath>
+          </defs>
+        </svg>
+      ),
+    },
+    {
       id: 'Menu',
       label: t('navigation.menu'),
       icon: (
@@ -236,7 +267,9 @@ function BottombarContent() {
     setActiveTab(tabId);
     
     // Handle navigation for specific tabs
-    if (tabId === 'Referrals') {
+    if (tabId === 'Home') {
+      router.push('/');
+    } else if (tabId === 'Referrals') {
       router.push('/alliance');
     } else if(tabId === 'Activity') {
       router.push('/promotions');
@@ -284,7 +317,13 @@ function BottombarContent() {
                 key={tab.id}
                 icon={tab.icon}
                 label={tab.label}
-                isActive={tab.id === 'Menu' ? !isCollapsed : activeTab === tab.id}
+                isActive={
+                  tab.id === 'Home' 
+                    ? pathname === '/' 
+                    : tab.id === 'Menu' 
+                      ? !isCollapsed 
+                      : activeTab === tab.id
+                }
                 onClick={() => handleTabClick(tab.id)}
               />
             ))
