@@ -104,6 +104,23 @@ export const HomepageSections: React.FC<{
           }}
           showProgressBars={true}
           autoplayDelay={1000000}
+        /> <br />
+        <SwiperSlider
+          key="homepage-live-casino-swiper"
+          data={card2}
+          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          slidesPerView={7}
+          spaceBetween={12}
+          breakpoints={{
+            320: { slidesPerView: 3.3 },
+            375: { slidesPerView: 3.5 },
+            425: { slidesPerView: 4.1 },
+            768: { slidesPerView: 4.3 },
+            1024: { slidesPerView: 5, spaceBetween: 20 },
+            1440: { slidesPerView: 7.3 },
+          }}
+          showProgressBars={true}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -122,12 +139,12 @@ export const HomepageSections: React.FC<{
           slidesPerView={7}
           spaceBetween={12}
           breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
+            320: { slidesPerView: 2.2 },
+            375: { slidesPerView: 2.5 },
+            425: { slidesPerView: 3.5 },
+            768: { slidesPerView: 4.1 },
+            1024: { slidesPerView: 4.5, spaceBetween: 20 },
+            1440: { slidesPerView: 4.7 },
           }}
           showProgressBars={true}
           autoplayDelay={1000000}
@@ -142,6 +159,23 @@ export const HomepageSections: React.FC<{
           alt="slots"
           count={card3.length}
         />
+        <SwiperSlider
+          key="homepage-slots-swiper"
+          data={card3}
+          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          slidesPerView={7}
+          spaceBetween={12}
+          breakpoints={{
+            320: { slidesPerView: 3.3 },
+            375: { slidesPerView: 3.5 },
+            425: { slidesPerView: 4.1 },
+            768: { slidesPerView: 4.3 },
+            1024: { slidesPerView: 5, spaceBetween: 20 },
+            1440: { slidesPerView: 7.3 },
+          }}
+          showProgressBars={true}
+          autoplayDelay={1000000}
+        /> <br />
         <SwiperSlider
           key="homepage-slots-swiper"
           data={card3}

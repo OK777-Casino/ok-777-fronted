@@ -487,7 +487,7 @@ const MainContent: React.FC = () => {
               />
             </div>
           )}
-
+          {/* Homepage Sections */}
           {/* Live Casino Section */}
           {shouldShowSection("live-casino") && (
             <div className="lg:mb-16 mb-8">
