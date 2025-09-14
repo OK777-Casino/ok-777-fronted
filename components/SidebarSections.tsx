@@ -62,18 +62,6 @@ const SidebarSections: React.FC<SidebarSectionsProps> = ({
                   const itemWithHandler =
                     item.id === "search"
                       ? { ...item, onClick: openGameSearchModal }
-                      : item.id === "favorites"
-                      ? {
-                          ...item,
-                          onClick: () =>
-                            openLocalGameSearchModal("favorites", "Favorites"),
-                        }
-                      : item.id === "recent"
-                      ? {
-                          ...item,
-                          onClick: () =>
-                            openLocalGameSearchModal("recent", "Recent"),
-                        }
                       : item;
 
                   return (

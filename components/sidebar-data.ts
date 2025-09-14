@@ -79,11 +79,13 @@ export const navigationItems: SidebarItem[] = [
     id: "favorites",
     icon: "/icons/heart.svg",
     label: "Favorites",
+    href: "/favorites",
   },
   {
     id: "recent",
     icon: "/icons/history.svg",
     label: "Recent",
+    href: "/recent",
   },
 ];
 

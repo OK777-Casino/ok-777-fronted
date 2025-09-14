@@ -27,11 +27,13 @@ export const createSidebarData = (t: (key: string) => string) => {
       id: "favorites",
       icon: "/icons/heart.svg",
       label: t('games.favorites'),
+      href: "/favorites",
     },
     {
       id: "recent",
       icon: "/icons/history.svg",
       label: t('games.recent'),
+      href: "/recent",
     },
   ];
 
