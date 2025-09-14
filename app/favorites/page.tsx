@@ -244,7 +244,6 @@ export default function FavoritesPage() {
               <CasinoCard
                 key={game.id}
                 {...game}
-                onClick={() => console.log('Play game:', game.title)}
               />
             ))}
           </div>

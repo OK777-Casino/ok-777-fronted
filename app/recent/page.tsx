@@ -252,7 +252,6 @@ export default function RecentPage() {
               <div key={game.id} className="relative">
                 <CasinoCard
                   {...game}
-                  onClick={() => console.log('Play game:', game.title)}
                 />
                 {/* Last played indicator */}
                 <div className="absolute top-2 right-2 bg-black/70 text-xs px-2 py-1 rounded text-gray-300">

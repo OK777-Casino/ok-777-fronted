@@ -476,22 +476,6 @@ const FilteredPageHeader: React.FC<{
   );
 };
 
-// Generate extended hash games data
-const generateHashGames = () => {
-  const baseHashGames = card9 || [];
-  const extendedGames = [];
-  
-  for (let i = 0; i < 30; i++) {
-    const baseGame = baseHashGames[i % baseHashGames.length];
-    extendedGames.push({
-      ...baseGame,
-      id: `hash-game-${i + 1}`,
-      title: `${baseGame.title} ${i + 1}`,
-    });
-  }
-  
-  return extendedGames;
-};
 
 // Generate game data with images
 const generateGameImages = () => {
