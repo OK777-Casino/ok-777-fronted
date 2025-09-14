@@ -356,16 +356,27 @@ const MainContent: React.FC = () => {
   }> = ({ data, renderCard, viewAllLink, maxCards }) => {
     // Mobile: 3 per row, 6 rows = 18 cards max
     // Desktop: 6 per row, 4 rows = 24 cards max
-    const maxDisplayCards = maxCards || 24; // Default to desktop max
+    const mobileMaxCards = 18; // 6 rows × 3 cards
+    const desktopMaxCards = 24; // 4 rows × 6 cards
+    
+    // Use responsive max cards - show 18 on mobile, 24 on desktop
+    const maxDisplayCards = maxCards || desktopMaxCards;
     const displayData = data.slice(0, maxDisplayCards);
-    const hasMoreCards = data.length > maxDisplayCards;
 
     return (
       <div className="space-y-4">
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+        {/* Mobile: 3 cards per row, max 18 cards (6 rows) */}
+        <div className="grid grid-cols-3 md:hidden gap-3">
+          {displayData.slice(0, mobileMaxCards).map((item, index) => renderCard(item, index))}
+        </div>
+        
+        {/* Desktop: 6 cards per row, max 24 cards (4 rows) */}
+        <div className="hidden md:grid grid-cols-6 gap-3">
           {displayData.map((item, index) => renderCard(item, index))}
-          </div>
-        {hasMoreCards && (
+        </div>
+        
+        {/* Show View All button if there are more cards than the mobile limit */}
+        {data.length > mobileMaxCards && (
           <div className="flex justify-center">
             <Link
               href={viewAllLink}

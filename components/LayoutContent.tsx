@@ -39,6 +39,9 @@ export default function LayoutContent({ children }: LayoutContentProps) {
   
   // Check if we're on View All pages (where we want to show mobile footer)
   const isViewAllPage = ['/slots', '/hash-games', '/live-casino', '/futures', '/crypto-games', '/sports', '/table-games'].includes(pathname || '');
+  
+  // Check if we should show sidebar (always show on desktop, or on mobile for View All pages)
+  const shouldShowSidebar = !isMobileHeader || isViewAllPage;
 
   // Handle initial page load
   useEffect(() => {
@@ -68,8 +71,8 @@ export default function LayoutContent({ children }: LayoutContentProps) {
       </Suspense>
       <main className={`w-full ${isMobileHeader ? 'pt-[56px] sm:pt-[64px]' : 'pt-[56px]'} relative z-60 transition-all duration-300`}>
         <div className="w-full max-w-[100vw] min-h-[calc(100vh-56px)]">
-          {!isMobileHeader && <Sidebar />}
-          <div className={`main-content ${isMobileHeader ? 'w-full' : isCollapsed ? 'lg:ml-[70px]' :  'lg:ml-[300px]'} overflow-y-auto ${!isMobileHeader && !isAlliancePage && !isProfileOpen ? 'h-[calc(100vh-56px-59px)]' : 'h-[calc(100vh-56px)]'} ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}>
+          {shouldShowSidebar && <Sidebar />}
+          <div className={`main-content ${shouldShowSidebar ? (isCollapsed ? 'lg:ml-[70px]' : 'lg:ml-[300px]') : 'w-full'} overflow-y-auto ${!isMobileHeader && !isAlliancePage && !isProfileOpen ? 'h-[calc(100vh-56px-59px)]' : 'h-[calc(100vh-56px)]'} ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}>
             {children}
             {!isHashgamePage && !isAlliancePage && <Footer />}
           </div>
