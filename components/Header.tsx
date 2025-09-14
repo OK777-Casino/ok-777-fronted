@@ -357,7 +357,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
     {
       id: "table",
       label: t("games.table"),
-      icon: "/icons/TableGames1.svg",
+      icon: "/icons/tablegame.svg",
       active: false,
     },
   ], [t]);

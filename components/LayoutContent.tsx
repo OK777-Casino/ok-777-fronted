@@ -72,7 +72,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
       <main className={`w-full ${isMobileHeader ? 'pt-[56px] sm:pt-[64px]' : 'pt-[56px]'} relative z-60 transition-all duration-300`}>
         <div className="w-full max-w-[100vw] min-h-[calc(100vh-56px)]">
           {shouldShowSidebar && <Sidebar />}
-          <div className={`main-content ${shouldShowSidebar ? (isCollapsed ? 'lg:ml-[70px]' : 'lg:ml-[300px]') : 'w-full'} overflow-y-auto ${!isMobileHeader && !isAlliancePage && !isProfileOpen ? 'h-[calc(100vh-56px-59px)]' : 'h-[calc(100vh-56px)]'} ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}>
+          <div className={`main-content ${shouldShowSidebar ? (isCollapsed ? 'lg:ml-[70px]' : 'lg:ml-[248px]') : 'w-full'} overflow-y-auto ${!isMobileHeader && !isAlliancePage && !isProfileOpen ? 'h-[calc(100vh-56px-59px)]' : 'h-[calc(100vh-56px)]'} ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}>
             {children}
             {!isHashgamePage && !isAlliancePage && <Footer />}
           </div>

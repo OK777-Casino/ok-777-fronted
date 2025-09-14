@@ -151,8 +151,8 @@ body {
 }
 
 .sidebar.open {
-  width: 18.75rem;
-  min-width: 18.75rem;
+  width: 15.5rem;
+  min-width: 15.5rem;
 }
 
 /* Sidebar scroll isolation */
@@ -775,8 +775,8 @@ body.sidebar-scrolling {
     position: fixed;
     left: 0;
     z-index: 50;
-    width: 300px;
-    min-width: 300px;
+    width: 15.5rem;
+    min-width: 15.5rem;
   }
 }
 
