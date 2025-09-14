@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import Link from "next/link";
 import mainContentData from "../../main-content-data.json";
 import { useModal } from "../../context/ModalProvider";
 import { useI18n } from "../../context/I18nProvider";
@@ -12,9 +13,6 @@ import {
   setLatestEarningsSlide,
   setGameManufacturersSlide,
 } from "../../store/slices/carouselSlice";
-import CasinoCard from "../../components/ui/cards/CasinoCard";
-import RewardCard from "../../components/ui/cards/RewardCard";
-import HashCard from "../../components/ui/cards/HashCard";
 import GameCard from "../../components/ui/cards/GameCard";
 import EarningCard from "../../components/ui/cards/EarningCard";
 import { Icon } from "@iconify/react";
@@ -30,19 +28,9 @@ import {
 
 // Extract data from JSON
 const {
-  card1,
-  card2,
-  card3,
-  card4,
-  card5,
-  card6,
   card7,
-  card9,
-  card10,
-  brand,
   latestBets,
   gameManufacturers,
-  footerContent,
 } = mainContentData;
 
 const bannerCards = [
@@ -286,6 +274,35 @@ const GameManufacturersSection: React.FC = () => {
   );
 };
 
+// Game Image Card Component
+const GameImageCard: React.FC<{
+  id: string;
+  image: string;
+  title: string;
+  link: string;
+}> = ({ id, image, title, link }) => (
+    <div className="relative group cursor-pointer">
+      <div className="rounded-lg overflow-hidden bg-gray-800">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+          onError={(e) => {
+            // Fallback if image doesn't exist
+            e.currentTarget.src = '/images/placeholder-game.jpg';
+          }}
+        />
+      </div>
+      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
+        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">
+            {title}
+          </div>
+        </div>
+      </div>
+    </div>
+);
+
 // Game Grid Component
 const GameGrid: React.FC<{
   data: any[];
@@ -476,7 +493,22 @@ const generateHashGames = () => {
   return extendedGames;
 };
 
-const extendedHashGames = generateHashGames();
+// Generate game data with images
+const generateGameImages = () => {
+  const gameImages = [];
+  for (let i = 1; i <= 15; i++) {
+    const gameNumber = i.toString().padStart(2, '0');
+    gameImages.push({
+      id: `game-${gameNumber}`,
+      image: `/images/games/Game${gameNumber}.jpg`,
+      title: `Game ${gameNumber}`,
+      link: `/hashgames/game${gameNumber}`
+    });
+  }
+  return gameImages;
+};
+
+const gameImages = generateGameImages();
 
 export default function HashGamesPage() {
   const { t } = useI18n();
@@ -512,20 +544,13 @@ export default function HashGamesPage() {
         <FilteredPageHeader
           title="Hash Games"
           icon="/icons/Hash.svg"
-          count={extendedHashGames.length}
+          count={gameImages.length}
         />
 
         <GameGrid
-          data={extendedHashGames}
-          renderCard={(card, index) => <HashCard key={index} {...card} />}
+          data={gameImages}
+          renderCard={(card, index) => <GameImageCard key={index} {...card} />}
         />
-        <div className="flex justify-center cursor-pointer">
-            <div
-              className="h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors"
-            >
-              Show All
-            </div>
-          </div>
       </div>
 
       {/* Latest Bets Section */}

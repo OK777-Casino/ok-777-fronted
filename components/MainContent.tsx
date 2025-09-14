@@ -112,6 +112,54 @@ const generateHashGames = () => {
 
 const extendedHashGames = generateHashGames();
 
+// Generate game data with images
+const generateGameImages = () => {
+  const gameImages = [];
+  for (let i = 1; i <= 15; i++) {
+    const gameNumber = i.toString().padStart(2, '0');
+    gameImages.push({
+      id: `game-${gameNumber}`,
+      image: `/images/games/Game${gameNumber}.jpg`,
+      title: `Game ${gameNumber}`,
+      link: `/hashgames/game${gameNumber}`
+    });
+  }
+  return gameImages;
+};
+
+const gameImages = generateGameImages();
+
+// Game Image Card Component
+const GameImageCard: React.FC<{
+  id: string;
+  image: string;
+  title: string;
+  link: string;
+}> = ({ image, title, link }) => (
+  <Link href={link} className="block">
+    <div className="relative group cursor-pointer">
+      <div className="aspect-square rounded-lg overflow-hidden bg-gray-800">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+          onError={(e) => {
+            // Fallback if image doesn't exist
+            e.currentTarget.src = '/images/placeholder-game.jpg';
+          }}
+        />
+      </div>
+      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
+        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">
+            {title}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Link>
+);
+
 const bannerCards = [
   {
     button: "CLAIM NOW",
@@ -513,11 +561,11 @@ const MainContent: React.FC = () => {
                 icon="/icons/Hash.svg"
                 title={t("games.hashgames")}
                 alt="hash"
-                 count={extendedHashGames.length}
+                 count={gameImages.length}
                />
                <GameGrid
-                 data={extendedHashGames}
-                 renderCard={(card, index) => <HashCard key={index} {...(card as any)} />}
+                 data={gameImages}
+                 renderCard={(card: any) => <GameImageCard key={card.id} {...card} />}
                  viewAllLink="/hash-games"
               />
             </div>
