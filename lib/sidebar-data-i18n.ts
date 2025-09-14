@@ -41,37 +41,44 @@ export const createSidebarData = (t: (key: string) => string) => {
       id: "hash-games",
       icon: "/icons/bitcoin.svg",
       label: t('games.hashgames'),
+      href: "/?tab=hash",
       hasHover: true,
     },
     {
       id: "slots",
       icon: "/icons/dice.svg",
       label: t('games.slots'),
+      href: "/?tab=slots",
     },
     {
       id: "live-casino",
       icon: "/icons/casino.svg",
       label: t('games.live'),
+      href: "/?tab=casino",
     },
     {
       id: "futures",
       icon: "/icons/Futures.svg",
       label: t('games.futures'),
+      href: "/?tab=futures",
     },
     {
       id: "crypto-games",
       icon: "/icons/Cryptogra.svg",
       label: t('games.crypto'),
+      href: "/?tab=crypto",
     },
     {
       id: "sport",
       icon: "/icons/football.svg",
       label: t('games.sports'),
+      href: "/?tab=sport",
     },
     {
       id: "table-games",
       icon: "/icons/game.svg",
       label: t('games.table'),
+      href: "/?tab=table",
     },
   ];
 
@@ -191,7 +198,7 @@ export const createSidebarData = (t: (key: string) => string) => {
   // Language data
   const languageData = {
     zh: { name: t('languages.chinese'), flag: "/icons/flag-icon/cn.svg" },
-    en: { name: t('languages.english'), flag: "/icons/flag-icon/en.svg" },
+    en: { name: t('languages.english'), flag: "/icons/flag-icon/uk.svg" },
     de: { name: t('languages.german'), flag: "/icons/flag-icon/de.svg" },
     pl: { name: t('languages.polish'), flag: "/icons/flag-icon/pl.svg" },
     pt: { name: t('languages.portuguese'), flag: "/icons/flag-icon/pt.svg" },

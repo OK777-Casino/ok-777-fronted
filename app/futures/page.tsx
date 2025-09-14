@@ -8,13 +8,13 @@ import { Swiper as SwiperType } from "swiper";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import {
   setMainBannerSlide,
-  setHashSlide,
+  setFuturesSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
 } from "../../store/slices/carouselSlice";
 import CasinoCard from "../../components/ui/cards/CasinoCard";
 import RewardCard from "../../components/ui/cards/RewardCard";
-import HashCard from "../../components/ui/cards/HashCard";
+import FutureCard from "../../components/ui/cards/FutureCard";
 import GameCard from "../../components/ui/cards/GameCard";
 import EarningCard from "../../components/ui/cards/EarningCard";
 import { Icon } from "@iconify/react";
@@ -459,26 +459,7 @@ const FilteredPageHeader: React.FC<{
   );
 };
 
-// Generate extended hash games data
-const generateHashGames = () => {
-  const baseHashGames = card9 || [];
-  const extendedGames = [];
-  
-  for (let i = 0; i < 30; i++) {
-    const baseGame = baseHashGames[i % baseHashGames.length];
-    extendedGames.push({
-      ...baseGame,
-      id: `hash-game-${i + 1}`,
-      title: `${baseGame.title} ${i + 1}`,
-    });
-  }
-  
-  return extendedGames;
-};
-
-const extendedHashGames = generateHashGames();
-
-export default function HashGamesPage() {
+export default function FuturesPage() {
   const { t } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -491,8 +472,8 @@ export default function HashGamesPage() {
     dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex));
   };
 
-  const handleHashSlideChange = (swiper: SwiperType) => {
-    dispatch(setHashSlide(swiper.realIndex ?? swiper.activeIndex));
+  const handleFuturesSlideChange = (swiper: SwiperType) => {
+    dispatch(setFuturesSlide(swiper.realIndex ?? swiper.activeIndex));
   };
 
   const handleLatestEarningsSlideChange = (swiper: SwiperType) => {
@@ -527,14 +508,14 @@ export default function HashGamesPage() {
       {/* Mobile Filtered View */}
       <div className="">
         <FilteredPageHeader
-          title="Hash Games"
-          icon="/icons/Hash.svg"
-          count={extendedHashGames.length}
+          title="P/F Futures"
+          icon="/icons/Futures1.svg"
+          count={card4.length}
         />
 
         <GameGrid
-          data={extendedHashGames}
-          renderCard={(card, index) => <HashCard key={index} {...card} />}
+          data={card4}
+          renderCard={(card, index) => <FutureCard key={index} {...card} />}
         />
         <div className="flex justify-center cursor-pointer">
             <div

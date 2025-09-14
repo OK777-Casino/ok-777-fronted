@@ -1,8 +1,5 @@
 // Service modal handler will be passed as a prop
 
-import { useModal } from "@/context/ModalProvider";
-import { ModalProvider } from "@/context/ModalProvider";
-
 // Sidebar data structure for dynamic rendering
 export interface SidebarItem {
   id: string;
@@ -96,42 +93,44 @@ export const gameCategories: SidebarItem[] = [
     id: "hash-games",
     icon: "/icons/bitcoin.svg",
     label: "Hash Games",
-    href: "/hash-games",
+    href: "/?tab=hash",
     hasHover: true,
   },
   {
     id: "slots",
     icon: "/icons/dice.svg",
     label: "Slots",
-    href: "/slots",
+    href: "/?tab=slots",
   },
   {
     id: "live-casino",
     icon: "/icons/casino.svg",
     label: "Live Casino",
-    href: "/casino",
+    href: "/?tab=casino",
   },
   {
     id: "futures",
     icon: "/icons/Futures.svg",
     label: "Futures",
+    href: "/?tab=futures",
   },
   {
     id: "crypto-games",
     icon: "/icons/Cryptogra.svg",
     label: "Crypto Games",
+    href: "/?tab=crypto",
   },
   {
     id: "sport",
     icon: "/icons/football.svg",
     label: "Sport",
-    href: "/sports",
+    href: "/?tab=sport",
   },
   {
     id: "table-games",
     icon: "/icons/game.svg",
     label: "Table Games",
-    href: "/table-games",
+    href: "/?tab=table",
   },
 ];
 
@@ -253,7 +252,7 @@ export const appDownloads: AppDownload[] = [
 // Language data
 export const languageData = {
   cn: { name: "中文", flag: "/icons/flag-icon/cn.svg" },
-  en: { name: "English", flag: "/icons/flag-icon/en.svg" },
+  en: { name: "English", flag: "/icons/flag-icon/uk.svg" },
   de: { name: "Deutsch", flag: "/icons/flag-icon/de.svg" },
   pl: { name: "Polish", flag: "/icons/flag-icon/pl.svg" },
   pt: { name: "Português", flag: "/icons/flag-icon/pt.svg" },

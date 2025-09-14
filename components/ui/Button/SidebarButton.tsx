@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { SidebarItem as SidebarItemType } from "../../sidebar-data";
 
@@ -24,7 +23,33 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   isCollapsedOnly
 }) => {
   const pathname = usePathname();
-  const isActive = href && pathname?.startsWith(href);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  
+  // Check if this item is active based on query parameters
+  const isActive = (() => {
+    if (!href) return false;
+    
+    // For query parameter URLs like /?tab=slots
+    if (href.includes('?tab=')) {
+      const url = new URL(href, 'http://localhost');
+      const tabParam = url.searchParams.get('tab');
+      const currentTab = searchParams.get('tab');
+      
+      // If we're on the home page and the tab matches
+      if (pathname === '/' && tabParam && currentTab === tabParam) {
+        return true;
+      }
+      
+      // If no tab is selected but this is the home tab
+      if (pathname === '/' && !currentTab && tabParam === 'home') {
+        return true;
+      }
+    }
+    
+    // Fallback to original pathname check
+    return pathname?.startsWith(href);
+  })();
   
   // Don't render if this is a collapsed-only item and sidebar is not collapsed
   if (isCollapsedOnly && !isCollapsed) {
@@ -66,24 +91,36 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     </>
   );
 
-  if (href) {
-    return (
-      <Link
-        href={href}
-        className={baseClasses}
-        aria-current={isActive ? 'page' : undefined}
-      >
-        {content}
-      </Link>
-    );
-  }
+  // Handle click - use onClick if provided, otherwise handle href navigation
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (onClick) {
+      onClick();
+    } else if (href) {
+      // For query parameter URLs, always navigate to root path with query
+      if (href.includes('?tab=')) {
+        const url = new URL(href, 'http://localhost');
+        const tabId = url.searchParams.get('tab');
+        if (tabId) {
+          const newUrl = `/?tab=${tabId}`;
+          router.replace(newUrl);
+        }
+      } else {
+        // For regular URLs
+        router.push(href);
+      }
+    }
+  };
 
   return (
     <div
       className={baseClasses}
-      onClick={onClick}
+      onClick={handleClick}
       onMouseEnter={hasHover ? onHashHover : undefined}
       onMouseLeave={hasHover ? onHashHoverLeave : undefined}
+      aria-current={isActive ? 'page' : undefined}
     >
       {content}
     </div>

@@ -31,8 +31,11 @@ const ResponsiveHeaderContent: React.FC<ResponsiveHeaderProps> = ({ onHeaderType
 
   // Check if back button should be shown
   const shouldShowBackButton = () => {
-    // Don't show back button on pages where it doesn't make sense
-    // You can add more conditions here as needed
+    // Don't show back button on View All pages
+    const viewAllPages = ['/slots', '/hash-games', '/live-casino', '/futures', '/crypto-games', '/sports', '/table-games'];
+    if (viewAllPages.includes(pathname)) {
+      return false;
+    }
     return true;
   };
 

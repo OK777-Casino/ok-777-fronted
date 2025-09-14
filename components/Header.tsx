@@ -319,12 +319,6 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   // Game navigation tabs for mobile with translations
   const gameNavTabs = useMemo(() => [
     {
-      id: "home",
-      label: t("navigation.home"),
-      icon: "/icons/Home.svg",
-      active: true,
-    },
-    {
       id: "hash",
       label: t("games.hashgames"),
       icon: "/icons/Hash.svg",
@@ -343,9 +337,27 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
       active: false,
     },
     {
+      id: "futures",
+      label: "Futures",
+      icon: "/icons/Futures1.svg",
+      active: false,
+    },
+    {
+      id: "crypto",
+      label: t("games.crypto"),
+      icon: "/icons/Cryptogra1.svg",
+      active: false,
+    },
+    {
       id: "sport",
       label: t("games.sports"),
       icon: "/icons/Sport.svg",
+      active: false,
+    },
+    {
+      id: "table",
+      label: t("games.table"),
+      icon: "/icons/TableGames1.svg",
       active: false,
     },
   ], [t]);
@@ -411,18 +423,18 @@ const Header: React.FC = () => {
     const tabFromQuery = searchParams.get('tab');
     if (tabFromQuery) {
       // Validate the tab parameter
-      const validTabs = ['home', 'hash', 'slots', 'casino', 'sport'];
+      const validTabs = ['hash', 'slots', 'casino', 'sport', 'futures', 'crypto', 'table'];
       if (validTabs.includes(tabFromQuery)) {
         setActiveGameTab(tabFromQuery);
       } else {
-        setActiveGameTab("home");
+        setActiveGameTab("hash");
       }
     } else {
       // Fallback to pathname-based detection if no query parameter
       const path = window.location.pathname;
       switch (path) {
         case "/":
-          setActiveGameTab("home");
+          setActiveGameTab("hash");
           break;
         case "/hash-games":
           setActiveGameTab("hash");
@@ -433,11 +445,20 @@ const Header: React.FC = () => {
         case "/casino":
           setActiveGameTab("casino");
           break;
+        case "/futures":
+          setActiveGameTab("futures");
+          break;
+        case "/crypto-games":
+          setActiveGameTab("crypto");
+          break;
         case "/sports":
           setActiveGameTab("sport");
           break;
+        case "/table-games":
+          setActiveGameTab("table");
+          break;
         default:
-          setActiveGameTab("home");
+          setActiveGameTab("hash");
       }
     }
   }, [searchParams]);
@@ -445,9 +466,8 @@ const Header: React.FC = () => {
   const handleTabChange = (tabId: string) => {
     setActiveGameTab(tabId);
     
-    // Create new URL with query parameter
-    const currentPath = window.location.pathname;
-    const newUrl = `${currentPath}?tab=${tabId}`;
+    // Always navigate to root path with query parameter
+    const newUrl = `/?tab=${tabId}`;
     
     // Use router.replace to update URL without adding to history
     router.replace(newUrl);

@@ -8,6 +8,7 @@ import Report from "@/features/alliance/components/Report";
 import Introduction from "@/features/alliance/components/Introduction";
 import AllianceBottomBar from "@/features/alliance/components/AllianceBottomBar";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 function AlliancePageContent() {
   const router = useRouter();
@@ -39,20 +40,20 @@ function AlliancePageContent() {
   );
 
   const [activeTab, setActiveTab] = useState<string>("Invite Friends");
-
+  
   useEffect(() => {
     const fromQuery = searchParams.get("tab");
     if (fromQuery && tabSlugToName[fromQuery as keyof typeof tabSlugToName]) {
       setActiveTab(tabSlugToName[fromQuery as keyof typeof tabSlugToName]);
     }
   }, [searchParams, tabSlugToName]);
-
+  
   const updateQuery = (nextTabName: string) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("tab", tabNameToSlug[nextTabName as keyof typeof tabNameToSlug]);
     router.replace(`${pathname}?${params.toString()}`);
   };
-
+  
   const navigationItems = [
     { name: "Invite Friends", icon: "/icons/user-plus.svg" },
     { name: "Management", icon: "/icons/group.svg" },
@@ -76,7 +77,9 @@ function AlliancePageContent() {
       default:
         return <InviteFriends />;
     }
+
   };
+
 
   return (
     <>
@@ -90,7 +93,7 @@ function AlliancePageContent() {
                 onClick={() => {
                   setActiveTab(item.name);
                   updateQuery(item.name);
-                  console.log('$$$')
+                  console.log(item.name);
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3  rounded-lg transition-all duration-200 ${
                   activeTab === item.name

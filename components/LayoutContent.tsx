@@ -36,6 +36,9 @@ export default function LayoutContent({ children }: LayoutContentProps) {
   
   // Check if we're on hashgame pages
   const isHashgamePage = pathname?.startsWith('/hashgames');
+  
+  // Check if we're on View All pages (where we want to show mobile footer)
+  const isViewAllPage = ['/slots', '/hash-games', '/live-casino', '/futures', '/crypto-games', '/sports', '/table-games'].includes(pathname || '');
 
   // Handle initial page load
   useEffect(() => {
@@ -84,7 +87,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
           </div>
         )}
       </main>
-      {!isMobileHeader && !isAlliancePage && !isProfileOpen && <Bottombar />}
+      {(!isMobileHeader && !isAlliancePage && !isProfileOpen) || (isMobileHeader && isViewAllPage) ? <Bottombar /> : null}
       
 
       

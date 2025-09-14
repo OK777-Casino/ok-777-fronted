@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import mainContentData from "../../main-content-data.json";
-import { useSidebar } from "../../context/SidebarProvider";
 import { useModal } from "../../context/ModalProvider";
 import { useI18n } from "../../context/I18nProvider";
 import { Swiper as SwiperType } from "swiper";
@@ -10,13 +9,23 @@ import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import {
   setMainBannerSlide,
   setSlotsSlide,
+  setLatestEarningsSlide,
+  setGameManufacturersSlide,
 } from "../../store/slices/carouselSlice";
 import CasinoCard from "../../components/ui/cards/CasinoCard";
 import RewardCard from "../../components/ui/cards/RewardCard";
+import GameCard from "../../components/ui/cards/GameCard";
+import EarningCard from "../../components/ui/cards/EarningCard";
 import { Icon } from "@iconify/react";
 import { SuccessForm } from "../../components/auth/SuccessForm";
 import SwiperSlider from "../../components/ui/slider/SwiperSlider";
 import { X } from "lucide-react";
+import {
+  StatusDropdown,
+  StatusDropdownTrigger,
+  StatusDropdownContent,
+  StatusDropdownItem,
+} from "@/components/ui/StatusDropdown";
 
 // Extract data from JSON
 const {
@@ -82,6 +91,199 @@ const bannerCards = [
     link: "#",
   },
 ] as const;
+
+const statusOptions = [
+  "Up to date",
+  "Daily",
+  "Checking for updates...",
+  "Installing updates",
+  "Update failed",
+  "Connected",
+  "Disconnected",
+];
+
+// Latest bets table component
+const LatestBetsTable: React.FC = () => {
+  const [selectedStatus, setSelectedStatus] = useState("Up to date");
+  return (
+    <>
+      <div className="text-4.5 font-bold flex items-center w-full justify-between text-white mb-4  gap-2">
+        <span>Latest Bets</span>
+        <StatusDropdown>
+          <StatusDropdownTrigger className="bg-[#2A3546] border-none ring-0 focus:ring-0 outline-none">
+            {selectedStatus}
+          </StatusDropdownTrigger>
+          <StatusDropdownContent
+            className="bg-[#2A3546] border-none"
+            align="center"
+          >
+            {statusOptions.map((status) => (
+              <StatusDropdownItem
+                key={status}
+                onClick={() => setSelectedStatus(status)}
+              >
+                {status}
+              </StatusDropdownItem>
+            ))}
+          </StatusDropdownContent>
+        </StatusDropdown>
+      </div>
+      <div
+        className={` grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] gap-[6px] lg:px-8 px-[6px] ${
+          selectedStatus !== "Daily"
+            ? "grid-cols-[20%_20%_20%_40%]"
+            : "grid-cols-[30%_30%_40%]"
+        } `}
+      >
+        <div className="text-left text-[12px] font-bold py-2 text-white">
+          Game
+        </div>
+        <div className="text-left text-[12px] font-bold py-2 text-white">
+          Player
+        </div>
+        <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 text-white">
+          Time
+        </div>
+        <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 truncate text-white">
+          Bet Amount
+        </div>
+        <div className="text-left text-[12px] font-bold py-2 text-white">
+          Multiplier
+        </div>
+        {selectedStatus !== "Daily" && (
+          <div className="text-left text-[12px] font-bold py-2 text-white">
+            Payout
+          </div>
+        )}
+      </div>
+      <div className="w-full relative h-[462px] z-[-1] lg:mb-16 mb-8">
+        <SwiperSlider
+          data={latestBets}
+          allowTouchMove={false}
+          renderSlide={(bet, index) => (
+            <div
+              className={`bg-[#1C2532] lg:px-8 gap-[6px] px-[6px] w-full grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] rounded-[16px] h-[48px] overflow-hidden mb-[6px] ${
+                selectedStatus !== "Daily"
+                  ? "grid-cols-[20%_20%_20%_40%]"
+                  : "grid-cols-[30%_30%_40%]"
+              } items-center`}
+              key={index}
+            >
+              <div className="text-white flex text-[12px] font-bold truncate items-center gap-2">
+                <img
+                  src="/images/gameLogo.png"
+                  alt="game"
+                  className="w-6 h-6"
+                />
+                {bet.game}
+              </div>
+              <div className="text-gray-300 text-[12px] font-bold truncate flex items-center gap-2">
+                <img
+                  src="/images/avatar(1).png"
+                  alt="avatar"
+                  className="w-6 h-6 hidden md:lg:block"
+                />
+                {bet.player}
+              </div>
+              <div className="text-gray-300 text-[12px] hidden md:lg:flex items-center font-bold truncate">
+                {bet.time}
+              </div>
+              <div className="text-gray-300 text-[12px] hidden md:lg:flex font-bold truncate items-center gap-2">
+                <img
+                  src="/icons/coin-icon/BTC.svg"
+                  alt="coin"
+                  className="w-6 h-6"
+                />
+                {bet.bet}
+              </div>
+              {selectedStatus !== "Daily" && (
+                <div className="text-[#2283F6] text-[12px] font-bold truncate flex items-center">
+                  {bet.multiplier}
+                </div>
+              )}
+              <div className="text-green-400 text-[12px] font-bold truncate flex items-center gap-2">
+                {bet.payout}
+                <div className="rounded-[8px] overflow-hidden !w-6 !h-6">
+                  <img
+                    src="/icons/coin-icon/BTC.svg"
+                    alt="coin"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+          direction="vertical"
+          slidesPerView={9.1}
+          spaceBetween={6}
+          autoplayDelay={1000}
+          className="h-full"
+        />
+        <div className="absolute bottom-0 left-0 w-full h-[254px] bg-gradient-to-b z-[30] from-transparent to-[#111923] pointer-events-none"></div>
+      </div>
+    </>
+  );
+};
+
+// Game manufacturers section component
+const GameManufacturersSection: React.FC = () => {
+  const swiperRef = useRef<SwiperType | null>(null);
+  const dispatch = useAppDispatch();
+  const carouselState = useAppSelector((state) => state.carousel);
+
+  const handleGameManufacturersSlideChange = (swiper: SwiperType) => {
+    dispatch(setGameManufacturersSlide(swiper.realIndex ?? swiper.activeIndex));
+  };
+
+  return (
+    <div className="lg:mb-16 mb-8">
+      <div className="flex items-center justify-between">
+        <h2 className="text-4.5 font-bold text-white mb-4 flex gap-2">
+          Game Manufacturers
+        </h2>
+        <div className="flex justify-end mb-4">
+          <div
+            className=" hover:bg-gray-600 active:bg-gray-600 w-9 h-9 flex items-center justify-center rounded-l-lg transition-colors cursor-pointer"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <Icon icon="mdi:chevron-left" className="text-white text-[24px] " />
+          </div>
+          <div
+            className="hover:bg-gray-600 active:bg-gray-600 w-9 h-9 flex items-center justify-center rounded-r-lg transition-colors cursor-pointer"
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            <Icon
+              icon="mdi:chevron-right"
+              className="text-white text-[24px] "
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex gap-4 overflow-x-auto">
+        <SwiperSlider
+          data={gameManufacturers}
+          renderSlide={(manufacturer, index) => (
+            <GameCard {...manufacturer} gameCount={manufacturer.gamesCount} />
+          )}
+          slidesPerView={4.4}
+          spaceBetween={12}
+          breakpoints={{
+            320: { slidesPerView: 1.2 },
+            375: { slidesPerView: 1.4 },
+            425: { slidesPerView: 1.8 },
+            768: { slidesPerView: 3.6 },
+            1024: { slidesPerView: 4.2, spaceBetween: 20 },
+            1440: { slidesPerView: 4.8 },
+          }}
+          navigationRef={swiperRef}
+          initialSlide={carouselState.gameManufacturersCurrentSlide}
+          onSlideChange={handleGameManufacturersSlideChange}
+          carouselId="game-manufacturers"
+        />
+      </div>
+    </div>
+  );
+};
 
 // Game Grid Component
 const GameGrid: React.FC<{
@@ -290,6 +492,10 @@ export default function SlotsPage() {
     dispatch(setSlotsSlide(swiper.realIndex ?? swiper.activeIndex));
   };
 
+  const handleLatestEarningsSlideChange = (swiper: SwiperType) => {
+    dispatch(setLatestEarningsSlide(swiper.realIndex ?? swiper.activeIndex));
+  };
+
   return (
     <div
       className="lg:px-6 px-1 py-6 pt-4 w-full max-w-[1920px] mx-auto overflow-x-hidden"
@@ -329,40 +535,44 @@ export default function SlotsPage() {
         />
       </div>
 
-      {/* Desktop Slider View */}
-      <div className="hidden lg:block">
-        <div className="lg:mb-16 mb-8">
-          <SectionHeader
-            icon="/icons/Slots.svg"
-            title={t("games.slots")}
-            alt="slots"
-          />
-          <SwiperSlider
-            data={card3}
-            autoplayDelay={1000000}
-            grid={{ rows: 2, fill: "row" }}
-            renderSlide={(card, index) => <CasinoCard {...card} />}
-            slidesPerView={7}
-            spaceBetween={12}
-            slideClassName="mb-1"
-            breakpoints={{
-              320: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-              375: { slidesPerView: 3.5, grid: { rows: 2, fill: "row" } },
-              425: { slidesPerView: 4.1, grid: { rows: 2, fill: "row" } },
-              768: { slidesPerView: 4.3, grid: { rows: 2, fill: "row" } },
-              1024: {
-                slidesPerView: 5,
-                spaceBetween: 12,
-                grid: { rows: 2, fill: "row" },
-              },
-              1440: { slidesPerView: 7, grid: { rows: 2, fill: "row" } },
-            }}
-            initialSlide={carouselState.slotsCurrentSlide}
-            onSlideChange={handleSlotsSlideChange}
-            carouselId="slots"
-          />
-        </div>
+      {/* Latest Bets Section */}
+      <div className="lg:mb-16 mb-8">
+        <LatestBetsTable />
       </div>
+
+      {/* Game Manufacturers Section */}
+      <GameManufacturersSection />
+
+      {/* Latest Earnings Section */}
+      <div className="lg:mb-16 mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-4.5 font-bold flex items-center text-white ">
+            Latest earnings
+          </h2>
+          <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
+            <span>online users 36</span>
+          </span>
+        </div>
+        <SwiperSlider
+          data={card7}
+          autoplayDelay={1000000}
+          renderSlide={(card, index) => <EarningCard {...card} />}
+          slidesPerView={7}
+          spaceBetween={12}
+          breakpoints={{
+            320: { slidesPerView: 3.3 },
+            375: { slidesPerView: 3.5 },
+            425: { slidesPerView: 4.1 },
+            768: { slidesPerView: 4.3 },
+            1024: { slidesPerView: 5, spaceBetween: 20 },
+            1440: { slidesPerView: 7.3 },
+          }}
+          initialSlide={carouselState.latestEarningsCurrentSlide}
+          onSlideChange={handleLatestEarningsSlideChange}
+          carouselId="latest-earnings"
+        />
+      </div>
+      
     </div>
   );
 }
