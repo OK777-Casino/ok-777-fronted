@@ -9,7 +9,7 @@ export function useSidebarPosition() {
   const { isCollapsed } = useSidebar();
   
   // Calculate left position based on sidebar state
-  const leftPosition = isCollapsed ? '80px' : '315px';
+  const leftPosition = isCollapsed ? '80px' : '248px';
   
   return {
     leftPosition,

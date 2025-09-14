@@ -501,7 +501,7 @@ export default function HashGamesPage() {
 
   return (
     <div
-      className="lg:px-6 px-1 py-6 pt-4 w-full max-w-[1920px] mx-auto overflow-x-hidden"
+      className="px-1 py-6 pt-4 w-full max-w-[1920px] mx-auto overflow-x-hidden"
       style={{ margin: "auto" }}
     >
       <SuccessForm isOpen={isOpen} />
