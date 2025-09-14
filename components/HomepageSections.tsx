@@ -51,6 +51,11 @@ export const HomepageSections: React.FC<{
 }) => {
   const { t } = useI18n();
 
+  // Helper function to duplicate data for two rows
+  const duplicateDataForTwoRows = (data: any[]) => {
+    return [...data, ...data];
+  };
+
   return (
     <>
       {/* New Launches Section */}
@@ -90,34 +95,18 @@ export const HomepageSections: React.FC<{
         />
         <SwiperSlider
           key="homepage-live-casino-swiper"
-          data={card2}
+          data={duplicateDataForTwoRows(card2)}
           renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
           slidesPerView={7}
           spaceBetween={12}
+          grid={{ rows: 2, fill: 'row' }}
           breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
-          }}
-          showProgressBars={true}
-          autoplayDelay={1000000}
-        /> <br />
-        <SwiperSlider
-          key="homepage-live-casino-swiper"
-          data={card2}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-          slidesPerView={7}
-          spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
+            320: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
+            375: { slidesPerView: 3.5, grid: { rows: 2, fill: 'row' } },
+            425: { slidesPerView: 4.1, grid: { rows: 2, fill: 'row' } },
+            768: { slidesPerView: 4.3, grid: { rows: 2, fill: 'row' } },
+            1024: { slidesPerView: 5, spaceBetween: 20, grid: { rows: 2, fill: 'row' } },
+            1440: { slidesPerView: 7.3, grid: { rows: 2, fill: 'row' } },
           }}
           showProgressBars={true}
           autoplayDelay={1000000}
@@ -161,34 +150,18 @@ export const HomepageSections: React.FC<{
         />
         <SwiperSlider
           key="homepage-slots-swiper"
-          data={card3}
+          data={duplicateDataForTwoRows(card3)}
           renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
           slidesPerView={7}
           spaceBetween={12}
+          grid={{ rows: 2, fill: 'row' }}
           breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
-          }}
-          showProgressBars={true}
-          autoplayDelay={1000000}
-        /> <br />
-        <SwiperSlider
-          key="homepage-slots-swiper"
-          data={card3}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-          slidesPerView={7}
-          spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
+            320: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
+            375: { slidesPerView: 3.5, grid: { rows: 2, fill: 'row' } },
+            425: { slidesPerView: 4.1, grid: { rows: 2, fill: 'row' } },
+            768: { slidesPerView: 4.3, grid: { rows: 2, fill: 'row' } },
+            1024: { slidesPerView: 5, spaceBetween: 20, grid: { rows: 2, fill: 'row' } },
+            1440: { slidesPerView: 7.3, grid: { rows: 2, fill: 'row' } },
           }}
           showProgressBars={true}
           autoplayDelay={1000000}

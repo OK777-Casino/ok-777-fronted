@@ -420,6 +420,8 @@ const Header: React.FC = () => {
 
   // Update active tab based on URL query parameters
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const tabFromQuery = searchParams.get('tab');
     if (tabFromQuery) {
       // Validate the tab parameter
@@ -464,13 +466,19 @@ const Header: React.FC = () => {
   }, [searchParams]);
   
   const handleTabChange = (tabId: string) => {
-    setActiveGameTab(tabId);
-    
-    // Always navigate to root path with query parameter
-    const newUrl = `/?tab=${tabId}`;
-    
-    // Use router.replace to update URL without adding to history
-    router.replace(newUrl);
+    try {
+      setActiveGameTab(tabId);
+      
+      // Always navigate to root path with query parameter
+      const newUrl = `/?tab=${tabId}`;
+      
+      // Use router.push for proper client-side navigation
+      router.push(newUrl);
+    } catch (error) {
+      console.error('Navigation error:', error);
+      // Fallback to window.location if router fails
+      window.location.href = `/?tab=${tabId}`;
+    }
   };
 
 

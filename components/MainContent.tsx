@@ -13,6 +13,7 @@ import {
   setNewLaunchesSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
+  
 } from "../store/slices/carouselSlice";
 import CasinoCard from "./ui/cards/CasinoCard";
 import RewardCard from "./ui/cards/RewardCard";

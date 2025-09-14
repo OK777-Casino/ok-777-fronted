@@ -96,21 +96,36 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     e.preventDefault();
     e.stopPropagation();
     
-    if (onClick) {
-      onClick();
-    } else if (href) {
-      // For query parameter URLs, always navigate to root path with query
-      if (href.includes('?tab=')) {
-        // Extract tab parameter from href without creating URL object
-        const tabMatch = href.match(/\?tab=([^&]+)/);
-        if (tabMatch && tabMatch[1]) {
-          const tabId = tabMatch[1];
-          const newUrl = `/?tab=${tabId}`;
-          router.replace(newUrl);
+    try {
+      if (onClick) {
+        onClick();
+      } else if (href) {
+        // For query parameter URLs, always navigate to root path with query
+        if (href.includes('?tab=')) {
+          // Extract tab parameter from href without creating URL object
+          const tabMatch = href.match(/\?tab=([^&]+)/);
+          if (tabMatch && tabMatch[1]) {
+            const tabId = tabMatch[1];
+            const newUrl = `/?tab=${tabId}`;
+            router.push(newUrl);
+          }
+        } else {
+          // For regular URLs
+          router.push(href);
         }
-      } else {
-        // For regular URLs
-        router.push(href);
+      }
+    } catch (error) {
+      console.error('Navigation error:', error);
+      // Fallback to window.location if router fails
+      if (href) {
+        if (href.includes('?tab=')) {
+          const tabMatch = href.match(/\?tab=([^&]+)/);
+          if (tabMatch && tabMatch[1]) {
+            window.location.href = `/?tab=${tabMatch[1]}`;
+          }
+        } else {
+          window.location.href = href;
+        }
       }
     }
   };
