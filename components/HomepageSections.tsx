@@ -122,12 +122,12 @@ export const HomepageSections: React.FC<{
           slidesPerView={7}
           spaceBetween={12}
           breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
+            320: { slidesPerView: 2.2 },
+            375: { slidesPerView: 2.5 },
+            425: { slidesPerView: 3.5 },
+            768: { slidesPerView: 4.1 },
+            1024: { slidesPerView: 4.5, spaceBetween: 20 },
+            1440: { slidesPerView: 4.7 },
           }}
           showProgressBars={true}
           autoplayDelay={1000000}
