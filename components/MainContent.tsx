@@ -530,6 +530,7 @@ const MainContent: React.FC = () => {
           alt="future"
           count={card4.length}
         />
+        
         <GameGrid
           data={cryptoCards}
           renderCard={(card, index) => <FutureCard key={index} {...(card as any)} />}
