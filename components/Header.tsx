@@ -319,6 +319,12 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   // Game navigation tabs for mobile with translations
   const gameNavTabs = useMemo(() => [
     {
+      id: "home",
+      label: "Home",
+      icon: "/icons/Home.svg",
+      active: false,
+    },
+    {
       id: "hash",
       label: t("games.hashgames"),
       icon: "/icons/Hash.svg",
@@ -425,18 +431,18 @@ const Header: React.FC = () => {
     const tabFromQuery = searchParams.get('tab');
     if (tabFromQuery) {
       // Validate the tab parameter
-      const validTabs = ['hash', 'slots', 'casino', 'sport', 'futures', 'crypto', 'table'];
+      const validTabs = ['home', 'hash', 'slots', 'casino', 'sport', 'futures', 'crypto', 'table'];
       if (validTabs.includes(tabFromQuery)) {
         setActiveGameTab(tabFromQuery);
       } else {
-        setActiveGameTab("hash");
+        setActiveGameTab("home");
       }
     } else {
       // Fallback to pathname-based detection if no query parameter
       const path = window.location.pathname;
       switch (path) {
         case "/":
-          setActiveGameTab("hash");
+          setActiveGameTab("home");
           break;
         case "/hash-games":
           setActiveGameTab("hash");
@@ -460,7 +466,7 @@ const Header: React.FC = () => {
           setActiveGameTab("table");
           break;
         default:
-          setActiveGameTab("hash");
+          setActiveGameTab("home");
       }
     }
   }, [searchParams]);
@@ -469,15 +475,22 @@ const Header: React.FC = () => {
     try {
       setActiveGameTab(tabId);
       
-      // Always navigate to root path with query parameter
-      const newUrl = `/?tab=${tabId}`;
-      
-      // Use router.push for proper client-side navigation
-      router.push(newUrl);
+      // Handle home tab navigation
+      if (tabId === 'home') {
+        router.push('/');
+      } else {
+        // Always navigate to root path with query parameter for other tabs
+        const newUrl = `/?tab=${tabId}`;
+        router.push(newUrl);
+      }
     } catch (error) {
       console.error('Navigation error:', error);
       // Fallback to window.location if router fails
-      window.location.href = `/?tab=${tabId}`;
+      if (tabId === 'home') {
+        window.location.href = '/';
+      } else {
+        window.location.href = `/?tab=${tabId}`;
+      }
     }
   };
 
