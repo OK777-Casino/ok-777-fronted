@@ -21,6 +21,7 @@ import FutureCard from "./ui/cards/FutureCard";
 import GameCard from "./ui/cards/GameCard";
 import { SuccessForm } from "./auth/SuccessForm";
 import SwiperSlider from "./ui/slider/SwiperSlider";
+import { HomepageSections } from "./HomepageSections";
 
 import {
   StatusDropdown,
@@ -438,156 +439,175 @@ const MainContent: React.FC = () => {
         />
       </div>
 
-      {/* New Launches Section */}
-      {shouldShowSection("new-launches") && (
-        <div className="lg:mb-16 mb-8">
-          <SectionHeader
-            icon="/icons/Home.svg"
-            title={t("games.new")}
-            alt="home"
-            count={card1.length}
-          />
-          <SwiperSlider
-            key="new-launches-swiper"
-            autoplayDelay={1000000}
-            data={card1}
-            renderSlide={(card, index) => <CasinoCard {...card} />}
-            slidesPerView={7}
-            spaceBetween={12}
-            breakpoints={{
-              320: { slidesPerView: 3.3 },
-              375: { slidesPerView: 3.5 },
-              425: { slidesPerView: 4.1 },
-              768: { slidesPerView: 4.3 },
-               1024: { slidesPerView: 5, spaceBetween: 20 },
-              1440: { slidesPerView: 7.3 },
-            }}
-            showProgressBars={true}
-            initialSlide={carouselState.newLaunchesCurrentSlide}
-            onSlideChange={handleNewLaunchesSlideChange}
-            carouselId="new-launches"
-          />
-        </div>
-      )}
-
-      {/* Live Casino Section */}
-      {shouldShowSection("live-casino") && (
-        <div className="lg:mb-16 mb-8">
-          <SectionHeader
-            icon="/icons/Casino1.svg"
-            title={t("games.live")}
-            alt="home"
-             count={card2.length}
-          />
-          <GameGrid
-            data={card2}
-            renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-            viewAllLink="/live-casino"
-          />
-        </div>
-      )}
-
-      {/* Hash Section */}
-      {shouldShowSection("hash") && (
-        <div className="lg:mb-16 mb-8">
-          <SectionHeader
-            icon="/icons/Hash.svg"
-            title={t("games.hashgames")}
-            alt="hash"
-             count={extendedHashGames.length}
-           />
-           <GameGrid
-             data={extendedHashGames}
-             renderCard={(card, index) => <HashCard key={index} {...(card as any)} />}
-             viewAllLink="/hash-games"
-          />
-        </div>
-      )}
-
-      {/* Slots Section */}
-      {shouldShowSection("slots") && (
-        <div className="lg:mb-16 mb-8">
-          <SectionHeader
-            icon="/icons/Slots.svg"
-            title={t("games.slots")}
-            alt="slots"
-             count={card3.length}
-          />
-           <GameGrid
-            data={card3}
-             renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-             viewAllLink="/slots"
-          />
-        </div>
-      )}
-
-      {/* P/F Futures Section */}
-      {shouldShowSection("futures") && (
-      <div className="lg:mb-16 mb-8">
-        <SectionHeader
-          icon="/icons/Futures1.svg"
-          title="P/F Futures"
-          alt="future"
-          count={card4.length}
+      {/* Homepage Sections with SwiperSlider - only show on homepage */}
+      {!searchParams.get('tab') && (
+        <HomepageSections
+          card1={card1}
+          card2={card2}
+          card3={card3}
+          card4={card4}
+          card5={card5}
+          card6={card6}
+          cryptoCards={cryptoCards}
+          extendedHashGames={extendedHashGames}
         />
-        
-        <GameGrid
-          data={cryptoCards}
-          renderCard={(card, index) => <FutureCard key={index} {...(card as any)} />}
-          viewAllLink="/futures"
-        />
-      </div>
       )}
 
-      {/* Cryptogra Section */}
-      {shouldShowSection("crypto") && (
-      <div className="lg:mb-16 mb-8">
-        <SectionHeader
-          icon="/icons/Cryptogra1.svg"
-          title={t("games.crypto")}
-          alt="cryptogra"
-          count={cryptoCards.length}
-        />
-        <GameGrid
-          data={card4}
-          renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-          viewAllLink="/crypto-games"
-        />
-      </div>
-      )}
+      {/* Game Grid Sections for other pages */}
+      {searchParams.get('tab') && (
+        <>
+          {/* New Launches Section */}
+          {shouldShowSection("new-launches") && (
+            <div className="lg:mb-16 mb-8">
+              <SectionHeader
+                icon="/icons/Home.svg"
+                title={t("games.new")}
+                alt="home"
+                count={card1.length}
+              />
+              <SwiperSlider
+                key="new-launches-swiper"
+                autoplayDelay={1000000}
+                data={card1}
+                renderSlide={(card, index) => <CasinoCard {...card} />}
+                slidesPerView={7}
+                spaceBetween={12}
+                breakpoints={{
+                  320: { slidesPerView: 3.3 },
+                  375: { slidesPerView: 3.5 },
+                  425: { slidesPerView: 4.1 },
+                  768: { slidesPerView: 4.3 },
+                   1024: { slidesPerView: 5, spaceBetween: 20 },
+                  1440: { slidesPerView: 7.3 },
+                }}
+                showProgressBars={true}
+                initialSlide={carouselState.newLaunchesCurrentSlide}
+                onSlideChange={handleNewLaunchesSlideChange}
+                carouselId="new-launches"
+              />
+            </div>
+          )}
 
-      {/* Sport Section */}
-      {shouldShowSection("sport") && (
-        <div className="lg:mb-16 mb-8">
-          <SectionHeader
-            icon="/icons/Sport.svg"
-            title={t("games.sports")}
-            alt="Sport"
-             count={card5.length}
-          />
-           <GameGrid
-            data={card5}
-             renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-             viewAllLink="/sports"
-          />
-        </div>
-      )}
+          {/* Live Casino Section */}
+          {shouldShowSection("live-casino") && (
+            <div className="lg:mb-16 mb-8">
+              <SectionHeader
+                icon="/icons/Casino1.svg"
+                title={t("games.live")}
+                alt="home"
+                 count={card2.length}
+              />
+              <GameGrid
+                data={card2}
+                renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+                viewAllLink="/live-casino"
+              />
+            </div>
+          )}
 
-      {/* Chess and cards Section */}
-      {shouldShowSection("table") && (
-      <div className="lg:mb-16 mb-8">
-        <SectionHeader
-          icon="/icons/tablegame.svg"
-          title={t("games.table")}
-          alt="tablegame"
-             count={card6.length}
-        />
-           <GameGrid
-          data={card6}
-             renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
-             viewAllLink="/table-games"
-        />
-      </div>
+          {/* Hash Section */}
+          {shouldShowSection("hash") && (
+            <div className="lg:mb-16 mb-8">
+              <SectionHeader
+                icon="/icons/Hash.svg"
+                title={t("games.hashgames")}
+                alt="hash"
+                 count={extendedHashGames.length}
+               />
+               <GameGrid
+                 data={extendedHashGames}
+                 renderCard={(card, index) => <HashCard key={index} {...(card as any)} />}
+                 viewAllLink="/hash-games"
+              />
+            </div>
+          )}
+
+          {/* Slots Section */}
+          {shouldShowSection("slots") && (
+            <div className="lg:mb-16 mb-8">
+              <SectionHeader
+                icon="/icons/Slots.svg"
+                title={t("games.slots")}
+                alt="slots"
+                 count={card3.length}
+              />
+               <GameGrid
+                data={card3}
+                 renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+                 viewAllLink="/slots"
+              />
+            </div>
+          )}
+
+          {/* P/F Futures Section */}
+          {shouldShowSection("futures") && (
+          <div className="lg:mb-16 mb-8">
+            <SectionHeader
+              icon="/icons/Futures1.svg"
+              title="P/F Futures"
+              alt="future"
+              count={card4.length}
+            />
+            
+            <GameGrid
+              data={cryptoCards}
+              renderCard={(card, index) => <FutureCard key={index} {...(card as any)} />}
+              viewAllLink="/futures"
+            />
+          </div>
+          )}
+
+          {/* Cryptogra Section */}
+          {shouldShowSection("crypto") && (
+          <div className="lg:mb-16 mb-8">
+            <SectionHeader
+              icon="/icons/Cryptogra1.svg"
+              title={t("games.crypto")}
+              alt="cryptogra"
+              count={cryptoCards.length}
+            />
+            <GameGrid
+              data={card4}
+              renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+              viewAllLink="/crypto-games"
+            />
+          </div>
+          )}
+
+          {/* Sport Section */}
+          {shouldShowSection("sport") && (
+            <div className="lg:mb-16 mb-8">
+              <SectionHeader
+                icon="/icons/Sport.svg"
+                title={t("games.sports")}
+                alt="Sport"
+                 count={card5.length}
+              />
+               <GameGrid
+                data={card5}
+                 renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+                 viewAllLink="/sports"
+              />
+            </div>
+          )}
+
+          {/* Chess and cards Section */}
+          {shouldShowSection("table") && (
+          <div className="lg:mb-16 mb-8">
+            <SectionHeader
+              icon="/icons/tablegame.svg"
+              title={t("games.table")}
+              alt="tablegame"
+                 count={card6.length}
+            />
+               <GameGrid
+              data={card6}
+                 renderCard={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+                 viewAllLink="/table-games"
+            />
+          </div>
+          )}
+        </>
       )}
 
       {/* Latest Bets Section */}
