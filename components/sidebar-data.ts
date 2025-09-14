@@ -128,7 +128,7 @@ export const gameCategories: SidebarItem[] = [
   },
   {
     id: "table-games",
-    icon: "/icons/game.svg",
+    icon: "/icons/tablegame.svg",
     label: "Table Games",
     href: "/?tab=table",
   },

@@ -59,14 +59,36 @@ const HashCard: React.FC<TypeTwoProps> = ({
             <span className="text-white text-[9px] sm:text-[11px] font-medium">
               Betting Address
             </span>
-            <span className="text-gray-400 text-[9px] sm:text-[11px]">
-              Use a Decentralized Wallet
+            <span className="text-gray-400 text-[9px] sm:text-[11px] leading-tight">
+              <span 
+                className="block overflow-hidden"
+                style={{
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  lineHeight: '1.2',
+                  maxHeight: '2.4em'
+                }}
+              >
+                Use a Decentralized Wallet
+              </span>
             </span>
           </div>
           <div className="relative">
             <div className="bg-[#090c11] rounded-lg w-full h-[28px] sm:h-[32px] border flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
-              <span className="text-gray-300 ml-2 sm:ml-3 text-[7px] sm:text-[9px] font-mono break-all pr-8">
-                {bettingAddress}
+              <span className="text-gray-300 ml-2 sm:ml-3 text-[7px] sm:text-[9px] font-mono pr-8 leading-tight">
+                <span 
+                  className="block overflow-hidden"
+                  style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    lineHeight: '1.2',
+                    maxHeight: '2.4em'
+                  }}
+                >
+                  {bettingAddress}
+                </span>
               </span>
             </div>
             <div

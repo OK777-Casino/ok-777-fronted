@@ -7,13 +7,11 @@ import { useI18n } from "../../context/I18nProvider";
 import { Swiper as SwiperType } from "swiper";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import {
-  setMainBannerSlide,
   setLiveCasinoSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
 } from "../../store/slices/carouselSlice";
 import CasinoCard from "../../components/ui/cards/CasinoCard";
-import RewardCard from "../../components/ui/cards/RewardCard";
 import GameCard from "../../components/ui/cards/GameCard";
 import EarningCard from "../../components/ui/cards/EarningCard";
 import { Icon } from "@iconify/react";
@@ -44,53 +42,6 @@ const {
   footerContent,
 } = mainContentData;
 
-const bannerCards = [
-  {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
-  },
-  {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
-  },
-  {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
-  },
-] as const;
 
 const statusOptions = [
   "Up to date",
@@ -467,9 +418,6 @@ export default function LiveCasinoPage() {
   const carouselState = useAppSelector((state) => state.carousel);
 
   // Carousel slide change handlers
-  const handleMainBannerSlideChange = (swiper: SwiperType) => {
-    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
 
   const handleLiveCasinoSlideChange = (swiper: SwiperType) => {
     dispatch(setLiveCasinoSlide(swiper.realIndex ?? swiper.activeIndex));
@@ -486,23 +434,6 @@ export default function LiveCasinoPage() {
     >
       <SuccessForm isOpen={isOpen} />
 
-      {/* Main Banner Section */}
-      <div className="lg:mb-16 mb-8 lg:mt-0 mt-[45px]">
-        <SwiperSlider
-          key="banner-swiper"
-          data={bannerCards}
-          renderSlide={(card, index) => <RewardCard {...card} />}
-          slidesPerView="auto"
-          autoplay={false}
-          spaceBetween={12}
-          slideClassName="!w-[min(486.76px,100%)]"
-          showProgressBars={true}
-          customPagination={true}
-          initialSlide={carouselState.mainBannerCurrentSlide}
-          onSlideChange={handleMainBannerSlideChange}
-          carouselId="main-banner"
-        />
-      </div>
 
       {/* Mobile Filtered View */}
       <div className="">

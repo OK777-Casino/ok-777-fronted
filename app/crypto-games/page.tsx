@@ -486,23 +486,6 @@ export default function CryptoGamesPage() {
     >
       <SuccessForm isOpen={isOpen} />
 
-      {/* Main Banner Section */}
-      <div className="lg:mb-16 mb-8 lg:mt-0 mt-[45px]">
-        <SwiperSlider
-          key="banner-swiper"
-          data={bannerCards}
-          renderSlide={(card, index) => <RewardCard {...card} />}
-          slidesPerView="auto"
-          autoplay={false}
-          spaceBetween={12}
-          slideClassName="!w-[min(486.76px,100%)]"
-          showProgressBars={true}
-          customPagination={true}
-          initialSlide={carouselState.mainBannerCurrentSlide}
-          onSlideChange={handleMainBannerSlideChange}
-          carouselId="main-banner"
-        />
-      </div>
 
       {/* Mobile Filtered View */}
       <div className="">

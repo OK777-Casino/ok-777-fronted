@@ -7,7 +7,6 @@ import { useI18n } from "../../context/I18nProvider";
 import { Swiper as SwiperType } from "swiper";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import {
-  setMainBannerSlide,
   setSlotsSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
@@ -44,53 +43,6 @@ const {
   footerContent,
 } = mainContentData;
 
-const bannerCards = [
-  {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
-  },
-  {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
-  },
-  {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
-  },
-  {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
-  },
-] as const;
 
 const statusOptions = [
   "Up to date",
@@ -484,9 +436,6 @@ export default function SlotsPage() {
   const carouselState = useAppSelector((state) => state.carousel);
 
   // Carousel slide change handlers
-  const handleMainBannerSlideChange = (swiper: SwiperType) => {
-    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
 
   const handleSlotsSlideChange = (swiper: SwiperType) => {
     dispatch(setSlotsSlide(swiper.realIndex ?? swiper.activeIndex));
@@ -503,23 +452,6 @@ export default function SlotsPage() {
     >
       <SuccessForm isOpen={isOpen} />
 
-      {/* Main Banner Section */}
-      <div className="lg:mb-16 mb-8 lg:mt-0 mt-[45px]">
-        <SwiperSlider
-          key="banner-swiper"
-          data={bannerCards}
-          renderSlide={(card, index) => <RewardCard {...card} />}
-          slidesPerView="auto"
-          autoplay={false}
-          spaceBetween={12}
-          slideClassName="!w-[min(486.76px,100%)]"
-          showProgressBars={true}
-          customPagination={true}
-          initialSlide={carouselState.mainBannerCurrentSlide}
-          onSlideChange={handleMainBannerSlideChange}
-          carouselId="main-banner"
-        />
-      </div>
 
       {/* Mobile Filtered View */}
       <div className="">

@@ -101,9 +101,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     } else if (href) {
       // For query parameter URLs, always navigate to root path with query
       if (href.includes('?tab=')) {
-        const url = new URL(href, 'http://localhost');
-        const tabId = url.searchParams.get('tab');
-        if (tabId) {
+        // Extract tab parameter from href without creating URL object
+        const tabMatch = href.match(/\?tab=([^&]+)/);
+        if (tabMatch && tabMatch[1]) {
+          const tabId = tabMatch[1];
           const newUrl = `/?tab=${tabId}`;
           router.replace(newUrl);
         }
