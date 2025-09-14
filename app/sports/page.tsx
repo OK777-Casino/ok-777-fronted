@@ -8,7 +8,7 @@ import { Swiper as SwiperType } from "swiper";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import {
   setMainBannerSlide,
-  setSportsSlide,
+  setSportSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
 } from "../../store/slices/carouselSlice";
@@ -472,7 +472,7 @@ export default function SportsPage() {
   };
 
   const handleSportsSlideChange = (swiper: SwiperType) => {
-    dispatch(setSportsSlide(swiper.realIndex ?? swiper.activeIndex));
+    dispatch(setSportSlide(swiper.realIndex ?? swiper.activeIndex));
   };
 
   const handleLatestEarningsSlideChange = (swiper: SwiperType) => {
