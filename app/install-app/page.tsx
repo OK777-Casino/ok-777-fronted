@@ -117,183 +117,129 @@ const InstallAppPage = () => {
 
   return (
     <>
-      <div className="md:w-[70%] w-full mx-auto">
-        <div className="lg:flex hidden   gap-4 items-center py-8">
-          <BlackButton>
-            <ArrowLeftStrokeIcon className="w-4 h-4" />
-          </BlackButton>
-          <span className="font-bold text-[18px] text-white">Install app</span>
-        </div>
-        <div className="rounded-[12px]  overflow-hidden lg:mb-64">
-          <div
-            className={cn(
-              "h-[426px] justify-end items-center lg:justify-start lg:items-start  w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8"
-            )}
-          >
-            <div className="hidden 2xl:block">
-              <span className="text-casper font-bold text-[18px] text-caper">
-                Quick and convenient
-              </span>
-              <h2 className="uppercase font-black text-white">
-                Install OK777 app
-              </h2>
-              <span className="font-medium text-[18px] text-casper">
-                Get fast access to OK777 from iOS, <br /> Android, Windows or
-                MacOS
-              </span>
-            </div>
-            <FlatButton className="h-[82px]  w-[426.52px] hidden 2xl:flex rounded-[19.88px] font-bold text-white uppercase bg-[linear-gradient(#0C60FF,#2C9FFA)] text-[29.82px]">
-              How to Install App
-            </FlatButton>
-            <div className="2xl:flex gap-4 items-center hidden">
-              {appDownloads.map((item) => (
-                <img
-                  src={item.icon}
-                  className="w-6 h-6"
-                  alt={item.alt}
-                  key={item.platform}
-                />
-              ))}
-            </div>
-            <TDButton
-              onClick={toggleModal}
-              type="blue"
-              className="h-[41px] lg:hidden z-[2] w-[200px] text-white font-bold text-[14px]"
-            >
-              How to Install App
-            </TDButton>
-            <img
-              src="/images/phone.png"
-              alt="phone"
-              className="absolute bottom-0 w-[375px] right-0"
-            />
+      <div className="lg:flex hidden   gap-4 items-center py-8">
+        <BlackButton>
+          <ArrowLeftStrokeIcon className="w-4 h-4" />
+        </BlackButton>
+        <span className="font-bold text-[18px] text-white">Install app</span>
+      </div>
+      <div className="rounded-[12px]  overflow-hidden lg:mb-64">
+        <div
+          className={cn(
+            "h-[426px] justify-end items-center lg:justify-start lg:items-start  w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8"
+          )}
+        >
+          <div className="hidden 2xl:block">
+            <span className="text-casper font-bold text-[18px] text-caper">
+              Quick and convenient
+            </span>
+            <h2 className="uppercase font-black text-white">
+              Install OK777 app
+            </h2>
+            <span className="font-medium text-[18px] text-casper">
+              Get fast access to OK777 from iOS, <br /> Android, Windows or
+              MacOS
+            </span>
           </div>
-          <div className="px-4 lg:bg-white-4 flex flex-col gap-[96px] pt-[96px] pb-0 lg:pb-[60px]">
-            <div className="grid lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000] bg-white-4 p-4 pt-[86px] rounded-[12px] gap-[86px] ">
-              {installApps.map((app) => (
-                <div className="bg-white-4 rounded-[12px] p-8 pt-[73px] relative flex flex-col gap-4 items-center">
-                  <h2 className="font-bold text-[14px] text-white ">
-                    {app.title}
-                  </h2>
-                  <p className="text-[14px] flex justify-center items-center text-casper">
-                    {app.desc}
-                  </p>
-                  <img
-                    src={app.icon}
-                    alt="app"
-                    className="w-[144px] h-[96px] absolute left-1/2 -top-[52px] transform -translate-x-1/2"
-                  />
+          <FlatButton className="h-[82px]  w-[426.52px] hidden 2xl:flex rounded-[19.88px] font-bold text-white uppercase bg-[linear-gradient(#0C60FF,#2C9FFA)] text-[29.82px]">
+            How to Install App
+          </FlatButton>
+          <div className="2xl:flex gap-4 items-center hidden">
+            {appDownloads.map((item) => (
+              <img
+                src={item.icon}
+                className="w-6 h-6"
+                alt={item.alt}
+                key={item.platform}
+              />
+            ))}
+          </div>
+          <TDButton
+            onClick={toggleModal}
+            type="blue"
+            className="h-[41px] lg:hidden z-[2] w-[200px] text-white font-bold text-[14px]"
+          >
+            How to Install App
+          </TDButton>
+          <img
+            src="/images/phone.png"
+            alt="phone"
+            className="absolute bottom-0 w-[375px] right-0"
+          />
+        </div>
+        <div className="px-4 lg:bg-white-4 flex flex-col gap-[96px] pt-[96px] pb-0 lg:pb-[60px]">
+          <div className="grid lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000] bg-white-4 p-4 pt-[86px] rounded-[12px] gap-[86px] ">
+            {installApps.map((app) => (
+              <div className="bg-white-4 rounded-[12px] p-8 pt-[73px] relative flex flex-col gap-4 items-center">
+                <h2 className="font-bold text-[14px] text-white ">
+                  {app.title}
+                </h2>
+                <p className="text-[14px] flex justify-center items-center text-casper">
+                  {app.desc}
+                </p>
+                <img
+                  src={app.icon}
+                  alt="app"
+                  className="w-[144px] h-[96px] absolute left-1/2 -top-[52px] transform -translate-x-1/2"
+                />
+              </div>
+            ))}
+          </div>
+          <div>
+            <h2 className="font-bold text-white text-[18px] indent-[20px] pb-4">
+              How to download BetFury App?
+            </h2>
+            <div className="flex lg:flex-row gap-4 flex-col">
+              <FAQ faqs={faqs[1]} title={false} />
+              <FAQ faqs={faqs[2]} title={false} />
+            </div>
+          </div>
+        </div>
+        <ModalContainer
+          title="How to Install"
+          className=""
+          isOpen={modal}
+          onClose={toggleModal}
+          position="bottom"
+        >
+          <div className="p-2 flex flex-col gap-6">
+            <div className="grid bg-white-4 rounded-[12px] p-1 grid-cols-2 gap-2">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  onClick={() => setSelectedTab(tab.id)}
+                  className={cn(
+                    "gap-2 h-9 rounded-[8px] text-[14px] flex justify-center items-center text-casper font-bold",
+                    selectedTab === tab.id ? "bg-white-13 text-white   " : ""
+                  )}
+                >
+                  {tab.icon}
+                  <span>{tab.title}</span>
                 </div>
               ))}
             </div>
-            <div>
-              <h2 className="font-bold text-white text-[18px] indent-[20px] pb-4">
-                How to download BetFury App?
-              </h2>
-              <div className="flex lg:flex-row gap-4 flex-col">
-                <FAQ faqs={faqs[1]} title={false} />
-                <FAQ faqs={faqs[2]} title={false} />
-              </div>
-            </div>
-          </div>
-          <ModalContainer
-            title="How to Install"
-            className=""
-            isOpen={modal}
-            onClose={toggleModal}
-            position="bottom"
-          >
-            <div className="p-2 flex flex-col gap-6">
-              <div className="grid bg-white-4 rounded-[12px] p-1 grid-cols-2 gap-2">
-                {tabs.map((tab) => (
-                  <div
-                    key={tab.id}
-                    onClick={() => setSelectedTab(tab.id)}
-                    className={cn(
-                      "gap-2 h-9 rounded-[8px] text-[14px] flex justify-center items-center text-casper font-bold",
-                      selectedTab === tab.id ? "bg-white-13 text-white   " : ""
-                    )}
-                  >
-                    {tab.icon}
-                    <span>{tab.title}</span>
-                  </div>
-                ))}
-              </div>
 
-              {selectedTab === "apple" ? (
-                <div className="flex flex-col gap-6">
-                  {/* Step 1 */}
-                  <div className="flex flex-col gap-3">
-                    <h2 className="text-[16px] font-bold text-white">
-                      1. Open The Website In Safari
-                    </h2>
-                    <p className="text-[14px] text-casper">
-                      Make sure you're using Safari browser on your iOS device
-                    </p>
-                  </div>
+            {selectedTab === "apple" ? (
+              <div className="flex flex-col gap-6">
+                {/* Step 1 */}
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-[16px] font-bold text-white">
+                    1. Open The Website In Safari
+                  </h2>
+                  <p className="text-[14px] text-casper">
+                    Make sure you're using Safari browser on your iOS device
+                  </p>
+                </div>
 
-                  {/* Step 2 */}
-                  <div className="flex flex-col gap-3">
-                    <h2 className="text-[16px] font-bold text-white">
-                      2. Tap The Share Icon
-                    </h2>
-                    <div className="bg-white-4 rounded-[12px] p-4 flex justify-center">
-                      <div className="bg-[#1a1a1a] rounded-[8px] p-3 flex items-center gap-4">
-                        {/* Back/Forward arrows */}
-                        <div className="flex gap-2">
-                          <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
-                            <svg
-                              width="12"
-                              height="12"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                            >
-                              <path
-                                d="M15 18L9 12L15 6"
-                                stroke="#666"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                          <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
-                            <svg
-                              width="12"
-                              height="12"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                            >
-                              <path
-                                d="M9 18L15 12L9 6"
-                                stroke="#666"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-
-                        {/* Share icon (highlighted) */}
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center ring-2 ring-white ring-opacity-50">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M8.684 13.342C8.886 12.938 9 12.482 9 12C9 11.518 8.886 11.062 8.684 10.658M3 12H21M12 3L21 12L12 21"
-                              stroke="#000"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-
-                        {/* Bookmarks icon */}
+                {/* Step 2 */}
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-[16px] font-bold text-white">
+                    2. Tap The Share Icon
+                  </h2>
+                  <div className="bg-white-4 rounded-[12px] p-4 flex justify-center">
+                    <div className="bg-[#1a1a1a] rounded-[8px] p-3 flex items-center gap-4">
+                      {/* Back/Forward arrows */}
+                      <div className="flex gap-2">
                         <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
                           <svg
                             width="12"
@@ -302,14 +248,7 @@ const InstallAppPage = () => {
                             fill="none"
                           >
                             <path
-                              d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-                              stroke="#666"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d="M6.5 2H20V22L13.5 17L7 22V2Z"
+                              d="M15 18L9 12L15 6"
                               stroke="#666"
                               strokeWidth="2"
                               strokeLinecap="round"
@@ -317,21 +256,7 @@ const InstallAppPage = () => {
                             />
                           </svg>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div className="flex flex-col gap-3">
-                    <h2 className="text-[16px] font-bold text-white">
-                      3. Select 'Add To Home Screen'
-                    </h2>
-                    <div className="bg-white-4 rounded-[12px] p-4 flex justify-center">
-                      <div className="bg-[#2a2a2a] rounded-[8px] p-3 flex items-center gap-3 min-w-[200px]">
-                        <span className="text-white text-[14px] font-medium">
-                          Add To Home Screen
-                        </span>
-                        <div className="w-6 h-6 bg-white rounded flex items-center justify-center ring-2 ring-white ring-opacity-50">
+                        <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
                           <svg
                             width="12"
                             height="12"
@@ -339,8 +264,8 @@ const InstallAppPage = () => {
                             fill="none"
                           >
                             <path
-                              d="M12 5V19M5 12H19"
-                              stroke="#000"
+                              d="M9 18L15 12L9 6"
+                              stroke="#666"
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -348,58 +273,130 @@ const InstallAppPage = () => {
                           </svg>
                         </div>
                       </div>
+
+                      {/* Share icon (highlighted) */}
+                      <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center ring-2 ring-white ring-opacity-50">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.684 13.342C8.886 12.938 9 12.482 9 12C9 11.518 8.886 11.062 8.684 10.658M3 12H21M12 3L21 12L12 21"
+                            stroke="#000"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+
+                      {/* Bookmarks icon */}
+                      <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+                            stroke="#666"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M6.5 2H20V22L13.5 17L7 22V2Z"
+                            stroke="#666"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Additional info */}
-                  <div className="bg-[#1a1a1a] rounded-[12px] p-4">
-                    <p className="text-[14px] text-casper flex justify-center items-center">
-                      After adding to home screen, you can move the app icon to
-                      any convenient place on your device.
-                    </p>
+                {/* Step 3 */}
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-[16px] font-bold text-white">
+                    3. Select 'Add To Home Screen'
+                  </h2>
+                  <div className="bg-white-4 rounded-[12px] p-4 flex justify-center">
+                    <div className="bg-[#2a2a2a] rounded-[8px] p-3 flex items-center gap-3 min-w-[200px]">
+                      <span className="text-white text-[14px] font-medium">
+                        Add To Home Screen
+                      </span>
+                      <div className="w-6 h-6 bg-white rounded flex items-center justify-center ring-2 ring-white ring-opacity-50">
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 5V19M5 12H19"
+                            stroke="#000"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ) : selectedTab === "android" ? (
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-3">
-                    <h2 className="text-[16px] font-bold text-white">
-                      1. Open The Website In Chrome
-                    </h2>
-                    <p className="text-[14px] text-casper">
-                      Make sure you're using Chrome browser on your Android
-                      device
-                    </p>
-                  </div>
 
-                  <div className="flex flex-col gap-3">
-                    <h2 className="text-[16px] font-bold text-white">
-                      2. Tap The Menu Icon
-                    </h2>
-                    <p className="text-[14px] text-casper">
-                      Look for the three dots menu in the top-right corner
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    <h2 className="text-[16px] font-bold text-white">
-                      3. Select 'Add to Home screen'
-                    </h2>
-                    <p className="text-[14px] text-casper">
-                      Choose the option to add the website to your home screen
-                    </p>
-                  </div>
-
-                  <div className="bg-[#1a1a1a] rounded-[12px] p-4">
-                    <p className="text-[14px] text-casper flex justify-center items-center">
-                      After adding to home screen, you can move the app icon to
-                      any convenient place on your device.
-                    </p>
-                  </div>
+                {/* Additional info */}
+                <div className="bg-[#1a1a1a] rounded-[12px] p-4">
+                  <p className="text-[14px] text-casper flex justify-center items-center">
+                    After adding to home screen, you can move the app icon to
+                    any convenient place on your device.
+                  </p>
                 </div>
-              ) : null}
-            </div>
-          </ModalContainer>
-        </div>
+              </div>
+            ) : selectedTab === "android" ? (
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-[16px] font-bold text-white">
+                    1. Open The Website In Chrome
+                  </h2>
+                  <p className="text-[14px] text-casper">
+                    Make sure you're using Chrome browser on your Android device
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-[16px] font-bold text-white">
+                    2. Tap The Menu Icon
+                  </h2>
+                  <p className="text-[14px] text-casper">
+                    Look for the three dots menu in the top-right corner
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <h2 className="text-[16px] font-bold text-white">
+                    3. Select 'Add to Home screen'
+                  </h2>
+                  <p className="text-[14px] text-casper">
+                    Choose the option to add the website to your home screen
+                  </p>
+                </div>
+
+                <div className="bg-[#1a1a1a] rounded-[12px] p-4">
+                  <p className="text-[14px] text-casper flex justify-center items-center">
+                    After adding to home screen, you can move the app icon to
+                    any convenient place on your device.
+                  </p>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </ModalContainer>
       </div>
     </>
   );

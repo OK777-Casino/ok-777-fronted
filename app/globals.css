@@ -40,12 +40,14 @@
   --sidebar-ring: 220 13% 91%;
 }
 
-
-
-
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "微软雅黑", sans-serif;
+  touch-action: manipulation; /* 限制触摸行为 */
+
+  /* 滚动条 */
+  scrollbar-color: #2a3546 rgba(13, 19, 28, 0.8);
+  scrollbar-width: thin;
 }
 
 body {
@@ -69,9 +71,9 @@ body::before {
   /* 放在内容下层 */
 }
 
-* {
-  scrollbar-color: #2a3546 rgba(13, 19, 28, 0.8);
-  scrollbar-width: thin;
+input, textarea, a {
+  -webkit-text-size-adjust: 100%; /* 防止 iOS 自动调整字体大小 */
+  text-size-adjust: 100%;
 }
 
 .loading-bg {
@@ -866,29 +868,6 @@ body.sidebar-scrolling {
 .glass-input {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-/* Hash game responsive fixes */
-@media (min-width: 1025px) {
-  .hash-game-container {
-    width: calc((100vw - 315px) * 0.7) !important;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-
-  .hash-game-container.sidebar-collapsed {
-    width: calc((100vw - 80px) * 0.7) !important;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hash-game-container {
-    width: 100% !important;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
 }
 
 /* Prevent scrollbars when modals are open */

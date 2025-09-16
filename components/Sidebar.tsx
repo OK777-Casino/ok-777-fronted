@@ -145,7 +145,7 @@ const Sidebar: React.FC = () => {
           isCollapsed ? "close " : "open"
         }`}
         style={{
-          borderRight: "0.0625rem solid #2d3748",
+          borderRight: "1px solid hsla(0, 0%, 100%, .04)",
           backdropFilter: "blur(2rem)",
           background: "rgba(17, 25, 35, 0.54)",
           overscrollBehavior: "contain",

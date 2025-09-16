@@ -21,27 +21,27 @@ function HelpCenterPageContent() {
 
   const tabSlugToName = useMemo(
     () =>
-    ({
-      problem: "Common problem",
-      gambling: "Responsible gambling",
-      honest: "Honestly and fairely",
-      termsuse: "Terms of use",
-      policy: "Privacy Policy",
-      aboutus: "About us"
-    } as const),
+      ({
+        problem: "Common problem",
+        gambling: "Responsible gambling",
+        honest: "Honestly and fairely",
+        termsuse: "Terms of use",
+        policy: "Privacy Policy",
+        aboutus: "About us",
+      } as const),
     []
   );
 
   const tabNameToSlug = useMemo(
     () =>
-    ({
-      "Common problem": "problem",
-      "Responsible gambling": "gambling",
-      "Honestly and fairely": "honest",
-      "Terms of use": "termsuse",
-      "Privacy Policy": "policy",
-      "About us": "aboutus"
-    } as const),
+      ({
+        "Common problem": "problem",
+        "Responsible gambling": "gambling",
+        "Honestly and fairely": "honest",
+        "Terms of use": "termsuse",
+        "Privacy Policy": "policy",
+        "About us": "aboutus",
+      } as const),
     []
   );
 
@@ -61,7 +61,12 @@ function HelpCenterPageContent() {
   };
 
   const navigationItems = [
-    "Common problem", "Responsible gambling", "Honestly and fairly", "Terms of use", "Privacy Policy", "About us"
+    "Common problem",
+    "Responsible gambling",
+    "Honestly and fairly",
+    "Terms of use",
+    "Privacy Policy",
+    "About us",
   ];
 
   const renderContent = () => {
@@ -85,7 +90,7 @@ function HelpCenterPageContent() {
 
   return (
     <>
-      <div className="flex hash-game-container flex-col w-full max-w-[120rem] mx-auto px-4 pt-[1.5rem]   pb-20 lg:pt-6 lg:pb-8">
+      <div className="flex flex-col w-full px-4 pt-[1.5rem] pb-20 lg:pt-6 lg:pb-8">
         {/* Top Tab Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg w-full mb-6 [@media(max-width:1024px)]:hidden">
           <div className="flex p-3 gap-1 justify-between overflow-x-auto">
@@ -102,7 +107,9 @@ function HelpCenterPageContent() {
                     : "text-gray-300 hover:bg-[rgba(255,255,255,0.08)]"
                 }`}
               >
-                <span className="font-bold text-[0.875rem] whitespace-nowrap">{item}</span>
+                <span className="font-bold text-[0.875rem] whitespace-nowrap">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
@@ -120,7 +127,10 @@ function HelpCenterPageContent() {
               className="w-full pl-12 pr-4 py-3 bg-transparent border border-blue-bayoux rounded-lg text-blue-bayoux placeholder:text-blue-bayoux font-montserrat text-sm focus:ring-2 focus:ring-dodger-blue focus:border-dodger-blue"
             />
           </div>
-          <div onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="flex justify-between items-center text-casper bg-white-4 rounded-[8px] text-[14px] font-bold h-12 px-4">
+          <div
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex justify-between items-center text-casper bg-white-4 rounded-[8px] text-[14px] font-bold h-12 px-4"
+          >
             <span>{activeTab}</span>
             <ChevronDownIcon />
             <DropdownSelection
@@ -137,7 +147,9 @@ function HelpCenterPageContent() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px] min-h-0">{renderContent()}</div>
+        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px] min-h-0">
+          {renderContent()}
+        </div>
       </div>
     </>
   );
@@ -146,7 +158,13 @@ function HelpCenterPageContent() {
 // Wrapper component with Suspense boundary
 export default function HelpCenterPage() {
   return (
-    <Suspense fallback={<div><span>Loading help center...</span></div>}>
+    <Suspense
+      fallback={
+        <div>
+          <span>Loading help center...</span>
+        </div>
+      }
+    >
       <HelpCenterPageContent />
     </Suspense>
   );

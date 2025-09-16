@@ -92,10 +92,7 @@ const NotificationBadge: React.FC = () => (
 const LeftSection: React.FC<{
   toggleSidebar: () => void;
   isCollapsed: boolean;
-}> = ({
-  toggleSidebar,
-  isCollapsed,
-}) => (
+}> = ({ toggleSidebar, isCollapsed }) => (
   <div className="flex items-center gap-2">
     <MenuButton onClick={toggleSidebar} isCollapsed={isCollapsed} />
     <Logo />
@@ -317,56 +314,59 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   const { t } = useI18n();
 
   // Game navigation tabs for mobile with translations
-  const gameNavTabs = useMemo(() => [
-    {
-      id: "home",
-      label: "Home",
-      icon: "/icons/Home.svg",
-      active: false,
-    },
-    {
-      id: "hash",
-      label: t("games.hashgames"),
-      icon: "/icons/Hash.svg",
-      active: false,
-    },
-    {
-      id: "slots",
-      label: t("games.slots"),
-      icon: "/icons/Slots.svg",
-      active: false,
-    },
-    {
-      id: "casino",
-      label: t("games.live"),
-      icon: "/icons/Casino1.svg",
-      active: false,
-    },
-    {
-      id: "futures",
-      label: "Futures",
-      icon: "/icons/Futures1.svg",
-      active: false,
-    },
-    {
-      id: "crypto",
-      label: t("games.crypto"),
-      icon: "/icons/Cryptogra1.svg",
-      active: false,
-    },
-    {
-      id: "sport",
-      label: t("games.sports"),
-      icon: "/icons/Sport.svg",
-      active: false,
-    },
-    {
-      id: "table",
-      label: t("games.table"),
-      icon: "/icons/tablegame.svg",
-      active: false,
-    },
-  ], [t]);
+  const gameNavTabs = useMemo(
+    () => [
+      {
+        id: "home",
+        label: "Home",
+        icon: "/icons/Home.svg",
+        active: false,
+      },
+      {
+        id: "hash",
+        label: t("games.hashgames"),
+        icon: "/icons/Hash.svg",
+        active: false,
+      },
+      {
+        id: "slots",
+        label: t("games.slots"),
+        icon: "/icons/Slots.svg",
+        active: false,
+      },
+      {
+        id: "casino",
+        label: t("games.live"),
+        icon: "/icons/Casino1.svg",
+        active: false,
+      },
+      {
+        id: "futures",
+        label: "Futures",
+        icon: "/icons/Futures1.svg",
+        active: false,
+      },
+      {
+        id: "crypto",
+        label: t("games.crypto"),
+        icon: "/icons/Cryptogra1.svg",
+        active: false,
+      },
+      {
+        id: "sport",
+        label: t("games.sports"),
+        icon: "/icons/Sport.svg",
+        active: false,
+      },
+      {
+        id: "table",
+        label: t("games.table"),
+        icon: "/icons/tablegame.svg",
+        active: false,
+      },
+    ],
+    [t]
+  );
 
   useEffect(() => {
     const index = gameNavTabs.findIndex((t) => t.id === activeTab);
@@ -407,8 +407,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
 };
 
 const Header: React.FC = () => {
-  const { toggleSidebar, toggleAuthModal, isCollapsed } =
-    useSidebar();
+  const { toggleSidebar, toggleAuthModal, isCollapsed } = useSidebar();
   const [activeGameTab, setActiveGameTab] = useState("home");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
@@ -426,12 +425,21 @@ const Header: React.FC = () => {
 
   // Update active tab based on URL query parameters
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    const tabFromQuery = searchParams.get('tab');
+    if (typeof window === "undefined") return;
+
+    const tabFromQuery = searchParams.get("tab");
     if (tabFromQuery) {
       // Validate the tab parameter
-      const validTabs = ['home', 'hash', 'slots', 'casino', 'sport', 'futures', 'crypto', 'table'];
+      const validTabs = [
+        "home",
+        "hash",
+        "slots",
+        "casino",
+        "sport",
+        "futures",
+        "crypto",
+        "table",
+      ];
       if (validTabs.includes(tabFromQuery)) {
         setActiveGameTab(tabFromQuery);
       } else {
@@ -470,39 +478,39 @@ const Header: React.FC = () => {
       }
     }
   }, [searchParams]);
-  
+
   const handleTabChange = (tabId: string) => {
     try {
       setActiveGameTab(tabId);
-      
+
       // Handle home tab navigation
-      if (tabId === 'home') {
-        router.push('/');
+      if (tabId === "home") {
+        router.push("/");
       } else {
         // Always navigate to root path with query parameter for other tabs
         const newUrl = `/?tab=${tabId}`;
         router.push(newUrl);
       }
     } catch (error) {
-      console.error('Navigation error:', error);
+      console.error("Navigation error:", error);
       // Fallback to window.location if router fails
-      if (tabId === 'home') {
-        window.location.href = '/';
+      if (tabId === "home") {
+        window.location.href = "/";
       } else {
         window.location.href = `/?tab=${tabId}`;
       }
     }
   };
 
-
   return (
     <>
       <header
         id="app-header"
-        className="fixed top-0 left-0 right-0 z-50 border-b border-gray-700 flex flex-col"
+        className="fixed top-0 left-0 right-0 z-50 flex flex-col"
         style={{
           backdropFilter: "blur(2rem)",
           background: "rgba(17, 25, 35, 0.54)",
+          borderBottom: "1px solid hsla(0, 0%, 100%, .04)",
         }}
       >
         {/* Main Header Row */}

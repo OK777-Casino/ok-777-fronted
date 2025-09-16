@@ -29,7 +29,7 @@ const FutureCard: React.FC<TypeFourProps> = ({
         />
         <div>
           <div className="text-white font-semibold">{symbol}</div>
-          <div className="text-gray-400 text-xs">{name}</div>
+          {/* <div className="text-gray-400 text-xs">{name}</div> */}
         </div>
       </div>
       <div className="space-y-2">

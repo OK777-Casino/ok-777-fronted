@@ -40,20 +40,20 @@ function AlliancePageContent() {
   );
 
   const [activeTab, setActiveTab] = useState<string>("Invite Friends");
-  
+
   useEffect(() => {
     const fromQuery = searchParams.get("tab");
     if (fromQuery && tabSlugToName[fromQuery as keyof typeof tabSlugToName]) {
       setActiveTab(tabSlugToName[fromQuery as keyof typeof tabSlugToName]);
     }
   }, [searchParams, tabSlugToName]);
-  
+
   const updateQuery = (nextTabName: string) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("tab", tabNameToSlug[nextTabName as keyof typeof tabNameToSlug]);
     router.replace(`${pathname}?${params.toString()}`);
   };
-  
+
   const navigationItems = [
     { name: "Invite Friends", icon: "/icons/user-plus.svg" },
     { name: "Management", icon: "/icons/group.svg" },
@@ -77,13 +77,11 @@ function AlliancePageContent() {
       default:
         return <InviteFriends />;
     }
-
   };
-
 
   return (
     <>
-      <div className="flex flex-col w-[70%] max-w-[1920px] [@media(max-width:1444px)]:w-[100%] gap-16 lg:py-6 pt-[6px] mx-auto justify-between pb-20 lg:pb-8">
+      <div className="flex flex-col gap-16 lg:py-6 pt-[6px] justify-between pb-20 lg:pb-8">
         {/* Left Sidebar Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg h-full [@media(max-width:1024px)]:hidden w-full ">
           <div className="grid grid-cols-5 p-3 gap-3">
@@ -109,9 +107,11 @@ function AlliancePageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px]">{renderContent()}</div>
+        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px]">
+          {renderContent()}
+        </div>
       </div>
-      
+
       {/* Mobile Bottom Navigation */}
       <AllianceBottomBar />
     </>

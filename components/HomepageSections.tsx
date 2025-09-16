@@ -7,7 +7,6 @@ import HashCard from "./ui/cards/HashCard";
 import FutureCard from "./ui/cards/FutureCard";
 import SwiperSlider from "./ui/slider/SwiperSlider";
 
-
 // Section header component
 const SectionHeader: React.FC<{
   icon: string;
@@ -28,6 +27,47 @@ const SectionHeader: React.FC<{
       )}
     </div>
   );
+};
+
+type GameBreakpointsProps = {
+  [width: number]: { slidesPerView: number };
+};
+
+type GameBreakpointsTwoRows = {
+  [width: number]: {
+    slidesPerView: number;
+    grid: {
+      rows: 2;
+      fill: "row";
+    };
+  };
+};
+
+const GameBreakpoints: GameBreakpointsProps = {
+  320: { slidesPerView: 3.3 },
+  375: { slidesPerView: 3.3 },
+  425: { slidesPerView: 3.3 },
+  768: { slidesPerView: 6.3 },
+  1024: { slidesPerView: 6.3 },
+  1440: { slidesPerView: 8.3 },
+};
+
+const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
+  320: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
+  375: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
+  425: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
+  768: { slidesPerView: 6.3, grid: { rows: 2, fill: "row" } },
+  1024: { slidesPerView: 6.3, grid: { rows: 2, fill: "row" } },
+  1440: { slidesPerView: 8.3, grid: { rows: 2, fill: "row" } },
+};
+
+const HashBreakpoints: GameBreakpointsProps = {
+  320: { slidesPerView: 1.3 },
+  375: { slidesPerView: 1.3 },
+  425: { slidesPerView: 1.8 },
+  768: { slidesPerView: 2.3 },
+  1024: { slidesPerView: 2.3 },
+  1440: { slidesPerView: 3.3 },
 };
 
 // Homepage sections with SwiperSlider
@@ -74,14 +114,7 @@ export const HomepageSections: React.FC<{
           renderSlide={(card, index) => <CasinoCard {...card} />}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
-          }}
+          breakpoints={GameBreakpoints}
           showProgressBars={true}
         />
       </div>
@@ -97,18 +130,13 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-live-casino-swiper"
           data={duplicateDataForTwoRows(card2)}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <CasinoCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          grid={{ rows: 2, fill: 'row' }}
-          breakpoints={{
-            320: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
-            375: { slidesPerView: 3.5, grid: { rows: 2, fill: 'row' } },
-            425: { slidesPerView: 4.1, grid: { rows: 2, fill: 'row' } },
-            768: { slidesPerView: 4.3, grid: { rows: 2, fill: 'row' } },
-            1024: { slidesPerView: 5, spaceBetween: 20, grid: { rows: 2, fill: 'row' } },
-            1440: { slidesPerView: 7.3, grid: { rows: 2, fill: 'row' } },
-          }}
+          grid={{ rows: 2, fill: "row" }}
+          breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
@@ -125,17 +153,12 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-hash-games-swiper"
           data={extendedHashGames}
-          renderSlide={(card, index) => <HashCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <HashCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 1.2 },
-            375: { slidesPerView: 1.3 },
-            425: { slidesPerView: 1.6 },
-            768: { slidesPerView: 2.7 },
-            1024: { slidesPerView: 2.8, spaceBetween: 20 },
-            1440: { slidesPerView: 3.1 },
-          }}
+          breakpoints={HashBreakpoints}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
@@ -152,18 +175,13 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-slots-swiper"
           data={duplicateDataForTwoRows(card3)}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <CasinoCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          grid={{ rows: 2, fill: 'row' }}
-          breakpoints={{
-            320: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
-            375: { slidesPerView: 3.5, grid: { rows: 2, fill: 'row' } },
-            425: { slidesPerView: 4.1, grid: { rows: 2, fill: 'row' } },
-            768: { slidesPerView: 4.3, grid: { rows: 2, fill: 'row' } },
-            1024: { slidesPerView: 5, spaceBetween: 20, grid: { rows: 2, fill: 'row' } },
-            1440: { slidesPerView: 7.3, grid: { rows: 2, fill: 'row' } },
-          }}
+          grid={{ rows: 2, fill: "row" }}
+          breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
@@ -180,17 +198,12 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-futures-swiper"
           data={cryptoCards}
-          renderSlide={(card, index) => <FutureCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <FutureCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 1.2 },
-            375: { slidesPerView: 1.3 },
-            425: { slidesPerView: 1.6 },
-            768: { slidesPerView: 2.7 },
-            1024: { slidesPerView: 2.8, spaceBetween: 20 },
-            1440: { slidesPerView: 3.1 },
-          }}
+          breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
@@ -207,17 +220,12 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-crypto-games-swiper"
           data={card4}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <CasinoCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
-          }}
+          breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
@@ -234,17 +242,12 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-sports-swiper"
           data={card5}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <CasinoCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
-          }}
+          breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
@@ -261,17 +264,12 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-table-games-swiper"
           data={card6}
-          renderSlide={(card, index) => <CasinoCard key={index} {...(card as any)} />}
+          renderSlide={(card, index) => (
+            <CasinoCard key={index} {...(card as any)} />
+          )}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={{
-            320: { slidesPerView: 3.3 },
-            375: { slidesPerView: 3.5 },
-            425: { slidesPerView: 4.1 },
-            768: { slidesPerView: 4.3 },
-            1024: { slidesPerView: 5, spaceBetween: 20 },
-            1440: { slidesPerView: 7.3 },
-          }}
+          breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
