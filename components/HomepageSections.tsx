@@ -70,6 +70,15 @@ const HashBreakpoints: GameBreakpointsProps = {
   1440: { slidesPerView: 3.3 },
 };
 
+const FutureBreakpoints: GameBreakpointsProps = {
+  320: { slidesPerView: 2.3 },
+  375: { slidesPerView: 2.3 },
+  425: { slidesPerView: 3.8 },
+  768: { slidesPerView: 5.3 },
+  1024: { slidesPerView: 6.3 },
+  1440: { slidesPerView: 7.3 },
+};
+
 // Homepage sections with SwiperSlider
 export const HomepageSections: React.FC<{
   card1: any[];
@@ -203,7 +212,7 @@ export const HomepageSections: React.FC<{
           )}
           slidesPerView={7}
           spaceBetween={12}
-          breakpoints={GameBreakpoints}
+          breakpoints={FutureBreakpoints}
           showProgressBars={true}
           autoplayDelay={1000000}
         />
