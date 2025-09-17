@@ -81,7 +81,7 @@ function AlliancePageContent() {
 
   return (
     <>
-      <div className="flex flex-col gap-16 lg:py-6 pt-[6px] justify-between pb-20 lg:pb-8">
+      <div className="flex flex-col gap-8 justify-between lg:pb-8">
         {/* Left Sidebar Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg h-full [@media(max-width:1024px)]:hidden w-full ">
           <div className="grid grid-cols-5 p-3 gap-3">
@@ -93,7 +93,7 @@ function AlliancePageContent() {
                   updateQuery(item.name);
                   console.log(item.name);
                 }}
-                className={`w-full flex items-center gap-3 px-4 py-3  rounded-lg transition-all duration-200 ${
+                className={`w-full flex items-center gap-3 px-4 py-3  rounded-lg transition-all duration-200 cursor-pointer ${
                   activeTab === item.name
                     ? "bg-[#FFFFFF14] text-white shadow-lg"
                     : "text-gray-300 hover:bg-[rgba(255,255,255,0.08)]"
@@ -107,7 +107,7 @@ function AlliancePageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px]">
+        <div className="flex-1 lg:bg-white-4 rounded-[12px]">
           {renderContent()}
         </div>
       </div>

@@ -119,21 +119,21 @@ const gameProviders = [
 
 const GameProviderPage = () => {
   return (
-    <div className="flex flex-col gap-8 p-4 pt-[26px] md:pt-4 mb-16">
-      <h2 className="text-white text-[18px] font-bold hidden lg:block">
+    <div className="flex flex-col gap-8 pt-[26px] md:pt-4 mb-16">
+      {/* <h2 className="text-white text-[18px] font-bold hidden lg:block">
         <span>Game Providers</span>
-      </h2>
+      </h2> */}
       {/* Content */}
       {/* Search Field */}
       <SearchInput placeholder="Manufacturer search" />
 
       {/* Game Providers Grid */}
-      <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 ">
+      <div className="grid grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 ">
         {gameProviders.map((provider) => (
           <Link
             href={`/game-provider/${provider.alt}`}
             key={provider.id}
-            className="flex flex-col items-center overflow-hidden justify-center  bg-white-4 rounded-xl aspect-[3/2] hover:bg-white-4/60 transition-colors cursor-pointer"
+            className="flex flex-col items-center overflow-hidden justify-center bg-white-4 rounded-xl aspect-[3/2] hover:bg-white-4/60 transition-colors cursor-pointer"
           >
             <div className="h-[60%] rounded-lg lg:rounded-t-lg overflow-hidden md:p-2">
               <img
@@ -154,7 +154,7 @@ const GameProviderPage = () => {
       <div className="flex flex-col gap-2.5">
         {/* Show More Button */}
         <div className="flex justify-center">
-          <div className="h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors">
+          <div className="cursor-pointer h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors">
             Show 4 more
             <ChevronDownIcon className=" text-casper" />
           </div>

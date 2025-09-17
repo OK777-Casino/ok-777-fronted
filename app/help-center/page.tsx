@@ -90,7 +90,7 @@ function HelpCenterPageContent() {
 
   return (
     <>
-      <div className="flex flex-col w-full px-4 pt-[1.5rem] pb-20 lg:pt-6 lg:pb-8">
+      <div className="flex flex-col">
         {/* Top Tab Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg w-full mb-6 [@media(max-width:1024px)]:hidden">
           <div className="flex p-3 gap-1 justify-between overflow-x-auto">
@@ -147,7 +147,7 @@ function HelpCenterPageContent() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px] min-h-0">
+        <div className="flex-1 lg:bg-white-4 rounded-[12px] min-h-0">
           {renderContent()}
         </div>
       </div>

@@ -107,7 +107,7 @@ const VipClubPage = () => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div className="flex flex-col p-4 gap-8">
+    <div className="flex flex-col gap-8">
       <div className="bg-[linear-gradient(#003F70,#0078D6)] relative overflow-hidden rounded-[0.75rem] border-[0.0625rem] border-white-13 gap-6 py-8 px-6 flex items-center">
         <img
           src="/images/awards/Silver.svg"
@@ -282,10 +282,10 @@ const VipClubPage = () => {
             breakpoints={{
               320: { slidesPerView: 1.2 },
               375: { slidesPerView: 1.4 },
-              425: { slidesPerView: 1.8 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 2.5 },
-              1440: { slidesPerView: 3.7 },
+              425: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2.3 },
+              1024: { slidesPerView: 3.3 },
+              1440: { slidesPerView: 4.3 },
             }}
             navigationRef={swiperRef}
             autoplay={false}

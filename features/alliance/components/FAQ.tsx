@@ -19,7 +19,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = "", title = true }) => {
   };
 
   return (
-    <div className={`mb-8 ${className} `}>
+    <div className={`lg:mb-8 ${className} `}>
       {
         title && (<h3 className="text-lg font-bold pl-3 text-white mb-6">FAQs</h3>)
       }
