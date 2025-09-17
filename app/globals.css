@@ -195,8 +195,8 @@ body.sidebar-scrolling {
 .main-content {
   overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
-  min-height: calc(100vh - 3.5rem);
-  height: calc(100vh - 3.5rem);
+  min-height: calc(100dvh - 3.5rem);
+  height: calc(100dvh - 3.5rem);
   overflow-y: auto;
 }
 
@@ -1202,8 +1202,8 @@ body.modal-open {
   }
 
   /* Full height modals on mobile */
-  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div[style*="height: 100vh"] {
-    height: 100vh !important;
+  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div[style*="height: 100dvh"] {
+    height: 100dvh !important;
     border-radius: 0 !important;
   }
 
@@ -1230,7 +1230,7 @@ body.modal-open {
   }
 
   /* Full height modals on desktop */
-  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div[style*="height: 100vh"] {
+  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div[style*="height: 100dvh"] {
     height: 90vh !important;
     max-height: 90vh !important;
     border-radius: 14px !important;

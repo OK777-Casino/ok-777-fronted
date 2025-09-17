@@ -221,7 +221,7 @@ const Sidebar: React.FC = () => {
       {!isCollapsed && (
         <div
           ref={overlayRef}
-          className="lg:hidden fixed left-0 right-0 z-[9] h-[calc(100vh-7.1rem)] bg-[#00000066] backdrop-blur-[0.1875rem]"
+          className="lg:hidden fixed left-0 right-0 z-[9] h-[calc(100dvh-7.1rem)] bg-[#00000066] backdrop-blur-[0.1875rem]"
           onClick={toggleSidebar}
         />
       )}

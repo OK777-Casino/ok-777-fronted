@@ -353,7 +353,7 @@ const BankerPlayerActive: React.FC = () => {
               alt="active"
               className="w-6 h-6"
             />
-            Active
+            Transfer betting
           </div>
           <Link
             href="/hashgames/bankerplayer/default"
@@ -366,7 +366,7 @@ const BankerPlayerActive: React.FC = () => {
               alt="active"
               className="w-6 h-6"
             />
-            Default
+            Page betting
           </Link>
         </div>
         <div className="flex items-center gap-2 [@media(max-width:768px)]:hidden">

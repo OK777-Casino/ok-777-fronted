@@ -26,7 +26,7 @@ const coins = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="lg:bg-[#1C2532] w-full text-gray-300 py-8 px-6 lg:mb-0       mb-[4.75rem]">
+    <footer className="lg:bg-[#1C2532] w-full text-gray-300 py-8 px-4">
       <div className="max-w-7xl mx-auto ">
         <div className="hidden lg:flex gap-8">
           {/* Left Section - Company Info */}
@@ -207,10 +207,10 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 ">
+        <div className="flex lg:flex-row flex-col-reverse justify-between items-center">
           {/* Partners and Industry Associations */}
           <div className="lg:w-[50%] w-full mb-4">
-            <h4 className="text-white  font-medium mb-3">
+            <h4 className="text-white font-medium py-2">
               Partners and Industry Associations
             </h4>
             <div className="flex gap-3">
@@ -226,7 +226,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="lg:hidden w-full mb-6 block ">
+          <div className="lg:hidden w-full block ">
             <h4 className="text-white w-full font-medium mb-3">
               Supported currencies
             </h4>
@@ -267,7 +267,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Company Description */}
-          <p className="text-sm text-gray-400 leading-relaxed mb-6">
+          <p className="text-sm text-gray-400 leading-relaxed">
             Ok777 casino is owned and operated by Nextech NV, a company
             registered in Curaçao with company number 162054, registered
             address: Zuikertuin tower 2/ Kaya W.F.G. (Cito) Hellmund z/n

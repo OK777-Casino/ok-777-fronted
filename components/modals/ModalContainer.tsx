@@ -141,7 +141,7 @@ export default function ModalContainer({
         style={{
           maxWidth: width || undefined,
           width: width || undefined,
-          maxHeight: '100vh',
+          maxHeight: '100dvh',
           overflowY: 'auto'
         }}
         onClick={(e) => e.stopPropagation()}

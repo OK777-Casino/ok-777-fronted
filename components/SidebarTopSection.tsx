@@ -15,7 +15,7 @@ const SidebarTopSection: React.FC<SidebarTopSectionProps> = ({ isCollapsed, topB
             key={button.label}
             className={`${
               isCollapsed ? "w-full mb-2" : "flex-1"
-            } w-12 ${
+            } w-12 cursor-pointer ${
               button.active 
                 ? "bg-gray-700 text-white" 
                 : "bg-transparent text-gray-400 hover:bg-gray-700 active:bg-gray-700"
