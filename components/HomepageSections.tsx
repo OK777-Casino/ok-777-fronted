@@ -113,7 +113,7 @@ export const HomepageSections: React.FC<{
         <SectionHeader
           icon="/icons/Home.svg"
           title={t("games.new")}
-          alt="home"
+          alt="lobby"
           count={card1.length}
         />
         <SwiperSlider
@@ -133,7 +133,7 @@ export const HomepageSections: React.FC<{
         <SectionHeader
           icon="/icons/Casino1.svg"
           title={t("games.live")}
-          alt="home"
+          alt="lobby"
           count={card2.length}
         />
         <SwiperSlider

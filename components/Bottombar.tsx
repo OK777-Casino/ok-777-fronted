@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import { useState, Suspense } from 'react';
-import { useSidebar } from '../context/SidebarProvider';
-import { useBottomBar } from '../context/BottomBarProvider';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useSimpleKeyboardDetection } from '@/hooks/useSimpleKeyboardDetection';
-import { useT } from '../context/I18nProvider';
+import { useState, Suspense } from "react";
+import { useSidebar } from "../context/SidebarProvider";
+import { useBottomBar } from "../context/BottomBarProvider";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSimpleKeyboardDetection } from "@/hooks/useSimpleKeyboardDetection";
+import { useT } from "../context/I18nProvider";
 
 interface TabBarButtonProps {
   icon: React.ReactNode;
@@ -14,29 +14,43 @@ interface TabBarButtonProps {
   onClick?: () => void;
 }
 
-const TabBarButton = ({ icon, label, isActive = false, onClick }: TabBarButtonProps) => (
+const TabBarButton = ({
+  icon,
+  label,
+  isActive = false,
+  onClick,
+}: TabBarButtonProps) => (
   <div
     className={`
       flex h-12 px-0 py-2 flex-col justify-center items-center gap-2 flex-1 cursor-pointer
-      ${isActive ? 'relative' : ''}
+      ${isActive ? "relative" : ""}
     `}
-    style={isActive ? {
-      background: 'radial-gradient(53.45% 44.05% at 50% 105.16%, rgba(237, 29, 73, 0.33) 0%, rgba(237, 29, 73, 0.00) 100%)'
-    } : {}}
+    style={
+      isActive
+        ? {
+            background:
+              "radial-gradient(53.45% 44.05% at 50% 105.16%, rgba(237, 29, 73, 0.33) 0%, rgba(237, 29, 73, 0.00) 100%)",
+          }
+        : {}
+    }
     onClick={onClick}
   >
-    <span className={isActive ? 'text-[#ED1D49]' : 'text-[#A7B5CA]'}>
+    <span className={isActive ? "text-[#ED1D49]" : "text-[#A7B5CA]"}>
       {icon}
     </span>
     <span
       className={`
         text-center text-[0.625rem] leading-none font-montserrat
-        ${isActive ? 'text-white' : 'text-[#A7B5CA]'}
+        ${isActive ? "text-white" : "text-[#A7B5CA]"}
       `}
-      style={isActive ? {
-        fontStyle: 'bold',
-        WebkitTextStrokeColor: '#ffffff'
-      } : {}}
+      style={
+        isActive
+          ? {
+              fontStyle: "bold",
+              WebkitTextStrokeColor: "#ffffff",
+            }
+          : {}
+      }
     >
       {label}
     </span>
@@ -44,7 +58,7 @@ const TabBarButton = ({ icon, label, isActive = false, onClick }: TabBarButtonPr
 );
 
 function BottombarContent() {
-  const [activeTab, setActiveTab] = useState('Menu');
+  const [activeTab, setActiveTab] = useState("Menu");
   const { toggleSidebar, isCollapsed } = useSidebar();
   const { isHidden } = useBottomBar();
   const { getBottomBarClasses } = useSimpleKeyboardDetection();
@@ -53,12 +67,12 @@ function BottombarContent() {
   const searchParams = useSearchParams();
   const t = useT();
 
-  const isAlliance = pathname === '/alliance';
+  const isAlliance = pathname === "/alliance";
 
   const defaultTabs = [
     {
-      id: 'Menu',
-      label: t('navigation.menu'),
+      id: "Menu",
+      label: t("navigation.menu"),
       icon: (
         <svg
           width="17"
@@ -82,15 +96,20 @@ function BottombarContent() {
           </g>
           <defs>
             <clipPath id="clip0_menu">
-              <rect width="16.8" height="19.2" fill="white" transform="translate(0.400024 0.799805)" />
+              <rect
+                width="16.8"
+                height="19.2"
+                fill="white"
+                transform="translate(0.400024 0.799805)"
+              />
             </clipPath>
           </defs>
         </svg>
       ),
     },
     {
-      id: 'Sport',
-      label: t('games.sports'),
+      id: "Sport",
+      label: t("games.sports"),
       icon: (
         <svg
           width="19"
@@ -113,15 +132,20 @@ function BottombarContent() {
           </g>
           <defs>
             <clipPath id="clip0_sport">
-              <rect width="19.2" height="19.2" fill="white" transform="translate(0.800049 0.799805)" />
+              <rect
+                width="19.2"
+                height="19.2"
+                fill="white"
+                transform="translate(0.800049 0.799805)"
+              />
             </clipPath>
           </defs>
         </svg>
       ),
     },
     {
-      id: 'Referrals',
-      label: t('promotions.referral'),
+      id: "Referrals",
+      label: t("promotions.referral"),
       icon: (
         <svg
           width="19"
@@ -144,15 +168,20 @@ function BottombarContent() {
           </g>
           <defs>
             <clipPath id="clip0_referrals">
-              <rect width="19.2" height="19.2" fill="white" transform="translate(0.400024 0.799805)" />
+              <rect
+                width="19.2"
+                height="19.2"
+                fill="white"
+                transform="translate(0.400024 0.799805)"
+              />
             </clipPath>
           </defs>
         </svg>
       ),
     },
     {
-      id: 'Activity',
-      label: 'Activity',
+      id: "Activity",
+      label: t("navigation.promotions"),
       icon: (
         <svg
           width="19"
@@ -175,15 +204,20 @@ function BottombarContent() {
           </g>
           <defs>
             <clipPath id="clip0_activity">
-              <rect width="19.2" height="19.2" fill="white" transform="translate(6.10352e-05 0.799805)" />
+              <rect
+                width="19.2"
+                height="19.2"
+                fill="white"
+                transform="translate(6.10352e-05 0.799805)"
+              />
             </clipPath>
           </defs>
         </svg>
       ),
     },
     {
-      id: 'Chat',
-      label: 'Chat',
+      id: "Chat",
+      label: "Chat",
       icon: (
         <svg
           width="24"
@@ -206,7 +240,12 @@ function BottombarContent() {
           </g>
           <defs>
             <clipPath id="clip0_chat">
-              <rect width="24" height="19.2" fill="white" transform="translate(0.200012 0.799805)" />
+              <rect
+                width="24"
+                height="19.2"
+                fill="white"
+                transform="translate(0.200012 0.799805)"
+              />
             </clipPath>
           </defs>
         </svg>
@@ -214,85 +253,131 @@ function BottombarContent() {
     },
   ];
 
- 
-
   const allianceTabs = [
-    { id: 'invite', label: t('alliance.inviteFriends'), icon: <img src="/icons/user-plus.svg" alt={t('alliance.inviteFriends')} className="w-[1.2rem] h-[1.2rem]" /> },
-    { id: 'management', label: t('alliance.management'), icon: <img src="/icons/group.svg" alt={t('alliance.management')} className="w-[1.2rem] h-[1.2rem]" /> },
-    { id: 'performance', label: t('alliance.performance'), icon: <img src="/icons/chart-network.svg" alt={t('alliance.performance')} className="w-[1.2rem] h-[1.2rem]" /> },
-    { id: 'report', label: t('alliance.report'), icon: <img src="/icons/file-report.svg" alt={t('alliance.report')} className="w-[1.2rem] h-[1.2rem]" /> },
-    { id: 'introduction', label: t('alliance.introduction'), icon: <img src="/icons/form.png" alt={t('alliance.introduction')} className="w-[1.2rem] h-[1.2rem]" /> },
+    {
+      id: "invite",
+      label: t("alliance.inviteFriends"),
+      icon: (
+        <img
+          src="/icons/user-plus.svg"
+          alt={t("alliance.inviteFriends")}
+          className="w-[1.2rem] h-[1.2rem]"
+        />
+      ),
+    },
+    {
+      id: "management",
+      label: t("alliance.management"),
+      icon: (
+        <img
+          src="/icons/group.svg"
+          alt={t("alliance.management")}
+          className="w-[1.2rem] h-[1.2rem]"
+        />
+      ),
+    },
+    {
+      id: "performance",
+      label: t("alliance.performance"),
+      icon: (
+        <img
+          src="/icons/chart-network.svg"
+          alt={t("alliance.performance")}
+          className="w-[1.2rem] h-[1.2rem]"
+        />
+      ),
+    },
+    {
+      id: "report",
+      label: t("alliance.report"),
+      icon: (
+        <img
+          src="/icons/file-report.svg"
+          alt={t("alliance.report")}
+          className="w-[1.2rem] h-[1.2rem]"
+        />
+      ),
+    },
+    {
+      id: "introduction",
+      label: t("alliance.introduction"),
+      icon: (
+        <img
+          src="/icons/form.png"
+          alt={t("alliance.introduction")}
+          className="w-[1.2rem] h-[1.2rem]"
+        />
+      ),
+    },
   ];
 
-  const currentAllianceTab = searchParams.get('tab') || 'invite';
+  const currentAllianceTab = searchParams.get("tab") || "invite";
 
   const handleAllianceTabClick = (slug: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    params.set('tab', slug);
+    params.set("tab", slug);
     router.replace(`${pathname}?${params.toString()}`);
   };
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
-    
+
     // Handle navigation for specific tabs
-    if (tabId === 'Referrals') {
-      router.push('/alliance');
-    } else if(tabId === 'Activity') {
-      router.push('/promotions');
-    } else if (tabId === 'Menu') {
+    if (tabId === "Referrals") {
+      router.push("/alliance");
+    } else if (tabId === "Activity") {
+      router.push("/promotions");
+    } else if (tabId === "Menu") {
       toggleSidebar();
     }
   };
 
-  const baseClasses = `fixed block lg:hidden left-0 right-0 bottom-0 z-50 bottom-bar transition-transform duration-300 ${isHidden ? 'translate-y-full' : 'translate-y-0'}`;
+  const baseClasses = `fixed block lg:hidden left-0 right-0 bottom-0 z-50 bottom-bar transition-transform duration-300 ${
+    isHidden ? "translate-y-full" : "translate-y-0"
+  }`;
   const bottomBarClasses = getBottomBarClasses(baseClasses);
-  
+
   return (
-    <div 
+    <div
       className={bottomBarClasses}
       style={{
         zIndex: 9999,
-        position: 'fixed',
+        position: "fixed",
         bottom: 0,
         left: 0,
-        right: 0
+        right: 0,
       }}
     >
-      <div 
+      <div
         className="flex w-full px-4 pt-2 pb-0 flex-col items-center rounded-t-2xl border-t border-white-8"
         style={{
-          background: 'rgba(17, 25, 35, 0.54)',
-          backdropFilter: 'blur(2rem)',
-          height: '3.6875rem'
+          background: "rgba(17, 25, 35, 0.54)",
+          backdropFilter: "blur(2rem)",
+          height: "3.6875rem",
         }}
       >
         <div className="flex justify-center items-start gap-2 w-full rounded-lg">
-          {isAlliance ? (
-            allianceTabs.map((tab) => (
-              <TabBarButton
-                key={tab.id}
-                icon={tab.icon}
-                label={tab.label}
-                isActive={currentAllianceTab === tab.id}
-                onClick={() => handleAllianceTabClick(tab.id)}
-              />
-            ))
-          ) : (
-            defaultTabs.map((tab) => (
-              <TabBarButton
-                key={tab.id}
-                icon={tab.icon}
-                label={tab.label}
-                isActive={
-                  tab.id === 'Menu' 
-                    ? !isCollapsed 
-                    : activeTab === tab.id
-                }
-                onClick={() => handleTabClick(tab.id)}
-              />
-            ))
-          )}
+          {isAlliance
+            ? allianceTabs.map((tab) => (
+                <TabBarButton
+                  key={tab.id}
+                  icon={tab.icon}
+                  label={tab.label}
+                  isActive={currentAllianceTab === tab.id}
+                  onClick={() => handleAllianceTabClick(tab.id)}
+                />
+              ))
+            : defaultTabs.map((tab) => (
+                <TabBarButton
+                  key={tab.id}
+                  icon={tab.icon}
+                  label={tab.label}
+                  isActive={
+                    tab.id === "Menu" ? !isCollapsed : activeTab === tab.id
+                  }
+                  onClick={() => handleTabClick(tab.id)}
+                />
+              ))}
         </div>
       </div>
     </div>
@@ -302,7 +387,13 @@ function BottombarContent() {
 // Wrapper component with Suspense boundary
 export default function Bottombar() {
   return (
-    <Suspense fallback={<div><span>Loading bottom bar...</span></div>}>
+    <Suspense
+      fallback={
+        <div>
+          <span>Loading bottom bar...</span>
+        </div>
+      }
+    >
       <BottombarContent />
     </Suspense>
   );

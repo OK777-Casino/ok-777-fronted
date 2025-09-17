@@ -317,8 +317,8 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   const gameNavTabs = useMemo(
     () => [
       {
-        id: "home",
-        label: "Home",
+        id: "lobby",
+        label: t("games.lobby"),
         icon: "/icons/Home.svg",
         active: false,
       },
@@ -342,7 +342,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
       },
       {
         id: "futures",
-        label: "Futures",
+        label: t("games.futures"),
         icon: "/icons/Futures1.svg",
         active: false,
       },
@@ -408,7 +408,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
 
 const Header: React.FC = () => {
   const { toggleSidebar, toggleAuthModal, isCollapsed } = useSidebar();
-  const [activeGameTab, setActiveGameTab] = useState("home");
+  const [activeGameTab, setActiveGameTab] = useState("lobby");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -431,7 +431,7 @@ const Header: React.FC = () => {
     if (tabFromQuery) {
       // Validate the tab parameter
       const validTabs = [
-        "home",
+        "lobby",
         "hash",
         "slots",
         "casino",
@@ -443,14 +443,14 @@ const Header: React.FC = () => {
       if (validTabs.includes(tabFromQuery)) {
         setActiveGameTab(tabFromQuery);
       } else {
-        setActiveGameTab("home");
+        setActiveGameTab("lobby");
       }
     } else {
       // Fallback to pathname-based detection if no query parameter
       const path = window.location.pathname;
       switch (path) {
         case "/":
-          setActiveGameTab("home");
+          setActiveGameTab("lobby");
           break;
         case "/hash-games":
           setActiveGameTab("hash");
@@ -474,7 +474,7 @@ const Header: React.FC = () => {
           setActiveGameTab("table");
           break;
         default:
-          setActiveGameTab("home");
+          setActiveGameTab("lobby");
       }
     }
   }, [searchParams]);
@@ -484,7 +484,7 @@ const Header: React.FC = () => {
       setActiveGameTab(tabId);
 
       // Handle home tab navigation
-      if (tabId === "home") {
+      if (tabId === "lobby") {
         router.push("/");
       } else {
         // Always navigate to root path with query parameter for other tabs
@@ -494,7 +494,7 @@ const Header: React.FC = () => {
     } catch (error) {
       console.error("Navigation error:", error);
       // Fallback to window.location if router fails
-      if (tabId === "home") {
+      if (tabId === "lobby") {
         window.location.href = "/";
       } else {
         window.location.href = `/?tab=${tabId}`;

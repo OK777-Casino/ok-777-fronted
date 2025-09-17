@@ -353,7 +353,7 @@ const InstallAppPage = () => {
                 {/* Additional info */}
                 <div className="bg-[#1a1a1a] rounded-[12px] p-4">
                   <p className="text-[14px] text-casper flex justify-center items-center">
-                    After adding to home screen, you can move the app icon to
+                    After adding to lobby screen, you can move the app icon to
                     any convenient place on your device.
                   </p>
                 </div>
@@ -383,13 +383,13 @@ const InstallAppPage = () => {
                     3. Select 'Add to Home screen'
                   </h2>
                   <p className="text-[14px] text-casper">
-                    Choose the option to add the website to your home screen
+                    Choose the option to add the website to your lobby screen
                   </p>
                 </div>
 
                 <div className="bg-[#1a1a1a] rounded-[12px] p-4">
                   <p className="text-[14px] text-casper flex justify-center items-center">
-                    After adding to home screen, you can move the app icon to
+                    After adding to lobby screen, you can move the app icon to
                     any convenient place on your device.
                   </p>
                 </div>

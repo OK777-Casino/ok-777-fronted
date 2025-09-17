@@ -339,12 +339,6 @@ const MainContent: React.FC = () => {
   const { t, locale } = useI18n();
   const searchParams = useSearchParams();
 
-  // Debug: Log when component re-renders with new locale
-  console.log("MainContent re-rendered with locale:", locale);
-  console.log("Translation test - games.slots:", t("games.slots"));
-  console.log("Translation test - app.search:", t("app.search"));
-  console.log("Translation test - games.all:", t("games.all"));
-
   // Redux state and dispatch
   const dispatch = useAppDispatch();
   const carouselState = useAppSelector((state) => state.carousel);
@@ -372,7 +366,7 @@ const MainContent: React.FC = () => {
   const shouldShowSection = (sectionType: string) => {
     const tabFromQuery = searchParams.get("tab");
 
-    // If no tab parameter, show all sections (home page)
+    // If no tab parameter, show all sections (lobby page)
     if (!tabFromQuery) {
       return true;
     }
@@ -461,7 +455,7 @@ const MainContent: React.FC = () => {
   }> = ({ icon, title, alt, count }) => {
     return (
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-4.5 font-bold flex items-center text-white   gap-2">
+        <h2 className="text-4.5 font-bold flex items-center text-white gap-2">
           <img className="grayscale" src={icon} alt={alt} />
           {title}
         </h2>
@@ -474,7 +468,7 @@ const MainContent: React.FC = () => {
     );
   };
 
-  // Render home view
+  // Render lobby view
   return (
     <div
       className="lg:px-6 lg:py-6 py-15 pt-4 w-full mx-auto overflow-x-hidden"
@@ -499,7 +493,7 @@ const MainContent: React.FC = () => {
         />
       </div>
 
-      {/* Homepage Sections with SwiperSlider - only show on homepage */}
+      {/* Lobbypage Sections with SwiperSlider - only show on lobbypage */}
       {!searchParams.get("tab") && (
         <HomepageSections
           card1={card1}
@@ -522,7 +516,7 @@ const MainContent: React.FC = () => {
               <SectionHeader
                 icon="/icons/Home.svg"
                 title={t("games.new")}
-                alt="home"
+                alt="lobby"
                 count={card1.length}
               />
               <SwiperSlider
@@ -554,7 +548,7 @@ const MainContent: React.FC = () => {
               <SectionHeader
                 icon="/icons/Casino1.svg"
                 title={t("games.live")}
-                alt="home"
+                alt="lobby"
                 count={card2.length}
               />
               <GameGrid

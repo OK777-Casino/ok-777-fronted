@@ -335,7 +335,7 @@ export default function CasinoPage() {
           <SectionHeader
             icon="/icons/Casino1.svg"
             title={t("games.live")}
-            alt="home"
+            alt="lobby"
           />
           <SwiperSlider
             data={card2}

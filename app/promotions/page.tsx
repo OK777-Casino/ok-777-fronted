@@ -13,6 +13,7 @@ import SpadeIcon from "@/components/ui/icons/spade";
 import ChevronsDownIcon from "@/components/ui/icons/chevrons-down";
 import CasinoPromotionCard from "@/components/ui/cards/PromotionCard";
 import NormalButton from "@/components/ui/Button/NormalButton";
+import { useI18n } from "../../context/I18nProvider";
 
 interface Tab {
   id: string;
