@@ -66,7 +66,7 @@
     "lottery": "彩票",
     "virtual": "虚拟体育",
     "hashgames": "哈希游戏",
-    "futures": "期货市场",
+    "futures": "期货",
     "crypto": "加密游戏",
     "providers": "游戏供应商",
     "searchPlaceholder": "搜索需要至少3个字母。",
@@ -96,7 +96,16 @@
     "maximum": "最大金额"
   },
   "promotions": {
+    "all": "全部",
+    "casino": "赌场",
+    "sport": "体育",
     "title": "优惠活动",
+
+    "joinnow": "马上加入",
+    "get": "获取",
+    "claimnow": "现在取款",
+    "readmore": "查看详情",
+
     "bonus": "奖励",
     "welcome": "欢迎奖励",
     "deposit": "充值奖励",
