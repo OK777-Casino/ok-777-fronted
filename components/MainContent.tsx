@@ -336,7 +336,7 @@ const LatestBetsTable: React.FC = () => {
 
 const MainContent: React.FC = () => {
   const { activeGameCategory } = useSidebar();
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const searchParams = useSearchParams();
 
   // Redux state and dispatch

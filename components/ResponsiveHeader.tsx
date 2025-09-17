@@ -121,6 +121,9 @@ const ResponsiveHeaderContent: React.FC<ResponsiveHeaderProps> = ({
     if (pathname.startsWith("/contact")) {
       return "Contact Us";
     }
+    if (pathname.startsWith("/promotions")) {
+      return "Promotions";
+    }
     // Add more path-based titles as needed
     return "Support/Legal support";
   };
