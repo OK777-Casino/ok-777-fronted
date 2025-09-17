@@ -159,7 +159,6 @@ body {
 
 /* Sidebar scroll isolation */
 .sidebar {
-  overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
@@ -193,7 +192,6 @@ body.sidebar-scrolling {
 } */
 
 .main-content {
-  overscroll-behavior: none;
   -webkit-overflow-scrolling: touch;
   min-height: calc(100dvh - 3.5rem);
   height: calc(100dvh - 3.5rem);

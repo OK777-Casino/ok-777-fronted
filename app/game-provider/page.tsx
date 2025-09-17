@@ -6,6 +6,7 @@ import SearchBar from "@/components/ui/SearchBar";
 import ChevronDownIcon from "@/components/ui/icons/chevron-down";
 import { Input } from "@/components/ui";
 import { SearchInput } from "@/components/ui/SearchInput";
+import Image from "next/image";
 const gameProviders = [
   {
     id: 1,
@@ -136,14 +137,16 @@ const GameProviderPage = () => {
             className="flex flex-col items-center overflow-hidden justify-center bg-white-4 rounded-xl aspect-[3/2] hover:bg-white-4/60 transition-colors cursor-pointer"
           >
             <div className="h-[60%] rounded-lg lg:rounded-t-lg overflow-hidden md:p-2">
-              <img
+              <Image
                 src={provider.image}
                 alt={provider.alt}
+                width={69}
+                height={45}
                 className="object-contain rounded-lg lg:rounded-t-lg"
                 loading="lazy"
               />
             </div>
-            <div className="h-[40%] w-full hidden lg:flex text-white bg-white-14 font-bold text-[14px] flex justify-center items-center">
+            <div className="h-[40%] w-full hidden lg:flex text-white bg-white-14 font-bold text-[14px] justify-center items-center">
               {provider.alt}
             </div>
           </Link>
