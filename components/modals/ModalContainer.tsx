@@ -101,7 +101,7 @@ export default function ModalContainer({
   const modalContent = (
     <div 
       className={cn(
-        "fixed inset-0 flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/80",
+        "fixed inset-0 flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/60",
         positionClasses[position],
         backdropClassName
       )}
@@ -141,7 +141,7 @@ export default function ModalContainer({
         style={{
           maxWidth: width || undefined,
           width: width || undefined,
-          maxHeight: '100dvh',
+          maxHeight: '90dvh',
           overflowY: 'auto'
         }}
         onClick={(e) => e.stopPropagation()}

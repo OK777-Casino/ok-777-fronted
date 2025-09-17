@@ -133,12 +133,12 @@ export default function GamingProviderModal({ isOpen, onClose }: GamingProviderM
     <div className="fixed inset-0 z-50 flex items-end lg:items-center justify-center z-[9999]">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
       
       {/* Modal */}
-      <div className={`lg:relative w-[100vw] max-w-md bg-transparent transition-transform duration-300 ease-out ${
+      <div className={`lg:relative w-[100vw] max-w-md bg-transparent transition-transform  duration-300 ease-out bg-black/60 ${
         isVisible ? 'translate-y-0' : 'translate-y-full lg:translate-y-0'
       }`}>
         {/* Header */}
@@ -155,7 +155,7 @@ export default function GamingProviderModal({ isOpen, onClose }: GamingProviderM
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-0 bg-gaming-mirage-54 p-6 backdrop-blur-[32px] max-h-[60vh] lg:max-h-none overflow-y-auto">
+        <div className="flex flex-col gap-2 bg-gaming-mirage-54 p-6 backdrop-blur-[3rem] max-h-[60dvh] lg:max-h-none overflow-y-auto">
           {providers.map((provider) => (
             <div
               key={provider.id}
@@ -210,7 +210,7 @@ export default function GamingProviderModal({ isOpen, onClose }: GamingProviderM
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-center gap-2 rounded-b-[14px] border-t border-gaming-white-8 bg-gaming-mirage-54 p-4 backdrop-blur-[32px]">
+        <div className="flex items-center justify-center gap-2 rounded-b-[14px] border-gaming-white-8 bg-gaming-mirage-54 p-4 backdrop-blur-[32px]">
           <div
             onClick={clearAll}
             className="flex items-center gap-2 rounded-lg px-4 py-2 transition-colors hover:bg-gaming-white-4"

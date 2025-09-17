@@ -44,6 +44,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
     "/crypto-games",
     "/sports",
     "/table-games",
+    "/promotions"
   ].includes(pathname || "");
 
   // Check if we should show sidebar (always show on desktop, or on mobile for View All pages)
