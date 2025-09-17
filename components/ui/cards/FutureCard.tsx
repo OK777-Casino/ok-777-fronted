@@ -20,8 +20,8 @@ const FutureCard: React.FC<TypeFourProps> = ({
   isPositive,
 }) => {
   return (
-    <div className="bg-gray-800 rounded-lg p-4 border-t-2 border-[#FFFFFF29]">
-      <div className="flex items-center space-x-3 mb-3">
+    <div className="bg-gray-800 rounded-lg p-2 border-t-2 border-[#FFFFFF29]">
+      <div className="flex items-center space-x-2 mb-3">
         <img
           src={`/icons/coin-icon/${symbol}.svg`}
           className="w-10 h-10"

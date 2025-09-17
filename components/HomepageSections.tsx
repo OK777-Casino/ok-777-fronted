@@ -21,8 +21,8 @@ const SectionHeader: React.FC<{
         {title}
       </h2>
       {count && (
-        <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-          <span>all {count}</span>
+        <span className="cursor-pointer font-bold flex items-center text-[14px] text-[#2283F6]">
+          <span>ALL {count}</span>
         </span>
       )}
     </div>

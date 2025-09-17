@@ -242,7 +242,7 @@ const GameGrid: React.FC<{
   data: any[];
   renderCard: (item: any, index: number) => React.ReactNode;
 }> = ({ data, renderCard }) => (
-  <div className="grid grid-cols-3 md:grid-cols-4 p-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 pb-4">
     {data.map((item, index) => renderCard(item, index))}
   </div>
 );
@@ -262,7 +262,7 @@ const FilteredPageHeader: React.FC<{
   };
 
   return (
-    <div className="p-4 pb-0 pt-0">
+    <div className="py-4">
       <div className="flex items-center justify-between mb-4 [@media(max-width:1024px)]:mt-[-4px]">
         <div className="bg-[rgba(255,255,255,0.08)] rounded-lg p-[7px]">
           <h1 className="text-white text-[14px] font-bold flex items-center gap-2">
@@ -447,7 +447,7 @@ export default function SlotsPage() {
 
   return (
     <div
-      className="lg:px-6 px-1 py-6 pt-4 w-full max-w-[1920px] mx-auto overflow-x-hidden"
+      className="lg:px-6 w-full max-w-[1920px] mx-auto overflow-x-hidden"
       style={{ margin: "auto" }}
     >
       <SuccessForm isOpen={isOpen} />

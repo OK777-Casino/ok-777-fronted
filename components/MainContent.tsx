@@ -433,7 +433,7 @@ const MainContent: React.FC = () => {
         </div>
 
         {/* Desktop: 6 cards per row, max 24 cards (4 rows) */}
-        <div className="hidden md:grid grid-cols-6 gap-3">
+        <div className="hidden md:grid grid-cols-6 gap-3 xl:grid-cols-8">
           {displayData.map((item, index) => renderCard(item, index))}
         </div>
 
@@ -477,13 +477,13 @@ const MainContent: React.FC = () => {
   // Render home view
   return (
     <div
-      className="lg:px-6 px-1 lg:py-6 py-15 pt-4 w-full mx-auto overflow-x-hidden"
+      className="lg:px-6 lg:py-6 py-15 pt-4 w-full mx-auto overflow-x-hidden"
       style={{ margin: "auto" }}
     >
       <SuccessForm isOpen={false} />
 
       {/* Main Banner Section */}
-      <div className="lg:mb-16 mb-8 lg:mt-0 mt-[45px]">
+      <div className="lg:mb-16 mb-8 lg:mt-0 mt-[2rem]">
         <SwiperSlider
           key={`banner-swiper-${activeGameCategory}`}
           data={bannerCards}
@@ -703,12 +703,12 @@ const MainContent: React.FC = () => {
             spaceBetween={12}
             slidesPerView={6}
             breakpoints={{
-              320: { slidesPerView: 2.5 },
-              375: { slidesPerView: 3 },
-              425: { slidesPerView: 3.5 },
-              768: { slidesPerView: 4.5 },
-              1024: { slidesPerView: 5.5 },
-              1440: { slidesPerView: 6.5 },
+              320: { slidesPerView: 1.3 },
+              375: { slidesPerView: 1.5 },
+              425: { slidesPerView: 2.3 },
+              768: { slidesPerView: 3.3 },
+              1024: { slidesPerView: 3.3 },
+              1440: { slidesPerView: 4.5 },
             }}
             initialSlide={carouselState.gameManufacturersCurrentSlide}
             onSlideChange={handleGameManufacturersSlideChange}

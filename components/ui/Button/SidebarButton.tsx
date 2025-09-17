@@ -66,7 +66,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     <>
       <img src={icon} className="w-5 h-5" alt={label} />
       {!isCollapsed && (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <span className="text-sm font-bold">{label}</span>
           {badge && (
             <span className={cn("text-xs font-medium", badge.color)}>
