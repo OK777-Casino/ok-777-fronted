@@ -193,9 +193,10 @@ body.sidebar-scrolling {
 
 .main-content {
   -webkit-overflow-scrolling: touch;
-  min-height: calc(100dvh - 3.5rem);
-  height: calc(100dvh - 3.5rem);
+  /* min-height: calc(100dvh - 3.5rem);
+  height: calc(100dvh - 3.5rem); */
   overflow-y: auto;
+  min-height: 100%;
 }
 
 .auth-modal {
