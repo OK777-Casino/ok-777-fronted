@@ -59,7 +59,7 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
     );
 
     return (
-      <div
+      <button
         ref={ref}
         onClick={onClick}
         className={cn(
@@ -85,7 +85,7 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
           </span>
           {icon || defaultIcon}
         </div>
-      </div>
+      </button>
     );
   }
 );
