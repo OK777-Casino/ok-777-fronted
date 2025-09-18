@@ -76,7 +76,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
           </div>
           <div className="relative">
             <div className="bg-[#090c11] rounded-lg w-full h-[2rem] sm:h-[2.5rem] border flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
-              <span className="text-gray-300 ml-2 sm:ml-3 text-[.6rem] sm:text-[.7rem] font-mono pr-8 leading-tight">
+              <span className="text-gray-300 ml-2 sm:ml-3 text-[.5rem] sm:text-[.6rem] font-mono pr-8 leading-tight">
                 <span 
                   className="block overflow-hidden"
                   style={{

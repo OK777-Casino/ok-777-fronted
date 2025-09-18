@@ -858,9 +858,7 @@ body.sidebar-scrolling {
 
 .glass-bg {
   background: rgba(17, 25, 35, 0.70);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.16) inset;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(4rem);
 }
 
 .glass-input {
