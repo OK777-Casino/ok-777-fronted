@@ -79,8 +79,8 @@ input, textarea, a {
 .loading-bg {
   background: radial-gradient(circle at center,
       #062751 0%,
-      #04152f 40%,
-      #0E141C 60%);
+      #04152f 50%,
+      #0E141C 100%);
 }
 
 /* Loading animation */
@@ -159,7 +159,7 @@ body {
 
 /* Sidebar scroll isolation */
 .sidebar {
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   scrollbar-width: thin;
   scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
   isolation: isolate;
