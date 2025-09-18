@@ -33,9 +33,8 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
 
     const defaultIcon = (
       <div
-        
         onClick={handleCopy}
-        className="p-1 hover:bg-ebony-clay rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+        className="p-1 hover:bg-ebony-clay rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 cursor-pointer"
         title={`Copy "${typeof children === 'string' ? children : 'text'}"`}
       >
         <svg
@@ -60,7 +59,7 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
     );
 
     return (
-      <button
+      <div
         ref={ref}
         onClick={onClick}
         className={cn(
@@ -72,7 +71,7 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
         {...props}
       >
         <div className="flex min-w-40 items-center gap-2 flex-1 self-stretch justify-between">
-          <div 
+          <span 
             className=" overflow-hidden text-ellipsis text-left text-white text-sm font-bold leading-normal"
             style={{ 
               fontFamily: 'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
@@ -83,10 +82,10 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
             }}
           >
             {children}
-          </div>
+          </span>
           {icon || defaultIcon}
         </div>
-      </button>
+      </div>
     );
   }
 );

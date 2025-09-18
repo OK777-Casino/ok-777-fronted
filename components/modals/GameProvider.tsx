@@ -148,7 +148,7 @@ export default function GamingProviderModal({ isOpen, onClose }: GamingProviderM
           </h2>
           <div
             onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-gaming-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors hover:bg-gaming-white-8"
+            className="flex h-9 w-9 items-center justify-center rounded-lg bg-gaming-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors hover:bg-gaming-white-8 cursor-pointer"
           >
             <X className="h-4 w-4 text-[#A7B5CA]" />
           </div>

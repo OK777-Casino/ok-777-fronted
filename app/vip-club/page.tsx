@@ -229,7 +229,7 @@ const VipClubPage = () => {
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
-                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
+                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1"/>
                 </div>
                 <div className="rounded-[12px] hover:bg-white-8 p-4 bg-white-4 relative flex gap-4">
                   <img

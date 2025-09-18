@@ -165,7 +165,7 @@ const Introduction: React.FC = () => {
             <div
               key={index}
               onClick={() => handleGameTypeClick(game.name)}
-              className={`flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-bold transition-colors duration-200 hover:bg-white/10 hover:shadow-md ${
+              className={`flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-bold transition-colors duration-200 hover:bg-white/10 hover:shadow-md cursor-pointer ${
                 selectedGameType === game.name
                   ? "bg-[#2283f6] text-white"
                   : "bg-transparent text-[#a7b5ca] hover:bg-[#ffffff0a]"

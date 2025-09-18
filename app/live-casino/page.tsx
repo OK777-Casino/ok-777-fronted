@@ -290,7 +290,7 @@ const FilteredPageHeader: React.FC<{
         <div className="flex gap-4 [@media(max-width:1024px)]:hidden">
           <div
             onClick={openGameProviderModal}
-            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
+            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
           >
             <span className="text-[#A7B5CA] text-sm">Game provider</span>
             <svg
@@ -310,7 +310,7 @@ const FilteredPageHeader: React.FC<{
 
           <div
             onClick={openChooseModal}
-            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
+            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
           >
             <span className="text-[#A7B5CA] text-sm">All</span>
             <svg
@@ -348,7 +348,7 @@ const FilteredPageHeader: React.FC<{
           <>
             <div
               onClick={openGameProviderModal}
-              className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
+              className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
             >
               <span className="text-[#A7B5CA] text-sm">
                 {t("games.providers")}
@@ -370,7 +370,7 @@ const FilteredPageHeader: React.FC<{
 
             <div
               onClick={openChooseModal}
-              className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
+              className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
             >
               <span className="text-[#A7B5CA] text-sm">All</span>
               <svg

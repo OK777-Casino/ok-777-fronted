@@ -209,8 +209,8 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex lg:flex-row flex-col-reverse justify-between items-center">
           {/* Partners and Industry Associations */}
-          <div className="lg:w-[50%] w-full mb-4">
-            <h4 className="text-white font-medium py-2">
+          <div className="lg:w-[50%] w-full">
+            <h4 className="text-white font-medium my-4">
               Partners and Industry Associations
             </h4>
             <div className="flex gap-3">
@@ -227,7 +227,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="lg:hidden w-full block ">
-            <h4 className="text-white w-full font-medium mb-3">
+            <h4 className="text-white w-full font-medium my-3">
               Supported currencies
             </h4>
             <div className="flex justify-between items-center lg:gap-2 ">
@@ -243,8 +243,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
           {/* Social Media Links */}
-          <div className="lg:w-[50%] w-full mb-4 md:mb-0">
-            <h4 className="text-white font-medium mb-3 text-left">
+          <div className="lg:w-[50%] w-full">
+            <h4 className="text-white font-medium my-3 text-left">
               Public entrance
             </h4>
             <div className="flex justify-between lg:justify-start lg:gap-4">
@@ -262,7 +262,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="w-full block lg:hidden md:col-span-2 ">
           {/* Logo */}
-          <div className="flex items-center mb-4">
+          <div className="flex items-center my-4">
             <img src="/images/logo.svg" alt="777 Gaming Logo" />
           </div>
 

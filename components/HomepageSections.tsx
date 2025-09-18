@@ -50,6 +50,7 @@ const GameBreakpoints: GameBreakpointsProps = {
   768: { slidesPerView: 6.3 },
   1024: { slidesPerView: 6.3 },
   1440: { slidesPerView: 8.3 },
+  1640: { slidesPerView: 9.3 },
 };
 
 const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
@@ -59,6 +60,7 @@ const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
   768: { slidesPerView: 6.3, grid: { rows: 2, fill: "row" } },
   1024: { slidesPerView: 6.3, grid: { rows: 2, fill: "row" } },
   1440: { slidesPerView: 8.3, grid: { rows: 2, fill: "row" } },
+  1640: { slidesPerView: 9.3, grid: { rows: 2, fill: "row" } },
 };
 
 const HashBreakpoints: GameBreakpointsProps = {
@@ -68,6 +70,7 @@ const HashBreakpoints: GameBreakpointsProps = {
   768: { slidesPerView: 2.3 },
   1024: { slidesPerView: 2.3 },
   1440: { slidesPerView: 3.3 },
+  1640: { slidesPerView: 4.3 },
 };
 
 const FutureBreakpoints: GameBreakpointsProps = {

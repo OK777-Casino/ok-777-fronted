@@ -161,7 +161,7 @@ export default function ModalContainer({
               {showCloseButton && (
                 <div
                   onClick={onClose}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] hover:bg-white-8 transition-colors"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] hover:bg-white-8 transition-colors cursor-pointer"
                 >
                   <X className="h-4 w-4 text-[white]" />
                 </div>
