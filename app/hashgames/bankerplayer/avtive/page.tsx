@@ -440,7 +440,7 @@ const BankerPlayerActive: React.FC = () => {
   return (
     <>
       <div
-        className={`w-full hash-game-container px-4 lg:px-0 py-16 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`w-full px-4 lg:px-0 py-16 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header Section */}
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">

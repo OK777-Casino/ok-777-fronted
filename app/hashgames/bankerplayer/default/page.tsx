@@ -85,7 +85,7 @@ const BankerPlayerDefault: React.FC = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center min-h-screen  gap-4 md:gap-16 py-16 px-0 hash-game-container mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`flex flex-col items-center min-h-screen  gap-4 md:gap-16 py-16 px-0  mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header with Segmented Control */}
         <div className="w-full flex flex-col items-center gap-4 p-0 ">

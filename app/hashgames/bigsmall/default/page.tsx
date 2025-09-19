@@ -445,7 +445,7 @@ const OddDefault: React.FC = () => {
   return (
     <>
       <div
-        className={`flex flex-col items-center min-h-screen gap-2 md:gap-16 py-16 hash-game-container mx-auto ${
+        className={`flex flex-col items-center min-h-screen gap-2 md:gap-16 py-16  mx-auto ${
           isCollapsed ? 'sidebar-collapsed' : ''
         }`}
       >

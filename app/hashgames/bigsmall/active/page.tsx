@@ -442,7 +442,7 @@ const BigSmallActive: React.FC = () => {
   return (
     <>
       <div
-        className={`min-h-screen hash-game-container py-16 m-auto text-white ${
+        className={`min-h-screen  py-16 m-auto text-white ${
           isCollapsed ? 'sidebar-collapsed' : ''
         }`}
       >
