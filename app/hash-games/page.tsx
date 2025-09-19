@@ -1,99 +1,95 @@
-"use client";
+'use client'
 
-import React, { useRef, useState } from "react";
-import Link from "next/link";
-import mainContentData from "../../main-content-data.json";
-import { useModal } from "../../context/ModalProvider";
-import { useI18n } from "../../context/I18nProvider";
-import { Swiper as SwiperType } from "swiper";
-import { useAppSelector, useAppDispatch } from "../../store/hooks";
+import React, { useRef, useState } from 'react'
+import Link from 'next/link'
+import mainContentData from '../../main-content-data.json'
+import { useModal } from '../../context/ModalProvider'
+import { useI18n } from '../../context/I18nProvider'
+import { Swiper as SwiperType } from 'swiper'
+import { useAppSelector, useAppDispatch } from '../../store/hooks'
 import {
   setMainBannerSlide,
   setHashSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
-} from "../../store/slices/carouselSlice";
-import GameCard from "../../components/ui/cards/GameCard";
-import EarningCard from "../../components/ui/cards/EarningCard";
-import { Icon } from "@iconify/react";
-import { SuccessForm } from "../../components/auth/SuccessForm";
-import SwiperSlider from "../../components/ui/slider/SwiperSlider";
-import { X } from "lucide-react";
+} from '../../store/slices/carouselSlice'
+import GameCard from '../../components/ui/cards/GameCard'
+import EarningCard from '../../components/ui/cards/EarningCard'
+import { Icon } from '@iconify/react'
+import { SuccessForm } from '../../components/auth/SuccessForm'
+import SwiperSlider from '../../components/ui/slider/SwiperSlider'
+import { X } from 'lucide-react'
 import {
   StatusDropdown,
   StatusDropdownTrigger,
   StatusDropdownContent,
   StatusDropdownItem,
-} from "@/components/ui/StatusDropdown";
+} from '@/components/ui/StatusDropdown'
 
 // Extract data from JSON
-const {
-  card7,
-  latestBets,
-  gameManufacturers,
-} = mainContentData;
+const { card7, latestBets, gameManufacturers } = mainContentData
 
 const bannerCards = [
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
-] as const;
+] as const
 
 const statusOptions = [
-  "Up to date",
-  "Daily",
-  "Checking for updates...",
-  "Installing updates",
-  "Update failed",
-  "Connected",
-  "Disconnected",
-];
+  'Up to date',
+  'Daily',
+  'Checking for updates...',
+  'Installing updates',
+  'Update failed',
+  'Connected',
+  'Disconnected',
+]
 
 // Latest bets table component
 const LatestBetsTable: React.FC = () => {
-  const [selectedStatus, setSelectedStatus] = useState("Up to date");
+  const [selectedStatus, setSelectedStatus] = useState('Up to date')
   return (
     <>
       <div className="text-4.5 font-bold flex items-center w-full justify-between text-white mb-4  gap-2">
@@ -106,7 +102,7 @@ const LatestBetsTable: React.FC = () => {
             className="bg-[#2A3546] border-none"
             align="center"
           >
-            {statusOptions.map((status) => (
+            {statusOptions.map(status => (
               <StatusDropdownItem
                 key={status}
                 onClick={() => setSelectedStatus(status)}
@@ -119,9 +115,9 @@ const LatestBetsTable: React.FC = () => {
       </div>
       <div
         className={` grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] gap-[6px] lg:px-8 px-[6px] ${
-          selectedStatus !== "Daily"
-            ? "grid-cols-[20%_20%_20%_40%]"
-            : "grid-cols-[30%_30%_40%]"
+          selectedStatus !== 'Daily'
+            ? 'grid-cols-[20%_20%_20%_40%]'
+            : 'grid-cols-[30%_30%_40%]'
         } `}
       >
         <div className="text-left text-[12px] font-bold py-2 text-white">
@@ -139,7 +135,7 @@ const LatestBetsTable: React.FC = () => {
         <div className="text-left text-[12px] font-bold py-2 text-white">
           Multiplier
         </div>
-        {selectedStatus !== "Daily" && (
+        {selectedStatus !== 'Daily' && (
           <div className="text-left text-[12px] font-bold py-2 text-white">
             Payout
           </div>
@@ -152,9 +148,9 @@ const LatestBetsTable: React.FC = () => {
           renderSlide={(bet, index) => (
             <div
               className={`bg-[#1C2532] lg:px-8 gap-[6px] px-[6px] w-full grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] rounded-[16px] h-[48px] overflow-hidden mb-[6px] ${
-                selectedStatus !== "Daily"
-                  ? "grid-cols-[20%_20%_20%_40%]"
-                  : "grid-cols-[30%_30%_40%]"
+                selectedStatus !== 'Daily'
+                  ? 'grid-cols-[20%_20%_20%_40%]'
+                  : 'grid-cols-[30%_30%_40%]'
               } items-center`}
               key={index}
             >
@@ -185,7 +181,7 @@ const LatestBetsTable: React.FC = () => {
                 />
                 {bet.bet}
               </div>
-              {selectedStatus !== "Daily" && (
+              {selectedStatus !== 'Daily' && (
                 <div className="text-[#2283F6] text-[12px] font-bold truncate flex items-center">
                   {bet.multiplier}
                 </div>
@@ -211,18 +207,18 @@ const LatestBetsTable: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-[254px] bg-gradient-to-b z-[30] from-transparent to-[#111923] pointer-events-none"></div>
       </div>
     </>
-  );
-};
+  )
+}
 
 // Game manufacturers section component
 const GameManufacturersSection: React.FC = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-  const dispatch = useAppDispatch();
-  const carouselState = useAppSelector((state) => state.carousel);
+  const swiperRef = useRef<SwiperType | null>(null)
+  const dispatch = useAppDispatch()
+  const carouselState = useAppSelector(state => state.carousel)
 
   const handleGameManufacturersSlideChange = (swiper: SwiperType) => {
-    dispatch(setGameManufacturersSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setGameManufacturersSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   return (
     <div className="lg:mb-16 mb-8">
@@ -271,61 +267,61 @@ const GameManufacturersSection: React.FC = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 // Game Image Card Component
 const GameImageCard: React.FC<{
-  id: string;
-  image: string;
-  title: string;
-  link: string;
+  id: string
+  image: string
+  title: string
+  link: string
 }> = ({ id, image, title, link }) => (
-    <div className="relative group cursor-pointer">
-      <div className="rounded-lg overflow-hidden bg-gray-800">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform group-hover:scale-105"
-          onError={(e) => {
-            // Fallback if image doesn't exist
-            e.currentTarget.src = '/images/placeholder-game.jpg';
-          }}
-        />
-      </div>
-      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">
-            {title}
-          </div>
+  <div className="relative group cursor-pointer">
+    <div className="rounded-lg overflow-hidden bg-gray-800">
+      <img
+        src={image}
+        alt={title}
+        className="w-full h-full object-cover transition-transform group-hover:scale-105"
+        onError={e => {
+          // Fallback if image doesn't exist
+          e.currentTarget.src = '/images/placeholder-game.jpg'
+        }}
+      />
+    </div>
+    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
+      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">
+          {title}
         </div>
       </div>
     </div>
-);
+  </div>
+)
 
 // Game Grid Component
 const GameGrid: React.FC<{
-  data: any[];
-  renderCard: (item: any, index: number) => React.ReactNode;
+  data: any[]
+  renderCard: (item: any, index: number) => React.ReactNode
 }> = ({ data, renderCard }) => (
   <div className="grid grid-cols-3 md:grid-cols-4 p-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
     {data.map((item, index) => renderCard(item, index))}
   </div>
-);
+)
 
 // Filtered Page Header Component
 const FilteredPageHeader: React.FC<{
-  title: string;
-  count: number;
-  icon: string;
+  title: string
+  count: number
+  icon: string
 }> = ({ title, count, icon }) => {
-  const { openGameProviderModal, openChooseModal } = useModal();
-  const { t } = useI18n();
-  const [isOpenSearch, setIsOpenSearch] = useState(true);
+  const { openGameProviderModal, openChooseModal } = useModal()
+  const { t } = useI18n()
+  const [isOpenSearch, setIsOpenSearch] = useState(true)
 
   const toggleOpenSearch = () => {
-    setIsOpenSearch(!isOpenSearch);
-  };
+    setIsOpenSearch(!isOpenSearch)
+  }
 
   return (
     <div className="py-4">
@@ -333,7 +329,7 @@ const FilteredPageHeader: React.FC<{
         <div className="bg-[rgba(255,255,255,0.08)] rounded-lg p-[7px]">
           <h1 className="text-white text-[14px] font-bold flex items-center gap-2">
             <img src={icon} className="w-6 hidden lg:block h-6" alt="game" />
-            {title}{" "}
+            {title}{' '}
             <span className="text-[#2283F6] text-[12px] bg-[#111923] px-2 py-0.5 rounded-[4px]">
               {count}
             </span>
@@ -404,7 +400,7 @@ const FilteredPageHeader: React.FC<{
               className="w-[18px] h-[18px]"
             />
             <span className="text-[#A7B5CA] hidden lg:block text-sm">
-              {t("app.search")}
+              {t('app.search')}
             </span>
           </div>
         </div>
@@ -418,7 +414,7 @@ const FilteredPageHeader: React.FC<{
               className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
             >
               <span className="text-[#A7B5CA] text-sm">
-                {t("games.providers")}
+                {t('games.providers')}
               </span>
               <svg
                 className="w-4 h-4 text-[#A7B5CA]"
@@ -465,7 +461,7 @@ const FilteredPageHeader: React.FC<{
               />
               <input
                 type="text"
-                placeholder={t("app.search")}
+                placeholder={t('app.search')}
                 className="flex-1 bg-transparent text-[#A7B5CA] text-sm placeholder:text-[#A7B5CA] border-none outline-none min-w-0"
               />
             </div>
@@ -473,55 +469,53 @@ const FilteredPageHeader: React.FC<{
         )}
       </div>
     </div>
-  );
-};
-
+  )
+}
 
 // Generate game data with images
 const generateGameImages = () => {
-  const gameImages = [];
+  const gameImages = []
   for (let i = 1; i <= 15; i++) {
-    const gameNumber = i.toString().padStart(2, '0');
+    const gameNumber = i.toString().padStart(2, '0')
     gameImages.push({
       id: `game-${gameNumber}`,
       image: `/images/games/Game${gameNumber}.jpg`,
       title: `Game ${gameNumber}`,
-      link: `/hashgames/game${gameNumber}`
-    });
+      link: `/hashgames/game${gameNumber}`,
+    })
   }
-  return gameImages;
-};
+  return gameImages
+}
 
-const gameImages = generateGameImages();
+const gameImages = generateGameImages()
 
 export default function HashGamesPage() {
-  const { t } = useI18n();
-  const [isOpen, setIsOpen] = useState(false);
+  const { t } = useI18n()
+  const [isOpen, setIsOpen] = useState(false)
 
   // Redux state and dispatch
-  const dispatch = useAppDispatch();
-  const carouselState = useAppSelector((state) => state.carousel);
+  const dispatch = useAppDispatch()
+  const carouselState = useAppSelector(state => state.carousel)
 
   // Carousel slide change handlers
   const handleMainBannerSlideChange = (swiper: SwiperType) => {
-    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   const handleHashSlideChange = (swiper: SwiperType) => {
-    dispatch(setHashSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setHashSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   const handleLatestEarningsSlideChange = (swiper: SwiperType) => {
-    dispatch(setLatestEarningsSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setLatestEarningsSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   return (
     <div
       className="px-1 py-6 pt-4 w-full max-w-[1920px] mx-auto overflow-x-hidden"
-      style={{ margin: "auto" }}
+      style={{ margin: 'auto' }}
     >
       <SuccessForm isOpen={isOpen} />
-
 
       {/* Mobile Filtered View */}
       <div className="">
@@ -574,7 +568,6 @@ export default function HashGamesPage() {
           carouselId="latest-earnings"
         />
       </div>
-      
     </div>
-  );
+  )
 }

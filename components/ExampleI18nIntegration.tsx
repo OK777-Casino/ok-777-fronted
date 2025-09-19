@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import React from 'react';
-import { useT } from '@/context/I18nProvider';
-import { useLanguage } from '@/context/LanguageProvider';
+import React from 'react'
+import { useT } from '@/context/I18nProvider'
+import { useLanguage } from '@/context/LanguageProvider'
 
 export default function ExampleI18nIntegration() {
-  const t = useT();
-  const { currentLanguage } = useLanguage();
+  const t = useT()
+  const { currentLanguage } = useLanguage()
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
@@ -18,7 +18,7 @@ export default function ExampleI18nIntegration() {
           {t('settings.language')}: {currentLanguage.name}
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <h3 className="text-lg font-semibold mb-3 text-blue-600">
@@ -63,7 +63,9 @@ export default function ExampleI18nIntegration() {
             <div className="p-3 bg-purple-50 rounded-lg">
               <div className="flex justify-between items-center mb-2">
                 <span className="font-semibold">{t('promotions.welcome')}</span>
-                <span className="text-sm text-purple-600">{t('status.active')}</span>
+                <span className="text-sm text-purple-600">
+                  {t('status.active')}
+                </span>
               </div>
               <p className="text-sm text-gray-600 mb-2">
                 {t('messages.bonusClaimed')}
@@ -100,5 +102,5 @@ export default function ExampleI18nIntegration() {
         </p>
       </div>
     </div>
-  );
+  )
 }

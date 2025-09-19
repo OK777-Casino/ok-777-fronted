@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import { cn } from '@/lib/utils'
+import React, { useState } from 'react'
 
 import {
   Wallet,
@@ -13,185 +13,185 @@ import {
   ArrowLeft,
   Check,
   ZoomIn,
-} from "lucide-react";
-import { ResponsiveChipSelector } from "@/components/ui/chipSelector/ResponsiveChipSelector";
-import Link from "next/link";
-import { useSidebar } from "@/context/SidebarProvider";
+} from 'lucide-react'
+import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
+import Link from 'next/link'
+import { useSidebar } from '@/context/SidebarProvider'
 
 const NiuniuDefault: React.FC = () => {
-  const { isCollapsed } = useSidebar();
-  const [difficulty, setDifficulty] = useState<"Beginner" | "Intermediate">(
-    "Beginner"
-  );
-  const [trendTab, setTrendTab] = useState<"Block Trend" | "My trend">(
-    "Block Trend"
-  );
+  const { isCollapsed } = useSidebar()
+  const [difficulty, setDifficulty] = useState<'Beginner' | 'Intermediate'>(
+    'Beginner'
+  )
+  const [trendTab, setTrendTab] = useState<'Block Trend' | 'My trend'>(
+    'Block Trend'
+  )
 
-  const [isBeginnerMode, setIsBeginnerMode] = useState(false);
-  const [selectedChip, setSelectedChip] = useState<number | null>(1);
+  const [isBeginnerMode, setIsBeginnerMode] = useState(false)
+  const [selectedChip, setSelectedChip] = useState<number | null>(1)
 
   // Mock data for lottery trend
 
   const board: (string | null)[][] = [
     // Each row = array of cells: "E", "O", or null for empty
     [
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
     ],
     [
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
     ],
     [
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
     ],
     [
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
     ],
     [
-      "E",
+      'E',
       null,
-      "E",
-      null,
-      null,
-      "E",
-      null,
-      "O",
+      'E',
       null,
       null,
-      "E",
+      'E',
+      null,
+      'O',
       null,
       null,
-      "E",
+      'E',
       null,
       null,
-      "O",
+      'E',
       null,
       null,
-      "E",
+      'O',
       null,
       null,
-      "O",
+      'E',
       null,
       null,
-      "E",
+      'O',
       null,
       null,
-      "O",
+      'E',
+      null,
+      null,
+      'O',
       null,
     ],
     [
@@ -226,7 +226,7 @@ const NiuniuDefault: React.FC = () => {
       null,
       null,
     ],
-  ];
+  ]
   const GameBoard = ({ board }: { board: (string | null)[][] }) => {
     return (
       <div className=" rounded-lg w-full mb-4">
@@ -237,11 +237,11 @@ const NiuniuDefault: React.FC = () => {
                 key={colIndex}
                 className="w-10 h-10 flex items-center justify-center border border-gray-700"
               >
-                {cell === "E" ? (
+                {cell === 'E' ? (
                   <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-500 text-black text-[12px] font-bold [@media(max-width:850px)]:text-[10px] [@media(max-width:850px)]:w-4 [@media(max-width:850px)]:h-4">
                     E
                   </div>
-                ) : cell === "O" ? (
+                ) : cell === 'O' ? (
                   <div className="w-5 h-5 flex items-center justify-center rounded-full bg-red-600 text-white text-[12px] font-bold [@media(max-width:850px)]:text-[10px] [@media(max-width:850px)]:w-4 [@media(max-width:850px)]:h-4">
                     O
                   </div>
@@ -251,33 +251,33 @@ const NiuniuDefault: React.FC = () => {
           </div>
         ))}
       </div>
-    );
-  };
+    )
+  }
 
   const bullItems = [
-    { name: "Bull1", ratio: "1:1" },
-    { name: "Bull2", ratio: "1:2" },
-    { name: "Bull3", ratio: "1:3" },
-    { name: "Bull4", ratio: "1:4" },
-    { name: "Bull5", ratio: "1:5" },
-    { name: "Bull6", ratio: "1:6" },
-    { name: "Bull7", ratio: "1:7" },
-    { name: "Bull8", ratio: "1:8" },
-    { name: "Bull9", ratio: "1:9" },
-    { name: "BullBull", ratio: "1:10" },
-  ];
+    { name: 'Bull1', ratio: '1:1' },
+    { name: 'Bull2', ratio: '1:2' },
+    { name: 'Bull3', ratio: '1:3' },
+    { name: 'Bull4', ratio: '1:4' },
+    { name: 'Bull5', ratio: '1:5' },
+    { name: 'Bull6', ratio: '1:6' },
+    { name: 'Bull7', ratio: '1:7' },
+    { name: 'Bull8', ratio: '1:8' },
+    { name: 'Bull9', ratio: '1:9' },
+    { name: 'BullBull', ratio: '1:10' },
+  ]
 
   const ChipSVG: React.FC<{
-    value?: number;
-    label?: string;
-    color: string;
-    selected?: boolean;
-    onClick?: () => void;
-    sizePx?: number;
+    value?: number
+    label?: string
+    color: string
+    selected?: boolean
+    onClick?: () => void
+    sizePx?: number
   }> = ({ value, label, color, selected = false, onClick, sizePx = 64 }) => {
-    const display = label ?? (value != null ? String(value) : "");
-    const textLines = display.split("\n");
-    const darkStroke = "#0B1220";
+    const display = label ?? (value != null ? String(value) : '')
+    const textLines = display.split('\n')
+    const darkStroke = '#0B1220'
     return (
       <div
         onClick={onClick}
@@ -437,14 +437,14 @@ const NiuniuDefault: React.FC = () => {
           )}
         </svg>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <>
       <div
         className={`min-h-screen hash-game-container py-16 m-auto text-white ${
-          isCollapsed ? "sidebar-collapsed" : ""
+          isCollapsed ? 'sidebar-collapsed' : ''
         }`}
       >
         {/* Header Section */}
@@ -453,7 +453,7 @@ const NiuniuDefault: React.FC = () => {
             <div
               className={` px-8  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
             >
-              {" "}
+              {' '}
               <img
                 src="/icons/swap-horizontal.svg"
                 alt="active"
@@ -466,7 +466,7 @@ const NiuniuDefault: React.FC = () => {
               className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
             >
-              {" "}
+              {' '}
               <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
               Page betting
             </Link>
@@ -478,22 +478,22 @@ const NiuniuDefault: React.FC = () => {
                 type="checkbox"
                 id="difficulty-toggle"
                 className="sr-only"
-                checked={difficulty === "Intermediate"}
-                onChange={(e) =>
-                  setDifficulty(e.target.checked ? "Intermediate" : "Beginner")
+                checked={difficulty === 'Intermediate'}
+                onChange={e =>
+                  setDifficulty(e.target.checked ? 'Intermediate' : 'Beginner')
                 }
               />
               <label
                 htmlFor="difficulty-toggle"
                 className={`block w-12 h-6 rounded-full cursor-pointer relative ${
-                  difficulty === "Intermediate"
-                    ? "bg-[#2283F6]"
-                    : "bg-[#a7b5ca73]"
+                  difficulty === 'Intermediate'
+                    ? 'bg-[#2283F6]'
+                    : 'bg-[#a7b5ca73]'
                 }`}
               >
                 <span
                   className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${
-                    difficulty === "Intermediate" ? "translate-x-6" : ""
+                    difficulty === 'Intermediate' ? 'translate-x-6' : ''
                   }`}
                 />
               </label>
@@ -506,7 +506,7 @@ const NiuniuDefault: React.FC = () => {
           <div
             className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
           >
-            {" "}
+            {' '}
             <img
               src="/icons/swap-horizontal.svg"
               alt="active"
@@ -518,7 +518,7 @@ const NiuniuDefault: React.FC = () => {
             href="/hashgames/lucky/default"
             className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
-            {" "}
+            {' '}
             <img
               src="/icons/swap-horizontal.svg"
               alt="active"
@@ -535,9 +535,9 @@ const NiuniuDefault: React.FC = () => {
               type="checkbox"
               id="difficulty-toggle"
               className="sr-only"
-              checked={difficulty === "Intermediate"}
-              onChange={(e) =>
-                setDifficulty(e.target.checked ? "Intermediate" : "Beginner")
+              checked={difficulty === 'Intermediate'}
+              onChange={e =>
+                setDifficulty(e.target.checked ? 'Intermediate' : 'Beginner')
               }
             />
             <label
@@ -546,7 +546,7 @@ const NiuniuDefault: React.FC = () => {
             >
               <span
                 className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${
-                  difficulty === "Intermediate" ? "translate-x-6" : ""
+                  difficulty === 'Intermediate' ? 'translate-x-6' : ''
                 }`}
               />
             </label>
@@ -584,7 +584,8 @@ const NiuniuDefault: React.FC = () => {
             </p>
             <p className="text-white text-[14px] font-bold">
               Limitation:
-              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>TRX
+              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>
+              TRX
             </p>
             <div className="text-[#2283F6] text-[14px] font-normal mt-5 opacity-80">
               Note: Odds will fluctuate automatically and all rights to
@@ -641,16 +642,16 @@ const NiuniuDefault: React.FC = () => {
               Betting rules
             </h3>
             <p className="text-white font-normal  leading-relaxed text-[14px] opacity-80">
-              The last digit of the Active amount, 1,3,5,7,9 are placed on{" "}
+              The last digit of the Active amount, 1,3,5,7,9 are placed on{' '}
               <span className="font-normal text-[#64B5F6]">odd</span>, 0,2,4,6,8
-              are placed on{" "}
+              are placed on{' '}
               <span className="font-normal text-[#64B5F6]">even</span>.
             </p>
             <h3 className="text-lg font-normal mb-3 text-white flex items-center gap-2">
               Rules of the game
             </h3>
             <p className="text-white font-normal  leading-relaxed text-[14px] opacity-80">
-              1,3,5,7,9 is{" "}
+              1,3,5,7,9 is{' '}
               <span className="font-normal text-[#64B5F6]">odd</span>, 0,2,4,6,8
               is <span className="font-normal text-[#64B5F6]">even</span>.
             </p>
@@ -695,18 +696,18 @@ const NiuniuDefault: React.FC = () => {
                     Betting rules
                   </h3>
                   <p className="text-white font-normal  leading-relaxed text-[14px]">
-                    The last digit of the Active amount, 1,3,5,7,9 are placed on{" "}
+                    The last digit of the Active amount, 1,3,5,7,9 are placed on{' '}
                     <span className="font-normal text-[#64B5F6]">odd</span>,
-                    0,2,4,6,8 are placed on{" "}
+                    0,2,4,6,8 are placed on{' '}
                     <span className="font-normal text-[#64B5F6]">even</span>.
                   </p>
                   <h3 className="text-lg font-normal mb-3 text-white flex items-center gap-2">
                     Rules of the game
                   </h3>
                   <p className="text-white font-normal  leading-relaxed text-[14px]">
-                    1,3,5,7,9 is{" "}
+                    1,3,5,7,9 is{' '}
                     <span className="font-normal text-[#64B5F6]">odd</span>,
-                    0,2,4,6,8 is{" "}
+                    0,2,4,6,8 is{' '}
                     <span className="font-normal text-[#64B5F6]">even</span>.
                   </p>
                 </div>
@@ -718,24 +719,24 @@ const NiuniuDefault: React.FC = () => {
                   Example 1
                 </h3>
                 <p className="text-white  font-normal text-[14px]">
-                  Your Active amount is:{" "}
+                  Your Active amount is:{' '}
                   <span className="text-[#64B5F6] font-normal">100.22</span>,
-                  recognized as{" "}
+                  recognized as{' '}
                   <span className="text-[#64B5F6] font-normal">a pair</span>,
                   Decimal point is an invalid amount, Block hash of this Active:
-                  646rgd**d9f9{" "}
+                  646rgd**d9f9{' '}
                   <span className="text-[#64B5F6] font-normal">2</span> The last
-                  digit of block hash 2 is determined as{" "}
+                  digit of block hash 2 is determined as{' '}
                   <span className="text-[#64B5F6] font-normal">a pair</span>,
-                  the result is{" "}
+                  the result is{' '}
                   <span className="text-[#64B5F6] font-normal">a win</span>.
                   System refund amount: 100*1.95=195.00
                 </p>
                 <h3 className="font-bold  text-white ">Example 2</h3>
                 <p className="text-white  font-normal text-[14px]">
-                  Your Active amount is:{" "}
+                  Your Active amount is:{' '}
                   <span className="text-[#64B5F6] font-normal">9</span>, limit:
-                  10 - 900 USDT, No Active amount{" "}
+                  10 - 900 USDT, No Active amount{' '}
                   <span className="text-[#64B5F6] font-normal">
                     Within the specified bet value
                   </span>
@@ -979,22 +980,22 @@ const NiuniuDefault: React.FC = () => {
             Example 1
           </h3>
           <p className="text-white  font-normal text-[14px] opacity-80">
-            Your Active amount is:{" "}
+            Your Active amount is:{' '}
             <span className="text-[#64B5F6] font-normal">100.22</span>,
-            recognized as{" "}
+            recognized as{' '}
             <span className="text-[#64B5F6] font-normal">a pair</span>, Decimal
-            point is an invalid amount, Block hash of this Active: 646rgd**d9f9{" "}
+            point is an invalid amount, Block hash of this Active: 646rgd**d9f9{' '}
             <span className="text-[#64B5F6] font-normal">2</span> The last digit
-            of block hash 2 is determined as{" "}
+            of block hash 2 is determined as{' '}
             <span className="text-[#64B5F6] font-normal">a pair</span>, the
             result is <span className="text-[#64B5F6] font-normal">a win</span>.
             System refund amount: 100*1.95=195.00
           </p>
           <h3 className="font-bold  text-white ">Example 2</h3>
           <p className="text-white  font-normal text-[14px] opacity-80">
-            Your Active amount is:{" "}
+            Your Active amount is:{' '}
             <span className="text-[#64B5F6] font-normal">9</span>, limit: 10 -
-            900 USDT, No Active amount{" "}
+            900 USDT, No Active amount{' '}
             <span className="text-[#64B5F6] font-normal">
               Within the specified bet value
             </span>
@@ -1004,7 +1005,7 @@ const NiuniuDefault: React.FC = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default NiuniuDefault;
+export default NiuniuDefault

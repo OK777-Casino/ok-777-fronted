@@ -1,47 +1,47 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import mainContentData from "../main-content-data.json";
-import { useSidebar } from "../context/SidebarProvider";
-import { useI18n } from "../context/I18nProvider";
-import { Swiper as SwiperType } from "swiper";
-import { useAppSelector, useAppDispatch } from "../store/hooks";
+import React, { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import Link from 'next/link'
+import mainContentData from '../main-content-data.json'
+import { useSidebar } from '../context/SidebarProvider'
+import { useI18n } from '../context/I18nProvider'
+import { Swiper as SwiperType } from 'swiper'
+import { useAppSelector, useAppDispatch } from '../store/hooks'
 import {
   setMainBannerSlide,
   setNewLaunchesSlide,
   setLatestEarningsSlide,
   setGameManufacturersSlide,
-} from "../store/slices/carouselSlice";
-import CasinoCard from "./ui/cards/CasinoCard";
-import RewardCard from "./ui/cards/RewardCard";
-import HashCard from "./ui/cards/HashCard";
-import FutureCard from "./ui/cards/FutureCard";
-import GameCard from "./ui/cards/GameCard";
-import { SuccessForm } from "./auth/SuccessForm";
-import SwiperSlider from "./ui/slider/SwiperSlider";
-import { HomepageSections } from "./HomepageSections";
+} from '../store/slices/carouselSlice'
+import CasinoCard from './ui/cards/CasinoCard'
+import RewardCard from './ui/cards/RewardCard'
+import HashCard from './ui/cards/HashCard'
+import FutureCard from './ui/cards/FutureCard'
+import GameCard from './ui/cards/GameCard'
+import { SuccessForm } from './auth/SuccessForm'
+import SwiperSlider from './ui/slider/SwiperSlider'
+import { HomepageSections } from './HomepageSections'
 
 import {
   StatusDropdown,
   StatusDropdownTrigger,
   StatusDropdownContent,
   StatusDropdownItem,
-} from "@/components/ui/StatusDropdown";
-import EarningCard from "./ui/cards/EarningCard";
+} from '@/components/ui/StatusDropdown'
+import EarningCard from './ui/cards/EarningCard'
 
 const statusOptions = [
-  "Up to date",
-  "Daily",
-  "Checking for updates...",
-  "Installing updates",
-  "Update failed",
-  "Connected",
-  "Disconnected",
-  "Syncing...",
-  "Sync complete",
-];
+  'Up to date',
+  'Daily',
+  'Checking for updates...',
+  'Installing updates',
+  'Update failed',
+  'Connected',
+  'Disconnected',
+  'Syncing...',
+  'Sync complete',
+]
 
 // Extract data from JSON
 const {
@@ -56,88 +56,88 @@ const {
   card9,
   latestBets,
   gameManufacturers,
-} = mainContentData;
+} = mainContentData
 
 // Generate extended hash games data (30 total)
 const generateHashGames = () => {
-  const baseGames = card9;
-  const extendedGames = [];
+  const baseGames = card9
+  const extendedGames = []
 
   // Add the original 5 games
-  extendedGames.push(...baseGames);
+  extendedGames.push(...baseGames)
 
   // Generate 25 more hash games with variations
   const gameTemplates = [
-    { title: "Dice Roll", chances: "1.95" },
-    { title: "Coin Flip", chances: "1.98" },
-    { title: "Number Guess", chances: "1.92" },
-    { title: "Color Pick", chances: "1.96" },
-    { title: "Card Draw", chances: "1.94" },
-    { title: "Lucky 7", chances: "1.97" },
-    { title: "High Low", chances: "1.93" },
-    { title: "Sum Total", chances: "1.91" },
-    { title: "Pattern Match", chances: "1.99" },
-    { title: "Random Pick", chances: "1.89" },
-    { title: "Double Up", chances: "1.88" },
-    { title: "Triple Win", chances: "1.87" },
-    { title: "Mega Roll", chances: "1.86" },
-    { title: "Super Flip", chances: "1.85" },
-    { title: "Ultra Guess", chances: "1.84" },
-    { title: "Pro Pick", chances: "1.83" },
-    { title: "Elite Draw", chances: "1.82" },
-    { title: "Master 7", chances: "1.81" },
-    { title: "Champion Low", chances: "1.80" },
-    { title: "Legend Sum", chances: "1.79" },
-    { title: "Hero Match", chances: "1.78" },
-    { title: "King Pick", chances: "1.77" },
-    { title: "Queen Up", chances: "1.76" },
-    { title: "Ace Win", chances: "1.75" },
-    { title: "Joker Roll", chances: "1.74" },
-  ];
+    { title: 'Dice Roll', chances: '1.95' },
+    { title: 'Coin Flip', chances: '1.98' },
+    { title: 'Number Guess', chances: '1.92' },
+    { title: 'Color Pick', chances: '1.96' },
+    { title: 'Card Draw', chances: '1.94' },
+    { title: 'Lucky 7', chances: '1.97' },
+    { title: 'High Low', chances: '1.93' },
+    { title: 'Sum Total', chances: '1.91' },
+    { title: 'Pattern Match', chances: '1.99' },
+    { title: 'Random Pick', chances: '1.89' },
+    { title: 'Double Up', chances: '1.88' },
+    { title: 'Triple Win', chances: '1.87' },
+    { title: 'Mega Roll', chances: '1.86' },
+    { title: 'Super Flip', chances: '1.85' },
+    { title: 'Ultra Guess', chances: '1.84' },
+    { title: 'Pro Pick', chances: '1.83' },
+    { title: 'Elite Draw', chances: '1.82' },
+    { title: 'Master 7', chances: '1.81' },
+    { title: 'Champion Low', chances: '1.80' },
+    { title: 'Legend Sum', chances: '1.79' },
+    { title: 'Hero Match', chances: '1.78' },
+    { title: 'King Pick', chances: '1.77' },
+    { title: 'Queen Up', chances: '1.76' },
+    { title: 'Ace Win', chances: '1.75' },
+    { title: 'Joker Roll', chances: '1.74' },
+  ]
 
   gameTemplates.forEach((template, index) => {
     extendedGames.push({
       title: template.title,
       chances: template.chances,
-      background: "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
-      bettingAddress: "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
+      background: '/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png',
+      bettingAddress: 'TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X',
       leftButtonLink: `/hashgames/${template.title
         .toLowerCase()
-        .replace(/\s+/g, "")}/active`,
+        .replace(/\s+/g, '')}/active`,
       rightButtonLink: `/hashgames/${template.title
         .toLowerCase()
-        .replace(/\s+/g, "")}/default`,
-    });
-  });
+        .replace(/\s+/g, '')}/default`,
+    })
+  })
 
-  return extendedGames;
-};
+  return extendedGames
+}
 
-const extendedHashGames = generateHashGames();
+const extendedHashGames = generateHashGames()
 
 // Generate game data with images
 const generateGameImages = () => {
-  const gameImages = [];
+  const gameImages = []
   for (let i = 1; i <= 15; i++) {
-    const gameNumber = i.toString().padStart(2, "0");
+    const gameNumber = i.toString().padStart(2, '0')
     gameImages.push({
       id: `game-${gameNumber}`,
       image: `/images/games/Game${gameNumber}.jpg`,
       title: `Game ${gameNumber}`,
       link: `/hashgames/game${gameNumber}`,
-    });
+    })
   }
-  return gameImages;
-};
+  return gameImages
+}
 
-const gameImages = generateGameImages();
+const gameImages = generateGameImages()
 
 // Game Image Card Component
 const GameImageCard: React.FC<{
-  id: string;
-  image: string;
-  title: string;
-  link: string;
+  id: string
+  image: string
+  title: string
+  link: string
 }> = ({ image, title, link }) => (
   <Link href={link} className="block">
     <div className="relative group cursor-pointer">
@@ -146,9 +146,9 @@ const GameImageCard: React.FC<{
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-transform group-hover:scale-105"
-          onError={(e) => {
+          onError={e => {
             // Fallback if image doesn't exist
-            e.currentTarget.src = "/images/placeholder-game.jpg";
+            e.currentTarget.src = '/images/placeholder-game.jpg'
           }}
         />
       </div>
@@ -161,59 +161,59 @@ const GameImageCard: React.FC<{
       </div>
     </div>
   </Link>
-);
+)
 
 const bannerCards = [
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
-] as const;
+] as const
 
 // Latest bets table component
 const LatestBetsTable: React.FC = () => {
-  const [selectedStatus, setSelectedStatus] = useState("Up to date");
+  const [selectedStatus, setSelectedStatus] = useState('Up to date')
   return (
     <>
       <div className="text-4.5 font-bold flex items-center w-full justify-between text-white mb-4  gap-2">
@@ -226,7 +226,7 @@ const LatestBetsTable: React.FC = () => {
             className="bg-[#2A3546] border-none"
             align="center"
           >
-            {statusOptions.map((status) => (
+            {statusOptions.map(status => (
               <StatusDropdownItem
                 key={status}
                 onClick={() => setSelectedStatus(status)}
@@ -239,9 +239,9 @@ const LatestBetsTable: React.FC = () => {
       </div>
       <div
         className={` grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] gap-[6px] lg:px-8 px-[6px] ${
-          selectedStatus !== "Daily"
-            ? "grid-cols-[20%_20%_20%_40%]"
-            : "grid-cols-[30%_30%_40%]"
+          selectedStatus !== 'Daily'
+            ? 'grid-cols-[20%_20%_20%_40%]'
+            : 'grid-cols-[30%_30%_40%]'
         } `}
       >
         <div className="text-left text-[12px] font-bold py-2 text-white">
@@ -259,7 +259,7 @@ const LatestBetsTable: React.FC = () => {
         <div className="text-left text-[12px] font-bold py-2 text-white">
           Multiplier
         </div>
-        {selectedStatus !== "Daily" && (
+        {selectedStatus !== 'Daily' && (
           <div className="text-left text-[12px] font-bold py-2 text-white">
             Payout
           </div>
@@ -272,9 +272,9 @@ const LatestBetsTable: React.FC = () => {
           renderSlide={(bet, index) => (
             <div
               className={`bg-[#1C2532] lg:px-8 gap-[6px] px-[6px] w-full grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] rounded-[16px] h-[48px] overflow-hidden mb-[6px] ${
-                selectedStatus !== "Daily"
-                  ? "grid-cols-[20%_20%_20%_40%]"
-                  : "grid-cols-[30%_30%_40%]"
+                selectedStatus !== 'Daily'
+                  ? 'grid-cols-[20%_20%_20%_40%]'
+                  : 'grid-cols-[30%_30%_40%]'
               } items-center`}
               key={index}
             >
@@ -305,7 +305,7 @@ const LatestBetsTable: React.FC = () => {
                 />
                 {bet.bet}
               </div>
-              {selectedStatus !== "Daily" && (
+              {selectedStatus !== 'Daily' && (
                 <div className="text-[#2283F6] text-[12px] font-bold truncate flex items-center">
                   {bet.multiplier}
                 </div>
@@ -331,91 +331,91 @@ const LatestBetsTable: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-[254px] bg-gradient-to-b z-[30] from-transparent to-[#111923] pointer-events-none"></div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const MainContent: React.FC = () => {
-  const { activeGameCategory } = useSidebar();
-  const { t } = useI18n();
-  const searchParams = useSearchParams();
+  const { activeGameCategory } = useSidebar()
+  const { t } = useI18n()
+  const searchParams = useSearchParams()
 
   // Redux state and dispatch
-  const dispatch = useAppDispatch();
-  const carouselState = useAppSelector((state) => state.carousel);
+  const dispatch = useAppDispatch()
+  const carouselState = useAppSelector(state => state.carousel)
 
   // Helper function to get category display labels
 
   // Carousel slide change handlers
   const handleMainBannerSlideChange = (swiper: SwiperType) => {
-    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   const handleNewLaunchesSlideChange = (swiper: SwiperType) => {
-    dispatch(setNewLaunchesSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setNewLaunchesSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   const handleLatestEarningsSlideChange = (swiper: SwiperType) => {
-    dispatch(setLatestEarningsSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setLatestEarningsSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   const handleGameManufacturersSlideChange = (swiper: SwiperType) => {
-    dispatch(setGameManufacturersSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setGameManufacturersSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   // Function to determine which sections to show based on query parameter
   const shouldShowSection = (sectionType: string) => {
-    const tabFromQuery = searchParams.get("tab");
+    const tabFromQuery = searchParams.get('tab')
 
     // If no tab parameter, show all sections (lobby page)
     if (!tabFromQuery) {
-      return true;
+      return true
     }
 
     // Map tab parameters to section types
     const tabToSectionMap: { [key: string]: string[] } = {
-      hash: ["hash", "latest-bets", "game-manufacturers", "latest-earnings"],
-      slots: ["slots", "latest-bets", "game-manufacturers", "latest-earnings"],
+      hash: ['hash', 'latest-bets', 'game-manufacturers', 'latest-earnings'],
+      slots: ['slots', 'latest-bets', 'game-manufacturers', 'latest-earnings'],
       casino: [
-        "live-casino",
-        "latest-bets",
-        "game-manufacturers",
-        "latest-earnings",
+        'live-casino',
+        'latest-bets',
+        'game-manufacturers',
+        'latest-earnings',
       ],
-      sport: ["sport", "latest-bets", "game-manufacturers", "latest-earnings"],
+      sport: ['sport', 'latest-bets', 'game-manufacturers', 'latest-earnings'],
       futures: [
-        "futures",
-        "latest-bets",
-        "game-manufacturers",
-        "latest-earnings",
+        'futures',
+        'latest-bets',
+        'game-manufacturers',
+        'latest-earnings',
       ],
       crypto: [
-        "crypto",
-        "latest-bets",
-        "game-manufacturers",
-        "latest-earnings",
+        'crypto',
+        'latest-bets',
+        'game-manufacturers',
+        'latest-earnings',
       ],
-      table: ["table", "latest-bets", "game-manufacturers", "latest-earnings"],
-    };
+      table: ['table', 'latest-bets', 'game-manufacturers', 'latest-earnings'],
+    }
 
-    const allowedSections = tabToSectionMap[tabFromQuery] || [];
-    return allowedSections.includes(sectionType);
-  };
+    const allowedSections = tabToSectionMap[tabFromQuery] || []
+    return allowedSections.includes(sectionType)
+  }
 
   // Game Grid Component
   const GameGrid: React.FC<{
-    data: unknown[];
-    renderCard: (item: unknown, index: number) => React.ReactNode;
-    viewAllLink: string;
-    maxCards?: number;
+    data: unknown[]
+    renderCard: (item: unknown, index: number) => React.ReactNode
+    viewAllLink: string
+    maxCards?: number
   }> = ({ data, renderCard, viewAllLink, maxCards }) => {
     // Mobile: 3 per row, 6 rows = 18 cards max
     // Desktop: 6 per row, 4 rows = 24 cards max
-    const mobileMaxCards = 18; // 6 rows × 3 cards
-    const desktopMaxCards = 24; // 4 rows × 6 cards
+    const mobileMaxCards = 18 // 6 rows × 3 cards
+    const desktopMaxCards = 24 // 4 rows × 6 cards
 
     // Use responsive max cards - show 18 on mobile, 24 on desktop
-    const maxDisplayCards = maxCards || desktopMaxCards;
-    const displayData = data.slice(0, maxDisplayCards);
+    const maxDisplayCards = maxCards || desktopMaxCards
+    const displayData = data.slice(0, maxDisplayCards)
 
     return (
       <div className="space-y-4">
@@ -443,15 +443,15 @@ const MainContent: React.FC = () => {
           </div>
         )}
       </div>
-    );
-  };
+    )
+  }
 
   // Section header component
   const SectionHeader: React.FC<{
-    icon: string;
-    title: string;
-    alt: string;
-    count?: number;
+    icon: string
+    title: string
+    alt: string
+    count?: number
   }> = ({ icon, title, alt, count }) => {
     return (
       <div className="flex items-center justify-between mb-4">
@@ -465,14 +465,14 @@ const MainContent: React.FC = () => {
           </span>
         )}
       </div>
-    );
-  };
+    )
+  }
 
   // Render lobby view
   return (
     <div
       className="lg:px-6 lg:py-6 py-15 pt-4 w-full mx-auto overflow-x-hidden"
-      style={{ margin: "auto" }}
+      style={{ margin: 'auto' }}
     >
       <SuccessForm isOpen={false} />
 
@@ -494,7 +494,7 @@ const MainContent: React.FC = () => {
       </div>
 
       {/* Lobbypage Sections with SwiperSlider - only show on lobbypage */}
-      {!searchParams.get("tab") && (
+      {!searchParams.get('tab') && (
         <HomepageSections
           card1={card1}
           card2={card2}
@@ -508,14 +508,14 @@ const MainContent: React.FC = () => {
       )}
 
       {/* Game Grid Sections for other pages */}
-      {searchParams.get("tab") && (
+      {searchParams.get('tab') && (
         <>
           {/* New Launches Section */}
-          {shouldShowSection("new-launches") && (
+          {shouldShowSection('new-launches') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Home.svg"
-                title={t("games.new")}
+                title={t('games.new')}
                 alt="lobby"
                 count={card1.length}
               />
@@ -531,7 +531,10 @@ const MainContent: React.FC = () => {
                   375: { slidesPerView: 3.5 },
                   425: { slidesPerView: 4.1 },
                   768: { slidesPerView: 4.3 },
-                  1024: { slidesPerView: 5, spaceBetween: 20 },
+                  1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                  },
                   1440: { slidesPerView: 7.3 },
                 }}
                 showProgressBars={true}
@@ -543,11 +546,11 @@ const MainContent: React.FC = () => {
           )}
           {/* Homepage Sections */}
           {/* Live Casino Section */}
-          {shouldShowSection("live-casino") && (
+          {shouldShowSection('live-casino') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Casino1.svg"
-                title={t("games.live")}
+                title={t('games.live')}
                 alt="lobby"
                 count={card2.length}
               />
@@ -562,11 +565,11 @@ const MainContent: React.FC = () => {
           )}
 
           {/* Hash Section */}
-          {shouldShowSection("hash") && (
+          {shouldShowSection('hash') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Hash.svg"
-                title={t("games.hashgames")}
+                title={t('games.hashgames')}
                 alt="hash"
                 count={gameImages.length}
               />
@@ -581,11 +584,11 @@ const MainContent: React.FC = () => {
           )}
 
           {/* Slots Section */}
-          {shouldShowSection("slots") && (
+          {shouldShowSection('slots') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Slots.svg"
-                title={t("games.slots")}
+                title={t('games.slots')}
                 alt="slots"
                 count={card3.length}
               />
@@ -600,7 +603,7 @@ const MainContent: React.FC = () => {
           )}
 
           {/* P/F Futures Section */}
-          {shouldShowSection("futures") && (
+          {shouldShowSection('futures') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Futures1.svg"
@@ -620,11 +623,11 @@ const MainContent: React.FC = () => {
           )}
 
           {/* Cryptogra Section */}
-          {shouldShowSection("crypto") && (
+          {shouldShowSection('crypto') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Cryptogra1.svg"
-                title={t("games.crypto")}
+                title={t('games.crypto')}
                 alt="cryptogra"
                 count={cryptoCards.length}
               />
@@ -639,11 +642,11 @@ const MainContent: React.FC = () => {
           )}
 
           {/* Sport Section */}
-          {shouldShowSection("sport") && (
+          {shouldShowSection('sport') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Sport.svg"
-                title={t("games.sports")}
+                title={t('games.sports')}
                 alt="Sport"
                 count={card5.length}
               />
@@ -658,11 +661,11 @@ const MainContent: React.FC = () => {
           )}
 
           {/* Chess and cards Section */}
-          {shouldShowSection("table") && (
+          {shouldShowSection('table') && (
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/tablegame.svg"
-                title={t("games.table")}
+                title={t('games.table')}
                 alt="tablegame"
                 count={card6.length}
               />
@@ -679,14 +682,14 @@ const MainContent: React.FC = () => {
       )}
 
       {/* Latest Bets Section */}
-      {shouldShowSection("latest-bets") && <LatestBetsTable />}
+      {shouldShowSection('latest-bets') && <LatestBetsTable />}
 
       {/* Game Manufacturers Section */}
-      {shouldShowSection("game-manufacturers") && (
+      {shouldShowSection('game-manufacturers') && (
         <div className="lg:mb-16 mb-8">
           <SectionHeader
             icon="/icons/game.svg"
-            title={t("games.gameManufacturers")}
+            title={t('games.gameManufacturers')}
             alt="gameManufacturers"
           />
           <SwiperSlider
@@ -712,7 +715,7 @@ const MainContent: React.FC = () => {
       )}
 
       {/* Latest earnings Section */}
-      {shouldShowSection("latest-earnings") && (
+      {shouldShowSection('latest-earnings') && (
         <div className="lg:mb-16 mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-4.5 font-bold flex items-center text-white ">
@@ -743,7 +746,7 @@ const MainContent: React.FC = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default MainContent;
+export default MainContent

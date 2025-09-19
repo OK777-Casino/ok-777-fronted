@@ -1,29 +1,29 @@
-"use client";
+'use client'
 
-import React from "react";
+import React from 'react'
 
 interface NormalButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
+  children: React.ReactNode
+  onClick?: () => void
+  className?: string
 }
 
 const NormalButton: React.FC<NormalButtonProps> = ({
   children,
   onClick,
-  className = "",
+  className = '',
 }) => {
   return (
     <div
       className={
-        "flex text-casper active:text-white h-[2.25rem]  bg-transparent hover:bg-ebony-clay hover:text-white  items-center justify-center rounded-[0.5rem] gap-[0.5rem] font-bold cursor-pointer " +
+        'flex text-casper active:text-white h-[2.25rem]  bg-transparent hover:bg-ebony-clay hover:text-white  items-center justify-center rounded-[0.5rem] gap-[0.5rem] font-bold cursor-pointer ' +
         className
       }
       onClick={onClick}
     >
       <span>{children}</span>
     </div>
-  );
-};
+  )
+}
 
-export default NormalButton;
+export default NormalButton

@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import { cn } from '@/lib/utils'
+import React, { useState } from 'react'
 
 import {
   Wallet,
@@ -13,202 +13,202 @@ import {
   ArrowLeft,
   Check,
   ZoomIn,
-} from "lucide-react";
-import { ResponsiveChipSelector } from "@/components/ui/chipSelector/ResponsiveChipSelector";
-import MenuModal from "@/components/modals/MenuModal";
-import { useModal } from "@/context/ModalProvider";
-import Link from "next/link";
-import GameHistoryTable from "@/components/ui/GameHistoryTable";
-import { useSidebar } from "@/context/SidebarProvider";
-import { useI18n } from "@/context/I18nProvider";
+} from 'lucide-react'
+import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
+import MenuModal from '@/components/modals/MenuModal'
+import { useModal } from '@/context/ModalProvider'
+import Link from 'next/link'
+import GameHistoryTable from '@/components/ui/GameHistoryTable'
+import { useSidebar } from '@/context/SidebarProvider'
+import { useI18n } from '@/context/I18nProvider'
 
 const OddDefault: React.FC = () => {
-  const { isCollapsed } = useSidebar();
-  const { openChangeGameModal } = useModal();
-  const { t } = useI18n();
-  const [activeTab, setActiveTab] = useState<"Active" | "Default">("Active");
-  const isActive = activeTab === "Active";
-  const [difficulty, setDifficulty] = useState<"Beginner" | "Intermediate">(
-    "Beginner"
-  );
-  const [trendTab, setTrendTab] = useState<"Block Trend" | "My trend">(
-    "Block Trend"
-  );
+  const { isCollapsed } = useSidebar()
+  const { openChangeGameModal } = useModal()
+  const { t } = useI18n()
+  const [activeTab, setActiveTab] = useState<'Active' | 'Default'>('Active')
+  const isActive = activeTab === 'Active'
+  const [difficulty, setDifficulty] = useState<'Beginner' | 'Intermediate'>(
+    'Beginner'
+  )
+  const [trendTab, setTrendTab] = useState<'Block Trend' | 'My trend'>(
+    'Block Trend'
+  )
 
-  const [isBeginnerMode, setIsBeginnerMode] = useState(false);
-  const [selectedChip, setSelectedChip] = useState<number | null>(1);
-  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
+  const [isBeginnerMode, setIsBeginnerMode] = useState(false)
+  const [selectedChip, setSelectedChip] = useState<number | null>(1)
+  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
 
   const handleMenuClick = () => {
-    setIsMenuModalOpen(true);
-  };
+    setIsMenuModalOpen(true)
+  }
 
   const handleCloseMenuModal = () => {
-    setIsMenuModalOpen(false);
-  };
+    setIsMenuModalOpen(false)
+  }
 
   // Mock data for lottery trend
 
   const board: (string | null)[][] = [
     // Each row = array of cells: "E", "O", or null for empty
     [
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
     ],
     [
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
     ],
     [
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
     ],
     [
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "O",
-      "O",
-      "E",
-      "O",
-      "E",
-      "E",
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'O',
+      'O',
+      'E',
+      'O',
+      'E',
+      'E',
     ],
     [
-      "E",
+      'E',
       null,
-      "E",
-      null,
-      null,
-      "E",
-      null,
-      "O",
+      'E',
       null,
       null,
-      "E",
+      'E',
+      null,
+      'O',
       null,
       null,
-      "E",
+      'E',
       null,
       null,
-      "O",
+      'E',
       null,
       null,
-      "E",
+      'O',
       null,
       null,
-      "O",
+      'E',
       null,
       null,
-      "E",
+      'O',
       null,
       null,
-      "O",
+      'E',
+      null,
+      null,
+      'O',
       null,
     ],
     [
@@ -243,7 +243,7 @@ const OddDefault: React.FC = () => {
       null,
       null,
     ],
-  ];
+  ]
   const GameBoard = ({ board }: { board: (string | null)[][] }) => {
     return (
       <div className=" rounded-lg w-full mb-4">
@@ -254,11 +254,11 @@ const OddDefault: React.FC = () => {
                 key={colIndex}
                 className="w-6 h-6 md:w-10 md:h-10 flex items-center justify-center border border-gray-700"
               >
-                {cell === "E" ? (
+                {cell === 'E' ? (
                   <div className="w-3 h-3 md:w-5 md:h-5 flex items-center justify-center rounded-full bg-yellow-500 text-black text-[8px] md:text-[12px] font-bold">
                     E
                   </div>
-                ) : cell === "O" ? (
+                ) : cell === 'O' ? (
                   <div className="w-3 h-3 md:w-5 md:h-5 flex items-center justify-center rounded-full bg-red-600 text-white text-[8px] md:text-[12px] font-bold">
                     O
                   </div>
@@ -268,20 +268,20 @@ const OddDefault: React.FC = () => {
           </div>
         ))}
       </div>
-    );
-  };
+    )
+  }
 
   const ChipSVG: React.FC<{
-    value?: number;
-    label?: string;
-    color: string;
-    selected?: boolean;
-    onClick?: () => void;
-    sizePx?: number;
+    value?: number
+    label?: string
+    color: string
+    selected?: boolean
+    onClick?: () => void
+    sizePx?: number
   }> = ({ value, label, color, selected = false, onClick, sizePx = 64 }) => {
-    const display = label ?? (value != null ? String(value) : "");
-    const textLines = display.split("\n");
-    const darkStroke = "#0B1220";
+    const display = label ?? (value != null ? String(value) : '')
+    const textLines = display.split('\n')
+    const darkStroke = '#0B1220'
     return (
       <div
         onClick={onClick}
@@ -440,14 +440,14 @@ const OddDefault: React.FC = () => {
           )}
         </svg>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <>
       <div
         className={`flex flex-col items-center min-h-screen gap-2 md:gap-16 py-4 md:py-16 hash-game-container mx-auto ${
-          isCollapsed ? "sidebar-collapsed" : ""
+          isCollapsed ? 'sidebar-collapsed' : ''
         }`}
       >
         {/* Header with Segmented Control */}
@@ -459,7 +459,7 @@ const OddDefault: React.FC = () => {
                 className={`px-4 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
               >
-                {" "}
+                {' '}
                 <img
                   src="/icons/swap-horizontal.svg"
                   alt="active"
@@ -547,7 +547,7 @@ const OddDefault: React.FC = () => {
               href="/hashgames/bankerplayer/active"
               className={` w-[50%] justify-center text-center  text-white py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
             >
-              {" "}
+              {' '}
               <img
                 src="/icons/swap-horizontal.svg"
                 alt="active"
@@ -558,7 +558,7 @@ const OddDefault: React.FC = () => {
             <div
               className={` w-[50%] justify-center text-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
             >
-              {" "}
+              {' '}
               <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
               Page betting
             </div>
@@ -570,7 +570,7 @@ const OddDefault: React.FC = () => {
             style={{
               background:
                 "url('https://api.builder.io/api/v1/image/assets/TEMP/35f26e9aa061258b5e5f2783c73faff4c656c9a3?width=740') lightgray 50% / cover no-repeat, #111923",
-              backgroundBlendMode: "hard-light, normal",
+              backgroundBlendMode: 'hard-light, normal',
             }}
           >
             <img
@@ -579,7 +579,7 @@ const OddDefault: React.FC = () => {
             />
             <div className="flex relative z-5 flex-col justify-center items-center gap-1  flex-1">
               <span className="text-xs md:text-sm font-bold text-casper">
-                {t("hashgame.currentBlock")}
+                {t('hashgame.currentBlock')}
               </span>
               <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
                 <Copy className="w-4 h-4 text-casper" />
@@ -590,7 +590,7 @@ const OddDefault: React.FC = () => {
             </div>
             <div className="flex flex-col relative z-5 justify-center items-center gap-1 flex-1">
               <span className="text-xs md:text-sm font-bold text-casper">
-                {t("hashgame.nextBlock")}
+                {t('hashgame.nextBlock')}
               </span>
               <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
                 <Copy className="w-4 h-4 text-dodger-blue" />
@@ -604,31 +604,31 @@ const OddDefault: React.FC = () => {
           {/* Betting Limit and Toggle */}
           <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2 sm:gap-0">
             <div className="text-sm font-bold">
-              <span className="text-white">{t("hashgame.limit")} </span>
+              <span className="text-white">{t('hashgame.limit')} </span>
               <span className="text-dodger-blue">1-15000</span>
             </div>
             <div className="flex h-6 items-center gap-2">
               <span
                 className={`text-xs sm:text-sm font-bold ${
-                  isBeginnerMode ? "text-gray-400" : "text-white"
+                  isBeginnerMode ? 'text-gray-400' : 'text-white'
                 }`}
               >
-                {t("hashgame.beginner")}
+                {t('hashgame.beginner')}
               </span>
               <div className="relative">
                 <div
                   onClick={() => setIsBeginnerMode(!isBeginnerMode)}
                   className={cn(
-                    "w-10 h-6 rounded-full transition-colors relative",
-                    isBeginnerMode ? "bg-[#2283F6]" : "bg-[#3C485C]"
+                    'w-10 h-6 rounded-full transition-colors relative',
+                    isBeginnerMode ? 'bg-[#2283F6]' : 'bg-[#3C485C]'
                   )}
                 >
                   <div
                     className={cn(
-                      "absolute top-0.5 w-5 h-5 rounded-full transition-transform duration-200",
+                      'absolute top-0.5 w-5 h-5 rounded-full transition-transform duration-200',
                       isBeginnerMode
-                        ? "translate-x-4 bg-white"
-                        : "translate-x-0.5 bg-casper border-2 border-casper"
+                        ? 'translate-x-4 bg-white'
+                        : 'translate-x-0.5 bg-casper border-2 border-casper'
                     )}
                   >
                     {isBeginnerMode && (
@@ -642,10 +642,10 @@ const OddDefault: React.FC = () => {
               </div>
               <span
                 className={`text-xs sm:text-sm font-bold ${
-                  !isBeginnerMode ? "text-gray-400" : "text-white"
+                  !isBeginnerMode ? 'text-gray-400' : 'text-white'
                 }`}
               >
-                {t("hashgame.intermediate")}
+                {t('hashgame.intermediate')}
               </span>
             </div>
           </div>
@@ -700,7 +700,7 @@ const OddDefault: React.FC = () => {
               <span className="text-sm font-bold text-white">$0</span>
             </div>
             <div className="text-2xl font-bold text-crimson">
-              {t("hashgame.odd")}
+              {t('hashgame.odd')}
             </div>
             <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
               <span className="text-sm font-bold text-white">1 : 1.95</span>
@@ -759,7 +759,7 @@ const OddDefault: React.FC = () => {
               <span className="text-sm font-bold text-white">$0</span>
             </div>
             <div className="text-2xl font-bold text-yellow-orange">
-              {t("hashgame.even")}
+              {t('hashgame.even')}
             </div>
             <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
               <span className="text-sm font-bold text-white">1 : 1.95</span>
@@ -819,7 +819,7 @@ const OddDefault: React.FC = () => {
       {/* Menu Modal */}
       <MenuModal isOpen={isMenuModalOpen} onClose={handleCloseMenuModal} />
     </>
-  );
-};
+  )
+}
 
-export default OddDefault;
+export default OddDefault

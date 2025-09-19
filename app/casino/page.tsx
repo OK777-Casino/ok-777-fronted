@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import React, { useEffect, useRef, useState } from "react";
-import mainContentData from "../../main-content-data.json";
-import { useSidebar } from "../../context/SidebarProvider";
-import { useModal } from "../../context/ModalProvider";
-import { useI18n } from "../../context/I18nProvider";
-import { Swiper as SwiperType } from "swiper";
-import { useAppSelector, useAppDispatch } from "../../store/hooks";
+import React, { useEffect, useRef, useState } from 'react'
+import mainContentData from '../../main-content-data.json'
+import { useSidebar } from '../../context/SidebarProvider'
+import { useModal } from '../../context/ModalProvider'
+import { useI18n } from '../../context/I18nProvider'
+import { Swiper as SwiperType } from 'swiper'
+import { useAppSelector, useAppDispatch } from '../../store/hooks'
 import {
   setMainBannerSlide,
   setLiveCasinoSlide,
-} from "../../store/slices/carouselSlice";
-import CasinoCard from "../../components/ui/cards/CasinoCard";
-import RewardCard from "../../components/ui/cards/RewardCard";
-import { Icon } from "@iconify/react";
-import { SuccessForm } from "../../components/auth/SuccessForm";
-import SwiperSlider from "../../components/ui/slider/SwiperSlider";
-import { X } from "lucide-react";
+} from '../../store/slices/carouselSlice'
+import CasinoCard from '../../components/ui/cards/CasinoCard'
+import RewardCard from '../../components/ui/cards/RewardCard'
+import { Icon } from '@iconify/react'
+import { SuccessForm } from '../../components/auth/SuccessForm'
+import SwiperSlider from '../../components/ui/slider/SwiperSlider'
+import { X } from 'lucide-react'
 
 // Extract data from JSON
 const {
@@ -33,79 +33,79 @@ const {
   latestBets,
   gameManufacturers,
   footerContent,
-} = mainContentData;
+} = mainContentData
 
 const bannerCards = [
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
   {
-    button: "CLAIM NOW",
-    image: "/images/banner/Banner12.jpg",
-    link: "#",
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner10.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
   },
   {
-    button: "JOIN NOW",
-    image: "/images/banner/Banner09.jpg",
-    link: "#",
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
   },
-] as const;
+] as const
 
 // Game Grid Component
 const GameGrid: React.FC<{
-  data: any[];
-  renderCard: (item: any, index: number) => React.ReactNode;
+  data: any[]
+  renderCard: (item: any, index: number) => React.ReactNode
 }> = ({ data, renderCard }) => (
   <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 pb-4">
     {data.map((item, index) => renderCard(item, index))}
   </div>
-);
+)
 
 // Filtered Page Header Component
 const FilteredPageHeader: React.FC<{
-  title: string;
-  count: number;
-  icon: string;
+  title: string
+  count: number
+  icon: string
 }> = ({ title, count, icon }) => {
-  const { openGameProviderModal, openChooseModal } = useModal();
-  const { t } = useI18n();
-  const [isOpenSearch, setIsOpenSearch] = useState(true);
+  const { openGameProviderModal, openChooseModal } = useModal()
+  const { t } = useI18n()
+  const [isOpenSearch, setIsOpenSearch] = useState(true)
 
   const toggleOpenSearch = () => {
-    setIsOpenSearch(!isOpenSearch);
-  };
+    setIsOpenSearch(!isOpenSearch)
+  }
 
   return (
     <div className="py-4">
@@ -113,7 +113,7 @@ const FilteredPageHeader: React.FC<{
         <div className="bg-[rgba(255,255,255,0.08)] rounded-lg p-[7px]">
           <h1 className="text-white text-[14px] font-bold flex items-center gap-2">
             <img src={icon} className="w-6 hidden lg:block h-6" alt="game" />
-            {title}{" "}
+            {title}{' '}
             <span className="text-[#2283F6] text-[12px] bg-[#111923] px-2 py-0.5 rounded-[4px]">
               {count}
             </span>
@@ -184,7 +184,7 @@ const FilteredPageHeader: React.FC<{
               className="w-[18px] h-[18px]"
             />
             <span className="text-[#A7B5CA] hidden lg:block text-sm">
-              {t("app.search")}
+              {t('app.search')}
             </span>
           </div>
         </div>
@@ -198,7 +198,7 @@ const FilteredPageHeader: React.FC<{
               className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
             >
               <span className="text-[#A7B5CA] text-sm">
-                {t("games.providers")}
+                {t('games.providers')}
               </span>
               <svg
                 className="w-4 h-4 text-[#A7B5CA]"
@@ -245,7 +245,7 @@ const FilteredPageHeader: React.FC<{
               />
               <input
                 type="text"
-                placeholder={t("app.search")}
+                placeholder={t('app.search')}
                 className="flex-1 bg-transparent text-[#A7B5CA] text-sm placeholder:text-[#A7B5CA] border-none outline-none min-w-0"
               />
             </div>
@@ -253,14 +253,14 @@ const FilteredPageHeader: React.FC<{
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 // Section header component
 const SectionHeader: React.FC<{
-  icon: string;
-  title: string;
-  alt: string;
+  icon: string
+  title: string
+  alt: string
 }> = ({ icon, title, alt }) => (
   <div className="flex items-center justify-between mb-4">
     <h2 className="text-4.5 font-bold flex items-center text-white gap-2">
@@ -271,29 +271,29 @@ const SectionHeader: React.FC<{
       <span>all 13</span>
     </span>
   </div>
-);
+)
 
 export default function CasinoPage() {
-  const { t } = useI18n();
-  const [isOpen, setIsOpen] = useState(false);
+  const { t } = useI18n()
+  const [isOpen, setIsOpen] = useState(false)
 
   // Redux state and dispatch
-  const dispatch = useAppDispatch();
-  const carouselState = useAppSelector((state) => state.carousel);
+  const dispatch = useAppDispatch()
+  const carouselState = useAppSelector(state => state.carousel)
 
   // Carousel slide change handlers
   const handleMainBannerSlideChange = (swiper: SwiperType) => {
-    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setMainBannerSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   const handleLiveCasinoSlideChange = (swiper: SwiperType) => {
-    dispatch(setLiveCasinoSlide(swiper.realIndex ?? swiper.activeIndex));
-  };
+    dispatch(setLiveCasinoSlide(swiper.realIndex ?? swiper.activeIndex))
+  }
 
   return (
     <div
       className="lg:px-6 w-full max-w-[1920px] mx-auto overflow-x-hidden"
-      style={{ margin: "auto" }}
+      style={{ margin: 'auto' }}
     >
       <SuccessForm isOpen={isOpen} />
 
@@ -334,28 +334,43 @@ export default function CasinoPage() {
         <div className="lg:mb-16 mb-8">
           <SectionHeader
             icon="/icons/Casino1.svg"
-            title={t("games.live")}
+            title={t('games.live')}
             alt="lobby"
           />
           <SwiperSlider
             data={card2}
             autoplayDelay={1000000}
-            grid={{ rows: 2, fill: "row" }}
+            grid={{ rows: 2, fill: 'row' }}
             renderSlide={(card, index) => <CasinoCard {...card} />}
             slidesPerView={7}
             spaceBetween={12}
             slideClassName="mb-1"
             breakpoints={{
-              320: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-              375: { slidesPerView: 3.5, grid: { rows: 2, fill: "row" } },
-              425: { slidesPerView: 4.1, grid: { rows: 2, fill: "row" } },
-              768: { slidesPerView: 4.3, grid: { rows: 2, fill: "row" } },
+              320: {
+                slidesPerView: 3.3,
+                grid: { rows: 2, fill: 'row' },
+              },
+              375: {
+                slidesPerView: 3.5,
+                grid: { rows: 2, fill: 'row' },
+              },
+              425: {
+                slidesPerView: 4.1,
+                grid: { rows: 2, fill: 'row' },
+              },
+              768: {
+                slidesPerView: 4.3,
+                grid: { rows: 2, fill: 'row' },
+              },
               1024: {
                 slidesPerView: 5,
                 spaceBetween: 20,
-                grid: { rows: 2, fill: "row" },
+                grid: { rows: 2, fill: 'row' },
               },
-              1440: { slidesPerView: 7, grid: { rows: 2, fill: "row" } },
+              1440: {
+                slidesPerView: 7,
+                grid: { rows: 2, fill: 'row' },
+              },
             }}
             initialSlide={carouselState.liveCasinoCurrentSlide}
             onSlideChange={handleLiveCasinoSlideChange}
@@ -364,5 +379,5 @@ export default function CasinoPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }

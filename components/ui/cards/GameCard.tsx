@@ -1,11 +1,11 @@
-"use client";
-import React from "react";
+'use client'
+import React from 'react'
 
 export interface GameCardProps {
-  name: string;
-  icon: string;
-  gameCount: string;
-  sampleGames?: string[];
+  name: string
+  icon: string
+  gameCount: string
+  sampleGames?: string[]
 }
 
 const GameCard: React.FC<GameCardProps> = ({
@@ -45,7 +45,7 @@ const GameCard: React.FC<GameCardProps> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default GameCard;
+export default GameCard

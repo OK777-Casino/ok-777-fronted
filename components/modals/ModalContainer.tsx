@@ -1,58 +1,58 @@
-"use client"
+'use client'
 
-import { X } from 'lucide-react';
-import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention';
-import { ReactNode, useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
-import { createPortal } from 'react-dom';
+import { X } from 'lucide-react'
+import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
+import { ReactNode, useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
+import { createPortal } from 'react-dom'
 
 interface ModalContainerProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title?: string;
-  children: ReactNode;
-  className?: string;
-  contentClassName?: string;
-  headerClassName?: string;
-  showHeader?: boolean;
-  showCloseButton?: boolean;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
-  position?: 'center' | 'bottom' | 'top' | 'responsive';
-  usePortal?: boolean;
-  zIndex?: number;
-  backdropClassName?: string;
-  onBackdropClick?: () => void;
-  disableBackdropClick?: boolean;
-  fullHeight?: boolean;
-  maxHeight?: string;
-  width?: string;
+  isOpen: boolean
+  onClose: () => void
+  title?: string
+  children: ReactNode
+  className?: string
+  contentClassName?: string
+  headerClassName?: string
+  showHeader?: boolean
+  showCloseButton?: boolean
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full'
+  position?: 'center' | 'bottom' | 'top' | 'responsive'
+  usePortal?: boolean
+  zIndex?: number
+  backdropClassName?: string
+  onBackdropClick?: () => void
+  disableBackdropClick?: boolean
+  fullHeight?: boolean
+  maxHeight?: string
+  width?: string
   topSpace?: string
 }
 
 const sizeClasses = {
   sm: 'max-w-sm sm:max-w-md',
-  md: 'max-w-md sm:max-w-lg', 
+  md: 'max-w-md sm:max-w-lg',
   lg: 'max-w-lg sm:max-w-2xl',
   xl: 'max-w-4xl sm:max-w-6xl',
   '2xl': 'max-w-4xl sm:max-w-7xl',
   '3xl': 'max-w-4xl sm:max-w-[90vw]',
-  full: 'w-full'
-};
+  full: 'w-full',
+}
 
 const positionClasses = {
   center: 'items-center',
   bottom: 'items-end',
   top: 'items-start',
-  'responsive': 'items-end sm:items-center' // Responsive: bottom on mobile, center on desktop
-};
+  responsive: 'items-end sm:items-center', // Responsive: bottom on mobile, center on desktop
+}
 
-export default function ModalContainer({ 
-  isOpen, 
+export default function ModalContainer({
+  isOpen,
   title,
-  onClose, 
-  className = "",
-  contentClassName = "",
-  headerClassName = "",
+  onClose,
+  className = '',
+  contentClassName = '',
+  headerClassName = '',
   children,
   showHeader = true,
   showCloseButton = true,
@@ -60,99 +60,103 @@ export default function ModalContainer({
   position = 'responsive',
   usePortal = true,
   zIndex = 10000,
-  backdropClassName = "",
+  backdropClassName = '',
   onBackdropClick,
   disableBackdropClick = false,
   width,
-  topSpace = "0"
+  topSpace = '0',
 }: ModalContainerProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
+  const [shouldRender, setShouldRender] = useState(false)
 
   // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen);
+  useModalScrollPrevention(isOpen)
 
   useEffect(() => {
     if (isOpen) {
-      setShouldRender(true);
+      setShouldRender(true)
       // Small delay to ensure the element is rendered before animation
-      const timer = setTimeout(() => setIsVisible(true), 10);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => setIsVisible(true), 10)
+      return () => clearTimeout(timer)
     } else {
-      setIsVisible(false);
+      setIsVisible(false)
       // Wait for animation to complete before unmounting
-      const timer = setTimeout(() => setShouldRender(false), 300);
-      return () => clearTimeout(timer);
+      const timer = setTimeout(() => setShouldRender(false), 300)
+      return () => clearTimeout(timer)
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (!disableBackdropClick && e.target === e.currentTarget) {
       if (onBackdropClick) {
-        onBackdropClick();
+        onBackdropClick()
       } else {
-        onClose();
+        onClose()
       }
     }
-  };
+  }
 
-  if (!shouldRender) return null;
+  if (!shouldRender) return null
 
   const modalContent = (
-    <div 
+    <div
       className={cn(
-        "fixed inset-0 flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/60",
+        'fixed inset-0 flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/60',
         positionClasses[position],
         backdropClassName
       )}
       style={{ zIndex }}
       onClick={handleBackdropClick}
     >
-      <div 
+      <div
         className={cn(
-          "modal-content-scroll",
-          "absolute z-[10001] mx-auto",
+          'modal-content-scroll',
+          'absolute z-[10001] mx-auto',
           // Position logic: responsive should be bottom on mobile, center on desktop
-          position === 'responsive' 
-            ? "top-auto bottom-0 sm:top-1/2 sm:bottom-auto h-full sm:h-auto" 
-            : position === 'bottom' 
-            ? "top-auto bottom-0 h-full sm:h-auto"
-            : position === 'top'
-            ? "top-0 bottom-auto"
-            : "top-1/2 bottom-auto",
+          position === 'responsive'
+            ? 'top-auto bottom-0 sm:top-1/2 sm:bottom-auto h-full sm:h-auto'
+            : position === 'bottom'
+              ? 'top-auto bottom-0 h-full sm:h-auto'
+              : position === 'top'
+                ? 'top-0 bottom-auto'
+                : 'top-1/2 bottom-auto',
           // Transform logic
-          "transform transition-all duration-300 ease-out",
-          position === 'responsive' 
-            ? "sm:-translate-y-1/2" 
-            : position === 'center' || position === 'top' 
-            ? "-translate-y-1/2" 
-            : "",
+          'transform transition-all duration-300 ease-out',
+          position === 'responsive'
+            ? 'sm:-translate-y-1/2'
+            : position === 'center' || position === 'top'
+              ? '-translate-y-1/2'
+              : '',
           // Animation states
           isVisible
-            ? "translate-y-0"
+            ? 'translate-y-0'
             : position === 'bottom' || position === 'responsive'
-              ? "translate-y-full sm:translate-y-8" 
+              ? 'translate-y-full sm:translate-y-8'
               : position === 'top'
-              ? "-translate-y-full"
-              : "translate-y-8",
-          width ? "" : sizeClasses[size],
+                ? '-translate-y-full'
+                : 'translate-y-8',
+          width ? '' : sizeClasses[size],
           className
         )}
         style={{
           maxWidth: width || undefined,
           width: width || undefined,
           maxHeight: '90dvh',
-          overflowY: 'auto'
+          overflowY: 'auto',
         }}
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
       >
-        <div className={cn("flex flex-col items-start w-full mx-auto", topSpace)}>
+        <div
+          className={cn('flex flex-col items-start w-full mx-auto', topSpace)}
+        >
           {/* Header */}
           {showHeader && (
-            <div className={cn(
-              "flex items-center gap-4 w-full px-6 py-4 rounded-t-[0.875rem] bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] border-t border-white-16 backdrop-blur-[2rem]",
-              headerClassName
-            )}>
+            <div
+              className={cn(
+                'flex items-center gap-4 w-full px-6 py-4 rounded-t-[0.875rem] bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] border-t border-white-16 backdrop-blur-[2rem]',
+                headerClassName
+              )}
+            >
               {title && (
                 <h2 className="flex-1 text-white font-montserrat text-lg font-bold">
                   {title}
@@ -170,22 +174,23 @@ export default function ModalContainer({
           )}
 
           {/* Content */}
-          <div className={cn(
-            "flex flex-col gap-6 p-4 w-full rounded-b-[0.875rem] bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem] min-h-0",
-            contentClassName
-          )}>
+          <div
+            className={cn(
+              'flex flex-col gap-6 p-4 w-full rounded-b-[0.875rem] bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem] min-h-0',
+              contentClassName
+            )}
+          >
             {children}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 
   // Use portal to render at document root level if specified
   if (usePortal && typeof document !== 'undefined') {
-    return createPortal(modalContent, document.body);
+    return createPortal(modalContent, document.body)
   }
 
-  return modalContent;
+  return modalContent
 }
-

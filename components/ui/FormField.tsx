@@ -1,15 +1,15 @@
-"use client";
+'use client'
 
-import React from "react";
-import clsx from "clsx";
+import React from 'react'
+import clsx from 'clsx'
 
 interface FormFieldProps {
-  label: string;
-  required?: boolean;
-  error?: string;
-  children: React.ReactNode;
-  className?: string;
-  htmlFor?: string;
+  label: string
+  required?: boolean
+  error?: string
+  children: React.ReactNode
+  className?: string
+  htmlFor?: string
 }
 
 const FormField: React.FC<FormFieldProps> = ({
@@ -17,11 +17,11 @@ const FormField: React.FC<FormFieldProps> = ({
   required = false,
   error,
   children,
-  className = "",
+  className = '',
   htmlFor,
 }) => {
   return (
-    <div className={clsx("w-full", className)}>
+    <div className={clsx('w-full', className)}>
       <label
         htmlFor={htmlFor}
         className="block text-sm font-medium text-gray-200 mb-2"
@@ -32,7 +32,7 @@ const FormField: React.FC<FormFieldProps> = ({
       {children}
       {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
     </div>
-  );
-};
+  )
+}
 
-export default FormField;
+export default FormField

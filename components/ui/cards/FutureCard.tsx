@@ -1,15 +1,15 @@
-"use client";
+'use client'
 
 // this is cryptocurrency card
 
-import React from "react";
+import React from 'react'
 
 export interface TypeFourProps {
-  symbol: string;
-  name: string;
-  price: string;
-  change: string;
-  isPositive: boolean;
+  symbol: string
+  name: string
+  price: string
+  change: string
+  isPositive: boolean
 }
 
 const FutureCard: React.FC<TypeFourProps> = ({
@@ -36,15 +36,15 @@ const FutureCard: React.FC<TypeFourProps> = ({
         <div className="text-white font-medium">{price}</div>
         <div
           className={`text-sm font-medium ${
-            isPositive ? "text-green-400" : "text-red-400"
+            isPositive ? 'text-green-400' : 'text-red-400'
           }`}
         >
-          {isPositive ? "+" : ""}
+          {isPositive ? '+' : ''}
           {change}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FutureCard;
+export default FutureCard

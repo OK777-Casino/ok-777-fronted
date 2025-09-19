@@ -1,20 +1,20 @@
-import RewardCard from "./RewardCard";
-import FlatButton from "../Button/FlatButton";
-import ArrowUpRightStrokeIcon from "../icons/arrow-up-right-stroke";
-import TabButton from "../Button/TabButton";
-import Link from "next/link";
-import { useT } from "@/context/I18nProvider";
+import RewardCard from './RewardCard'
+import FlatButton from '../Button/FlatButton'
+import ArrowUpRightStrokeIcon from '../icons/arrow-up-right-stroke'
+import TabButton from '../Button/TabButton'
+import Link from 'next/link'
+import { useT } from '@/context/I18nProvider'
 
 export default function CasinoPromotionCard({
   button,
   image,
   link,
 }: {
-  button: string;
-  image: string;
-  link: string;
+  button: string
+  image: string
+  link: string
 }) {
-  const t = useT();
+  const t = useT()
 
   return (
     <div className="">
@@ -27,8 +27,8 @@ export default function CasinoPromotionCard({
             className="absolute inset-0 bg-no-repeat transition-transform duration-500 "
             style={{
               backgroundImage: `url(${image})`,
-              backgroundSize: "100% 100%",
-              backgroundPosition: "center",
+              backgroundSize: '100% 100%',
+              backgroundPosition: 'center',
             }}
           />
 
@@ -41,10 +41,10 @@ export default function CasinoPromotionCard({
           <div className="relative z-10 h-full flex flex-col justify-between">
             <h1
               className="text-3xl font-extrabold leading-tight drop-shadow-md"
-              style={{ fontWeight: "900 !important" }}
+              style={{ fontWeight: '900 !important' }}
             ></h1>
             <div>
-              <Link href={"/promotions/" + link}>
+              <Link href={'/promotions/' + link}>
                 <FlatButton className="w-[7.84875rem] text-[0.8575rem] h-[2.108125rem] font-bold rounded-[0.571875rem] uppercase bg-[linear-gradient(#0C60FF,#2C9FFA)]">
                   {button}
                 </FlatButton>
@@ -81,15 +81,15 @@ export default function CasinoPromotionCard({
           {/* Read More Link */}
           <div className="mt-3 text-right">
             <Link
-              href={"/promotions/" + link}
+              href={'/promotions/' + link}
               className="inline-flex items-center gap-2 text-dodger-blue font-montserrat text-[0.875rem] font-bold hover:text-dodger-blue/80 transition-colors group"
             >
-              {t("promotions.readmore")}
+              {t('promotions.readmore')}
               <ArrowUpRightStrokeIcon className="w-6 h-6 text-casper group-hover:text-white transition-colors" />
             </Link>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

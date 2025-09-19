@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true, // Enable strict mode (optional but recommended)
   swcMinify: true, // Enabling SWC minifier (recommended for production)
   images: {
-    domains: ["api.builder.io"], // Allow external domains for image optimization (if you're using external image sources)
+    domains: ['api.builder.io'], // Allow external domains for image optimization (if you're using external image sources)
   },
   // Removed i18n config as it can cause navigation issues with App Router
   // i18n: {
@@ -11,6 +11,6 @@ const nextConfig = {
   //   defaultLocale: 'en',
   // },
   // Other custom settings here...
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

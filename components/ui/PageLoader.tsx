@@ -1,35 +1,35 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import LoadingSpinner from './LoadingSpinner';
+import React, { useState, useEffect } from 'react'
+import LoadingSpinner from './LoadingSpinner'
 
 interface PageLoaderProps {
-  message?: string;
+  message?: string
 }
 
-const PageLoader: React.FC<PageLoaderProps> = ({ message = "Loading..." }) => {
-  const [loadingProgress, setLoadingProgress] = useState(0);
+const PageLoader: React.FC<PageLoaderProps> = ({ message = 'Loading...' }) => {
+  const [loadingProgress, setLoadingProgress] = useState(0)
 
   useEffect(() => {
     // Simulate loading progress
     const progressInterval = setInterval(() => {
       setLoadingProgress(prev => {
         if (prev >= 100) {
-          clearInterval(progressInterval);
-          return 100;
+          clearInterval(progressInterval)
+          return 100
         }
-        return prev + Math.random() * 15;
-      });
-    }, 100);
+        return prev + Math.random() * 15
+      })
+    }, 100)
 
-    return () => clearInterval(progressInterval);
-  }, []);
+    return () => clearInterval(progressInterval)
+  }, [])
 
   return (
     <div className="fixed inset-0 loading-bg flex flex-col z-[9999]">
       {/* Red Progress Bar at Top */}
       <div className="w-full lg:h-4 h-2">
-        <div 
+        <div
           className="h-full bg-crimson rounded-r-full transition-all duration-300 ease-out"
           style={{ width: `${Math.min(loadingProgress, 100)}%` }}
         />
@@ -43,7 +43,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({ message = "Loading..." }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PageLoader;
+export default PageLoader

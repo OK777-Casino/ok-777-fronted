@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const ResponsibleGambling: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const ResponsibleGambling: React.FC = () => {
         http://www.cyberpatrol.com
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ResponsibleGambling;
+export default ResponsibleGambling

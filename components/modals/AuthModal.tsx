@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import { setAuthUser } from "@/lib/auth";
-import { X, Eye, EyeOff, ChevronDown } from "lucide-react";
-import { useSidebar } from "../../context/SidebarProvider";
-import { cn } from "@/lib/utils";
-import { useModalScrollPrevention } from "@/hooks/useModalScrollPrevention";
-import { useI18n } from "@/context/I18nProvider";
+import { useEffect, useState } from 'react'
+import { setAuthUser } from '@/lib/auth'
+import { X, Eye, EyeOff, ChevronDown } from 'lucide-react'
+import { useSidebar } from '../../context/SidebarProvider'
+import { cn } from '@/lib/utils'
+import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
+import { useI18n } from '@/context/I18nProvider'
 
-import "./style.css";
-import TDButton from "../ui/Button/TDButton";
-import TonIcon from "../ui/icons/TONIcon";
-import GoogleIcon from "../ui/icons/GoogleIcon";
-import MetamaskIcon from "../ui/icons/MetamaskIcon";
-import TelegramIcon from "../ui/icons/TelegramIcon";
+import './style.css'
+import TDButton from '../ui/Button/TDButton'
+import TonIcon from '../ui/icons/TONIcon'
+import GoogleIcon from '../ui/icons/GoogleIcon'
+import MetamaskIcon from '../ui/icons/MetamaskIcon'
+import TelegramIcon from '../ui/icons/TelegramIcon'
 
 interface SocialButtonProps {
-  icon: React.ReactNode;
-  onClick?: () => void;
+  icon: React.ReactNode
+  onClick?: () => void
 }
 
 const SocialButton = ({ icon, onClick }: SocialButtonProps) => (
@@ -25,12 +25,12 @@ const SocialButton = ({ icon, onClick }: SocialButtonProps) => (
     onClick={onClick}
     className="flex h-9 w-9 items-center justify-center text-casper rounded-lg bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8 cursor-pointer"
     style={{
-      boxShadow: "0 1px 0 0 rgba(255, 255, 255, 0.16) inset",
+      boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
     }}
   >
     <span>{icon}</span>
   </div>
-);
+)
 
 const TrustWalletIcon = () => (
   <svg width="25" height="24" viewBox="0 0 16 16" fill="none">
@@ -39,7 +39,7 @@ const TrustWalletIcon = () => (
       fill="#A7B5CA"
       stroke="#A7B5CA"
     />
-    <g style={{ mixBlendMode: "luminosity" }}>
+    <g style={{ mixBlendMode: 'luminosity' }}>
       <path
         d="M14.5184 2.78533L8 0.666687V15.3334C12.656 13.3776 14.5184 9.6295 14.5184 7.51131V2.78533Z"
         fill="url(#paint0_linear_trust)"
@@ -59,49 +59,49 @@ const TrustWalletIcon = () => (
       </linearGradient>
     </defs>
   </svg>
-);
+)
 
 export default function AuthModal() {
-  const { isAuthModalOpen, toggleAuthModal } = useSidebar();
-  const { t } = useI18n();
-  const [isLogin, setIsLogin] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("password123");
-  const [referralCode, setReferralCode] = useState("");
-  const [agreedToTerms, setAgreedToTerms] = useState(true);
-  const [agreedToNotifications, setAgreedToNotifications] = useState(true);
-  const [showReferral, setShowReferral] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
+  const { isAuthModalOpen, toggleAuthModal } = useSidebar()
+  const { t } = useI18n()
+  const [isLogin, setIsLogin] = useState(true)
+  const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('password123')
+  const [referralCode, setReferralCode] = useState('')
+  const [agreedToTerms, setAgreedToTerms] = useState(true)
+  const [agreedToNotifications, setAgreedToNotifications] = useState(true)
+  const [showReferral, setShowReferral] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
+  const [shouldRender, setShouldRender] = useState(false)
 
-  useModalScrollPrevention(isAuthModalOpen);
+  useModalScrollPrevention(isAuthModalOpen)
 
   const login = () => {
-    if (email === "dev.com@gmail.com" && password === "123") {
-      setAuthUser(email);
+    if (email === 'dev.com@gmail.com' && password === '123') {
+      setAuthUser(email)
     }
-    toggleAuthModal();
-  };
+    toggleAuthModal()
+  }
 
   const register = () => {
-    console.log("register");
-    toggleAuthModal();
-  };
+    console.log('register')
+    toggleAuthModal()
+  }
 
   useEffect(() => {
     if (isAuthModalOpen) {
-      setShouldRender(true);
-      const timer = setTimeout(() => setIsVisible(true), 10);
-      return () => clearTimeout(timer);
+      setShouldRender(true)
+      const timer = setTimeout(() => setIsVisible(true), 10)
+      return () => clearTimeout(timer)
     } else {
-      setIsVisible(false);
-      const timer = setTimeout(() => setShouldRender(false), 300);
-      return () => clearTimeout(timer);
+      setIsVisible(false)
+      const timer = setTimeout(() => setShouldRender(false), 300)
+      return () => clearTimeout(timer)
     }
-  }, [isAuthModalOpen]);
+  }, [isAuthModalOpen])
 
-  if (!shouldRender) return null;
+  if (!shouldRender) return null
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center overflow-hidden">
@@ -111,8 +111,8 @@ export default function AuthModal() {
       {/* Modal */}
       <div
         className={cn(
-          "relative w-full max-w-[740px] h-full max-h-screen flex justify-center items-center modal-content-scroll transform transition-all duration-300 ease-out",
-          isVisible ? "translate-y-0" : "translate-y-full sm:translate-y-8"
+          'relative w-full max-w-[740px] h-full max-h-screen flex justify-center items-center modal-content-scroll transform transition-all duration-300 ease-out',
+          isVisible ? 'translate-y-0' : 'translate-y-full sm:translate-y-8'
         )}
       >
         {/* Desktop Layout */}
@@ -125,9 +125,9 @@ export default function AuthModal() {
               style={{
                 backgroundImage:
                   "url('https://api.builder.io/api/v1/image/assets/TEMP/1966099a1a2c23b6a4509e98b3ec5376765f2b13?width=740')",
-                backgroundSize: "100% 100%",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#111923]/90" />
@@ -163,7 +163,7 @@ export default function AuthModal() {
                 onClick={toggleAuthModal}
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] hover:bg-white-8 transition-colors cursor-pointer"
                 style={{
-                  boxShadow: "0 1px 0 0 rgba(255, 255, 255, 0.16) inset",
+                  boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
                 }}
               >
                 <span>
@@ -178,21 +178,21 @@ export default function AuthModal() {
                 onClick={() => setIsLogin(true)}
                 className={`flex-1 py-4 px-3 text-sm font-bold text-center transition-colors cursor-pointer ${
                   isLogin
-                    ? "text-[#EDEDED] border-b-2 border-[#2283F6]"
-                    : "text-[#A7B5CA]"
+                    ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
+                    : 'text-[#A7B5CA]'
                 }`}
               >
-                <span>{t("auth.login")}</span>
+                <span>{t('auth.login')}</span>
               </div>
               <div
                 onClick={() => setIsLogin(false)}
                 className={`flex-1 py-4 px-3 text-center   text-sm font-bold transition-colors cursor-pointer ${
                   !isLogin
-                    ? "text-[#EDEDED] border-b-2 border-[#2283F6]"
-                    : "text-[#A7B5CA]"
+                    ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
+                    : 'text-[#A7B5CA]'
                 }`}
               >
-                <span>{t("auth.register")}</span>
+                <span>{t('auth.register')}</span>
               </div>
             </div>
 
@@ -203,13 +203,13 @@ export default function AuthModal() {
                 <div className="relative">
                   <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
                     <span className="text-xs text-[#93ACD3]">
-                      {t("auth.usernameEmail")}
+                      {t('auth.usernameEmail')}
                     </span>
                   </div>
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={e => setEmail(e.target.value)}
                     placeholder="Enter your username or email"
                     className="w-full h-12 px-4 pt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
                   />
@@ -225,18 +225,18 @@ export default function AuthModal() {
                     </span>
                   </div>
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={e => setPassword(e.target.value)}
                     placeholder={
                       !isLogin && password
-                        ? "✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱"
-                        : "Enter your password"
+                        ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
+                        : 'Enter your password'
                     }
                     className={`w-full h-12 px-4 pt-2 pr-12 bg-[#0D131C] rounded-xl text-sm focus:outline-none ${
                       !isLogin && password
-                        ? "border-2 border-[#2283F6] text-white"
-                        : "border border-[#55657E] text-white placeholder-[#55657E]"
+                        ? 'border-2 border-[#2283F6] text-white'
+                        : 'border border-[#55657E] text-white placeholder-[#55657E]'
                     }`}
                   />
                   <div
@@ -258,7 +258,7 @@ export default function AuthModal() {
               {isLogin ? (
                 <div className="mb-6">
                   <div className="text-[#2283F6] text-sm font-bold cursor-pointer">
-                    <span>{t("auth.forgotPassword")}</span>
+                    <span>{t('auth.forgotPassword')}</span>
                   </div>
                 </div>
               ) : (
@@ -267,14 +267,14 @@ export default function AuthModal() {
                     onClick={() => setShowReferral(!showReferral)}
                     className="flex items-center text-[#2283F6] text-sm font-bold cursor-pointer"
                   >
-                    <span>{t("auth.referralCode")}</span>
+                    <span>{t('auth.referralCode')}</span>
                     <ChevronDown size={20} className="ml-1" />
                   </div>
                   {showReferral && (
                     <input
                       type="text"
                       value={referralCode}
-                      onChange={(e) => setReferralCode(e.target.value)}
+                      onChange={e => setReferralCode(e.target.value)}
                       placeholder="Enter referral code"
                       className="w-full h-12 px-4 mt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
                     />
@@ -290,14 +290,14 @@ export default function AuthModal() {
                       <input
                         type="checkbox"
                         checked={agreedToTerms}
-                        onChange={(e) => setAgreedToTerms(e.target.checked)}
+                        onChange={e => setAgreedToTerms(e.target.checked)}
                         className="sr-only"
                       />
                       <div
                         className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
                           agreedToTerms
-                            ? "bg-[#2283F6] border-[#2283F6]"
-                            : "border-[#55657E] bg-transparent"
+                            ? 'bg-[#2283F6] border-[#2283F6]'
+                            : 'border-[#55657E] bg-transparent'
                         }`}
                       >
                         {agreedToTerms && (
@@ -319,7 +319,7 @@ export default function AuthModal() {
                       </div>
                     </div>
                     <span className="text-xs text-[#A7B5CA]">
-                      {t("auth.agreeUserAgreement")}
+                      {t('auth.agreeUserAgreement')}
                     </span>
                   </label>
 
@@ -328,7 +328,7 @@ export default function AuthModal() {
                       <input
                         type="checkbox"
                         checked={agreedToNotifications}
-                        onChange={(e) =>
+                        onChange={e =>
                           setAgreedToNotifications(e.target.checked)
                         }
                         className="sr-only"
@@ -336,8 +336,8 @@ export default function AuthModal() {
                       <div
                         className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
                           agreedToNotifications
-                            ? "bg-[#2283F6] border-[#2283F6]"
-                            : "border-[#55657E] bg-transparent"
+                            ? 'bg-[#2283F6] border-[#2283F6]'
+                            : 'border-[#55657E] bg-transparent'
                         }`}
                       >
                         {agreedToNotifications && (
@@ -359,7 +359,7 @@ export default function AuthModal() {
                       </div>
                     </div>
                     <span className="text-xs text-[#A7B5CA]">
-                      {t("auth.agreePromotional")}{" "}
+                      {t('auth.agreePromotional')}{' '}
                       <span className="text-[#2283F6]">ok777.casino</span>
                     </span>
                   </label>
@@ -372,7 +372,7 @@ export default function AuthModal() {
                 type="red"
                 className="w-full h-11 text-[14px] font-bold text-white"
               >
-                {isLogin ? "LOG IN" : "REGISTER"}
+                {isLogin ? 'LOG IN' : 'REGISTER'}
               </TDButton>
 
               {/* Spacer */}
@@ -407,18 +407,18 @@ export default function AuthModal() {
         {/* Mobile Layout */}
         <div
           className="lg:hidden animation-fade-in absolute top-0 h-full w-full max-w-md mx-auto bg-[#111923] overflow-x-hidden overflow-y-auto modal-content-scroll"
-          style={{ WebkitOverflowScrolling: "touch" }}
+          style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {/* Blue Gradient Background */}
           <div className="relative">
             <div
               className="w-full h-80 bg-gradient-to-b from-[#003A81] to-[#111923]"
               style={{
-                filter: "blur(175px)",
-                position: "absolute",
+                filter: 'blur(175px)',
+                position: 'absolute',
                 top: 0,
                 left: 0,
-                transform: "scale(1.5)",
+                transform: 'scale(1.5)',
               }}
             />
 
@@ -435,7 +435,7 @@ export default function AuthModal() {
                 onClick={toggleAuthModal}
                 className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] hover:bg-white-8 transition-colors cursor-pointer"
                 style={{
-                  boxShadow: "0 1px 0 0 rgba(255, 255, 255, 0.16) inset",
+                  boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
                 }}
               >
                 <span>
@@ -454,21 +454,21 @@ export default function AuthModal() {
                   onClick={() => setIsLogin(true)}
                   className={`flex-1 py-4 px-3 text-sm font-bold transition-colors cursor-pointer ${
                     isLogin
-                      ? "text-[#EDEDED] border-b-2 border-[#2283F6]"
-                      : "text-[#A7B5CA]"
+                      ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
+                      : 'text-[#A7B5CA]'
                   }`}
                 >
-                  <span>{t("auth.login")}</span>
+                  <span>{t('auth.login')}</span>
                 </div>
                 <div
                   onClick={() => setIsLogin(false)}
                   className={`flex-1 py-4 px-3 text-sm font-bold transition-colors cursor-pointer ${
                     !isLogin
-                      ? "text-[#EDEDED] border-b-2 border-[#2283F6]"
-                      : "text-[#A7B5CA]"
+                      ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
+                      : 'text-[#A7B5CA]'
                   }`}
                 >
-                  <span>{t("auth.register")}</span>
+                  <span>{t('auth.register')}</span>
                 </div>
               </div>
 
@@ -482,7 +482,7 @@ export default function AuthModal() {
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                   placeholder="Enter your username or email."
                   className="w-full h-12 px-4 pt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
                 />
@@ -494,18 +494,18 @@ export default function AuthModal() {
                   <span className="text-xs text-[#93ACD3]">Password</span>
                 </div>
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={e => setPassword(e.target.value)}
                   placeholder={
                     !isLogin && password
-                      ? "✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱"
-                      : "Enter your password"
+                      ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
+                      : 'Enter your password'
                   }
                   className={`w-full h-12 px-4 pt-2 pr-12 bg-[#0D131C] rounded-xl text-sm focus:outline-none ${
                     !isLogin && password
-                      ? "border-2 border-[#2283F6] text-white"
-                      : "border border-[#55657E] text-white placeholder-[#55657E]"
+                      ? 'border-2 border-[#2283F6] text-white'
+                      : 'border border-[#55657E] text-white placeholder-[#55657E]'
                   }`}
                 />
                 <div
@@ -527,7 +527,7 @@ export default function AuthModal() {
                       onClick={() => setShowReferral(!showReferral)}
                       className="flex items-center justify-between w-full text-[#2283F6] text-sm font-bold py-2 cursor-pointer"
                     >
-                      <span>{t("auth.referralCode")}</span>
+                      <span>{t('auth.referralCode')}</span>
                       <ChevronDown size={20} />
                     </div>
                   )}
@@ -535,7 +535,7 @@ export default function AuthModal() {
                     <input
                       type="text"
                       value={referralCode}
-                      onChange={(e) => setReferralCode(e.target.value)}
+                      onChange={e => setReferralCode(e.target.value)}
                       placeholder="Enter referral code"
                       className="w-full h-12 px-4 mt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
                     />
@@ -557,14 +557,14 @@ export default function AuthModal() {
                         <input
                           type="checkbox"
                           checked={agreedToTerms}
-                          onChange={(e) => setAgreedToTerms(e.target.checked)}
+                          onChange={e => setAgreedToTerms(e.target.checked)}
                           className="sr-only"
                         />
                         <div
                           className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
                             agreedToTerms
-                              ? "bg-[#2283F6] border-[#2283F6]"
-                              : "border-[#55657E] bg-transparent"
+                              ? 'bg-[#2283F6] border-[#2283F6]'
+                              : 'border-[#55657E] bg-transparent'
                           }`}
                         >
                           {agreedToTerms && (
@@ -586,7 +586,7 @@ export default function AuthModal() {
                         </div>
                       </div>
                       <span className="text-xs text-[#A7B5CA]">
-                        {t("auth.agreeUserAgreement")}
+                        {t('auth.agreeUserAgreement')}
                       </span>
                     </label>
 
@@ -595,7 +595,7 @@ export default function AuthModal() {
                         <input
                           type="checkbox"
                           checked={agreedToNotifications}
-                          onChange={(e) =>
+                          onChange={e =>
                             setAgreedToNotifications(e.target.checked)
                           }
                           className="sr-only"
@@ -603,8 +603,8 @@ export default function AuthModal() {
                         <div
                           className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
                             agreedToNotifications
-                              ? "bg-[#2283F6] border-[#2283F6]"
-                              : "border-[#55657E] bg-transparent"
+                              ? 'bg-[#2283F6] border-[#2283F6]'
+                              : 'border-[#55657E] bg-transparent'
                           }`}
                         >
                           {agreedToNotifications && (
@@ -626,7 +626,7 @@ export default function AuthModal() {
                         </div>
                       </div>
                       <span className="text-xs text-[#A7B5CA]">
-                        {t("auth.agreePromotional")}{" "}
+                        {t('auth.agreePromotional')}{' '}
                         <span className="text-[#2283F6]">ok777.casino</span>
                       </span>
                     </label>
@@ -667,5 +667,5 @@ export default function AuthModal() {
         </div>
       </div>
     </div>
-  );
+  )
 }

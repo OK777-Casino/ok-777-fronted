@@ -1,35 +1,38 @@
-import React, { useRef } from 'react';
-import { cn } from '@/lib/utils';
+import React, { useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 interface CopyBoxProps {
-  children?: React.ReactNode;
-  onClick?: () => void;
-  icon?: React.ReactNode;
-  className?: string;
-  onCopy?: (text: string) => void;
+  children?: React.ReactNode
+  onClick?: () => void
+  icon?: React.ReactNode
+  className?: string
+  onCopy?: (text: string) => void
 }
 
 export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
-  ({ children = "Filled", onClick, icon, className, onCopy, ...props }, ref) => {
+  (
+    { children = 'Filled', onClick, icon, className, onCopy, ...props },
+    ref
+  ) => {
     const handleCopy = async (e: React.MouseEvent) => {
-      e.stopPropagation(); // Prevent button onClick from firing
-      const textToCopy = typeof children === 'string' ? children : 'Filled';
+      e.stopPropagation() // Prevent button onClick from firing
+      const textToCopy = typeof children === 'string' ? children : 'Filled'
 
       try {
-        await navigator.clipboard.writeText(textToCopy);
-        onCopy?.(textToCopy);
+        await navigator.clipboard.writeText(textToCopy)
+        onCopy?.(textToCopy)
       } catch (error) {
-        console.error('Failed to copy text:', error);
+        console.error('Failed to copy text:', error)
         // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = textToCopy;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        onCopy?.(textToCopy);
+        const textArea = document.createElement('textarea')
+        textArea.value = textToCopy
+        document.body.appendChild(textArea)
+        textArea.select()
+        document.execCommand('copy')
+        document.body.removeChild(textArea)
+        onCopy?.(textToCopy)
       }
-    };
+    }
 
     const defaultIcon = (
       <div
@@ -56,29 +59,30 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
           />
         </svg>
       </div>
-    );
+    )
 
     return (
       <button
         ref={ref}
         onClick={onClick}
         className={cn(
-          "flex justify-center items-start gap-1 rounded-lg bg-[#1C2532] h-12 px-4 py-3",
-          "hover:bg-[#253040] transition-colors duration-200",
-          "focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50",
+          'flex justify-center items-start gap-1 rounded-lg bg-[#1C2532] h-12 px-4 py-3',
+          'hover:bg-[#253040] transition-colors duration-200',
+          'focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50',
           className
         )}
         {...props}
       >
         <div className="flex min-w-40 items-center gap-2 flex-1 self-stretch justify-between">
-          <span 
+          <span
             className=" overflow-hidden text-ellipsis text-left text-white text-sm font-bold leading-normal"
-            style={{ 
-              fontFamily: 'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
+            style={{
+              fontFamily:
+                'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
               textOverflow: 'ellipsis',
               WebkitLineClamp: 1,
               WebkitBoxOrient: 'vertical',
-              display: '-webkit-box'
+              display: '-webkit-box',
             }}
           >
             {children}
@@ -86,8 +90,8 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
           {icon || defaultIcon}
         </div>
       </button>
-    );
+    )
   }
-);
+)
 
-CopyBox.displayName = "CopyBox";
+CopyBox.displayName = 'CopyBox'

@@ -1,133 +1,133 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { useState } from "react";
+import { useState } from 'react'
 
-import ChevronDownIcon from "@/components/ui/icons/chevron-down";
-import FootballIcon from "@/components/ui/icons/football";
-import GiftIcon from "@/components/ui/icons/gift";
-import SpadeIcon from "@/components/ui/icons/spade";
-import ChevronsDownIcon from "@/components/ui/icons/chevrons-down";
-import CasinoPromotionCard from "@/components/ui/cards/PromotionCard";
-import NormalButton from "@/components/ui/Button/NormalButton";
-import { useT } from "@/context/I18nProvider";
+import ChevronDownIcon from '@/components/ui/icons/chevron-down'
+import FootballIcon from '@/components/ui/icons/football'
+import GiftIcon from '@/components/ui/icons/gift'
+import SpadeIcon from '@/components/ui/icons/spade'
+import ChevronsDownIcon from '@/components/ui/icons/chevrons-down'
+import CasinoPromotionCard from '@/components/ui/cards/PromotionCard'
+import NormalButton from '@/components/ui/Button/NormalButton'
+import { useT } from '@/context/I18nProvider'
 
 interface Tab {
-  id: string;
-  label: string;
-  icon: React.ReactNode;
-  count?: number;
+  id: string
+  label: string
+  icon: React.ReactNode
+  count?: number
 }
 
 const PromotionsPage = () => {
-  const [activeTab, setActiveTab] = useState("all");
-  const t = useT();
+  const [activeTab, setActiveTab] = useState('all')
+  const t = useT()
   const handleTabClick = (tabId: string) => {
-    setActiveTab(tabId);
-  };
+    setActiveTab(tabId)
+  }
 
   const tabs: Tab[] = [
     {
-      id: "all",
-      label: t("promotions.all"),
+      id: 'all',
+      label: t('promotions.all'),
       icon: <GiftIcon className="w-6 h-6" />,
       count: 4,
     },
     {
-      id: "casino",
-      label: t("promotions.casino"),
+      id: 'casino',
+      label: t('promotions.casino'),
       icon: <SpadeIcon className="w-6 h-6" />,
     },
     {
-      id: "sport",
-      label: t("promotions.sport"),
+      id: 'sport',
+      label: t('promotions.sport'),
       icon: <FootballIcon />,
     },
-  ];
+  ]
 
   const bannerCards = [
     {
-      button: t("promotions.joinnow"),
-      image: "/images/banner/Banner01.jpg",
-      link: "/joincommunity",
+      button: t('promotions.joinnow'),
+      image: '/images/banner/Banner01.jpg',
+      link: '/joincommunity',
     },
     {
-      button: `${t("promotions.get")} $588`,
-      image: "/images/banner/Banner10.jpg",
-      link: "/livecasino",
+      button: `${t('promotions.get')} $588`,
+      image: '/images/banner/Banner10.jpg',
+      link: '/livecasino',
     },
     {
-      button: `${t("promotions.claimnow")}`,
-      image: "/images/banner/Banner03.jpg",
-      link: "/firstdeposit",
+      button: `${t('promotions.claimnow')}`,
+      image: '/images/banner/Banner03.jpg',
+      link: '/firstdeposit',
     },
     {
-      button: `${t("promotions.claimnow")}`,
-      image: "/images/banner/Banner12.jpg",
-      link: "/first-deposit",
+      button: `${t('promotions.claimnow')}`,
+      image: '/images/banner/Banner12.jpg',
+      link: '/first-deposit',
     },
     {
-      button: `${t("promotions.get")} $588`,
-      image: "/images/banner/Banner02.jpg",
-      link: "/hashchallenge ",
+      button: `${t('promotions.get')} $588`,
+      image: '/images/banner/Banner02.jpg',
+      link: '/hashchallenge ',
     },
     {
-      button: `${t("promotions.get")} $1588`,
-      image: "/images/banner/Banner08.jpg",
-      link: "/electronicsubmit",
+      button: `${t('promotions.get')} $1588`,
+      image: '/images/banner/Banner08.jpg',
+      link: '/electronicsubmit',
     },
     {
-      button: `${t("promotions.claimnow")}`,
-      image: "/images/banner/Banner03.jpg",
-      link: "/firstdeposit",
+      button: `${t('promotions.claimnow')}`,
+      image: '/images/banner/Banner03.jpg',
+      link: '/firstdeposit',
     },
     {
-      button: `${t("promotions.claimnow")}`,
-      image: "/images/banner/Banner06.jpg",
-      link: "/checkinrewards",
+      button: `${t('promotions.claimnow')}`,
+      image: '/images/banner/Banner06.jpg',
+      link: '/checkinrewards',
     },
     {
-      button: `${t("promotions.get")} $588`,
-      image: "/images/banner/Banner05.jpg",
-      link: "/roadtochampion ",
+      button: `${t('promotions.get')} $588`,
+      image: '/images/banner/Banner05.jpg',
+      link: '/roadtochampion ',
     },
     {
-      button: `${t("promotions.get")} $1588`,
-      image: "/images/banner/Banner04.jpg",
-      link: "/minigame",
+      button: `${t('promotions.get')} $1588`,
+      image: '/images/banner/Banner04.jpg',
+      link: '/minigame',
     },
     {
-      button: `${t("promotions.claimnow")}`,
-      image: "/images/banner/Banner09.jpg",
-      link: "/nonstop",
+      button: `${t('promotions.claimnow')}`,
+      image: '/images/banner/Banner09.jpg',
+      link: '/nonstop',
     },
     {
-      button: `${t("promotions.get")} $588`,
-      image: "/images/banner/Banner11.jpg",
-      link: "/depositbonus ",
+      button: `${t('promotions.get')} $588`,
+      image: '/images/banner/Banner11.jpg',
+      link: '/depositbonus ',
     },
     {
-      button: `${t("promotions.get")} $1588`,
-      image: "/images/banner/Banner07.jpg",
-      link: "/energybank",
+      button: `${t('promotions.get')} $1588`,
+      image: '/images/banner/Banner07.jpg',
+      link: '/energybank',
     },
-  ] as const;
+  ] as const
 
   return (
     <div className="flex flex-col gap-8 mx-auto mb-16 pt-2">
       <div className="flex items-center w-full md:w-[28.125rem] p-1 bg-[#1A2332] rounded-xl m-auto">
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
+        {tabs.map(tab => {
+          const isActive = activeTab === tab.id
           return (
             <button
               key={tab.id}
               className={`flex items-center justify-start flex-1 p-2 rounded-lg transition-colors gap-2 ${
                 isActive
-                  ? "bg-[#2A3546] text-white"
-                  : "text-[#A7B5CA] hover:text-white"
+                  ? 'bg-[#2A3546] text-white'
+                  : 'text-[#A7B5CA] hover:text-white'
               }`}
               onClick={() => handleTabClick(tab.id)}
             >
@@ -143,7 +143,7 @@ const PromotionsPage = () => {
                 </div>
               )}
             </button>
-          );
+          )
         })}
       </div>
 
@@ -179,7 +179,7 @@ const PromotionsPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PromotionsPage;
+export default PromotionsPage

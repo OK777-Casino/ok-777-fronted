@@ -1,24 +1,24 @@
-'use client';
+'use client'
 
-import { Check } from "lucide-react";
-import ModalContainer from "./ModalContainer";
+import { Check } from 'lucide-react'
+import ModalContainer from './ModalContainer'
 
-type SortOption = "view-all" | "new" | "popular" | "a-z" | "z-a";
+type SortOption = 'view-all' | 'new' | 'popular' | 'a-z' | 'z-a'
 
 interface ChooseModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  selectedOption: SortOption;
-  onOptionChange: (option: SortOption) => void;
+  isOpen: boolean
+  onClose: () => void
+  selectedOption: SortOption
+  onOptionChange: (option: SortOption) => void
 }
 
 const sortOptions: { value: SortOption; label: string }[] = [
-  { value: "view-all", label: "View All" },
-  { value: "new", label: "New" },
-  { value: "popular", label: "Popular" },
-  { value: "a-z", label: "A-Z" },
-  { value: "z-a", label: "Z-A" },
-];
+  { value: 'view-all', label: 'View All' },
+  { value: 'new', label: 'New' },
+  { value: 'popular', label: 'Popular' },
+  { value: 'a-z', label: 'A-Z' },
+  { value: 'z-a', label: 'Z-A' },
+]
 
 export default function ChooseModal({
   isOpen,
@@ -36,8 +36,11 @@ export default function ChooseModal({
       className="lg:relative lg:w-[203px]"
       contentClassName="p-6 max-h-[60vh] lg:max-h-none overflow-y-auto"
     >
-      {sortOptions.map((option) => (
-        <div key={option.value} className={`flex h-[50px] px-3 pl-2 items-center gap-2 rounded-xl ${selectedOption === option.value ? 'bg-white/[0.04]' : ''}`}>
+      {sortOptions.map(option => (
+        <div
+          key={option.value}
+          className={`flex h-[50px] px-3 pl-2 items-center gap-2 rounded-xl ${selectedOption === option.value ? 'bg-white/[0.04]' : ''}`}
+        >
           <div className="flex h-9 px-2 pl-3 items-center gap-2 flex-1 rounded-lg">
             <div className="text-white font-montserrat text-sm font-bold line-clamp-1">
               {option.label}
@@ -60,5 +63,5 @@ export default function ChooseModal({
         </div>
       ))}
     </ModalContainer>
-  );
+  )
 }

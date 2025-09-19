@@ -1,9 +1,9 @@
 'use client'
 
-import React from "react"
+import React from 'react'
 
 interface PolicyFormProps {
-  content: string; // or `content?: string` if it can be optional
+  content: string // or `content?: string` if it can be optional
 }
 
 const PolicyForm: React.FC<PolicyFormProps> = ({ content }) => {
@@ -15,4 +15,4 @@ const PolicyForm: React.FC<PolicyFormProps> = ({ content }) => {
   )
 }
 
-export default PolicyForm;
+export default PolicyForm

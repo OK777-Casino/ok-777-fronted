@@ -154,10 +154,10 @@ Business logic is encapsulated in custom hooks:
 
 ```typescript
 // Old imports
-import Button from "../component/buttons/Button";
+import Button from '../component/buttons/Button'
 
 // New imports
-import { Button } from "../ui/atoms";
+import { Button } from '../ui/atoms'
 ```
 
 ## Best Practices

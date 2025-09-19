@@ -1,11 +1,11 @@
-import { useModalScrollPrevention } from "@/hooks/useModalScrollPrevention";
-import { useModal } from "../../context/ModalProvider";
-import { useI18n } from "../../context/I18nProvider";
-import ModalContainer from "./ModalContainer";
+import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
+import { useModal } from '../../context/ModalProvider'
+import { useI18n } from '../../context/I18nProvider'
+import ModalContainer from './ModalContainer'
 
 interface MenuModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen: boolean
+  onClose: () => void
 }
 
 // Custom SVG icons matching the Figma design exactly
@@ -23,7 +23,7 @@ const HeartIcon = () => (
       strokeWidth="2"
     />
   </svg>
-);
+)
 
 const GamepadIcon = () => (
   <svg
@@ -40,7 +40,7 @@ const GamepadIcon = () => (
       fill="#55657E"
     />
   </svg>
-);
+)
 
 const MessageDotsIcon = () => (
   <svg
@@ -55,7 +55,7 @@ const MessageDotsIcon = () => (
       fill="#55657E"
     />
   </svg>
-);
+)
 
 const HeadphoneMicIcon = () => (
   <svg
@@ -70,7 +70,7 @@ const HeadphoneMicIcon = () => (
       fill="#55657E"
     />
   </svg>
-);
+)
 
 const MedalStarIcon = () => (
   <svg
@@ -89,7 +89,7 @@ const MedalStarIcon = () => (
       fill="#55657E"
     />
   </svg>
-);
+)
 
 const InfoCircleIcon = () => (
   <svg
@@ -104,62 +104,62 @@ const InfoCircleIcon = () => (
       fill="#55657E"
     />
   </svg>
-);
+)
 
 export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
-  const { openRuleModal } = useModal();
-  const { t } = useI18n();
+  const { openRuleModal } = useModal()
+  const { t } = useI18n()
 
   // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen);
+  useModalScrollPrevention(isOpen)
 
   const menuItems = [
     {
-      id: "favorite",
-      label: t("games.favorites"),
+      id: 'favorite',
+      label: t('games.favorites'),
       icon: HeartIcon,
-      onClick: () => console.log("Favorite clicked"),
+      onClick: () => console.log('Favorite clicked'),
     },
     {
-      id: "lobby",
-      label: t("navigation.lobby"),
+      id: 'lobby',
+      label: t('navigation.lobby'),
       icon: GamepadIcon,
-      onClick: () => console.log("lobby clicked"),
+      onClick: () => console.log('lobby clicked'),
     },
     {
-      id: "chat",
-      label: t("navigation.chat"),
+      id: 'chat',
+      label: t('navigation.chat'),
       icon: MessageDotsIcon,
-      onClick: () => console.log("Chat clicked"),
+      onClick: () => console.log('Chat clicked'),
     },
     {
-      id: "online-service",
-      label: t("help.onlineService"),
+      id: 'online-service',
+      label: t('help.onlineService'),
       icon: HeadphoneMicIcon,
-      onClick: () => console.log("Online service clicked"),
+      onClick: () => console.log('Online service clicked'),
     },
     {
-      id: "betting-record",
-      label: t("navigation.bettingRecord"),
+      id: 'betting-record',
+      label: t('navigation.bettingRecord'),
       icon: MedalStarIcon,
-      onClick: () => console.log("Betting record clicked"),
+      onClick: () => console.log('Betting record clicked'),
     },
     {
-      id: "rule",
-      label: t("navigation.rules"),
+      id: 'rule',
+      label: t('navigation.rules'),
       icon: InfoCircleIcon,
       onClick: () => {
-        openRuleModal();
-        onClose(); // Close the menu modal when opening rule modal
+        openRuleModal()
+        onClose() // Close the menu modal when opening rule modal
       },
     },
-  ];
+  ]
 
   return (
     <ModalContainer
       isOpen={isOpen}
       onClose={onClose}
-      title={t("navigation.menu")}
+      title={t('navigation.menu')}
       size="md"
       position="responsive"
       width="90vw"
@@ -168,8 +168,8 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
       showHeader={true}
       showCloseButton={true}
     >
-      {menuItems.map((item) => {
-        const IconComponent = item.icon;
+      {menuItems.map(item => {
+        const IconComponent = item.icon
         return (
           <div
             key={item.id}
@@ -183,8 +183,8 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
               {item.label}
             </span>
           </div>
-        );
+        )
       })}
     </ModalContainer>
-  );
+  )
 }

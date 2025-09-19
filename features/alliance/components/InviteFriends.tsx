@@ -1,35 +1,35 @@
-import React from "react";
-import FAQ from "./FAQ";
-import { UnifiedButton } from "@/components/ui";
-import FlatButton from "@/components/ui/Button/FlatButton";
-import { CopyBox } from "@/components/ui/CopyBox";
-import { TwitterIcon, X, XIcon, YoutubeIcon } from "lucide-react";
-import BlackButton from "@/components/ui/Button/BlackButton";
-import FacebookIcon from "@/components/ui/icons/FacebookIcon";
-import InstagramIcon from "@/components/ui/icons/InstagramIcon";
-import YouTubeIcon from "@/components/ui/icons/YouTubeIcon";
-import DiscordIcon from "@/components/ui/icons/DiscordIcon";
-import TikTokIcon from "@/components/ui/icons/TikTokIcon";
-import TelegramIcon from "@/components/ui/icons/TelegramIcon";
+import React from 'react'
+import FAQ from './FAQ'
+import { UnifiedButton } from '@/components/ui'
+import FlatButton from '@/components/ui/Button/FlatButton'
+import { CopyBox } from '@/components/ui/CopyBox'
+import { TwitterIcon, X, XIcon, YoutubeIcon } from 'lucide-react'
+import BlackButton from '@/components/ui/Button/BlackButton'
+import FacebookIcon from '@/components/ui/icons/FacebookIcon'
+import InstagramIcon from '@/components/ui/icons/InstagramIcon'
+import YouTubeIcon from '@/components/ui/icons/YouTubeIcon'
+import DiscordIcon from '@/components/ui/icons/DiscordIcon'
+import TikTokIcon from '@/components/ui/icons/TikTokIcon'
+import TelegramIcon from '@/components/ui/icons/TelegramIcon'
 
 const InviteFriends: React.FC = () => {
   const faqs = [
     {
-      question: "How to activate a wallet address?",
+      question: 'How to activate a wallet address?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
     {
-      question: "Why do I need to activate the wallet address?",
+      question: 'Why do I need to activate the wallet address?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
     {
-      question: "Will not activating the wallet address affect withdrawals?",
+      question: 'Will not activating the wallet address affect withdrawals?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
-  ];
+  ]
 
   return (
     <div className="flex-1">
@@ -46,7 +46,7 @@ const InviteFriends: React.FC = () => {
           />
           <span className="text-white text-[1.125rem] font-bold relative z-10">
             Invite friends
-          </span>{" "}
+          </span>{' '}
         </div>
       </div>
 
@@ -171,7 +171,7 @@ const InviteFriends: React.FC = () => {
       {/* FAQs Section */}
       <FAQ faqs={faqs} />
     </div>
-  );
-};
+  )
+}
 
-export default InviteFriends;
+export default InviteFriends

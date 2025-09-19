@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import React from "react";
-import { LanguageSelector } from "../ui/Internationalization";
+import React from 'react'
+import { LanguageSelector } from '../ui/Internationalization'
 
 interface LanguageSelectorModalProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  initialLanguage: string;
-  onLanguageChange: (langCode: string) => void;
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  initialLanguage: string
+  onLanguageChange: (langCode: string) => void
 }
 
 const LanguageSelectorModal: React.FC<LanguageSelectorModalProps> = ({
@@ -22,6 +22,6 @@ const LanguageSelectorModal: React.FC<LanguageSelectorModalProps> = ({
     initialLanguage={initialLanguage}
     onLanguageChange={onLanguageChange}
   />
-);
+)
 
-export default LanguageSelectorModal;
+export default LanguageSelectorModal

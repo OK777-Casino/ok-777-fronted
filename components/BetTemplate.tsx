@@ -1,24 +1,24 @@
-"use client";
+'use client'
 
-import { ReactNode } from "react";
-import BlackButton from "./ui/Button/BlackButton";
-import FlatButton from "./ui/Button/FlatButton";
-import TDButton from "./ui/Button/TDButton";
-import ArrowLeftStrokeIcon from "./ui/icons/arrow-left-stroke";
-import { cn } from "@/lib/utils";
+import { ReactNode } from 'react'
+import BlackButton from './ui/Button/BlackButton'
+import FlatButton from './ui/Button/FlatButton'
+import TDButton from './ui/Button/TDButton'
+import ArrowLeftStrokeIcon from './ui/icons/arrow-left-stroke'
+import { cn } from '@/lib/utils'
 
 interface BetTemplateProps {
-  children: ReactNode;
-  background: string;
-  heading: string;
+  children: ReactNode
+  background: string
+  heading: string
   title: {
-    line1: string;
-    line2: string;
-  };
-  submit: string;
-  onClick: () => void;
-  button?: string;
-  onButtonClick?: () => void;
+    line1: string
+    line2: string
+  }
+  submit: string
+  onClick: () => void
+  button?: string
+  onButtonClick?: () => void
 }
 
 const BetTemplate: React.FC<BetTemplateProps> = ({
@@ -43,7 +43,7 @@ const BetTemplate: React.FC<BetTemplateProps> = ({
         <div className="rounded-[12px] overflow-hidden lg:mb-64">
           <div
             className={cn(
-              "h-[426px] w-full  flex flex-col justify-around lg:justify-center  bg-right gap-10 bg-no-repeat bg-cover",
+              'h-[426px] w-full  flex flex-col justify-around lg:justify-center  bg-right gap-10 bg-no-repeat bg-cover',
               background
             )}
           >
@@ -86,7 +86,7 @@ const BetTemplate: React.FC<BetTemplateProps> = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default BetTemplate;
+export default BetTemplate

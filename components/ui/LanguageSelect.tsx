@@ -1,30 +1,30 @@
-import { useState, useRef, useEffect } from "react";
-import { Search } from "lucide-react";
+import { useState, useRef, useEffect } from 'react'
+import { Search } from 'lucide-react'
 
 export interface Language {
-  code: string;
-  name: string;
-  flag: string;
+  code: string
+  name: string
+  flag: string
 }
 
 export const languages: Language[] = [
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "pl", name: "Polish", flag: "🇵🇱" },
-  { code: "pt", name: "Português", flag: "🇵🇹" },
-  { code: "ua", name: "Ukraine", flag: "🇺🇦" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "br", name: "Português (BR)", flag: "🇧🇷" },
-  { code: "zh", name: "中文", flag: "🇨🇳" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-];
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'pl', name: 'Polish', flag: '🇵🇱' },
+  { code: 'pt', name: 'Português', flag: '🇵🇹' },
+  { code: 'ua', name: 'Ukraine', flag: '🇺🇦' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'br', name: 'Português (BR)', flag: '🇧🇷' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+]
 
 interface LanguageSelectProps {
-  open?: boolean;
-  onRequestClose?: () => void;
-  triggerless?: boolean;
-  inline?: boolean;
-  value?: Language | null;
-  onChange?: (lang: Language) => void;
+  open?: boolean
+  onRequestClose?: () => void
+  triggerless?: boolean
+  inline?: boolean
+  value?: Language | null
+  onChange?: (lang: Language) => void
 }
 
 export default function LanguageDropdown({
@@ -35,94 +35,94 @@ export default function LanguageDropdown({
   value,
   onChange,
 }: LanguageSelectProps) {
-  const isControlled = typeof open === "boolean";
-  const [isOpenState, setIsOpenState] = useState(false);
-  const isOpen = isControlled ? (open as boolean) : isOpenState;
-  const [searchQuery, setSearchQuery] = useState("");
+  const isControlled = typeof open === 'boolean'
+  const [isOpenState, setIsOpenState] = useState(false)
+  const isOpen = isControlled ? (open as boolean) : isOpenState
+  const [searchQuery, setSearchQuery] = useState('')
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(
     value || languages[6]
-  ); // Default to Chinese
-  const [scrollTop, setScrollTop] = useState(0);
-  const [scrollHeight, setScrollHeight] = useState(0);
-  const [clientHeight, setClientHeight] = useState(0);
+  ) // Default to Chinese
+  const [scrollTop, setScrollTop] = useState(0)
+  const [scrollHeight, setScrollHeight] = useState(0)
+  const [clientHeight, setClientHeight] = useState(0)
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const scrollThumbRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const scrollThumbRef = useRef<HTMLDivElement>(null)
 
-  const filteredLanguages = languages.filter((lang) =>
+  const filteredLanguages = languages.filter(lang =>
     lang.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  )
 
   // Calculate scroll thumb position and size
-  const scrollRatio = clientHeight / scrollHeight;
-  const scrollThumbHeight = Math.max(scrollRatio * 100, 20); // Minimum thumb height
+  const scrollRatio = clientHeight / scrollHeight
+  const scrollThumbHeight = Math.max(scrollRatio * 100, 20) // Minimum thumb height
   const scrollThumbTop =
-    (scrollTop / (scrollHeight - clientHeight)) * (100 - scrollThumbHeight);
+    (scrollTop / (scrollHeight - clientHeight)) * (100 - scrollThumbHeight)
 
   const updateScrollMetrics = () => {
     if (scrollContainerRef.current) {
       const { scrollTop, scrollHeight, clientHeight } =
-        scrollContainerRef.current;
-      setScrollTop(scrollTop);
-      setScrollHeight(scrollHeight);
-      setClientHeight(clientHeight);
+        scrollContainerRef.current
+      setScrollTop(scrollTop)
+      setScrollHeight(scrollHeight)
+      setClientHeight(clientHeight)
     }
-  };
+  }
 
   const handleScroll = () => {
-    updateScrollMetrics();
-  };
+    updateScrollMetrics()
+  }
 
   const handleThumbMouseDown = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const startY = e.clientY;
-    const startTop = scrollTop;
+    e.preventDefault()
+    const startY = e.clientY
+    const startTop = scrollTop
 
     const handleMouseMove = (e: MouseEvent) => {
-      const deltaY = e.clientY - startY;
-      const scrollContainer = scrollContainerRef.current;
+      const deltaY = e.clientY - startY
+      const scrollContainer = scrollContainerRef.current
       if (scrollContainer) {
-        const maxScroll = scrollHeight - clientHeight;
-        const scrollRatio = deltaY / (100 - scrollThumbHeight);
+        const maxScroll = scrollHeight - clientHeight
+        const scrollRatio = deltaY / (100 - scrollThumbHeight)
         const newScrollTop = Math.max(
           0,
           Math.min(maxScroll, startTop + scrollRatio * maxScroll)
-        );
-        scrollContainer.scrollTop = newScrollTop;
+        )
+        scrollContainer.scrollTop = newScrollTop
       }
-    };
+    }
 
     const handleMouseUp = () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+    }
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseup', handleMouseUp)
+  }
 
   const handleTrackClick = (e: React.MouseEvent) => {
-    const scrollContainer = scrollContainerRef.current;
-    const scrollTrack = e.currentTarget;
+    const scrollContainer = scrollContainerRef.current
+    const scrollTrack = e.currentTarget
     if (scrollContainer && scrollTrack) {
-      const rect = scrollTrack.getBoundingClientRect();
-      const clickY = e.clientY - rect.top;
-      const trackHeight = rect.height;
-      const scrollRatio = clickY / trackHeight;
-      const maxScroll = scrollHeight - clientHeight;
-      scrollContainer.scrollTop = scrollRatio * maxScroll;
+      const rect = scrollTrack.getBoundingClientRect()
+      const clickY = e.clientY - rect.top
+      const trackHeight = rect.height
+      const scrollRatio = clickY / trackHeight
+      const maxScroll = scrollHeight - clientHeight
+      scrollContainer.scrollTop = scrollRatio * maxScroll
     }
-  };
+  }
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
+    const scrollContainer = scrollContainerRef.current
     if (scrollContainer) {
-      updateScrollMetrics();
-      scrollContainer.addEventListener("scroll", handleScroll);
-      return () => scrollContainer.removeEventListener("scroll", handleScroll);
+      updateScrollMetrics()
+      scrollContainer.addEventListener('scroll', handleScroll)
+      return () => scrollContainer.removeEventListener('scroll', handleScroll)
     }
-  }, [filteredLanguages]);
+  }, [filteredLanguages])
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -131,22 +131,22 @@ export default function LanguageDropdown({
         !dropdownRef.current.contains(event.target as Node)
       ) {
         if (isControlled) {
-          onRequestClose && onRequestClose();
+          onRequestClose && onRequestClose()
         } else {
-          setIsOpenState(false);
+          setIsOpenState(false)
         }
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isControlled, onRequestClose]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isControlled, onRequestClose])
 
   const FlagComponent = ({ code, name }: { code: string; name: string }) => {
     switch (code) {
-      case "de":
+      case 'de':
         return (
           <svg
             width="24"
@@ -166,8 +166,8 @@ export default function LanguageDropdown({
               </clipPath>
             </defs>
           </svg>
-        );
-      case "pl":
+        )
+      case 'pl':
         return (
           <svg
             width="24"
@@ -196,16 +196,16 @@ export default function LanguageDropdown({
               </clipPath>
             </defs>
           </svg>
-        );
-      case "pt":
+        )
+      case 'pt':
         return (
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/66de423489519396011389fd3ef2bc92f4a166d2?width=48"
             alt="Portugal flag"
             className="w-6 h-[18px] aspect-[4/3] rounded"
           />
-        );
-      case "ua":
+        )
+      case 'ua':
         return (
           <svg
             width="24"
@@ -234,24 +234,24 @@ export default function LanguageDropdown({
               </clipPath>
             </defs>
           </svg>
-        );
-      case "es":
+        )
+      case 'es':
         return (
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/4617f2553722a80a1a3ec1108536d85b409ead73?width=48"
             alt="Spain flag"
             className="w-6 h-[18px] aspect-[4/3]"
           />
-        );
-      case "br":
+        )
+      case 'br':
         return (
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/bad7e8606b2aed3047fd250a48eb1cb58eafef8d?width=48"
             alt="Brazil flag"
             className="w-6 h-[18px] aspect-[4/3] rounded"
           />
-        );
-      case "zh":
+        )
+      case 'zh':
         return (
           <svg
             width="24"
@@ -289,8 +289,8 @@ export default function LanguageDropdown({
               </clipPath>
             </defs>
           </svg>
-        );
-      case "fr":
+        )
+      case 'fr':
         return (
           <svg
             width="24"
@@ -325,17 +325,17 @@ export default function LanguageDropdown({
               </clipPath>
             </defs>
           </svg>
-        );
+        )
       default:
-        return <span className="text-lg">{name.slice(0, 2)}</span>;
+        return <span className="text-lg">{name.slice(0, 2)}</span>
     }
-  };
+  }
 
   useEffect(() => {
     if (value) {
-      setSelectedLanguage(value);
+      setSelectedLanguage(value)
     }
-  }, [value]);
+  }, [value])
 
   return (
     <div className="relative right-[272px]" ref={dropdownRef}>
@@ -354,7 +354,7 @@ export default function LanguageDropdown({
           </span>
           <svg
             className={`w-4 h-4 text-[#55657E] transition-transform ${
-              isOpen ? "rotate-180" : ""
+              isOpen ? 'rotate-180' : ''
             }`}
             fill="none"
             stroke="currentColor"
@@ -374,7 +374,7 @@ export default function LanguageDropdown({
       {isOpen && (
         <div
           className={`${
-            inline ? "static" : "absolute top-full left-0 mt-2"
+            inline ? 'static' : 'absolute top-full left-0 mt-2'
           } w-[280px] p-4 rounded-[14px] border border-white/13 bg-[#111923]/90 backdrop-blur-[32px] z-50`}
         >
           <div className="flex gap-2">
@@ -389,7 +389,7 @@ export default function LanguageDropdown({
                   type="text"
                   placeholder="Default"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={e => setSearchQuery(e.target.value)}
                   className="flex-1 bg-transparent text-[#55657E] placeholder-[#55657E] font-montserrat text-sm font-normal outline-none"
                 />
               </div>
@@ -400,29 +400,29 @@ export default function LanguageDropdown({
                 className="max-h-[300px] overflow-y-auto pr-2 scrollbar-hidden"
                 onScroll={handleScroll}
               >
-                {filteredLanguages.map((lang) => (
+                {filteredLanguages.map(lang => (
                   <div
                     key={lang.code}
                     onClick={() => {
-                      setSelectedLanguage(lang);
-                      onChange && onChange(lang);
+                      setSelectedLanguage(lang)
+                      onChange && onChange(lang)
                       if (isControlled) {
-                        onRequestClose && onRequestClose();
+                        onRequestClose && onRequestClose()
                       } else {
-                        setIsOpenState(false);
+                        setIsOpenState(false)
                       }
-                      setSearchQuery("");
+                      setSearchQuery('')
                     }}
                     className={`flex items-center gap-4 w-full h-12 px-3 rounded-lg transition-colors mb-1 ${
-                      lang.code === "zh"
-                        ? "bg-white/[0.04]"
-                        : "hover:bg-white/[0.04]"
+                      lang.code === 'zh'
+                        ? 'bg-white/[0.04]'
+                        : 'hover:bg-white/[0.04]'
                     }`}
                   >
                     <FlagComponent code={lang.code} name={lang.name} />
                     <span
                       className={`font-montserrat text-sm font-bold truncate ${
-                        lang.code === "zh" ? "text-[#93ACD3]" : "text-[#55657E]"
+                        lang.code === 'zh' ? 'text-[#93ACD3]' : 'text-[#55657E]'
                       }`}
                     >
                       {lang.name}
@@ -447,7 +447,7 @@ export default function LanguageDropdown({
                     style={{
                       height: `${Math.max(scrollThumbHeight, 30)}px`,
                       transform: `translateY(${scrollThumbTop * 3}px)`,
-                      position: "absolute",
+                      position: 'absolute',
                       top: 0,
                       right: 0,
                     }}
@@ -460,5 +460,5 @@ export default function LanguageDropdown({
         </div>
       )}
     </div>
-  );
+  )
 }

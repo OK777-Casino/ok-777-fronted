@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import React from 'react';
-import Overlay from './Overlay';
-import UserProfileDropdown from "@/components/ui/notification/Profile";
+import React from 'react'
+import Overlay from './Overlay'
+import UserProfileDropdown from '@/components/ui/notification/Profile'
 
 interface ProfileOverlayProps {
-  onClose: () => void;
+  onClose: () => void
 }
 
 const ProfileOverlay: React.FC<ProfileOverlayProps> = ({ onClose }) => {
@@ -24,7 +24,7 @@ const ProfileOverlay: React.FC<ProfileOverlayProps> = ({ onClose }) => {
         <UserProfileDropdown onClose={onClose} />
       </div>
     </Overlay>
-  );
-};
+  )
+}
 
-export default ProfileOverlay;
+export default ProfileOverlay

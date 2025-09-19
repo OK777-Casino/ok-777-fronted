@@ -1,111 +1,111 @@
-"use client";
+'use client'
 
-import ChevronLeftIcon from "@/components/ui/icons/chevron-left";
-import ChevronRightIcon from "@/components/ui/icons/chevron-right";
-import SwiperSlider from "@/components/ui/slider/SwiperSlider";
-import { Swiper as SwiperType } from "swiper";
-import { useRef, useState } from "react";
-import InfoCircleIcon from "@/components/ui/icons/info-circle";
-import HeadphoneMicIcon from "@/components/ui/icons/headphone-mic";
-import ArrowUpRightStrokeIcon from "@/components/ui/icons/arrow-up-right-stroke";
-import WhatsAppIcon from "@/components/ui/icons/WhatsAppIcon";
-import { FAQ } from "@/features/alliance/components";
-import ModalContainer from "@/components/modals/ModalContainer";
-import TelegramIcon from "@/components/ui/icons/TelegramIcon";
+import ChevronLeftIcon from '@/components/ui/icons/chevron-left'
+import ChevronRightIcon from '@/components/ui/icons/chevron-right'
+import SwiperSlider from '@/components/ui/slider/SwiperSlider'
+import { Swiper as SwiperType } from 'swiper'
+import { useRef, useState } from 'react'
+import InfoCircleIcon from '@/components/ui/icons/info-circle'
+import HeadphoneMicIcon from '@/components/ui/icons/headphone-mic'
+import ArrowUpRightStrokeIcon from '@/components/ui/icons/arrow-up-right-stroke'
+import WhatsAppIcon from '@/components/ui/icons/WhatsAppIcon'
+import { FAQ } from '@/features/alliance/components'
+import ModalContainer from '@/components/modals/ModalContainer'
+import TelegramIcon from '@/components/ui/icons/TelegramIcon'
 
-const data = [1, 2, 3, 4, 5];
+const data = [1, 2, 3, 4, 5]
 const faq = [
   {
-    question: "What can I do to improve my VIP level?",
+    question: 'What can I do to improve my VIP level?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
   {
-    question: "What are the rules for upgrading to VIP level?",
+    question: 'What are the rules for upgrading to VIP level?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
   {
-    question: "How can I claim the free VIP beauty bonus?",
+    question: 'How can I claim the free VIP beauty bonus?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
   {
-    question: "When is the monthly VIP bonus available and how can I claim it?",
+    question: 'When is the monthly VIP bonus available and how can I claim it?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
-];
+]
 
 const faq1 = [
   {
-    question: "Explain the VIP bonus.",
+    question: 'Explain the VIP bonus.',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
   {
-    question: "What are the conditions for withdrawing bonuses?",
+    question: 'What are the conditions for withdrawing bonuses?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
   {
-    question: "Why did my VIP level drop?",
+    question: 'Why did my VIP level drop?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
   {
-    question: "How can I ensure that my VIP level does not decrease?",
+    question: 'How can I ensure that my VIP level does not decrease?',
     answer:
-      "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
   },
-];
+]
 
 const vips = {
   1: [
     {
-      level: "v1",
-      promotion: "0",
-      moonthly: "0",
-      change: "0.20%",
+      level: 'v1',
+      promotion: '0',
+      moonthly: '0',
+      change: '0.20%',
     },
     {
-      level: "v1",
-      promotion: "2",
-      moonthly: "2",
-      change: "0.30%",
+      level: 'v1',
+      promotion: '2',
+      moonthly: '2',
+      change: '0.30%',
     },
     {
-      level: "v3",
-      promotion: "5",
-      moonthly: "5",
-      change: "0.40%",
+      level: 'v3',
+      promotion: '5',
+      moonthly: '5',
+      change: '0.40%',
     },
   ],
   2: [
     {
-      level: "v1",
-      deposit: "0",
-      income: "0",
-      change: "0",
+      level: 'v1',
+      deposit: '0',
+      income: '0',
+      change: '0',
     },
     {
-      level: "v2",
-      deposit: "100",
-      income: "800",
-      change: "200",
+      level: 'v2',
+      deposit: '100',
+      income: '800',
+      change: '200',
     },
     {
-      level: "v3",
-      deposit: "500",
-      income: "4k",
-      change: "1k",
+      level: 'v3',
+      deposit: '500',
+      income: '4k',
+      change: '1k',
     },
   ],
-};
+}
 
 const VipClubPage = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const swiperRef = useRef<SwiperType | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <div className="flex flex-col gap-8">
       <div className="bg-[linear-gradient(#003F70,#0078D6)] relative overflow-hidden rounded-[0.75rem] border-[0.0625rem] border-white-13 gap-6 py-8 px-6 flex items-center">
@@ -194,7 +194,10 @@ const VipClubPage = () => {
           <SwiperSlider
             data={data}
             renderSlide={(manufacturer, index) => (
-              <div key={index} className="rounded-[12px] overflow-hidden p-4 bg-white-4 hover:bg-white-8 flex flex-col gap-3">
+              <div
+                key={index}
+                className="rounded-[12px] overflow-hidden p-4 bg-white-4 hover:bg-white-8 flex flex-col gap-3"
+              >
                 <div
                   className="flex gap-4 items-start"
                   onClick={() => setIsModalOpen(true)}
@@ -375,7 +378,10 @@ const VipClubPage = () => {
               <span>Change of cutoff</span>
             </div>
             {vips[1].map((vip, index) => (
-              <div key={index} className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2">
+              <div
+                key={index}
+                className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2"
+              >
                 <span className="flex gap-2 items-center">
                   <img
                     src="/images/awards/Bronze.svg"
@@ -407,7 +413,10 @@ const VipClubPage = () => {
               <span>Change of cutoff</span>
             </div>
             {vips[2].map((vip, index) => (
-              <div key={index} className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2">
+              <div
+                key={index}
+                className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2"
+              >
                 <span className="flex gap-2 items-center">
                   <img
                     src="/images/awards/Bronze.svg"
@@ -425,7 +434,7 @@ const VipClubPage = () => {
         </div>
       </ModalContainer>
     </div>
-  );
-};
+  )
+}
 
-export default VipClubPage;
+export default VipClubPage

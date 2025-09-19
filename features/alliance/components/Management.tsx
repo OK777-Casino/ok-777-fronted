@@ -1,24 +1,24 @@
-import React from "react";
-import FAQ from "./FAQ";
+import React from 'react'
+import FAQ from './FAQ'
 
 const Management: React.FC = () => {
   const faqs = [
     {
-      question: "How to activate a wallet address?",
+      question: 'How to activate a wallet address?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
     {
-      question: "Why do I need to activate the wallet address?",
+      question: 'Why do I need to activate the wallet address?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
     {
-      question: "Will not activating the wallet address affect withdrawals?",
+      question: 'Will not activating the wallet address affect withdrawals?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
-  ];
+  ]
 
   return (
     <div className=" [@media(max-width:660px)]:w-full">
@@ -67,7 +67,7 @@ const Management: React.FC = () => {
       {/* FAQs Section */}
       <FAQ faqs={faqs} />
     </div>
-  );
-};
+  )
+}
 
-export default Management;
+export default Management

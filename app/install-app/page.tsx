@@ -1,119 +1,119 @@
-"use client";
+'use client'
 
-import { ReactNode, useState } from "react";
-import { cn } from "@/lib/utils";
-import ArrowLeftStrokeIcon from "@/components/ui/icons/arrow-left-stroke";
-import BlackButton from "@/components/ui/Button/BlackButton";
-import FlatButton from "@/components/ui/Button/FlatButton";
-import { FAQ } from "@/features/alliance/components";
-import TDButton from "@/components/ui/Button/TDButton";
-import ModalContainer from "@/components/modals/ModalContainer";
-import AppleIcon from "@/components/ui/icons/Apple";
-import AndroidIcon from "@/components/ui/icons/Android";
+import { ReactNode, useState } from 'react'
+import { cn } from '@/lib/utils'
+import ArrowLeftStrokeIcon from '@/components/ui/icons/arrow-left-stroke'
+import BlackButton from '@/components/ui/Button/BlackButton'
+import FlatButton from '@/components/ui/Button/FlatButton'
+import { FAQ } from '@/features/alliance/components'
+import TDButton from '@/components/ui/Button/TDButton'
+import ModalContainer from '@/components/modals/ModalContainer'
+import AppleIcon from '@/components/ui/icons/Apple'
+import AndroidIcon from '@/components/ui/icons/Android'
 
 const appDownloads = [
   {
-    icon: "/icons/apple.svg",
-    alt: "Apple",
-    platform: "iOS",
+    icon: '/icons/apple.svg',
+    alt: 'Apple',
+    platform: 'iOS',
   },
   {
-    icon: "/icons/windows.svg",
-    alt: "Windows",
-    platform: "Windows",
+    icon: '/icons/windows.svg',
+    alt: 'Windows',
+    platform: 'Windows',
   },
   {
-    icon: "/icons/android.svg",
-    alt: "Android",
-    platform: "Android",
+    icon: '/icons/android.svg',
+    alt: 'Android',
+    platform: 'Android',
   },
-];
+]
 
 const installApps = [
   {
-    icon: "/images/rocket1.svg",
-    title: "Lightning speed",
-    desc: "Enjoy even faster site loading and an improved BetFury experience. Make big wins with our fast app!",
+    icon: '/images/rocket1.svg',
+    title: 'Lightning speed',
+    desc: 'Enjoy even faster site loading and an improved BetFury experience. Make big wins with our fast app!',
   },
   {
-    icon: "/images/rocket2.svg",
-    title: "First to know",
+    icon: '/images/rocket2.svg',
+    title: 'First to know',
     desc: "Don't miss out on the latest news, special offers, bonuses, and new releases. Subscribe to our web push notifications on your mobile and desktop for instant updates.",
   },
   {
-    icon: "/images/rocket3.svg",
-    title: "Quick access",
-    desc: "Access BetFury with just one click! Enjoy the convenience of easy access to our platform and explore a wide range of crypto features, exciting games, and sports betting options.",
+    icon: '/images/rocket3.svg',
+    title: 'Quick access',
+    desc: 'Access BetFury with just one click! Enjoy the convenience of easy access to our platform and explore a wide range of crypto features, exciting games, and sports betting options.',
   },
-];
+]
 
 const faqs = {
   1: [
     {
-      question: "How to install on Android with Chrome?",
+      question: 'How to install on Android with Chrome?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
     {
-      question: "How to install on iOS with Chrome?",
+      question: 'How to install on iOS with Chrome?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
     {
-      question: "How to install on iOS with Safari?",
+      question: 'How to install on iOS with Safari?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
     {
-      question: "Which browsers is the app available in?  ",
+      question: 'Which browsers is the app available in?  ',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
   ],
   2: [
     {
-      question: "How to install on Windows with Chrome?",
+      question: 'How to install on Windows with Chrome?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
     {
-      question: "How to install on MacOS with Chrome?",
+      question: 'How to install on MacOS with Chrome?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
     {
-      question: "How to install on MacOS with Safari?",
+      question: 'How to install on MacOS with Safari?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
     {
-      question: "How to install if registered via crypto wallet?",
+      question: 'How to install if registered via crypto wallet?',
       answer:
         'Open BetFury in a Safari browser. Tap the "Share” icon on the bottom bar of the Safari. Select "Add to Home Screen" in the dropdown menu.Move the new application icon to any convenient place.',
     },
   ],
-};
+}
 
 const tabs = [
   {
-    id: "apple",
+    id: 'apple',
     icon: <AppleIcon />,
-    title: "iOS",
+    title: 'iOS',
   },
   {
-    id: "android",
+    id: 'android',
     icon: <AndroidIcon />,
-    title: "Android",
+    title: 'Android',
   },
-];
+]
 
 const InstallAppPage = () => {
-  const [modal, setModal] = useState(false);
-  const [selectedTab, setSelectedTab] = useState("apple");
+  const [modal, setModal] = useState(false)
+  const [selectedTab, setSelectedTab] = useState('apple')
 
   const toggleModal = () => {
-    setModal(!modal);
-  };
+    setModal(!modal)
+  }
 
   return (
     <>
@@ -126,7 +126,7 @@ const InstallAppPage = () => {
       <div className="rounded-[12px]  overflow-hidden lg:mb-64">
         <div
           className={cn(
-            "h-[426px] justify-end items-center lg:justify-start lg:items-start  w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8"
+            'h-[426px] justify-end items-center lg:justify-start lg:items-start  w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8'
           )}
         >
           <div className="hidden 2xl:block">
@@ -145,7 +145,7 @@ const InstallAppPage = () => {
             How to Install App
           </FlatButton>
           <div className="2xl:flex gap-4 items-center hidden">
-            {appDownloads.map((item) => (
+            {appDownloads.map(item => (
               <img
                 src={item.icon}
                 className="w-6 h-6"
@@ -169,7 +169,7 @@ const InstallAppPage = () => {
         </div>
         <div className="px-4 lg:bg-white-4 flex flex-col gap-[96px] pt-[96px] pb-0 lg:pb-[60px]">
           <div className="grid lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000] bg-white-4 p-4 pt-[86px] rounded-[12px] gap-[86px] ">
-            {installApps.map((app) => (
+            {installApps.map(app => (
               <div className="bg-white-4 rounded-[12px] p-8 pt-[73px] relative flex flex-col gap-4 items-center">
                 <h2 className="font-bold text-[14px] text-white ">
                   {app.title}
@@ -204,13 +204,13 @@ const InstallAppPage = () => {
         >
           <div className="p-2 flex flex-col gap-6">
             <div className="grid bg-white-4 rounded-[12px] p-1 grid-cols-2 gap-2">
-              {tabs.map((tab) => (
+              {tabs.map(tab => (
                 <div
                   key={tab.id}
                   onClick={() => setSelectedTab(tab.id)}
                   className={cn(
-                    "gap-2 h-9 rounded-[8px] text-[14px] flex justify-center items-center text-casper font-bold",
-                    selectedTab === tab.id ? "bg-white-13 text-white   " : ""
+                    'gap-2 h-9 rounded-[8px] text-[14px] flex justify-center items-center text-casper font-bold',
+                    selectedTab === tab.id ? 'bg-white-13 text-white   ' : ''
                   )}
                 >
                   {tab.icon}
@@ -219,7 +219,7 @@ const InstallAppPage = () => {
               ))}
             </div>
 
-            {selectedTab === "apple" ? (
+            {selectedTab === 'apple' ? (
               <div className="flex flex-col gap-6">
                 {/* Step 1 */}
                 <div className="flex flex-col gap-3">
@@ -358,7 +358,7 @@ const InstallAppPage = () => {
                   </p>
                 </div>
               </div>
-            ) : selectedTab === "android" ? (
+            ) : selectedTab === 'android' ? (
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-3">
                   <h2 className="text-[16px] font-bold text-white">
@@ -399,7 +399,7 @@ const InstallAppPage = () => {
         </ModalContainer>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default InstallAppPage;
+export default InstallAppPage

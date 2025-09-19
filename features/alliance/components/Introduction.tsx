@@ -1,147 +1,183 @@
-import React, { useEffect, useState } from "react";
-import FAQ from "./FAQ";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from 'react'
+import FAQ from './FAQ'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 interface CommissionData {
-  agentLevel: string;
-  performance: string;
-  rebate: string;
+  agentLevel: string
+  performance: string
+  rebate: string
 }
 
 interface AffiliateData {
-  id: string;
-  teamPerformance: string;
-  ratePerTenK: string;
-  rewardEarned: string;
-  validBet: string;
-  directPerformance?: string;
-  directCommission?: string;
-  subordinateCommission?: string;
-  totalRewards?: string;
+  id: string
+  teamPerformance: string
+  ratePerTenK: string
+  rewardEarned: string
+  validBet: string
+  directPerformance?: string
+  directCommission?: string
+  subordinateCommission?: string
+  totalRewards?: string
 }
 
 const Introduction: React.FC = () => {
-  const [selectedGameType, setSelectedGameType] = useState("Hash Games");
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [selectedGameType, setSelectedGameType] = useState('Hash Games')
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
-    const sub = searchParams.get("sub");
-    if (sub === "hash-games") setSelectedGameType("Hash Games");
-    if (sub === "slots") setSelectedGameType("Slots");
-  }, [searchParams]);
+    const sub = searchParams.get('sub')
+    if (sub === 'hash-games') setSelectedGameType('Hash Games')
+    if (sub === 'slots') setSelectedGameType('Slots')
+  }, [searchParams])
 
   const handleGameTypeClick = (gameType: string) => {
-    setSelectedGameType(gameType);
-    const params = new URLSearchParams(searchParams.toString());
-    const value = gameType === "Hash Games" ? "hash-games" : "slots";
-    params.set("sub", value);
-    router.replace(`${pathname}?${params.toString()}`);
-  };
+    setSelectedGameType(gameType)
+    const params = new URLSearchParams(searchParams.toString())
+    const value = gameType === 'Hash Games' ? 'hash-games' : 'slots'
+    params.set('sub', value)
+    router.replace(`${pathname}?${params.toString()}`)
+  }
 
   const commissionData: CommissionData[] = [
-    { agentLevel: "1class", performance: "valid bet > 50", rebate: "10k/30" },
-    { agentLevel: "2class", performance: "valid bet > 2.5M", rebate: "10k/31" },
-    { agentLevel: "3class", performance: "valid bet > 7.5M", rebate: "10k/32" },
-    { agentLevel: "4class", performance: "valid bet > 15M", rebate: "10k/33" },
-    { agentLevel: "5class", performance: "valid bet > 25M", rebate: "10k/34" },
-    { agentLevel: "6class", performance: "valid bet > 75M", rebate: "10k/35" },
-    { agentLevel: "7class", performance: "valid bet > 150M", rebate: "10k/37" },
-    { agentLevel: "8class", performance: "valid bet > 250M", rebate: "10k/39" },
-    { agentLevel: "9class", performance: "valid bet > 750M", rebate: "10k/42" },
     {
-      agentLevel: "10class",
-      performance: "valid bet > 1250M",
-      rebate: "10k/45",
+      agentLevel: '1class',
+      performance: 'valid bet > 50',
+      rebate: '10k/30',
     },
-  ];
+    {
+      agentLevel: '2class',
+      performance: 'valid bet > 2.5M',
+      rebate: '10k/31',
+    },
+    {
+      agentLevel: '3class',
+      performance: 'valid bet > 7.5M',
+      rebate: '10k/32',
+    },
+    {
+      agentLevel: '4class',
+      performance: 'valid bet > 15M',
+      rebate: '10k/33',
+    },
+    {
+      agentLevel: '5class',
+      performance: 'valid bet > 25M',
+      rebate: '10k/34',
+    },
+    {
+      agentLevel: '6class',
+      performance: 'valid bet > 75M',
+      rebate: '10k/35',
+    },
+    {
+      agentLevel: '7class',
+      performance: 'valid bet > 150M',
+      rebate: '10k/37',
+    },
+    {
+      agentLevel: '8class',
+      performance: 'valid bet > 250M',
+      rebate: '10k/39',
+    },
+    {
+      agentLevel: '9class',
+      performance: 'valid bet > 750M',
+      rebate: '10k/42',
+    },
+    {
+      agentLevel: '10class',
+      performance: 'valid bet > 1250M',
+      rebate: '10k/45',
+    },
+  ]
 
   const affiliateAData: AffiliateData = {
-    id: "A",
-    teamPerformance: "4.12M",
-    ratePerTenK: "35",
-    rewardEarned: "14420",
-    validBet: "2640",
-    directPerformance: "720K",
-    directCommission: "2520",
-    subordinateCommission: "2520",
-    totalRewards: "2640",
-  };
+    id: 'A',
+    teamPerformance: '4.12M',
+    ratePerTenK: '35',
+    rewardEarned: '14420',
+    validBet: '2640',
+    directPerformance: '720K',
+    directCommission: '2520',
+    subordinateCommission: '2520',
+    totalRewards: '2640',
+  }
 
   const affiliateBData: AffiliateData[] = [
     {
-      id: "B1",
-      teamPerformance: "400K",
-      ratePerTenK: "32",
-      rewardEarned: "1280",
-      validBet: "200K",
+      id: 'B1',
+      teamPerformance: '400K',
+      ratePerTenK: '32',
+      rewardEarned: '1280',
+      validBet: '200K',
     },
     {
-      id: "B2",
-      teamPerformance: "0",
-      ratePerTenK: "0",
-      rewardEarned: "0",
-      validBet: "500K",
+      id: 'B2',
+      teamPerformance: '0',
+      ratePerTenK: '0',
+      rewardEarned: '0',
+      validBet: '500K',
     },
     {
-      id: "B3",
-      teamPerformance: "3M",
-      ratePerTenK: "35",
-      rewardEarned: "10500",
-      validBet: "20K",
+      id: 'B3',
+      teamPerformance: '3M',
+      ratePerTenK: '35',
+      rewardEarned: '10500',
+      validBet: '20K',
     },
-  ];
+  ]
 
   const affiliateCData: AffiliateData[] = [
     {
-      id: "C1",
-      teamPerformance: "0",
-      ratePerTenK: "0",
-      rewardEarned: "0",
-      validBet: "200K",
+      id: 'C1',
+      teamPerformance: '0',
+      ratePerTenK: '0',
+      rewardEarned: '0',
+      validBet: '200K',
     },
     {
-      id: "C2",
-      teamPerformance: "0",
-      ratePerTenK: "0",
-      rewardEarned: "0",
-      validBet: "200K",
+      id: 'C2',
+      teamPerformance: '0',
+      ratePerTenK: '0',
+      rewardEarned: '0',
+      validBet: '200K',
     },
     {
-      id: "C3",
-      teamPerformance: "0",
-      ratePerTenK: "0",
-      rewardEarned: "0",
-      validBet: "3M",
+      id: 'C3',
+      teamPerformance: '0',
+      ratePerTenK: '0',
+      rewardEarned: '0',
+      validBet: '3M',
     },
-  ];
+  ]
   // /icons/Home.svg", active: true },
   //   { id: "hash", label: "Hash Games", icon: "/icons/Hash.svg", active: false },
   //   { id: "slots", label: "Slots", icon: "/icons/Slots.svg", active: false },
   //   { id: "casino", label: "Casino", icon: "/icons/Casino1.svg", active: false },
   //   { id: "sport", label: "Sport", icon: "/icons/Sport.svg", active: false },
   const gameTypes = [
-    { name: "Hash Games", icon: "/icons/Home.svg", active: true },
-    { name: "Slots", icon: "/icons/Hash.svg", active: false },
-  ];
+    { name: 'Hash Games', icon: '/icons/Home.svg', active: true },
+    { name: 'Slots', icon: '/icons/Hash.svg', active: false },
+  ]
   const faqs = [
     {
-      question: "How to activate a wallet address?",
+      question: 'How to activate a wallet address?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
     {
-      question: "Why do I need to activate the wallet address?",
+      question: 'Why do I need to activate the wallet address?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
     {
-      question: "Will not activating the wallet address affect withdrawals?",
+      question: 'Will not activating the wallet address affect withdrawals?',
       answer:
-        "Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.",
+        'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
     },
-  ];
+  ]
 
   return (
     <div className=" [@media(max-width:660px)]:w-full">
@@ -167,8 +203,8 @@ const Introduction: React.FC = () => {
               onClick={() => handleGameTypeClick(game.name)}
               className={`flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-bold transition-colors duration-200 hover:bg-white/10 hover:shadow-md cursor-pointer ${
                 selectedGameType === game.name
-                  ? "bg-[#2283f6] text-white"
-                  : "bg-transparent text-[#a7b5ca] hover:bg-[#ffffff0a]"
+                  ? 'bg-[#2283f6] text-white'
+                  : 'bg-transparent text-[#a7b5ca] hover:bg-[#ffffff0a]'
               }`}
             >
               <img src={game.icon} alt={game.name} width={26} height={26} />
@@ -196,7 +232,7 @@ const Introduction: React.FC = () => {
               <div
                 key={index}
                 className={`p-3 ${
-                  index % 2 === 0 ? "bg-[#ffffff14]" : "bg-[#ffffff0a]"
+                  index % 2 === 0 ? 'bg-[#ffffff14]' : 'bg-[#ffffff0a]'
                 }`}
               >
                 <div className="flex grid-cols-3 gap-4  justify-center items-center">
@@ -526,7 +562,7 @@ const Introduction: React.FC = () => {
       {/* FAQs Section */}
       <FAQ faqs={faqs} />
     </div>
-  );
-};
+  )
+}
 
-export default Introduction;
+export default Introduction

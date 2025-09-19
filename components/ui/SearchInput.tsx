@@ -1,36 +1,46 @@
-import React, { useState } from 'react';
-import { cn } from '@/lib/utils';
+import React, { useState } from 'react'
+import { cn } from '@/lib/utils'
 
 interface SearchInputProps {
-  value?: string;
-  placeholder?: string;
-  onValueChange?: (value: string) => void;
-  onClear?: () => void;
-  className?: string;
+  value?: string
+  placeholder?: string
+  onValueChange?: (value: string) => void
+  onClear?: () => void
+  className?: string
 }
 
 export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
-  ({ value, placeholder = "Search...", onValueChange, onClear, className, ...props }, ref) => {
-    const [inputValue, setInputValue] = useState(value || '');
+  (
+    {
+      value,
+      placeholder = 'Search...',
+      onValueChange,
+      onClear,
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    const [inputValue, setInputValue] = useState(value || '')
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const newValue = e.target.value;
-      setInputValue(newValue);
-      onValueChange?.(newValue);
-    };
+      const newValue = e.target.value
+      setInputValue(newValue)
+      onValueChange?.(newValue)
+    }
 
     const handleClear = () => {
-      setInputValue('');
-      onValueChange?.('');
-      onClear?.();
-    };
+      setInputValue('')
+      onValueChange?.('')
+      onClear?.()
+    }
 
     const searchIcon = (
-      <svg 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
-        fill="none" 
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-6 h-6"
       >
@@ -40,20 +50,19 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           stroke="#55657E"
         />
       </svg>
-    );
+    )
 
     const clearIcon = (
       <div
-        
         onClick={handleClear}
         className="p-1 hover:bg-blue-bayoux/10 rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-dodger-blue focus:ring-opacity-50"
         title="Clear search"
       >
-        <svg 
-          width="24" 
-          height="24" 
-          viewBox="0 0 24 24" 
-          fill="none" 
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-6 h-6"
         >
@@ -64,13 +73,16 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           />
         </svg>
       </div>
-    );
+    )
 
     return (
-      <div className={cn("flex w-full px-4 py-3 justify-center items-center gap-2 rounded-lg border border-dodger-blue h-12", className)}>
-        <div className="flex items-center flex-shrink-0">
-          {searchIcon}
-        </div>
+      <div
+        className={cn(
+          'flex w-full px-4 py-3 justify-center items-center gap-2 rounded-lg border border-dodger-blue h-12',
+          className
+        )}
+      >
+        <div className="flex items-center flex-shrink-0">{searchIcon}</div>
 
         <input
           ref={ref}
@@ -79,28 +91,27 @@ export const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           placeholder={placeholder}
           onChange={handleInputChange}
           className={cn(
-            "flex-1 overflow-hidden text-ellipsis bg-transparent text-polo-blue text-sm font-normal outline-none min-w-0",
-            "placeholder:text-blue-bayoux/70",
-            "focus:outline-none focus:ring-0"
+            'flex-1 overflow-hidden text-ellipsis bg-transparent text-polo-blue text-sm font-normal outline-none min-w-0',
+            'placeholder:text-blue-bayoux/70',
+            'focus:outline-none focus:ring-0'
           )}
           style={{
-            fontFamily: 'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
+            fontFamily:
+              'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
             textOverflow: 'ellipsis',
             WebkitLineClamp: 1,
             WebkitBoxOrient: 'vertical',
-            display: '-webkit-box'
+            display: '-webkit-box',
           }}
           {...props}
         />
 
         {inputValue && inputValue.length > 0 && (
-          <div className="flex items-center flex-shrink-0">
-            {clearIcon}
-          </div>
+          <div className="flex items-center flex-shrink-0">{clearIcon}</div>
         )}
       </div>
-    );
+    )
   }
-);
+)
 
-SearchInput.displayName = "SearchInput";
+SearchInput.displayName = 'SearchInput'

@@ -1,18 +1,18 @@
-"use client";
+'use client'
 
-import { cn } from "@/lib/utils";
-import React from "react";
+import { cn } from '@/lib/utils'
+import React from 'react'
 
 interface FlatButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
+  children: React.ReactNode
+  onClick?: () => void
+  className?: string
 }
 
 const FlatButton: React.FC<FlatButtonProps> = ({
   children,
   onClick,
-  className = "",
+  className = '',
 }) => {
   return (
     <div
@@ -21,7 +21,7 @@ const FlatButton: React.FC<FlatButtonProps> = ({
     >
       <span
         className={cn(
-          "edge absolute  top-[0.1875rem] left-0 w-full h-full rounded-[0.5rem] !bg-[#2283F680] opacity-80",
+          'edge absolute  top-[0.1875rem] left-0 w-full h-full rounded-[0.5rem] !bg-[#2283F680] opacity-80',
           className
         )}
       ></span>
@@ -37,7 +37,7 @@ const FlatButton: React.FC<FlatButtonProps> = ({
         <span>{children}</span>
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default FlatButton;
+export default FlatButton

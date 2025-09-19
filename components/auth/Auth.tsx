@@ -1,29 +1,29 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
-import { useSidebar } from "../../context/SidebarProvider";
-import { UnifiedButton } from "../ui";
+import LoginForm from './LoginForm'
+import RegisterForm from './RegisterForm'
+import { useSidebar } from '../../context/SidebarProvider'
+import { UnifiedButton } from '../ui'
 
-const icons = ["Gmail", "Telegram", "MetaMask", "TON", "Trustpilot"];
+const icons = ['Gmail', 'Telegram', 'MetaMask', 'TON', 'Trustpilot']
 
 const Auth: React.FC = () => {
-  const { isAuthModalOpen, toggleAuthModal } = useSidebar();
-  const [socialOIcons, setSocialOIcons] = useState(icons);
-  const [activeTab, setActiveTab] = useState<"login" | "registration">("login");
+  const { isAuthModalOpen, toggleAuthModal } = useSidebar()
+  const [socialOIcons, setSocialOIcons] = useState(icons)
+  const [activeTab, setActiveTab] = useState<'login' | 'registration'>('login')
 
-  const handleTabChange = (tabId: "login" | "registration") => {
-    setActiveTab(tabId);
-  };
+  const handleTabChange = (tabId: 'login' | 'registration') => {
+    setActiveTab(tabId)
+  }
 
   const AuthModalContentInfo = {
-    backImage: "images/auth/auth-back.png",
-    CharactorImage: "images/auth/auth-charator.png",
-    Title: "WELCOME </br> BONUS </br> UP TO 590%",
-    addInfo: "+ 225 Free Spins",
-  };
+    backImage: 'images/auth/auth-back.png',
+    CharactorImage: 'images/auth/auth-charator.png',
+    Title: 'WELCOME </br> BONUS </br> UP TO 590%',
+    addInfo: '+ 225 Free Spins',
+  }
 
   return (
     <>
@@ -71,25 +71,25 @@ const Auth: React.FC = () => {
                       <span
                         data-id="login"
                         className={`auth-option-item ${
-                          activeTab === "login" ? "active" : ""
+                          activeTab === 'login' ? 'active' : ''
                         }`}
-                        onClick={() => handleTabChange("login")}
+                        onClick={() => handleTabChange('login')}
                       >
                         Log In
                       </span>
                       <span
                         data-id="registration"
                         className={`auth-option-item ${
-                          activeTab === "registration" ? "active" : ""
+                          activeTab === 'registration' ? 'active' : ''
                         }`}
-                        onClick={() => handleTabChange("registration")}
+                        onClick={() => handleTabChange('registration')}
                       >
                         Registration
                       </span>
                     </div>
                     <div className="auth-forms">
-                      {activeTab === "login" && <LoginForm />}
-                      {activeTab === "registration" && <RegisterForm />}
+                      {activeTab === 'login' && <LoginForm />}
+                      {activeTab === 'registration' && <RegisterForm />}
                     </div>
                   </div>
                   <div className="auth-modal-form-social">
@@ -100,9 +100,7 @@ const Auth: React.FC = () => {
                           Log in using
                           <span className="title-line"></span>
                         </div>
-                        <div className="social-buttons-row">
-                          
-                        </div>
+                        <div className="social-buttons-row"></div>
                       </div>
                     </div>
                   </div>
@@ -115,7 +113,7 @@ const Auth: React.FC = () => {
         <></>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Auth;
+export default Auth

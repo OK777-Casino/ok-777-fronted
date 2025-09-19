@@ -1,52 +1,62 @@
-import { useState } from "react";
-import { PokerChip } from "./PokerChip";
-import { CircularChipSelector } from "./CircularChipSelector";
+import { useState } from 'react'
+import { PokerChip } from './PokerChip'
+import { CircularChipSelector } from './CircularChipSelector'
 
 interface MobileChipSelectorProps {
-  onMenuClick: () => void;
-  onGridClick: () => void;
+  onMenuClick: () => void
+  onGridClick: () => void
 }
 
-const chipData: Record<string, { value: string | number; color: "blue" | "purple" | "green" | "navy" | "red" | "orange" }> = {
-  "1": { value: 1, color: "blue" },
-  "5": { value: 5, color: "purple" },
-  "10": { value: 10, color: "green" },
-  "50": { value: 50, color: "navy" },
-  "100": { value: 100, color: "red" },
-  "customize": { value: "Customize", color: "orange" },
-};
+const chipData: Record<
+  string,
+  {
+    value: string | number
+    color: 'blue' | 'purple' | 'green' | 'navy' | 'red' | 'orange'
+  }
+> = {
+  '1': { value: 1, color: 'blue' },
+  '5': { value: 5, color: 'purple' },
+  '10': { value: 10, color: 'green' },
+  '50': { value: 50, color: 'navy' },
+  '100': { value: 100, color: 'red' },
+  customize: { value: 'Customize', color: 'orange' },
+}
 
-
-export function MobileChipSelector({ onMenuClick, onGridClick }: MobileChipSelectorProps) {
-  const [selectedChip, setSelectedChip] = useState<string>("1");
-  const [showCircularView, setShowCircularView] = useState<boolean>(false);
+export function MobileChipSelector({
+  onMenuClick,
+  onGridClick,
+}: MobileChipSelectorProps) {
+  const [selectedChip, setSelectedChip] = useState<string>('1')
+  const [showCircularView, setShowCircularView] = useState<boolean>(false)
 
   const getChipDisplay = (chipId: string) => {
-    return chipData[chipId] || chipData["1"];
-  };
+    return chipData[chipId] || chipData['1']
+  }
 
   const handleChipSelect = (chipId: string) => {
-    setSelectedChip(chipId);
-    setShowCircularView(false); // Close circular view after selection
-  };
+    setSelectedChip(chipId)
+    setShowCircularView(false) // Close circular view after selection
+  }
 
   return (
     <>
-        <div className="flex relative justify-center items-center w-full ">
-      {showCircularView && (<CircularChipSelector
-        onChipSelect={handleChipSelect}
-        onClose={() => setShowCircularView(false)}
-      />)}
+      <div className="flex relative justify-center items-center w-full ">
+        {showCircularView && (
+          <CircularChipSelector
+            onChipSelect={handleChipSelect}
+            onClose={() => setShowCircularView(false)}
+          />
+        )}
         <div
           className="flex h-[52px] items-end justify-center w-full gap-2  px-2 py-2 rounded-xl"
-          style={{ background: "rgba(255, 255, 255, 0.04)" }}
+          style={{ background: 'rgba(255, 255, 255, 0.04)' }}
         >
           {/* Grid/Menu Button */}
           <div
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/5 bg-white/5 backdrop-blur-[32px]"
             style={{
-              background: "rgba(255, 255, 255, 0.04)",
-              boxShadow: "0 1px 0 0 rgba(255, 255, 255, 0.16) inset"
+              background: 'rgba(255, 255, 255, 0.04)',
+              boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
             }}
             onClick={onGridClick}
           >
@@ -100,7 +110,7 @@ export function MobileChipSelector({ onMenuClick, onGridClick }: MobileChipSelec
           <div className="flex flex-1 justify-center items-center gap-1">
             <div
               className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-chip-casper flex-1"
-              style={{ background: "rgba(0, 0, 0, 0.54)" }}
+              style={{ background: 'rgba(0, 0, 0, 0.54)' }}
             >
               Undo
               <svg
@@ -124,8 +134,8 @@ export function MobileChipSelector({ onMenuClick, onGridClick }: MobileChipSelec
             color={getChipDisplay(selectedChip).color}
             isSelected={true}
             onClick={() => {
-              console.log("Chip clicked, showing circular view");
-              setShowCircularView(true);
+              console.log('Chip clicked, showing circular view')
+              setShowCircularView(true)
             }}
             className="relative"
           />
@@ -134,7 +144,7 @@ export function MobileChipSelector({ onMenuClick, onGridClick }: MobileChipSelec
           <div className="flex flex-1 justify-center items-center gap-1">
             <div
               className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-chip-casper flex-1"
-              style={{ background: "rgba(0, 0, 0, 0.54)" }}
+              style={{ background: 'rgba(0, 0, 0, 0.54)' }}
             >
               <svg
                 width="24"
@@ -157,8 +167,8 @@ export function MobileChipSelector({ onMenuClick, onGridClick }: MobileChipSelec
           <div
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/5 bg-white/5 backdrop-blur-[32px]"
             style={{
-              background: "rgba(255, 255, 255, 0.04)",
-              boxShadow: "0 1px 0 0 rgba(255, 255, 255, 0.16) inset"
+              background: 'rgba(255, 255, 255, 0.04)',
+              boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
             }}
             onClick={onMenuClick}
           >
@@ -179,7 +189,6 @@ export function MobileChipSelector({ onMenuClick, onGridClick }: MobileChipSelec
           </div>
         </div>
       </div>
-      
     </>
-  );
+  )
 }

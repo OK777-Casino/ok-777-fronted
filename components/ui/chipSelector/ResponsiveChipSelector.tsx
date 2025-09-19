@@ -1,43 +1,43 @@
-import { useState, useEffect } from "react";
-import { ChipSelector } from "./ChipSelector";
-import { MobileChipSelector } from "./MobileChipSelector";
-import MenuModal from "@/components/modals/MenuModal";
-import ChangeGameModal from "@/components/modals/ChangeGameModal";
+import { useState, useEffect } from 'react'
+import { ChipSelector } from './ChipSelector'
+import { MobileChipSelector } from './MobileChipSelector'
+import MenuModal from '@/components/modals/MenuModal'
+import ChangeGameModal from '@/components/modals/ChangeGameModal'
 
 export function ResponsiveChipSelector() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
-  const [isChangeMenuModalOpen, setIsChangeMenuModalOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
+  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
+  const [isChangeMenuModalOpen, setIsChangeMenuModalOpen] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     // Mark as client-side to prevent hydration mismatch
-    setIsClient(true);
-    
+    setIsClient(true)
+
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+      setIsMobile(window.innerWidth < 768)
+    }
 
     // Check on mount
-    checkIsMobile();
+    checkIsMobile()
 
     // Listen for resize events
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener('resize', checkIsMobile)
 
     // Cleanup
-    return () => window.removeEventListener('resize', checkIsMobile);
-  }, []);
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   const handleMenuClick = () => {
-    setIsMenuModalOpen(true);
-  };
+    setIsMenuModalOpen(true)
+  }
 
   const handleCloseMenuModal = () => {
-    setIsMenuModalOpen(false);
-  };
+    setIsMenuModalOpen(false)
+  }
 
   const toggleChangeGameModal = () => {
-    setIsChangeMenuModalOpen(!isChangeMenuModalOpen);
+    setIsChangeMenuModalOpen(!isChangeMenuModalOpen)
   }
 
   // Prevent hydration mismatch by showing the same content on server and client initially
@@ -45,29 +45,32 @@ export function ResponsiveChipSelector() {
     return (
       <>
         <ChipSelector />
-        <MenuModal 
-          isOpen={isMenuModalOpen} 
-          onClose={handleCloseMenuModal} 
+        <MenuModal isOpen={isMenuModalOpen} onClose={handleCloseMenuModal} />
+        <ChangeGameModal
+          isOpen={isChangeMenuModalOpen}
+          onClose={toggleChangeGameModal}
         />
-        <ChangeGameModal isOpen={isChangeMenuModalOpen} onClose={toggleChangeGameModal} />
       </>
-    );
+    )
   }
 
   return (
     <>
       {isMobile ? (
-        <MobileChipSelector onMenuClick={handleMenuClick} onGridClick={toggleChangeGameModal} />
+        <MobileChipSelector
+          onMenuClick={handleMenuClick}
+          onGridClick={toggleChangeGameModal}
+        />
       ) : (
         <ChipSelector />
       )}
-      
+
       {/* Menu Modal - Rendered at higher level to avoid bottom bar conflicts */}
-      <MenuModal 
-        isOpen={isMenuModalOpen} 
-        onClose={handleCloseMenuModal} 
+      <MenuModal isOpen={isMenuModalOpen} onClose={handleCloseMenuModal} />
+      <ChangeGameModal
+        isOpen={isChangeMenuModalOpen}
+        onClose={toggleChangeGameModal}
       />
-      <ChangeGameModal isOpen={isChangeMenuModalOpen} onClose={toggleChangeGameModal} />
     </>
-  );
+  )
 }

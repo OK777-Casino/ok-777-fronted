@@ -1,96 +1,96 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { UnifiedButton } from "@/components/ui";
-import { setAuthUser } from "@/lib/auth";
-import { X } from "lucide-react";
-import { useLanguage } from "@/context/LanguageProvider";
-import { useOverlay } from "@/context/OverlayProvider";
-import WalletIcon from "../icons/wallet";
-import NotificationIcon from "../icons/notification";
-import MedalStarAlt2Icon from "../icons/medal-star-alt-2";
-import ChartNetworkIcon from "../icons/chart-network";
-import CrownIcon from "../icons/crown";
-import LikeIcon from "../icons/like";
-import DoughnutChartIcon from "../icons/doughnut-chart";
-import SliderAltIcon from "../icons/slider-alt";
-import EditIcon from "../icons/edit";
-import PriceTagIcon from "../icons/price-tag";
-import DockRightArrowIcon from "../icons/dock-right-arrow";
-import FlatButton from "../Button/FlatButton";
-import Link from "next/link";
-import { useModal } from "@/context/ModalProvider";
+import { useState } from 'react'
+import { UnifiedButton } from '@/components/ui'
+import { setAuthUser } from '@/lib/auth'
+import { X } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageProvider'
+import { useOverlay } from '@/context/OverlayProvider'
+import WalletIcon from '../icons/wallet'
+import NotificationIcon from '../icons/notification'
+import MedalStarAlt2Icon from '../icons/medal-star-alt-2'
+import ChartNetworkIcon from '../icons/chart-network'
+import CrownIcon from '../icons/crown'
+import LikeIcon from '../icons/like'
+import DoughnutChartIcon from '../icons/doughnut-chart'
+import SliderAltIcon from '../icons/slider-alt'
+import EditIcon from '../icons/edit'
+import PriceTagIcon from '../icons/price-tag'
+import DockRightArrowIcon from '../icons/dock-right-arrow'
+import FlatButton from '../Button/FlatButton'
+import Link from 'next/link'
+import { useModal } from '@/context/ModalProvider'
 
 interface UserProfileDropdownProps {
-  onClose?: () => void;
+  onClose?: () => void
 }
 
 const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
-  const [bonusCode, setBonusCode] = useState("");
-  const { currentLanguage } = useLanguage();
-  const { openNotifications } = useOverlay();
+  const [bonusCode, setBonusCode] = useState('')
+  const { currentLanguage } = useLanguage()
+  const { openNotifications } = useOverlay()
 
   const menuItems = [
     {
       icon: <WalletIcon />,
-      label: "Wallet",
+      label: 'Wallet',
       count: null,
-      href: "/wallet",
+      href: '/wallet',
       event: onClose,
     },
     {
       icon: <NotificationIcon />,
-      label: "Notifications",
+      label: 'Notifications',
       count: 4,
-      href: "#",
+      href: '#',
       event: () => {
-        openNotifications();
-        onClose;
+        openNotifications()
+        onClose
       },
     },
     {
       icon: <CrownIcon />,
-      label: "VIP Club",
+      label: 'VIP Club',
       count: null,
-      href: "/vip-club",
+      href: '/vip-club',
       event: onClose,
     },
     {
       icon: <LikeIcon />,
-      label: "Alliance Plan",
+      label: 'Alliance Plan',
       count: null,
-      href: "/alliance",
+      href: '/alliance',
       event: onClose,
     },
     {
       icon: <MedalStarAlt2Icon />,
-      label: "Game records",
+      label: 'Game records',
       count: null,
-      href: "/wallet?tab=gamehistory",
+      href: '/wallet?tab=gamehistory',
       event: onClose,
     },
     {
       icon: <DoughnutChartIcon />,
-      label: "Data Statistics",
+      label: 'Data Statistics',
       count: null,
-      href: "/wallet?tab=datastatistics",
+      href: '/wallet?tab=datastatistics',
       event: onClose,
     },
     {
       icon: <SliderAltIcon />,
-      label: "Settings",
+      label: 'Settings',
       count: null,
-      href: "/settings",
+      href: '/settings',
       event: onClose,
     },
     {
       label: `Default Lang: ${currentLanguage.name}`,
       count: null,
       flag: currentLanguage.code,
-      href: "#",
+      href: '#',
       event: onClose,
     },
-  ];
+  ]
 
   return (
     <div className="lg:w-[282px] md:w-[282px] w-full h-screen lg:h-auto lg:rounded-[14px] glass-bg p-0 text-white font-montserrat backdrop-blur-[32px] overflow-y-auto">
@@ -98,7 +98,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
         onClick={onClose}
         className="flex absolute right-4 top-4 h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] hover:bg-white-8 transition-colors lg:hidden z-10"
         style={{
-          boxShadow: "0 1px 0 0 rgba(255, 255, 255, 0.16) inset",
+          boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
         }}
       >
         <X size={16} className="text-[#A7B5CA]" />
@@ -118,7 +118,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
               <div className="absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 z-10">
                 <div
                   className="h-5 px-2 flex items-center justify-center rounded-2xl border border-white shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
-                  style={{ backgroundColor: "#1BB83D" }}
+                  style={{ backgroundColor: '#1BB83D' }}
                 >
                   <span className="text-white text-xs font-bold whitespace-nowrap">
                     VIP 1
@@ -130,15 +130,21 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
 
           {/* Username */}
           <div className="flex items-center gap-1 mt-2">
-            <span className="text-white text-sm font-bold"><span>User8527681</span></span>
+            <span className="text-white text-sm font-bold">
+              <span>User8527681</span>
+            </span>
             <EditIcon className="w-4 h-4" />
           </div>
 
           {/* VIP Progress */}
           <div className="w-full flex flex-col gap-0.5">
             <div className="flex justify-between items-center">
-              <span className="text-white text-[10px] font-bold"><span>VIP 1</span></span>
-              <span className="text-white text-[10px] font-bold"><span>VIP 1</span></span>
+              <span className="text-white text-[10px] font-bold">
+                <span>VIP 1</span>
+              </span>
+              <span className="text-white text-[10px] font-bold">
+                <span>VIP 1</span>
+              </span>
             </div>
 
             {/* Progress Bar */}
@@ -146,7 +152,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
               <div className="relative w-full h-2 rounded-lg">
                 <div
                   className="w-[116px] h-full border border-white-4 rounded-lg"
-                  style={{ backgroundColor: "#ED1D49" }}
+                  style={{ backgroundColor: '#ED1D49' }}
                 ></div>
                 <div className="absolute right-1 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
                   <img
@@ -168,7 +174,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           {/* Bonus Code Header */}
           <div className="flex items-center gap-2 mb-4">
             <PriceTagIcon className="w-4 h-4" />
-            <span className="text-sm font-bold" style={{ color: "#A7B5CA" }}>
+            <span className="text-sm font-bold" style={{ color: '#A7B5CA' }}>
               Bonus code
             </span>
           </div>
@@ -178,12 +184,14 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
             <input
               type="text"
               value={bonusCode}
-              onChange={(e) => setBonusCode(e.target.value)}
+              onChange={e => setBonusCode(e.target.value)}
               placeholder="Enter bonus code"
               className="flex-1 text-gallery bg-transparent text-xs border-none outline-none px-3 w-[30px] placeholder:text-blue-bayoux"
-              style={{ color: "#55657E" }}
+              style={{ color: '#55657E' }}
             />
-            <FlatButton className="text-xs font-bold h-9 px-4"><span>Send</span></FlatButton>
+            <FlatButton className="text-xs font-bold h-9 px-4">
+              <span>Send</span>
+            </FlatButton>
           </div>
         </div>
       </div>
@@ -192,7 +200,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
       <div className="px-4 pb-4 lg:pb-2">
         <div className="flex flex-col gap-0.5">
           {menuItems.map((item, index) => {
-            const isActive = (item as any).isActive;
+            const isActive = (item as any).isActive
             return (
               <Link
                 href={item.href}
@@ -200,8 +208,8 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                 key={index}
                 className={`flex items-center gap-2 h-12 px-4 rounded-lg text-casper transition-colors group backdrop-blur-[32px] ${
                   isActive
-                    ? "bg-[#8B5CF6]/20 border border-[#8B5CF6]/30"
-                    : "hover:bg-white/5"
+                    ? 'bg-[#8B5CF6]/20 border border-[#8B5CF6]/30'
+                    : 'hover:bg-white/5'
                 }`}
               >
                 {item.icon}
@@ -216,15 +224,17 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                 <span
                   className={`flex items-center gap-2 text-left text-sm font-bold transition-colors ${
                     isActive
-                      ? "text-white"
-                      : "text-[#A7B5CA] group-hover:text-white"
+                      ? 'text-white'
+                      : 'text-[#A7B5CA] group-hover:text-white'
                   }`}
                 >
                   {item.label}
                   {item.count && (
                     <div
                       className=" rounded-md px-1.5 py-0.5 shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
-                      style={{ backgroundColor: "#1BB83D" }}
+                      style={{
+                        backgroundColor: '#1BB83D',
+                      }}
                     >
                       <span className="text-white text-xs font-bold">
                         {item.count}
@@ -233,7 +243,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                   )}
                 </span>
               </Link>
-            );
+            )
           })}
         </div>
       </div>
@@ -242,22 +252,22 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
       <div className="px-4 pb-8 lg:pb-2">
         <div
           onClick={() => {
-            setAuthUser(null);
-            onClose?.(); // 🔥 close modal immediately
+            setAuthUser(null)
+            onClose?.() // 🔥 close modal immediately
           }}
           className="flex items-center text-casper gap-2 h-12 px-4 rounded-lg hover:bg-white/5 transition-colors group w-full backdrop-blur-[32px]"
         >
           <DockRightArrowIcon />
           <span
             className="flex-1 text-left text-sm font-bold group-hover:text-white transition-colors"
-            style={{ color: "#A7B5CA" }}
+            style={{ color: '#A7B5CA' }}
           >
             Log out
           </span>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UserProfileDropdown;
+export default UserProfileDropdown

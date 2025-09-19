@@ -17,14 +17,17 @@ store/
 ## 🔧 **Store Setup**
 
 ### **Store Configuration** (`store/index.ts`)
+
 - Configures Redux store with loading reducer
 - Exports TypeScript types for state and dispatch
 
 ### **Redux Provider** (`store/provider.tsx`)
+
 - Wraps the app with Redux Provider
 - Enables Redux state throughout the application
 
 ### **Custom Hooks** (`store/hooks.ts`)
+
 - `useAppDispatch`: Typed dispatch function
 - `useAppSelector`: Typed selector function
 
@@ -36,8 +39,8 @@ The loading slice manages two key states:
 
 ```typescript
 interface LoadingState {
-  isLoading: boolean;      // Current loading state
-  isInitialLoad: boolean;  // Whether this is the first app load
+  isLoading: boolean // Current loading state
+  isInitialLoad: boolean // Whether this is the first app load
 }
 ```
 
@@ -58,12 +61,14 @@ interface LoadingState {
 ## 🚀 **How It Works**
 
 ### **Page Refresh (F5)**
+
 1. ✅ **State Resets**: Redux state resets to initial values
 2. ✅ **Loading Shows**: `isLoading: true`, `isInitialLoad: true`
 3. ✅ **Timer Starts**: 1.5 second loading screen
 4. ✅ **State Updates**: `setInitialLoadComplete()` called
 
 ### **Page Navigation**
+
 1. ✅ **State Persists**: Redux state remains intact
 2. ✅ **No Loading**: `isLoading: false`, `isInitialLoad: false`
 3. ✅ **Instant Transition**: No loading screen shown
@@ -72,20 +77,24 @@ interface LoadingState {
 ## 🎯 **Key Benefits**
 
 ### **vs localStorage Approach**
+
 - ❌ **localStorage**: Persists across browser sessions
 - ✅ **Redux State**: Resets on page refresh (F5)
 
 ### **vs Context API**
+
 - ❌ **Context**: Re-renders all consumers on state change
 - ✅ **Redux**: Efficient updates, minimal re-renders
 
 ### **vs useState**
+
 - ❌ **useState**: Local to component, doesn't persist
 - ✅ **Redux**: Global state, persists during navigation
 
 ## 🔄 **Usage Examples**
 
 ### **In Components**
+
 ```typescript
 import { useAppSelector, useAppDispatch } from '@/store/hooks';
 import { setLoading } from '@/store/slices/loadingSlice';
@@ -93,11 +102,11 @@ import { setLoading } from '@/store/slices/loadingSlice';
 function MyComponent() {
   const dispatch = useAppDispatch();
   const { isLoading } = useAppSelector((state) => state.loading);
-  
+
   const handleStartLoading = () => {
     dispatch(setLoading(true));
   };
-  
+
   return (
     <div>
       {isLoading ? 'Loading...' : 'Content'}
@@ -108,6 +117,7 @@ function MyComponent() {
 ```
 
 ### **In Components (Direct Redux Usage)**
+
 ```typescript
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setInitialLoadComplete } from '@/store/slices/loadingSlice';
@@ -115,7 +125,7 @@ import { setInitialLoadComplete } from '@/store/slices/loadingSlice';
 export default function LayoutContent({ children }) {
   const dispatch = useAppDispatch();
   const { isLoading, isInitialLoad } = useAppSelector((state) => state.loading);
-  
+
   useEffect(() => {
     if (isInitialLoad) {
       const timer = setTimeout(() => {
@@ -124,11 +134,11 @@ export default function LayoutContent({ children }) {
       return () => clearTimeout(timer);
     }
   }, [isInitialLoad, dispatch]);
-  
+
   if (isLoading) {
     return <PageLoader message="Loading app..." />;
   }
-  
+
   return <>{children}</>;
 }
 ```
@@ -147,12 +157,14 @@ import ReduxLoadingTest from '@/components/examples/ReduxLoadingTest';
 ## 📱 **Integration Points**
 
 ### **Updated Components**
+
 - ✅ `LayoutContent`: Direct Redux state access with initial load logic
 - ✅ `app/page.tsx`: Uses Redux loading state for progress bar
 - ✅ `app/layout.tsx`: Wrapped with Redux Provider
 - ✅ `app/test-loading/page.tsx`: Test page for loading functionality
 
 ### **Removed Dependencies**
+
 - ❌ `LoadingProvider`: Replaced with direct Redux usage
 - ❌ `NavigationProvider`: No longer needed
 - ❌ `localStorage.getItem('app-has-loaded')`

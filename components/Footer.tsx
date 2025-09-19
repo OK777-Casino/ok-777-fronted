@@ -1,28 +1,18 @@
-"use client";
+'use client'
 
-import React from "react";
-import {  UnifiedButton } from "./ui";
-import Link from "next/link";
-import XIcon from "./ui/icons/XIcon";
-import InstagramIcon from "./ui/icons/InstagramIcon";
-import YouTubeIcon from "./ui/icons/YouTubeIcon";
-import DiscordIcon from "./ui/icons/DiscordIcon";
-import TikTokIcon from "./ui/icons/TikTokIcon";
-import BlackButton from "./ui/Button/BlackButton";
-import FacebookIcon from "./ui/icons/FacebookIcon";
-import TelegramIcon from "./ui/icons/TelegramIcon";
+import React from 'react'
+import { UnifiedButton } from './ui'
+import Link from 'next/link'
+import XIcon from './ui/icons/XIcon'
+import InstagramIcon from './ui/icons/InstagramIcon'
+import YouTubeIcon from './ui/icons/YouTubeIcon'
+import DiscordIcon from './ui/icons/DiscordIcon'
+import TikTokIcon from './ui/icons/TikTokIcon'
+import BlackButton from './ui/Button/BlackButton'
+import FacebookIcon from './ui/icons/FacebookIcon'
+import TelegramIcon from './ui/icons/TelegramIcon'
 
-const coins = [
-  "USDT",
-  "SOL",
-  "BNB",
-  "LTC",
-  "ETC",
-  "TRX",
-  "BTC",
-  "TON",
-] as const;
-
+const coins = ['USDT', 'SOL', 'BNB', 'LTC', 'ETC', 'TRX', 'BTC', 'TON'] as const
 
 const Footer: React.FC = () => {
   return (
@@ -56,7 +46,7 @@ const Footer: React.FC = () => {
                 {coins.map((item, index) => (
                   <div key={index} className="flex items-center justify-center">
                     <img
-                      src={"/icons/coin-icon/" + item + ".svg"}
+                      src={'/icons/coin-icon/' + item + '.svg'}
                       className="w-8 h-8"
                       alt="coin"
                     />
@@ -117,7 +107,9 @@ const Footer: React.FC = () => {
 
           {/* Right Section - About Us */}
           <div className="w-[25%]">
-            <h3 className="text-white font-semibold mb-4"><span>About us</span></h3>
+            <h3 className="text-white font-semibold mb-4">
+              <span>About us</span>
+            </h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -155,7 +147,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="w-full lg:hidden block">
-          <h4 className="text-white font-medium mb-3"><span>Support/Legal support</span></h4>
+          <h4 className="text-white font-medium mb-3">
+            <span>Support/Legal support</span>
+          </h4>
           <div className="rounded-[0.5rem] flex gap-1 flex-col overflow-hidden">
             <div className=" flex items-center h-[3rem] justify-between px-4 bg-[#2a3546]">
               <span className="text-[#A7B5CA] text-[0.875rem] font-bold">
@@ -234,7 +228,7 @@ const Footer: React.FC = () => {
               {coins.map((item, index) => (
                 <div key={index} className="flex items-center justify-center">
                   <img
-                    src={"/icons/coin-icon/" + item + ".svg"}
+                    src={'/icons/coin-icon/' + item + '.svg'}
                     className="w-8 h-8"
                     alt="coin"
                   />
@@ -248,15 +242,27 @@ const Footer: React.FC = () => {
               Public entrance
             </h4>
             <div className="flex justify-between lg:justify-start lg:gap-4">
-              <BlackButton><TelegramIcon className="w-4 h-4" /></BlackButton>
-              <BlackButton><FacebookIcon className="w-4 h-4" /></BlackButton>
-              <BlackButton><XIcon className="w-4 h-4" /></BlackButton>
-              <BlackButton><InstagramIcon className="w-4 h-4" /></BlackButton>
-              <BlackButton><YouTubeIcon className="w-4 h-4" /></BlackButton>
-              <BlackButton><DiscordIcon className="w-4 h-4" /></BlackButton>
-              <BlackButton><TikTokIcon className="w-4 h-4" /></BlackButton>
-  
-        
+              <BlackButton>
+                <TelegramIcon className="w-4 h-4" />
+              </BlackButton>
+              <BlackButton>
+                <FacebookIcon className="w-4 h-4" />
+              </BlackButton>
+              <BlackButton>
+                <XIcon className="w-4 h-4" />
+              </BlackButton>
+              <BlackButton>
+                <InstagramIcon className="w-4 h-4" />
+              </BlackButton>
+              <BlackButton>
+                <YouTubeIcon className="w-4 h-4" />
+              </BlackButton>
+              <BlackButton>
+                <DiscordIcon className="w-4 h-4" />
+              </BlackButton>
+              <BlackButton>
+                <TikTokIcon className="w-4 h-4" />
+              </BlackButton>
             </div>
           </div>
         </div>
@@ -286,7 +292,7 @@ const Footer: React.FC = () => {
               {coins.map((item, index) => (
                 <div key={index} className="flex items-center justify-center">
                   <img
-                    src={"/icons/coin-icon/" + item + ".svg"}
+                    src={'/icons/coin-icon/' + item + '.svg'}
                     className="w-8 h-8"
                     alt="coin"
                   />
@@ -305,13 +311,13 @@ const Footer: React.FC = () => {
             </div>
             <div>
               <div className="flex text-[#A7B5CA] text-sm font-medium">
-                {" "}
+                {' '}
                 Install
                 <img
                   src="/images/logo.svg"
                   className="h-[17px]"
                   alt="logo"
-                />{" "}
+                />{' '}
                 on the desktop
               </div>
             </div>
@@ -319,13 +325,15 @@ const Footer: React.FC = () => {
               Accept
             </div>
             <UnifiedButton variant="default">
-              <span className="px-2.5"><span>X</span></span>
+              <span className="px-2.5">
+                <span>X</span>
+              </span>
             </UnifiedButton>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

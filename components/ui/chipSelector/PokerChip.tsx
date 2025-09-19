@@ -1,37 +1,43 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 interface PokerChipProps {
-  value: string | number;
-  color: "blue" | "purple" | "green" | "navy" | "red" | "orange";
-  isSelected?: boolean;
-  onClick?: () => void;
-  className?: string;
+  value: string | number
+  color: 'blue' | 'purple' | 'green' | 'navy' | 'red' | 'orange'
+  isSelected?: boolean
+  onClick?: () => void
+  className?: string
 }
 
 const colorMap = {
-  blue: "#2283F6",
-  purple: "#FC73FF", 
-  green: "#1BB83D",
-  navy: "#002450",
-  red: "#ED1D49",
-  orange: "#FFB636",
-};
+  blue: '#2283F6',
+  purple: '#FC73FF',
+  green: '#1BB83D',
+  navy: '#002450',
+  red: '#ED1D49',
+  orange: '#FFB636',
+}
 
-export function PokerChip({ value, color, isSelected = false, onClick, className }: PokerChipProps) {
-  const chipColor = colorMap[color];
+export function PokerChip({
+  value,
+  color,
+  isSelected = false,
+  onClick,
+  className,
+}: PokerChipProps) {
+  const chipColor = colorMap[color]
 
   return (
     <div
       className={cn(
-        "relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-200",
-        isSelected && " ring-chip-orange shadow-[0_0_13px_0_#FBB335]",
+        'relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-200',
+        isSelected && ' ring-chip-orange shadow-[0_0_13px_0_#FBB335]',
         className
       )}
       onClick={onClick}
       style={{
-        filter: isSelected ?
-          "drop-shadow(0 4px 0 #ED1D49) drop-shadow(0 3px 0 #FFB636) drop-shadow(0 2px 0 #1BB83D) drop-shadow(0 1px 0 #002450)"
-          : "drop-shadow(0 1px 0 #002450)"
+        filter: isSelected
+          ? 'drop-shadow(0 4px 0 #ED1D49) drop-shadow(0 3px 0 #FFB636) drop-shadow(0 2px 0 #1BB83D) drop-shadow(0 1px 0 #002450)'
+          : 'drop-shadow(0 1px 0 #002450)',
       }}
     >
       <svg
@@ -87,8 +93,17 @@ export function PokerChip({ value, color, isSelected = false, onClick, className
               type="matrix"
               values="0 0 0 0 0 0 0 0 0 0.141176 0 0 0 0 0.313726 0 0 0 1 0"
             />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow"
+              result="shape"
+            />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -114,7 +129,12 @@ export function PokerChip({ value, color, isSelected = false, onClick, className
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -131,21 +151,26 @@ export function PokerChip({ value, color, isSelected = false, onClick, className
           </filter>
         </defs>
       </svg>
-      
+
       {/* Chip text */}
       <div className="absolute inset-0 flex items-center justify-center ">
-        <span 
+        <span
           className={cn(
-            "font-montserrat font-bold text-white  flex justify-center items-center leading-none",
-            typeof value === "string" && value.length > 3 ? "text-[10px] px-1" : "text-lg"
+            'font-montserrat font-bold text-white  flex justify-center items-center leading-none',
+            typeof value === 'string' && value.length > 3
+              ? 'text-[10px] px-1'
+              : 'text-lg'
           )}
           style={{
-            WebkitTextStroke: typeof value === "string" && value.length > 3 ? "0.5px #002450" : undefined
+            WebkitTextStroke:
+              typeof value === 'string' && value.length > 3
+                ? '0.5px #002450'
+                : undefined,
           }}
         >
           {value}
         </span>
       </div>
     </div>
-  );
+  )
 }

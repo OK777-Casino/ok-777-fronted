@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   Dialog,
   DialogPortal,
   DialogOverlay,
   DialogTitle,
-} from "@/components/ui/Dialog";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { cn } from "@/lib/utils";
-import { useT } from "@/context/I18nProvider";
+} from '@/components/ui/Dialog'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { cn } from '@/lib/utils'
+import { useT } from '@/context/I18nProvider'
 
 interface Language {
-  code: string;
-  name: string;
-  flag: React.ReactNode;
+  code: string
+  name: string
+  flag: React.ReactNode
 }
 
 interface LanguageSelectorProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  onLanguageChange?: (languageCode: string) => void;
-  initialLanguage?: string;
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  onLanguageChange?: (languageCode: string) => void
+  initialLanguage?: string
 }
 
 const languages: Language[] = [
   {
-    code: "en",
-    name: "English",
+    code: 'en',
+    name: 'English',
     flag: (
       <svg
         width="24"
@@ -50,8 +50,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "zh",
-    name: "中文",
+    code: 'zh',
+    name: '中文',
     flag: (
       <svg
         width="24"
@@ -93,8 +93,8 @@ const languages: Language[] = [
   },
 
   {
-    code: "de",
-    name: "Deutsch",
+    code: 'de',
+    name: 'Deutsch',
     flag: (
       <svg
         width="24"
@@ -117,8 +117,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "pl",
-    name: "Polish",
+    code: 'pl',
+    name: 'Polish',
     flag: (
       <svg
         width="24"
@@ -150,8 +150,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "pt",
-    name: "Português",
+    code: 'pt',
+    name: 'Português',
     flag: (
       <svg
         width="24"
@@ -175,8 +175,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "ua",
-    name: "Ukraine",
+    code: 'ua',
+    name: 'Ukraine',
     flag: (
       <svg
         width="24"
@@ -208,8 +208,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "es",
-    name: "Español",
+    code: 'es',
+    name: 'Español',
     flag: (
       <svg
         width="24"
@@ -231,8 +231,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "pt-br",
-    name: "Português (BR)",
+    code: 'pt-br',
+    name: 'Português (BR)',
     flag: (
       <svg
         width="24"
@@ -256,8 +256,8 @@ const languages: Language[] = [
     ),
   },
   {
-    code: "fr",
-    name: "Français",
+    code: 'fr',
+    name: 'Français',
     flag: (
       <svg
         width="24"
@@ -294,7 +294,7 @@ const languages: Language[] = [
       </svg>
     ),
   },
-];
+]
 
 const RadioButton = ({ selected = false }: { selected?: boolean }) => {
   if (selected) {
@@ -322,7 +322,7 @@ const RadioButton = ({ selected = false }: { selected?: boolean }) => {
           strokeLinejoin="round"
         />
       </svg>
-    );
+    )
   }
 
   return (
@@ -341,17 +341,17 @@ const RadioButton = ({ selected = false }: { selected?: boolean }) => {
         strokeLinejoin="round"
       />
     </svg>
-  );
-};
+  )
+}
 
 export function LanguageSelector({
   open,
   onOpenChange,
   onLanguageChange,
-  initialLanguage = "en",
+  initialLanguage = 'en',
 }: LanguageSelectorProps) {
-  const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
-  const t = useT();
+  const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage)
+  const t = useT()
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -360,41 +360,41 @@ export function LanguageSelector({
         <DialogPrimitive.Content
           className={cn(
             // Mobile: slide from bottom, full width
-            "fixed h-fit bottom-0 left-0 right-0 z-50",
-            "w-full max-w-none rounded-t-3xl border-0",
-            "data-[state=open]:slide-in-from-bottom data-[state=closed]:slide-out-to-bottom",
+            'fixed h-fit bottom-0 left-0 right-0 z-50',
+            'w-full max-w-none rounded-t-3xl border-0',
+            'data-[state=open]:slide-in-from-bottom data-[state=closed]:slide-out-to-bottom',
             // Tablet and desktop: centered dialog
-            "sm:fixed sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]",
-            "sm:w-full sm:max-w-[402px] sm:rounded-xl",
-            "sm:data-[state=open]:slide-in-from-left-1/2 sm:data-[state=open]:slide-in-from-top-[48%]",
-            "sm:data-[state=closed]:slide-out-to-left-1/2 sm:data-[state=closed]:slide-out-to-top-[48%]",
+            'sm:fixed sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
+            'sm:w-full sm:max-w-[402px] sm:rounded-xl',
+            'sm:data-[state=open]:slide-in-from-left-1/2 sm:data-[state=open]:slide-in-from-top-[48%]',
+            'sm:data-[state=closed]:slide-out-to-left-1/2 sm:data-[state=closed]:slide-out-to-top-[48%]',
             // Shared styles
-            "p-0 bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px]",
-            "shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset]",
-            "duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out",
-            "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-            "sm:data-[state=closed]:zoom-out-95 sm:data-[state=open]:zoom-in-95"
+            'p-0 bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px]',
+            'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset]',
+            'duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out',
+            'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+            'sm:data-[state=closed]:zoom-out-95 sm:data-[state=open]:zoom-in-95'
           )}
         >
           {/* Header */}
           <div
             className={cn(
-              "flex items-center justify-between px-4 py-4 rounded-t-3xl sm:px-6 sm:rounded-t-xl",
-              "bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554]",
-              "shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
+              'flex items-center justify-between px-4 py-4 rounded-t-3xl sm:px-6 sm:rounded-t-xl',
+              'bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554]',
+              'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]'
             )}
           >
             <DialogTitle className="text-white font-montserrat text-lg sm:text-xl font-bold">
-              {t("settings.language")}
+              {t('settings.language')}
             </DialogTitle>
             <div
               onClick={() => onOpenChange(false)}
               className={cn(
-                "flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg",
-                "border border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.04)]",
-                "shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]",
-                "hover:bg-[rgba(255,255,255,0.08)] transition-colors",
-                "touch-manipulation" // Better touch support on mobile
+                'flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg',
+                'border border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.04)]',
+                'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]',
+                'hover:bg-[rgba(255,255,255,0.08)] transition-colors',
+                'touch-manipulation' // Better touch support on mobile
               )}
             >
               <svg
@@ -414,23 +414,23 @@ export function LanguageSelector({
 
           {/* Languages List */}
           <div className="px-4 py-4 space-y-0 max-h-[60vh] overflow-y-auto sm:max-h-none sm:overflow-visible">
-            {languages.map((language) => {
-              const isSelected = selectedLanguage === language.code;
+            {languages.map(language => {
+              const isSelected = selectedLanguage === language.code
 
               return (
                 <div
                   key={language.code}
                   onClick={() => {
-                    setSelectedLanguage(language.code);
+                    setSelectedLanguage(language.code)
                     if (onLanguageChange) {
-                      onLanguageChange(language.code);
+                      onLanguageChange(language.code)
                     }
                   }}
                   className={cn(
-                    "flex items-center justify-between w-full h-[52px] sm:h-[50px] px-4 rounded-xl",
-                    "hover:bg-[rgba(255,255,255,0.02)] active:bg-[rgba(255,255,255,0.04)] transition-colors",
-                    "touch-manipulation", // Better touch support
-                    isSelected && "bg-[#1C2532]"
+                    'flex items-center justify-between w-full h-[52px] sm:h-[50px] px-4 rounded-xl',
+                    'hover:bg-[rgba(255,255,255,0.02)] active:bg-[rgba(255,255,255,0.04)] transition-colors',
+                    'touch-manipulation', // Better touch support
+                    isSelected && 'bg-[#1C2532]'
                   )}
                 >
                   <div className="flex items-center gap-4">
@@ -439,9 +439,9 @@ export function LanguageSelector({
                     </div>
                     <span
                       className={cn(
-                        "font-montserrat text-sm sm:text-sm font-bold",
-                        "text-left truncate", // Handle long language names
-                        isSelected ? "text-[#93ACD3]" : "text-[#55657E]"
+                        'font-montserrat text-sm sm:text-sm font-bold',
+                        'text-left truncate', // Handle long language names
+                        isSelected ? 'text-[#93ACD3]' : 'text-[#55657E]'
                       )}
                     >
                       {language.name}
@@ -451,11 +451,11 @@ export function LanguageSelector({
                     <RadioButton selected={isSelected} />
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
         </DialogPrimitive.Content>
       </DialogPortal>
     </Dialog>
-  );
+  )
 }

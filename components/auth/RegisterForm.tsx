@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import AuthButton from "../ui/AuthButton";
-import PolicyForm from "./PolicyForm";
+import AuthButton from '../ui/AuthButton'
+import PolicyForm from './PolicyForm'
 
 const PoclifyFormInfo = [
   {
@@ -14,21 +14,23 @@ const PoclifyFormInfo = [
     content:
       "<span>I agree to receive promotional notifications from <a href='#'>ok777.casino</a></span>",
   },
-];
+]
 
 const RegisterForm: React.FC = () => {
-  const [policy, setPolicy] = useState(PoclifyFormInfo);
-  const [showPassword, setShowPassword] = useState(false);
-  const [discountCodeState, setDiscountCodeState] = useState(false);
+  const [policy, setPolicy] = useState(PoclifyFormInfo)
+  const [showPassword, setShowPassword] = useState(false)
+  const [discountCodeState, setDiscountCodeState] = useState(false)
 
   const changeDiscountCodeState = () => {
-    setDiscountCodeState(!discountCodeState);
-  };
+    setDiscountCodeState(!discountCodeState)
+  }
 
   return (
     <div className="login-form">
       <div className="input-group">
-        <label className="input-label"><span>Username / email</span></label>
+        <label className="input-label">
+          <span>Username / email</span>
+        </label>
         <input
           type="text"
           placeholder="Enter your username or email"
@@ -36,10 +38,12 @@ const RegisterForm: React.FC = () => {
         />
       </div>
       <div className="input-group">
-        <label className="input-label"><span>Password</span></label>
+        <label className="input-label">
+          <span>Password</span>
+        </label>
         <div className="password-input-container">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showPassword ? 'text' : 'password'}
             placeholder="Enter your password"
             className="form-input"
           />
@@ -74,7 +78,7 @@ const RegisterForm: React.FC = () => {
       <div className="discount-code-form flex flex-col gap-6">
         <div
           className={`discount-code-form-label gap-4 flex ${
-            discountCodeState == true ? "open" : "close"
+            discountCodeState == true ? 'open' : 'close'
           }`}
           onClick={changeDiscountCodeState}
         >
@@ -133,7 +137,7 @@ const RegisterForm: React.FC = () => {
         <PolicyForm content={item.content} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default RegisterForm;
+export default RegisterForm

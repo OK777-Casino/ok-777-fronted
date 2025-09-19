@@ -1,124 +1,127 @@
-import { useState, useRef, useEffect } from "react";
-import { X } from "lucide-react";
+import { useState, useRef, useEffect } from 'react'
+import { X } from 'lucide-react'
 
 interface AnnouncementModalProps {
-  isOpen: boolean;
+  isOpen: boolean
 }
 
 export function SuccessForm({ isOpen }: AnnouncementModalProps) {
-  const [currentSlide, setCurrentSlide] = useState(4); // 5th slide active (0-indexed)
-  const totalSlides = 10;
-  const [isOpenSuccess, setIsOpenSuccess] = useState(isOpen);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(4) // 5th slide active (0-indexed)
+  const totalSlides = 10
+  const [isOpenSuccess, setIsOpenSuccess] = useState(isOpen)
+  const [touchStart, setTouchStart] = useState<number | null>(null)
+  const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   // Minimum swipe distance (in px)
-  const minSwipeDistance = 30;
+  const minSwipeDistance = 30
 
   const toggleSuccessForm = () => {
-    setIsOpenSuccess(!isOpenSuccess);
-    const successForm = document.getElementById("success-form");
+    setIsOpenSuccess(!isOpenSuccess)
+    const successForm = document.getElementById('success-form')
     if (successForm) {
-      successForm.style.display = isOpenSuccess ? "block" : "none";
+      successForm.style.display = isOpenSuccess ? 'block' : 'none'
     }
-  };
+  }
 
   // Touch event handlers for swipe gestures
   const onTouchStart = (e: React.TouchEvent) => {
-    e.preventDefault();
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-    setIsDragging(true);
-  };
+    e.preventDefault()
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+    setIsDragging(true)
+  }
 
   const onTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
+    if (!isDragging) return
+    e.preventDefault()
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
 
   const onTouchEnd = (e: React.TouchEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!touchStart || !touchEnd) {
-      setIsDragging(false);
-      return;
+      setIsDragging(false)
+      return
     }
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
+
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
 
     if (isLeftSwipe && currentSlide < totalSlides - 1) {
       // Swipe left - go to next slide
-      setCurrentSlide(prev => prev + 1);
+      setCurrentSlide(prev => prev + 1)
     } else if (isRightSwipe && currentSlide > 0) {
       // Swipe right - go to previous slide
-      setCurrentSlide(prev => prev - 1);
+      setCurrentSlide(prev => prev - 1)
     }
 
-    setIsDragging(false);
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
+    setIsDragging(false)
+    setTouchStart(null)
+    setTouchEnd(null)
+  }
 
   // Mouse event handlers for desktop testing
   const onMouseDown = (e: React.MouseEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.clientX);
-    setIsDragging(true);
-  };
+    setTouchEnd(null)
+    setTouchStart(e.clientX)
+    setIsDragging(true)
+  }
 
   const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    setTouchEnd(e.clientX);
-  };
+    if (!isDragging) return
+    setTouchEnd(e.clientX)
+  }
 
   const onMouseUp = (e: React.MouseEvent) => {
     if (!touchStart || !touchEnd) {
-      setIsDragging(false);
-      return;
+      setIsDragging(false)
+      return
     }
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
+
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
 
     if (isLeftSwipe && currentSlide < totalSlides - 1) {
-      setCurrentSlide(prev => prev + 1);
+      setCurrentSlide(prev => prev + 1)
     } else if (isRightSwipe && currentSlide > 0) {
-      setCurrentSlide(prev => prev - 1);
+      setCurrentSlide(prev => prev - 1)
     }
 
-    setIsDragging(false);
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
+    setIsDragging(false)
+    setTouchStart(null)
+    setTouchEnd(null)
+  }
 
   // Keyboard navigation support
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isOpen) return;
-      
+      if (!isOpen) return
+
       if (e.key === 'ArrowLeft' && currentSlide > 0) {
-        setCurrentSlide(prev => prev - 1);
+        setCurrentSlide(prev => prev - 1)
       } else if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
-        setCurrentSlide(prev => prev + 1);
+        setCurrentSlide(prev => prev + 1)
       } else if (e.key === 'Escape') {
-        toggleSuccessForm();
+        toggleSuccessForm()
       }
-    };
+    }
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentSlide, totalSlides]);
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, currentSlide, totalSlides])
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" id="success-form">
-      <div 
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+      id="success-form"
+    >
+      <div
         ref={carouselRef}
         className="w-[402px] h-[533px] flex flex-col items-end gap-4 p-6 rounded-[14px] bg-[rgba(17,25,35,0.54)] border border-[rgba(255,255,255,0.16)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] select-none"
         onTouchStart={onTouchStart}
@@ -128,9 +131,9 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
         onMouseLeave={() => {
-          setIsDragging(false);
-          setTouchStart(null);
-          setTouchEnd(null);
+          setIsDragging(false)
+          setTouchStart(null)
+          setTouchEnd(null)
         }}
       >
         {/* Close Button */}
@@ -138,7 +141,9 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
           className="flex h-9 w-9 items-center justify-center rounded-lg border border-[rgba(255,255,255,0.16)] bg-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-opacity hover:opacity-80 z-10 cursor-pointer"
           onClick={toggleSuccessForm}
         >
-          <span><X className="h-4 w-4 text-[#A7B5CA]" /></span>
+          <span>
+            <X className="h-4 w-4 text-[#A7B5CA]" />
+          </span>
         </div>
 
         {/* Main Content Area */}
@@ -172,7 +177,7 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${
-                    index === currentSlide ? "bg-[#ED1D49]" : "bg-[#A7B5CA]"
+                    index === currentSlide ? 'bg-[#ED1D49]' : 'bg-[#A7B5CA]'
                   }`}
                 />
               ))}
@@ -195,5 +200,5 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,18 +1,18 @@
-"use client";
+'use client'
 
-import React from "react";
-import { useI18n } from "../context/I18nProvider";
-import CasinoCard from "./ui/cards/CasinoCard";
-import HashCard from "./ui/cards/HashCard";
-import FutureCard from "./ui/cards/FutureCard";
-import SwiperSlider from "./ui/slider/SwiperSlider";
+import React from 'react'
+import { useI18n } from '../context/I18nProvider'
+import CasinoCard from './ui/cards/CasinoCard'
+import HashCard from './ui/cards/HashCard'
+import FutureCard from './ui/cards/FutureCard'
+import SwiperSlider from './ui/slider/SwiperSlider'
 
 // Section header component
 const SectionHeader: React.FC<{
-  icon: string;
-  title: string;
-  alt: string;
-  count?: number;
+  icon: string
+  title: string
+  alt: string
+  count?: number
 }> = ({ icon, title, alt, count }) => {
   return (
     <div className="flex items-center justify-between mb-4">
@@ -26,22 +26,22 @@ const SectionHeader: React.FC<{
         </span>
       )}
     </div>
-  );
-};
+  )
+}
 
 type GameBreakpointsProps = {
-  [width: number]: { slidesPerView: number };
-};
+  [width: number]: { slidesPerView: number }
+}
 
 type GameBreakpointsTwoRows = {
   [width: number]: {
-    slidesPerView: number;
+    slidesPerView: number
     grid: {
-      rows: 2;
-      fill: "row";
-    };
-  };
-};
+      rows: 2
+      fill: 'row'
+    }
+  }
+}
 
 const GameBreakpoints: GameBreakpointsProps = {
   320: { slidesPerView: 3.3 },
@@ -51,17 +51,17 @@ const GameBreakpoints: GameBreakpointsProps = {
   1024: { slidesPerView: 6.3 },
   1440: { slidesPerView: 8.3 },
   1640: { slidesPerView: 9.3 },
-};
+}
 
 const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
-  320: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-  375: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-  425: { slidesPerView: 3.3, grid: { rows: 2, fill: "row" } },
-  768: { slidesPerView: 6.3, grid: { rows: 2, fill: "row" } },
-  1024: { slidesPerView: 6.3, grid: { rows: 2, fill: "row" } },
-  1440: { slidesPerView: 8.3, grid: { rows: 2, fill: "row" } },
-  1640: { slidesPerView: 9.3, grid: { rows: 2, fill: "row" } },
-};
+  320: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
+  375: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
+  425: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
+  768: { slidesPerView: 6.3, grid: { rows: 2, fill: 'row' } },
+  1024: { slidesPerView: 6.3, grid: { rows: 2, fill: 'row' } },
+  1440: { slidesPerView: 8.3, grid: { rows: 2, fill: 'row' } },
+  1640: { slidesPerView: 9.3, grid: { rows: 2, fill: 'row' } },
+}
 
 const HashBreakpoints: GameBreakpointsProps = {
   320: { slidesPerView: 1.3 },
@@ -71,7 +71,7 @@ const HashBreakpoints: GameBreakpointsProps = {
   1024: { slidesPerView: 2.3 },
   1440: { slidesPerView: 3.3 },
   1640: { slidesPerView: 4.3 },
-};
+}
 
 const FutureBreakpoints: GameBreakpointsProps = {
   320: { slidesPerView: 2.3 },
@@ -80,18 +80,18 @@ const FutureBreakpoints: GameBreakpointsProps = {
   768: { slidesPerView: 5.3 },
   1024: { slidesPerView: 6.3 },
   1440: { slidesPerView: 7.3 },
-};
+}
 
 // Homepage sections with SwiperSlider
 export const HomepageSections: React.FC<{
-  card1: any[];
-  card2: any[];
-  card3: any[];
-  card4: any[];
-  card5: any[];
-  card6: any[];
-  cryptoCards: any[];
-  extendedHashGames: any[];
+  card1: any[]
+  card2: any[]
+  card3: any[]
+  card4: any[]
+  card5: any[]
+  card6: any[]
+  cryptoCards: any[]
+  extendedHashGames: any[]
 }> = ({
   card1,
   card2,
@@ -102,12 +102,12 @@ export const HomepageSections: React.FC<{
   cryptoCards,
   extendedHashGames,
 }) => {
-  const { t } = useI18n();
+  const { t } = useI18n()
 
   // Helper function to duplicate data for two rows
   const duplicateDataForTwoRows = (data: any[]) => {
-    return [...data, ...data];
-  };
+    return [...data, ...data]
+  }
 
   return (
     <>
@@ -115,7 +115,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Home.svg"
-          title={t("games.new")}
+          title={t('games.new')}
           alt="lobby"
           count={card1.length}
         />
@@ -135,7 +135,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Casino1.svg"
-          title={t("games.live")}
+          title={t('games.live')}
           alt="lobby"
           count={card2.length}
         />
@@ -147,7 +147,7 @@ export const HomepageSections: React.FC<{
           )}
           slidesPerView={7}
           spaceBetween={12}
-          grid={{ rows: 2, fill: "row" }}
+          grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
           autoplayDelay={1000000}
@@ -158,7 +158,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Hash.svg"
-          title={t("games.hashgames")}
+          title={t('games.hashgames')}
           alt="hash"
           count={extendedHashGames.length}
         />
@@ -180,7 +180,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Slots.svg"
-          title={t("games.slots")}
+          title={t('games.slots')}
           alt="slots"
           count={card3.length}
         />
@@ -192,7 +192,7 @@ export const HomepageSections: React.FC<{
           )}
           slidesPerView={7}
           spaceBetween={12}
-          grid={{ rows: 2, fill: "row" }}
+          grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
           autoplayDelay={1000000}
@@ -225,7 +225,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Cryptogra1.svg"
-          title={t("games.crypto")}
+          title={t('games.crypto')}
           alt="cryptogra"
           count={cryptoCards.length}
         />
@@ -247,7 +247,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Sport.svg"
-          title={t("games.sports")}
+          title={t('games.sports')}
           alt="Sport"
           count={card5.length}
         />
@@ -269,7 +269,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/tablegame.svg"
-          title={t("games.table")}
+          title={t('games.table')}
           alt="tablegame"
           count={card6.length}
         />
@@ -287,5 +287,5 @@ export const HomepageSections: React.FC<{
         />
       </div>
     </>
-  );
-};
+  )
+}

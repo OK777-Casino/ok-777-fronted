@@ -1,105 +1,109 @@
-"use client";
+'use client'
 
-import React, { useState, useRef, useEffect } from "react";
-import { Search, ChevronDown, Play } from "lucide-react";
-import CasinoCard from "@/components/ui/cards/CasinoCard";
-import { Button } from "@/components/ui";
-import { useI18n } from "@/context/I18nProvider";
-import { createPortal } from "react-dom";
+import React, { useState, useRef, useEffect } from 'react'
+import { Search, ChevronDown, Play } from 'lucide-react'
+import CasinoCard from '@/components/ui/cards/CasinoCard'
+import { Button } from '@/components/ui'
+import { useI18n } from '@/context/I18nProvider'
+import { createPortal } from 'react-dom'
 
 // Mock game data for favorites
 const gameImages = [
-  "https://api.builder.io/api/v1/image/assets/TEMP/a79278fafd9b48c78c8388123f81620317fe8d54?width=230",
-  "https://api.builder.io/api/v1/image/assets/TEMP/8b925652b70e2da887252313faf53f95f3a960e8?width=230",
-  "https://api.builder.io/api/v1/image/assets/TEMP/e791e1fa9f325156debd5ac895252c60b3b371c2?width=230",
-];
+  'https://api.builder.io/api/v1/image/assets/TEMP/a79278fafd9b48c78c8388123f81620317fe8d54?width=230',
+  'https://api.builder.io/api/v1/image/assets/TEMP/8b925652b70e2da887252313faf53f95f3a960e8?width=230',
+  'https://api.builder.io/api/v1/image/assets/TEMP/e791e1fa9f325156debd5ac895252c60b3b371c2?width=230',
+]
 
 const favoritesGames = [
   {
     id: 101,
-    title: "HUNTRESS WILD VENGEANCE",
-    provider: "PRINT STUDIOS",
+    title: 'HUNTRESS WILD VENGEANCE',
+    provider: 'PRINT STUDIOS',
     image: gameImages[0],
-    badge: "NEW",
+    badge: 'NEW',
   },
   {
     id: 102,
-    title: "SPEED BACCARAT",
-    provider: "DBLIVE",
+    title: 'SPEED BACCARAT',
+    provider: 'DBLIVE',
     image: gameImages[1],
-    badge: "HOT",
+    badge: 'HOT',
   },
   {
     id: 103,
-    title: "LIGHTNING ROULETTE",
-    provider: "EVOLUTION",
+    title: 'LIGHTNING ROULETTE',
+    provider: 'EVOLUTION',
     image: gameImages[2],
-    badge: "NEW",
+    badge: 'NEW',
   },
   {
     id: 104,
-    title: "MEGA MONEY WHEEL",
-    provider: "EVOLUTION",
+    title: 'MEGA MONEY WHEEL',
+    provider: 'EVOLUTION',
     image: gameImages[0],
-    badge: "HOT",
+    badge: 'HOT',
   },
   {
     id: 105,
-    title: "BLACKJACK LIVE",
-    provider: "EVOLUTION",
+    title: 'BLACKJACK LIVE',
+    provider: 'EVOLUTION',
     image: gameImages[1],
-    badge: "NEW",
+    badge: 'NEW',
   },
   {
     id: 106,
-    title: "IMMERSIVE ROULETTE",
-    provider: "EVOLUTION",
+    title: 'IMMERSIVE ROULETTE',
+    provider: 'EVOLUTION',
     image: gameImages[2],
-    badge: "HOT",
+    badge: 'HOT',
   },
   {
     id: 107,
     title: "GONZO'S QUEST",
-    provider: "NETENT",
+    provider: 'NETENT',
     image: gameImages[0],
-    badge: "NEW",
+    badge: 'NEW',
   },
   {
     id: 108,
-    title: "STARBURST",
-    provider: "NETENT",
+    title: 'STARBURST',
+    provider: 'NETENT',
     image: gameImages[1],
-    badge: "HOT",
+    badge: 'HOT',
   },
-];
+]
 
 const gameProviders = [
-  { id: "all", label: "All Providers" },
-  { id: "evolution", label: "Evolution" },
-  { id: "netent", label: "NetEnt" },
-  { id: "printstudios", label: "Print Studios" },
-  { id: "dblive", label: "DBLive" },
-];
+  { id: 'all', label: 'All Providers' },
+  { id: 'evolution', label: 'Evolution' },
+  { id: 'netent', label: 'NetEnt' },
+  { id: 'printstudios', label: 'Print Studios' },
+  { id: 'dblive', label: 'DBLive' },
+]
 
 const gameTypes = [
-  { id: "all", label: "All Types" },
-  { id: "new", label: "New" },
-  { id: "hot", label: "Hot" },
-  { id: "featured", label: "Featured" },
-];
+  { id: 'all', label: 'All Types' },
+  { id: 'new', label: 'New' },
+  { id: 'hot', label: 'Hot' },
+  { id: 'featured', label: 'Featured' },
+]
 
 export default function FavoritesPage() {
-  const { t } = useI18n();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProvider, setSelectedProvider] = useState(gameProviders[0]);
-  const [selectedType, setSelectedType] = useState(gameTypes[0]);
-  const [isProviderOpen, setIsProviderOpen] = useState(false);
-  const [isTypeOpen, setIsTypeOpen] = useState(false);
-  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0, width: 0 });
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { t } = useI18n()
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedProvider, setSelectedProvider] = useState(gameProviders[0])
+  const [selectedType, setSelectedType] = useState(gameTypes[0])
+  const [isProviderOpen, setIsProviderOpen] = useState(false)
+  const [isTypeOpen, setIsTypeOpen] = useState(false)
+  const [dropdownPosition, setDropdownPosition] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+  })
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
-  const providerRef = useRef<HTMLDivElement>(null);
-  const typeRef = useRef<HTMLDivElement>(null);
+  const providerRef = useRef<HTMLDivElement>(null)
+  const typeRef = useRef<HTMLDivElement>(null)
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -108,37 +112,37 @@ export default function FavoritesPage() {
         providerRef.current &&
         !providerRef.current.contains(event.target as Node)
       ) {
-        setIsProviderOpen(false);
-        setActiveDropdown(null);
+        setIsProviderOpen(false)
+        setActiveDropdown(null)
       }
       if (typeRef.current && !typeRef.current.contains(event.target as Node)) {
-        setIsTypeOpen(false);
-        setActiveDropdown(null);
+        setIsTypeOpen(false)
+        setActiveDropdown(null)
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   // Filter games based on search term and filters
-  const filteredGames = favoritesGames.filter((game) => {
-    const matchesSearch = 
+  const filteredGames = favoritesGames.filter(game => {
+    const matchesSearch =
       game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      game.provider.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesProvider = 
-      selectedProvider.id === "all" || 
-      game.provider.toLowerCase().includes(selectedProvider.id.toLowerCase());
-    
-    const matchesType = 
-      selectedType.id === "all" || 
-      game.badge?.toLowerCase() === selectedType.id.toLowerCase();
-    
-    return matchesSearch && matchesProvider && matchesType;
-  });
+      game.provider.toLowerCase().includes(searchTerm.toLowerCase())
+
+    const matchesProvider =
+      selectedProvider.id === 'all' ||
+      game.provider.toLowerCase().includes(selectedProvider.id.toLowerCase())
+
+    const matchesType =
+      selectedType.id === 'all' ||
+      game.badge?.toLowerCase() === selectedType.id.toLowerCase()
+
+    return matchesSearch && matchesProvider && matchesType
+  })
 
   return (
     <div className="text-white">
@@ -147,9 +151,9 @@ export default function FavoritesPage() {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <span className="text-red-500">❤️</span>
-            {t("games.favorites")}
+            {t('games.favorites')}
           </h1>
-          
+
           {/* Search and filters */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-col lg:flex-row items-start gap-3 w-full">
@@ -159,7 +163,7 @@ export default function FavoritesPage() {
                 <input
                   type="text"
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={e => setSearchTerm(e.target.value)}
                   placeholder="Search favorites..."
                   className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
                 />
@@ -172,14 +176,14 @@ export default function FavoritesPage() {
                   <div
                     onClick={() => {
                       if (providerRef.current) {
-                        const rect = providerRef.current.getBoundingClientRect();
+                        const rect = providerRef.current.getBoundingClientRect()
                         setDropdownPosition({
                           top: rect.bottom + window.scrollY + 4,
                           left: rect.left + window.scrollX,
-                          width: rect.width
-                        });
-                        setActiveDropdown('provider');
-                        setIsProviderOpen(!isProviderOpen);
+                          width: rect.width,
+                        })
+                        setActiveDropdown('provider')
+                        setIsProviderOpen(!isProviderOpen)
                       }
                     }}
                     className="flex items-center justify-between w-full sm:w-[180px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
@@ -189,7 +193,7 @@ export default function FavoritesPage() {
                     </span>
                     <ChevronDown
                       className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
-                        isProviderOpen ? "rotate-180" : ""
+                        isProviderOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </div>
@@ -200,14 +204,14 @@ export default function FavoritesPage() {
                   <div
                     onClick={() => {
                       if (typeRef.current) {
-                        const rect = typeRef.current.getBoundingClientRect();
+                        const rect = typeRef.current.getBoundingClientRect()
                         setDropdownPosition({
                           top: rect.bottom + window.scrollY + 4,
                           left: rect.left + window.scrollX,
-                          width: rect.width
-                        });
-                        setActiveDropdown('type');
-                        setIsTypeOpen(!isTypeOpen);
+                          width: rect.width,
+                        })
+                        setActiveDropdown('type')
+                        setIsTypeOpen(!isTypeOpen)
                       }
                     }}
                     className="flex items-center justify-between w-full sm:w-[150px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
@@ -217,7 +221,7 @@ export default function FavoritesPage() {
                     </span>
                     <ChevronDown
                       className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
-                        isTypeOpen ? "rotate-180" : ""
+                        isTypeOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </div>
@@ -233,18 +237,16 @@ export default function FavoritesPage() {
         {/* Results count */}
         <div className="mb-6">
           <p className="text-gray-400">
-            {filteredGames.length} {filteredGames.length === 1 ? 'game' : 'games'} found
+            {filteredGames.length}{' '}
+            {filteredGames.length === 1 ? 'game' : 'games'} found
           </p>
         </div>
 
         {/* Games Grid */}
         {filteredGames.length > 0 ? (
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-            {filteredGames.map((game) => (
-              <CasinoCard
-                key={game.id}
-                {...game}
-              />
+            {filteredGames.map(game => (
+              <CasinoCard key={game.id} {...game} />
             ))}
           </div>
         ) : (
@@ -252,65 +254,66 @@ export default function FavoritesPage() {
             <div className="text-6xl mb-4">❤️</div>
             <h3 className="text-xl font-semibold mb-2">No favorites found</h3>
             <p className="text-gray-400">
-              {searchTerm ? 'Try adjusting your search terms' : 'Start adding games to your favorites!'}
+              {searchTerm
+                ? 'Try adjusting your search terms'
+                : 'Start adding games to your favorites!'}
             </p>
           </div>
         )}
       </div>
 
       {/* Portal-based Dropdown */}
-      {(isProviderOpen || isTypeOpen) && typeof window !== 'undefined' && createPortal(
-        <div
-          className="fixed bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg"
-          style={{
-            top: dropdownPosition.top,
-            left: dropdownPosition.left,
-            width: dropdownPosition.width,
-            zIndex: 99999
-          }}
-        >
-          {activeDropdown === 'provider' && gameProviders.map((provider) => (
-            <div
-              key={provider.id}
-              onClick={() => {
-                setSelectedProvider(provider);
-                setIsProviderOpen(false);
-                setActiveDropdown(null);
-              }}
-              className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
-                selectedProvider.id === provider.id
-                  ? "bg-blue-500/20"
-                  : ""
-              }`}
-            >
-              <span className="text-gray-300 text-sm font-medium font-montserrat">
-                {provider.label}
-              </span>
-            </div>
-          ))}
-          {activeDropdown === 'type' && gameTypes.map((type) => (
-            <div
-              key={type.id}
-              onClick={() => {
-                setSelectedType(type);
-                setIsTypeOpen(false);
-                setActiveDropdown(null);
-              }}
-              className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
-                selectedType.id === type.id
-                  ? "bg-blue-500/20"
-                  : ""
-              }`}
-            >
-              <span className="text-gray-300 text-sm font-medium font-montserrat">
-                {type.label}
-              </span>
-            </div>
-          ))}
-        </div>,
-        document.body
-      )}
+      {(isProviderOpen || isTypeOpen) &&
+        typeof window !== 'undefined' &&
+        createPortal(
+          <div
+            className="fixed bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg"
+            style={{
+              top: dropdownPosition.top,
+              left: dropdownPosition.left,
+              width: dropdownPosition.width,
+              zIndex: 99999,
+            }}
+          >
+            {activeDropdown === 'provider' &&
+              gameProviders.map(provider => (
+                <div
+                  key={provider.id}
+                  onClick={() => {
+                    setSelectedProvider(provider)
+                    setIsProviderOpen(false)
+                    setActiveDropdown(null)
+                  }}
+                  className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                    selectedProvider.id === provider.id ? 'bg-blue-500/20' : ''
+                  }`}
+                >
+                  <span className="text-gray-300 text-sm font-medium font-montserrat">
+                    {provider.label}
+                  </span>
+                </div>
+              ))}
+            {activeDropdown === 'type' &&
+              gameTypes.map(type => (
+                <div
+                  key={type.id}
+                  onClick={() => {
+                    setSelectedType(type)
+                    setIsTypeOpen(false)
+                    setActiveDropdown(null)
+                  }}
+                  className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                    selectedType.id === type.id ? 'bg-blue-500/20' : ''
+                  }`}
+                >
+                  <span className="text-gray-300 text-sm font-medium font-montserrat">
+                    {type.label}
+                  </span>
+                </div>
+              ))}
+          </div>,
+          document.body
+        )}
     </div>
-  );
+  )
 }
-

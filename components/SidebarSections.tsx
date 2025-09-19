@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useModal } from "@/context/ModalProvider";
-import SidebarItem from "./ui/Button/SidebarButton";
-import { SidebarSection, SidebarItem as SidebarItemType } from "./sidebar-data";
+import React, { useState, useEffect } from 'react'
+import { useModal } from '@/context/ModalProvider'
+import SidebarItem from './ui/Button/SidebarButton'
+import { SidebarSection, SidebarItem as SidebarItemType } from './sidebar-data'
 
 interface SidebarSectionsProps {
-  isCollapsed: boolean;
-  sidebarSections: SidebarSection[];
-  serviceItemsWithHandler?: SidebarItemType[];
-  onHashHover?: (e: React.MouseEvent<HTMLDivElement>) => void;
-  onHashHoverLeave?: () => void;
+  isCollapsed: boolean
+  sidebarSections: SidebarSection[]
+  serviceItemsWithHandler?: SidebarItemType[]
+  onHashHover?: (e: React.MouseEvent<HTMLDivElement>) => void
+  onHashHoverLeave?: () => void
 }
 
 const Divider = () => (
   <div className="w-full mx-auto h-[1px] relative bg-[linear-gradient(to_right,#1a2332,#6a7282,#1a2332)]"></div>
-);
+)
 
 const SidebarSections: React.FC<SidebarSectionsProps> = ({
   isCollapsed,
@@ -22,52 +22,55 @@ const SidebarSections: React.FC<SidebarSectionsProps> = ({
   onHashHover,
   onHashHoverLeave,
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const { openGameSearchModal, openLocalGameSearchModal } = useModal();
+  const [isMobile, setIsMobile] = useState(false)
+  const [isClient, setIsClient] = useState(false)
+  const { openGameSearchModal, openLocalGameSearchModal } = useModal()
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    setIsClient(true)
+  }, [])
 
   useEffect(() => {
-    if (!isClient) return;
+    if (!isClient) return
 
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint
-    };
+      setIsMobile(window.innerWidth < 1024) // lg breakpoint
+    }
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, [isClient]);
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [isClient])
 
   return (
     <>
       {sidebarSections
-        .filter((section) => !(isClient && isMobile && section.hideOnMobile))
-        .map((section) => {
+        .filter(section => !(isClient && isMobile && section.hideOnMobile))
+        .map(section => {
           // Use service items with handlers if available, otherwise use default items
           const itemsToRender =
-            section.id === "services" && serviceItemsWithHandler
+            section.id === 'services' && serviceItemsWithHandler
               ? serviceItemsWithHandler
-              : section.items;
+              : section.items
 
           return (
             <div key={section.id}>
               <div
-                className={`${section.className} ${isCollapsed ? "px-2" : ""}`}
+                className={`${section.className} ${isCollapsed ? 'px-2' : ''}`}
               >
-                {itemsToRender.map((item) => {
+                {itemsToRender.map(item => {
                   const itemWithHandler =
-                    item.id === "search"
-                      ? { ...item, onClick: openGameSearchModal }
-                      : item;
+                    item.id === 'search'
+                      ? {
+                          ...item,
+                          onClick: openGameSearchModal,
+                        }
+                      : item
 
                   return (
                     <div
                       key={item.id}
-                      className={item.hasHover ? "relative" : ""}
+                      className={item.hasHover ? 'relative' : ''}
                     >
                       <SidebarItem
                         {...itemWithHandler}
@@ -83,15 +86,15 @@ const SidebarSections: React.FC<SidebarSectionsProps> = ({
                         </div>
                       )}
                     </div>
-                  );
+                  )
                 })}
               </div>
               {section.showDivider && <Divider />}
             </div>
-          );
+          )
         })}
     </>
-  );
-};
+  )
+}
 
-export default SidebarSections;
+export default SidebarSections

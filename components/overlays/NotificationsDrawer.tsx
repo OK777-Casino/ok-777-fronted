@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import React from 'react';
-import Overlay from './Overlay';
-import NotificationsPanel from "@/components/ui/notification/Panel";
+import React from 'react'
+import Overlay from './Overlay'
+import NotificationsPanel from '@/components/ui/notification/Panel'
 
 interface Props {
-  onClose: () => void;
+  onClose: () => void
 }
 
 const NotificationsDrawer: React.FC<Props> = ({ onClose }) => {
@@ -22,9 +22,7 @@ const NotificationsDrawer: React.FC<Props> = ({ onClose }) => {
     >
       <NotificationsPanel onClose={onClose} />
     </Overlay>
-  );
-};
+  )
+}
 
-export default NotificationsDrawer;
-
-
+export default NotificationsDrawer

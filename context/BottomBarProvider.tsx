@@ -1,36 +1,42 @@
 'use client'
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react'
 
 interface BottomBarContextType {
-  isHidden: boolean;
-  hideBottomBar: () => void;
-  showBottomBar: () => void;
+  isHidden: boolean
+  hideBottomBar: () => void
+  showBottomBar: () => void
 }
 
-const BottomBarContext = createContext<BottomBarContextType | undefined>(undefined);
+const BottomBarContext = createContext<BottomBarContextType | undefined>(
+  undefined
+)
 
 export const useBottomBar = () => {
-  const context = useContext(BottomBarContext);
+  const context = useContext(BottomBarContext)
   if (context === undefined) {
-    throw new Error('useBottomBar must be used within a BottomBarProvider');
+    throw new Error('useBottomBar must be used within a BottomBarProvider')
   }
-  return context;
-};
-
-interface BottomBarProviderProps {
-  children: ReactNode;
+  return context
 }
 
-export const BottomBarProvider: React.FC<BottomBarProviderProps> = ({ children }) => {
-  const [isHidden, setIsHidden] = useState(false);
+interface BottomBarProviderProps {
+  children: ReactNode
+}
 
-  const hideBottomBar = () => setIsHidden(true);
-  const showBottomBar = () => setIsHidden(false);
+export const BottomBarProvider: React.FC<BottomBarProviderProps> = ({
+  children,
+}) => {
+  const [isHidden, setIsHidden] = useState(false)
+
+  const hideBottomBar = () => setIsHidden(true)
+  const showBottomBar = () => setIsHidden(false)
 
   return (
-    <BottomBarContext.Provider value={{ isHidden, hideBottomBar, showBottomBar }}>
+    <BottomBarContext.Provider
+      value={{ isHidden, hideBottomBar, showBottomBar }}
+    >
       {children}
     </BottomBarContext.Provider>
-  );
-};
+  )
+}

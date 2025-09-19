@@ -1,25 +1,24 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import AuthButton from "../ui/AuthButton";
+import AuthButton from '../ui/AuthButton'
 
 const LoginForm: React.FC = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const [showPassword, setShowPassword] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   const toggleSuccessForm = () => {
-    setIsOpen(!isOpen);
-    const authContainer = document.getElementById("auth-container");
-    const successForm = document.getElementById("success-form");
+    setIsOpen(!isOpen)
+    const authContainer = document.getElementById('auth-container')
+    const successForm = document.getElementById('success-form')
     if (successForm) {
-      successForm.style.display = isOpen ? "block" : "none";
+      successForm.style.display = isOpen ? 'block' : 'none'
     }
     if (authContainer) {
-      authContainer.style.display = isOpen ? "none" : "block";
+      authContainer.style.display = isOpen ? 'none' : 'block'
     }
-    console.log(successForm?.style.display, isOpen);
-
-  };
+    console.log(successForm?.style.display, isOpen)
+  }
   return (
     <div className="login-form">
       <div className="input-group">
@@ -34,7 +33,7 @@ const LoginForm: React.FC = () => {
         <label className="input-label">Password</label>
         <div className="password-input-container">
           <input
-            type={showPassword ? "text" : "password"}
+            type={showPassword ? 'text' : 'password'}
             placeholder="Enter your password"
             className="form-input"
           />
@@ -69,9 +68,9 @@ const LoginForm: React.FC = () => {
       <div className="forget-password-form">
         <a href="#">Forget the password</a>
       </div>
-      <AuthButton type="login" onClick={toggleSuccessForm}/>
+      <AuthButton type="login" onClick={toggleSuccessForm} />
     </div>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

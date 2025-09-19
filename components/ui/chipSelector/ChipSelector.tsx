@@ -1,36 +1,36 @@
-import { useState } from "react";
-import { PokerChip } from "./PokerChip";
-import { cn } from "@/lib/utils";
+import { useState } from 'react'
+import { PokerChip } from './PokerChip'
+import { cn } from '@/lib/utils'
 
 interface ChipData {
-  id: string;
-  value: string | number;
-  color: "blue" | "purple" | "green" | "navy" | "red" | "orange";
+  id: string
+  value: string | number
+  color: 'blue' | 'purple' | 'green' | 'navy' | 'red' | 'orange'
 }
 
 const chips: ChipData[] = [
-  { id: "1", value: 1, color: "blue" },
-  { id: "5", value: 5, color: "purple" },
-  { id: "10", value: 10, color: "green" },
-  { id: "50", value: 50, color: "navy" },
-  { id: "100", value: 100, color: "red" },
-  { id: "customize", value: "Customize", color: "orange" },
-];
+  { id: '1', value: 1, color: 'blue' },
+  { id: '5', value: 5, color: 'purple' },
+  { id: '10', value: 10, color: 'green' },
+  { id: '50', value: 50, color: 'navy' },
+  { id: '100', value: 100, color: 'red' },
+  { id: 'customize', value: 'Customize', color: 'orange' },
+]
 
 export function ChipSelector() {
-  const [selectedChip, setSelectedChip] = useState<string>("1");
+  const [selectedChip, setSelectedChip] = useState<string>('1')
 
   return (
     <div className="flex justify-center items-center w-full">
-      <div 
+      <div
         className="flex items-end gap-4 p-8 w-full rounded-xl"
-        style={{ background: "rgba(255, 255, 255, 0.04)" }}
+        style={{ background: 'rgba(255, 255, 255, 0.04)' }}
       >
         {/* Undo button section */}
         <div className="flex flex-col justify-center items-end gap-1 flex-1 min-w-0 px-4">
-          <div 
+          <div
             className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-chip-casper"
-            style={{ background: "rgba(0, 0, 0, 0.54)" }}
+            style={{ background: 'rgba(0, 0, 0, 0.54)' }}
           >
             Undo
             <svg
@@ -50,7 +50,7 @@ export function ChipSelector() {
 
         {/* Chips section */}
         <div className="flex items-center gap-4">
-          {chips.map((chip) => (
+          {chips.map(chip => (
             <PokerChip
               key={chip.id}
               value={chip.value}
@@ -63,9 +63,9 @@ export function ChipSelector() {
 
         {/* Confirm button section */}
         <div className="flex flex-col justify-center items-start gap-1 flex-1 min-w-0 px-4">
-          <div 
+          <div
             className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-chip-casper"
-            style={{ background: "rgba(0, 0, 0, 0.54)" }}
+            style={{ background: 'rgba(0, 0, 0, 0.54)' }}
           >
             <svg
               width="24"
@@ -85,5 +85,5 @@ export function ChipSelector() {
         </div>
       </div>
     </div>
-  );
+  )
 }

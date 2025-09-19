@@ -1,210 +1,210 @@
-"use client";
+'use client'
 
-import { X, Search, ChevronDown, Play } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
-import CasinoCard from "@/components/ui/cards/CasinoCard";
-import { Button } from "@/components/ui";
-import { useModalScrollPrevention } from "@/hooks/useModalScrollPrevention";
+import { X, Search, ChevronDown, Play } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import CasinoCard from '@/components/ui/cards/CasinoCard'
+import { Button } from '@/components/ui'
+import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
 
 interface LocalGameSearchModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  category: string; // The specific category to search within
-  categoryLabel: string; // Display name for the category
+  isOpen: boolean
+  onClose: () => void
+  category: string // The specific category to search within
+  categoryLabel: string // Display name for the category
 }
 
 const gameImages = [
-  "https://api.builder.io/api/v1/image/assets/TEMP/a79278fafd9b48c78c8388123f81620317fe8d54?width=230",
-  "https://api.builder.io/api/v1/image/assets/TEMP/8b925652b70e2da887252313faf53f95f3a960e8?width=230",
-  "https://api.builder.io/api/v1/image/assets/TEMP/e791e1fa9f325156debd5ac895252c60b3b371c2?width=230",
-];
+  'https://api.builder.io/api/v1/image/assets/TEMP/a79278fafd9b48c78c8388123f81620317fe8d54?width=230',
+  'https://api.builder.io/api/v1/image/assets/TEMP/8b925652b70e2da887252313faf53f95f3a960e8?width=230',
+  'https://api.builder.io/api/v1/image/assets/TEMP/e791e1fa9f325156debd5ac895252c60b3b371c2?width=230',
+]
 
 // Mock game data for different categories
 const gamesByCategory = {
   favorites: [
     {
       id: 101,
-      title: "HUNTRESS WILD VENGEANCE",
-      provider: "PRINT STUDIOS",
+      title: 'HUNTRESS WILD VENGEANCE',
+      provider: 'PRINT STUDIOS',
       image: gameImages[0],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 102,
-      title: "SPEED BACCARAT",
-      provider: "DBLIVE",
+      title: 'SPEED BACCARAT',
+      provider: 'DBLIVE',
       image: gameImages[1],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 103,
-      title: "LIGHTNING ROULETTE",
-      provider: "EVOLUTION",
+      title: 'LIGHTNING ROULETTE',
+      provider: 'EVOLUTION',
       image: gameImages[2],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 104,
-      title: "MEGA MONEY WHEEL",
-      provider: "EVOLUTION",
+      title: 'MEGA MONEY WHEEL',
+      provider: 'EVOLUTION',
       image: gameImages[0],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 105,
-      title: "BLACKJACK LIVE",
-      provider: "EVOLUTION",
+      title: 'BLACKJACK LIVE',
+      provider: 'EVOLUTION',
       image: gameImages[1],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 106,
-      title: "IMMERSIVE ROULETTE",
-      provider: "EVOLUTION",
+      title: 'IMMERSIVE ROULETTE',
+      provider: 'EVOLUTION',
       image: gameImages[2],
-      badge: "HOT",
+      badge: 'HOT',
     },
   ],
   recent: [], // Empty array for recent games
   slots: [
     {
       id: 1,
-      title: "Mahjong Ways",
-      provider: "PG Soft",
+      title: 'Mahjong Ways',
+      provider: 'PG Soft',
       image: gameImages[0],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 2,
-      title: "Fortune Tiger",
-      provider: "PG Soft",
+      title: 'Fortune Tiger',
+      provider: 'PG Soft',
       image: gameImages[1],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 3,
-      title: "Gates of Olympus",
-      provider: "Pragmatic",
+      title: 'Gates of Olympus',
+      provider: 'Pragmatic',
       image: gameImages[2],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 4,
-      title: "Sweet Bonanza",
-      provider: "Pragmatic",
+      title: 'Sweet Bonanza',
+      provider: 'Pragmatic',
       image: gameImages[0],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 5,
-      title: "Starlight Princess",
-      provider: "Pragmatic",
+      title: 'Starlight Princess',
+      provider: 'Pragmatic',
       image: gameImages[1],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 6,
-      title: "Wild West Gold",
-      provider: "Pragmatic",
+      title: 'Wild West Gold',
+      provider: 'Pragmatic',
       image: gameImages[2],
-      badge: "NEW",
+      badge: 'NEW',
     },
   ],
   casino: [
     {
       id: 7,
-      title: "Live Blackjack",
-      provider: "Evolution",
+      title: 'Live Blackjack',
+      provider: 'Evolution',
       image: gameImages[0],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 8,
-      title: "Live Roulette",
-      provider: "Evolution",
+      title: 'Live Roulette',
+      provider: 'Evolution',
       image: gameImages[1],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 9,
-      title: "Live Baccarat",
-      provider: "Evolution",
+      title: 'Live Baccarat',
+      provider: 'Evolution',
       image: gameImages[2],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 10,
-      title: "Live Poker",
-      provider: "Evolution",
+      title: 'Live Poker',
+      provider: 'Evolution',
       image: gameImages[0],
-      badge: "HOT",
+      badge: 'HOT',
     },
   ],
   hash: [
     {
       id: 11,
-      title: "Hash Banker Player",
-      provider: "777 Gaming",
+      title: 'Hash Banker Player',
+      provider: '777 Gaming',
       image: gameImages[0],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 12,
-      title: "Hash Odd Even",
-      provider: "777 Gaming",
+      title: 'Hash Odd Even',
+      provider: '777 Gaming',
       image: gameImages[1],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 13,
-      title: "Hash Big Small",
-      provider: "777 Gaming",
+      title: 'Hash Big Small',
+      provider: '777 Gaming',
       image: gameImages[2],
-      badge: "HOT",
+      badge: 'HOT',
     },
   ],
   sport: [
     {
       id: 14,
-      title: "Football Manager",
-      provider: "Sports Co",
+      title: 'Football Manager',
+      provider: 'Sports Co',
       image: gameImages[0],
-      badge: "HOT",
+      badge: 'HOT',
     },
     {
       id: 15,
-      title: "Basketball Pro",
-      provider: "Sports Co",
+      title: 'Basketball Pro',
+      provider: 'Sports Co',
       image: gameImages[1],
-      badge: "NEW",
+      badge: 'NEW',
     },
     {
       id: 16,
-      title: "Tennis Ace",
-      provider: "Sports Co",
+      title: 'Tennis Ace',
+      provider: 'Sports Co',
       image: gameImages[2],
-      badge: "HOT",
+      badge: 'HOT',
     },
   ],
-};
+}
 
 const gameProviders = [
-  { id: "all", label: "All Providers" },
-  { id: "pg-soft", label: "PG Soft" },
-  { id: "evolution", label: "Evolution" },
-  { id: "pragmatic", label: "Pragmatic Play" },
-  { id: "cfg-gaming", label: "CFG Gaming" },
-  { id: "777-gaming", label: "777 Gaming" },
-  { id: "sports-co", label: "Sports Co" },
-];
+  { id: 'all', label: 'All Providers' },
+  { id: 'pg-soft', label: 'PG Soft' },
+  { id: 'evolution', label: 'Evolution' },
+  { id: 'pragmatic', label: 'Pragmatic Play' },
+  { id: 'cfg-gaming', label: 'CFG Gaming' },
+  { id: '777-gaming', label: '777 Gaming' },
+  { id: 'sports-co', label: 'Sports Co' },
+]
 
 const gameTypes = [
-  { id: "all", label: "All" },
-  { id: "new", label: "New" },
-  { id: "popular", label: "Popular" },
-  { id: "hot", label: "Hot" },
-  { id: "featured", label: "Featured" },
-];
+  { id: 'all', label: 'All' },
+  { id: 'new', label: 'New' },
+  { id: 'popular', label: 'Popular' },
+  { id: 'hot', label: 'Hot' },
+  { id: 'featured', label: 'Featured' },
+]
 
 export default function LocalGameSearchModal({
   isOpen,
@@ -212,17 +212,17 @@ export default function LocalGameSearchModal({
   category,
   categoryLabel,
 }: LocalGameSearchModalProps) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProvider, setSelectedProvider] = useState(gameProviders[0]);
-  const [selectedType, setSelectedType] = useState(gameTypes[0]);
-  const [isProviderOpen, setIsProviderOpen] = useState(false);
-  const [isTypeOpen, setIsTypeOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedProvider, setSelectedProvider] = useState(gameProviders[0])
+  const [selectedType, setSelectedType] = useState(gameTypes[0])
+  const [isProviderOpen, setIsProviderOpen] = useState(false)
+  const [isTypeOpen, setIsTypeOpen] = useState(false)
 
-  const providerRef = useRef<HTMLDivElement>(null);
-  const typeRef = useRef<HTMLDivElement>(null);
+  const providerRef = useRef<HTMLDivElement>(null)
+  const typeRef = useRef<HTMLDivElement>(null)
 
   // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen);
+  useModalScrollPrevention(isOpen)
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -231,30 +231,30 @@ export default function LocalGameSearchModal({
         providerRef.current &&
         !providerRef.current.contains(event.target as Node)
       ) {
-        setIsProviderOpen(false);
+        setIsProviderOpen(false)
       }
       if (typeRef.current && !typeRef.current.contains(event.target as Node)) {
-        setIsTypeOpen(false);
+        setIsTypeOpen(false)
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   const currentGames =
-    gamesByCategory[category as keyof typeof gamesByCategory] || [];
+    gamesByCategory[category as keyof typeof gamesByCategory] || []
 
   // Filter games based on search term
   const filteredGames = currentGames.filter(
-    (game) =>
+    game =>
       game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       game.provider.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
 
   return (
     <div className="fixed inset-0 z-50 flex p-2 sm:p-4 justify-center items-center bg-black/80">
@@ -278,7 +278,7 @@ export default function LocalGameSearchModal({
           {/* Content */}
           <div className="flex flex-col gap-6 p-4 w-full rounded-b-[14px] bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px] flex-1 sm:flex-none">
             {/* Search and filters - only show for non-recent modals */}
-            {category !== "recent" && (
+            {category !== 'recent' && (
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col lg:flex-row items-start gap-3 w-full">
                   {/* Search Input */}
@@ -287,7 +287,7 @@ export default function LocalGameSearchModal({
                     <input
                       type="text"
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onChange={e => setSearchTerm(e.target.value)}
                       placeholder={`Search ${categoryLabel.toLowerCase()}...`}
                       className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
                     />
@@ -306,24 +306,24 @@ export default function LocalGameSearchModal({
                         </span>
                         <ChevronDown
                           className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
-                            isProviderOpen ? "rotate-180" : ""
+                            isProviderOpen ? 'rotate-180' : ''
                           }`}
                         />
                       </div>
 
                       {isProviderOpen && (
                         <div className="absolute top-full left-0 right-0 mt-1 bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg z-50">
-                          {gameProviders.map((provider) => (
+                          {gameProviders.map(provider => (
                             <div
                               key={provider.id}
                               onClick={() => {
-                                setSelectedProvider(provider);
-                                setIsProviderOpen(false);
+                                setSelectedProvider(provider)
+                                setIsProviderOpen(false)
                               }}
                               className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
                                 selectedProvider.id === provider.id
-                                  ? "bg-blue-500/20"
-                                  : ""
+                                  ? 'bg-blue-500/20'
+                                  : ''
                               }`}
                             >
                               <span className="text-gray-300 text-sm font-medium font-montserrat">
@@ -346,24 +346,24 @@ export default function LocalGameSearchModal({
                         </span>
                         <ChevronDown
                           className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
-                            isTypeOpen ? "rotate-180" : ""
+                            isTypeOpen ? 'rotate-180' : ''
                           }`}
                         />
                       </div>
 
                       {isTypeOpen && (
                         <div className="absolute top-full left-0 right-0 mt-1 bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg z-50">
-                          {gameTypes.map((type) => (
+                          {gameTypes.map(type => (
                             <div
                               key={type.id}
                               onClick={() => {
-                                setSelectedType(type);
-                                setIsTypeOpen(false);
+                                setSelectedType(type)
+                                setIsTypeOpen(false)
                               }}
                               className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
                                 selectedType.id === type.id
-                                  ? "bg-blue-500/20"
-                                  : ""
+                                  ? 'bg-blue-500/20'
+                                  : ''
                               }`}
                             >
                               <span className="text-gray-300 text-sm font-medium font-montserrat">
@@ -380,7 +380,7 @@ export default function LocalGameSearchModal({
             )}
 
             {/* Results count - only show for non-recent modals */}
-            {category !== "recent" && (
+            {category !== 'recent' && (
               <div className="flex items-center justify-between">
                 <p className="text-gray-400 text-sm">
                   {filteredGames.length} games found in {categoryLabel}
@@ -389,7 +389,7 @@ export default function LocalGameSearchModal({
             )}
 
             {/* Game Grid or Empty State */}
-            {category === "recent" ? (
+            {category === 'recent' ? (
               // Recent modal - show empty state with image
               <div className="flex flex-col items-center justify-center flex-1 min-h-0">
                 <div className="flex flex-col items-center justify-center py-16">
@@ -440,5 +440,5 @@ export default function LocalGameSearchModal({
         </div>
       </div>
     </div>
-  );
+  )
 }

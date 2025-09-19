@@ -1,29 +1,29 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { Input, Button } from ".";
+import React, { useState } from 'react'
+import { Input, Button } from '.'
 
 interface SearchBarProps {
-  onSearch: (query: string) => void;
-  placeholder?: string;
-  className?: string;
-  buttonText?: string;
+  onSearch: (query: string) => void
+  placeholder?: string
+  className?: string
+  buttonText?: string
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
-  placeholder = "Search...",
-  className = "",
-  buttonText = "Search",
+  placeholder = 'Search...',
+  className = '',
+  buttonText = 'Search',
 }) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (query.trim()) {
-      onSearch(query.trim());
+      onSearch(query.trim())
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} className={`flex gap-2 ${className}`}>
@@ -31,14 +31,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
         type="text"
         placeholder={placeholder}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={e => setQuery(e.target.value)}
         className="flex-1"
       />
       <Button variant="blue" disabled={!query.trim()}>
         {buttonText}
       </Button>
     </form>
-  );
-};
+  )
+}
 
-export default SearchBar;
+export default SearchBar

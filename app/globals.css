@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --dodger-blue: #2283F6;
+  --dodger-blue: #2283f6;
 
   /* Border radius values */
   --radius: 0.5rem;
@@ -42,7 +42,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Montserrat", "微软雅黑", sans-serif;
+  font-family: 'Montserrat', '微软雅黑', sans-serif;
   touch-action: manipulation; /* 限制触摸行为 */
 
   /* 滚动条 */
@@ -51,36 +51,42 @@
 }
 
 body {
-  background: #0E141C;
+  background: #0e141c;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 body::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50vh,
-      #062751 0%,
-      #04152f 40%,
-      #0E141C 60%);
+  background: radial-gradient(
+    circle at 50% 50vh,
+    #062751 0%,
+    #04152f 40%,
+    #0e141c 60%
+  );
   z-index: -1;
   /* 放在内容下层 */
 }
 
-input, textarea, a {
+input,
+textarea,
+a {
   -webkit-text-size-adjust: 100%; /* 防止 iOS 自动调整字体大小 */
   text-size-adjust: 100%;
 }
 
 .loading-bg {
-  background: radial-gradient(circle at center,
-      #062751 0%,
-      #04152f 40%,
-      #0E141C 60%);
+  background: radial-gradient(
+    circle at center,
+    #062751 0%,
+    #04152f 40%,
+    #0e141c 60%
+  );
 }
 
 /* Loading animation */
@@ -112,7 +118,6 @@ input, textarea, a {
 body {
   overflow-x: hidden;
 }
-
 
 @media (max-width: 1024px) {
   .main-content {
@@ -255,9 +260,12 @@ body.sidebar-scrolling {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: radial-gradient(92.24% 59.35% at 100% 0%,
+  background:
+    radial-gradient(
+      92.24% 59.35% at 100% 0%,
       rgba(34, 131, 246, 0.54) 0%,
-      rgba(34, 131, 246, 0) 100%),
+      rgba(34, 131, 246, 0) 100%
+    ),
     linear-gradient(180deg, rgba(0, 0, 0, 0) 20.73%, #111923 86.56%);
   padding: 32px;
   display: flex;
@@ -514,15 +522,17 @@ body.sidebar-scrolling {
 }
 
 .social-login-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -652,9 +662,10 @@ body.sidebar-scrolling {
   border-radius: 999px;
   opacity: 1;
   margin: 0 4px !important;
-  transition: background-color 0.3s ease, width 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    width 0.3s ease;
 }
-
 
 /* ========== Pagination: FRACTION ========== */
 .swiper-pagination-fraction {
@@ -689,8 +700,6 @@ body.sidebar-scrolling {
   color: white !important;
 }
 
-
-
 /* Style all bullets */
 .swiper-pagination-bullet {
   width: 16px !important;
@@ -703,7 +712,9 @@ body.sidebar-scrolling {
   /* fully rounded ends */
   opacity: 1;
   /* avoid default fading */
-  transition: background-color 0.3s ease, width 0.3s ease !important;
+  transition:
+    background-color 0.3s ease,
+    width 0.3s ease !important;
   margin: 0 4px !important;
   /* spacing between bullets */
   opacity: 1 !important;
@@ -718,7 +729,7 @@ body.sidebar-scrolling {
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: var(--swiper-pagination-bottom, -6px) !important;
   z-index: 9999 !important;
@@ -726,7 +737,7 @@ body.sidebar-scrolling {
 }
 
 .swiper-pagination-bullet-active::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -845,10 +856,10 @@ body.sidebar-scrolling {
 }
 
 .font-montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.swiper-grid-column>.swiper-wrapper {
+.swiper-grid-column > .swiper-wrapper {
   flex-direction: row !important;
 }
 
@@ -857,7 +868,7 @@ body.sidebar-scrolling {
 }
 
 .glass-bg {
-  background: rgba(17, 25, 35, 0.70);
+  background: rgba(17, 25, 35, 0.7);
   backdrop-filter: blur(4rem);
 }
 
@@ -878,7 +889,7 @@ body.modal-open {
   z-index: 10000 !important;
 }
 
-.fixed.inset-0.flex>div {
+.fixed.inset-0.flex > div {
   z-index: 10001 !important;
 }
 
@@ -911,47 +922,47 @@ body.modal-open {
 }
 
 .bg-mirage-4 {
-  background-color: #1C2532;
+  background-color: #1c2532;
 }
 
 .bg-yellow-orange {
-  background-color: #FFB636;
+  background-color: #ffb636;
 }
 
 .bg-ebony-clay {
-  background-color: #2A3546;
+  background-color: #2a3546;
 }
 
 .bg-oxford-blue {
-  background-color: #3C485C;
+  background-color: #3c485c;
 }
 
 .bg-crimson {
-  background-color: #ED1D49;
+  background-color: #ed1d49;
 }
 
 .bg-casper {
-  background-color: #A7B5CA;
+  background-color: #a7b5ca;
 }
 
 .text-casper {
-  color: #A7B5CA;
+  color: #a7b5ca;
 }
 
 .border-casper {
-  border-color: #A7B5CA;
+  border-color: #a7b5ca;
 }
 
 .border-yellow-orange {
-  border-color: #FFB636;
+  border-color: #ffb636;
 }
 
 .text-yellow-orange {
-  color: #FFB636;
+  color: #ffb636;
 }
 
 .border-crimson {
-  border-color: #ED1D49;
+  border-color: #ed1d49;
 }
 
 .bg-black-blur {
@@ -998,19 +1009,19 @@ body.modal-open {
 }
 
 .bg-malachite {
-  background-color: #1BB83D;
+  background-color: #1bb83d;
 }
 
 .text-chip-casper {
-  color: #A7B5CA;
+  color: #a7b5ca;
 }
 
 .text-chip-crimson {
-  color: #ED1D49;
+  color: #ed1d49;
 }
 
 .text-chip-yellow-orange {
-  color: #FFB636;
+  color: #ffb636;
 }
 
 /* Modal animations */
@@ -1050,7 +1061,6 @@ body.modal-open {
 
 /* Mobile Modal - Close to Bottom */
 @media (max-width: 768px) {
-
   /* Auth modal positioning for mobile */
   .auth-content {
     align-items: flex-end !important;
@@ -1190,7 +1200,8 @@ body.modal-open {
     padding: 0 !important;
   }
 
-  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div {
+  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80
+    > div {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -1198,7 +1209,8 @@ body.modal-open {
   }
 
   /* Full height modals on mobile */
-  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div[style*="height: 100dvh"] {
+  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80
+    > div[style*='height: 100dvh'] {
     height: 100dvh !important;
     border-radius: 0 !important;
   }
@@ -1220,13 +1232,15 @@ body.modal-open {
     padding: 1rem !important;
   }
 
-  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div {
+  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80
+    > div {
     margin: 0 auto !important;
     border-radius: 14px !important;
   }
 
   /* Full height modals on desktop */
-  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80 > div[style*="height: 100dvh"] {
+  .fixed.inset-0.flex.p-2.sm\:p-4.justify-center.items-end.sm\:items-center.bg-black\/80
+    > div[style*='height: 100dvh'] {
     height: 90vh !important;
     max-height: 90vh !important;
     border-radius: 14px !important;
@@ -1235,7 +1249,6 @@ body.modal-open {
 
 /* Virtual Keyboard Handling - Simple Bottom Bar Positioning */
 @media (max-width: 1024px) {
-
   /* Ensure bottom bar is always visible with high z-index */
   .fixed.bottom-0 {
     z-index: 9999 !important;
