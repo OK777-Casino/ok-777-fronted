@@ -171,9 +171,30 @@ const BeginnerTutorialPage = () => {
     },
   ]
 
+  const hashCards = [
+    {
+      gameName: 'Big/Small',
+      odds: '1.95X',
+      betRange: '10USDT Starting/2TRX Starting',
+      bettingAddress: 'TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X',
+    },
+    {
+      gameName: 'Big/Small',
+      odds: '1.95X',
+      betRange: '10USDT Starting/2TRX Starting',
+      bettingAddress: 'TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X',
+    },
+    {
+      gameName: 'Big/Small',
+      odds: '1.95X',
+      betRange: '10USDT Starting/2TRX Starting',
+      bettingAddress: 'TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X',
+    },
+  ]
+
   return (
     <>
-      <div className="hash-game-container [@media(max-width:768px)]:!px-0   mx-auto flex flex-col 2xl:gap-16 gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col 2xl:gap-16 gap-4">
         <div className="rounded-[0.75rem]  h-[14.49375rem] overflow-hidden 2xl:mt-4  relative bg-center bg-cover">
           <img
             src="/images/block-coin.png"
@@ -219,7 +240,7 @@ const BeginnerTutorialPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col p-4 2xl:gap-16 gap-4">
+        <div className="flex flex-col p-2 2xl:gap-16 gap-4">
           <div>
             <div className="grid grid-cols-3 gap-3">
               {wallets.map((item, index) => (
@@ -269,201 +290,54 @@ const BeginnerTutorialPage = () => {
               <ArrowUpRightStrokeIcon className="w-6 h-6" />
             </div>
             <div className="grid xl:grid-cols-2 grid-cols-1 gap-4">
-              <div
-                className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center"
-                style={{ backgroundColor: '#0D131C' }}
-              >
-                <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
-                <div className="relative z-[2]">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[14px] font-bold text-white">
-                      Hash Big/Small
-                    </span>
-                    <div className="flex justify-end text-white items-center">
-                      <span className="font-medium text-[12px] text-dodger-blue">
-                        Graphic Tutorial
-                      </span>
-                      <ArrowUpRightStrokeIcon className="w-6 h-6" />
+              {hashCards.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center"
+                    style={{ backgroundColor: '#0D131C' }}
+                  >
+                    <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
+                    <div className="relative z-[2]">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[14px] font-bold text-white">
+                          Hash:{data.gameName}
+                        </span>
+                        <div className="flex justify-end text-white items-center">
+                          <span className="font-medium text-[12px] text-dodger-blue">
+                            Graphic Tutorial
+                          </span>
+                          <ArrowUpRightStrokeIcon className="w-6 h-6" />
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <span className="text-[14px] text-white block">
+                          Odds:{data.odds}
+                        </span>
+                        <span className="text-[14px] text-white block">
+                          Bet:{data.betRange}
+                        </span>
+                      </div>
+                      <div className="bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full py-2">
+                        <div className="indent-[20px]">
+                          <span className="text-white text-[12px] font-medium mr-2">
+                            Betting Address
+                          </span>
+                          <span className="text-casper text-[12px] font-medium">
+                            Use a Decentralized Wallet
+                          </span>
+                        </div>
+                        <CopyBox className="bg-white-8">
+                          {data.bettingAddress}
+                        </CopyBox>
+                      </div>
                     </div>
                   </div>
-                  <div className="mt-2">
-                    <span className="text-[14px] text-white block">
-                      Odds：1.95X
-                    </span>
-                    <span className="text-[14px] text-white block">
-                      Bet：10USDT Starting/2TRX Starting
-                    </span>
-                  </div>
-                  <div className="p-4 bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full">
-                    <div className="indent-[20px]">
-                      <span className="text-white text-[12px] font-medium mr-2">
-                        Betting Address
-                      </span>
-                      <span className="text-casper text-[12px] font-medium">
-                        Use a Decentralized Wallet
-                      </span>
-                    </div>
-                    <CopyBox className="bg-white-8">
-                      TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X
-                    </CopyBox>
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center">
-                <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
-                <div className="relative z-[2]">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[14px] font-bold text-white">
-                      Hash Big/Small
-                    </span>
-                    <div className="flex justify-end text-white items-center">
-                      <span className="font-medium text-[12px] text-dodger-blue">
-                        Graphic Tutorial
-                      </span>
-                      <ArrowUpRightStrokeIcon className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-[14px] text-white block">
-                      Odds：1.95X
-                    </span>
-                    <span className="text-[14px] text-white block">
-                      Bet：10USDT Starting/2TRX Starting
-                    </span>
-                  </div>
-                  <div className="p-4 bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full">
-                    <div className="indent-[20px]">
-                      <span className="text-white text-[12px] font-medium mr-2">
-                        Betting Address
-                      </span>
-                      <span className="text-casper text-[12px] font-medium">
-                        Use a Decentralized Wallet
-                      </span>
-                    </div>
-                    <CopyBox className="bg-white-8">
-                      TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X
-                    </CopyBox>
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center">
-                <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
-                <div className="relative z-[2]">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[14px] font-bold text-white">
-                      Hash Big/Small
-                    </span>
-                    <div className="flex justify-end text-white items-center">
-                      <span className="font-medium text-[12px] text-dodger-blue">
-                        Graphic Tutorial
-                      </span>
-                      <ArrowUpRightStrokeIcon className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-[14px] text-white block">
-                      Odds：1.95X
-                    </span>
-                    <span className="text-[14px] text-white block">
-                      Bet：10USDT Starting/2TRX Starting
-                    </span>
-                  </div>
-                  <div className="p-4 bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full">
-                    <div className="indent-[20px]">
-                      <span className="text-white text-[12px] font-medium mr-2">
-                        Betting Address
-                      </span>
-                      <span className="text-casper text-[12px] font-medium">
-                        Use a Decentralized Wallet
-                      </span>
-                    </div>
-                    <CopyBox className="bg-white-8">
-                      TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X
-                    </CopyBox>
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center">
-                <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
-                <div className="relative z-[2]">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[14px] font-bold text-white">
-                      Hash Big/Small
-                    </span>
-                    <div className="flex justify-end text-white items-center">
-                      <span className="font-medium text-[12px] text-dodger-blue">
-                        Graphic Tutorial
-                      </span>
-                      <ArrowUpRightStrokeIcon className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-[14px] text-white block">
-                      Odds：1.95X
-                    </span>
-                    <span className="text-[14px] text-white block">
-                      Bet：10USDT Starting/2TRX Starting
-                    </span>
-                  </div>
-                  <div className="p-4 bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full">
-                    <div className="indent-[20px]">
-                      <span className="text-white text-[12px] font-medium mr-2">
-                        Betting Address
-                      </span>
-                      <span className="text-casper text-[12px] font-medium">
-                        Use a Decentralized Wallet
-                      </span>
-                    </div>
-                    <CopyBox className="bg-white-8">
-                      TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X
-                    </CopyBox>
-                  </div>
-                </div>
-              </div>
-
-              <div className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center">
-                <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
-                <div className="relative z-[2]">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[14px] font-bold text-white">
-                      Hash Big/Small
-                    </span>
-                    <div className="flex justify-end text-white items-center">
-                      <span className="font-medium text-[12px] text-dodger-blue">
-                        Graphic Tutorial
-                      </span>
-                      <ArrowUpRightStrokeIcon className="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-[14px] text-white block">
-                      Odds：1.95X
-                    </span>
-                    <span className="text-[14px] text-white block">
-                      Bet：10USDT Starting/2TRX Starting
-                    </span>
-                  </div>
-                  <div className="p-4 bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full">
-                    <div className="indent-[20px]">
-                      <span className="text-white text-[12px] font-medium mr-2">
-                        Betting Address
-                      </span>
-                      <span className="text-casper text-[12px] font-medium">
-                        Use a Decentralized Wallet
-                      </span>
-                    </div>
-                    <CopyBox className="bg-white-8">
-                      TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X
-                    </CopyBox>
-                  </div>
-                </div>
-              </div>
+                )
+              })}
             </div>
           </div>
-          <div className="flex flex-col gap-4 " id="Refund">
+          <div className="flex flex-col gap-4 p-4" id="Refund">
             <div>
               <h2 className="font-bold text-[14px] text-white">3.Payouts</h2>
               <h3 className="text-casper">
@@ -620,8 +494,8 @@ const BeginnerTutorialPage = () => {
                 <span>Official website</span>
                 <span>Link</span>
               </div>
-              {tutorials.map(tutorial => (
-                <div className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1">
+              {tutorials.map((tutorial, index) => (
+                <div key={index} className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1">
                   <span className="text-left">
                     <img src={tutorial.icon} alt="tutorial" />
                   </span>

@@ -145,13 +145,13 @@ export default function FavoritesPage() {
   })
 
   return (
-    <div className="text-white">
+    <div className="max-w-7xl p-2 m-auto">
       {/* Header */}
       <div className="bg-[#111923]/54 backdrop-blur-[2rem] border-b border-gray-700 py-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto">
           <h1 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <span className="text-red-500">❤️</span>
-            {t('games.favorites')}
+            <span className='text-white'>{t('games.favorites')}</span>
           </h1>
 
           {/* Search and filters */}

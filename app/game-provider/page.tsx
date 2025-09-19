@@ -120,7 +120,7 @@ const gameProviders = [
 
 const GameProviderPage = () => {
   return (
-    <div className="flex flex-col gap-8 pt-[26px] md:pt-4 mb-16">
+    <div className="flex flex-col gap-8 pt-[26px] md:pt-4 mb-16 max-w-7xl p-2 m-auto">
       {/* <h2 className="text-white text-[18px] font-bold hidden lg:block">
         <span>Game Providers</span>
       </h2> */}

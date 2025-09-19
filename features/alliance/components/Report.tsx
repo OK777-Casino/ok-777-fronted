@@ -36,7 +36,7 @@ const Report: React.FC = () => {
   ]
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full">
+    <div className="p-4">
       <p className="text-[18px] font-bold mb-4 text-white [@media(max-width:660px)]:hidden">
         Report
       </p>

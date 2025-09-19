@@ -107,7 +107,7 @@ const VipClubPage = () => {
   const swiperRef = useRef<SwiperType | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 max-w-7xl p-2 m-auto">
       <div className="bg-[linear-gradient(#003F70,#0078D6)] relative overflow-hidden rounded-[0.75rem] border-[0.0625rem] border-white-13 gap-6 py-8 px-6 flex items-center">
         <img
           src="/images/awards/Silver.svg"

@@ -471,7 +471,7 @@ const MainContent: React.FC = () => {
   // Render lobby view
   return (
     <div
-      className="lg:px-6 lg:py-6 py-15 pt-4 w-full mx-auto overflow-x-hidden"
+      className="w-full mx-auto overflow-x-hidden p-2 pt-6 lg:p-6"
       style={{ margin: 'auto' }}
     >
       <SuccessForm isOpen={false} />

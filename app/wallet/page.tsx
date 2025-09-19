@@ -104,7 +104,7 @@ function WalletPageContent() {
 
   return (
     <>
-      <div className="flex flex-col 2xl:w-[70%] w-full lg:w-[97%] max-w-[120rem]  gap-16 lg:py-6 mx-auto justify-between pb-20 lg:pb-8">
+      <div className="flex flex-col w-full justify-between max-w-7xl p-2 gap-8 lg:py-6 mx-auto pb-4 lg:pb-8">
         {/* Left Sidebar Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg h-full [@media(max-width:1024px)]:hidden w-full ">
           <div className="flex p-3 gap-1 justify-between">
@@ -115,7 +115,7 @@ function WalletPageContent() {
                   setActiveTab(item.name)
                   updateQuery(item.name)
                 }}
-                className={`w-fit flex items-center gap-1 p-2  rounded-lg transition-all duration-200 ${
+                className={`w-fit flex items-center gap-1 p-2 rounded-lg transition-all duration-200 cursor-pointer ${
                   activeTab === item.name
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
@@ -129,7 +129,7 @@ function WalletPageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 lg:bg-white-4 p-4 rounded-[12px]">
+        <div className="flex-1 lg:bg-white-4 p-2 rounded-[12px]">
           {renderContent()}
         </div>
       </div>

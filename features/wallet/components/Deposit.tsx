@@ -74,7 +74,7 @@ const Deposit: React.FC = () => {
 
   return (
     <div className=" [@media(max-width:660px)]:w-full">
-      <div className="w-full flex flex-col gap-4 space-y-4">
+      <div className="w-full flex flex-col gap-4">
         {/* Deposit Header */}
         <h1 className="text-lg sm:text-xl font-bold text-white hidden lg:block">
           {selectedCurrencyType === 'Crypto' ? 'Deposit' : 'To replenish'}
@@ -82,6 +82,7 @@ const Deposit: React.FC = () => {
         <div className="grid grid-cols-2 gap-4 bg-white-4 rounded-[12px] overflow-hidden p-1 h-11">
           {['Crypto', 'Fiat'].map((item, index) => (
             <div
+              key={index}
               className={cn(
                 'text-[14px] font-bold rounded-[8px] overflow-hidden flex justify-center items-center',
                 selectedCurrencyType === item
@@ -112,32 +113,32 @@ const Deposit: React.FC = () => {
               />
             </div>
 
-            <div className="p-4 grid grid-cols-[141px_auto] gap-4 rounded-[12px] bg-white-4">
-              <div className="bg-white rounded-[8px] p-2 ">
+            <div className="p-2 grid grid-cols-1 sm:grid-cols-[150px_auto] gap-4 rounded-[12px] bg-white-4">
+              <div className="rounded-[8px] p-2 mx-auto">
                 <img
                   src="images/qr.png"
                   className="h-[125px] aspect-[1/1]"
                   alt="qr"
                 />
               </div>
-              <div className="flex flex-col justify-between w-full">
-                <h2 className="font-bold text-[14px] text-white indent-[20px]">
+              <div className="flex flex-col justify-between w-full gap-2">
+                <h2 className="font-bold text-[1rem] text-white">
                   Wallet Address
                 </h2>
                 <div className="bg-white-8 rounded-[8px] w-full h-[62px] flex justify-center items-center">
-                  <span className="text-casper font-bold break-all p-4 text-[12px]">
+                  <span className="text-casper font-bold break-all p-2 text-[.8rem]">
                     <span className="text-dodger-blue">TXS3</span>
                     PfAU9hemKkoBWRUfsUkGBSrZGa
                     <span className="text-dodger-blue">gh6X</span>
                   </span>
                 </div>
-                <div className="flex bg-white-13 justify-center text-casper text-[14px] font-bold items-center rounded-[12px] gap-1 h-[48px] w-full">
+                <div className="flex bg-white-13 justify-center text-casper text-[1rem] font-bold items-center rounded-[12px] gap-1 h-[48px] w-full">
                   <CopyIcon />
                   <span>Copy Address</span>
                 </div>
               </div>
             </div>
-            <div className="p-4 flex gap-2 rounded-[12px] items-center bg-[#1BB83D21] pl-2">
+            <div className="p-2 flex gap-2 rounded-[12px] items-center bg-[#1BB83D21] pl-2">
               <InfoCircleIcon className="h-6 w-6" color="#1BB83D" />
               <p className="font-medium text-[14px] w-[90%] text-white">
                 Please only send USDT to this address. Transfer amounts less

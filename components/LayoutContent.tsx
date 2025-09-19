@@ -100,7 +100,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
                 : 'h-[calc(100dvh-56px)]'
             } ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}
           >
-            <div className="w-full max-w-[1920px] mx-auto p-2">{children}</div>
+            <div className="w-full max-w-[1920px] mx-auto">{children}</div>
             {!isHashgamePage && !isAlliancePage && <Footer />}
           </div>
           {isNotificationsOpen && !isMobileHeader && (

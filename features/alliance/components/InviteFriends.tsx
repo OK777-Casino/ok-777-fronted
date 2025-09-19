@@ -32,10 +32,10 @@ const InviteFriends: React.FC = () => {
   ]
 
   return (
-    <div className="flex-1">
+    <div className="flex-1 lg:p-4">
       {/* Header Section */}
       <div className="mb-8 [@media(max-width:1024px)]:hidden">
-        <h1 className="text-[1.125rem] font-bold text-white mb-6">
+        <h1 className="text-[1.125rem] font-bold text-white">
           Invite Friends
         </h1>
         <div className=" bg-[linear-gradient(170deg,#ED1D49_5%,#111923_90%)] rounded-[0.75rem] p-10  text-left h-[7.1875rem] relative overflow-hidden">
@@ -53,7 +53,7 @@ const InviteFriends: React.FC = () => {
       {/* Referral Section */}
       <div className="grid grid-cols-2 gap-4 mb-4 [@media(max-width:1500px)]:grid-cols-1">
         <div className="bg-[#FFFFFF0A] rounded-[0.75rem] p-5 ">
-          <label className="block text-white text-[0.875rem] font-bold mb-3 ">
+          <label className="block text-white text-[0.875rem] font-bold">
             Referral link
           </label>
           <div className="flex items-center gap-3">

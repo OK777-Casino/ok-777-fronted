@@ -90,7 +90,7 @@ function HelpCenterPageContent() {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col max-w-7xl p-2 m-auto">
         {/* Top Tab Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg w-full mb-6 [@media(max-width:1024px)]:hidden">
           <div className="flex p-3 gap-1 justify-between overflow-x-auto">

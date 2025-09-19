@@ -156,11 +156,11 @@ export default function RecentPage() {
   })
 
   return (
-    <div className="text-white">
+    <div className="max-w-7xl p-2 m-auto">
       {/* Header */}
       <div className="bg-[#111923]/54 backdrop-blur-[2rem] border-b border-gray-700 py-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <div className="mx-auto">
+          <h1 className="flex items-center text-2xl font-bold mb-4 gap-2 text-white">
             <Clock className="h-6 w-6 text-blue-400" />
             Recently Viewed
           </h1>

@@ -117,7 +117,7 @@ const PromotionsPage = () => {
   ] as const
 
   return (
-    <div className="flex flex-col gap-8 mx-auto mb-16 pt-2">
+    <div className="flex flex-col gap-8 mx-auto mb-16 pt-2 max-w-7xl p-2 m-auto">
       <div className="flex items-center w-full md:w-[28.125rem] p-1 bg-[#1A2332] rounded-xl m-auto">
         {tabs.map(tab => {
           const isActive = activeTab === tab.id

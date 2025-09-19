@@ -17,7 +17,7 @@ const GameProviderPage = () => {
   const id = pathname.split('/')[2].split('%20').join(' ')
 
   return (
-    <div className="lg:w-[70%] flex flex-col gap-8 w-full mx-auto p-4 pt-[26px] md:pt-4 mb-16">
+    <div className="flex flex-col gap-8 w-full mx-auto pt-[26px] md:pt-4 mb-16 max-w-7xl p-2 m-auto">
       <h2 className="text-white text-[18px] font-bold hidden lg:block">{id}</h2>
       {/* Content */}
       {/* Search Field */}
