@@ -31,12 +31,12 @@ class I18nManager {
     this.initializeTranslations()
   }
 
-  private initializeTranslations() {
+  private async initializeTranslations() {
     try {
       if (typeof window === 'undefined') {
         // Server-side initialization
-        const fs = require('fs')
-        const path = require('path')
+        const fs = await import('fs')
+        const path = await import('path')
         const filePath = path.join(
           process.cwd(),
           'public',
@@ -111,8 +111,8 @@ class I18nManager {
       if (typeof window === 'undefined') {
         // Server-side: use require for static files
         try {
-          const fs = require('fs')
-          const path = require('path')
+          const fs = await import('fs')
+          const path = await import('path')
           const filePath = path.join(
             process.cwd(),
             'public',
@@ -128,8 +128,8 @@ class I18nManager {
           )
           // Fallback to English
           try {
-            const fs = require('fs')
-            const path = require('path')
+            const fs = await import('fs')
+            const path = await import('path')
             const filePath = path.join(
               process.cwd(),
               'public',

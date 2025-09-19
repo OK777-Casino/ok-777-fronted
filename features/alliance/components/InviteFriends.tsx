@@ -35,9 +35,7 @@ const InviteFriends: React.FC = () => {
     <div className="flex-1 lg:p-4">
       {/* Header Section */}
       <div className="mb-8 [@media(max-width:1024px)]:hidden">
-        <h1 className="text-[1.125rem] font-bold text-white">
-          Invite Friends
-        </h1>
+        <h1 className="text-[1.125rem] font-bold text-white">Invite Friends</h1>
         <div className=" bg-[linear-gradient(170deg,#ED1D49_5%,#111923_90%)] rounded-[0.75rem] p-10  text-left h-[7.1875rem] relative overflow-hidden">
           <img
             src="/images/banner/invite-banner.png"

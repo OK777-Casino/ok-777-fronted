@@ -151,7 +151,7 @@ export default function FavoritesPage() {
         <div className="mx-auto">
           <h1 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <span className="text-red-500">❤️</span>
-            <span className='text-white'>{t('games.favorites')}</span>
+            <span className="text-white">{t('games.favorites')}</span>
           </h1>
 
           {/* Search and filters */}

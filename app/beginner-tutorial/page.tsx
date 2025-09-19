@@ -495,7 +495,10 @@ const BeginnerTutorialPage = () => {
                 <span>Link</span>
               </div>
               {tutorials.map((tutorial, index) => (
-                <div key={index} className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1">
+                <div
+                  key={index}
+                  className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1"
+                >
                   <span className="text-left">
                     <img src={tutorial.icon} alt="tutorial" />
                   </span>
