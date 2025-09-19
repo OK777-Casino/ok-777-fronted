@@ -180,7 +180,7 @@ const Introduction: React.FC = () => {
         <div className="bg-[#ffffff0a] rounded-xl overflow-hidden">
           {/* Table Header */}
           <div className="bg-[#11192389] border-b border-[#2a3546] p-4">
-            <div className="grid grid-cols-3 gap-4 flex justify-center items-center">
+            <div className="flex grid-cols-3 gap-4 justify-center items-center">
               <div className="text-xs font-bold text-[#55657e]">
                 Agent level
               </div>
@@ -199,7 +199,7 @@ const Introduction: React.FC = () => {
                   index % 2 === 0 ? "bg-[#ffffff14]" : "bg-[#ffffff0a]"
                 }`}
               >
-                <div className="grid grid-cols-3 gap-4 flex justify-center items-center">
+                <div className="flex grid-cols-3 gap-4  justify-center items-center">
                   <div className="text-xs font-bold text-[#a7b5ca]">
                     {row.agentLevel}
                   </div>

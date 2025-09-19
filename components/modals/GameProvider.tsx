@@ -130,7 +130,7 @@ export default function GamingProviderModal({ isOpen, onClose }: GamingProviderM
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end lg:items-center justify-center z-[9999]">
+    <div className="fixed inset-0 flex items-end lg:items-center justify-center z-[9999]">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -138,7 +138,7 @@ export default function GamingProviderModal({ isOpen, onClose }: GamingProviderM
       />
       
       {/* Modal */}
-      <div className={`lg:relative w-[100vw] max-w-md bg-transparent transition-transform  duration-300 ease-out bg-black/60 ${
+      <div className={`lg:relative w-[100vw] max-w-md transition-transform  duration-300 ease-out bg-black/60 ${
         isVisible ? 'translate-y-0' : 'translate-y-full lg:translate-y-0'
       }`}>
         {/* Header */}

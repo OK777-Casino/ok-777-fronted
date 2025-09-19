@@ -194,7 +194,7 @@ const VipClubPage = () => {
           <SwiperSlider
             data={data}
             renderSlide={(manufacturer, index) => (
-              <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 hover:bg-white-8 flex flex-col gap-3">
+              <div key={index} className="rounded-[12px] overflow-hidden p-4 bg-white-4 hover:bg-white-8 flex flex-col gap-3">
                 <div
                   className="flex gap-4 items-start"
                   onClick={() => setIsModalOpen(true)}
@@ -229,7 +229,7 @@ const VipClubPage = () => {
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
-                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1"/>
+                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
                 </div>
                 <div className="rounded-[12px] hover:bg-white-8 p-4 bg-white-4 relative flex gap-4">
                   <img
@@ -294,6 +294,7 @@ const VipClubPage = () => {
       </div>
       <div className="rounded-[12px] 2xl:h-[292.9px] 2xl:overflow-hidden  relative bg-center bg-cover">
         <img
+          alt=""
           src="/images/block-coin.png"
           className="w-full absolute 2xl:block hidden h-full z-[9] object-cover grayscale"
         />
@@ -367,14 +368,14 @@ const VipClubPage = () => {
       >
         <div className="flex gap-4 flex-col">
           <div className="flex w-full flex-col gap-[6px]">
-            <div className="grid px-4 items-center bg-mirage-8a flex justify-center items-center font-bold text-[12px] rounded-t-[8px] h-10 text-blue-bayoux grid-cols-[auto_100px_90px_80px] gap-2">
+            <div className="flex justify-center px-4 items-center bg-mirage-8a   font-bold text-[12px] rounded-t-[8px] h-10 text-blue-bayoux grid-cols-[auto_100px_90px_80px] gap-2">
               <span>VIP level</span>
               <span>Promotional bonus</span>
               <span>Monthly bonus</span>
               <span>Change of cutoff</span>
             </div>
             {vips[1].map((vip, index) => (
-              <div className="grid px-4 items-center bg-white-4 flex justify-center items-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2">
+              <div key={index} className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2">
                 <span className="flex gap-2 items-center">
                   <img
                     src="/images/awards/Bronze.svg"
@@ -399,14 +400,14 @@ const VipClubPage = () => {
             </span>
           </div>
           <div className="flex w-full flex-col gap-[6px]">
-            <div className="grid px-4 items-center bg-mirage-8a flex justify-center items-center font-bold text-[12px] rounded-t-[8px] h-10 text-blue-bayoux grid-cols-[auto_100px_90px_80px] gap-2">
+            <div className="flex justify-center items-center px-4 bg-mirage-8a font-bold text-[12px] rounded-t-[8px] h-10 text-blue-bayoux grid-cols-[auto_100px_90px_80px] gap-2">
               <span>VIP level</span>
               <span>Accumulated deposits</span>
               <span>Accumu-lated income</span>
               <span>Change of cutoff</span>
             </div>
             {vips[2].map((vip, index) => (
-              <div className="grid px-4 items-center bg-white-4 flex justify-center items-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2">
+              <div key={index} className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2">
                 <span className="flex gap-2 items-center">
                   <img
                     src="/images/awards/Bronze.svg"

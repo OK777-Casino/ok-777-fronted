@@ -549,7 +549,7 @@ const NiuniuDefault: React.FC = () => {
           <div className="bg-[#72707038] rounded-lg w-full  p-1 hidden [@media(max-width:768px)]:flex ">
             <Link
               href="/hashgames/lucky/active"
-              className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]
+              className={` w-[50%] justify-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]
           `}
             >
               {" "}
@@ -561,7 +561,7 @@ const NiuniuDefault: React.FC = () => {
               Transfer betting
             </Link>
             <div
-              className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+              className={` w-[50%] justify-center py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
             >
               {" "}
               <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
@@ -579,6 +579,7 @@ const NiuniuDefault: React.FC = () => {
             }}
           >
             <img
+              alt=""
               src="/images/hashgame.jpg"
               className="absolute rounded-[14px] top-0 z-1 left-0 w-full h-full"
             />
