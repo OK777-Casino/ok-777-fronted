@@ -20,6 +20,18 @@ const Deposit: React.FC = () => {
       value: 'usdt',
       label: 'USDT',
       icon: <img src="/icons/coin-icon/USDT.svg" />,
+    },{
+      value: 'usdt',
+      label: 'USDT',
+      icon: <img src="/icons/coin-icon/USDT.svg" />,
+    },{
+      value: 'usdt',
+      label: 'USDT',
+      icon: <img src="/icons/coin-icon/USDT.svg" />,
+    },{
+      value: 'usdt',
+      label: 'USDT',
+      icon: <img src="/icons/coin-icon/USDT.svg" />,
     },
   ]
 
@@ -33,6 +45,18 @@ const Deposit: React.FC = () => {
 
   const networkOptions = [
     {
+      value: 'trc',
+      label: 'TRC20',
+      icon: <img src="/icons/coin-icon/TRX.svg" />,
+    },{
+      value: 'trc',
+      label: 'TRC20',
+      icon: <img src="/icons/coin-icon/TRX.svg" />,
+    },{
+      value: 'trc',
+      label: 'TRC20',
+      icon: <img src="/icons/coin-icon/TRX.svg" />,
+    },{
       value: 'trc',
       label: 'TRC20',
       icon: <img src="/icons/coin-icon/TRX.svg" />,
