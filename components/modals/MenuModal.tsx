@@ -164,7 +164,7 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
       position="responsive"
       width="90vw"
       className="w-full"
-      contentClassName="px-6 py-6 space-y-2"
+      contentClassName="px-6 py-6 "
       showHeader={true}
       showCloseButton={true}
     >

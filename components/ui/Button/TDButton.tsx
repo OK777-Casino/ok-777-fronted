@@ -50,7 +50,7 @@ const TDButton: React.FC<TDButtonProps> = ({
             Style
           )}
         >
-          <span>{children}</span>
+          {children}
         </span>
       </div>
     </>

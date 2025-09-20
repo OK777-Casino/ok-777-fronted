@@ -442,9 +442,7 @@ const BigSmallActive: React.FC = () => {
   return (
     <>
       <div
-        className={`min-h-screen  py-16 m-auto text-white ${
-          isCollapsed ? 'sidebar-collapsed' : ''
-        }`}
+        className={`min-h-screen hash-game-container py-16 m-auto text-white ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header Section */}
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
@@ -458,7 +456,7 @@ const BigSmallActive: React.FC = () => {
                 alt="active"
                 className="w-6 h-6"
               />
-              Transfer betting
+              Active
             </div>
             <Link
               href="/hashgames/bigsmall/default"
@@ -467,7 +465,7 @@ const BigSmallActive: React.FC = () => {
             >
               {' '}
               <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
-              Page betting
+              Default
             </Link>
           </div>
           <div className="flex items-center gap-2 [@media(max-width:768px)]:hidden">
@@ -584,8 +582,7 @@ const BigSmallActive: React.FC = () => {
             </p>
             <p className="text-white text-[14px] font-bold">
               Limitation:
-              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>
-              TRX
+              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>TRX
             </p>
             <div className="text-[#2283F6] text-[14px] font-normal mt-5 opacity-80">
               Note: Odds will fluctuate automatically and all rights to

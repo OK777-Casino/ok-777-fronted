@@ -34,7 +34,7 @@ const FlatButton: React.FC<FlatButtonProps> = ({
           className
         )}
       >
-        <span>{children}</span>
+        {children}
       </span>
     </div>
   )

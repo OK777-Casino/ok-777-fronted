@@ -1,6 +1,10 @@
 'use client'
-
 import { cn } from '@/lib/utils'
+
+import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
+import MenuModal from '@/components/modals/MenuModal'
+import Link from 'next/link'
+import { useSidebar } from '@/context/SidebarProvider'
 import React, { useState } from 'react'
 
 import {
@@ -14,14 +18,15 @@ import {
   Check,
   ZoomIn,
 } from 'lucide-react'
-import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
-import MenuModal from '@/components/modals/MenuModal'
-import Link from 'next/link'
-import { useSidebar } from '@/context/SidebarProvider'
-import { CopyBox } from '@/components/ui/CopyBox'
 
-const BankerPlayerActive: React.FC = () => {
+interface HashTemplateProps {
+  type: 'active' | 'default'
+}
+
+const OddDefault: React.FC = () => {
   const { isCollapsed } = useSidebar()
+  const [activeTab, setActiveTab] = useState<'Active' | 'Default'>('Active')
+  const isActive = activeTab === 'Active'
   const [difficulty, setDifficulty] = useState<'Beginner' | 'Intermediate'>(
     'Beginner'
   )
@@ -437,10 +442,13 @@ const BankerPlayerActive: React.FC = () => {
       </div>
     )
   }
+
   return (
     <>
       <div
-        className={`w-full px-4 lg:px-0 py-16 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`min-h-screen  py-16 m-auto text-white ${
+          isCollapsed ? 'sidebar-collapsed' : ''
+        }`}
       >
         {/* Header Section */}
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
@@ -457,7 +465,7 @@ const BankerPlayerActive: React.FC = () => {
               Transfer betting
             </div>
             <Link
-              href="/hashgames/bankerplayer/default"
+              href="/hashgames/oddeven/default"
               className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
             >
@@ -510,8 +518,8 @@ const BankerPlayerActive: React.FC = () => {
             Active
           </div>
           <Link
-            href="/hashgames/bankerplayer/default"
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+            href="/hashgames/oddeven/default"
+            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
             {' '}
             <img
@@ -558,12 +566,16 @@ const BankerPlayerActive: React.FC = () => {
               Use a decentralized wallet
             </span>
           </h2>
-          <CopyBox className="w-full mb-4">
-            <span className="text-[#2283F6]">TXS3</span>
-            PfAUShemKkoBWRUFsUkGBSrZ
-            <span className="text-[#2283F6]">gh..</span>
-          </CopyBox>
-
+          <div className="flex opacity-80 justify-between bg-[#2a3546] p-3 border rounded-lg p-3Icon.svg border-[rgba(255,255,255,0.1)] mb-4">
+            <div className="flex items-center">
+              <span className="text-gray-300 text-[12px] font-bold">
+                <span className="text-[#2283F6]">TXS3</span>
+                <span className="text-[#FFFFFF]">PfAUShemKkoBWRUFsUkGBSrZ</span>
+                <span className="text-[#2283F6]">gh..</span>
+              </span>
+            </div>
+            <img src="/icons/copy.svg" alt="copy" className="w-6 h-6" />
+          </div>
           <div className="relative mb-4">
             <div className="absolute inset-0 bg-[#003a8a] rounded-[12px] translate-y-1"></div>
             <div className=" w-full relative rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-[14px] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg ">
@@ -832,12 +844,22 @@ const BankerPlayerActive: React.FC = () => {
             <div className="flex items-center mb-4 mt-2 rounded-lg">
               <div className="flex bg-[#FFFFFF0A] rounded-lg p-1">
                 <div
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+                  onClick={() => setActiveTab('Default')}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 ${
+                    isActive
+                      ? 'bg-color-[#FFFFFF] text-white shadow-lg'
+                      : 'bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]'
+                  }`}
                 >
                   Block Trend
                 </div>
                 <div
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+                  onClick={() => setActiveTab('Active')}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 ${
+                    !isActive
+                      ? 'bg-color-[#FFFFFF] text-white shadow-lg'
+                      : 'bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]'
+                  }`}
                 >
                   My Trend
                 </div>
@@ -994,9 +1016,15 @@ const BankerPlayerActive: React.FC = () => {
           </p>
         </div>
       </div>
+
+      {/* Menu Modal */}
       <MenuModal isOpen={isMenuModalOpen} onClose={handleCloseMenuModal} />
     </>
   )
 }
 
-export default BankerPlayerActive
+const HashTemplate = () => {
+  return <div></div>
+}
+
+export default HashTemplate

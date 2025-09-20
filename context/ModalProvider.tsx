@@ -14,6 +14,7 @@ import GameSearchModal from '@/components/modals/GameSearch'
 import LocalGameSearchModal from '@/components/modals/LocalGameSearch'
 import RuleModal from '@/components/modals/RuleModal'
 import ChangeGameModal from '@/components/modals/ChangeGameModal'
+import CustomizeChipModal from '@/components/modals/CustomizeChipModal'
 import { AUTH_CHANGED_EVENT, getIsLoggedIn } from '@/lib/auth'
 import { SuccessForm } from '@/components/auth/SuccessForm'
 
@@ -53,6 +54,11 @@ interface ModalContextType {
   isChangeGameModalOpen: boolean
   openChangeGameModal: () => void
   closeChangeGameModal: () => void
+
+  // Customize Chip Modal
+  isCustomizeChipModalOpen: boolean
+  openCustomizeChipModal: () => void
+  closeCustomizeChipModal: () => void
 }
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined)
@@ -80,6 +86,8 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
   const [localSearchCategoryLabel, setLocalSearchCategoryLabel] = useState('')
   const [isRuleModalOpen, setIsRuleModalOpen] = useState(false)
   const [isChangeGameModalOpen, setIsChangeGameModalOpen] = useState(false)
+  const [isCustomizeChipModalOpen, setIsCustomizeChipModalOpen] =
+    useState(false)
   const [isSuccessOpen, setIsSuccessOpen] = useState(false)
 
   const openGameProviderModal = () => setIsGameProviderModalOpen(true)
@@ -106,6 +114,9 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
 
   const openChangeGameModal = () => setIsChangeGameModalOpen(true)
   const closeChangeGameModal = () => setIsChangeGameModalOpen(false)
+
+  const openCustomizeChipModal = () => setIsCustomizeChipModalOpen(true)
+  const closeCustomizeChipModal = () => setIsCustomizeChipModalOpen(false)
 
   // Open Success modal when auth state changes to logged-in
   useEffect(() => {
@@ -144,6 +155,9 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     isChangeGameModalOpen,
     openChangeGameModal,
     closeChangeGameModal,
+    isCustomizeChipModalOpen,
+    openCustomizeChipModal,
+    closeCustomizeChipModal,
   }
 
   return (
@@ -176,6 +190,10 @@ export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
       <ChangeGameModal
         isOpen={isChangeGameModalOpen}
         onClose={closeChangeGameModal}
+      />
+      <CustomizeChipModal
+        isOpen={isCustomizeChipModalOpen}
+        onClose={closeCustomizeChipModal}
       />
     </ModalContext.Provider>
   )

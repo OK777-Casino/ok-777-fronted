@@ -12,11 +12,10 @@ import AlertSquareIcon from '@/components/ui/icons/alert-square'
 import CopyIcon from '@/components/ui/icons/copy'
 import CurrencyNotes1Icon from '@/components/ui/icons/currency-notes-1'
 import InfoCircleIcon from '@/components/ui/icons/info-circle'
-import { useT } from '@/context/I18nProvider'
 
 const JoinCommunityPage = () => {
   const clickSubmit = () => {}
-  const t = useT()
+
   const socials = [
     'Telegram',
     'Facebook',
@@ -49,16 +48,17 @@ const JoinCommunityPage = () => {
     <BetTemplate {...data}>
       <div className="p-4 bg-white-4 rounded-[12px] flex flex-col gap-4">
         <div className="text-[18px] font-bold text-white flex justify-center items-center">
-          {t('promotions.title1')}
+          Complete tasks every day and give bonuses every day!
         </div>
         <div className="lg:w-[70%] w-full mx-auto flex justify-center items-center text-[14px] text-casper">
-          <p className="font-medium">
-            {t('promotions.content1')}
-            <span className="text-yellow-orange">
-              {t('promotions.content2')}
-            </span>
-            {t('promotions.content3')}
-          </p>
+          Want to play around and make money? Now join the official community of
+          OK777 to complete the designated 
+          <span className="text-yellow-orange">
+            interactive tasks, betting challenges, and friend invitation
+            activities.{' '}
+          </span>
+          There are new tasks every day, with prizes, and you can also be on the
+          “Task King List”! Click the social media link below to join the event.
         </div>
         <div className=" rounded-[12px] flex justify-center items-center flex-wrap gap-2 flex justify-center items-center text-[14px] text-casper">
           {socials.map(item => (
@@ -78,18 +78,18 @@ const JoinCommunityPage = () => {
 
       <div className="bg-white-4 rounded-[12px] p-4 flex flex-col gap-4 mt-4 ">
         <div className="font-bold text-[14px] flex justify-center items-center text-white">
-          {t('promotions.text1')}
+          How to claim the bonus
         </div>
         <div className="grid xl:grid-cols-2 lg:grid-cols-1 gap-4">
           <div className="p-8 flex flex-col gap-8 bg-white-4 rounded-[12px]">
             <div>
               <TabButton
                 type="one"
-                title={t('promotions.text3')}
+                title="Super simple mission"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
               <span className="text-[14px] text-casper font-bold pt-4">
-                {t('promotions.text2')}
+                Leave a message, share, and invite friends
               </span>
             </div>
             <div className="relative flex justify-center items-center">
@@ -108,19 +108,19 @@ const JoinCommunityPage = () => {
                   onClick={() => {}}
                   className="w-[242px] h-[41px] text-[12px]"
                 >
-                  {t('promotions.textbutton1')}
+                  Message
                 </FlatButton>
                 <FlatButton
                   onClick={() => {}}
                   className="w-[242px] h-[41px] text-[12px]"
                 >
-                  {t('promotions.textbutton2')}
+                  Share
                 </FlatButton>
                 <FlatButton
                   onClick={() => {}}
                   className="w-[242px] h-[41px] text-[12px] bg-cornflower-blue"
                 >
-                  {t('promotions.textbutton3')}
+                  Invite friends
                 </FlatButton>
                 <img
                   src="/icons/cursor.svg"
@@ -134,17 +134,17 @@ const JoinCommunityPage = () => {
             <div className="flex flex-col gap-4 items-start">
               <TabButton
                 type="one"
-                title={t('promotions.text4')}
+                title="There will be rewards when you finish"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
               <span className="text-[14px] text-casper font-bold">
-                {t('promotions.text5')}
+                No new users are allowed, everyone can participate
               </span>
               <span className="text-[14px] text-casper font-bold">
-                {t('promotions.text6')}
+                Continuous participation can still be limited 
               </span>
               <span className="text-[14px] text-dodger-blue font-bold">
-                {t('promotions.text7')}
+                Headframe, lottery qualifications, ranking awards!
               </span>
             </div>
             <div className="relative flex justify-center items-center relative">
@@ -168,18 +168,37 @@ const JoinCommunityPage = () => {
         </div>
 
         <div className="rounded-[12px] p-4 flex flex-col gap-2 bg-white-4 rounded-[12px]">
-          <h2 className="text-[18px] text-gallery">{t('promotions.text8')}</h2>
+          <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
           <div className="text-[14px] font-bold text-white">
-            <p>{t('promotions.text9')}</p>
-            <p>{t('promotions.text10')}</p>
-            <p>{t('promotions.text11')}</p>
+            <p>Event Venue: Live Game </p>
+            <p>Eligible: All </p>
+            <p>Promotion Period: Long-term activity</p>
           </div>
           <div className="px-4 ">
             <ol className="text-casper text-[14px] list-decimal">
-              <li className="pb-4">{t('promotions.text12')}</li>
-              <li className="pb-4">{t('promotions.text13')}</li>
-              <li className="pb-4">{t('promotions.text14')}</li>
-              <li className="pb-4">{t('promotions.text15')}</li>
+              <li className="pb-4">
+                To receive the reward amount in this activity, you can withdraw
+                money with only 3 times the turnover.
+              </li>
+
+              <li className="pb-4">
+                You can participate in this event every day and you can claim 7
+                rewards.
+              </li>
+
+              <li className="pb-4">
+                Definition of valid turnover: Bets that result in a win or loss
+                are considered valid betting turnover
+              </li>
+
+              <li className="pb-4">
+                Each player can only register one account. Registering multiple
+                accounts to participate in this event will be considered bonus
+                abuse, and all profits and bonuses will be canceled. If any user
+                or group uses abnormal methods to exploit offers, the platform
+                reserves the right to freeze the account or cancel the bonus
+                qualification without notice.
+              </li>
             </ol>
             <div className="py-16 flex justify-center">
               <BlackButton>

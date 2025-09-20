@@ -16,6 +16,7 @@ import HeadphoneMicIcon from './ui/icons/headphone-mic'
 import ModalContainer from './modals/ModalContainer'
 import ArrowUpRightStrokeIcon from './ui/icons/arrow-up-right-stroke'
 import TelegramIcon from './ui/icons/TelegramIcon'
+import Overlay from './overlays/Overlay'
 import Link from 'next/link'
 
 const useOnlineService = () => {
@@ -73,7 +74,6 @@ const Sidebar: React.FC = () => {
     clearTimeout()
   }
   const sidebarRef = useRef<HTMLDivElement>(null)
-  const overlayRef = useRef<HTMLDivElement>(null)
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false)
   const { currentLanguage, setCurrentLanguage } = useLanguage()
 
@@ -81,63 +81,6 @@ const Sidebar: React.FC = () => {
     sidebarData.languageData[
       currentLanguage.code as keyof typeof sidebarData.languageData
     ] || sidebarData.languageData.zh
-
-  useEffect(() => {
-    const sidebar = sidebarRef.current
-    const overlay = overlayRef.current
-
-    if (!sidebar || !overlay) return
-
-    let startX = 0
-    let currentX = 0
-    let isDragging = false
-    let scrollTimeout: NodeJS.Timeout
-
-    const handleTouchStart = (e: TouchEvent) => {
-      startX = e.touches[0].clientX
-      isDragging = true
-    }
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging) return
-
-      currentX = e.touches[0].clientX
-      const diffX = startX - currentX
-
-      // Only allow swipe from left to right (closing gesture)
-      if (diffX < 0) {
-        e.preventDefault()
-      }
-    }
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!isDragging) return
-
-      const diffX = startX - currentX
-      const threshold = 100 // Minimum swipe distance to trigger close
-
-      // If swiped right (from left to right) and distance is enough, close sidebar
-      if (diffX < -threshold) {
-        toggleSidebar()
-      }
-
-      isDragging = false
-    }
-
-    overlay.addEventListener('touchstart', handleTouchStart, {
-      passive: false,
-    })
-    overlay.addEventListener('touchmove', handleTouchMove, {
-      passive: false,
-    })
-    overlay.addEventListener('touchend', handleTouchEnd, { passive: false })
-
-    return () => {
-      overlay.removeEventListener('touchstart', handleTouchStart)
-      overlay.removeEventListener('touchmove', handleTouchMove)
-      overlay.removeEventListener('touchend', handleTouchEnd)
-    }
-  }, [toggleSidebar])
 
   return (
     <>
@@ -220,13 +163,19 @@ const Sidebar: React.FC = () => {
           />
         </div>
       </aside>
-      {!isCollapsed && (
-        <div
-          ref={overlayRef}
-          className="lg:hidden fixed left-0 right-0 z-[9] h-[calc(100dvh-7.1rem)] bg-[#00000066] backdrop-blur-[0.1875rem]"
-          onClick={toggleSidebar}
-        />
-      )}
+      <Overlay
+        isOpen={!isCollapsed}
+        onClose={toggleSidebar}
+        className="lg:hidden fixed left-0 right-0 z-[9]"
+        backdropClassName="h-[calc(100dvh-7.1rem)] bg-[#00000066] backdrop-blur-[0.1875rem]"
+        contentClassName=""
+        zIndex={9}
+        closeOnBackdropClick={true}
+        closeOnEscape={true}
+        preventScroll={false}
+      >
+        {null}
+      </Overlay>
 
       {/* Language Selection Modal */}
       <LanguageSelector

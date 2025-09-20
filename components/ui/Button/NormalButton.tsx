@@ -21,7 +21,7 @@ const NormalButton: React.FC<NormalButtonProps> = ({
       }
       onClick={onClick}
     >
-      <span>{children}</span>
+      {children}
     </div>
   )
 }

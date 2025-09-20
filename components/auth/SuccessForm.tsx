@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { X } from 'lucide-react'
+import Overlay from '../overlays/Overlay'
 
 interface AnnouncementModalProps {
   isOpen: boolean
@@ -117,9 +118,16 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
   if (!isOpen) return null
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
-      id="success-form"
+    <Overlay
+      isOpen={isOpenSuccess}
+      onClose={() => setIsOpenSuccess(false)}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      backdropClassName="bg-black/50"
+      contentClassName=""
+      zIndex={50}
+      closeOnBackdropClick={true}
+      closeOnEscape={true}
+      preventScroll={true}
     >
       <div
         ref={carouselRef}
@@ -199,6 +207,6 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Overlay>
   )
 }

@@ -2,7 +2,16 @@ import { cn } from '@/lib/utils'
 
 interface PokerChipProps {
   value: string | number
-  color: 'blue' | 'purple' | 'green' | 'navy' | 'red' | 'orange'
+  color:
+    | 'blue'
+    | 'purple'
+    | 'green'
+    | 'navy'
+    | 'red'
+    | 'orange'
+    | 'gold'
+    | 'brown'
+    | 'lightblue'
   isSelected?: boolean
   onClick?: () => void
   className?: string
@@ -15,6 +24,9 @@ const colorMap = {
   navy: '#002450',
   red: '#ED1D49',
   orange: '#FFB636',
+  gold: '#FFD700',
+  brown: '#8B4513',
+  lightblue: '#87CEEB',
 }
 
 export function PokerChip({

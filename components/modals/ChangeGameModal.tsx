@@ -31,7 +31,6 @@ export default function ChangeGameModal({
       size="xl"
       position="responsive"
       className="max-w-[740px] "
-      topSpace="mt-[46rem]"
       contentClassName="p-6"
       fullHeight={true}
     >

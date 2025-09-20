@@ -37,8 +37,8 @@ const ElectronicSubmitPage = () => {
           [OK777 Hash Casino]VIP Bet (Slot Games) Place bets reaching 
           <span className="text-yellow-orange">200 USDT+</span> to receive
           challenge bonuses. Pass the levels to 
-          <span className="text-yellow-orange">win up to 1588 USDT</span>
-           in bonuses! Join now! Generous bonuses await you!
+          <span className="text-yellow-orange">win up to 1588 USDT</span> in
+          bonuses! Join now! Generous bonuses await you!
         </p>
       </div>
       <div className="p-4 grid grid-cols-1  lg:grid-cols-2 rounded-[12px] mb-8 bg-white-4 gap-4">

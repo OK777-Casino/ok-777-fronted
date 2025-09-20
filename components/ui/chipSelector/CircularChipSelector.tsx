@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { PokerChip } from './PokerChip'
+import CustomizeChipModal from '@/components/modals/CustomizeChipModal'
 
 interface ChipData {
   id: string
@@ -17,7 +18,7 @@ const chips: ChipData[] = [
 ]
 
 interface CircularChipSelectorProps {
-  onChipSelect?: (chipId: string) => void
+  onChipSelect?: (chipId: string, value?: string | number) => void
   selectedChip?: string
   onClose?: () => void
 }
@@ -28,11 +29,33 @@ export function CircularChipSelector({
   onClose,
 }: CircularChipSelectorProps) {
   const [localSelectedChip, setLocalSelectedChip] = useState<string>('')
+  const [isAnimating, setIsAnimating] = useState<boolean>(true)
+  const [isCustomizeModalOpen, setIsCustomizeModalOpen] =
+    useState<boolean>(false)
 
   console.log('CircularChipSelector rendered')
 
+  useEffect(() => {
+    // Start animation when component mounts
+    setIsAnimating(true)
+
+    // Stop animation after a short delay to allow chips to spread out
+    const timer = setTimeout(() => {
+      setIsAnimating(false)
+    }, 100) // Quick animation duration for immediate spread
+
+    return () => clearTimeout(timer)
+  }, [])
+
   const handleChipClick = (chipId: string) => {
     console.log('Chip clicked in circular view:', chipId)
+
+    if (chipId === 'customize') {
+      // Open customize modal instead of selecting the chip
+      setIsCustomizeModalOpen(true)
+      return
+    }
+
     setLocalSelectedChip(chipId)
     onChipSelect?.(chipId)
   }
@@ -50,6 +73,21 @@ export function CircularChipSelector({
     ]
 
     return positions[index] || { left: 0, top: 0 }
+  }
+
+  const getCenterPosition = () => {
+    // Center position within the 251x152 container
+    return { left: 125.5, top: 76 } // Center of the container
+  }
+
+  const handleCustomizeSubmit = (chipId: string, value: string | number) => {
+    console.log('Custom chip selected:', chipId, value)
+    onChipSelect?.(chipId, value)
+    setIsCustomizeModalOpen(false)
+  }
+
+  const handleCloseCustomizeModal = () => {
+    setIsCustomizeModalOpen(false)
   }
 
   return (
@@ -73,14 +111,37 @@ export function CircularChipSelector({
 
           {/* Surrounding chips */}
           {chips.map((chip, index) => {
-            const position = getChipPosition(index)
+            const finalPosition = getChipPosition(index)
+            const centerPosition = getCenterPosition()
+            const currentPosition = isAnimating ? centerPosition : finalPosition
+
+            // Stagger the animation delay for each chip - minimal delay for quick spread
+            const animationDelay = isAnimating ? `${index * 30}ms` : '0ms'
+
+            // Add slight rotation variation for each chip
+            const rotationVariation = isAnimating
+              ? index % 2 === 0
+                ? 5
+                : -3
+              : 0
+
             return (
               <div
                 key={chip.id}
-                className="absolute"
+                className="absolute transition-all duration-500 ease-out"
                 style={{
-                  left: `${position.left}px`,
-                  top: `${position.top}px`,
+                  left: `${currentPosition.left}px`,
+                  top: `${currentPosition.top}px`,
+                  transform: isAnimating
+                    ? `scale(0.8) translateY(10px) rotate(${rotationVariation}deg)`
+                    : 'scale(1) translateY(0px) rotate(0deg)',
+                  opacity: isAnimating ? 0.7 : 1,
+                  transitionDelay: animationDelay,
+                  transitionTimingFunction:
+                    'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  filter: isAnimating
+                    ? 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                    : 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))',
                 }}
               >
                 <PokerChip
@@ -94,6 +155,13 @@ export function CircularChipSelector({
           })}
         </div>
       </div>
+
+      {/* Customize Chip Modal */}
+      <CustomizeChipModal
+        isOpen={isCustomizeModalOpen}
+        onClose={handleCloseCustomizeModal}
+        onChipSelect={handleCustomizeSubmit}
+      />
     </div>
   )
 }

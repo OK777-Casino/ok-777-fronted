@@ -292,7 +292,6 @@ body.sidebar-scrolling {
 }
 
 .auth-modal-content-content .auth-modal-content-content-add {
-  
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
@@ -322,7 +321,7 @@ body.sidebar-scrolling {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   font-weight: 700;
   font-style: Bold;
   font-size: 14px;
@@ -354,7 +353,6 @@ body.sidebar-scrolling {
 }
 
 .input-label {
-  
   font-weight: 400;
   font-style: Regular;
   font-size: 10px;
@@ -383,7 +381,7 @@ body.sidebar-scrolling {
   border: 1px solid #374151;
   border-radius: 8px;
   color: #f9fafb;
-  
+
   font-size: 14px;
   transition: all 0.2s ease;
   background-color: #111923;
@@ -436,7 +434,6 @@ body.sidebar-scrolling {
 }
 
 .forget-password-form a {
-  
   font-weight: 700;
   font-style: Bold;
   font-size: 14px;
@@ -456,7 +453,7 @@ body.sidebar-scrolling {
   border-radius: 12px;
   border-width: 1px;
   padding: 13.5px;
-  
+
   font-weight: 700;
   font-style: Bold;
   font-size: 14px;
@@ -481,7 +478,7 @@ body.sidebar-scrolling {
   display: flex;
   align-items: center;
   gap: 2px;
-  
+
   font-weight: 500;
   font-size: 14px;
   color: #9ca3af;
@@ -550,7 +547,6 @@ body.sidebar-scrolling {
 }
 
 .social-btn-text {
-  
   font-weight: 600;
   font-size: 16px;
   color: #9ca3af;
@@ -583,7 +579,6 @@ body.sidebar-scrolling {
 }
 
 .social-icon-item p {
-  
   font-weight: 700;
   font-style: Bold;
   font-size: 12px;
@@ -1261,5 +1256,27 @@ body.modal-open {
     bottom: 0 !important;
     top: auto !important;
     z-index: 9999 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hash-game-container {
+    width: calc((100vw - 315px) * 0.7) !important;
+    max-width: 1920px;
+    overflow-x: hidden;
+  }
+
+  .hash-game-container.sidebar-collapsed {
+    width: calc((100vw - 80px) * 0.7) !important;
+    max-width: 1920px;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hash-game-container {
+    width: 100% !important;
+    max-width: 1920px;
+    overflow-x: hidden;
   }
 }

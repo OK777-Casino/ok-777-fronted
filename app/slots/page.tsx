@@ -446,7 +446,7 @@ export default function SlotsPage() {
 
   return (
     <div
-      className="lg:px-6 w-full max-w-[1920px] mx-auto overflow-x-hidden p-2"
+      className="lg:px-6 w-full max-w-[1920px] mx-auto overflow-x-hidden"
       style={{ margin: 'auto' }}
     >
       <SuccessForm isOpen={isOpen} />

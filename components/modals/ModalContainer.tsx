@@ -110,23 +110,18 @@ export default function ModalContainer({
     >
       <div
         className={cn(
-          'modal-content-scroll',
+          'modal-content-scroll w-[-webkit-fill-available]',
           'absolute z-[10001] mx-auto',
           // Position logic: responsive should be bottom on mobile, center on desktop
           position === 'responsive'
-            ? 'top-auto bottom-0 sm:top-1/2 sm:bottom-auto h-full sm:h-auto'
+            ? 'bottom-0 left-0 right-0 sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:bottom-auto sm:right-auto h-fit sm:h-auto'
             : position === 'bottom'
-              ? 'top-auto bottom-0 h-full sm:h-auto'
+              ? 'bottom-0 left-0 right-0 sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:bottom-auto sm:right-auto h-fit sm:h-auto'
               : position === 'top'
                 ? 'top-0 bottom-auto'
                 : 'top-1/2 bottom-auto',
-          // Transform logic
+          // Transform logic - remove default transform since we're using specific positioning
           'transform transition-all duration-300 ease-out',
-          position === 'responsive'
-            ? 'sm:-translate-y-1/2'
-            : position === 'center' || position === 'top'
-              ? '-translate-y-1/2'
-              : '',
           // Animation states
           isVisible
             ? 'translate-y-0'
@@ -135,25 +130,43 @@ export default function ModalContainer({
               : position === 'top'
                 ? '-translate-y-full'
                 : 'translate-y-8',
-          width ? '' : sizeClasses[size],
+          // Mobile: full width, Desktop: use size classes or custom width
+          position === 'responsive' || position === 'bottom'
+            ? 'w-full sm:w-auto'
+            : width
+              ? ''
+              : sizeClasses[size],
           className
         )}
         style={{
-          maxWidth: width || undefined,
-          width: width || undefined,
+          // maxWidth: width || undefined,
+          // width: width || undefined,
           maxHeight: '90dvh',
+          width: '-webkit-fill-available',
           overflowY: 'auto',
         }}
         onClick={e => e.stopPropagation()}
       >
         <div
-          className={cn('flex flex-col items-start w-full mx-auto', topSpace)}
+          className={cn(
+            'flex flex-col items-start w-full mx-auto',
+            // Mobile: rounded top corners, Desktop: rounded all corners
+            position === 'responsive' || position === 'bottom'
+              ? 'rounded-t-3xl sm:rounded-xl'
+              : 'rounded-xl',
+            topSpace
+          )}
         >
           {/* Header */}
           {showHeader && (
             <div
               className={cn(
-                'flex items-center gap-4 w-full px-6 py-4 rounded-t-[0.875rem] bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] border-t border-white-16 backdrop-blur-[2rem]',
+                'flex items-center gap-4 w-full px-4 py-4 sm:px-6',
+                // Mobile: rounded top corners, Desktop: rounded top corners
+                position === 'responsive' || position === 'bottom'
+                  ? 'rounded-t-3xl sm:rounded-t-xl'
+                  : 'rounded-t-xl',
+                'bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] border-t border-white-16 backdrop-blur-[2rem]',
                 headerClassName
               )}
             >
@@ -176,7 +189,12 @@ export default function ModalContainer({
           {/* Content */}
           <div
             className={cn(
-              'flex flex-col gap-6 p-4 w-full rounded-b-[0.875rem] bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem] min-h-0',
+              'flex flex-col gap-6 p-4 w-full',
+              // Mobile: rounded bottom corners, Desktop: rounded bottom corners
+              position === 'responsive' || position === 'bottom'
+                ? 'rounded-b-3xl sm:rounded-b-xl'
+                : 'rounded-b-xl',
+              'bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem] min-h-0',
               contentClassName
             )}
           >
