@@ -125,6 +125,7 @@ module.exports = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+
         // Bull Player App Colors
         'dodger-blue': '#2283F6',
         'cornflower-blue': '#4E9CF8',

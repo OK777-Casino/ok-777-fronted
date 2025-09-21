@@ -237,7 +237,6 @@
     "changePassword": "修改密码",
     "verifyEmail": "验证邮箱",
     "verifyPhone": "验证手机号",
-    "referralCode": "推荐码/折扣码",
     "usernameEmail": "用户名 / 邮箱",
     "agreeTerms": "我同意《服务条款》和《隐私政策》",
     "agreeNotifications": "我同意接收促销通知",
@@ -358,7 +357,16 @@
     "management": "管理",
     "performance": "业绩",
     "report": "报表",
-    "introduction": "介绍"
+    "introduction": "介绍",
+    "referralLink": "邀请链接",
+    "referralCode": "邀请码",
+    "shareMedia": "通过社交媒体分享",
+    "newSibordinates": "新的直属下级",
+    "directSibordinates": "直属下级",
+    "newTotalTeamMember": "新增团队总人数",
+    "totalTeamMember": "团队总人数",
+    "commissionRewards": "佣金奖励",
+    "details": "详情查看"
   },
   "rules": {
     "hashSize": "哈希大小",
