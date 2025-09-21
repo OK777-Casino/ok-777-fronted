@@ -30,6 +30,7 @@ import {
   StatusDropdownItem,
 } from '@/components/ui/StatusDropdown'
 import EarningCard from './ui/cards/EarningCard'
+import { GameBreakpoints } from '@/components/HomepageSections'
 
 const statusOptions = [
   'Up to date',
@@ -325,7 +326,7 @@ const LatestBetsTable: React.FC = () => {
           direction="vertical"
           slidesPerView={9.1}
           spaceBetween={6}
-          autoplayDelay={1000}
+          autoplayDelay={1500}
           className="h-full"
         />
         <div className="absolute bottom-0 left-0 w-full h-[254px] bg-gradient-to-b z-[30] from-transparent to-[#111923] pointer-events-none"></div>
@@ -438,7 +439,7 @@ const MainContent: React.FC = () => {
               href={viewAllLink}
               className="h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors"
             >
-              View All
+              {t('app.viewall')}
             </Link>
           </div>
         )}
@@ -461,7 +462,7 @@ const MainContent: React.FC = () => {
         </h2>
         {count && (
           <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-            <span>all {count}</span>
+            <span>{t('app.all')} {count}</span>
           </span>
         )}
       </div>
@@ -521,7 +522,7 @@ const MainContent: React.FC = () => {
               />
               <SwiperSlider
                 key="new-launches-swiper"
-                autoplayDelay={1000000}
+                autoplay={false}
                 data={card1}
                 renderSlide={(card, index) => <CasinoCard {...card} />}
                 slidesPerView={7}
@@ -689,13 +690,13 @@ const MainContent: React.FC = () => {
         <div className="lg:mb-16 mb-8">
           <SectionHeader
             icon="/icons/game.svg"
-            title={t('games.gameManufacturers')}
-            alt="gameManufacturers"
+            title={t('app.gameProvider')}
+            alt="gameProvider"
           />
           <SwiperSlider
             key={`game-manufacturers-swiper-${activeGameCategory}`}
             data={gameManufacturers}
-            autoplayDelay={1000000}
+            autoplay={false}
             renderSlide={(card, index) => <GameCard {...card} />}
             spaceBetween={12}
             slidesPerView={6}
@@ -719,26 +720,19 @@ const MainContent: React.FC = () => {
         <div className="lg:mb-16 mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-4.5 font-bold flex items-center text-white ">
-              Latest earnings
+              {t("app.latestEarining")}
             </h2>
             <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-              <span>online users 36</span>
+              <span>{t('app.onlinePlayer')} 36</span>
             </span>
           </div>
           <SwiperSlider
             data={card7}
-            autoplayDelay={1000000}
+            autoplay={false}
             renderSlide={(card, index) => <EarningCard {...card} />}
             slidesPerView={7}
             spaceBetween={12}
-            breakpoints={{
-              320: { slidesPerView: 3.3 },
-              375: { slidesPerView: 3.5 },
-              425: { slidesPerView: 4.1 },
-              768: { slidesPerView: 4.3 },
-              1024: { slidesPerView: 5, spaceBetween: 20 },
-              1440: { slidesPerView: 7.3 },
-            }}
+            breakpoints={GameBreakpoints}
             initialSlide={carouselState.latestEarningsCurrentSlide}
             onSlideChange={handleLatestEarningsSlideChange}
             carouselId="latest-earnings"

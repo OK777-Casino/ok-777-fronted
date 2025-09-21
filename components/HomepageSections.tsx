@@ -43,7 +43,7 @@ type GameBreakpointsTwoRows = {
   }
 }
 
-const GameBreakpoints: GameBreakpointsProps = {
+export const GameBreakpoints: GameBreakpointsProps = {
   320: { slidesPerView: 3.3 },
   375: { slidesPerView: 3.3 },
   425: { slidesPerView: 3.3 },
