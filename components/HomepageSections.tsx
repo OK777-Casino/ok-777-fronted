@@ -121,7 +121,7 @@ export const HomepageSections: React.FC<{
         />
         <SwiperSlider
           key="homepage-new-launches-swiper"
-          autoplayDelay={1000000}
+          autoplay={false}
           data={card1}
           renderSlide={(card, index) => <CasinoCard {...card} />}
           slidesPerView={10}

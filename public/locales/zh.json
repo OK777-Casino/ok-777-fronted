@@ -395,5 +395,7 @@
     "termsOfService": "服务条款",
     "privacyPolicy": "隐私政策"
   },
-  "aboutUs": {}
+  "aboutUs": {
+    "aboutUs": "关于我们"
+  }
 }

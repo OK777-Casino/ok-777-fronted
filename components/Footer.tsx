@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
           {/* Right Section - About Us */}
           <div className="w-[25%]">
             <h3 className="text-white font-semibold mb-4">
-              <span>About us</span>
+              <span>{t('aboutUs.aboutUs')}</span>
             </h3>
             <ul className="space-y-2">
               <li>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  Online service
+                  {t('help.onlineService')}
                 </a>
               </li>
               <li>
