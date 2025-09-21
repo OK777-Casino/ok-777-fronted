@@ -486,7 +486,6 @@ const MainContent: React.FC = () => {
           data={bannerCards}
           renderSlide={(card, index) => <RewardCard {...card} />}
           slidesPerView="auto"
-          spaceBetween={12}
           slideClassName="!w-[min(486.76px,100%)]"
           showProgressBars={true}
           customPagination={true}

@@ -124,8 +124,8 @@ export const HomepageSections: React.FC<{
           autoplayDelay={1000000}
           data={card1}
           renderSlide={(card, index) => <CasinoCard {...card} />}
-          slidesPerView={7}
-          spaceBetween={12}
+          slidesPerView={10}
+          spaceBetween={6}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
         />
@@ -150,7 +150,7 @@ export const HomepageSections: React.FC<{
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
 
@@ -172,7 +172,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={HashBreakpoints}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
 
@@ -195,7 +195,7 @@ export const HomepageSections: React.FC<{
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
 
@@ -217,7 +217,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={FutureBreakpoints}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
 
@@ -239,7 +239,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
 
@@ -261,7 +261,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
 
@@ -283,7 +283,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
-          autoplayDelay={1000000}
+          autoplay={false}
         />
       </div>
     </>
