@@ -462,7 +462,9 @@ const MainContent: React.FC = () => {
         </h2>
         {count && (
           <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-            <span>{t('app.all')} {count}</span>
+            <span>
+              {t('app.all')} {count}
+            </span>
           </span>
         )}
       </div>
@@ -720,7 +722,7 @@ const MainContent: React.FC = () => {
         <div className="lg:mb-16 mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-4.5 font-bold flex items-center text-white ">
-              {t("app.latestEarining")}
+              {t('app.latestEarining')}
             </h2>
             <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
               <span>{t('app.onlinePlayer')} 36</span>
