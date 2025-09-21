@@ -5,9 +5,9 @@ import { ReactNode } from 'react'
 
 interface TDButtonProps {
   className?: string
-  type: 'red' | 'blue'
+  type?: 'red' | 'blue'
   children: ReactNode
-  onClick: () => void
+  onClick?: () => void
 }
 
 const TDButton: React.FC<TDButtonProps> = ({

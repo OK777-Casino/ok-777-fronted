@@ -132,7 +132,7 @@ export default function ModalContainer({
                 : 'translate-y-8',
           // Mobile: full width, Desktop: use size classes or custom width
           position === 'responsive' || position === 'bottom'
-            ? 'w-full sm:w-auto'
+            ? 'w-full sm:w-full'
             : width
               ? ''
               : sizeClasses[size],
@@ -142,7 +142,6 @@ export default function ModalContainer({
           // maxWidth: width || undefined,
           // width: width || undefined,
           maxHeight: '90dvh',
-          width: '-webkit-fill-available',
           overflowY: 'auto',
         }}
         onClick={e => e.stopPropagation()}

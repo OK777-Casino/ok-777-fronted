@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { UnifiedButton } from './ui'
 import Link from 'next/link'
 import XIcon from './ui/icons/XIcon'
 import InstagramIcon from './ui/icons/InstagramIcon'
@@ -12,6 +11,7 @@ import BlackButton from './ui/Button/BlackButton'
 import FacebookIcon from './ui/icons/FacebookIcon'
 import TelegramIcon from './ui/icons/TelegramIcon'
 import { useI18n } from '../context/I18nProvider'
+import TDButton from '@/components/ui/Button/TDButton'
 
 const coins = ['USDT', 'SOL', 'BNB', 'LTC', 'ETC', 'TRX', 'BTC', 'TON'] as const
 
@@ -301,20 +301,31 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <div className="flex text-[#A7B5CA] text-sm font-medium">
-              {' '}
-              Install
-              <img src="/images/logo.svg" className="h-[17px]" alt="logo" /> on
-              the desktop
+              <span>{t('install.install')}</span>
+              <div>
+                <img
+                  src="/images/logo.svg"
+                  className="h-[1.2rem] px-[.5rem]"
+                  alt="logo"
+                />
+              </div>
+              <span>{t('install.onTheDesktop')}</span>
             </div>
           </div>
-          <div className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors">
-            Accept
-          </div>
-          <UnifiedButton variant="default">
+          {/* <div className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors">
+            {t('install.accept')}
+          </div> */}
+          <TDButton
+            type="blue"
+            className="w-[5.3125rem] h-[2.0625rem] rounded-lg"
+          >
+            <span className="text-[0.85rem]">{t('install.accept')}</span>
+          </TDButton>
+          {/* <BlackButton>
             <span className="px-2.5">
               <span>X</span>
             </span>
-          </UnifiedButton>
+          </BlackButton> */}
         </div>
       </div>
     </footer>

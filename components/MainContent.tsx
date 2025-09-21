@@ -214,11 +214,12 @@ const bannerCards = [
 
 // Latest bets table component
 const LatestBetsTable: React.FC = () => {
+  const { t } = useI18n()
   const [selectedStatus, setSelectedStatus] = useState('Up to date')
   return (
     <>
       <div className="text-4.5 font-bold flex items-center w-full justify-between text-white mb-4  gap-2">
-        <span>Latest Bets</span>
+        <span>{t('app.latestBetting')}</span>
         <StatusDropdown>
           <StatusDropdownTrigger className="bg-[#2A3546] border-none ring-0 focus:ring-0 outline-none">
             {selectedStatus}
@@ -609,7 +610,7 @@ const MainContent: React.FC = () => {
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Futures1.svg"
-                title="P/F Futures"
+                title={t('games.pfFutures')}
                 alt="future"
                 count={card4.length}
               />

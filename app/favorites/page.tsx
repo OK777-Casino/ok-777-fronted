@@ -73,23 +73,23 @@ const favoritesGames = [
   },
 ]
 
-const gameProviders = [
-  { id: 'all', label: 'All Providers' },
-  { id: 'evolution', label: 'Evolution' },
-  { id: 'netent', label: 'NetEnt' },
-  { id: 'printstudios', label: 'Print Studios' },
-  { id: 'dblive', label: 'DBLive' },
-]
-
-const gameTypes = [
-  { id: 'all', label: 'All Types' },
-  { id: 'new', label: 'New' },
-  { id: 'hot', label: 'Hot' },
-  { id: 'featured', label: 'Featured' },
-]
-
 export default function FavoritesPage() {
   const { t } = useI18n()
+  const gameProviders = [
+    { id: 'all', label: t('games.allProviders') },
+    { id: 'pragmatic', label: 'Pragmatic Play' },
+    { id: 'netent', label: 'NetEnt' },
+    { id: 'playngo', label: "Play'n GO" },
+    { id: 'evolution', label: 'Evolution' },
+  ]
+
+  const gameTypes = [
+    { id: 'all', label: t('app.allTypes') },
+    { id: 'new', label: t('games.new') },
+    { id: 'hot', label: t('games.hot') },
+    { id: 'featured', label: t('games.featured') },
+    { id: 'exclusive', label: t('games.exclusive') },
+  ]
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedProvider, setSelectedProvider] = useState(gameProviders[0])
   const [selectedType, setSelectedType] = useState(gameTypes[0])
@@ -164,7 +164,7 @@ export default function FavoritesPage() {
                   type="text"
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
-                  placeholder="Search favorites..."
+                  placeholder={t('app.favoritesPlaceholder')}
                   className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
                 />
               </div>

@@ -14,6 +14,7 @@ const SectionHeader: React.FC<{
   alt: string
   count?: number
 }> = ({ icon, title, alt, count }) => {
+  const { t } = useI18n()
   return (
     <div className="flex items-center justify-between mb-4">
       <h2 className="text-4.5 font-bold flex items-center text-white gap-2">
@@ -22,7 +23,9 @@ const SectionHeader: React.FC<{
       </h2>
       {count && (
         <span className="cursor-pointer font-bold flex items-center text-[14px] text-[#2283F6]">
-          <span>ALL {count}</span>
+          <span>
+            {t('app.all')} {count}
+          </span>
         </span>
       )}
     </div>
@@ -203,7 +206,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Futures1.svg"
-          title="P/F Futures"
+          title={t('games.pfFutures')}
           alt="future"
           count={card4.length}
         />
