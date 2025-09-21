@@ -16,7 +16,6 @@ import {
 } from '../store/slices/carouselSlice'
 import CasinoCard from './ui/cards/CasinoCard'
 import RewardCard from './ui/cards/RewardCard'
-import HashCard from './ui/cards/HashCard'
 import FutureCard from './ui/cards/FutureCard'
 import GameCard from './ui/cards/GameCard'
 import { SuccessForm } from './auth/SuccessForm'

@@ -377,6 +377,9 @@
     "luckyHashRules": "幸运哈希规则"
   },
   "hashgame": {
+    "chances": "赔率",
+    "bettingAddress": "投注地址",
+    "useDecWallet": "使用去中心化钱包",
     "currentBlock": "当前区块",
     "nextBlock": "下一个区块",
     "limit": "限制",
@@ -400,6 +403,24 @@
     "clearBets": "清除投注",
     "autoBet": "自动投注",
     "stopAuto": "停止自动"
+  },
+  "vip": {
+    "vip": "会员",
+    "bronze": "青铜",
+    "silver": "白银",
+    "vip4": "VIP 4",
+    "upgradeDetails": "晋级详情",
+    "currentDeposits": "当前存款",
+    "currentIncomes": "当前投注",
+    "levelSystem": "VIP等级系统",
+    "rebateRatio": "返水比例",
+    "upgradeBonus": "升级奖金",
+    "monthlyGiftMoney": "每月礼金",
+    "freeWithdrawal": "免费提现次数",
+    "theFirst": "前",
+    "timesFree": "次免费",
+    "stayConnected": "保持联络",
+    "stayConnectedDescription": "敬请关注特别优惠和最新消息。如有任何疑问，请联系我们的客服团队。"
   },
   "licence": {
     "company": "Ok777 赌场由 Nextech NV 拥有和运营，该公司在库拉索岛注册，公司编号为 162054，注册地址为：Zuikertuin Tower 2/ Kaya W.F.G. (Cito) Hellmund z/n库拉索岛，由库拉索岛博彩管理局 (CGB) 授权，许可证号为365/JAZ，由 Antillephone 颁发。该许可证经库拉索岛政府批准和监管，确保平台的合法性和安全性。"

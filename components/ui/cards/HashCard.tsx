@@ -1,11 +1,11 @@
 'use client'
-
 // this is the game card
-
 import React from 'react'
 import { Copy, Info, ArrowLeftRight } from 'lucide-react'
 import { Button } from '..'
 import Link from 'next/link'
+import { useI18n } from '@/context/I18nProvider'
+
 export interface TypeTwoProps {
   title: string
   chances: string
@@ -23,6 +23,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
   rightButtonLink,
   background,
 }) => {
+  const { t } = useI18n()
   const handleCopy = () => navigator.clipboard.writeText(bettingAddress)
 
   return (
@@ -49,7 +50,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
           </div>
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <span className="text-gray-300 text-[.7rem] sm:text-[.8rem]">
-              Chances:
+              {t('hashgame.chances')}:
             </span>
             <span className="text-red-400 text-[.9rem] sm:text-[1rem] font-bold bg-red-500/20 px-1 py-0.5 sm:px-1.5 sm:py-1 rounded">
               {chances}
@@ -61,7 +62,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
         <div className="flex-1 flex flex-col justify-center mb-2 sm:mb-3">
           <div className="flex items-center justify-between mb-1 sm:mb-1.5">
             <span className="text-white text-[.7rem] sm:text-[.8rem] font-medium">
-              Betting Address
+              {t('hashgame.bettingAddress')}
             </span>
             <span className="text-gray-400 text-[.7rem] sm:text-[.8rem] leading-tight">
               <span
@@ -74,7 +75,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
                   maxHeight: '2.4em',
                 }}
               >
-                Use a Decentralized Wallet
+                {t('hashgame.useDecWallet')}
               </span>
             </span>
           </div>
