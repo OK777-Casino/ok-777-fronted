@@ -2,11 +2,11 @@
 
 import React, { ReactNode } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { cn } from '@/lib/utils'
 import CurrencyNotesIcon from '@/components/ui/icons/currency-notes'
 import PrintDollarIcon from '@/components/ui/icons/print-dollar'
 import SwapDiagonalIcon from '@/components/ui/icons/swap-diagonal'
 import ReceiptIcon from '@/components/ui/icons/receipt'
+import { useI18n } from '@/context/I18nProvider'
 
 interface WalletTabButtonProps {
   icon: ReactNode
@@ -57,6 +57,7 @@ const WalletTabButton = ({
 )
 
 export default function WalletBottomBar() {
+  const { t } = useI18n()
   const pathname = usePathname()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -66,22 +67,22 @@ export default function WalletBottomBar() {
   const walletTabs = [
     {
       id: 'deposit',
-      label: 'Deposit',
+      label: t('wallet.deposit'),
       icon: <CurrencyNotesIcon />,
     },
     {
       id: 'withdraw',
-      label: 'Withdraw',
+      label: t('wallet.withdraw'),
       icon: <PrintDollarIcon />,
     },
     {
       id: 'swap',
-      label: 'Swap',
+      label: t('wallet.swap'),
       icon: <SwapDiagonalIcon />,
     },
     {
       id: 'transaction',
-      label: 'Transaction',
+      label: t('wallet.history'),
       icon: <ReceiptIcon />,
     },
   ]

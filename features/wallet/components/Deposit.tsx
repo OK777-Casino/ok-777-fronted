@@ -5,8 +5,10 @@ import { DropdownSelect } from '@/components/ui/DropdownSelect'
 import CopyIcon from '@/components/ui/icons/copy'
 import InfoCircleIcon from '@/components/ui/icons/info-circle'
 import TDButton from '@/components/ui/Button/TDButton'
+import { useI18n } from '@/context/I18nProvider'
 
 const Deposit: React.FC = () => {
+  const { t } = useI18n()
   const [selectedCurrencyType, setSelectedCurrencyType] = useState('Crypto')
   const router = useRouter()
   const pathname = usePathname()
@@ -19,7 +21,7 @@ const Deposit: React.FC = () => {
     {
       value: 'usdt',
       label: 'USDT',
-      icon: <img src="/icons/coin-icon/USDT.svg" />,
+      icon: <img src="/icons/coin-icon/USDT.svg" alt="" />,
     },
   ]
 
@@ -27,7 +29,13 @@ const Deposit: React.FC = () => {
     {
       value: 'uah',
       label: 'UAH',
-      icon: <img src="/icons/flag-icon/ua.svg" className="h-6 rounded-[4px]" />,
+      icon: (
+        <img
+          src="/icons/flag-icon/ua.svg"
+          alt=""
+          className="h-6 rounded-[4px]"
+        />
+      ),
     },
   ]
 
@@ -35,7 +43,7 @@ const Deposit: React.FC = () => {
     {
       value: 'trc',
       label: 'TRC20',
-      icon: <img src="/icons/coin-icon/TRX.svg" />,
+      icon: <img src="/icons/coin-icon/TRX.svg" alt="" />,
     },
   ]
 
@@ -80,18 +88,21 @@ const Deposit: React.FC = () => {
           {selectedCurrencyType === 'Crypto' ? 'Deposit' : 'To replenish'}
         </h1>
         <div className="grid grid-cols-2 gap-4 bg-white-4 rounded-[12px] overflow-hidden p-1 h-11">
-          {['Crypto', 'Fiat'].map((item, index) => (
+          {[
+            { label: 'crypto', key: 'Crypto' },
+            { label: 'fiat', key: 'Fiat' },
+          ].map((item, index) => (
             <div
               key={index}
               className={cn(
                 'text-[14px] font-bold rounded-[8px] overflow-hidden flex justify-center items-center',
-                selectedCurrencyType === item
+                selectedCurrencyType === item.key
                   ? 'bg-white-13 text-gallery'
                   : 'text-casper'
               )}
-              onClick={() => handleCurrencyTypeClick(item)}
+              onClick={() => handleCurrencyTypeClick(item.key)}
             >
-              {item}
+              {t(`wallet.${item.label}`)}
             </div>
           ))}
         </div>
@@ -100,13 +111,13 @@ const Deposit: React.FC = () => {
           <>
             <div className="grid grid-cols-2 gap-4 rounded-[12px] ">
               <DropdownSelect
-                label="Currency"
+                label={t('wallet.currency')}
                 value={selectedValue}
                 options={currencyOptions}
                 onChange={setSelectedValue}
               />
               <DropdownSelect
-                label="Network"
+                label={t('wallet.network')}
                 value={selectedNetworkValue}
                 options={networkOptions}
                 onChange={setSelectedNetworkValue}
@@ -123,7 +134,7 @@ const Deposit: React.FC = () => {
               </div>
               <div className="flex flex-col justify-between w-full gap-2">
                 <h2 className="font-bold text-[1rem] text-white">
-                  Wallet Address
+                  {t('wallet.address')}
                 </h2>
                 <div className="bg-white-8 rounded-[8px] w-full h-[62px] flex justify-center items-center">
                   <span className="text-casper font-bold break-all p-2 text-[.8rem]">
@@ -134,29 +145,28 @@ const Deposit: React.FC = () => {
                 </div>
                 <div className="flex bg-white-13 justify-center text-casper text-[1rem] font-bold items-center rounded-[12px] gap-1 h-[48px] w-full">
                   <CopyIcon />
-                  <span>Copy Address</span>
+                  <span>{t('wallet.copy')}</span>
                 </div>
               </div>
             </div>
             <div className="p-2 flex gap-2 rounded-[12px] items-center bg-[#1BB83D21] pl-2">
               <InfoCircleIcon className="h-6 w-6" color="#1BB83D" />
               <p className="font-medium text-[14px] w-[90%] text-white">
-                Please only send USDT to this address. Transfer amounts less
-                than 1 USDT will not be received.
+                <span>{t('wallet.noticeUsdt')}</span>
               </p>
             </div>
           </>
         ) : (
           <>
             <DropdownSelect
-              label="Currency"
+              label={t('wallet.currency')}
               value={selectedCurrencyValue}
               options={currencyOptions1}
               onChange={setSelectedCurrencyValue}
             />
             <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-4">
               <h2 className="text-[14px] font-bold text-white">
-                Replenishment method
+                <span>{t('wallet.relenishmentMethod')}</span>
               </h2>
               <div className="bg-mirage rounded-[12px] h-[48px] p-[6px] grid items-center  grid-cols-[auto_auto_56px] pl-2">
                 <div className="flex justify-center items-center">
@@ -176,11 +186,10 @@ const Deposit: React.FC = () => {
             </div>
             <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-2">
               <h2 className="text-[14px] text-gallery font-bold">
-                No cryptocurrency?
+                {t('wallet.noCurrency')}?
               </h2>
               <p className="text-[14px] text-casper">
-                Follow these simple steps and the funds will be automatically
-                transferred to your wallet as shown below.
+                {t('wallet.relenishmentMethodDescription')}
               </p>
             </div>
             <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-4">
