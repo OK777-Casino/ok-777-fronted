@@ -172,7 +172,7 @@ const Sidebar: React.FC = () => {
         zIndex={9}
         closeOnBackdropClick={true}
         closeOnEscape={true}
-        preventScroll={false}
+        preventScroll={true}
       >
         {null}
       </Overlay>
