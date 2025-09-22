@@ -50,6 +50,47 @@
   scrollbar-width: thin;
 }
 
+/* Hide scrollbar when circular chip selector is active */
+body.circular-view-active {
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100% !important;
+}
+
+body.circular-view-active::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html.circular-view-active {
+  overflow: hidden !important;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+  height: 100vh !important;
+}
+
+html.circular-view-active::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Target all elements when circular view is active */
+.circular-view-active * {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.circular-view-active *::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
 body {
   background: #0e141c;
   color: var(--foreground);
@@ -199,7 +240,6 @@ body.sidebar-scrolling {
   -webkit-overflow-scrolling: touch;
   min-height: calc(100dvh - 3.5rem);
   height: calc(100dvh - 3.5rem);
-  overflow-y: auto;
 }
 
 .auth-modal {
@@ -904,61 +944,6 @@ body.modal-open {
   }
 }
 
-.bg-mirage {
-  background: #111923;
-}
-
-.bg-mirage-2 {
-  background-color: #161f2c;
-}
-
-.bg-mirage-4 {
-  background-color: #1c2532;
-}
-
-.bg-yellow-orange {
-  background-color: #ffb636;
-}
-
-.bg-ebony-clay {
-  background-color: #2a3546;
-}
-
-.bg-oxford-blue {
-  background-color: #3c485c;
-}
-
-.bg-crimson {
-  background-color: #ed1d49;
-}
-
-.bg-casper {
-  background-color: #a7b5ca;
-}
-
-.text-casper {
-  color: #a7b5ca;
-}
-
-.border-casper {
-  border-color: #a7b5ca;
-}
-
-.border-yellow-orange {
-  border-color: #ffb636;
-}
-
-.text-yellow-orange {
-  color: #ffb636;
-}
-
-.border-crimson {
-  border-color: #ed1d49;
-}
-
-.bg-black-blur {
-  background-color: #000000;
-}
 
 /* 'dodger-blue': '#2283F6',
         'casper': '#A7B5CA',
@@ -970,50 +955,6 @@ body.modal-open {
         'white-8': 'rgba(255, 255, 255, 0.08)',
         'white-13': 'rgba(255, 255, 255, 0.13)',
         'white-16': 'rgba(255, 255, 255, 0.16)', */
-
-.bg-dodger-blue {
-  background-color: var(--dodger-blue);
-}
-
-.text-dodger-blue {
-  color: var(--dodger-blue);
-}
-
-.bg-white-4 {
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
-.bg-white-8 {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.border-white-8 {
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.bg-white-13 {
-  background-color: rgba(255, 255, 255, 0.13);
-}
-
-.bg-white-16 {
-  background-color: rgba(255, 255, 255, 0.16);
-}
-
-.bg-malachite {
-  background-color: #1bb83d;
-}
-
-.text-chip-casper {
-  color: #a7b5ca;
-}
-
-.text-chip-crimson {
-  color: #ed1d49;
-}
-
-.text-chip-yellow-orange {
-  color: #ffb636;
-}
 
 /* Modal animations */
 @keyframes slide-in-from-bottom {

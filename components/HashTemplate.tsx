@@ -465,7 +465,7 @@ const OddDefault: React.FC = () => {
               Transfer betting
             </div>
             <Link
-              href="/hashgames/oddeven/default"
+              href="/hashgames/oddeven/page-betting"
               className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
             >
@@ -518,7 +518,7 @@ const OddDefault: React.FC = () => {
             Active
           </div>
           <Link
-            href="/hashgames/oddeven/default"
+            href="/hashgames/oddeven/page-betting"
             className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
             {' '}

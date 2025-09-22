@@ -15,10 +15,12 @@ import {
   ZoomIn,
 } from 'lucide-react'
 import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
+import MenuModal from '@/components/modals/MenuModal'
 import Link from 'next/link'
 import { useSidebar } from '@/context/SidebarProvider'
+import { CopyBox } from '@/components/ui/CopyBox'
 
-const NiuniuDefault: React.FC = () => {
+const ActivePageLayout: React.FC = () => {
   const { isCollapsed } = useSidebar()
   const [difficulty, setDifficulty] = useState<'Beginner' | 'Intermediate'>(
     'Beginner'
@@ -29,6 +31,15 @@ const NiuniuDefault: React.FC = () => {
 
   const [isBeginnerMode, setIsBeginnerMode] = useState(false)
   const [selectedChip, setSelectedChip] = useState<number | null>(1)
+  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
+
+  const handleMenuClick = () => {
+    setIsMenuModalOpen(true)
+  }
+
+  const handleCloseMenuModal = () => {
+    setIsMenuModalOpen(false)
+  }
 
   // Mock data for lottery trend
 
@@ -254,19 +265,6 @@ const NiuniuDefault: React.FC = () => {
     )
   }
 
-  const bullItems = [
-    { name: 'Bull1', ratio: '1:1' },
-    { name: 'Bull2', ratio: '1:2' },
-    { name: 'Bull3', ratio: '1:3' },
-    { name: 'Bull4', ratio: '1:4' },
-    { name: 'Bull5', ratio: '1:5' },
-    { name: 'Bull6', ratio: '1:6' },
-    { name: 'Bull7', ratio: '1:7' },
-    { name: 'Bull8', ratio: '1:8' },
-    { name: 'Bull9', ratio: '1:9' },
-    { name: 'BullBull', ratio: '1:10' },
-  ]
-
   const ChipSVG: React.FC<{
     value?: number
     label?: string
@@ -439,11 +437,10 @@ const NiuniuDefault: React.FC = () => {
       </div>
     )
   }
-
   return (
     <>
       <div
-        className={`min-h-screen hash-game-container py-16 m-auto text-white ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`w-full hash-game-container px-4 lg:px-0 py-16 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header Section */}
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
@@ -460,7 +457,7 @@ const NiuniuDefault: React.FC = () => {
               Active
             </div>
             <Link
-              href="/hashgames/lucky/default"
+              href="/hashgames/bankerplayer/page-betting"
               className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
             >
@@ -500,7 +497,7 @@ const NiuniuDefault: React.FC = () => {
           </div>
         </div>
         {/* Mobile view Header Section*/}
-        <div className="bg-[#72707038] rounded-lg p-1 hidden [@media(max-width:768px)]:flex ">
+        <div className="bg-[#72707038] rounded-lg w-full  p-1 hidden [@media(max-width:768px)]:flex ">
           <div
             className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
           >
@@ -513,8 +510,8 @@ const NiuniuDefault: React.FC = () => {
             Active
           </div>
           <Link
-            href="/hashgames/lucky/default"
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+            href="/hashgames/bankerplayer/page-betting"
+            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
             {' '}
             <img
@@ -525,6 +522,7 @@ const NiuniuDefault: React.FC = () => {
             Default
           </Link>
         </div>
+
         {/* Mobile view Header Section1s*/}
         <div className="items-center gap-2 mt-4 mb-4 justify-center [@media(max-width:768px)]:flex hidden">
           <span className="text-sm text-gray-300">Beginner</span>
@@ -560,16 +558,11 @@ const NiuniuDefault: React.FC = () => {
               Use a decentralized wallet
             </span>
           </h2>
-          <div className="flex opacity-80 justify-between bg-[#2a3546] p-3 border rounded-lg p-3Icon.svg border-[rgba(255,255,255,0.1)] mb-4">
-            <div className="flex items-center">
-              <span className="text-gray-300 text-[12px] font-bold">
-                <span className="text-[#2283F6]">TXS3</span>
-                <span className="text-[#FFFFFF]">PfAUShemKkoBWRUFsUkGBSrZ</span>
-                <span className="text-[#2283F6]">gh..</span>
-              </span>
-            </div>
-            <img src="/icons/copy.svg" alt="copy" className="w-6 h-6" />
-          </div>
+          <CopyBox className="w-full mb-4">
+            <span className="text-[#2283F6]">TXS3</span>PfAUShemKkoBWRUFsUkGBSrZ
+            <span className="text-[#2283F6]">gh..</span>
+          </CopyBox>
+
           <div className="relative mb-4">
             <div className="absolute inset-0 bg-[#003a8a] rounded-[12px] translate-y-1"></div>
             <div className=" w-full relative rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-[14px] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg ">
@@ -837,14 +830,12 @@ const NiuniuDefault: React.FC = () => {
             <div className="flex items-center mb-4 mt-2 rounded-lg">
               <div className="flex bg-[#FFFFFF0A] rounded-lg p-1">
                 <div
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 `}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
                 >
                   Block Trend
                 </div>
                 <div
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
-                    bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]
-                `}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
                 >
                   My Trend
                 </div>
@@ -1001,8 +992,9 @@ const NiuniuDefault: React.FC = () => {
           </p>
         </div>
       </div>
+      <MenuModal isOpen={isMenuModalOpen} onClose={handleCloseMenuModal} />
     </>
   )
 }
 
-export default NiuniuDefault
+export default ActivePageLayout;

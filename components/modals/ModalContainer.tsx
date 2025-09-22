@@ -101,7 +101,7 @@ export default function ModalContainer({
   const modalContent = (
     <div
       className={cn(
-        'fixed inset-0 flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/60',
+        'fixed inset-0 h-[100vh] overflow-auto flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/60',
         positionClasses[position],
         backdropClassName
       )}
@@ -111,10 +111,10 @@ export default function ModalContainer({
       <div
         className={cn(
           'modal-content-scroll w-[-webkit-fill-available]',
-          'absolute z-[10001] mx-auto',
+          'relative z-[10001] mx-auto',
           // Position logic: responsive should be bottom on mobile, center on desktop
           position === 'responsive'
-            ? 'bottom-0 left-0 right-0 sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:bottom-auto sm:right-auto h-fit sm:h-auto'
+            ? 'bottom-0 left-0 right-0 '
             : position === 'bottom'
               ? 'bottom-0 left-0 right-0 sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:bottom-auto sm:right-auto h-fit sm:h-auto'
               : position === 'top'
@@ -139,11 +139,8 @@ export default function ModalContainer({
           className
         )}
         style={{
-          // maxWidth: width || undefined,
-          // width: width || undefined,
-          maxHeight: '90dvh',
           width: '-webkit-fill-available',
-          overflowY: 'auto',
+          maxHeight: '-webkit-fill-available', // Ensure modal doesn't exceed viewport height
         }}
         onClick={e => e.stopPropagation()}
       >
@@ -166,7 +163,7 @@ export default function ModalContainer({
                 position === 'responsive' || position === 'bottom'
                   ? 'rounded-t-3xl sm:rounded-t-xl'
                   : 'rounded-t-xl',
-                'bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] border-t border-white-16 backdrop-blur-[2rem]',
+                'bg-gradient-to-b from-mirage-54 to-navy-dark border-t border-white-16 backdrop-blur-[2rem]',
                 headerClassName
               )}
             >
@@ -194,7 +191,7 @@ export default function ModalContainer({
               position === 'responsive' || position === 'bottom'
                 ? 'rounded-b-3xl sm:rounded-b-xl'
                 : 'rounded-b-xl',
-              'bg-[rgba(17,25,35,0.54)] backdrop-blur-[2rem] min-h-0',
+              'bg-mirage-54 backdrop-blur-[2rem] min-h-0',
               contentClassName
             )}
           >

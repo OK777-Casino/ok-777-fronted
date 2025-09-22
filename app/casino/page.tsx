@@ -137,11 +137,11 @@ const FilteredPageHeader: React.FC<{
         <div className="flex gap-4 [@media(max-width:1024px)]:hidden">
           <div
             onClick={openGameProviderModal}
-            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
+            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-white-4 rounded-lg hover:bg-white-8 transition-colors cursor-pointer"
           >
             <span className="text-[#A7B5CA] text-sm">Game provider</span>
             <svg
-              className="w-4 h-4 text-[#A7B5CA]"
+              className="w-4 h-4 text-casper"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -157,11 +157,11 @@ const FilteredPageHeader: React.FC<{
 
           <div
             onClick={openChooseModal}
-            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
+            className="hidden lg:flex w-50 items-center justify-between h-12 px-3 bg-white-4 rounded-lg hover:bg-white-8 transition-colors cursor-pointer"
           >
-            <span className="text-[#A7B5CA] text-sm">All</span>
+            <span className="text-casper text-sm">All</span>
             <svg
-              className="w-4 h-4 text-[#A7B5CA]"
+              className="w-4 h-4 text-casper"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -201,7 +201,7 @@ const FilteredPageHeader: React.FC<{
                 {t('games.providers')}
               </span>
               <svg
-                className="w-4 h-4 text-[#A7B5CA]"
+                className="w-4 h-4 text-casper"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -219,9 +219,9 @@ const FilteredPageHeader: React.FC<{
               onClick={openChooseModal}
               className="flex w-[50%] items-center justify-between h-10 px-3 bg-[rgba(255,255,255,0.04)] rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors cursor-pointer"
             >
-              <span className="text-[#A7B5CA] text-sm">All</span>
+              <span className="text-casper text-sm">All</span>
               <svg
-                className="w-4 h-4 text-[#A7B5CA]"
+                className="w-4 h-4 text-casper"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -267,7 +267,7 @@ const SectionHeader: React.FC<{
       <img className="grayscale" src={icon} alt={alt} />
       {title}
     </h2>
-    <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
+    <span className="font-bold flex items-center text-[14px] text-dodger-blue">
       <span>all 13</span>
     </span>
   </div>

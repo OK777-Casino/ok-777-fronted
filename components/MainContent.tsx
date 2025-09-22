@@ -103,10 +103,10 @@ const generateHashGames = () => {
       bettingAddress: 'TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X',
       leftButtonLink: `/hashgames/${template.title
         .toLowerCase()
-        .replace(/\s+/g, '')}/active`,
+        .replace(/\s+/g, '')}/transfer-betting`,
       rightButtonLink: `/hashgames/${template.title
         .toLowerCase()
-        .replace(/\s+/g, '')}/default`,
+        .replace(/\s+/g, '')}/page-betting`,
     })
   })
 

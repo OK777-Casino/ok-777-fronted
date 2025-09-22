@@ -5,7 +5,6 @@ import { useState, useRef, useEffect } from 'react'
 import { useSidebar } from '@/context/SidebarProvider'
 import CasinoCard from '@/components/ui/cards/CasinoCard'
 import { Button } from '@/components/ui'
-import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
 import ModalContainer from './ModalContainer'
 import { useI18n } from '@/context/I18nProvider'
 
@@ -252,8 +251,6 @@ export default function GameSearchModal({
   const { t } = useI18n()
   const [sidebarOffset, setSidebarOffset] = useState(0)
 
-  // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen)
 
   useEffect(() => {
     if (!isOpen) return
