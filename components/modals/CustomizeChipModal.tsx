@@ -68,12 +68,19 @@ export default function CustomizeChipModal({
       return
     }
 
-    // Toggle chip selection
+    // Toggle chip selection with max limit of 5
     setSelectedChips(prev => {
       if (prev.includes(chipId)) {
+        // Remove chip if already selected
         return prev.filter(id => id !== chipId)
       } else {
-        return [...prev, chipId]
+        // Add chip only if under the limit of 5
+        if (prev.length < 5) {
+          return [...prev, chipId]
+        } else {
+          // If at limit, replace the first selected chip
+          return [...prev.slice(1), chipId]
+        }
       }
     })
   }
@@ -101,9 +108,20 @@ export default function CustomizeChipModal({
       onClose={onClose}
       title="Chip Settings"
       size="lg"
-      position="center"
     >
       <div className="flex flex-col  gap-6 pb-6">
+        {/* Selection Counter */}
+        <div className="flex justify-between items-center px-2">
+          <span className="text-white/70 text-sm font-montserrat">
+            Selected: {selectedChips.length}/5 chips
+          </span>
+          {selectedChips.length === 5 && (
+            <span className="text-orange-400 text-xs font-montserrat">
+              Maximum reached
+            </span>
+          )}
+        </div>
+
         {/* Chip Rows */}
         {chipRows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex justify-between gap-4">
@@ -111,7 +129,12 @@ export default function CustomizeChipModal({
               <div key={chip.id} className="flex flex-col items-center gap-2">
                 <div
                   onClick={() => handleChipClick(chip.id, chip.value)}
-                  className="cursor-pointer transition-transform hover:scale-105"
+                  className={`cursor-pointer transition-transform hover:scale-105 ${
+                    !selectedChips.includes(chip.id) &&
+                    selectedChips.length >= 5
+                      ? 'opacity-50 cursor-not-allowed'
+                      : ''
+                  }`}
                 >
                   <PokerChip
                     value={chip.value}

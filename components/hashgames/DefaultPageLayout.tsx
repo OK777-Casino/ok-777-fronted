@@ -56,11 +56,11 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
 
   const getGameRoute = (gameType: string) => {
     const routes = {
-      bankerplayer: '/hashgames/bankerplayer/active',
-      bigsmall: '/hashgames/bigsmall/active',
-      lucky: '/hashgames/lucky/active',
-      niuniu: '/hashgames/niuniu/active',
-      oddeven: '/hashgames/oddeven/active',
+      bankerplayer: '/hashgames/bankerplayer/transfer-betting',
+      bigsmall: '/hashgames/bigsmall/transfer-betting',
+      lucky: '/hashgames/lucky/transfer-betting',
+      niuniu: '/hashgames/niuniu/transfer-betting',
+      oddeven: '/hashgames/oddeven/transfer-betting',
     }
     return routes[gameType as keyof typeof routes] || '/hashgames'
   }

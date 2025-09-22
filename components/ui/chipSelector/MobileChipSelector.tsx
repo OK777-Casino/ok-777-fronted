@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { PokerChip } from './PokerChip'
 import { CircularChipSelector } from './CircularChipSelector'
 
@@ -28,6 +28,145 @@ export function MobileChipSelector({
 }: MobileChipSelectorProps) {
   const [selectedChip, setSelectedChip] = useState<string>('1')
   const [showCircularView, setShowCircularView] = useState<boolean>(false)
+
+  // Prevent background scrolling and hide scrollbar when circular view is shown
+  useEffect(() => {
+    if (showCircularView) {
+      // Store original values
+      const originalBodyOverflow = document.body.style.overflow
+      const originalDocumentOverflow = document.documentElement.style.overflow
+      const originalBodyPaddingRight = document.body.style.paddingRight
+      const originalBodyHeight = document.body.style.height
+      const originalDocumentHeight = document.documentElement.style.height
+
+      // Calculate scrollbar width to prevent layout shift
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth
+
+      // Add CSS classes for complete scrollbar hiding
+      document.body.classList.add('circular-view-active')
+      document.documentElement.classList.add('circular-view-active')
+
+      // Aggressively hide scrollbar and prevent scrolling
+      document.body.style.overflow = 'hidden !important'
+      document.documentElement.style.overflow = 'hidden !important'
+      document.body.style.height = '100vh'
+      document.documentElement.style.height = '100vh'
+
+      // Add padding to prevent layout shift when scrollbar disappears
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`
+      }
+
+      // Additional scrollbar hiding for webkit browsers
+      ;(document.body.style as any).scrollbarWidth = 'none' // Firefox
+      ;(document.body.style as any).msOverflowStyle = 'none' // IE/Edge
+
+      // Target specific scrollable elements and containers
+      const scrollableSelectors = [
+        'main',
+        '#__next',
+        '[data-scrollable]',
+        '.scrollable',
+        'div[style*="overflow"]',
+        'section[style*="overflow"]',
+      ]
+
+      scrollableSelectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector)
+        elements.forEach(element => {
+          const htmlElement = element as HTMLElement
+          if (
+            htmlElement.style.overflow === 'auto' ||
+            htmlElement.style.overflow === 'scroll' ||
+            getComputedStyle(htmlElement).overflow === 'auto' ||
+            getComputedStyle(htmlElement).overflow === 'scroll'
+          ) {
+            htmlElement.style.overflow = 'hidden'
+            htmlElement.setAttribute(
+              'data-original-overflow',
+              getComputedStyle(htmlElement).overflow
+            )
+          }
+        })
+      })
+
+      // Also target the main app container
+      const mainContainer =
+        document.querySelector('main') ||
+        document.querySelector('#__next') ||
+        document.body
+      if (mainContainer) {
+        const htmlElement = mainContainer as HTMLElement
+        htmlElement.style.overflow = 'hidden'
+        htmlElement.setAttribute(
+          'data-original-overflow',
+          getComputedStyle(htmlElement).overflow
+        )
+      }
+
+      // Cleanup function to restore original values
+      return () => {
+        document.body.classList.remove('circular-view-active')
+        document.documentElement.classList.remove('circular-view-active')
+        document.body.style.overflow = originalBodyOverflow
+        document.documentElement.style.overflow = originalDocumentOverflow
+        document.body.style.paddingRight = originalBodyPaddingRight
+        document.body.style.height = originalBodyHeight
+        document.documentElement.style.height = originalDocumentHeight
+        ;(document.body.style as any).scrollbarWidth = ''
+        ;(document.body.style as any).msOverflowStyle = ''
+
+        // Restore scrollable elements
+        scrollableSelectors.forEach(selector => {
+          const elements = document.querySelectorAll(selector)
+          elements.forEach(element => {
+            const htmlElement = element as HTMLElement
+            const originalOverflow = htmlElement.getAttribute(
+              'data-original-overflow'
+            )
+            if (originalOverflow) {
+              htmlElement.style.overflow = originalOverflow
+              htmlElement.removeAttribute('data-original-overflow')
+            } else if (htmlElement.style.overflow === 'hidden') {
+              htmlElement.style.overflow = ''
+            }
+          })
+        })
+
+        // Restore main container
+        const mainContainer =
+          document.querySelector('main') ||
+          document.querySelector('#__next') ||
+          document.body
+        if (mainContainer) {
+          const htmlElement = mainContainer as HTMLElement
+          const originalOverflow = htmlElement.getAttribute(
+            'data-original-overflow'
+          )
+          if (originalOverflow) {
+            htmlElement.style.overflow = originalOverflow
+            htmlElement.removeAttribute('data-original-overflow')
+          } else {
+            htmlElement.style.overflow = ''
+          }
+        }
+      }
+    } else {
+      // Remove CSS classes
+      document.body.classList.remove('circular-view-active')
+      document.documentElement.classList.remove('circular-view-active')
+
+      // Restore scrolling and show scrollbar
+      document.body.style.overflow = 'unset'
+      document.documentElement.style.overflow = 'unset'
+      document.body.style.paddingRight = ''
+      document.body.style.height = ''
+      document.documentElement.style.height = ''
+      ;(document.body.style as any).scrollbarWidth = ''
+      ;(document.body.style as any).msOverflowStyle = ''
+    }
+  }, [showCircularView])
 
   const getChipDisplay = (chipId: string) => {
     return chipData[chipId] || chipData['1']
@@ -109,7 +248,7 @@ export function MobileChipSelector({
           {/* Undo Button */}
           <div className="flex flex-1 justify-center items-center gap-1">
             <div
-              className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-chip-casper flex-1"
+              className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-casper flex-1"
               style={{ background: 'rgba(0, 0, 0, 0.54)' }}
             >
               Undo
@@ -143,7 +282,7 @@ export function MobileChipSelector({
           {/* Confirm Button */}
           <div className="flex flex-1 justify-center items-center gap-1">
             <div
-              className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-chip-casper flex-1"
+              className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-casper flex-1"
               style={{ background: 'rgba(0, 0, 0, 0.54)' }}
             >
               <svg

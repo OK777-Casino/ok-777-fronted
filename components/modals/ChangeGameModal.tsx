@@ -1,6 +1,5 @@
 'use client'
 
-import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
 import mainContentData from '../../main-content-data.json'
 import Link from 'next/link'
 import ModalContainer from './ModalContainer'
@@ -14,9 +13,6 @@ export default function ChangeGameModal({
   isOpen,
   onClose,
 }: ChangeGameModalProps) {
-  // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen)
-
   const handleGameSelect = (gameId: string) => {
     console.log(`Selected game: ${gameId}`)
     // Here you can add navigation logic to the selected game
@@ -30,7 +26,7 @@ export default function ChangeGameModal({
       title="Change game"
       size="xl"
       position="responsive"
-      className="max-w-[740px] "
+      className="max-w-[740px]"
       contentClassName="p-6"
       fullHeight={true}
     >

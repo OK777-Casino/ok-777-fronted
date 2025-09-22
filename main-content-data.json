@@ -912,102 +912,102 @@
       "chances": "1.95",
       "background": "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
       "bettingAddress": "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
-      "leftButtonLink": "/hashgames/bigsmall/active",
-      "rightButtonLink": "/hashgames/bigsmall/default"
+      "leftButtonLink": "/hashgames/bigsmall/transfer-betting",
+      "rightButtonLink": "/hashgames/bigsmall/page-betting"
     },
     {
       "title": "Odd/Even",
       "chances": "1.95",
       "background": "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
       "bettingAddress": "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
-      "leftButtonLink": "/hashgames/oddeven/active",
-      "rightButtonLink": "/hashgames/oddeven/default"
+      "leftButtonLink": "/hashgames/oddeven/transfer-betting",
+      "rightButtonLink": "/hashgames/oddeven/page-betting"
     },
     {
       "title": "Lucky",
       "chances": "1.95",
       "background": "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
       "bettingAddress": "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
-      "leftButtonLink": "/hashgames/lucky/active",
-      "rightButtonLink": "/hashgames/lucky/default"
+      "leftButtonLink": "/hashgames/lucky/transfer-betting",
+      "rightButtonLink": "/hashgames/lucky/page-betting"
     },
     {
       "title": "Banker/Player",
       "chances": "1.95",
       "background": "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
       "bettingAddress": "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
-      "leftButtonLink": "/hashgames/bankerplayer/active",
-      "rightButtonLink": "/hashgames/bankerplayer/default"
+      "leftButtonLink": "/hashgames/bankerplayer/transfer-betting",
+      "rightButtonLink": "/hashgames/bankerplayer/page-betting"
     },
     {
       "title": "NiuNiu",
       "chances": "1.95",
       "background": "/images/games/6850b36f2bd45516f6329cf19663fc91b6440882.png",
       "bettingAddress": "TXS3PfAU9hemKkoBWRUfsUkGBSrZGagh6X",
-      "leftButtonLink": "/hashgames/niuniu/active",
-      "rightButtonLink": "/hashgames/niuniu/default"
+      "leftButtonLink": "/hashgames/niuniu/transfer-betting",
+      "rightButtonLink": "/hashgames/niuniu/page-betting"
     }
   ],
   "card10": [
     {
       "badge": "HOT",
       "image": "/images/games/Game01.jpg",
-      "link": "/hashgames/lucky/default"
+      "link": "/hashgames/lucky/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game02.jpg",
-      "link": "/hashgames/lucky/default"
+      "link": "/hashgames/lucky/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game03.jpg",
-      "link": "/hashgames/niuniu/default"
+      "link": "/hashgames/niuniu/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game04.jpg",
-      "link": "/hashgames/niuniu/default"
+      "link": "/hashgames/niuniu/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game05.jpg",
-      "link": "/hashgames/niuniu/default"
+      "link": "/hashgames/niuniu/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game06.jpg",
-      "link": "/hashgames/bankerplayer/default"
+      "link": "/hashgames/bankerplayer/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game07.jpg",
-      "link": "/hashgames/bankerplayer/default"
+      "link": "/hashgames/bankerplayer/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game08.jpg",
-      "link": "/hashgames/bankerplayer/default"
+      "link": "/hashgames/bankerplayer/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game09.jpg",
-      "link": "/hashgames/bigsmall/default"
+      "link": "/hashgames/bigsmall/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game10.jpg",
-      "link": "/hashgames/bigsmall/default"
+      "link": "/hashgames/bigsmall/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game11.jpg",
-      "link": "/hashgames/bigsmall/default"
+      "link": "/hashgames/bigsmall/page-betting"
     },
     {
       "badge": "HOT",
       "image": "/images/games/Game12.jpg",
-      "link": "/hashgames/lucky/default"
+      "link": "/hashgames/lucky/page-betting"
     }
   ],
   "brand": [

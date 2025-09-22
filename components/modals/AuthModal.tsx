@@ -5,7 +5,6 @@ import { setAuthUser } from '@/lib/auth'
 import { X, Eye, EyeOff, ChevronDown } from 'lucide-react'
 import { useSidebar } from '../../context/SidebarProvider'
 import { cn } from '@/lib/utils'
-import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
 import { useI18n } from '@/context/I18nProvider'
 
 import './style.css'
@@ -36,8 +35,9 @@ const TrustWalletIcon = () => (
   <svg width="25" height="24" viewBox="0 0 16 16" fill="none">
     <path
       d="M7.5 14.5554C3.51622 12.6038 1.9815 9.29679 1.98145 7.51141V3.14716L7.5 1.35419V14.5554Z"
-      fill="#A7B5CA"
-      stroke="#A7B5CA"
+      fill="currentColor"
+      stroke="currentColor"
+      className="text-casper"
     />
     <g style={{ mixBlendMode: 'luminosity' }}>
       <path
@@ -54,8 +54,8 @@ const TrustWalletIcon = () => (
         y2="15.133"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#B1B9C3" />
-        <stop offset="1" stopColor="#171F29" />
+        <stop stopColor="var(--tw-color-border-light)" />
+        <stop offset="1" stopColor="var(--tw-color-border-dark)" />
       </linearGradient>
     </defs>
   </svg>
@@ -74,8 +74,6 @@ export default function AuthModal() {
   const [showReferral, setShowReferral] = useState(true)
   const [isVisible, setIsVisible] = useState(false)
   const [shouldRender, setShouldRender] = useState(false)
-
-  useModalScrollPrevention(isAuthModalOpen)
 
   const login = () => {
     if (email === 'dev.com@gmail.com' && password === '123') {
@@ -106,7 +104,7 @@ export default function AuthModal() {
   return (
     <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center overflow-hidden">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-[#0D131C]/73" />
+      <div className="absolute inset-0 bg-mirage-73" />
 
       {/* Modal */}
       <div
@@ -116,12 +114,12 @@ export default function AuthModal() {
         )}
       >
         {/* Desktop Layout */}
-        <div className="hidden sm:flex w-full h-[670px] rounded-[14px] overflow-hidden bg-[#111923]/54 backdrop-blur-[32px]">
+        <div className="hidden lg:flex w-full h-[670px] rounded-[14px] overflow-hidden bg-mirage-54 backdrop-blur-[32px]">
           {/* Left Side - Branding */}
           <div className="flex-1 relative">
             {/* Background Image with Gradient Overlay */}
             <div
-              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#111923]"
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-mirage"
               style={{
                 backgroundImage:
                   "url('https://api.builder.io/api/v1/image/assets/TEMP/1966099a1a2c23b6a4509e98b3ec5376765f2b13?width=740')",
@@ -130,7 +128,7 @@ export default function AuthModal() {
                 backgroundPosition: 'center',
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#111923]/90" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-mirage/90" />
 
             {/* Bull Character and Text */}
             <div className="relative z-10 flex flex-col items-center justify-between h-full p-8 pt-16">
@@ -139,16 +137,16 @@ export default function AuthModal() {
 
               {/* Welcome Text */}
               <div className="text-center">
-                <h1 className="font-black text-[32px] text-[#EDEDED] leading-none mb-2">
+                <h1 className="font-black text-[32px] text-gallery leading-none mb-2">
                   WELCOME
                 </h1>
-                <h2 className="font-black text-[32px] text-[#EDEDED] leading-none mb-2">
+                <h2 className="font-black text-[32px] text-gallery leading-none mb-2">
                   BONUS
                 </h2>
-                <h3 className="font-black text-[32px] text-[#EDEDED] leading-none mb-4">
+                <h3 className="font-black text-[32px] text-gallery leading-none mb-4">
                   UP TO 590%
                 </h3>
-                <p className="text-[#A7B5CA] text-base font-medium">
+                <p className="text-casper text-base font-medium">
                   + 225 Free Spins
                 </p>
               </div>
@@ -167,7 +165,7 @@ export default function AuthModal() {
                 }}
               >
                 <span>
-                  <X size={16} className="text-[#A7B5CA]" />
+                  <X size={16} className="text-casper" />
                 </span>
               </div>
             </div>
@@ -178,8 +176,8 @@ export default function AuthModal() {
                 onClick={() => setIsLogin(true)}
                 className={`flex-1 py-4 px-3 text-sm font-bold text-center transition-colors cursor-pointer ${
                   isLogin
-                    ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
-                    : 'text-[#A7B5CA]'
+                    ? 'text-gallery border-b-2 border-dodger-blue'
+                    : 'text-casper'
                 }`}
               >
                 <span>{t('auth.login')}</span>
@@ -188,8 +186,8 @@ export default function AuthModal() {
                 onClick={() => setIsLogin(false)}
                 className={`flex-1 py-4 px-3 text-center text-sm font-bold transition-colors cursor-pointer ${
                   !isLogin
-                    ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
-                    : 'text-[#A7B5CA]'
+                    ? 'text-gallery border-b-2 border-dodger-blue'
+                    : 'text-casper'
                 }`}
               >
                 <span>{t('auth.register')}</span>
@@ -201,8 +199,8 @@ export default function AuthModal() {
               {/* Email Input */}
               <div className="mb-4">
                 <div className="relative">
-                  <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
-                    <span className="text-xs text-[#93ACD3]">
+                  <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-mirage to-deep-blue">
+                    <span className="text-xs text-polo-blue">
                       {t('auth.usernameEmail')}
                     </span>
                   </div>
@@ -210,8 +208,8 @@ export default function AuthModal() {
                     type="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
-                    placeholder={t('auth.userEmailPlaceholder')}
-                    className="w-full h-12 px-4 pt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
+                    placeholder="Enter your username or email"
+                    className="w-full h-12 px-4 pt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
                   />
                 </div>
               </div>
@@ -219,9 +217,9 @@ export default function AuthModal() {
               {/* Password Input */}
               <div className="mb-4">
                 <div className="relative">
-                  <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
-                    <span className="text-xs text-[#93ACD3]">
-                      <span>{t('auth.password')}</span>
+                  <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-mirage to-deep-blue">
+                    <span className="text-xs text-polo-blue">
+                      <span>Password</span>
                     </span>
                   </div>
                   <input
@@ -233,10 +231,10 @@ export default function AuthModal() {
                         ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
                         : t('auth.passPlaceholder')
                     }
-                    className={`w-full h-12 px-4 pt-2 pr-12 bg-[#0D131C] rounded-xl text-sm focus:outline-none ${
+                    className={`w-full h-12 px-4 pt-2 pr-12 bg-deep-blue rounded-xl text-sm focus:outline-none ${
                       !isLogin && password
-                        ? 'border-2 border-[#2283F6] text-white'
-                        : 'border border-[#55657E] text-white placeholder-[#55657E]'
+                        ? 'border-2 border-dodger-blue text-white'
+                        : 'border border-blue-bayoux text-white placeholder-blue-bayoux'
                     }`}
                   />
                   <div
@@ -245,9 +243,9 @@ export default function AuthModal() {
                   >
                     <span>
                       {showPassword ? (
-                        <Eye size={20} className="text-[#55657E]" />
+                        <Eye size={20} className="text-blue-bayoux" />
                       ) : (
-                        <EyeOff size={20} className="text-[#55657E]" />
+                        <EyeOff size={20} className="text-blue-bayoux" />
                       )}
                     </span>
                   </div>
@@ -257,7 +255,7 @@ export default function AuthModal() {
               {/* Forgot Password / Referral Code */}
               {isLogin ? (
                 <div className="mb-6">
-                  <div className="text-[#2283F6] text-sm font-bold cursor-pointer">
+                  <div className="text-dodger-blue text-sm font-bold cursor-pointer">
                     <span>{t('auth.forgotPassword')}</span>
                   </div>
                 </div>
@@ -265,7 +263,7 @@ export default function AuthModal() {
                 <div className="mb-4">
                   <div
                     onClick={() => setShowReferral(!showReferral)}
-                    className="flex items-center text-[#2283F6] text-sm font-bold cursor-pointer"
+                    className="flex items-center text-dodger-blue text-sm font-bold cursor-pointer"
                   >
                     <span>{t('alliance.referralCode')}</span>
                     <ChevronDown size={20} className="ml-1" />
@@ -275,8 +273,8 @@ export default function AuthModal() {
                       type="text"
                       value={referralCode}
                       onChange={e => setReferralCode(e.target.value)}
-                      placeholder={t('auth.referralPlaceholder')}
-                      className="w-full h-12 px-4 mt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
+                      placeholder="Enter referral code"
+                      className="w-full h-12 px-4 mt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
                     />
                   )}
                 </div>
@@ -296,8 +294,8 @@ export default function AuthModal() {
                       <div
                         className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
                           agreedToTerms
-                            ? 'bg-[#2283F6] border-[#2283F6]'
-                            : 'border-[#55657E] bg-transparent'
+                            ? 'bg-dodger-blue border-dodger-blue'
+                            : 'border-blue-bayoux bg-transparent'
                         }`}
                       >
                         {agreedToTerms && (
@@ -318,7 +316,7 @@ export default function AuthModal() {
                         )}
                       </div>
                     </div>
-                    <span className="text-xs text-[#A7B5CA]">
+                    <span className="text-xs text-casper">
                       {t('auth.agreeUserAgreement')}
                     </span>
                   </label>
@@ -336,8 +334,8 @@ export default function AuthModal() {
                       <div
                         className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
                           agreedToNotifications
-                            ? 'bg-[#2283F6] border-[#2283F6]'
-                            : 'border-[#55657E] bg-transparent'
+                            ? 'bg-dodger-blue border-dodger-blue'
+                            : 'border-blue-bayoux bg-transparent'
                         }`}
                       >
                         {agreedToNotifications && (
@@ -358,7 +356,7 @@ export default function AuthModal() {
                         )}
                       </div>
                     </div>
-                    <span className="text-xs text-[#A7B5CA]">
+                    <span className="text-xs text-casper">
                       {t('auth.agreePromotional')}{' '}
                       <span className="text-[#2283F6]">ok777.casino</span>
                     </span>
@@ -439,7 +437,7 @@ export default function AuthModal() {
                 }}
               >
                 <span>
-                  <X size={16} className="text-[#A7B5CA]" />
+                  <X size={16} className="text-casper" />
                 </span>
               </div>
             </div>
@@ -538,8 +536,8 @@ export default function AuthModal() {
                       type="text"
                       value={referralCode}
                       onChange={e => setReferralCode(e.target.value)}
-                      placeholder={t('auth.referralPlaceholder')}
-                      className="w-full h-12 px-4 mt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
+                      placeholder="Enter referral code"
+                      className="w-full h-12 px-4 mt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
                     />
                   )}
 
@@ -587,7 +585,7 @@ export default function AuthModal() {
                           )}
                         </div>
                       </div>
-                      <span className="text-xs text-[#A7B5CA]">
+                      <span className="text-xs text-casper">
                         {t('auth.agreeUserAgreement')}
                       </span>
                     </label>
@@ -627,7 +625,7 @@ export default function AuthModal() {
                           )}
                         </div>
                       </div>
-                      <span className="text-xs text-[#A7B5CA]">
+                      <span className="text-xs text-casper">
                         {t('auth.agreePromotional')}{' '}
                         <span className="text-[#2283F6]">ok777.casino</span>
                       </span>

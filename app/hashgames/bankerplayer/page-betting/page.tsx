@@ -2,7 +2,6 @@
 
 import React from 'react'
 import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
-
 const BankerPlayerDefault: React.FC = () => {
   const bettingOptions = [
     {

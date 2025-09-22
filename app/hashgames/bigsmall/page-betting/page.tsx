@@ -2,12 +2,11 @@
 
 import React from 'react'
 import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
-
-const OddEvenDefault: React.FC = () => {
+const BigSmallDefault: React.FC = () => {
   const bettingOptions = [
     {
-      id: 'odd',
-      label: 'ODD',
+      id: 'small',
+      label: 'SMALL',
       color: '#ED1D49',
       progress: 57,
       amount: '10038',
@@ -15,8 +14,8 @@ const OddEvenDefault: React.FC = () => {
       odds: '1 : 1.95',
     },
     {
-      id: 'even',
-      label: 'EVEN',
+      id: 'big',
+      label: 'BIG',
       color: '#FFB636',
       progress: 43,
       amount: '7592',
@@ -26,8 +25,8 @@ const OddEvenDefault: React.FC = () => {
   ]
 
   return (
-    <DefaultPageLayout gameType="oddeven" bettingOptions={bettingOptions} />
+    <DefaultPageLayout gameType="bigsmall" bettingOptions={bettingOptions} />
   )
 }
 
-export default OddEvenDefault
+export default BigSmallDefault
