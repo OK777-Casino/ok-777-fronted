@@ -397,10 +397,10 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
                 swiperRef.current?.slideTo(idx, 250)
               }}
               variant={activeTab === tab.id ? 'primary' : 'secondary'}
-              className="px-2 py-1 whitespace-nowrap min-w-fit"
+              className="h-0 py-4 px-2 whitespace-nowrap min-w-fit"
             >
               <img src={tab.icon} alt={tab.label} className="w-5 h-5" />
-              <span className="text-[0.75rem] font-bold">{tab.label}</span>
+              <span className="text-[0.8rem] font-bold">{tab.label}</span>
             </UnifiedButton>
           </SwiperSlide>
         ))}
