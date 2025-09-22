@@ -51,7 +51,6 @@ const gameCategories = [
   },
 ]
 
-
 const gameImages = [
   'https://api.builder.io/api/v1/image/assets/TEMP/a79278fafd9b48c78c8388123f81620317fe8d54?width=230',
   'https://api.builder.io/api/v1/image/assets/TEMP/8b925652b70e2da887252313faf53f95f3a960e8?width=230',
