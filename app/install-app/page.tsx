@@ -116,20 +116,13 @@ const InstallAppPage = () => {
   }
 
   return (
-    <>
-      <div className="lg:flex hidden   gap-4 items-center py-8">
-        <BlackButton>
-          <ArrowLeftStrokeIcon className="w-4 h-4" />
-        </BlackButton>
-        <span className="font-bold text-[18px] text-white">Install app</span>
-      </div>
-      <div className="rounded-[12px]  overflow-hidden lg:mb-64">
+      <div className="overflow-hidden lg:mb-64">
         <div
           className={cn(
-            'h-[426px] justify-end items-center lg:justify-start lg:items-start  w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8'
+            'h-[426px] justify-end items-center lg:justify-start lg:items-start w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8'
           )}
         >
-          <div className="hidden 2xl:block">
+          <div className="hidden lg:block">
             <span className="text-casper font-bold text-[18px] text-caper">
               Quick and convenient
             </span>
@@ -141,10 +134,10 @@ const InstallAppPage = () => {
               MacOS
             </span>
           </div>
-          <FlatButton className="h-[82px]  w-[426.52px] hidden 2xl:flex rounded-[19.88px] font-bold text-white uppercase bg-[linear-gradient(#0C60FF,#2C9FFA)] text-[29.82px]">
+          <FlatButton className="h-[3rem] w-[15rem] hidden lg:flex rounded-[12px] font-bold text-white uppercase bg-[linear-gradient(#0C60FF 40%,#2C9FFA 60%)] text-[1rem]">
             How to Install App
           </FlatButton>
-          <div className="2xl:flex gap-4 items-center hidden">
+          <div className="lg:flex gap-4 items-center hidden">
             {appDownloads.map(item => (
               <img
                 src={item.icon}
@@ -167,7 +160,7 @@ const InstallAppPage = () => {
             className="absolute bottom-0 w-[375px] right-0"
           />
         </div>
-        <div className="px-4 lg:bg-white-4 flex flex-col gap-[96px] pt-[96px] pb-0 lg:pb-[60px]">
+        <div className="flex flex-col gap-[96px] max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000] bg-white-4 p-4 pt-[86px] rounded-[12px] gap-[86px] ">
             {installApps.map(app => (
               <div className="bg-white-4 rounded-[12px] p-8 pt-[73px] relative flex flex-col gap-4 items-center">
@@ -398,7 +391,6 @@ const InstallAppPage = () => {
           </div>
         </ModalContainer>
       </div>
-    </>
   )
 }
 

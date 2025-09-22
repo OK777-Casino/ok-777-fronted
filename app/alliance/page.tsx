@@ -129,7 +129,7 @@ function AlliancePageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 lg:bg-white-4 rounded-[12px]">
+        <div className="flex-1">
           {renderContent()}
         </div>
       </div>
