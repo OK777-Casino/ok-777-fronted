@@ -129,9 +129,7 @@ function AlliancePageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1">
-          {renderContent()}
-        </div>
+        <div className="flex-1">{renderContent()}</div>
       </div>
 
       {/* Mobile Bottom Navigation */}
