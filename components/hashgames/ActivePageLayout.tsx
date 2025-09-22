@@ -997,4 +997,4 @@ const ActivePageLayout: React.FC = () => {
   )
 }
 
-export default ActivePageLayout;
+export default ActivePageLayout

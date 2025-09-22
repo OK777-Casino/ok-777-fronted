@@ -102,7 +102,6 @@ export default function GamingProviderModal({
   const [providers, setProviders] = useState<GamingProvider[]>(initialProviders)
   const [isVisible, setIsVisible] = useState(false)
 
-
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true)

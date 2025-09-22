@@ -38,57 +38,73 @@ export function MobileChipSelector({
       const originalBodyPaddingRight = document.body.style.paddingRight
       const originalBodyHeight = document.body.style.height
       const originalDocumentHeight = document.documentElement.style.height
-      
+
       // Calculate scrollbar width to prevent layout shift
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
-      
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth
+
       // Add CSS classes for complete scrollbar hiding
       document.body.classList.add('circular-view-active')
       document.documentElement.classList.add('circular-view-active')
-      
+
       // Aggressively hide scrollbar and prevent scrolling
       document.body.style.overflow = 'hidden !important'
       document.documentElement.style.overflow = 'hidden !important'
       document.body.style.height = '100vh'
       document.documentElement.style.height = '100vh'
-      
+
       // Add padding to prevent layout shift when scrollbar disappears
       if (scrollbarWidth > 0) {
         document.body.style.paddingRight = `${scrollbarWidth}px`
       }
-      
+
       // Additional scrollbar hiding for webkit browsers
       ;(document.body.style as any).scrollbarWidth = 'none' // Firefox
       ;(document.body.style as any).msOverflowStyle = 'none' // IE/Edge
-      
+
       // Target specific scrollable elements and containers
       const scrollableSelectors = [
-        'main', '#__next', '[data-scrollable]', '.scrollable',
-        'div[style*="overflow"]', 'section[style*="overflow"]'
+        'main',
+        '#__next',
+        '[data-scrollable]',
+        '.scrollable',
+        'div[style*="overflow"]',
+        'section[style*="overflow"]',
       ]
-      
+
       scrollableSelectors.forEach(selector => {
         const elements = document.querySelectorAll(selector)
-        elements.forEach((element) => {
+        elements.forEach(element => {
           const htmlElement = element as HTMLElement
-          if (htmlElement.style.overflow === 'auto' || 
-              htmlElement.style.overflow === 'scroll' ||
-              getComputedStyle(htmlElement).overflow === 'auto' ||
-              getComputedStyle(htmlElement).overflow === 'scroll') {
+          if (
+            htmlElement.style.overflow === 'auto' ||
+            htmlElement.style.overflow === 'scroll' ||
+            getComputedStyle(htmlElement).overflow === 'auto' ||
+            getComputedStyle(htmlElement).overflow === 'scroll'
+          ) {
             htmlElement.style.overflow = 'hidden'
-            htmlElement.setAttribute('data-original-overflow', getComputedStyle(htmlElement).overflow)
+            htmlElement.setAttribute(
+              'data-original-overflow',
+              getComputedStyle(htmlElement).overflow
+            )
           }
         })
       })
-      
+
       // Also target the main app container
-      const mainContainer = document.querySelector('main') || document.querySelector('#__next') || document.body
+      const mainContainer =
+        document.querySelector('main') ||
+        document.querySelector('#__next') ||
+        document.body
       if (mainContainer) {
         const htmlElement = mainContainer as HTMLElement
         htmlElement.style.overflow = 'hidden'
-        htmlElement.setAttribute('data-original-overflow', getComputedStyle(htmlElement).overflow)
+        htmlElement.setAttribute(
+          'data-original-overflow',
+          getComputedStyle(htmlElement).overflow
+        )
       }
-      
+
       // Cleanup function to restore original values
       return () => {
         document.body.classList.remove('circular-view-active')
@@ -100,13 +116,15 @@ export function MobileChipSelector({
         document.documentElement.style.height = originalDocumentHeight
         ;(document.body.style as any).scrollbarWidth = ''
         ;(document.body.style as any).msOverflowStyle = ''
-        
+
         // Restore scrollable elements
         scrollableSelectors.forEach(selector => {
           const elements = document.querySelectorAll(selector)
-          elements.forEach((element) => {
+          elements.forEach(element => {
             const htmlElement = element as HTMLElement
-            const originalOverflow = htmlElement.getAttribute('data-original-overflow')
+            const originalOverflow = htmlElement.getAttribute(
+              'data-original-overflow'
+            )
             if (originalOverflow) {
               htmlElement.style.overflow = originalOverflow
               htmlElement.removeAttribute('data-original-overflow')
@@ -115,12 +133,17 @@ export function MobileChipSelector({
             }
           })
         })
-        
+
         // Restore main container
-        const mainContainer = document.querySelector('main') || document.querySelector('#__next') || document.body
+        const mainContainer =
+          document.querySelector('main') ||
+          document.querySelector('#__next') ||
+          document.body
         if (mainContainer) {
           const htmlElement = mainContainer as HTMLElement
-          const originalOverflow = htmlElement.getAttribute('data-original-overflow')
+          const originalOverflow = htmlElement.getAttribute(
+            'data-original-overflow'
+          )
           if (originalOverflow) {
             htmlElement.style.overflow = originalOverflow
             htmlElement.removeAttribute('data-original-overflow')
@@ -133,7 +156,7 @@ export function MobileChipSelector({
       // Remove CSS classes
       document.body.classList.remove('circular-view-active')
       document.documentElement.classList.remove('circular-view-active')
-      
+
       // Restore scrolling and show scrollbar
       document.body.style.overflow = 'unset'
       document.documentElement.style.overflow = 'unset'
@@ -251,7 +274,7 @@ export function MobileChipSelector({
             isSelected={true}
             onClick={() => {
               console.log('Chip clicked, showing circular view')
-              setShowCircularView(true);
+              setShowCircularView(true)
             }}
             className="relative"
           />
