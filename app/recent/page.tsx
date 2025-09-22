@@ -81,22 +81,23 @@ const recentGames = [
   },
 ]
 
+const gameProviders = [
+  { id: 'all', label: 'All Providers' },
+  { id: 'pragmatic', label: 'Pragmatic Play' },
+  { id: 'netent', label: 'NetEnt' },
+  { id: 'playngo', label: "Play'n GO" },
+  { id: 'evolution', label: 'Evolution' },
+]
+
+const timeFilters = [
+  { id: 'all', label: 'All Time' },
+  { id: 'today', label: 'Today' },
+  { id: 'week', label: 'This Week' },
+  { id: 'month', label: 'This Month' },
+]
+
 export default function RecentPage() {
   const { t } = useI18n()
-  const gameProviders = [
-    { id: 'all', label: t('games.allProviders') },
-    { id: 'pragmatic', label: 'Pragmatic Play' },
-    { id: 'netent', label: 'NetEnt' },
-    { id: 'playngo', label: "Play'n GO" },
-    { id: 'evolution', label: 'Evolution' },
-  ]
-
-  const timeFilters = [
-    { id: 'all', label: t('app.allTime') },
-    { id: 'today', label: t('app.toDay') },
-    { id: 'week', label: t('app.thisWeek') },
-    { id: 'month', label: t('app.thisMonth') },
-  ]
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedProvider, setSelectedProvider] = useState(gameProviders[0])
   const [selectedTimeFilter, setSelectedTimeFilter] = useState(timeFilters[0])
@@ -161,7 +162,7 @@ export default function RecentPage() {
         <div className="mx-auto">
           <h1 className="flex items-center text-2xl font-bold mb-4 gap-2 text-white">
             <Clock className="h-6 w-6 text-blue-400" />
-            {t('app.recently')}
+            Recently Viewed
           </h1>
 
           {/* Search and filters */}
@@ -174,7 +175,7 @@ export default function RecentPage() {
                   type="text"
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
-                  placeholder={t('app.recentlyPlaceholder')}
+                  placeholder="Search recent games..."
                   className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
                 />
               </div>

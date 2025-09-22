@@ -4,7 +4,6 @@ import React, { useEffect, useState, Suspense } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Header from './Header'
 import { MobileHeader } from './MobileHeader'
-import { useI18n } from '@/context/I18nProvider'
 
 interface ResponsiveHeaderProps {
   onHeaderTypeChange?: (isMobile: boolean) => void
@@ -23,7 +22,7 @@ const ResponsiveHeaderContent: React.FC<ResponsiveHeaderProps> = ({
   // Check if current page should use mobile header
   const shouldUseMobileHeader = () => {
     // Don't use mobile header on lobbypage (/) and hashgame pages (/hashgames/*)
-    if (pathname === '/') {
+    if (pathname === '/' || pathname.startsWith('/hashgames')) {
       return false
     }
     // Only use mobile header after client-side hydration

@@ -29,7 +29,7 @@ export function ChipSelector() {
         {/* Undo button section */}
         <div className="flex flex-col justify-center items-end gap-1 flex-1 min-w-0 px-4">
           <div
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-chip-casper"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-casper"
             style={{ background: 'rgba(0, 0, 0, 0.54)' }}
           >
             Undo
@@ -64,7 +64,7 @@ export function ChipSelector() {
         {/* Confirm button section */}
         <div className="flex flex-col justify-center items-start gap-1 flex-1 min-w-0 px-4">
           <div
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-chip-casper"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-casper"
             style={{ background: 'rgba(0, 0, 0, 0.54)' }}
           >
             <svg

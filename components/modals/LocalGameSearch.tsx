@@ -221,6 +221,7 @@ export default function LocalGameSearchModal({
   const providerRef = useRef<HTMLDivElement>(null)
   const typeRef = useRef<HTMLDivElement>(null)
 
+
   // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {

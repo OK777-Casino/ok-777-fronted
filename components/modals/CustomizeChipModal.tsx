@@ -130,8 +130,7 @@ export default function CustomizeChipModal({
                 <div
                   onClick={() => handleChipClick(chip.id, chip.value)}
                   className={`cursor-pointer transition-transform hover:scale-105 ${
-                    !selectedChips.includes(chip.id) &&
-                    selectedChips.length >= 5
+                    !selectedChips.includes(chip.id) && selectedChips.length >= 5
                       ? 'opacity-50 cursor-not-allowed'
                       : ''
                   }`}

@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import tailwindcssAnimate from 'tailwindcss-animate'
 
 module.exports = {
   content: [
@@ -126,7 +125,6 @@ module.exports = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-
         // Bull Player App Colors
         'dodger-blue': '#2283F6',
         'cornflower-blue': '#4E9CF8',
@@ -151,7 +149,7 @@ module.exports = {
         // Additional colors used in TabButton
         'mirage-4': 'rgba(17, 25, 35, 0.04)',
         'mirage-2': 'rgba(17, 25, 35, 0.2)',
-
+        
         // Additional hardcoded colors found in project
         'deep-blue': '#0D131C',
         'navy-dark': '#002554',
@@ -174,6 +172,7 @@ module.exports = {
         'crimson-80': 'rgba(237, 29, 73, 0.5)',
         'mirage-73': 'rgba(13, 19, 28, 0.73)',
         'mirage-54': 'rgba(17, 25, 35, 0.54)',
+        
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
@@ -207,7 +206,7 @@ module.exports = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [require('tailwindcss-animate')],
   // Enable arbitrary values for all properties
   experimental: {
     arbitraryValues: true,

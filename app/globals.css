@@ -98,7 +98,7 @@ body {
 
 body::before {
   content: ' ';
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -110,6 +110,7 @@ body::before {
     #0e141c 60%
   );
   z-index: -1;
+  /* 放在内容下层 */
 }
 
 input,
@@ -942,6 +943,7 @@ body.modal-open {
     width: 100% !important;
   }
 }
+
 
 /* 'dodger-blue': '#2283F6',
         'casper': '#A7B5CA',

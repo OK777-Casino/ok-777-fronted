@@ -8,12 +8,9 @@ import Report from '@/features/alliance/components/Report'
 import Introduction from '@/features/alliance/components/Introduction'
 import AllianceBottomBar from '@/features/alliance/components/AllianceBottomBar'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { useI18n } from '@/context/I18nProvider'
 import Link from 'next/link'
 
 function AlliancePageContent() {
-  const { t } = useI18n()
-
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -58,31 +55,11 @@ function AlliancePageContent() {
   }
 
   const navigationItems = [
-    {
-      name: t('alliance.inviteFriends'),
-      key: 'Invite Friends',
-      icon: '/icons/user-plus.svg',
-    },
-    {
-      name: t('alliance.management'),
-      key: 'Management',
-      icon: '/icons/group.svg',
-    },
-    {
-      name: t('alliance.performance'),
-      key: 'Performance',
-      icon: '/icons/chart-network.svg',
-    },
-    {
-      name: t('alliance.report'),
-      key: 'Report',
-      icon: '/icons/file-report.svg',
-    },
-    {
-      name: t('alliance.introduction'),
-      key: 'Introduction',
-      icon: '/icons/form.png',
-    },
+    { name: 'Invite Friends', icon: '/icons/user-plus.svg' },
+    { name: 'Management', icon: '/icons/group.svg' },
+    { name: 'Performance', icon: '/icons/chart-network.svg' },
+    { name: 'Report', icon: '/icons/file-report.svg' },
+    { name: 'Introduction', icon: '/icons/form.png' },
   ]
 
   const renderContent = () => {
@@ -104,32 +81,35 @@ function AlliancePageContent() {
 
   return (
     <>
-      <div className="flex flex-col gap-8 justify-between lg:pb-8 max-w-6xl p-2 m-auto">
+      <div className="flex flex-col gap-8 justify-between lg:pb-8 max-w-7xl p-2 m-auto">
         {/* Left Sidebar Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg h-full [@media(max-width:1024px)]:hidden w-full ">
           <div className="grid grid-cols-5 p-3 gap-3">
             {navigationItems.map(item => (
               <div
-                key={item.key}
+                key={item.name}
                 onClick={() => {
-                  setActiveTab(item.key)
-                  updateQuery(item.key)
+                  setActiveTab(item.name)
+                  updateQuery(item.name)
+                  console.log(item.name)
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3  rounded-lg transition-all duration-200 cursor-pointer ${
-                  activeTab === item.key
+                  activeTab === item.name
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
                 }`}
               >
-                <img src={item.icon} alt={item.key} />
-                <span className="font-bold text-[.8rem]">{item.name}</span>
+                <img src={item.icon} alt={item.name} />
+                <span className="font-bold text-[14px]">{item.name}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1">{renderContent()}</div>
+        <div className="flex-1 lg:bg-white-4 rounded-[12px]">
+          {renderContent()}
+        </div>
       </div>
 
       {/* Mobile Bottom Navigation */}
@@ -140,9 +120,8 @@ function AlliancePageContent() {
 
 // Wrapper component with Suspense boundary
 export default function AllianceClient() {
-  const { t } = useI18n()
   return (
-    <Suspense fallback={<div>{t('app.loading')}</div>}>
+    <Suspense fallback={<div>Loading alliance...</div>}>
       <AlliancePageContent />
     </Suspense>
   )

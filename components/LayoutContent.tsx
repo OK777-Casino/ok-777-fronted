@@ -94,7 +94,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
                   ? 'lg:ml-[70px]'
                   : 'lg:ml-[248px]'
                 : 'w-full'
-            } ${
+            } overflow-y-auto ${
               !isMobileHeader && !isAlliancePage && !isProfileOpen
                 ? 'h-[calc(100dvh-56px-59px)]'
                 : 'h-[calc(100dvh-56px)]'

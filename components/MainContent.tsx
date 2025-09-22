@@ -16,6 +16,7 @@ import {
 } from '../store/slices/carouselSlice'
 import CasinoCard from './ui/cards/CasinoCard'
 import RewardCard from './ui/cards/RewardCard'
+import HashCard from './ui/cards/HashCard'
 import FutureCard from './ui/cards/FutureCard'
 import GameCard from './ui/cards/GameCard'
 import { SuccessForm } from './auth/SuccessForm'
@@ -29,7 +30,6 @@ import {
   StatusDropdownItem,
 } from '@/components/ui/StatusDropdown'
 import EarningCard from './ui/cards/EarningCard'
-import { GameBreakpoints } from '@/components/HomepageSections'
 
 const statusOptions = [
   'Up to date',
@@ -213,12 +213,11 @@ const bannerCards = [
 
 // Latest bets table component
 const LatestBetsTable: React.FC = () => {
-  const { t } = useI18n()
   const [selectedStatus, setSelectedStatus] = useState('Up to date')
   return (
     <>
       <div className="text-4.5 font-bold flex items-center w-full justify-between text-white mb-4  gap-2">
-        <span>{t('app.latestBetting')}</span>
+        <span>Latest Bets</span>
         <StatusDropdown>
           <StatusDropdownTrigger className="bg-[#2A3546] border-none ring-0 focus:ring-0 outline-none">
             {selectedStatus}
@@ -246,23 +245,23 @@ const LatestBetsTable: React.FC = () => {
         } `}
       >
         <div className="text-left text-[12px] font-bold py-2 text-white">
-          {t('games.title')}
+          Game
         </div>
         <div className="text-left text-[12px] font-bold py-2 text-white">
-          {t('games.player')}
+          Player
         </div>
         <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 text-white">
-          {t('games.betTime')}
+          Time
         </div>
         <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 truncate text-white">
-          {t('games.betAmount')}
+          Bet Amount
         </div>
         <div className="text-left text-[12px] font-bold py-2 text-white">
-          {t('games.multiplier')}
+          Multiplier
         </div>
         {selectedStatus !== 'Daily' && (
           <div className="text-left text-[12px] font-bold py-2 text-white">
-            {t('games.payout')}
+            Payout
           </div>
         )}
       </div>
@@ -326,7 +325,7 @@ const LatestBetsTable: React.FC = () => {
           direction="vertical"
           slidesPerView={9.1}
           spaceBetween={6}
-          autoplayDelay={1500}
+          autoplayDelay={1000}
           className="h-full"
         />
         <div className="absolute bottom-0 left-0 w-full h-[254px] bg-gradient-to-b z-[30] from-transparent to-[#111923] pointer-events-none"></div>
@@ -439,7 +438,7 @@ const MainContent: React.FC = () => {
               href={viewAllLink}
               className="h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors"
             >
-              {t('app.viewall')}
+              View All
             </Link>
           </div>
         )}
@@ -462,9 +461,7 @@ const MainContent: React.FC = () => {
         </h2>
         {count && (
           <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-            <span>
-              {t('app.all')} {count}
-            </span>
+            <span>all {count}</span>
           </span>
         )}
       </div>
@@ -486,6 +483,7 @@ const MainContent: React.FC = () => {
           data={bannerCards}
           renderSlide={(card, index) => <RewardCard {...card} />}
           slidesPerView="auto"
+          spaceBetween={12}
           slideClassName="!w-[min(486.76px,100%)]"
           showProgressBars={true}
           customPagination={true}
@@ -523,7 +521,7 @@ const MainContent: React.FC = () => {
               />
               <SwiperSlider
                 key="new-launches-swiper"
-                autoplay={false}
+                autoplayDelay={1000000}
                 data={card1}
                 renderSlide={(card, index) => <CasinoCard {...card} />}
                 slidesPerView={7}
@@ -609,7 +607,7 @@ const MainContent: React.FC = () => {
             <div className="lg:mb-16 mb-8">
               <SectionHeader
                 icon="/icons/Futures1.svg"
-                title={t('games.pfFutures')}
+                title="P/F Futures"
                 alt="future"
                 count={card4.length}
               />
@@ -691,13 +689,13 @@ const MainContent: React.FC = () => {
         <div className="lg:mb-16 mb-8">
           <SectionHeader
             icon="/icons/game.svg"
-            title={t('app.gameProvider')}
-            alt="gameProvider"
+            title={t('games.gameManufacturers')}
+            alt="gameManufacturers"
           />
           <SwiperSlider
             key={`game-manufacturers-swiper-${activeGameCategory}`}
             data={gameManufacturers}
-            autoplay={false}
+            autoplayDelay={1000000}
             renderSlide={(card, index) => <GameCard {...card} />}
             spaceBetween={12}
             slidesPerView={6}
@@ -721,19 +719,26 @@ const MainContent: React.FC = () => {
         <div className="lg:mb-16 mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-4.5 font-bold flex items-center text-white ">
-              {t('app.latestEarining')}
+              Latest earnings
             </h2>
             <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
-              <span>{t('app.onlinePlayer')} 36</span>
+              <span>online users 36</span>
             </span>
           </div>
           <SwiperSlider
             data={card7}
-            autoplay={false}
+            autoplayDelay={1000000}
             renderSlide={(card, index) => <EarningCard {...card} />}
             slidesPerView={7}
             spaceBetween={12}
-            breakpoints={GameBreakpoints}
+            breakpoints={{
+              320: { slidesPerView: 3.3 },
+              375: { slidesPerView: 3.5 },
+              425: { slidesPerView: 4.1 },
+              768: { slidesPerView: 4.3 },
+              1024: { slidesPerView: 5, spaceBetween: 20 },
+              1440: { slidesPerView: 7.3 },
+            }}
             initialSlide={carouselState.latestEarningsCurrentSlide}
             onSlideChange={handleLatestEarningsSlideChange}
             carouselId="latest-earnings"
