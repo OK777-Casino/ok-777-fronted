@@ -114,7 +114,7 @@ export default function AuthModal() {
         )}
       >
         {/* Desktop Layout */}
-        <div className="hidden lg:flex w-full h-[670px] rounded-[14px] overflow-hidden bg-mirage-54 backdrop-blur-[32px]">
+        <div className="hidden md:flex w-full h-[670px] rounded-[14px] overflow-hidden bg-mirage-54 backdrop-blur-[32px]">
           {/* Left Side - Branding */}
           <div className="flex-1 relative">
             {/* Background Image with Gradient Overlay */}
