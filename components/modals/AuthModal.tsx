@@ -75,7 +75,6 @@ export default function AuthModal() {
   const [isVisible, setIsVisible] = useState(false)
   const [shouldRender, setShouldRender] = useState(false)
 
-
   const login = () => {
     if (email === 'dev.com@gmail.com' && password === '123') {
       setAuthUser(email)

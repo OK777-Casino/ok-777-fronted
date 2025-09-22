@@ -192,7 +192,6 @@ export default function GameSearchModal({
   const { t } = useI18n()
   const [sidebarOffset, setSidebarOffset] = useState(0)
 
-
   useEffect(() => {
     if (!isOpen) return
     const updateOffset = () => {

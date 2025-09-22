@@ -151,7 +151,7 @@ module.exports = {
         // Additional colors used in TabButton
         'mirage-4': 'rgba(17, 25, 35, 0.04)',
         'mirage-2': 'rgba(17, 25, 35, 0.2)',
-        
+
         // Additional hardcoded colors found in project
         'deep-blue': '#0D131C',
         'navy-dark': '#002554',
@@ -174,7 +174,6 @@ module.exports = {
         'crimson-80': 'rgba(237, 29, 73, 0.5)',
         'mirage-73': 'rgba(13, 19, 28, 0.73)',
         'mirage-54': 'rgba(17, 25, 35, 0.54)',
-        
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
