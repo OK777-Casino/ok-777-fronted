@@ -2,7 +2,6 @@
 
 import React from 'react'
 import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
-
 const LuckyDefault: React.FC = () => {
   // Lucky page has a single HASH betting option
   const bettingOptions = [

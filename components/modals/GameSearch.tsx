@@ -5,7 +5,6 @@ import { useState, useRef, useEffect } from 'react'
 import { useSidebar } from '@/context/SidebarProvider'
 import CasinoCard from '@/components/ui/cards/CasinoCard'
 import { Button } from '@/components/ui'
-import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
 import ModalContainer from './ModalContainer'
 import { useI18n } from '@/context/I18nProvider'
 
@@ -193,66 +192,6 @@ export default function GameSearchModal({
   const { t } = useI18n()
   const [sidebarOffset, setSidebarOffset] = useState(0)
 
-  const gameCategories = [
-    {
-      id: 'hash',
-      label: t('games.hashgames'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/539e29d3dd35d4b4f7551e751c116f40a102eaa5?width=52',
-    },
-    {
-      id: 'slots',
-      label: t('games.slots'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/056061de0a658f58bc9d8b0d5fa49ebd2eb7243d?width=39',
-    },
-    {
-      id: 'casino',
-      label: t('games.live'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/7245cb568c2fb51c6094f50e99f10760ed43d47c?width=52',
-    },
-    {
-      id: 'futures',
-      label: t('games.pfFutures'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/ab3b5fe5364a6a5cf19370622e52a65297b9f2fd?width=48',
-    },
-    {
-      id: 'crypto',
-      label: t('games.crypto'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/da20222e69eb632beb025b819d563282485ae610?width=52',
-    },
-    {
-      id: 'sport',
-      label: t('games.sports'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/72146436b2617db347f4558bef4da1d7dc2be29e?width=52',
-    },
-    {
-      id: 'table',
-      label: t('games.table'),
-      icon: 'https://api.builder.io/api/v1/image/assets/TEMP/f3965682be44f8f5716cdfd793a2929763c6f824?width=48',
-    },
-  ]
-
-  const gameProviders = [
-    { id: 'all', label: t('games.allProviders') },
-    { id: 'pg-soft', label: 'PG Soft' },
-    { id: 'evolution', label: 'Evolution' },
-    { id: 'pragmatic', label: 'Pragmatic Play' },
-    { id: 'cfg-gaming', label: 'CFG Gaming' },
-    { id: 'future-games', label: 'Future Games' },
-    { id: 'crypto-games', label: 'Crypto Games' },
-    { id: 'sports-co', label: 'Sports Co' },
-    { id: 'table-games', label: 'Table Games' },
-  ]
-
-  const gameTypes = [
-    { id: 'all', label: t('games.all') },
-    { id: 'new', label: t('games.new') },
-    { id: 'featured', label: t('games.featured') },
-    { id: 'hot', label: t('games.hot') },
-    { id: 'exclusive', label: t('games.exclusive') },
-  ]
-
-  // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen)
 
   useEffect(() => {
     if (!isOpen) return

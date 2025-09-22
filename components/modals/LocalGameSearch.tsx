@@ -4,7 +4,6 @@ import { X, Search, ChevronDown, Play } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import CasinoCard from '@/components/ui/cards/CasinoCard'
 import { Button } from '@/components/ui'
-import { useModalScrollPrevention } from '@/hooks/useModalScrollPrevention'
 import Overlay from '@/components/overlays/Overlay'
 
 interface LocalGameSearchModalProps {
@@ -222,8 +221,6 @@ export default function LocalGameSearchModal({
   const providerRef = useRef<HTMLDivElement>(null)
   const typeRef = useRef<HTMLDivElement>(null)
 
-  // Prevent background scrolling when modal is open
-  useModalScrollPrevention(isOpen)
 
   // Close dropdowns when clicking outside
   useEffect(() => {
