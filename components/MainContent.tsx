@@ -246,23 +246,23 @@ const LatestBetsTable: React.FC = () => {
         } `}
       >
         <div className="text-left text-[12px] font-bold py-2 text-white">
-          Game
+          {t('games.title')}
         </div>
         <div className="text-left text-[12px] font-bold py-2 text-white">
-          Player
+          {t('games.player')}
         </div>
         <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 text-white">
-          Time
+          {t('games.betTime')}
         </div>
         <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 truncate text-white">
-          Bet Amount
+          {t('games.betAmount')}
         </div>
         <div className="text-left text-[12px] font-bold py-2 text-white">
-          Multiplier
+          {t('games.multiplier')}
         </div>
         {selectedStatus !== 'Daily' && (
           <div className="text-left text-[12px] font-bold py-2 text-white">
-            Payout
+            {t('games.payout')}
           </div>
         )}
       </div>

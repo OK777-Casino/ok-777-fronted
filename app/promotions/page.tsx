@@ -116,8 +116,8 @@ const PromotionsPage = () => {
   }
 
   return (
-    <div className="lg:w-[70%] flex flex-col gap-8 w-full mx-auto p-4  pt-[1.625rem] md:pt-4 mb-16">
-      <div className="grid grid-cols-3 items-center w-full md:w-[28.125rem]  p-1 bg-white-4 rounded-xl">
+    <div className="flex flex-col gap-6 max-w-6xl mx-auto p-4 pt-[1.625rem] md:pt-4 mb-16">
+      <div className="grid grid-cols-3 items-start w-full md:w-[28.125rem]  p-1 bg-white-4 rounded-xl">
         {tabs.map(tab => {
           const isActive = activeTab === tab.id
 
@@ -130,7 +130,7 @@ const PromotionsPage = () => {
               {tab.icon}
               {tab.label}
               {tab.count && (
-                <div className="flex items-center justify-center h-5 px-1.5 bg-malachite  rounded-md shadow-[0_0.0625rem_0_0_var(--white-08)_inset]">
+                <div className="flex items-start justify-start h-5 px-1.5 bg-malachite  rounded-md shadow-[0_0.0625rem_0_0_var(--white-08)_inset]">
                   <span className="text-white font-montserrat text-xs font-bold">
                     {tab.count}
                   </span>
@@ -142,7 +142,7 @@ const PromotionsPage = () => {
       </div>
 
       {/* Game Providers Grid */}
-      <div className="flex gap-4 flex-wrap justify-center px-30">
+      <div className="flex gap-4 flex-wrap justify-center md:justify-start">
         {bannerCards.map((card, index) => (
           <CasinoPromotionCard key={index} {...card} />
         ))}

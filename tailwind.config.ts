@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindcssAnimate from 'tailwindcss-animate'
 
 module.exports = {
   content: [
@@ -205,7 +206,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [tailwindcssAnimate],
   // Enable arbitrary values for all properties
   experimental: {
     arbitraryValues: true,

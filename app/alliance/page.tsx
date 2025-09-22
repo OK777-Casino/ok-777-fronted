@@ -104,7 +104,7 @@ function AlliancePageContent() {
 
   return (
     <>
-      <div className="flex flex-col gap-8 justify-between lg:pb-8 max-w-7xl p-2 m-auto">
+      <div className="flex flex-col gap-8 justify-between lg:pb-8 max-w-6xl p-2 m-auto">
         {/* Left Sidebar Navigation */}
         <div className="bg-[#FFFFFF0A] rounded-lg h-full [@media(max-width:1024px)]:hidden w-full ">
           <div className="grid grid-cols-5 p-3 gap-3">
