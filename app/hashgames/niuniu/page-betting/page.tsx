@@ -2,7 +2,7 @@
 
 import React from 'react'
 import NiuniuBettingSection from '@/components/hashgames/NiuniuBettingSection'
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import DefaultPageLayout from '@/components/hashgames/PageBettingLayout'
 const NiuniuDefault: React.FC = () => {
   const bullRatios = [
     { name: 'Bull1', ratio: '1:1' },

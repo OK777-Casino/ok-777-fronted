@@ -1,6 +1,6 @@
 'use client'
 
-import ActivePageLayout from '@/components/hashgames/ActivePageLayout'
+import ActivePageLayout from '@/components/hashgames/TransferBettingLayout'
 import React from 'react'
 
 const TransferBettingPage: React.FC = () => {

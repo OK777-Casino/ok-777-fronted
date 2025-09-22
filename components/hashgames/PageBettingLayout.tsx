@@ -117,25 +117,8 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
   )
 
   const renderBettingOption = (option: BettingOption, index: number) => (
-    <div key={option.id} className="flex flex-col items-center gap-2 flex-1">
+    <div key={option.id} className="flex flex-col items-center gap-8 flex-1">
       <div className="flex pb-4 justify-between items-center w-full">
-        {index === 0 ? (
-          <div className="flex flex-col items-start">
-            <div className="text-base font-bold">
-              <span className="text-casper">$</span>
-              <span className="text-white">{option.amount}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <User className="w-4 h-4 text-casper" />
-              <span className="text-sm font-bold text-casper">
-                {option.users}
-              </span>
-            </div>
-          </div>
-        ) : (
-          <div></div>
-        )}
-
         {renderProgressCircle(
           option.progress,
           option.color,
@@ -143,16 +126,31 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
         )}
 
         {index > 0 && (
-          <div className="flex flex-col items-end">
-            <div className="text-base font-bold text-right">
+          <div className="flex flex-col items-start">
+            <div className="flex items-start text-sm font-bold gap-1">
               <span className="text-casper">$</span>
               <span className="text-white">{option.amount}</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-sm font-bold text-casper">
+              <User className="w-4 h-4 text-casper" />
+              <span className="text-xs font-bold text-casper">
                 {option.users}
               </span>
+            </div>
+          </div>
+        )}
+
+        {index === 0 && (
+          <div className="flex flex-col items-start">
+            <div className="flex items-start text-sm font-bold gap-1">
+              <span className="text-casper">$</span>
+              <span className="text-white">{option.amount}</span>
+            </div>
+            <div className="flex items-center gap-1">
               <User className="w-4 h-4 text-casper" />
+              <span className="text-xs font-bold text-casper">
+                {option.users}
+              </span>
             </div>
           </div>
         )}
@@ -163,7 +161,7 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
       </div>
 
       <div
-        className={`text-2xl font-bold ${option.color === '#ED1D49' ? 'text-crimson' : option.color === '#FFB636' ? 'text-yellow-orange' : 'text-white'}`}
+        className={`text-xl font-bold ${option.color === '#ED1D49' ? 'text-crimson' : option.color === '#FFB636' ? 'text-yellow-orange' : 'text-white'}`}
       >
         {option.label}
       </div>
@@ -177,7 +175,7 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
   return (
     <>
       <div
-        className={`flex flex-col items-center min-h-screen gap-4 md:gap-16 py-16 hash-game-container mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`flex flex-col items-center min-h-screen gap-4 md:gap-8 p-2 hash-game-container mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header with Segmented Control */}
         <div className="w-full flex flex-col items-center gap-4 p-0">
@@ -283,45 +281,8 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
             </div>
           </div>
 
-          {/* Block Information */}
-          <div
-            className="flex min-h-[80px] md:h-[100px] relative p-4 justify-center items-center gap-2 md:gap-4 w-full rounded-xl overflow-hidden"
-            style={{
-              background:
-                "url('https://api.builder.io/api/v1/image/assets/TEMP/35f26e9aa061258b5e5f2783c73faff4c656c9a3?width=740') lightgray 50% / cover no-repeat, #111923",
-              backgroundBlendMode: 'hard-light, normal',
-            }}
-          >
-            <img
-              src="/images/hashgame.jpg"
-              className="absolute rounded-[14px] top-0 z-1 left-0 w-full h-full"
-            />
-            <div className="flex relative z-5 flex-col justify-center items-center gap-1 flex-1">
-              <span className="text-xs md:text-sm font-bold text-casper">
-                {t?.('hashgame.currentBlock') || 'Current block'}
-              </span>
-              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
-                <Copy className="w-4 h-4 text-casper" />
-                <span className="text-xs md:text-sm font-bold text-casper">
-                  73852830
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col relative z-5 justify-center items-center gap-1 flex-1">
-              <span className="text-xs md:text-sm font-bold text-casper">
-                {t?.('hashgame.nextBlock') || 'Next block'}
-              </span>
-              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
-                <Copy className="w-4 h-4 text-dodger-blue" />
-                <span className="text-xs md:text-sm font-bold text-dodger-blue">
-                  73872867
-                </span>
-              </div>
-            </div>
-          </div>
-
           {/* Betting Limit and Toggle */}
-          <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2 sm:gap-0">
+          <div className="flex lg:flex-col flex-row justify-between items-center w-full gap-2 sm:gap-0">
             <div className="text-sm font-bold">
               <span className="text-white">
                 {t?.('hashgame.limit') || 'Limit'}{' '}
@@ -366,13 +327,50 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
               </span>
             </div>
           </div>
+
+          {/* Block Information */}
+          <div
+            className="flex min-h-[80px] md:h-[100px] relative p-4 justify-center items-center gap-2 md:gap-4 w-full rounded-xl overflow-hidden"
+            style={{
+              background:
+                "url('https://api.builder.io/api/v1/image/assets/TEMP/35f26e9aa061258b5e5f2783c73faff4c656c9a3?width=740') lightgray 50% / cover no-repeat, #111923",
+              backgroundBlendMode: 'hard-light, normal',
+            }}
+          >
+            <img
+              src="/images/hashgame.jpg"
+              className="absolute rounded-[14px] top-0 z-1 left-0 w-full h-full"
+            />
+            <div className="flex relative z-5 flex-col justify-center items-center gap-1 flex-1">
+              <span className="text-xs md:text-sm font-bold text-casper">
+                {t?.('hashgame.currentBlock') || 'Current block'}
+              </span>
+              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
+                <Copy className="w-4 h-4 text-casper" />
+                <span className="text-xs md:text-sm font-bold text-casper">
+                  73852830
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col relative z-5 justify-center items-center gap-1 flex-1">
+              <span className="text-xs md:text-sm font-bold text-casper">
+                {t?.('hashgame.nextBlock') || 'Next block'}
+              </span>
+              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
+                <Copy className="w-4 h-4 text-dodger-blue" />
+                <span className="text-xs md:text-sm font-bold text-dodger-blue">
+                  73872867
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Custom Betting Section or Default */}
         {customBettingSection ? (
           customBettingSection
         ) : (
-          <div className="flex p-4 md:p-8 items-start gap-4 w-full rounded-xl bg-white/[0.04]">
+          <div className="flex p-2 md:p-8 items-start gap-4 w-full rounded-xl bg-white/[0.04]">
             {bettingOptions.map((option, index) => (
               <React.Fragment key={option.id}>
                 {renderBettingOption(option, index)}

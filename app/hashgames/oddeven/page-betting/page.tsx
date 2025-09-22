@@ -1,6 +1,6 @@
 'use client'
 
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import DefaultPageLayout from '@/components/hashgames/PageBettingLayout'
 import React from 'react'
 
 const OddEvenDefault: React.FC = () => {

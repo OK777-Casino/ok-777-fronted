@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import DefaultPageLayout from '@/components/hashgames/PageBettingLayout'
 const BigSmallDefault: React.FC = () => {
   const bettingOptions = [
     {

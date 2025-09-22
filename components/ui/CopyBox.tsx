@@ -75,7 +75,7 @@ export const CopyBox = React.forwardRef<HTMLButtonElement, CopyBoxProps>(
       >
         <div className="flex min-w-40 items-center gap-2 flex-1 self-stretch justify-between">
           <span
-            className=" overflow-hidden text-ellipsis text-left text-white text-sm font-bold leading-normal"
+            className=" overflow-hidden text-ellipsis text-left text-white text-xs font-bold leading-normal"
             style={{
               fontFamily:
                 'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',

@@ -1,6 +1,5 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { useState } from 'react'
 
 import {
@@ -20,7 +19,7 @@ import Link from 'next/link'
 import { useSidebar } from '@/context/SidebarProvider'
 import { CopyBox } from '@/components/ui/CopyBox'
 
-const ActivePageLayout: React.FC = () => {
+const TransferBettingLayout: React.FC = () => {
   const { isCollapsed } = useSidebar()
   const [difficulty, setDifficulty] = useState<'Beginner' | 'Intermediate'>(
     'Beginner'
@@ -440,7 +439,7 @@ const ActivePageLayout: React.FC = () => {
   return (
     <>
       <div
-        className={`w-full hash-game-container px-4 lg:px-0 py-16 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`w-full hash-game-container lg:px-0 p-2 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header Section */}
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
@@ -454,7 +453,7 @@ const ActivePageLayout: React.FC = () => {
                 alt="active"
                 className="w-6 h-6"
               />
-              Active
+              Transfer betting
             </div>
             <Link
               href="/hashgames/bankerplayer/page-betting"
@@ -463,7 +462,7 @@ const ActivePageLayout: React.FC = () => {
             >
               {' '}
               <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
-              Default
+              Page betting
             </Link>
           </div>
           <div className="flex items-center gap-2 [@media(max-width:768px)]:hidden">
@@ -499,7 +498,7 @@ const ActivePageLayout: React.FC = () => {
         {/* Mobile view Header Section*/}
         <div className="bg-[#72707038] rounded-lg w-full  p-1 hidden [@media(max-width:768px)]:flex ">
           <div
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+            className={` w-[50%] justify-center flex items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none  gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
           >
             {' '}
             <img
@@ -507,11 +506,11 @@ const ActivePageLayout: React.FC = () => {
               alt="active"
               className="w-6 h-6"
             />
-            Active
+            Transfer betting
           </div>
           <Link
             href="/hashgames/bankerplayer/page-betting"
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+            className={` w-[50%] justify-center flex  items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-[14px] border-none gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
             {' '}
             <img
@@ -519,7 +518,7 @@ const ActivePageLayout: React.FC = () => {
               alt="active"
               className="w-6 h-6"
             />
-            Default
+            Page betting
           </Link>
         </div>
 
@@ -552,21 +551,22 @@ const ActivePageLayout: React.FC = () => {
 
         {/* Desktop view Bid address and Wallet Section*/}
         <div className="bg-[#111923] rounded-lg p-3 mb-6  border border-[rgba(12,96,255,0.1)] shadow-xl [@media(max-width:768px)]:block hidden">
-          <h2 className="text-lg font-bold mb-4 text-[#FFFFFF] text-[14px] flex items-center gap-2">
+          <h2 className="text-lg font-bold mb-4 text-[#FFFFFF] text-[12px] flex items-center gap-2 justify-between">
             Bid address
             <span className="font-bold text-[12px] opacity-80">
               Use a decentralized wallet
             </span>
           </h2>
-          <CopyBox className="w-full mb-4">
-            <span className="text-[#2283F6]">TXS3</span>PfAUShemKkoBWRUFsUkGBSrZ
+          <CopyBox className="w-full mb-4 ">
+            <span className="text-[#2283F6] ">TXS3</span>
+            <span className="">PfAUShemKkoBWRUFsUkGBSrZ</span>
             <span className="text-[#2283F6]">gh..</span>
           </CopyBox>
 
           <div className="relative mb-4">
             <div className="absolute inset-0 bg-[#003a8a] rounded-[12px] translate-y-1"></div>
-            <div className=" w-full relative rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-[14px] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg ">
-              Activate wallet
+            <div className=" w-full relative rounded-[8px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white py-2 text-[.8rem] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg ">
+              <span className="text-center block">Activate wallet</span>
             </div>
           </div>
           <div className="bg-[#FFFFFF0A] rounded-lg p-3 mb-6 border border-[rgba(12,96,255,0.1)] shadow-xl">
@@ -997,4 +997,4 @@ const ActivePageLayout: React.FC = () => {
   )
 }
 
-export default ActivePageLayout
+export default TransferBettingLayout

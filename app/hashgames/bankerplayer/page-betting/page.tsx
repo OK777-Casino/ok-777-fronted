@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import PageBettingLayout from '@/components/hashgames/PageBettingLayout'
 const BankerPlayerDefault: React.FC = () => {
   const bettingOptions = [
     {
@@ -34,7 +34,7 @@ const BankerPlayerDefault: React.FC = () => {
   ]
 
   return (
-    <DefaultPageLayout
+    <PageBettingLayout
       gameType="bankerplayer"
       bettingOptions={bettingOptions}
     />
