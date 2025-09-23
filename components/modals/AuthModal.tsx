@@ -404,7 +404,7 @@ export default function AuthModal() {
 
         {/* Mobile Layout */}
         <div
-          className="sm:hidden animation-fade-in absolute top-0 h-full w-full max-w-md mx-auto bg-[#111923] overflow-x-hidden overflow-y-auto modal-content-scroll"
+          className="md:hidden animation-fade-in absolute top-0 h-full w-full max-w-md mx-auto bg-[#111923] overflow-x-hidden overflow-y-auto modal-content-scroll"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {/* Blue Gradient Background */}
