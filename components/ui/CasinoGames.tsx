@@ -153,7 +153,7 @@ export default function CasinoGames() {
   ]
 
   return (
-    <div className="inline-flex w-[507px] items-start absolute justify-center bg-mirage-54 p-6 backdrop-blur-[32px] rounded-xl">
+    <div className="inline-flex items-start absolute justify-center bg-mirage-54 p-6 backdrop-blur-[32px] rounded-xl">
       <div className="flex w-full gap-6">
         {/* Left Column */}
         <div className="flex flex-col items-start gap-0">

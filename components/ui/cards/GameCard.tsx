@@ -15,20 +15,20 @@ const GameCard: React.FC<GameCardProps> = ({
   sampleGames,
 }) => {
   return (
-    <div className="bg-gray-800 rounded-lg p-[8px_10px_12px_10px] hover:bg-gray-700 transition-colors cursor-pointer">
-      <div className="flex items-center pb-4">
-        <img
-          src={icon}
-          alt={`${name} manufacturer icon`}
-          className="h-6 w-9 object-contain"
-        />
-        <div className="ml-3">
-          <h3 className="text-[10px] font-[700] text-white leading-tight">
+    <div className="bg-gray-800 rounded-lg p-2 hover:bg-gray-700 transition-colors gap-2 cursor-pointer flex flex-col">
+      <div className="flex items-center">
+        <div>
+          <img
+            src={icon}
+            alt={`${name} manufacturer icon`}
+            className="h-8 object-contain"
+          />
+        </div>
+        <div className="">
+          <p className="text-base font-semibold text-white leading-tight">
             {name}
-          </h3>
-          <p className="text-[10px] font-[700] text-[#A7B5CA] leading-tight">
-            {gameCount}
           </p>
+          <p className="text-base text-[#A7B5CA] leading-tight">{gameCount}</p>
         </div>
       </div>
 

@@ -379,7 +379,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   }, [activeTab, gameNavTabs])
 
   return (
-    <div className="lg:hidden px-2 py-1">
+    <div className="lg:hidden px-2">
       <Swiper
         modules={[FreeMode]}
         freeMode={true}
@@ -517,7 +517,7 @@ const Header: React.FC = () => {
         }}
       >
         {/* Main Header Row */}
-        <div className="h-14 flex items-center justify-between gap-2 px-4 py-2.5">
+        <div className="flex items-center justify-between p-2">
           {/* Left side */}
           <LeftSection
             toggleSidebar={toggleSidebar}
@@ -528,7 +528,7 @@ const Header: React.FC = () => {
           <div className="flex-1"></div>
 
           {/* Right side */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center sm:gap-2">
             <AuthSection
               toggleAuthModal={toggleAuthModal}
               isLoggedIn={isLoggedIn}

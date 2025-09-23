@@ -245,23 +245,23 @@ const LatestBetsTable: React.FC = () => {
             : 'grid-cols-[30%_30%_40%]'
         } `}
       >
-        <div className="text-left text-[12px] font-bold py-2 text-white">
+        <div className="text-left text-sm font-bold py-2 text-white">
           {t('games.title')}
         </div>
-        <div className="text-left text-[12px] font-bold py-2 text-white">
+        <div className="text-left text-sm font-bold py-2 text-white">
           {t('games.player')}
         </div>
-        <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 text-white">
+        <div className="text-left text-sm hidden md:lg:block font-bold py-2 text-white">
           {t('games.betTime')}
         </div>
-        <div className="text-left text-[12px] hidden md:lg:block font-bold py-2 truncate text-white">
+        <div className="text-left text-sm hidden md:lg:block font-bold py-2 truncate text-white">
           {t('games.betAmount')}
         </div>
-        <div className="text-left text-[12px] font-bold py-2 text-white">
+        <div className="text-left text-sm font-bold py-2 text-white">
           {t('games.multiplier')}
         </div>
         {selectedStatus !== 'Daily' && (
-          <div className="text-left text-[12px] font-bold py-2 text-white">
+          <div className="text-left text-sm font-bold py-2 text-white">
             {t('games.payout')}
           </div>
         )}
@@ -698,7 +698,7 @@ const MainContent: React.FC = () => {
             key={`game-manufacturers-swiper-${activeGameCategory}`}
             data={gameManufacturers}
             autoplay={false}
-            renderSlide={(card, index) => <GameCard {...card} />}
+            renderSlide={(card, index) => <GameCard key={index} {...card} />}
             spaceBetween={12}
             slidesPerView={6}
             breakpoints={{
