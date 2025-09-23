@@ -127,8 +127,8 @@ export const HomepageSections: React.FC<{
           autoplay={false}
           data={card1}
           renderSlide={(card, index) => <CasinoCard {...card} />}
-          slidesPerView={10}
-          spaceBetween={6}
+          slidesPerView={7}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
         />
@@ -149,7 +149,7 @@ export const HomepageSections: React.FC<{
             <CasinoCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
@@ -172,7 +172,7 @@ export const HomepageSections: React.FC<{
             <HashCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={HashBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -194,7 +194,7 @@ export const HomepageSections: React.FC<{
             <CasinoCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
@@ -217,7 +217,7 @@ export const HomepageSections: React.FC<{
             <FutureCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={FutureBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -239,7 +239,7 @@ export const HomepageSections: React.FC<{
             <CasinoCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -261,7 +261,7 @@ export const HomepageSections: React.FC<{
             <CasinoCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -283,7 +283,7 @@ export const HomepageSections: React.FC<{
             <CasinoCard key={index} {...(card as any)} />
           )}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplay={false}
