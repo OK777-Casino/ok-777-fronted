@@ -56,7 +56,7 @@ const BonusesButton: React.FC = () => (
       variant="gradient"
       className="px-3 py-2"
       style={{
-        border: '0.0625rem solid #6B7280',
+        border: '0.0625rem solid var(--gray-600)',
       }}
     >
       <div className="flex items-center gap-2">
@@ -284,7 +284,7 @@ const ProfileButton: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
     <div className="relative" ref={containerRef}>
       <BlackButton
-        className="px-[0.125rem] bg-[conic-gradient(#1BB83D_0_75%,#00000000_75%_100%)] rounded-[0.625rem] hover:bg-[conic-gradient(#1BB83D_0_75%,#00000000_75%_100%)] "
+        className="px-[0.125rem] bg-[conic-gradient(var(--malachite)_0_75%,transparent_75%_100%)] rounded-[0.625rem] hover:bg-[conic-gradient(var(--malachite)_0_75%,transparent_75%_100%)] "
         onClick={handleButtonClick}
       >
         <img
@@ -512,8 +512,8 @@ const Header: React.FC = () => {
         className="fixed top-0 left-0 right-0 z-50 flex flex-col"
         style={{
           backdropFilter: 'blur(2rem)',
-          background: 'rgba(17, 25, 35, 0.54)',
-          borderBottom: '1px solid hsla(0, 0%, 100%, .04)',
+          background: 'var(--mirage-54)',
+          borderBottom: '1px solid var(--white-4)',
         }}
       >
         {/* Main Header Row */}

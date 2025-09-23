@@ -21,7 +21,10 @@
     "download": "Download",
     "subtitle": "Get unlimited pleasure on the road",
     "showMore": "Show More",
-    "showLess": "Show Less"
+    "showLess": "Show Less",
+    "communityEntrance": "Community Entrance",
+    "supportedCurrencies": "Supported Currencies",
+    "gamblingLicense": "Gambling License"
   },
   "navigation": {
     "home": "Home",
@@ -304,6 +307,25 @@
     "polish": "Polski",
     "ukrainian": "Українська",
     "portugueseBR": "Português (BR)"
+  },
+  "licence": {
+    "company": "Ok777 casino is owned and operated by Nextech NV, a company registered in Curaçao with company number 162054, registered address: Zuikertuin Tower 2/ Kaya W.F.G. (Cito) Hellmund z/n Curaçao, authorized by the Curaçao Gaming Board (CGB), license No. 365/JAZ, issued by Antillephone. This license is approved and regulated by the Government of Curaçao, ensuring the platform's legality and security."
+  },
+  "generalInformation": {
+    "generalInformation": "General Information",
+    "commonProblem": "Common Problems",
+    "responsibleGambling": "Responsible Gambling",
+    "honestlyAndFairly": "Honesty and Fairness",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "aboutUs": {
+    "aboutUs": "About Us"
+  },
+  "install": {
+    "install": "Install",
+    "onTheDesktop": "on the Desktop",
+    "accept": "Accept"
   },
   "alliance": {
     "inviteFriends": "Invite Friends",

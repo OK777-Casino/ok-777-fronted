@@ -34,9 +34,9 @@ const HashCard: React.FC<TypeTwoProps> = ({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="relative rounded-[14px] w-full min-h-[180px] p-2 sm:p-3 text-white overflow-hidden border border-gray-700/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col"
+      className="relative rounded-[14px] w-full min-h-[180px] p-2 sm:p-3 text-white overflow-hidden   shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col"
     >
-      <div className="absolute w-full h-full bg-gradient-to-br from-gray-900/90 to-gray-800/80 top-0 left-0" />
+      <div className="absolute w-full h-full bg-black opacity-60 top-0 left-0" />
       <div className="relative z-10 flex flex-col h-full">
         {/* Header Section */}
         <div className="flex justify-between items-center mb-2 sm:mb-3">
@@ -80,7 +80,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
             </span>
           </div>
           <div className="relative">
-            <div className="bg-[#090c11] rounded-lg w-full h-[2rem] sm:h-[2.5rem] border flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
+            <div className="bg-[#090c11] rounded-lg w-full h-[2rem] sm:h-[2.5rem]  flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
               <span className="text-gray-300 ml-2 sm:ml-3 text-[.5rem] sm:text-[.6rem] font-mono pr-8 leading-tight">
                 <span
                   className="block overflow-hidden"

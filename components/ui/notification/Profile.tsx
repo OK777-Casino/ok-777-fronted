@@ -101,7 +101,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
         }}
       >
-        <X size={16} className="text-[#A7B5CA]" />
+        <X size={16} className="text-[var(--casper)]" />
       </div>
       {/* User Profile Section */}
       <div className="p-4 lg:p-4 pt-5 lg:pt-4 flex flex-col items-center lg:justify-start lg:min-h-0">
@@ -118,7 +118,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
               <div className="absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 z-10">
                 <div
                   className="h-5 px-2 flex items-center justify-center rounded-2xl border border-white shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
-                  style={{ backgroundColor: '#1BB83D' }}
+                  style={{ backgroundColor: 'var(--malachite)' }}
                 >
                   <span className="text-white text-xs font-bold whitespace-nowrap">
                     VIP 1
@@ -152,7 +152,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
               <div className="relative w-full h-2 rounded-lg">
                 <div
                   className="w-[116px] h-full border border-white-4 rounded-lg"
-                  style={{ backgroundColor: '#ED1D49' }}
+                  style={{ backgroundColor: 'var(--crimson)' }}
                 ></div>
                 <div className="absolute right-1 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
                   <img
@@ -174,7 +174,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           {/* Bonus Code Header */}
           <div className="flex items-center gap-2 mb-4">
             <PriceTagIcon className="w-4 h-4" />
-            <span className="text-sm font-bold" style={{ color: '#A7B5CA' }}>
+            <span className="text-sm font-bold" style={{ color: 'var(--casper)' }}>
               Bonus code
             </span>
           </div>
@@ -187,7 +187,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
               onChange={e => setBonusCode(e.target.value)}
               placeholder="Enter bonus code"
               className="flex-1 text-gallery bg-transparent text-xs border-none outline-none px-3 w-[30px] placeholder:text-blue-bayoux"
-              style={{ color: '#55657E' }}
+              style={{ color: 'var(--blue-bayoux)' }}
             />
             <FlatButton className="text-xs font-bold h-9 px-4">
               <span>Send</span>
@@ -208,7 +208,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                 key={index}
                 className={`flex items-center gap-2 h-12 px-4 rounded-lg text-casper transition-colors group backdrop-blur-[32px] ${
                   isActive
-                    ? 'bg-[#8B5CF6]/20 border border-[#8B5CF6]/30'
+                    ? 'bg-[var(--chip-purple)]/20 border border-[var(--chip-purple)]/30'
                     : 'hover:bg-white/5'
                 }`}
               >
@@ -225,7 +225,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                   className={`flex items-center gap-2 text-left text-sm font-bold transition-colors ${
                     isActive
                       ? 'text-white'
-                      : 'text-[#A7B5CA] group-hover:text-white'
+                      : 'text-[var(--casper)] group-hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -233,7 +233,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                     <div
                       className=" rounded-md px-1.5 py-0.5 shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
                       style={{
-                        backgroundColor: '#1BB83D',
+                        backgroundColor: 'var(--malachite)',
                       }}
                     >
                       <span className="text-white text-xs font-bold">
@@ -260,7 +260,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           <DockRightArrowIcon />
           <span
             className="flex-1 text-left text-sm font-bold group-hover:text-white transition-colors"
-            style={{ color: '#A7B5CA' }}
+            style={{ color: 'var(--casper)' }}
           >
             Log out
           </span>
