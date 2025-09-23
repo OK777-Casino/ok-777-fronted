@@ -11,10 +11,8 @@ import YouTubeIcon from '@/components/ui/icons/YouTubeIcon'
 import DiscordIcon from '@/components/ui/icons/DiscordIcon'
 import TikTokIcon from '@/components/ui/icons/TikTokIcon'
 import TelegramIcon from '@/components/ui/icons/TelegramIcon'
-import { useI18n } from '@/context/I18nProvider'
 
 const InviteFriends: React.FC = () => {
-  const { t } = useI18n()
   const faqs = [
     {
       question: 'How to activate a wallet address?',
@@ -37,18 +35,16 @@ const InviteFriends: React.FC = () => {
     <div className="flex-1 lg:p-4">
       {/* Header Section */}
       <div className="mb-8 [@media(max-width:1024px)]:hidden">
-        <h1 className="text-[1.125rem] font-bold text-white">
-          {t('alliance.inviteFriends')}
-        </h1>
+        <h1 className="text-[1.125rem] font-bold text-white">Invite Friends</h1>
         <div className=" bg-[linear-gradient(170deg,#ED1D49_5%,#111923_90%)] rounded-[0.75rem] p-10  text-left h-[7.1875rem] relative overflow-hidden">
           <img
             src="/images/banner/invite-banner.png"
             className="w-[81%] h-full center absolute top-0 left-1/2 transform -translate-x-1/2  "
             alt=""
           />
-          {/* <span className="text-white text-[1.125rem] font-bold relative z-10">
+          <span className="text-white text-[1.125rem] font-bold relative z-10">
             Invite friends
-          </span> */}
+          </span>{' '}
         </div>
       </div>
 
@@ -56,18 +52,18 @@ const InviteFriends: React.FC = () => {
       <div className="grid grid-cols-2 gap-4 mb-4 [@media(max-width:1500px)]:grid-cols-1">
         <div className="bg-[#FFFFFF0A] rounded-[0.75rem] p-5 ">
           <label className="block text-white text-[0.875rem] font-bold">
-            {t('alliance.referralLink')}
+            Referral link
           </label>
           <div className="flex items-center gap-3">
             <CopyBox className="w-full bg-white-8 h-12">
-              https://ok777.io/?AgentCode=330395
+              https://magic88.game/?AgentCode=330395
             </CopyBox>
           </div>
         </div>
 
         <div className="bg-[#FFFFFF0A] rounded-[0.75rem] p-5 ">
           <label className="block text-white text-sm font-bold mb-3">
-            {t('alliance.referralCode')}
+            Referral code
           </label>
           <div className="flex items-center gap-3">
             <CopyBox className="w-full bg-white-8 h-12">330395</CopyBox>
@@ -80,7 +76,7 @@ const InviteFriends: React.FC = () => {
         {/* Left Card: Share via Social Media */}
         <div className="bg-white-4 rounded-[0.75rem] p-5  [@media(max-width:375px)]:p-2">
           <h3 className="text-gray-300 text-[0.875rem] font-bold mb-4">
-            {t('alliance.shareMedia')}
+            Share via social media
           </h3>
           <div className=" flex justify-around">
             <BlackButton>
@@ -114,32 +110,30 @@ const InviteFriends: React.FC = () => {
             <div className=" block text-center m-t items-center">
               <div className="text-[0.875rem] font-bold text-white mb-1">0</div>
               <div className="text-gray-300 text-[.8rem]">
-                {t('alliance.newSibordinates')}
+                New direct subordinates
               </div>
             </div>
             {/* Top Right */}
             <div className=" block text-center m-t items-center">
               <div className="text-[0.875rem] font-bold text-white mb-1">0</div>
               <div className="text-gray-300 text-[.8rem]">
-                {t('alliance.directSibordinates')}
+                Direct subordinates
               </div>
             </div>
             {/* Bottom Left */}
             <div className=" block text-center m-t items-center">
-              <div className="text-[0.875rem] font-bold text-dodger-blue mb-1">
+              <div className="text-[0.875rem] font-bold text-[#0C60FF] mb-1">
                 0
               </div>
-              <div className="text-gray-300 text-[.8rem]">
-                {t('alliance.newTotalTeamMember')}
-              </div>
+              <div className="text-gray-300 text-[.8rem]">New team member</div>
             </div>
             {/* Bottom Right */}
             <div className=" block text-center m-t items-center">
-              <div className="text-[0.875rem] font-bold text-dodger-blue mb-1">
+              <div className="text-[0.875rem] font-bold text-[#0C60FF] mb-1">
                 0
               </div>
               <div className="text-gray-300 text-[.8rem]">
-                {t('alliance.totalTeamMember')}
+                Total team member
               </div>
             </div>
           </div>
@@ -150,23 +144,23 @@ const InviteFriends: React.FC = () => {
       <div className="mb-8 bg-[#FFFFFF0A] rounded-[12px] p-5 ">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-[0.875rem] font-bold text-white">
-            {t('alliance.commissionRewards')}
+            Commission Rewards
           </h3>
           <a
             href="#"
             className="text-[#2283F6] hover:underline font-bold text-[0.875rem]"
           >
-            {t('alliance.details')}
+            Details
           </a>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex justify-between w-full bg-[#FFFFFF14] rounded-[12px] p-2 pr-4 pl-4 ">
             <div className="flex items-center gap-3">
               <img src="/icons/coin-icon/USDT.svg" alt="coin w-6 h-6" />
-              <span className="text-[12px] text-dodger-blue font-bold">0</span>
+              <span className="text-[12px] text-[#2283F6] font-bold">0</span>
             </div>
             <FlatButton className="px-6 py-3 text-[12px] font-bold">
-              {t('alliance.inviteFriends')}
+              Claim
             </FlatButton>
           </div>
         </div>

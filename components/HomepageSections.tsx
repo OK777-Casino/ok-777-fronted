@@ -14,7 +14,6 @@ const SectionHeader: React.FC<{
   alt: string
   count?: number
 }> = ({ icon, title, alt, count }) => {
-  const { t } = useI18n()
   return (
     <div className="flex items-center justify-between mb-4">
       <h2 className="text-4.5 font-bold flex items-center text-white gap-2">
@@ -23,9 +22,7 @@ const SectionHeader: React.FC<{
       </h2>
       {count && (
         <span className="cursor-pointer font-bold flex items-center text-[14px] text-[#2283F6]">
-          <span>
-            {t('app.all')} {count}
-          </span>
+          <span>ALL {count}</span>
         </span>
       )}
     </div>
@@ -46,7 +43,7 @@ type GameBreakpointsTwoRows = {
   }
 }
 
-export const GameBreakpoints: GameBreakpointsProps = {
+const GameBreakpoints: GameBreakpointsProps = {
   320: { slidesPerView: 3.3 },
   375: { slidesPerView: 3.3 },
   425: { slidesPerView: 3.3 },
@@ -124,11 +121,11 @@ export const HomepageSections: React.FC<{
         />
         <SwiperSlider
           key="homepage-new-launches-swiper"
-          autoplay={false}
+          autoplayDelay={1000000}
           data={card1}
           renderSlide={(card, index) => <CasinoCard {...card} />}
-          slidesPerView={10}
-          spaceBetween={6}
+          slidesPerView={7}
+          spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
         />
@@ -153,7 +150,7 @@ export const HomepageSections: React.FC<{
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -175,7 +172,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={HashBreakpoints}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -198,7 +195,7 @@ export const HomepageSections: React.FC<{
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -206,7 +203,7 @@ export const HomepageSections: React.FC<{
       <div className="lg:mb-16 mb-8">
         <SectionHeader
           icon="/icons/Futures1.svg"
-          title={t('games.pfFutures')}
+          title="P/F Futures"
           alt="future"
           count={card4.length}
         />
@@ -220,7 +217,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={FutureBreakpoints}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -242,7 +239,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -264,7 +261,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
 
@@ -286,7 +283,7 @@ export const HomepageSections: React.FC<{
           spaceBetween={12}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
-          autoplay={false}
+          autoplayDelay={1000000}
         />
       </div>
     </>

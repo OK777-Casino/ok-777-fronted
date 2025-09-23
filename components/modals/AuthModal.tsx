@@ -75,6 +75,7 @@ export default function AuthModal() {
   const [isVisible, setIsVisible] = useState(false)
   const [shouldRender, setShouldRender] = useState(false)
 
+
   const login = () => {
     if (email === 'dev.com@gmail.com' && password === '123') {
       setAuthUser(email)
@@ -184,7 +185,7 @@ export default function AuthModal() {
               </div>
               <div
                 onClick={() => setIsLogin(false)}
-                className={`flex-1 py-4 px-3 text-center text-sm font-bold transition-colors cursor-pointer ${
+                className={`flex-1 py-4 px-3 text-center   text-sm font-bold transition-colors cursor-pointer ${
                   !isLogin
                     ? 'text-gallery border-b-2 border-dodger-blue'
                     : 'text-casper'
@@ -229,7 +230,7 @@ export default function AuthModal() {
                     placeholder={
                       !isLogin && password
                         ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
-                        : t('auth.passPlaceholder')
+                        : 'Enter your password'
                     }
                     className={`w-full h-12 px-4 pt-2 pr-12 bg-deep-blue rounded-xl text-sm focus:outline-none ${
                       !isLogin && password
@@ -265,7 +266,7 @@ export default function AuthModal() {
                     onClick={() => setShowReferral(!showReferral)}
                     className="flex items-center text-dodger-blue text-sm font-bold cursor-pointer"
                   >
-                    <span>{t('alliance.referralCode')}</span>
+                    <span>{t('auth.referralCode')}</span>
                     <ChevronDown size={20} className="ml-1" />
                   </div>
                   {showReferral && (
@@ -283,7 +284,7 @@ export default function AuthModal() {
               {/* Registration Checkboxes */}
               {!isLogin && (
                 <div className="mb-6 space-y-2">
-                  <label className="flex items-center gap-3 cursor-pointer">
+                  <label className="flex items-start gap-3">
                     <div className="relative mt-0.5">
                       <input
                         type="checkbox"
@@ -321,7 +322,7 @@ export default function AuthModal() {
                     </span>
                   </label>
 
-                  <label className="flex items-center gap-3 cursor-pointer">
+                  <label className="flex items-start gap-3">
                     <div className="relative mt-0.5">
                       <input
                         type="checkbox"
@@ -370,7 +371,7 @@ export default function AuthModal() {
                 type="red"
                 className="w-full h-11 text-[14px] font-bold text-white"
               >
-                {isLogin ? t('auth.signIn') : t('auth.signOut')}
+                {isLogin ? 'LOG IN' : 'REGISTER'}
               </TDButton>
 
               {/* Spacer */}
@@ -378,10 +379,10 @@ export default function AuthModal() {
 
               {/* Social Login */}
               <div className="space-y-4">
-                <div className="flex items-center gap-3 cursor-pointer">
+                <div className="flex items-center gap-3">
                   <div className="flex-1 h-px bg-[#3C485C]" />
                   <span className="text-sm text-[#A7B5CA]">
-                    <span>{t('auth.logInUsing')}</span>
+                    <span>Log in using</span>
                   </span>
                   <div className="flex-1 h-px bg-[#3C485C]" />
                 </div>
@@ -404,7 +405,7 @@ export default function AuthModal() {
 
         {/* Mobile Layout */}
         <div
-          className="sm:hidden animation-fade-in absolute top-0 h-full w-full max-w-md mx-auto bg-[#111923] overflow-x-hidden overflow-y-auto modal-content-scroll"
+          className="lg:hidden animation-fade-in absolute top-0 h-full w-full max-w-md mx-auto bg-[#111923] overflow-x-hidden overflow-y-auto modal-content-scroll"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {/* Blue Gradient Background */}
@@ -450,7 +451,7 @@ export default function AuthModal() {
               <div className="flex rounded-xl p-1">
                 <div
                   onClick={() => setIsLogin(true)}
-                  className={`flex-1 py-4 px-3 text-sm font-bold transition-colors text-center cursor-pointer ${
+                  className={`flex-1 py-4 px-3 text-sm font-bold transition-colors cursor-pointer ${
                     isLogin
                       ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
                       : 'text-[#A7B5CA]'
@@ -460,7 +461,7 @@ export default function AuthModal() {
                 </div>
                 <div
                   onClick={() => setIsLogin(false)}
-                  className={`flex-1 py-4 px-3 text-sm font-bold transition-colors text-center cursor-pointer ${
+                  className={`flex-1 py-4 px-3 text-sm font-bold transition-colors cursor-pointer ${
                     !isLogin
                       ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
                       : 'text-[#A7B5CA]'
@@ -474,14 +475,14 @@ export default function AuthModal() {
               <div className="relative">
                 <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
                   <span className="text-xs text-[#93ACD3]">
-                    <span>{t('auth.usernameEmail')}</span>
+                    <span>Username / email</span>
                   </span>
                 </div>
                 <input
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  placeholder={t('auth.userEmailPlaceholder')}
+                  placeholder="Enter your username or email."
                   className="w-full h-12 px-4 pt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
                 />
               </div>
@@ -489,9 +490,7 @@ export default function AuthModal() {
               {/* Password Input */}
               <div className="relative">
                 <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
-                  <span className="text-xs text-[#93ACD3]">
-                    {t('settings.password')}
-                  </span>
+                  <span className="text-xs text-[#93ACD3]">Password</span>
                 </div>
                 <input
                   type={showPassword ? 'text' : 'password'}
@@ -500,7 +499,7 @@ export default function AuthModal() {
                   placeholder={
                     !isLogin && password
                       ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
-                      : t('auth.passPlaceholder')
+                      : 'Enter your password'
                   }
                   className={`w-full h-12 px-4 pt-2 pr-12 bg-[#0D131C] rounded-xl text-sm focus:outline-none ${
                     !isLogin && password
@@ -527,7 +526,7 @@ export default function AuthModal() {
                       onClick={() => setShowReferral(!showReferral)}
                       className="flex items-center justify-between w-full text-[#2283F6] text-sm font-bold py-2 cursor-pointer"
                     >
-                      <span>{t('alliance.referralCode')}</span>
+                      <span>{t('auth.referralCode')}</span>
                       <ChevronDown size={20} />
                     </div>
                   )}
@@ -547,12 +546,12 @@ export default function AuthModal() {
                     type="red"
                     onClick={register}
                   >
-                    {t('auth.register')}
+                    REGISTER
                   </TDButton>
 
                   {/* Checkboxes */}
                   <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer">
+                    <label className="flex items-start gap-3">
                       <div className="relative mt-0.5">
                         <input
                           type="checkbox"
@@ -590,7 +589,7 @@ export default function AuthModal() {
                       </span>
                     </label>
 
-                    <label className="flex items-center gap-3 cursor-pointer">
+                    <label className="flex items-start gap-3">
                       <div className="relative mt-0.5">
                         <input
                           type="checkbox"
@@ -638,7 +637,7 @@ export default function AuthModal() {
               {isLogin && (
                 <>
                   <TDButton className="!w-full h-11" type="red" onClick={login}>
-                    {t('auth.login')}
+                    LOG IN
                   </TDButton>
                 </>
               )}
@@ -646,7 +645,7 @@ export default function AuthModal() {
 
             {/* Social Login */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 cursor-pointer">
+              <div className="flex items-center gap-3">
                 <div className="flex-1 h-px bg-[#3C485C]" />
                 <span className="text-sm text-[#A7B5CA]">Log in using</span>
                 <div className="flex-1 h-px bg-[#3C485C]" />

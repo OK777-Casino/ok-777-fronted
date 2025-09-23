@@ -1,6 +1,12 @@
 'use client'
 
 import React, { useEffect, useMemo, useState, Suspense } from 'react'
+import InviteFriends from '@/features/alliance/components/InviteFriends'
+import Management from '@/features/alliance/components/Management'
+import Performance from '@/features/alliance/components/Performance'
+import Report from '@/features/alliance/components/Report'
+import Introduction from '@/features/alliance/components/Introduction'
+import AllianceBottomBar from '@/features/alliance/components/AllianceBottomBar'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Deposit from '@/features/wallet/components/Deposit'
 import Withdraw from '@/features/wallet/components/Withdraw'
@@ -15,10 +21,8 @@ import ReceiptIcon from '@/components/ui/icons/receipt'
 import MedalStarAlt2Icon from '@/components/ui/icons/medal-star-alt-2'
 import DoughnutChartIcon from '@/components/ui/icons/doughnut-chart'
 import WalletBottomBar from '@/features/wallet/components/WalletBottomBar'
-import { useI18n } from '@/context/I18nProvider'
 
 function WalletPageContent() {
-  const { t } = useI18n()
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -138,10 +142,8 @@ function WalletPageContent() {
 
 // Wrapper component with Suspense boundary
 export default function WalletPage() {
-  const { t } = useI18n()
-
   return (
-    <Suspense fallback={<div>{t('app.loading')}</div>}>
+    <Suspense fallback={<div>Loading wallet...</div>}>
       <WalletPageContent />
     </Suspense>
   )

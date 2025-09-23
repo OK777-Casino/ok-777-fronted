@@ -251,6 +251,7 @@ export default function GameSearchModal({
   const { t } = useI18n()
   const [sidebarOffset, setSidebarOffset] = useState(0)
 
+
   useEffect(() => {
     if (!isOpen) return
     const updateOffset = () => {
@@ -302,10 +303,10 @@ export default function GameSearchModal({
     <ModalContainer
       isOpen={isOpen}
       onClose={onClose}
-      title={t('app.search')}
+      title="Favourites"
       size="xl"
       position="responsive"
-      className="max-w-6xl"
+      className="max-w-5xl"
       fullHeight={true}
     >
       {/* Search and filters */}
@@ -405,7 +406,7 @@ export default function GameSearchModal({
       </div>
 
       {/* Game Categories - Now with background changes when selected */}
-      <div className="flex flex-wrap items-center gap-2 overflow-x-auto pb-2">
+      <div className="flex flex-wrap items-center gap-1 overflow-x-auto pb-2">
         {gameCategories.map(category => (
           <div
             key={category.id}

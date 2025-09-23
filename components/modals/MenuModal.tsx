@@ -116,6 +116,7 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
   const { openRuleModal } = useModal()
   const { t } = useI18n()
 
+
   const menuItems = [
     {
       id: 'favorite',

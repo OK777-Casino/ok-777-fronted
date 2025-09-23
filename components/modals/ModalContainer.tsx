@@ -110,7 +110,7 @@ export default function ModalContainer({
     >
       <div
         className={cn(
-          'modal-content-scroll max-w-6xl',
+          'modal-content-scroll w-[-webkit-fill-available]',
           'relative z-[10001] mx-auto',
           // Position logic: responsive should be bottom on mobile, center on desktop
           position === 'responsive'
@@ -132,13 +132,14 @@ export default function ModalContainer({
                 : 'translate-y-8',
           // Mobile: full width, Desktop: use size classes or custom width
           position === 'responsive' || position === 'bottom'
-            ? 'w-full sm:w-full'
+            ? 'w-full sm:w-auto'
             : width
               ? ''
               : sizeClasses[size],
           className
         )}
         style={{
+          width: '-webkit-fill-available',
           maxHeight: '-webkit-fill-available', // Ensure modal doesn't exceed viewport height
         }}
         onClick={e => e.stopPropagation()}

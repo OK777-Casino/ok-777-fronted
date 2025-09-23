@@ -13,6 +13,7 @@ export default function ChangeGameModal({
   isOpen,
   onClose,
 }: ChangeGameModalProps) {
+
   const handleGameSelect = (gameId: string) => {
     console.log(`Selected game: ${gameId}`)
     // Here you can add navigation logic to the selected game

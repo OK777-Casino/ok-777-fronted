@@ -12,7 +12,6 @@ import WhatsAppIcon from '@/components/ui/icons/WhatsAppIcon'
 import { FAQ } from '@/features/alliance/components'
 import ModalContainer from '@/components/modals/ModalContainer'
 import TelegramIcon from '@/components/ui/icons/TelegramIcon'
-import { useI18n } from '@/context/I18nProvider'
 
 const data = [1, 2, 3, 4, 5]
 const faq = [
@@ -105,11 +104,10 @@ const vips = {
 }
 
 const VipClubPage = () => {
-  const { t } = useI18n()
   const swiperRef = useRef<SwiperType | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
-    <div className="flex flex-col gap-8 max-w-6xl p-2 m-auto">
+    <div className="flex flex-col gap-8 max-w-7xl p-2 m-auto">
       <div className="bg-[linear-gradient(#003F70,#0078D6)] relative overflow-hidden rounded-[0.75rem] border-[0.0625rem] border-white-13 gap-6 py-8 px-6 flex items-center">
         <img
           src="/images/awards/Silver.svg"
@@ -128,26 +126,23 @@ const VipClubPage = () => {
 
             <div className="w-full flex flex-col justify-center ">
               <span className="text-casper text-[0.75rem] font-medium block">
-                {t('vip.silver')}
+                Silver
               </span>
               <span className="bg-[linear-gradient(#686150,#CFC8B5,#696150)] block text-[1.5rem] font-bold bg-clip-text text-transparent">
-                {t('vip.vip4')}
+                VIP 4
               </span>
               <span
-                className="font-medium text-[0.75rem] text-white flex items-center cursor-pointer"
+                className="lg:hidden font-medium text-[0.75rem] text-white flex items-center cursor-pointer"
                 onClick={() => setIsModalOpen(true)}
               >
-                <span>{t('vip.upgradeDetails')} </span>
-                <span>
-                  <ChevronRightIcon className="w-6 h-6" />
-                </span>
+                Upgrade details <ChevronRightIcon className="w-6 h-6" />
               </span>
             </div>
           </div>
-          <div className="flex gap-4 w-full">
+          <div className="flex gap-6 w-full">
             <div className="flex flex-col gap-2 w-full">
               <span className="font-bold text-[0.875rem] text-white">
-                {t('vip.currentDeposits')}
+                Current deposits
               </span>
               <div className="bg-white-4 rounded-full h-[0.375rem]">
                 <div className="w-[10%] bg-french-rose h-full rounded-full" />
@@ -158,7 +153,7 @@ const VipClubPage = () => {
             </div>
             <div className="flex flex-col gap-2 w-full">
               <span className="font-bold text-[14px] text-white">
-                {t('vip.currentIncomes')}
+                Current incomes
               </span>
               <div className="bg-white-4 rounded-full h-[6px]">
                 <div className="w-[10%] bg-french-rose h-full rounded-full" />
@@ -178,7 +173,7 @@ const VipClubPage = () => {
       <div>
         <div className="flex items-center justify-between">
           <h2 className="text-4.5 font-bold text-white mb-4 flex gap-2">
-            {t('vip.levelSystem')}
+            VIP system level
           </h2>
           <div className="flex justify-end mb-4">
             <div
@@ -204,7 +199,7 @@ const VipClubPage = () => {
                 className="rounded-[12px] overflow-hidden p-4 bg-white-4 hover:bg-white-8 flex flex-col gap-3"
               >
                 <div
-                  className="flex gap-4 items-start justify-center"
+                  className="flex gap-4 items-start"
                   onClick={() => setIsModalOpen(true)}
                 >
                   <img
@@ -215,14 +210,14 @@ const VipClubPage = () => {
                   <div>
                     <div className="flex gap-2">
                       <span className="uppercase font-bold text-[14px] text-white">
-                        {t('vip.vip')}
+                        vip
                       </span>
                       <span className="font-bold text-[14px] text-dodger-blue">
                         1-3
                       </span>
                     </div>
                     <span className="text-casper font-medium text-[14px]">
-                      {t('vip.bronze')}
+                      Bronze
                     </span>
                   </div>
                   <div className="flex items-start h-full">
@@ -233,7 +228,7 @@ const VipClubPage = () => {
                   <img src="/images/awards/image.svg" className="h-10" alt="" />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-bold text-white">
-                      {t('vip.rebateRatio')}
+                      Discount rate
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
@@ -247,7 +242,7 @@ const VipClubPage = () => {
                   />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-bold text-white">
-                      {t('vip.upgradeBonus')}
+                      Discount rate
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
@@ -261,7 +256,7 @@ const VipClubPage = () => {
                   />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-bold text-white">
-                      {t('vip.monthlyGiftMoney')}
+                      Discount rate
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
@@ -275,12 +270,10 @@ const VipClubPage = () => {
                   />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-bold text-white">
-                      {t('vip.freeWithdrawal')}
+                      Free withdrawal
                     </span>
                     <span className="text-[14px] text-casper">
-                      {t('vip.theFirst')}
-                      <b className="text-malachite">3</b>
-                      {t('vip.timesFree')}
+                      The first <b className="text-malachite">3</b> times free
                     </span>
                   </div>
                   <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
@@ -313,10 +306,11 @@ const VipClubPage = () => {
         <div className="relative w-full h-full flex-col lg:flex-row 2xl:p-8 gap-8 z-[99] items-center flex justify-between">
           <div className="flex flex-col 2xl:w-[250px] gap-2 2xl:bg-mirage bg-white-4 p-4 rounded-[12px]">
             <span className="text-[14px] font-bold text-white">
-              {t('vip.stayConnected')}
+              The relationship is still there!
             </span>
             <p className="text-casper text-[14px]">
-              {t('vip.stayConnectedDescription')}
+              Stay tuned for special offers and the latest news. If you have any
+              questions, please contact our customer service team.
             </p>
           </div>
           <img
@@ -331,7 +325,7 @@ const VipClubPage = () => {
                   <HeadphoneMicIcon className="w-4 h-4" />
                 </div>
                 <span className="text-casper font-bold text-[14px]">
-                  24/7 {t('help.onlineService')}
+                  24/7 online customer service
                 </span>
               </div>
               <ArrowUpRightStrokeIcon className="w-6 h-6 text-casper" />
@@ -353,7 +347,7 @@ const VipClubPage = () => {
                   <WhatsAppIcon className="w-4 h-4" color="#1BB83D" />
                 </div>
                 <span className="text-casper font-bold text-[14px]">
-                  WhatsApp
+                  WhatsApp Customer Service
                 </span>
               </div>
               <ArrowUpRightStrokeIcon className="w-6 h-6 text-casper" />

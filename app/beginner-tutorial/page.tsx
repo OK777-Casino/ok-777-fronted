@@ -194,12 +194,11 @@ const BeginnerTutorialPage = () => {
 
   return (
     <>
-      <div className="flex flex-col max-w-6xl mx-auto gap-6">
-        <div className="rounded-[0.75rem] h-[14.49375rem] overflow-hidden 2xl:mt-4 relative bg-center bg-cover">
+      <div className="max-w-7xl mx-auto flex flex-col 2xl:gap-16 gap-4">
+        <div className="rounded-[0.75rem]  h-[14.49375rem] overflow-hidden 2xl:mt-4  relative bg-center bg-cover">
           <img
             src="/images/block-coin.png"
             className="w-full absolute   h-full z-[1] object-cover grayscale"
-            alt=""
           />
           <div className="w-full absolute bg-[radial-gradient(circle,_#f2f2f2_0.125rem,_transparent_0.125rem)] [background-size:1.875rem_1.875rem]  h-full z-[2] " />
 
