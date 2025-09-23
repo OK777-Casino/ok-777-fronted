@@ -2,18 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import React, { useState } from 'react'
-
-import {
-  Wallet,
-  ArrowUpDown,
-  Grid3X3,
-  Menu,
-  User,
-  Copy,
-  ArrowLeft,
-  Check,
-  ZoomIn,
-} from 'lucide-react'
+import { Menu, Copy, Check } from 'lucide-react'
 import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
 import MenuModal from '@/components/modals/MenuModal'
 import { useModal } from '@/context/ModalProvider'
@@ -21,33 +10,26 @@ import Link from 'next/link'
 import GameHistoryTable from '@/components/ui/GameHistoryTable'
 import { useSidebar } from '@/context/SidebarProvider'
 
-interface DefaultPageLayoutProps {
+interface PageBettingLayoutProps {
   children: React.ReactNode
 }
 
-const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({ children }) => {
-  const { isCollapsed } = useSidebar()
-  const { openChangeGameModal } = useModal()
-  const [activeTab, setActiveTab] = useState<'Active' | 'Default'>('Active')
-
+const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
+  const [isBeginnerMode, setIsBeginnerMode] = useState(false)
+  const { openChangeGameModal } = useModal()
+  const { isCollapsed } = useSidebar()
 
   const handleCloseMenuModal = () => {
     setIsMenuModalOpen(false)
   }
-
-  const [isBeginnerMode, setIsBeginnerMode] = useState(false)
-
   const handleMenuClick = () => {
     setIsMenuModalOpen(true)
   }
-
-  // Mock data for lottery trend
-
   return (
     <>
       <div
-        className={`flex flex-col items-center min-h-screen gap-4 md:gap-16 py-16 hash-game-container mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`max-w-6xl flex flex-col items-center p-2 gap-4 md:gap-8 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header with Segmented Control */}
         <div className="w-full flex flex-col items-center gap-4 p-0 ">
@@ -139,7 +121,7 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({ children }) => {
           <div className="bg-[#72707038] rounded-lg w-full  p-1 hidden [@media(max-width:768px)]:flex ">
             <Link
               href="/hashgames/bankerplayer/transfer-betting"
-              className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+              className={` w-[50%] justify-center flex items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
               <img
@@ -150,7 +132,7 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({ children }) => {
               Transfer betting
             </Link>
             <div
-              className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+              className={` w-[50%] justify-center flex items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
             >
               {' '}
               <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
@@ -158,45 +140,8 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({ children }) => {
             </div>
           </div>
 
-          {/* Block Information */}
-          <div
-            className="flex min-h-[80px] md:h-[100px] relative p-4 justify-center items-center gap-2 md:gap-4 w-full  rounded-xl  overflow-hidden"
-            style={{
-              background:
-                "url('https://api.builder.io/api/v1/image/assets/TEMP/35f26e9aa061258b5e5f2783c73faff4c656c9a3?width=740') lightgray 50% / cover no-repeat, #111923",
-              backgroundBlendMode: 'hard-light, normal',
-            }}
-          >
-            <img
-              src="/images/hashgame.jpg"
-              className="absolute rounded-[14px] top-0 z-1 left-0 w-full h-full"
-            />
-            <div className="flex relative z-5 flex-col justify-center items-center gap-1  flex-1">
-              <span className="text-xs md:text-sm font-bold text-casper">
-                Current block
-              </span>
-              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
-                <Copy className="w-4 h-4 text-casper" />
-                <span className="text-xs md:text-sm font-bold text-casper">
-                  73852830
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col relative z-5 justify-center items-center gap-1 flex-1">
-              <span className="text-xs md:text-sm font-bold text-casper">
-                Next block
-              </span>
-              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
-                <Copy className="w-4 h-4 text-dodger-blue" />
-                <span className="text-xs md:text-sm font-bold text-dodger-blue">
-                  73872867
-                </span>
-              </div>
-            </div>
-          </div>
-
           {/* Betting Limit and Toggle */}
-          <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-2 sm:gap-0">
+          <div className="flex flex-row lg:flex-col justify-between items-center w-full gap-2 sm:gap-0">
             <div className="text-sm font-bold">
               <span className="text-white">Limit </span>
               <span className="text-dodger-blue">1-15000</span>
@@ -239,10 +184,45 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({ children }) => {
               </span>
             </div>
           </div>
+
+          {/* Block Information */}
+          <div
+            className="flex min-h-[80px] md:h-[100px] relative p-4 justify-center items-center gap-2 md:gap-4 w-full  rounded-xl  overflow-hidden"
+            style={{
+              background:
+                "url('https://api.builder.io/api/v1/image/assets/TEMP/35f26e9aa061258b5e5f2783c73faff4c656c9a3?width=740') lightgray 50% / cover no-repeat, #111923",
+              backgroundBlendMode: 'hard-light, normal',
+            }}
+          >
+            <img
+              src="/images/hashgame.jpg"
+              className="absolute rounded-[14px] top-0 z-1 left-0 w-full h-full"
+            />
+            <div className="flex relative z-5 flex-col justify-center items-center gap-1  flex-1">
+              <span className="text-xs md:text-sm font-bold text-casper">
+                Current block
+              </span>
+              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
+                <Copy className="w-4 h-4 text-casper" />
+                <span className="text-xs md:text-sm font-bold text-casper">
+                  73852830
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col relative z-5 justify-center items-center gap-1 flex-1">
+              <span className="text-xs md:text-sm font-bold text-casper">
+                Next block
+              </span>
+              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
+                <Copy className="w-4 h-4 text-dodger-blue" />
+                <span className="text-xs md:text-sm font-bold text-dodger-blue">
+                  73872867
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-
         {children}
-
         {/* Betting Controls */}
         <ResponsiveChipSelector />
 
@@ -298,4 +278,4 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({ children }) => {
   )
 }
 
-export default DefaultPageLayout
+export default PageBettingLayout

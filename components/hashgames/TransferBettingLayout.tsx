@@ -1,248 +1,24 @@
 'use client'
-import { cn } from '@/lib/utils'
 
-import { ResponsiveChipSelector } from '@/components/ui/chipSelector/ResponsiveChipSelector'
+import React, { useState } from 'react'
 import MenuModal from '@/components/modals/MenuModal'
 import Link from 'next/link'
 import { useSidebar } from '@/context/SidebarProvider'
-import React, { useState } from 'react'
+import { CopyBox } from '@/components/ui/CopyBox'
+import { board } from './mockboard'
 
-import {
-  Wallet,
-  ArrowUpDown,
-  Grid3X3,
-  Menu,
-  User,
-  Copy,
-  ArrowLeft,
-  Check,
-  ZoomIn,
-} from 'lucide-react'
-
-interface HashTemplateProps {
-  type: 'active' | 'default'
-}
-
-const OddDefault: React.FC = () => {
+const TransferBettingLayout: React.FC = () => {
   const { isCollapsed } = useSidebar()
-  const [activeTab, setActiveTab] = useState<'Active' | 'Default'>('Active')
-  const isActive = activeTab === 'Active'
   const [difficulty, setDifficulty] = useState<'Beginner' | 'Intermediate'>(
     'Beginner'
   )
-  const [trendTab, setTrendTab] = useState<'Block Trend' | 'My trend'>(
-    'Block Trend'
-  )
 
-  const [isBeginnerMode, setIsBeginnerMode] = useState(false)
-  const [selectedChip, setSelectedChip] = useState<number | null>(1)
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
-
-  const handleMenuClick = () => {
-    setIsMenuModalOpen(true)
-  }
 
   const handleCloseMenuModal = () => {
     setIsMenuModalOpen(false)
   }
 
-  // Mock data for lottery trend
-
-  const board: (string | null)[][] = [
-    // Each row = array of cells: "E", "O", or null for empty
-    [
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-    ],
-    [
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-    ],
-    [
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-    ],
-    [
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'O',
-      'O',
-      'E',
-      'O',
-      'E',
-      'E',
-    ],
-    [
-      'E',
-      null,
-      'E',
-      null,
-      null,
-      'E',
-      null,
-      'O',
-      null,
-      null,
-      'E',
-      null,
-      null,
-      'E',
-      null,
-      null,
-      'O',
-      null,
-      null,
-      'E',
-      null,
-      null,
-      'O',
-      null,
-      null,
-      'E',
-      null,
-      null,
-      'O',
-      null,
-    ],
-    [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-    ],
-  ]
   const GameBoard = ({ board }: { board: (string | null)[][] }) => {
     return (
       <div className=" rounded-lg w-full mb-4">
@@ -270,185 +46,10 @@ const OddDefault: React.FC = () => {
     )
   }
 
-  const ChipSVG: React.FC<{
-    value?: number
-    label?: string
-    color: string
-    selected?: boolean
-    onClick?: () => void
-    sizePx?: number
-  }> = ({ value, label, color, selected = false, onClick, sizePx = 64 }) => {
-    const display = label ?? (value != null ? String(value) : '')
-    const textLines = display.split('\n')
-    const darkStroke = '#0B1220'
-    return (
-      <div
-        onClick={onClick}
-        aria-pressed={selected}
-        className={`relative inline-flex items-center justify-center rounded-full transition-transform active:scale-95`}
-        style={{ width: sizePx, height: sizePx }}
-      >
-        <svg
-          width={sizePx}
-          height={sizePx}
-          viewBox="0 0 100 100"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <radialGradient id="baseGrad" cx="35%" cy="30%" r="70%">
-              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.18" />
-              <stop offset="60%" stopColor={color} stopOpacity="1" />
-              <stop offset="100%" stopColor={color} stopOpacity="1" />
-            </radialGradient>
-            <linearGradient id="innerSheen" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1A2640" stopOpacity="0.0" />
-              <stop offset="100%" stopColor="#0F1722" stopOpacity="0.55" />
-            </linearGradient>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur
-                in="SourceGraphic"
-                stdDeviation="3"
-                result="blur"
-              />
-            </filter>
-          </defs>
-
-          {/* Golden outer ring when selected */}
-          {selected && (
-            <>
-              <circle
-                cx="50"
-                cy="50"
-                r="49"
-                fill="none"
-                stroke="#FFB636"
-                strokeWidth="4"
-              />
-              <circle
-                cx="50"
-                cy="50"
-                r="49"
-                fill="none"
-                stroke="#FFB636"
-                strokeWidth="4"
-                opacity="0.5"
-                filter="url(#glow)"
-              />
-            </>
-          )}
-
-          {/* Outer base */}
-          <circle
-            cx="50"
-            cy="50"
-            r="46"
-            fill="url(#baseGrad)"
-            stroke={darkStroke}
-            strokeWidth="2"
-          />
-
-          {/* Outer inner ring */}
-          <circle
-            cx="50"
-            cy="50"
-            r="38"
-            fill="none"
-            stroke={darkStroke}
-            strokeWidth="3"
-            opacity="0.9"
-          />
-
-          {/* Inner disc */}
-          <circle
-            cx="50"
-            cy="50"
-            r="28"
-            fill="url(#innerSheen)"
-            stroke={darkStroke}
-            strokeWidth="2.5"
-          />
-
-          {/* 8 markers: 4 squares (cardinal) and 4 diamonds (diagonals) */}
-          {([0, 90, 180, 270] as number[]).map((deg, idx) => (
-            <g key={`sq-${idx}`} transform={`rotate(${deg} 50 50)`}>
-              <rect
-                x="46"
-                y="6"
-                width="8"
-                height="10"
-                rx="2"
-                fill="#F2F6FF"
-                stroke="#DCE4F2"
-                strokeWidth="1"
-              />
-            </g>
-          ))}
-          {([45, 135, 225, 315] as number[]).map((deg, idx) => (
-            <g key={`dm-${idx}`} transform={`rotate(${deg} 50 50)`}>
-              <rect
-                x="48"
-                y="8"
-                width="6"
-                height="6"
-                rx="1.5"
-                fill="#F2F6FF"
-                stroke="#DCE4F2"
-                strokeWidth="1"
-                transform="rotate(45 51 11)"
-              />
-            </g>
-          ))}
-
-          {/* Label */}
-          {textLines.length === 1 ? (
-            <text
-              x="50"
-              y="58"
-              textAnchor="middle"
-              fontFamily="inherit"
-              fontWeight="800"
-              fontSize="28"
-              fill="#FFFFFF"
-            >
-              {textLines[0]}
-            </text>
-          ) : (
-            <>
-              <text
-                x="50"
-                y="48"
-                textAnchor="middle"
-                fontFamily="inherit"
-                fontWeight="800"
-                fontSize="14"
-                fill="#FFFFFF"
-              >
-                {textLines[0]}
-              </text>
-              <text
-                x="50"
-                y="64"
-                textAnchor="middle"
-                fontFamily="inherit"
-                fontWeight="800"
-                fontSize="14"
-                fill="#FFFFFF"
-              >
-                {textLines[1]}
-              </text>
-            </>
-          )}
-        </svg>
-      </div>
-    )
-  }
-
   return (
     <>
       <div
-        className={`min-h-screen  py-16 m-auto text-white ${
-          isCollapsed ? 'sidebar-collapsed' : ''
-        }`}
+        className={`w-full max-w-6xl lg:px-0 p-2 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header Section */}
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
@@ -459,18 +60,18 @@ const OddDefault: React.FC = () => {
               {' '}
               <img
                 src="/icons/swap-horizontal.svg"
-                alt="active"
+                alt="transfer"
                 className="w-6 h-6"
               />
               Transfer betting
             </div>
             <Link
-              href="/hashgames/oddeven/page-betting"
+              href="/hashgames/bankerplayer/page-betting"
               className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
-              <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
+              <img src="/icons/wallet.svg" alt="page" className="w-6 h-6" />
               Page betting
             </Link>
           </div>
@@ -512,22 +113,22 @@ const OddDefault: React.FC = () => {
             {' '}
             <img
               src="/icons/swap-horizontal.svg"
-              alt="active"
+              alt="transfer"
               className="w-6 h-6"
             />
-            Active
+            Transfer betting
           </div>
           <Link
-            href="/hashgames/oddeven/page-betting"
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+            href="/hashgames/bankerplayer/page-betting"
+            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
             {' '}
             <img
               src="/icons/swap-horizontal.svg"
-              alt="active"
+              alt="page"
               className="w-6 h-6"
             />
-            Default
+            Page betting
           </Link>
         </div>
 
@@ -566,16 +167,11 @@ const OddDefault: React.FC = () => {
               Use a decentralized wallet
             </span>
           </h2>
-          <div className="flex opacity-80 justify-between bg-[#2a3546] p-3 border rounded-lg p-3Icon.svg border-[rgba(255,255,255,0.1)] mb-4">
-            <div className="flex items-center">
-              <span className="text-gray-300 text-[12px] font-bold">
-                <span className="text-[#2283F6]">TXS3</span>
-                <span className="text-[#FFFFFF]">PfAUShemKkoBWRUFsUkGBSrZ</span>
-                <span className="text-[#2283F6]">gh..</span>
-              </span>
-            </div>
-            <img src="/icons/copy.svg" alt="copy" className="w-6 h-6" />
-          </div>
+          <CopyBox className="w-full mb-4">
+            <span className="text-[#2283F6]">TXS3</span>PfAUShemKkoBWRUFsUkGBSrZ
+            <span className="text-[#2283F6]">gh..</span>
+          </CopyBox>
+
           <div className="relative mb-4">
             <div className="absolute inset-0 bg-[#003a8a] rounded-[12px] translate-y-1"></div>
             <div className=" w-full relative rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-[14px] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg ">
@@ -588,8 +184,7 @@ const OddDefault: React.FC = () => {
             </p>
             <p className="text-white text-[14px] font-bold">
               Limitation:
-              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>
-              TRX
+              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>TRX
             </p>
             <div className="text-[#2283F6] text-[14px] font-normal mt-5 opacity-80">
               Note: Odds will fluctuate automatically and all rights to
@@ -599,7 +194,8 @@ const OddDefault: React.FC = () => {
             <div className="mt-4 text-[#FFFFFF] text-[14px] font-normal opacity-80 ">
               Amounts below the limit are withdrawn by the platform; amounts
               above the limit are considered invalid. The platform charges a 1%
-              commission and returns the balance. If you don't win, it's a loss.
+              commission and returns the balance. If you don&apos;t win,
+              it&apos;s a loss.
             </div>
           </div>
           {/* Mobile view Desktop View Example Section */}
@@ -844,22 +440,12 @@ const OddDefault: React.FC = () => {
             <div className="flex items-center mb-4 mt-2 rounded-lg">
               <div className="flex bg-[#FFFFFF0A] rounded-lg p-1">
                 <div
-                  onClick={() => setActiveTab('Default')}
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 ${
-                    isActive
-                      ? 'bg-color-[#FFFFFF] text-white shadow-lg'
-                      : 'bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]'
-                  }`}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
                 >
                   Block Trend
                 </div>
                 <div
-                  onClick={() => setActiveTab('Active')}
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 ${
-                    !isActive
-                      ? 'bg-color-[#FFFFFF] text-white shadow-lg'
-                      : 'bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]'
-                  }`}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
                 >
                   My Trend
                 </div>
@@ -915,7 +501,7 @@ const OddDefault: React.FC = () => {
               Bets Amount
             </span>
             <span className="text-[#55657E] font-bold text-[12px] opacity-80 text-right">
-              Today's win or loss...
+              Today&apos;s win or loss...
             </span>
           </div>
           <div className="space-y-3">
@@ -986,6 +572,7 @@ const OddDefault: React.FC = () => {
             </div>
           </div>
         </div>
+
         {/* Mobile View Example Section */}
         <div className="w-full space-y-2 t-[14px] bg-[#FFFFFF0A] p-6 rounded-xl h-min-content hidden [@media(max-width:768px)]:block">
           <h3 className=" font-bold mb-3 text-white flex items-center gap-2">
@@ -1016,15 +603,9 @@ const OddDefault: React.FC = () => {
           </p>
         </div>
       </div>
-
-      {/* Menu Modal */}
       <MenuModal isOpen={isMenuModalOpen} onClose={handleCloseMenuModal} />
     </>
   )
 }
 
-const HashTemplate = () => {
-  return <div></div>
-}
-
-export default HashTemplate
+export default TransferBettingLayout

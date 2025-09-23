@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import PageBettingLayout from '@/components/hashgames/PageBettingLayout'
 const NiuniuDefault: React.FC = () => {
   const bullRatios = [
     { name: 'Bull1', ratio: '1:1' },
@@ -19,7 +19,7 @@ const NiuniuDefault: React.FC = () => {
   // Note: Removed NiuniuBettingSection (missing component) to fix build
 
   return (
-    <DefaultPageLayout>
+    <PageBettingLayout>
       <div className="w-full">
         <div className="md:bg-white-4 rounded-xl md:p-8 space-y-4">
           {/* Bull Ratios Grid */}
@@ -97,7 +97,7 @@ const NiuniuDefault: React.FC = () => {
           </div>
         </div>
       </div>
-    </DefaultPageLayout>
+    </PageBettingLayout>
   )
 }
 

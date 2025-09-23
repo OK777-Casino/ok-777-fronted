@@ -1039,26 +1039,6 @@ body.modal-open {
   z-index: 10001 !important;
 }
 
-/* Ensure content doesn't overflow on smaller screens */
-
-@media (max-width: 1300px) {
-  .min-h-screen {
-    width: 80% !important;
-  }
-}
-
-@media (max-width: 1200px) {
-  .min-h-screen {
-    width: 95% !important;
-  }
-}
-
-@media (max-width: 1px) {
-  .min-h-screen {
-    width: 100% !important;
-  }
-}
-
 /* 'dodger-blue': '#2283F6',
         'casper': '#A7B5CA',
         'mirage': '#111923',
@@ -1311,27 +1291,5 @@ body.modal-open {
     bottom: 0 !important;
     top: auto !important;
     z-index: 9999 !important;
-  }
-}
-
-@media (min-width: 1025px) {
-  .hash-game-container {
-    width: calc((100vw - 315px) * 0.7) !important;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-
-  .hash-game-container.sidebar-collapsed {
-    width: calc((100vw - 80px) * 0.7) !important;
-    max-width: 1920px;
-    overflow-x: hidden;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hash-game-container {
-    width: 100% !important;
-    max-width: 1920px;
-    overflow-x: hidden;
   }
 }

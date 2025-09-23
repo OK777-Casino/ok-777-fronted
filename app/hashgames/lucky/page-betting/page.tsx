@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import PageBettingLayout from '@/components/hashgames/PageBettingLayout'
 const LuckyDefault: React.FC = () => {
   // Lucky page has a single HASH betting option
   const bullItems = [
@@ -18,7 +18,7 @@ const LuckyDefault: React.FC = () => {
   ]
 
   return (
-    <DefaultPageLayout>
+    <PageBettingLayout>
       <div className="w-full">
         <div className="bg-white-4 rounded-xl p-4 md:p-8 space-y-4">
           {/* Bull Ratios Grid */}
@@ -96,7 +96,7 @@ const LuckyDefault: React.FC = () => {
           </div>
         </div>
       </div>
-    </DefaultPageLayout>
+    </PageBettingLayout>
   )
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import DefaultPageLayout from '@/components/hashgames/DefaultPageLayout'
+import PageBettingLayout from '@/components/hashgames/PageBettingLayout'
 import { User } from '@/components/ui/icons'
 import { useI18n } from '@/context/I18nProvider'
 import React from 'react'
@@ -9,7 +9,7 @@ const OddEvenDefault: React.FC = () => {
   const { t } = useI18n()
 
   return (
-    <DefaultPageLayout>
+    <PageBettingLayout>
       {/* Main Betting Section */}
       <div className="flex p-2 md:p-8 items-start gap-2 md:gap-4 w-full rounded-xl bg-white/[0.04]">
         {/* ODD Section */}
@@ -125,7 +125,7 @@ const OddEvenDefault: React.FC = () => {
           </div>
         </div>
       </div>
-    </DefaultPageLayout>
+    </PageBettingLayout>
   )
 }
 

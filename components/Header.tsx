@@ -379,7 +379,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   }, [activeTab, gameNavTabs])
 
   return (
-    <div className="lg:hidden px-2">
+    <div className="lg:hidden p-2">
       <Swiper
         modules={[FreeMode]}
         freeMode={true}
