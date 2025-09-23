@@ -67,9 +67,9 @@ const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
 }
 
 const HashBreakpoints: GameBreakpointsProps = {
-  320: { slidesPerView: 1.3 },
-  375: { slidesPerView: 1.3 },
-  425: { slidesPerView: 1.8 },
+  320: { slidesPerView: 1.1 },
+  375: { slidesPerView: 1.1 },
+  425: { slidesPerView: 1.5 },
   768: { slidesPerView: 2.3 },
   1024: { slidesPerView: 2.3 },
   1440: { slidesPerView: 3.3 },

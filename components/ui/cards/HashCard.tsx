@@ -34,7 +34,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="relative rounded-[14px] w-full min-h-[180px] p-2 sm:p-3 text-white overflow-hidden   shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col"
+      className="relative rounded-lg w-full p-3 sm:p-2 text-white overflow-hidden  shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col"
     >
       <div className="absolute w-full h-full bg-black opacity-60 top-0 left-0" />
       <div className="relative z-10 flex flex-col h-full">
@@ -49,7 +49,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
             </div>
           </div>
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-            <span className="text-gray-300 text-[.7rem] sm:text-[.8rem]">
+            <span className="text-gray-300 text-[.9rem] sm:text-[1rem] font-medium">
               {t('hashgame.chances')}:
             </span>
             <span className="text-red-400 text-[.9rem] sm:text-[1rem] font-bold bg-red-500/20 px-1 py-0.5 sm:px-1.5 sm:py-1 rounded">
@@ -81,14 +81,14 @@ const HashCard: React.FC<TypeTwoProps> = ({
           </div>
           <div className="relative">
             <div className="bg-[#090c11] rounded-lg w-full h-[2rem] sm:h-[2.5rem]  flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
-              <span className="text-gray-300 ml-2 sm:ml-3 text-[.5rem] sm:text-[.6rem] font-mono pr-8 leading-tight">
+              <span className="text-gray-300 ml-2 font-medium sm:ml-3 text-[.7rem] font-mono pr-8 leading-tight">
                 <span
                   className="block overflow-hidden"
                   style={{
                     display: '-webkit-box',
                     WebkitLineClamp: 2,
                     WebkitBoxOrient: 'vertical',
-                    lineHeight: '1.2',
+                    lineHeight: '1.5',
                     maxHeight: '2.4em',
                   }}
                 >
@@ -116,7 +116,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
               href={leftButtonLink}
             >
               <ArrowLeftRight className="w-2 h-2 sm:w-2.5 sm:h-2.5" />
-              <span className="text-[9px] sm:text-[11px] font-medium">
+              <span className="text-xs sm:text-[11px] font-medium">
                 Junior field
               </span>
             </Link>
@@ -129,7 +129,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
               href={rightButtonLink}
               className="flex items-center justify-center"
             >
-              <span className="text-[9px] sm:text-[11px] font-medium">Put</span>
+              <span className="text-xs sm:text-[11px] font-medium">Put</span>
             </Link>
           </Button>
         </div>
