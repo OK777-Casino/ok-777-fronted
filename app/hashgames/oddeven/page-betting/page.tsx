@@ -1,6 +1,6 @@
 'use client'
 
-import DefaultPageLayout from '@/components/hashgames/PageBettingLayout'
+import PageBettingLayout from '@/components/hashgames/PageBettingLayout'
 import React from 'react'
 
 const OddEvenDefault: React.FC = () => {
@@ -26,7 +26,7 @@ const OddEvenDefault: React.FC = () => {
   ]
 
   return (
-    <DefaultPageLayout gameType="oddeven" bettingOptions={bettingOptions} />
+    <PageBettingLayout gameType="oddeven" bettingOptions={bettingOptions} />
   )
 }
 

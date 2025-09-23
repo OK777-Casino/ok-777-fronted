@@ -187,17 +187,13 @@ const DefaultPageLayout: React.FC<DefaultPageLayoutProps> = ({
               >
                 <img
                   src="/icons/swap-horizontal.svg"
-                  alt="active"
+                  alt="transfer"
                   className="w-6 h-6"
                 />
                 Transfer betting
               </Link>
               <div className="px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]">
-                <img
-                  src="/icons/wallet.svg"
-                  alt="default"
-                  className="w-6 h-6"
-                />
+                <img src="/icons/wallet.svg" alt="page" className="w-6 h-6" />
                 Page betting
               </div>
             </div>

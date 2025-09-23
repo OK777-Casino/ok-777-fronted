@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import DefaultPageLayout from '@/components/hashgames/PageBettingLayout'
+import PageBettingLayout from '@/components/hashgames/PageBettingLayout'
 const LuckyDefault: React.FC = () => {
   // Lucky page has a single HASH betting option
   const bettingOptions = [
@@ -16,7 +16,7 @@ const LuckyDefault: React.FC = () => {
     },
   ]
 
-  return <DefaultPageLayout gameType="lucky" bettingOptions={bettingOptions} />
+  return <PageBettingLayout gameType="lucky" bettingOptions={bettingOptions} />
 }
 
 export default LuckyDefault
