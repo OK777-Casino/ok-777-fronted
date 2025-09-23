@@ -198,11 +198,11 @@ const Withdraw: React.FC = () => {
                 Withdraw money
               </FlatButton>
               <div className="font-medium text-[0.875rem] flex gap-2 text-white items-center">
-                <InfoCircleIcon className="h-6 w-6" color="#1BB83D" />
+                <InfoCircleIcon className="h-6 w-6" color="var(--malachite)" />
                 Please set a fund password
               </div>
 
-              <div className="p-4  rounded-[0.75rem] items-center font-medium text-[0.875rem]  text-white bg-[#1BB83D21]">
+              <div className="p-4  rounded-[0.75rem] items-center font-medium text-[0.875rem]  text-white bg-[var(--malachite)21]">
                 For security reasons, larger or suspicious withdrawals may take
                 1-6 hours to review. Thank you for your patience!
               </div>

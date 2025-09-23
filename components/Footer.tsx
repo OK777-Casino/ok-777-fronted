@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { UnifiedButton } from './ui'
 import Link from 'next/link'
 import XIcon from './ui/icons/XIcon'
 import InstagramIcon from './ui/icons/InstagramIcon'
@@ -10,15 +11,12 @@ import TikTokIcon from './ui/icons/TikTokIcon'
 import BlackButton from './ui/Button/BlackButton'
 import FacebookIcon from './ui/icons/FacebookIcon'
 import TelegramIcon from './ui/icons/TelegramIcon'
-import { useI18n } from '../context/I18nProvider'
-import TDButton from '@/components/ui/Button/TDButton'
 
 const coins = ['USDT', 'SOL', 'BNB', 'LTC', 'ETC', 'TRX', 'BTC', 'TON'] as const
 
 const Footer: React.FC = () => {
-  const { t } = useI18n()
   return (
-    <footer className="lg:bg-[#1C2532] w-full text-gray-300 py-8 pb-[5rem] lg:mb-[2rem] px-4">
+    <footer className="lg:bg-[#1C2532] w-full text-gray-300 py-8 px-4">
       <div className="max-w-7xl mx-auto ">
         <div className="hidden lg:flex gap-8">
           {/* Left Section - Company Info */}
@@ -30,13 +28,19 @@ const Footer: React.FC = () => {
 
             {/* Company Description */}
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
-              {t('licence.company')}
+              Ok777 casino is owned and operated by Nextech NV, a company
+              registered in Curaçao with company number 162054, registered
+              address: Zuikertuin tower 2/ Kaya W.F.G. (Cito) Hellmund z/n
+              Curaçao, licensed by the Curaçao Gaming Authority (CGB), license
+              number 365/JAZ, issued by Antillephone. The license is approved
+              and regulated by the Government of Curaçao, ensuring the legality
+              and security of the platform.
             </p>
 
             {/* Supported Currencies */}
             <div className="lg:block mb-6 hidden">
               <h4 className="text-white font-medium mb-3">
-                {t('app.supportedCurrencies')}
+                Supported currencies
               </h4>
               <div className="flex flex-wrap gap-2">
                 {coins.map((item, index) => (
@@ -55,7 +59,7 @@ const Footer: React.FC = () => {
           {/* Middle Section - General Information */}
           <div className="w-[25%]">
             <h3 className="text-white font-semibold mb-4">
-              {t('generalInformation.generalInformation')}
+              General Information
             </h3>
             <ul className="space-y-2">
               <li>
@@ -63,7 +67,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  {t('generalInformation.commonProblem')}
+                  Common problem
                 </a>
               </li>
               <li>
@@ -71,7 +75,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  {t('generalInformation.responsibleGambling')}
+                  Responsible gambling
                 </a>
               </li>
               <li>
@@ -79,7 +83,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  {t('generalInformation.honestlyAndFairly')}
+                  Honestly and fairly
                 </a>
               </li>
               <li>
@@ -87,7 +91,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  {t('generalInformation.termsOfService')}
+                  Terms of Service
                 </a>
               </li>
               <li>
@@ -95,7 +99,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  {t('generalInformation.privacyPolicy')}
+                  Privacy Policy
                 </a>
               </li>
             </ul>
@@ -104,7 +108,7 @@ const Footer: React.FC = () => {
           {/* Right Section - About Us */}
           <div className="w-[25%]">
             <h3 className="text-white font-semibold mb-4">
-              <span>{t('aboutUs.aboutUs')}</span>
+              <span>About us</span>
             </h3>
             <ul className="space-y-2">
               <li>
@@ -112,7 +116,7 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white text-sm transition-colors"
                 >
-                  {t('help.onlineService')}
+                  Online service
                 </a>
               </li>
               <li>
@@ -201,7 +205,7 @@ const Footer: React.FC = () => {
           {/* Partners and Industry Associations */}
           <div className="lg:w-[50%] w-full">
             <h4 className="text-white font-medium my-4">
-              {t('app.gamblingLicense')}
+              Partners and Industry Associations
             </h4>
             <div className="flex gap-3">
               <div>
@@ -218,7 +222,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="lg:hidden w-full block ">
             <h4 className="text-white w-full font-medium my-3">
-              {t('app.supportedCurrencies')}
+              Supported currencies
             </h4>
             <div className="flex justify-between items-center lg:gap-2 ">
               {coins.map((item, index) => (
@@ -235,7 +239,7 @@ const Footer: React.FC = () => {
           {/* Social Media Links */}
           <div className="lg:w-[50%] w-full">
             <h4 className="text-white font-medium my-3 text-left">
-              {t('app.communityEntrance')}
+              Public entrance
             </h4>
             <div className="flex justify-between lg:justify-start lg:gap-4">
               <BlackButton>
@@ -270,13 +274,19 @@ const Footer: React.FC = () => {
 
           {/* Company Description */}
           <p className="text-sm text-gray-400 leading-relaxed">
-            {t('licence.company')}
+            Ok777 casino is owned and operated by Nextech NV, a company
+            registered in Curaçao with company number 162054, registered
+            address: Zuikertuin tower 2/ Kaya W.F.G. (Cito) Hellmund z/n
+            Curaçao, licensed by the Curaçao Gaming Authority (CGB), license
+            number 365/JAZ, issued by Antillephone. The license is approved and
+            regulated by the Government of Curaçao, ensuring the legality and
+            security of the platform.
           </p>
 
           {/* Supported Currencies */}
           <div className="lg:block mb-6 hidden pl-[12px]">
             <h4 className="text-white font-medium mb-3">
-              {t('app.supportedCurrencies')}
+              Supported currencies
             </h4>
             <div className="flex justify-between">
               {coins.map((item, index) => (
@@ -291,41 +301,35 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-      {/* Bottom Section - Social Media & Install App */}
-      <div className="hidden lg:block fixed right-0 bottom-0 bg-[rgb(15,23,32)] z-10 w-full pl-[248px]">
-        {/* Install App Banner */}
-        <div className=" px-4 py-2 flex items-center justify-center gap-3">
-          <div className="text-2xl">
-            <img src="/images/brand/cookie.svg" alt="cookie" />
-          </div>
-          <div>
-            <div className="flex text-[#A7B5CA] text-sm font-medium">
-              <span>{t('install.install')}</span>
-              <div>
+
+        {/* Bottom Section - Social Media & Install App */}
+        <div className="mt-8 hidden lg:block pt-6 border-t border-gray-800">
+          {/* Install App Banner */}
+          <div className=" px-4 py-2 flex items-center justify-center gap-3">
+            <div className="text-2xl">
+              <img src="/images/brand/cookie.svg" alt="cookie" />
+            </div>
+            <div>
+              <div className="flex text-[#A7B5CA] text-sm font-medium">
+                {' '}
+                Install
                 <img
                   src="/images/logo.svg"
-                  className="h-[1.2rem] px-[.5rem]"
+                  className="h-[17px]"
                   alt="logo"
-                />
+                />{' '}
+                on the desktop
               </div>
-              <span>{t('install.onTheDesktop')}</span>
             </div>
+            <div className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors">
+              Accept
+            </div>
+            <UnifiedButton variant="default">
+              <span className="px-2.5">
+                <span>X</span>
+              </span>
+            </UnifiedButton>
           </div>
-          {/* <div className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors">
-            {t('install.accept')}
-          </div> */}
-          <TDButton
-            type="blue"
-            className="w-[5.3125rem] h-[2.0625rem] rounded-lg"
-          >
-            <span className="text-[0.85rem]">{t('install.accept')}</span>
-          </TDButton>
-          {/* <BlackButton>
-            <span className="px-2.5">
-              <span>X</span>
-            </span>
-          </BlackButton> */}
         </div>
       </div>
     </footer>

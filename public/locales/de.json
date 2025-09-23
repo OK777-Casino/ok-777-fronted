@@ -21,8 +21,28 @@
     "download": "Herunterladen",
     "subtitle": "Unbegrenzten Spaß unterwegs erleben",
     "showMore": "Mehr anzeigen",
-    "showLess": "Weniger anzeigen"
+    "showLess": "Weniger anzeigen",
+    "communityEntrance": "Community-Eingang",
+    "supportedCurrencies": "Unterstützte Währungen",
+    "gamblingLicense": "Glücksspiellizenz"
   },
+  "licence": {
+    "company": "Ok777 Casino wird von Nextech NV betrieben, einem in Curaçao registrierten Unternehmen (Nr. 162054). Lizenz 365/JAZ (Antillephone), reguliert von der Regierung von Curaçao."
+  },
+  "generalInformation": {
+    "generalInformation": "Allgemeine Informationen",
+    "commonProblem": "Häufige Probleme",
+    "responsibleGambling": "Verantwortungsvolles Spielen",
+    "honestlyAndFairly": "Ehrlich und fair",
+    "termsOfService": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutz"
+  },
+  "aboutUs": { "aboutUs": "Über uns" },
+  "install": {
+    "install": "Installieren",
+    "onTheDesktop": "auf dem Desktop",
+    "accept": "Akzeptieren"
+  }
   "navigation": {
     "home": "Startseite",
     "games": "Spiele",

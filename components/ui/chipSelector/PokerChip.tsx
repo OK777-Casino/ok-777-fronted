@@ -18,15 +18,15 @@ interface PokerChipProps {
 }
 
 const colorMap = {
-  blue: '#2283F6',
-  purple: '#FC73FF',
-  green: '#1BB83D',
-  navy: '#002450',
-  red: '#ED1D49',
-  orange: '#FFB636',
-  gold: '#FFD700',
-  brown: '#8B4513',
-  lightblue: '#87CEEB',
+  blue: 'var(--chip-blue)',
+  purple: 'var(--chip-purple)',
+  green: 'var(--chip-green)',
+  navy: 'var(--chip-navy)',
+  red: 'var(--chip-red)',
+  orange: 'var(--chip-orange)',
+  gold: 'var(--chip-gold)',
+  brown: 'var(--chip-brown)',
+  lightblue: 'var(--chip-lightblue)',
 }
 
 export function PokerChip({
@@ -42,14 +42,14 @@ export function PokerChip({
     <div
       className={cn(
         'relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-200',
-        isSelected && ' ring-chip-orange shadow-[0_0_13px_0_#FBB335]',
+        isSelected && ' ring-chip-orange shadow-[0_0_13px_0_var(--yellow-orange)]',
         className
       )}
       onClick={onClick}
       style={{
         filter: isSelected
-          ? 'drop-shadow(0 4px 0 #ED1D49) drop-shadow(0 3px 0 #FFB636) drop-shadow(0 2px 0 #1BB83D) drop-shadow(0 1px 0 #002450)'
-          : 'drop-shadow(0 1px 0 #002450)',
+          ? 'drop-shadow(0 4px 0 var(--chip-red)) drop-shadow(0 3px 0 var(--chip-orange)) drop-shadow(0 2px 0 var(--chip-green)) drop-shadow(0 1px 0 var(--chip-navy))'
+          : 'drop-shadow(0 1px 0 var(--chip-navy))',
       }}
     >
       <svg
@@ -58,14 +58,14 @@ export function PokerChip({
         viewBox="0 0 49 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="drop-shadow-[0_1px_0_#002450]"
+        className="drop-shadow-[0_1px_0_var(--chip-navy)]"
       >
         <g filter="url(#filter0_di)">
           <path
             fillRule="evenodd"
             clipRule="evenodd"
             d="M24.8441 43.2767C23.8462 43.2767 23.0016 43.3048 22.967 43.3392C22.9325 43.3736 22.9043 44.2183 22.9043 45.2164V47.031H26.6587V43.2767H24.8441ZM39.2357 36.6126C39.2085 36.6126 38.5959 37.2041 37.8743 37.9271L36.5624 39.2416L39.2357 41.9148L41.909 39.2416L40.5971 37.9271C39.8758 37.2044 39.2634 36.6131 39.2357 36.6126ZM9.27055 37.904C8.56116 38.6148 7.98078 39.2385 7.98078 39.2902C7.98081 39.3418 8.55125 39.9534 9.24841 40.6491L10.516 41.914L13.1891 39.2407L10.5602 36.6118L9.27055 37.904ZM2.63086 26.7575H6.38519V23.0032H2.63086V26.7575ZM43.2716 26.7575H47.0299L46.979 23.0501L43.2716 22.9993V26.7575ZM39.2827 7.9858C39.2296 7.9858 38.6061 8.56708 37.8969 9.27759L36.6077 10.5694L39.2366 13.1933L41.909 10.5209L40.6441 9.25334C39.9484 8.55629 39.336 7.986 39.2827 7.9858ZM7.88683 10.5694L9.17871 11.8587C9.88909 12.5678 10.5127 13.1479 10.5644 13.148C10.6869 13.148 13.1425 10.6877 13.1431 10.5644C13.1431 10.5128 12.5618 9.89035 11.8513 9.18125L10.5595 7.89194L7.88683 10.5694ZM24.8255 2.72974C23.421 2.72974 22.9815 2.75788 22.9461 2.85004C22.9208 2.91621 22.9115 3.75047 22.9256 4.70379L22.9513 6.43714L26.6587 6.48801V2.72974H24.8255Z"
-            fill="#EDEDED"
+            fill="var(--gallery)"
           />
           <g filter="url(#filter1_i)">
             <path
@@ -176,7 +176,7 @@ export function PokerChip({
           style={{
             WebkitTextStroke:
               typeof value === 'string' && value.length > 3
-                ? '0.5px #002450'
+                ? '0.5px var(--chip-navy)'
                 : undefined,
           }}
         >

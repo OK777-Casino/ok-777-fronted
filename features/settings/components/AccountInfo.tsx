@@ -32,7 +32,7 @@ const AccountInfo: React.FC = () => {
                 <div className="absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 z-10">
                   <div
                     className="h-5 px-2 flex items-center justify-center rounded-2xl border border-white shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
-                    style={{ backgroundColor: '#1BB83D' }}
+                    style={{ backgroundColor: 'var(--malachite)' }}
                   >
                     <span className="text-white text-xs font-bold whitespace-nowrap">
                       VIP 1
@@ -78,7 +78,7 @@ const AccountInfo: React.FC = () => {
           </h2>
           <div className="p-[6px] gap-1 bg-white-8 justify-between flex items-center pl-4 rounded-[12px]">
             <div className="flex text-casper text-[14px] font-bold gap-1">
-              <TelegramIcon color="#A7B5CA" className="w-6 h-6" />
+              <TelegramIcon color="var(--casper)" className="w-6 h-6" />
               Not intertwined
             </div>
             <FlatButton className="w-[82px] h-9 font-bold text-gallery text-[12px]">
