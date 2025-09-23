@@ -30,7 +30,8 @@ const UnifiedButton: React.FC<UnifiedButtonProps> = ({
   const variantClasses = {
     default:
       'h-9 bg-[var(--white-4)] border-b-[1px] border-[var(--ebony-clay)] border-t-[3px] border-[var(--white-29)] hover:bg-[var(--white-8)]',
-    primary: 'h-9 bg-[var(--dodger-blue)] text-white hover:bg-[var(--dodger-blue)]',
+    primary:
+      'h-9 bg-[var(--dodger-blue)] text-white hover:bg-[var(--dodger-blue)]',
     secondary:
       'h-9 bg-[var(--white-8)] text-[var(--casper)] hover:bg-[var(--white-13)]',
     gradient:

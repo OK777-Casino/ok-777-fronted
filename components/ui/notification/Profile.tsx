@@ -174,7 +174,10 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           {/* Bonus Code Header */}
           <div className="flex items-center gap-2 mb-4">
             <PriceTagIcon className="w-4 h-4" />
-            <span className="text-sm font-bold" style={{ color: 'var(--casper)' }}>
+            <span
+              className="text-sm font-bold"
+              style={{ color: 'var(--casper)' }}
+            >
               Bonus code
             </span>
           </div>

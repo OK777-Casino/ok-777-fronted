@@ -42,7 +42,8 @@ export function PokerChip({
     <div
       className={cn(
         'relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-200',
-        isSelected && ' ring-chip-orange shadow-[0_0_13px_0_var(--yellow-orange)]',
+        isSelected &&
+          ' ring-chip-orange shadow-[0_0_13px_0_var(--yellow-orange)]',
         className
       )}
       onClick={onClick}

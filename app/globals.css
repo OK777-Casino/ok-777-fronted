@@ -7,7 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  
+
   /* Border radius values */
   --radius: 0.5rem;
 
@@ -39,21 +39,21 @@
   --sidebar-ring: 220 13% 91%;
 
   /* Brand Colors */
-  --dodger-blue: #2283F6;
-  --cornflower-blue: #4E9CF8;
-  --crimson: #ED1D49;
-  --french-rose: #F14A6D;
-  --malachite: #1BB83D;
-  --yellow-orange: #FFB636;
+  --dodger-blue: #2283f6;
+  --cornflower-blue: #4e9cf8;
+  --crimson: #ed1d49;
+  --french-rose: #f14a6d;
+  --malachite: #1bb83d;
+  --yellow-orange: #ffb636;
 
   /* Neutral Colors */
   --mirage: #111923;
-  --mirage-8a: #1119238A;
-  --casper: #A7B5CA;
-  --polo-blue: #93ACD3;
-  --gallery: #EDEDED;
-  --blue-bayoux: #55657E;
-  --ebony-clay: #2A3546;
+  --mirage-8a: #1119238a;
+  --casper: #a7b5ca;
+  --polo-blue: #93acd3;
+  --gallery: #ededed;
+  --blue-bayoux: #55657e;
+  --ebony-clay: #2a3546;
 
   /* White Opacity Variants */
   --white-4: rgba(255, 255, 255, 0.04);
@@ -66,46 +66,46 @@
   --white-33: rgba(255, 255, 255, 0.33);
 
   /* Additional Colors */
-  --deep-blue: #0D131C;
+  --deep-blue: #0d131c;
   --navy-dark: #002554;
-  --gray-600: #6B7280;
+  --gray-600: #6b7280;
   --gray-700: #374151;
-  --gray-800: #1F2937;
+  --gray-800: #1f2937;
   --gray-900: #111827;
-  --slate-600: #4B5563;
-  --light-gray: #9CA3AF;
-  --white-pure: #FFFFFF;
-  --blue-500: #3B82F6;
-  --gradient-start: #F9476E;
-  --gradient-end: #BD0139;
-  --text-light: #F9FAFB;
-  --border-light: #B1B9C3;
-  --border-dark: #171F29;
+  --slate-600: #4b5563;
+  --light-gray: #9ca3af;
+  --white-pure: #ffffff;
+  --blue-500: #3b82f6;
+  --gradient-start: #f9476e;
+  --gradient-end: #bd0139;
+  --text-light: #f9fafb;
+  --border-light: #b1b9c3;
+  --border-dark: #171f29;
   --crimson-80: rgba(237, 29, 73, 0.5);
   --mirage-73: rgba(13, 19, 28, 0.73);
   --mirage-54: rgba(17, 25, 35, 0.54);
 
   /* Poker Chip Colors */
-  --chip-blue: #2283F6;
-  --chip-purple: #FC73FF;
-  --chip-green: #1BB83D;
+  --chip-blue: #2283f6;
+  --chip-purple: #fc73ff;
+  --chip-green: #1bb83d;
   --chip-navy: #002450;
-  --chip-red: #ED1D49;
-  --chip-orange: #FFB636;
-  --chip-gold: #FFD700;
-  --chip-brown: #8B4513;
-  --chip-lightblue: #87CEEB;
+  --chip-red: #ed1d49;
+  --chip-orange: #ffb636;
+  --chip-gold: #ffd700;
+  --chip-brown: #8b4513;
+  --chip-lightblue: #87ceeb;
 
   /* Button Colors */
-  --button-blue-start: #0C60FF;
-  --button-blue-end: #2C9FFA;
+  --button-blue-start: #0c60ff;
+  --button-blue-end: #2c9ffa;
   --button-blue-edge: #003a8a;
-  --button-red-start: #F9476E;
-  --button-red-end: #BD0139;
+  --button-red-start: #f9476e;
+  --button-red-end: #bd0139;
   --button-red-edge: #61001d;
-  --button-green-start: #31FF5E;
-  --button-green-end: #1BB83D;
-  --button-green-edge: #1BB83D80;
+  --button-green-start: #31ff5e;
+  --button-green-end: #1bb83d;
+  --button-green-edge: #1bb83d80;
 
   /* Background Gradients */
   --bg-gradient-start: #062751;
@@ -600,7 +600,7 @@ body.sidebar-scrolling {
 }
 
 .auth-button {
-  background: linear-gradient(180deg, #F9476E 0%, #BD0139 24%);
+  background: linear-gradient(180deg, #f9476e 0%, #bd0139 24%);
   border: 1px solid var(--white-21);
   box-shadow: 0px 5px 0px -2px var(--crimson-80);
   gap: 8px;

@@ -56,7 +56,9 @@ const Sidebar: React.FC = () => {
 
   const services = [
     {
-      icon: <HeadphoneMicIcon color="var(--yellow-orange)" className="w-4 h-4" />,
+      icon: (
+        <HeadphoneMicIcon color="var(--yellow-orange)" className="w-4 h-4" />
+      ),
       title: t('help.onlineService'),
       desc: t('help.serviceDescription'),
       color: 'var(--yellow-orange)',
@@ -241,7 +243,10 @@ const Sidebar: React.FC = () => {
                   </div>
                   {service.title}
                 </div>
-                <ArrowUpRightStrokeIcon className="w-6 h-6" color="var(--casper)" />
+                <ArrowUpRightStrokeIcon
+                  className="w-6 h-6"
+                  color="var(--casper)"
+                />
               </div>
               <div className="text-casper text-[0.875rem]">{service.desc}</div>
             </div>

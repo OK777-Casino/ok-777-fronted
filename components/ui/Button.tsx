@@ -155,7 +155,8 @@ const BlueButton: React.FC<BlueButtonProps> = ({
                     border-[1px] border-[#55657E]
                     group-active:translate-y-[1px] hover:shadow-[0_3px_28px_#2283f666] group-active:duration-&lsqb;34ms&rsqb; text-[12px] font-bold items-center justify-center lg:text-[18.9px]"
         style={{
-          boxShadow: '0 3px 28px #2283f666, inset 0 3px 3px rgba(255,255,255,0.21)',
+          boxShadow:
+            '0 3px 28px #2283f666, inset 0 3px 3px rgba(255,255,255,0.21)',
         }}
       >
         <span>{children}</span>

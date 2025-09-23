@@ -43,8 +43,12 @@ const NiuniuDefault: React.FC = () => {
             {/* Balance and User Info */}
             <div className="space-y-2">
               <div className="text-left">
-                <span className="text-casper text-base font-montserrat font-bold">$</span>
-                <span className="text-white text-base font-montserrat font-bold">10038</span>
+                <span className="text-casper text-base font-montserrat font-bold">
+                  $
+                </span>
+                <span className="text-white text-base font-montserrat font-bold">
+                  10038
+                </span>
               </div>
               <div className="flex items-center gap-1">
                 <svg
@@ -60,7 +64,9 @@ const NiuniuDefault: React.FC = () => {
                     fill="#A7B5CA"
                   />
                 </svg>
-                <span className="text-casper text-sm font-montserrat font-bold leading-none">12</span>
+                <span className="text-casper text-sm font-montserrat font-bold leading-none">
+                  12
+                </span>
               </div>
             </div>
           </div>
@@ -68,24 +74,30 @@ const NiuniuDefault: React.FC = () => {
           {/* $0 Button */}
           <div className="flex justify-center">
             <div className="h-9 px-4 bg-mirage border border-white-8 rounded-lg shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px] flex items-center justify-center">
-              <span className="text-white text-sm font-montserrat font-bold">$0</span>
+              <span className="text-white text-sm font-montserrat font-bold">
+                $0
+              </span>
             </div>
           </div>
 
           {/* BULL PLAYER Title */}
           <div className="flex justify-center items-center">
-            <h1 className="text-yellow-orange text-2xl font-montserrat font-bold">BULL PLAYER</h1>
+            <h1 className="text-yellow-orange text-2xl font-montserrat font-bold">
+              BULL PLAYER
+            </h1>
           </div>
 
           {/* 1:1.95 Button */}
           <div className="flex justify-center">
             <div className="h-9 px-4 bg-mirage border border-white-8 rounded-lg shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px] flex items-center justify-center">
-              <span className="text-white text-sm font-montserrat font-bold">1 : 1.95</span>
+              <span className="text-white text-sm font-montserrat font-bold">
+                1 : 1.95
+              </span>
             </div>
           </div>
         </div>
       </div>
-      </DefaultPageLayout>
+    </DefaultPageLayout>
   )
 }
 
