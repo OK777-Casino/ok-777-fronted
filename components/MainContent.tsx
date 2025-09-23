@@ -164,49 +164,60 @@ const GameImageCard: React.FC<{
 )
 
 const bannerCards = [
+  // {
+  //   button: 'CLAIM NOW',
+  //   image: '/images/banner/Banner01-1.jpg',
+  //   link: '#',
+  // },
   {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
+    button: 'JOIN NOW',
+    image: '/images/banner/banner-first-depost.jpg',
     link: '#',
   },
   {
     button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
+    image: '/images/banner/Banner10-1.jpg',
     link: '#',
   },
   {
     button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
+    image: '/images/banner/Banner07-1.jpg',
     link: '#',
   },
   {
     button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
+    image: '/images/banner/Banner03-1.jpg',
+    link: '#',
+  },
+  {
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner04-1.jpg',
     link: '#',
   },
   {
     button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
+    image: '/images/banner/Banner05-1.jpg',
+    link: '#',
+  },
+
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner08-1.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09-1.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner11-1.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner12-1.jpg',
     link: '#',
   },
 ] as const
@@ -484,7 +495,7 @@ const MainContent: React.FC = () => {
         <SwiperSlider
           key={`banner-swiper-${activeGameCategory}`}
           data={bannerCards}
-          renderSlide={(card, index) => <RewardCard {...card} />}
+          renderSlide={(card, index) => <RewardCard key={index} {...card} />}
           slidesPerView="auto"
           slideClassName="!w-[min(486.76px,100%)]"
           showProgressBars={true}

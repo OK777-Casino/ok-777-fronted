@@ -27,6 +27,9 @@ const TypeOne: React.FC<TypeOneProps> = ({ button, image, link = '#' }) => {
           backgroundPosition: 'center',
         }}
       />
+      <div className="absolute">
+        <span>123</span>
+      </div>
 
       {/* subtle dark overlay for readability */}
       {/* <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/30" /> */}
