@@ -41,7 +41,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
         {/* Header Section */}
         <div className="flex justify-between items-center mb-2 sm:mb-3">
           <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-1">
-            <h1 className="text-[.8rem] sm:text-[.9] font-bold text-white truncate">
+            <h1 className="text-[0.85rem] font-bold text-white truncate">
               {title}
             </h1>
             <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors flex-shrink-0">
@@ -52,19 +52,19 @@ const HashCard: React.FC<TypeTwoProps> = ({
             <span className="text-gray-300 text-[.9rem] sm:text-[1rem] font-medium">
               {t('hashgame.chances')}:
             </span>
-            <span className="text-red-400 text-[.9rem] sm:text-[1rem] font-bold bg-red-500/20 px-1 py-0.5 sm:px-1.5 sm:py-1 rounded">
+            <span className="text-red-400 text-sm font-bold bg-red-500/20 px-1 py-0.5 sm:px-1.5 sm:py-1 rounded">
               {chances}
             </span>
           </div>
         </div>
 
         {/* Betting Address Section */}
-        <div className="flex-1 flex flex-col justify-center mb-2 sm:mb-3">
-          <div className="flex items-center justify-between mb-1 sm:mb-1.5">
-            <span className="text-white text-[.7rem] sm:text-[.8rem] font-medium">
+        <div className="flex-1 flex flex-col justify-center">
+          <div className="flex items-center justify-between py-2">
+            <span className="text-white text-sm font-medium">
               {t('hashgame.bettingAddress')}
             </span>
-            <span className="text-gray-400 text-[.7rem] sm:text-[.8rem] leading-tight">
+            <span className="text-gray-400 text-sm leading-tight">
               <span
                 className="block overflow-hidden"
                 style={{
@@ -80,10 +80,10 @@ const HashCard: React.FC<TypeTwoProps> = ({
             </span>
           </div>
           <div className="relative">
-            <div className="bg-[#090c11] rounded-lg w-full h-[2rem] sm:h-[2.5rem]  flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
-              <span className="text-gray-300 ml-2 font-medium sm:ml-3 text-[.7rem] font-mono pr-8 leading-tight">
+            <div className="bg-mirage-54 rounded-lg w-full h-[2rem] flex items-center border-gray-600/50 hover:border-gray-500/70 transition-colors">
+              <span className="text-gray-300 ml-2 font-medium text-xs font-mono pr-8 leading-tight">
                 <span
-                  className="block overflow-hidden"
+                  className="block overflow-hidden text-ellipsis w-[85%]"
                   style={{
                     display: '-webkit-box',
                     WebkitLineClamp: 2,
@@ -100,13 +100,13 @@ const HashCard: React.FC<TypeTwoProps> = ({
               onClick={handleCopy}
               className="absolute right-1.5 sm:right-2 top-1/2 -translate-y-1/2 h-8 rounded bg-gray-700/50 hover:bg-gray-600/70 flex items-center justify-center cursor-pointer transition-colors"
             >
-              <Copy className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-gray-300" />
+              <Copy className="h-[1rem] text-gray-300" />
             </div>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-1.5 sm:gap-2 mt-auto">
+        <div className="flex gap-1.5 sm:gap-2 mt-auto py-2">
           <Button
             variant="green"
             className="flex-1 min-h-[28px] sm:min-h-[32px]"
