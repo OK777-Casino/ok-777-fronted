@@ -55,7 +55,7 @@ const InviteFriends: React.FC = () => {
             {t('alliance.referralLink')}
           </label>
           <div className="flex items-center gap-3">
-            <CopyBox className="w-full bg-white-8 h-12">
+            <CopyBox className="w-full bg-white-8 h-12 text-sm">
               https://ok777.io/?AgentCode=330395
             </CopyBox>
           </div>
@@ -66,7 +66,7 @@ const InviteFriends: React.FC = () => {
             {t('alliance.referralCode')}
           </label>
           <div className="flex items-center gap-3">
-            <CopyBox className="w-full bg-white-8 h-12">330395</CopyBox>
+            <CopyBox className="w-full bg-white-8 h-12 text-sm">330395</CopyBox>
           </div>
         </div>
       </div>
