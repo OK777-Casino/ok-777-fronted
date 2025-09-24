@@ -457,5 +457,52 @@
     "install": "安装",
     "onTheDesktop": "在桌面上",
     "accept": "接受"
+  },
+  "banner": {
+    "firstDepost": {
+      "mainTitle": "首存送豪礼",
+      "subTitle": "最高赠送 5888 USDT",
+      "button": "点击领取"
+    },
+    "cryptoGame": {
+      "mainTitle": "加密游戏",
+      "subTitle": "开启时空冒险，每天都有奖",
+      "button": "最高可领 $1588"
+    },
+    "dailyDepost": {
+      "mainTitle": "每日存款",
+      "subTitle": "领取 100% 奖金",
+      "button": "点击领取"
+    },
+    "dailyQuests": {
+      "mainTitle": "完成任务",
+      "subTitle": "加入社群，天天送豪礼",
+      "button": "立即参与"
+    },
+    "footerball": {
+      "mainTitle": "每日体育竞猜",
+      "subTitle": "最高赠送 $588",
+      "button": "立即体验"
+    },
+    "hash": {
+      "mainTitle": "哈希闯关",
+      "subTitle": "最高赠送 $588",
+      "button": "最高领取$588"
+    },
+    "live": {
+      "mainTitle": "真人百家乐",
+      "subTitle": "勇者征途",
+      "button": "最高领取 $588"
+    },
+    "rebate": {
+      "mainTitle": "高额返水",
+      "subTitle": "投注不停，返水不止",
+      "button": "最高领取 1.1%"
+    },
+    "solts": {
+      "mainTitle": "电子派对",
+      "subTitle": "登顶赢家，总奖金达 $1588",
+      "button": "立即体验"
+    }
   }
 }

@@ -10,9 +10,17 @@ interface TypeOneProps {
   button: string
   image: string // image URL from /public
   link?: string
+  mainTitle: string
+  subTitle: string
 }
 
-const TypeOne: React.FC<TypeOneProps> = ({ button, image, link = '#' }) => {
+const TypeOne: React.FC<TypeOneProps> = ({
+  button,
+  image,
+  link = '#',
+  mainTitle,
+  subTitle,
+}) => {
   return (
     <div
       className="group relative overflow-hidden rounded-[14px] lg:h-[270px] h-[196px] lg:px-8 px-6 lg:py-16 py-8 flex items-end text-white shadow-md transition-all duration-300 "
@@ -27,8 +35,17 @@ const TypeOne: React.FC<TypeOneProps> = ({ button, image, link = '#' }) => {
           backgroundPosition: 'center',
         }}
       />
-      <div className="absolute">
-        <span>123</span>
+      <div className="absolute top-[15%] left-[5%] w-3/5">
+        <p>
+          <span className="font-bold text-[1.6rem] md:text-[2rem]">
+            {mainTitle}
+          </span>
+        </p>
+        <p>
+          <span className="font-semibold text-[1.2rem] md:text-[1.6rem] leading-[1.5rem] md:leading-[2rem]">
+            {subTitle}
+          </span>
+        </p>
       </div>
 
       {/* subtle dark overlay for readability */}
