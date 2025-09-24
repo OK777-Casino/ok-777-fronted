@@ -98,7 +98,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
             </div>
             <div
               onClick={handleCopy}
-              className="absolute right-1.5 sm:right-2 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded bg-gray-700/50 hover:bg-gray-600/70 flex items-center justify-center cursor-pointer transition-colors"
+              className="absolute right-1.5 sm:right-2 top-1/2 -translate-y-1/2 h-8 rounded bg-gray-700/50 hover:bg-gray-600/70 flex items-center justify-center cursor-pointer transition-colors"
             >
               <Copy className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-gray-300" />
             </div>
