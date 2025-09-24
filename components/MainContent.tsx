@@ -163,6 +163,54 @@ const GameImageCard: React.FC<{
   </Link>
 )
 
+const bannerCards = [
+  {
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
+  },
+  {
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
+  },
+  {
+    button: 'CLAIM NOW',
+    image: '/images/banner/Banner12.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner10.jpg',
+    link: '#',
+  },
+  {
+    button: 'JOIN NOW',
+    image: '/images/banner/Banner09.jpg',
+    link: '#',
+  },
+] as const
+
 // Latest bets table component
 const LatestBetsTable: React.FC = () => {
   const { t } = useI18n()
@@ -423,81 +471,6 @@ const MainContent: React.FC = () => {
     )
   }
 
-  const bannerCards = [
-    {
-      button: t('banner.firstDepost.button'),
-      image: '/images/banner/banner-first-depost.jpg',
-      mainTitle: t('banner.firstDepost.mainTitle'),
-      subTitle: t('banner.firstDepost.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.cryptoGame.button'),
-      image: '/images/banner/banner-crypto-game.jpg',
-      mainTitle: t('banner.cryptoGame.mainTitle'),
-      subTitle: t('banner.cryptoGame.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.dailyDepost.button'),
-      image: '/images/banner/banner-daily-depost.jpg',
-      mainTitle: t('banner.dailyDepost.mainTitle'),
-      subTitle: t('banner.dailyDepost.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.dailyQuests.button'),
-      image: '/images/banner/banner-daily-quests.jpg',
-      mainTitle: t('banner.dailyQuests.mainTitle'),
-      subTitle: t('banner.dailyQuests.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.footerball.button'),
-      image: '/images/banner/banner-footerball.jpg',
-      mainTitle: t('banner.footerball.mainTitle'),
-      subTitle: t('banner.footerball.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.hash.button'),
-      image: '/images/banner/banner-hash.jpg',
-      mainTitle: t('banner.hash.mainTitle'),
-      subTitle: t('banner.hash.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.live.button'),
-      image: '/images/banner/banner-live.jpg',
-      mainTitle: t('banner.live.mainTitle'),
-      subTitle: t('banner.live.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.rebate.button'),
-      image: '/images/banner/banner-rebate.jpg',
-      mainTitle: t('banner.rebate.mainTitle'),
-      subTitle: t('banner.rebate.subTitle'),
-      description: '',
-      link: '#',
-    },
-    {
-      button: t('banner.solts.button'),
-      image: '/images/banner/banner-solts.jpg',
-      mainTitle: t('banner.solts.mainTitle'),
-      subTitle: t('banner.solts.subTitle'),
-      description: '',
-      link: '#',
-    },
-  ] as const
-
   // Render lobby view
   return (
     <div
@@ -511,12 +484,11 @@ const MainContent: React.FC = () => {
         <SwiperSlider
           key={`banner-swiper-${activeGameCategory}`}
           data={bannerCards}
-          renderSlide={(card, index) => <RewardCard key={index} {...card} />}
+          renderSlide={(card, index) => <RewardCard {...card} />}
           slidesPerView="auto"
           slideClassName="!w-[min(486.76px,100%)]"
           showProgressBars={true}
           customPagination={true}
-          autoplay={false}
           initialSlide={carouselState.mainBannerCurrentSlide}
           onSlideChange={handleMainBannerSlideChange}
           carouselId="main-banner"

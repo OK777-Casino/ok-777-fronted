@@ -9,7 +9,6 @@ import Introduction from '@/features/alliance/components/Introduction'
 import AllianceBottomBar from '@/features/alliance/components/AllianceBottomBar'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useI18n } from '@/context/I18nProvider'
-import Link from 'next/link'
 
 function AlliancePageContent() {
   const { t } = useI18n()
