@@ -67,9 +67,9 @@ const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
 }
 
 const HashBreakpoints: GameBreakpointsProps = {
-  320: { slidesPerView: 1.3 },
-  375: { slidesPerView: 1.3 },
-  425: { slidesPerView: 1.8 },
+  320: { slidesPerView: 1.1 },
+  375: { slidesPerView: 1.1 },
+  425: { slidesPerView: 1.5 },
   768: { slidesPerView: 2.3 },
   1024: { slidesPerView: 2.3 },
   1440: { slidesPerView: 3.3 },
@@ -87,14 +87,14 @@ const FutureBreakpoints: GameBreakpointsProps = {
 
 // Homepage sections with SwiperSlider
 export const HomepageSections: React.FC<{
-  card1: any[]
-  card2: any[]
-  card3: any[]
-  card4: any[]
-  card5: any[]
-  card6: any[]
-  cryptoCards: any[]
-  extendedHashGames: any[]
+  card1: []
+  card2: []
+  card3: []
+  card4: []
+  card5: []
+  card6: []
+  cryptoCards: []
+  extendedHashGames: []
 }> = ({
   card1,
   card2,
@@ -108,7 +108,7 @@ export const HomepageSections: React.FC<{
   const { t } = useI18n()
 
   // Helper function to duplicate data for two rows
-  const duplicateDataForTwoRows = (data: any[]) => {
+  const duplicateDataForTwoRows = (data: []) => {
     return [...data, ...data]
   }
 
@@ -126,9 +126,9 @@ export const HomepageSections: React.FC<{
           key="homepage-new-launches-swiper"
           autoplay={false}
           data={card1}
-          renderSlide={(card, index) => <CasinoCard {...card} />}
-          slidesPerView={10}
-          spaceBetween={6}
+          renderSlide={card => <CasinoCard {...card} />}
+          slidesPerView={7}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
         />
@@ -145,11 +145,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-live-casino-swiper"
           data={duplicateDataForTwoRows(card2)}
-          renderSlide={(card, index) => (
-            <CasinoCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <CasinoCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
@@ -168,11 +166,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-hash-games-swiper"
           data={extendedHashGames}
-          renderSlide={(card, index) => (
-            <HashCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <HashCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={HashBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -190,11 +186,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-slots-swiper"
           data={duplicateDataForTwoRows(card3)}
-          renderSlide={(card, index) => (
-            <CasinoCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <CasinoCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           grid={{ rows: 2, fill: 'row' }}
           breakpoints={GameBreakpointsTwoRows}
           showProgressBars={true}
@@ -213,11 +207,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-futures-swiper"
           data={cryptoCards}
-          renderSlide={(card, index) => (
-            <FutureCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <FutureCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={FutureBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -235,11 +227,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-crypto-games-swiper"
           data={card4}
-          renderSlide={(card, index) => (
-            <CasinoCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <CasinoCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -257,11 +247,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-sports-swiper"
           data={card5}
-          renderSlide={(card, index) => (
-            <CasinoCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <CasinoCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplay={false}
@@ -279,11 +267,9 @@ export const HomepageSections: React.FC<{
         <SwiperSlider
           key="homepage-table-games-swiper"
           data={card6}
-          renderSlide={(card, index) => (
-            <CasinoCard key={index} {...(card as any)} />
-          )}
+          renderSlide={(card, index) => <CasinoCard key={index} {...card} />}
           slidesPerView={7}
-          spaceBetween={12}
+          spaceBetween={8}
           breakpoints={GameBreakpoints}
           showProgressBars={true}
           autoplay={false}

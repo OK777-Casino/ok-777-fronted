@@ -56,16 +56,18 @@ const Sidebar: React.FC = () => {
 
   const services = [
     {
-      icon: <HeadphoneMicIcon color="#FFB636" className="w-4 h-4" />,
+      icon: (
+        <HeadphoneMicIcon color="var(--yellow-orange)" className="w-4 h-4" />
+      ),
       title: t('help.onlineService'),
       desc: t('help.serviceDescription'),
-      color: '#FFB636',
+      color: 'var(--yellow-orange)',
     },
     {
-      icon: <TelegramIcon color="#2283F6" className="w-4 h-4" />,
+      icon: <TelegramIcon color="var(--dodger-blue)" className="w-4 h-4" />,
       title: 'Telegram',
       desc: t('help.telegramDescription'),
-      color: '#2283F6',
+      color: 'var(--dodger-blue)',
     },
   ]
 
@@ -86,13 +88,13 @@ const Sidebar: React.FC = () => {
     <>
       <aside
         ref={sidebarRef}
-        className={`sidebar bg-[#111923]/54 backdrop-blur-[2rem] fixed lg:block transition-all duration-300 z-40 overflow-y-auto overflow-x-visible h-[calc(100dvh-9.9375rem)] lg:top-[3.5rem] top-[6.25rem] lg:h-[calc(100dvh-3.5rem)] ${
+        className={`sidebar bg-[var(--mirage)]/54 backdrop-blur-[2rem] fixed lg:block transition-all duration-300 z-40 overflow-y-auto overflow-x-visible h-[calc(100dvh-9.9375rem)] lg:top-[3.5rem] top-[6.25rem] lg:h-[calc(100dvh-3.5rem)] ${
           isCollapsed ? 'close ' : 'open'
         }`}
         style={{
-          borderRight: '1px solid hsla(0, 0%, 100%, .04)',
+          borderRight: '1px solid var(--white-4)',
           backdropFilter: 'blur(2rem)',
-          background: 'rgba(17, 25, 35, 0.54)',
+          background: 'var(--mirage-54)',
           overscrollBehavior: 'contain',
           WebkitOverflowScrolling: 'touch',
         }}
@@ -134,7 +136,7 @@ const Sidebar: React.FC = () => {
             </div>
             <Link
               href={'/install-app'}
-              className="py-2 justify-center lg:hidden flex flex-col gap-2 rounded-[0.5rem] h-[5.1875rem] px-4 bg-[linear-gradient(45deg,#111923,#003A81)]"
+              className="py-2 justify-center lg:hidden flex flex-col gap-2 rounded-[0.5rem] h-[5.1875rem] px-4 bg-[linear-gradient(45deg,#111923,#002554)]"
             >
               <span className="text-[0.875rem] text-white font-bold">
                 {t('app.title')}
@@ -167,7 +169,7 @@ const Sidebar: React.FC = () => {
         isOpen={!isCollapsed}
         onClose={toggleSidebar}
         className="lg:hidden fixed left-0 right-0 z-[9]"
-        backdropClassName="h-[calc(100dvh-7.1rem)] bg-[#00000066] backdrop-blur-[0.1875rem]"
+        backdropClassName="h-[calc(100dvh-7.1rem)] bg-[var(--mirage-73)] backdrop-blur-[0.1875rem]"
         contentClassName=""
         zIndex={9}
         closeOnBackdropClick={true}
@@ -241,7 +243,10 @@ const Sidebar: React.FC = () => {
                   </div>
                   {service.title}
                 </div>
-                <ArrowUpRightStrokeIcon className="w-6 h-6" color="#A7B5CA" />
+                <ArrowUpRightStrokeIcon
+                  className="w-6 h-6"
+                  color="var(--casper)"
+                />
               </div>
               <div className="text-casper text-[0.875rem]">{service.desc}</div>
             </div>

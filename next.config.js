@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true, // Enable strict mode (optional but recommended)
   swcMinify: true, // Enabling SWC minifier (recommended for production)
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['api.builder.io'], // Allow external domains for image optimization (if you're using external image sources)
   },

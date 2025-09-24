@@ -208,7 +208,7 @@ export default function AuthModal() {
                     type="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
-                    placeholder="Enter your username or email"
+                    placeholder={t('auth.userEmailPlaceholder')}
                     className="w-full h-12 px-4 pt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
                   />
                 </div>
@@ -219,7 +219,7 @@ export default function AuthModal() {
                 <div className="relative">
                   <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-mirage to-deep-blue">
                     <span className="text-xs text-polo-blue">
-                      <span>Password</span>
+                      <span>{t('auth.password')}</span>
                     </span>
                   </div>
                   <input
@@ -265,7 +265,7 @@ export default function AuthModal() {
                     onClick={() => setShowReferral(!showReferral)}
                     className="flex items-center text-dodger-blue text-sm font-bold cursor-pointer"
                   >
-                    <span>{t('alliance.referralCode')}</span>
+                    <span>{t('auth.referralPlaceholder')}</span>
                     <ChevronDown size={20} className="ml-1" />
                   </div>
                   {showReferral && (
@@ -273,7 +273,7 @@ export default function AuthModal() {
                       type="text"
                       value={referralCode}
                       onChange={e => setReferralCode(e.target.value)}
-                      placeholder="Enter referral code"
+                      placeholder={t('auth.referralPlaceholder')}
                       className="w-full h-12 px-4 mt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
                     />
                   )}
@@ -536,7 +536,7 @@ export default function AuthModal() {
                       type="text"
                       value={referralCode}
                       onChange={e => setReferralCode(e.target.value)}
-                      placeholder="Enter referral code"
+                      placeholder={t('auth.referralPlaceholder')}
                       className="w-full h-12 px-4 mt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
                     />
                   )}

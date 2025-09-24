@@ -21,7 +21,27 @@
     "download": "Descargar",
     "subtitle": "Obtén placer ilimitado en el camino",
     "showMore": "Mostrar Más",
-    "showLess": "Mostrar Menos"
+    "showLess": "Mostrar Menos",
+    "communityEntrance": "Entrada de la comunidad",
+    "supportedCurrencies": "Monedas admitidas",
+    "gamblingLicense": "Licencia de juego"
+  },
+  "licence": {
+    "company": "El casino Ok777 es propiedad y está operado por Nextech NV, registrado en Curazao (N.º 162054). Licencia 365/JAZ (Antillephone), regulado por el Gobierno de Curazao."
+  },
+  "generalInformation": {
+    "generalInformation": "Información general",
+    "commonProblem": "Problemas comunes",
+    "responsibleGambling": "Juego responsable",
+    "honestlyAndFairly": "Honestidad y equidad",
+    "termsOfService": "Términos de servicio",
+    "privacyPolicy": "Política de privacidad"
+  },
+  "aboutUs": { "aboutUs": "Sobre nosotros" },
+  "install": {
+    "install": "Instalar",
+    "onTheDesktop": "en el escritorio",
+    "accept": "Aceptar"
   },
   "navigation": {
     "home": "Inicio",

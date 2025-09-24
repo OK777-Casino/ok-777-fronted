@@ -105,7 +105,7 @@ export const createSidebarData = (t: (key: string) => string) => {
       href: '/vip-club',
       badge: {
         text: 'VIP',
-        color: 'text-yellow-400',
+        color: 'text-yellow-orange',
       },
     },
     {

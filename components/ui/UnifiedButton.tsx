@@ -29,17 +29,18 @@ const UnifiedButton: React.FC<UnifiedButtonProps> = ({
 
   const variantClasses = {
     default:
-      'h-9 bg-[rgba(255, 255, 255, 0.04)] border-b-[1px] border-[#2a3536] border-t-[3px] border-[#FFFFFF29] hover:bg-[rgba(255, 255, 255, 0.08)]',
-    primary: 'h-9 bg-[#2283F6] text-white hover:bg-[#1a6fd8]',
+      'h-9 bg-[var(--white-4)] border-b-[1px] border-[var(--ebony-clay)] border-t-[3px] border-[var(--white-29)] hover:bg-[var(--white-8)]',
+    primary:
+      'h-9 bg-[var(--dodger-blue)] text-white hover:bg-[var(--dodger-blue)]',
     secondary:
-      'h-9 bg-[rgba(255, 255, 255, 0.08)] text-[#A7B5CA] hover:bg-[rgba(255, 255, 255, 0.12)]',
+      'h-9 bg-[var(--white-8)] text-[var(--casper)] hover:bg-[var(--white-13)]',
     gradient:
-      'h-9 bg-gradient-to-r from-[#0546A7] to-[#0C9898] text-white hover:brightness-110',
+      'h-9 bg-gradient-to-r from-[var(--navy-dark)] to-[var(--blue-500)] text-white hover:brightness-110',
     custom: '',
   }
 
   const defaultStyle =
-    variant === 'default' ? { borderTop: '1px solid #9b9292bd' } : {}
+    variant === 'default' ? { borderTop: '1px solid var(--light-gray)' } : {}
 
   return (
     <div

@@ -34,7 +34,7 @@ const styles: Record<
     base: 'flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] hover:bg-white-8 transition-colors',
   },
   red: {
-    base: 'bg-[linear-gradient(to_bottom,rgb(249,71,110)_0%,rgb(189,1,57)_24%)]',
+    base: 'bg-[linear-gradient(to_bottom,#F9476E_0%,#BD0139_24%)]',
     edge: 'bg-[#61001d]',
     width: 'w-[85px]',
   },
@@ -111,7 +111,7 @@ const Button: React.FC<ButtonProps> = ({
       ></span>
       <span
         className={clsx(
-          'front relative w-full h-full rounded-[8px] hover:shadow-[0_3px_16px_transparent,inset_0_4px_3px_#ffffff4d] text-white font-bold flex items-center justify-center text-[12px] will-change-transform transform transition-transform duration-&lsqb;600ms&rsqb; ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1)&rsqb; group-hover:-translate-y-[3px] group-hover:duration-&lsqb;250ms&rsqb; group-hover:ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1.5)&rsqb; group-active:translate-y-[1px] group-active:duration-&lsqb;34ms&rsqb;',
+          'front relative w-full h-full rounded-[8px] hover:shadow-[0_3px_16px_transparent,inset_0_4px_3px_var(--white-25)] text-white font-bold flex items-center justify-center text-[12px] will-change-transform transform transition-transform duration-&lsqb;600ms&rsqb; ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1)&rsqb; group-hover:-translate-y-[3px] group-hover:duration-&lsqb;250ms&rsqb; group-hover:ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1.5)&rsqb; group-active:translate-y-[1px] group-active:duration-&lsqb;34ms&rsqb;',
           base
         )}
       >
@@ -136,7 +136,7 @@ const BlueButton: React.FC<BlueButtonProps> = ({
   type = 'button',
   disabled = false,
 }) => {
-  // background: linear-gradient(3360deg, #db0a49 .8%, #fb2b57);
+  // background: linear-gradient(3360deg, #F9476E .8%, #BD0139);
   return (
     <div
       className="pushable group relative border-none bg-transparent p-0 cursor-pointer outline-offset-1 hover:brightness-110 transition-filter duration-250 focus:outline-none focus-visible:outline"
@@ -155,7 +155,8 @@ const BlueButton: React.FC<BlueButtonProps> = ({
                     border-[1px] border-[#55657E]
                     group-active:translate-y-[1px] hover:shadow-[0_3px_28px_#2283f666] group-active:duration-&lsqb;34ms&rsqb; text-[12px] font-bold items-center justify-center lg:text-[18.9px]"
         style={{
-          boxShadow: '0 3px 28px #2283f666, inset 0 3px 3px #ffffff21',
+          boxShadow:
+            '0 3px 28px #2283f666, inset 0 3px 3px rgba(255,255,255,0.21)',
         }}
       >
         <span>{children}</span>
