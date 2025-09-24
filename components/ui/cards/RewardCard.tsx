@@ -37,12 +37,12 @@ const TypeOne: React.FC<TypeOneProps> = ({
       />
       <div className="absolute top-[15%] left-[5%] w-3/5">
         <p>
-          <span className="font-bold text-[1.6rem] md:text-[2rem]">
+          <span className="font-bold text-[1.4rem] md:text-[1.6]">
             {mainTitle}
           </span>
         </p>
         <p>
-          <span className="font-semibold text-[1.2rem] md:text-[1.6rem] leading-[1.5rem] md:leading-[2rem]">
+          <span className="font-semibold text-[1rem] md:text-[1.2rem] leading-[1.5rem] md:leading-[2rem]">
             {subTitle}
           </span>
         </p>
