@@ -21,10 +21,7 @@ const Management: React.FC = () => {
   ]
 
   return (
-    <div className="lg:p-4">
-      <p className="text-[18px] mb-4 font-bold text-white [@media(max-width:660px)]:hidden">
-        Management
-      </p>
+    <div className="">
       <div className="relative w-full mb-4">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <img
@@ -40,7 +37,7 @@ const Management: React.FC = () => {
         />
       </div>
       <div className="overflow-x-auto rounded-[12px] mb-4">
-        <table className="w-full text-white border-[0.5px] border-[#ffffff09]">
+        <table className="w-full text-white">
           <thead>
             <tr className="bg-[#1119238A]">
               <th className="py-3 px-4 [@media(max-width:500px)]:px-0 font-bold text-[12px] text-[#55657E]">

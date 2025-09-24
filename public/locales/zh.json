@@ -378,9 +378,9 @@
     "referralLink": "邀请链接",
     "referralCode": "邀请码",
     "shareMedia": "通过社交媒体分享",
-    "newSibordinates": "新的直属下级",
-    "directSibordinates": "直属下级",
-    "newTotalTeamMember": "新增团队总人数",
+    "newSibordinates": "今日新增直属下级人数",
+    "directSibordinates": "直属下级总人数",
+    "newTotalTeamMember": "今日新增团队人数",
     "totalTeamMember": "团队总人数",
     "commissionRewards": "佣金奖励",
     "details": "详情查看"

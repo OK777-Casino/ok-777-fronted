@@ -2,7 +2,7 @@ import React from 'react'
 import FAQ from './FAQ'
 import FlatButton from '@/components/ui/Button/FlatButton'
 import { CopyBox } from '@/components/ui/CopyBox'
-import { XIcon, } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 import BlackButton from '@/components/ui/Button/BlackButton'
 import FacebookIcon from '@/components/ui/icons/FacebookIcon'
 import InstagramIcon from '@/components/ui/icons/InstagramIcon'
@@ -74,7 +74,7 @@ const InviteFriends: React.FC = () => {
       {/* Share via Social Media and Statistics Section */}
       <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
         {/* Left Card: Share via Social Media */}
-        <div className="bg-white-4 rounded-lg p-3">
+        <div className="flex flex-col md:justify-around bg-white-4 rounded-lg p-3">
           <h3 className="text-white text-md font-medium leading-8">
             {t('alliance.shareMedia')}
           </h3>
@@ -108,22 +108,26 @@ const InviteFriends: React.FC = () => {
           <div className="grid grid-cols-2 gap-4">
             {/* Top Left */}
             <div className=" block text-center m-t items-center">
-              <div className="text-sm font-bold text-white mb-1">0</div>
+              <div className="text-sm font-bold text-dodger-blue mb-1">
+                <span>12</span>
+              </div>
               <div className="text-gray-300 text-sm">
                 {t('alliance.newSibordinates')}
               </div>
             </div>
             {/* Top Right */}
             <div className=" block text-center m-t items-center">
-              <div className="text-sm font-bold text-white mb-1">0</div>
+              <div className="text-sm font-bold text-white mb-1">
+                <span>22</span>
+              </div>
               <div className="text-gray-300 text-sm">
                 {t('alliance.directSibordinates')}
               </div>
             </div>
             {/* Bottom Left */}
-            <div className=" block text-center m-t items-center">
+            <div className="block text-center m-t items-center">
               <div className="text-sm font-bold text-dodger-blue mb-1">
-                0
+                <span>465</span>
               </div>
               <div className="text-gray-300 text-sm">
                 {t('alliance.newTotalTeamMember')}
@@ -131,8 +135,8 @@ const InviteFriends: React.FC = () => {
             </div>
             {/* Bottom Right */}
             <div className=" block text-center m-t items-center">
-              <div className="text-sm font-bold text-dodger-blue mb-1">
-                0
+              <div className="text-sm font-bold text-white mb-1">
+                <span>1652</span>
               </div>
               <div className="text-gray-300 text-sm">
                 {t('alliance.totalTeamMember')}
@@ -145,9 +149,7 @@ const InviteFriends: React.FC = () => {
       {/* Commission Rewards Section */}
       <div className="mb-8 bg-white-4 rounded-lg p-3 ">
         <div className="flex justify-between items-center font-medium leading-8">
-          <h3 className="text-white">
-            {t('alliance.commissionRewards')}
-          </h3>
+          <h3 className="text-white">{t('alliance.commissionRewards')}</h3>
           <a
             href="#"
             className="text-[#2283F6] hover:underline font-bold text-sm"

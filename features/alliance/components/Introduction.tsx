@@ -182,16 +182,12 @@ const Introduction: React.FC = () => {
   return (
     <div className=" [@media(max-width:660px)]:w-full">
       <div className="w-full">
-        {/* Introduction Header */}
-        <h1 className="hidden lg:block text-lg sm:text-xl font-bold text-white mb-6 px-3">
-          Introduction
-        </h1>
         {/* Commission Rules */}
         <div className="bg-[#ffffff0a] rounded-xl p-3 sm:p-4">
           <h2 className="text-sm font-bold text-[#ededed] mb-2">
             Commission Rules
           </h2>
-          <p className="text-sm font-normal text-[#a7b5ca]">
+          <p className="text-sm font-normal text-casper">
             Commission rates vary depending on the game and the valid bet amount
           </p>
         </div>
@@ -204,7 +200,7 @@ const Introduction: React.FC = () => {
               className={`flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-bold transition-colors duration-200 hover:bg-white/10 hover:shadow-md cursor-pointer ${
                 selectedGameType === game.name
                   ? 'bg-[#2283f6] text-white'
-                  : 'bg-transparent text-[#a7b5ca] hover:bg-[#ffffff0a]'
+                  : 'bg-transparent text-casper hover:bg-[#ffffff0a]'
               }`}
             >
               <img src={game.icon} alt={game.name} width={26} height={26} />
@@ -236,7 +232,7 @@ const Introduction: React.FC = () => {
                 }`}
               >
                 <div className="flex grid-cols-3 gap-4  justify-center items-center">
-                  <div className="text-xs font-bold text-[#a7b5ca]">
+                  <div className="text-xs font-bold text-casper">
                     {row.agentLevel}
                   </div>
                   <div className="text-xs font-bold text-white">
@@ -260,7 +256,7 @@ const Introduction: React.FC = () => {
           <div className="mb-6">
             <div className="relative bg-[#1a2332]  rounded-xl p-4 sm:p-6 w-full border border-[#ffffff1a]">
               {/* A badge */}
-              <div className="absolute top-0 left-0 h-5 px-2 rounded-[12px_0_12px_0] text-[11px] border-t border-[#ffffff38] font-bold bg-[#ffb636] text-white flex items-center shadow">
+              <div className="absolute top-0 left-0 h-5 px-2 rounded-[12px_0_12px_0] text-[11px] border-t border-[#ffffff38] font-bold bg-chip-orange text-white flex items-center shadow">
                 A
               </div>
 
@@ -274,44 +270,42 @@ const Introduction: React.FC = () => {
                   </div>
                   {/* No title next to avatar in the design */}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 text-[12px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 text-xs">
                   <div className="flex gap-1 items-end">
-                    <span className="text-[#a7b5ca]">Team performance:</span>
-                    <span className="text-[#ffb636] font-bold">
+                    <span className="text-casper">Team performance:</span>
+                    <span className="text-chip-orange font-bold">
                       {affiliateAData.teamPerformance}
                     </span>
                   </div>
                   <div className="flex gap-1 items-end">
-                    <span className="text-[#a7b5ca]">Direct performance:</span>
-                    <span className="text-[#ffb636] font-bold">
+                    <span className="text-casper">Direct performance:</span>
+                    <span className="text-chip-orange font-bold">
                       {affiliateAData.directPerformance}
                     </span>
                   </div>
 
                   <div className="flex gap-1 items-end">
-                    <span className="text-[#a7b5ca]">Rate per 10K:</span>
-                    <span className="text-[#ffb636] font-bold">
+                    <span className="text-casper">Rate per 10K:</span>
+                    <span className="text-chip-orange font-bold">
                       {affiliateAData.ratePerTenK}
                     </span>
                   </div>
                   <div className="flex gap-1 items-end">
-                    <span className="text-[#a7b5ca]">Direct commission:</span>
-                    <span className="text-[#ffb636] font-bold">
+                    <span className="text-casper">Direct commission:</span>
+                    <span className="text-chip-orange font-bold">
                       {affiliateAData.directCommission}
                     </span>
                   </div>
 
                   <div className="flex gap-1 items-end">
-                    <span className="text-[#a7b5ca]">Team commission:</span>
-                    <span className="text-[#ffb636] font-bold">
+                    <span className="text-casper">Team commission:</span>
+                    <span className="text-chip-orange font-bold">
                       {affiliateAData.rewardEarned}
                     </span>
                   </div>
                   <div className="flex gap-1 items-end">
-                    <span className="text-[#a7b5ca]">
-                      Subordinate commission:
-                    </span>
-                    <span className="text-[#ffb636] font-bold">
+                    <span className="text-casper">Subordinate commission:</span>
+                    <span className="text-chip-orange font-bold">
                       {affiliateAData.subordinateCommission}
                     </span>
                   </div>
@@ -321,7 +315,7 @@ const Introduction: React.FC = () => {
               {/* Divider and total */}
               <div className="mt-4 border-t border-[#ffffff1a] pt-3 flex justify-between">
                 <span className="text-white font-bold">Total Rewards:</span>
-                <span className="text-[#ffb636] font-bold">
+                <span className="text-chip-orange font-bold">
                   {affiliateAData.totalRewards}
                 </span>
               </div>
@@ -350,28 +344,28 @@ const Introduction: React.FC = () => {
                     {affiliate.id}
                   </div>
                 </div>
-                <div className="space-y-2 text-[.8rem]">
+                <div className="space-y-2 text-xs">
                   <div className="flex gap-1 flex-wrap items-end">
                     <p className="text-gray-400">Team performance:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.teamPerformance}
                     </p>
                   </div>
                   <div className="flex gap-1 items-end">
                     <p className="text-gray-400">Rate per 10K:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.ratePerTenK}
                     </p>
                   </div>
                   <div className="flex gap-1 items-end">
                     <p className="text-gray-400">Reward Earned:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.rewardEarned}
                     </p>
                   </div>
                   <div className="border-t border-[#ffffff1a] pt-2 flex gap-1 items-end">
                     <p className="text-gray-400">Valid Bet:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.validBet}
                     </p>
                   </div>
@@ -415,28 +409,28 @@ const Introduction: React.FC = () => {
                     {affiliate.id}
                   </div>
                 </div>
-                <div className="space-y-2 text-[.8rem]">
+                <div className="space-y-2 text-xs">
                   <div className="flex flex-wrap  gap-1">
                     <p className="text-gray-400">Team performance:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.teamPerformance}
                     </p>
                   </div>
                   <div className="flex gap-1 items-center">
                     <p className="text-gray-400">Rate per 10K:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.ratePerTenK}
                     </p>
                   </div>
                   <div className="flex gap-1 items-center">
                     <p className="text-gray-400">Reward Earned:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.rewardEarned}
                     </p>
                   </div>
                   <div className="border-t border-[#ffffff1a] flex gap-1 pt-2">
                     <p className="text-gray-400">Valid Bet:</p>
-                    <p className="text-[#ffb636] font-bold">
+                    <p className="text-chip-orange font-bold">
                       {affiliate.validBet}
                     </p>
                   </div>
@@ -445,111 +439,113 @@ const Introduction: React.FC = () => {
             ))}
           </div>
         </div>
-        {/* Commission Calculation */}
-        <div className="space-y-4">
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
+        <div>
+          {/* Commission Calculation */}
+          <div className="bg-[#ffffff0a] rounded-xl p-4 mb-4">
             <h2 className="text-lg font-bold text-white">
               Commission Calculation
             </h2>
           </div>
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
-            <h3 className="text-sm font-bold text-[#ededed] mb-2">
-              Commission Calculation
-            </h3>
-            <p className="text-sm font-normal text-[#a7b5ca] mb-2">
-              Direct Subordinates' Effective Bets × Commission Ratio = Direct
-              Commission
-            </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
-              Team Total Commission - Direct Commission - Sub-agent Commission =
-              Agent Commission
-            </p>
-          </div>
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
-            <h3 className="text-sm font-bold text-[#ededed] mb-2">
-              Team A total performance
-            </h3>
-            <p className="text-sm font-normal text-[#a7b5ca] mb-2">
-              Team A Total Performance: 4.12 million (Direct Performance 720,000
-              + Sub-agent Performance 3.4 million)
-            </p>
-            <p className="text-sm font-normal text-[#a7b5ca] mb-2">
-              Commission rate: 35 per ten thousand returns
-            </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
-              Total commission earned by the team：412×35=14420 USDT
-            </p>
-          </div>
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
-            <h3 className="text-sm font-bold text-[#ededed] mb-2">
-              Calculation of direct commission for A
-            </h3>
-            <p className="text-sm font-normal text-[#a7b5ca] mb-2">
-              Performance of A's direct subordinates B1, B2, B3 is:
-              20+50+2=720,000.
-            </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
-              Received direct commission: 72×35=2520 USDT.
-            </p>
-          </div>
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
-            <h3 className="text-sm font-bold text-[#ededed] mb-2">
-              Commission from A's subordinate agents
-            </h3>
-            <p className="text-sm font-normal text-[#a7b5ca] mb-2">
-              Direct agent B1: Team performance 400,000, commission rate per ten
-              thousand 32, received 40×32=1280 USDT.
-            </p>
-            <p className="text-sm font-normal text-[#a7b5ca] mb-2">
-              Team performance 0, no commission generated.
-            </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
-              Direct agent B3: Team performance 3 million, commission rate per
-              ten thousand 35, received 300×35=10,500 USDT.
-            </p>
-          </div>
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
-            <h3 className="text-sm font-bold text-[#ededed] mb-2">
-              Commission calculation for A
-            </h3>
-            <p className="text-sm font-normal text-[#a7b5ca]">
-              14420-2520-1280-0-10500= 120 USDT
-            </p>
-          </div>
-          <div className="bg-[#ffffff0a] rounded-xl p-4">
-            <h3 className="text-sm font-bold text-[#ededed] mb-2">
-              Total commission earned by A (Direct commission + Agent
-              commission):
-            </h3>
-            <p className="text-sm font-normal text-[#a7b5ca]">
-              2520+120=2640 USDT
-            </p>
+          <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
+            <div className="bg-[#ffffff0a] rounded-xl p-4">
+              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+                Commission Calculation
+              </h3>
+              <p className="text-sm font-normal text-casper mb-2">
+                Direct Subordinates' Effective Bets × Commission Ratio = Direct
+                Commission
+              </p>
+              <p className="text-sm font-normal text-casper">
+                Team Total Commission - Direct Commission - Sub-agent Commission
+                = Agent Commission
+              </p>
+            </div>
+            <div className="bg-[#ffffff0a] rounded-xl p-4">
+              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+                Team A total performance
+              </h3>
+              <p className="text-sm font-normal text-casper mb-2">
+                Team A Total Performance: 4.12 million (Direct Performance
+                720,000 + Sub-agent Performance 3.4 million)
+              </p>
+              <p className="text-sm font-normal text-casper mb-2">
+                Commission rate: 35 per ten thousand returns
+              </p>
+              <p className="text-sm font-normal text-casper">
+                Total commission earned by the team：412×35=14420 USDT
+              </p>
+            </div>
+            <div className="bg-[#ffffff0a] rounded-xl p-4">
+              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+                Calculation of direct commission for A
+              </h3>
+              <p className="text-sm font-normal text-casper mb-2">
+                Performance of A's direct subordinates B1, B2, B3 is:
+                20+50+2=720,000.
+              </p>
+              <p className="text-sm font-normal text-casper">
+                Received direct commission: 72×35=2520 USDT.
+              </p>
+            </div>
+            <div className="bg-[#ffffff0a] rounded-xl p-4">
+              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+                Commission from A's subordinate agents
+              </h3>
+              <p className="text-sm font-normal text-casper mb-2">
+                Direct agent B1: Team performance 400,000, commission rate per
+                ten thousand 32, received 40×32=1280 USDT.
+              </p>
+              <p className="text-sm font-normal text-casper mb-2">
+                Team performance 0, no commission generated.
+              </p>
+              <p className="text-sm font-normal text-casper">
+                Direct agent B3: Team performance 3 million, commission rate per
+                ten thousand 35, received 300×35=10,500 USDT.
+              </p>
+            </div>
+            <div className="bg-[#ffffff0a] rounded-xl p-4">
+              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+                Commission calculation for A
+              </h3>
+              <p className="text-sm font-normal text-casper">
+                14420-2520-1280-0-10500= 120 USDT
+              </p>
+            </div>
+            <div className="bg-[#ffffff0a] rounded-xl p-4">
+              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+                Total commission earned by A (Direct commission + Agent
+                commission):
+              </h3>
+              <p className="text-sm font-normal text-casper">
+                2520+120=2640 USDT
+              </p>
+            </div>
           </div>
         </div>
         {/* How to get commission rewards */}
-        <div className="bg-[#ffffff0a] rounded-xl p-4">
+        <div className="bg-[#ffffff0a] rounded-xl p-4 mb-6">
           <h2 className="text-lg font-bold text-white mb-4">
             How to get commission rewards?
           </h2>
           <div className="space-y-3">
-            <p className="text-sm font-normal text-[#a7b5ca]">
+            <p className="text-sm font-normal text-casper">
               1、Sharing friends must register through your link to become your
               valid member.
             </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
+            <p className="text-sm font-normal text-casper">
               2、Share the developed users for valid bet
             </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
+            <p className="text-sm font-normal text-casper">
               3、Performance calculation: player turnover (effective bet
               amount), regardless of winning or losing, commission is calculated
               based on this basis
             </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
+            <p className="text-sm font-normal text-casper">
               4、Commission calculation: Offline users are composed of
               commissions generated by direct member performance + agent
               difference commissions
             </p>
-            <p className="text-sm font-normal text-[#a7b5ca]">
+            <p className="text-sm font-normal text-casper">
               5、Rebates are calculated based on valid bets. In all products,
               any cancellation or principal refund and simultaneous bets on
               matched markets in the same game will not be counted as valid

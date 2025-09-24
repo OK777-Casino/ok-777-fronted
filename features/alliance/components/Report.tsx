@@ -36,33 +36,24 @@ const Report: React.FC = () => {
   ]
 
   return (
-    <div className="p-4">
-      <p className="text-[18px] font-bold mb-4 text-white [@media(max-width:660px)]:hidden">
-        Report
-      </p>
-
+    <div className="">
       {/* Metrics Summary */}
-      <div className="rounded-[12px] mb-6 p-6 border border-[#ffffff14] bg-[#FFFFFF0A] [@media(max-width:660px)]:mb-10">
+      <div className="flex flex-col gap-6 rounded-[12px] mb-6 p-4 border border-[#ffffff14] bg-[#FFFFFF0A] md:mb-10">
         {metricPairs.map((pair, rowIdx) => (
-          <div
-            key={rowIdx}
-            className={`grid grid-cols-2 gap-8 ${
-              rowIdx < metricPairs.length - 1 ? 'mb-6' : ''
-            }`}
-          >
-            <div className="flex flex-col">
-              <span className="text-white text-[.8rem] font-bold tracking-wide">
+          <div key={rowIdx} className={`grid grid-cols-2`}>
+            <div className="flex flex-col pr-4">
+              <span className="text-white text-sm font-bold tracking-wide text-center">
                 {pair[0].value}
               </span>
-              <span className="text-[#A7B5CA] text-[.8rem] mt-1">
+              <span className="text-[#A7B5CA] text-sm text-center">
                 {pair[0].label}
               </span>
             </div>
-            <div className="flex flex-col pl-8 border-l border-[#ffffff1a]">
-              <span className="text-white text-[.8rem] font-bold tracking-wide">
+            <div className="flex flex-col pl-4 border-l border-[#ffffff1a]">
+              <span className="text-white text-sm font-bold tracking-wide text-center">
                 {pair[1].value}
               </span>
-              <span className="text-[#A7B5CA] text-[.8rem] mt-1">
+              <span className="text-[#A7B5CA] text-sm text-center">
                 {pair[1].label}
               </span>
             </div>

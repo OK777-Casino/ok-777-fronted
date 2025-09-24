@@ -422,7 +422,7 @@ const MainContent: React.FC = () => {
       </div>
     )
   }
-   const bannerCards = [
+  const bannerCards = [
     {
       button: t('banner.firstDepost.button'),
       image: '/images/banner/banner-first-depost.jpg',

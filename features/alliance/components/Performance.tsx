@@ -57,9 +57,6 @@ const Performance: React.FC = () => {
 
   return (
     <div className="w-full lg:p-4">
-      <p className="text-[18px] font-bold text-white pb-4 hidden lg:block">
-        Performance
-      </p>
       <div className="flex bg-[#72707038] rounded-lg w-fit p-1 mb-4 w-67 [@media(max-width:660px)]:w-full">
         <div
           onClick={() => {
@@ -91,19 +88,19 @@ const Performance: React.FC = () => {
 
       {/* Performance Table */}
       <div className="overflow-x-auto rounded-lg mb-4">
-        <table className="w-full text-white border-[1px] border-[#FFFFFF1A]">
+        <table className="w-full text-white">
           <thead>
-            <tr className="bg-[#1119238A] h-12">
-              <th className="[@media(max-width:500px)]:px-0 font-bold text-[12px] text-[#FFFFFFCC] text-center">
+            <tr className="bg-gray-900 h-12">
+              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
                 Game Type
               </th>
-              <th className="[@media(max-width:500px)]:px-0 font-bold text-[12px] text-[#FFFFFFCC] text-center">
+              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
                 Total performance
               </th>
-              <th className="[@media(max-width:500px)]:px-0 font-bold text-[12px] text-[#FFFFFFCC] text-center">
+              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
                 Direct performance
               </th>
-              <th className="[@media(max-width:500px)]:px-0 font-bold text-[12px] text-[#FFFFFFCC] text-center">
+              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
                 Agent performance
               </th>
             </tr>
@@ -111,13 +108,13 @@ const Performance: React.FC = () => {
           <tbody>
             {performanceData.map((row, index) => (
               <tr key={index}>
-                <td className="text-[.8rem] font-bold text-center whitespace-nowrap text-[#A7B5CA]">
+                <td className="text-sm font-semibold text-center whitespace-nowrap text-casper">
                   {row.gameType}
                 </td>
-                <td className="text-[.8rem] font-bold text-center whitespace-nowrap text-white">
+                <td className="text-sm font-semibold text-center whitespace-nowrap text-white">
                   {row.total}
                 </td>
-                <td className="text-[.8rem] font-bold text-center whitespace-nowrap text-white">
+                <td className="text-sm font-semibold text-center whitespace-nowrap text-white">
                   <div className="inline-flex items-center justify-center gap-2">
                     {row.direct}
                     <img
@@ -127,7 +124,7 @@ const Performance: React.FC = () => {
                     />
                   </div>
                 </td>
-                <td className="py-3 px-4 text-[.8rem] font-bold text-center whitespace-nowrap text-white">
+                <td className="py-3 px-4 text-sm font-semibold text-center whitespace-nowrap text-white">
                   <div className="inline-flex items-center justify-center gap-2">
                     {row.agent}
                     <img

@@ -174,6 +174,17 @@ module.exports = {
         'crimson-80': 'var(--crimson-80)',
         'mirage-73': 'var(--mirage-73)',
         'mirage-54': 'var(--mirage-54)',
+
+        // Poker Chip Colors
+        'chip-blue': 'var(--chip-blue)',
+        'chip-purple': 'var(--chip-purple)',
+        'chip-green': 'var(--chip-green)',
+        'chip-navy': 'var(--chip-navy)',
+        'chip-red': 'var(--chip-red)',
+        'chip-orange': 'var(--chip-orange)',
+        'chip-gold': 'var(--chip-gold)',
+        'chip-brown': 'var(--chip-brown)',
+        'chip-lightblue': 'var(--chip-lightblue)',
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
