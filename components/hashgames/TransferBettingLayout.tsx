@@ -32,11 +32,11 @@ const TransferBettingLayout: React.FC = () => {
                 className="w-10 h-10 flex items-center justify-center border border-gray-700"
               >
                 {cell === 'E' ? (
-                  <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-500 text-black text-[12px] font-bold [@media(max-width:850px)]:text-[10px] [@media(max-width:850px)]:w-4 [@media(max-width:850px)]:h-4">
+                  <div className="w-5 h-5 flex items-center justify-center rounded-full bg-yellow-500 text-black text-xs font-bold [@media(max-width:850px)]:text-[10px] [@media(max-width:850px)]:w-4 [@media(max-width:850px)]:h-4">
                     E
                   </div>
                 ) : cell === 'O' ? (
-                  <div className="w-5 h-5 flex items-center justify-center rounded-full bg-red-600 text-white text-[12px] font-bold [@media(max-width:850px)]:text-[10px] [@media(max-width:850px)]:w-4 [@media(max-width:850px)]:h-4">
+                  <div className="w-5 h-5 flex items-center justify-center rounded-full bg-red-600 text-white text-xs font-bold [@media(max-width:850px)]:text-[10px] [@media(max-width:850px)]:w-4 [@media(max-width:850px)]:h-4">
                     O
                   </div>
                 ) : null}
@@ -57,7 +57,7 @@ const TransferBettingLayout: React.FC = () => {
         <div className=" justify-between items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
           <div className="flex bg-[#72707038] rounded-lg p-1 ">
             <div
-              className={` px-8  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+              className={` px-8  py-1.5 rounded-lg font-bold transition-all duration-200 text-sm border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
             >
               {' '}
               <img
@@ -69,7 +69,7 @@ const TransferBettingLayout: React.FC = () => {
             </div>
             <Link
               href="/hashgames/bankerplayer/page-betting"
-              className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
+              className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm border-none flex items-center gap-2 
                 bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
@@ -77,8 +77,10 @@ const TransferBettingLayout: React.FC = () => {
               {t('hashgame.pageBetting')}
             </Link>
           </div>
-          <div className="flex items-center gap-2 [@media(max-width:768px)]:hidden">
-            <span className="text-sm text-gray-300">Beginner</span>
+          <div className="hidden items-center gap-2 md:flex">
+            <span className="text-sm text-gray-300">
+              {t('hashgame.beginner')}
+            </span>
             <div className="relative">
               <input
                 type="checkbox"
@@ -104,13 +106,15 @@ const TransferBettingLayout: React.FC = () => {
                 />
               </label>
             </div>
-            <span className="text-sm text-gray-300">Intermediate</span>
+            <span className="text-sm text-gray-300">
+              {t('hashgame.intermediate')}
+            </span>
           </div>
         </div>
         {/* Mobile view Header Section*/}
         <div className="bg-[#72707038] rounded-lg w-full  p-1 hidden [@media(max-width:768px)]:flex ">
           <div
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+            className={` w-[50%] flex justify-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-sm border-none items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
           >
             {' '}
             <img
@@ -122,7 +126,7 @@ const TransferBettingLayout: React.FC = () => {
           </div>
           <Link
             href="/hashgames/bankerplayer/page-betting"
-            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-[14px] border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+            className={` w-[50%] justify-center flex justify-center items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-white text-sm border-none flex items-center gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
           >
             {' '}
             <img
@@ -167,41 +171,38 @@ const TransferBettingLayout: React.FC = () => {
 
         {/* Desktop view Bid address and Wallet Section*/}
         <div className="bg-[#111923] rounded-lg p-3 mb-6  border border-[rgba(12,96,255,0.1)] shadow-xl [@media(max-width:768px)]:block hidden">
-          <h2 className="text-lg font-bold mb-4 text-[#FFFFFF] text-[14px] flex items-center gap-2">
+          <h2 className="text-lg font-bold mb-4 text-[#FFFFFF] flex items-center gap-2">
             {t('hashgame.bettingAddress')}
-            <span className="font-bold text-[12px] opacity-80">
+            <span className="font-bold text-xs opacity-80">
               {t('hashgame.useDecWallet')}
             </span>
           </h2>
           <CopyBox className="w-full mb-4">
-            <span className="text-[#2283F6]">TXS3</span>PfAUShemKkoBWRUFsUkGBSrZ
-            <span className="text-[#2283F6]">gh..</span>
+            <span className="text-chip-blue">TXS3</span>PfAUShemKkoBWRUFsUkGBSrZ
+            <span className="text-chip-blue">gh..</span>
           </CopyBox>
 
           <div className="relative mb-4">
             <div className="absolute inset-0 bg-[#003a8a] rounded-[12px] translate-y-1"></div>
-            <div className=" w-full relative text-center rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-[14px] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg ">
+            <div className=" w-full relative text-center rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-sm font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg cursor-pointer">
               {t('hashgame.activeAddress')}
             </div>
           </div>
           <div className="bg-[#FFFFFF0A] rounded-lg p-3 mb-6 border border-[rgba(12,96,255,0.1)] shadow-xl">
-            <p className="text-white text-[14px] font-bold mb-2">
-              {t('hashgame.chances')}:<span className="text-[#2283F6]">1:1.95</span>
+            <p className="text-white text-sm font-bold mb-2">
+              {t('hashgame.chances')}:
+              <span className="text-chip-blue">1:1.95</span>
             </p>
-            <p className="text-white text-[14px] font-bold">
+            <p className="text-white text-sm font-bold">
               {t('hashgame.limitation')}:
-              <span className="text-[#2283F6]">10-15000 USDT 2-30000 </span>TRX
+              <span className="text-chip-blue">10-15000 USDT 2-30000 </span>TRX
             </p>
-            <div className="text-[#2283F6] text-[14px] font-normal mt-5 opacity-80">
-              Note: Odds will fluctuate automatically and all rights to
-              explanation belong to this platform.
+            <div className="text-chip-blue text-sm font-normal mt-5 opacity-80">
+              {t('hashgame.notetitle')}
             </div>
 
-            <div className="mt-4 text-[#FFFFFF] text-[14px] font-normal opacity-80 ">
-              Amounts below the limit are withdrawn by the platform; amounts
-              above the limit are considered invalid. The platform charges a 1%
-              commission and returns the balance. If you don&apos;t win,
-              it&apos;s a loss.
+            <div className="mt-4 text-[#FFFFFF] text-sm font-normal opacity-80 ">
+              {t('hashgame.notecontent')}
             </div>
           </div>
           {/* Mobile view Desktop View Example Section */}
@@ -211,9 +212,8 @@ const TransferBettingLayout: React.FC = () => {
               <div className="flex gap-8 relative z-10">
                 {/* Left Column - Title, Hash Example, and Rules */}
                 <div>
-                  <p className="text-[14px] text-align-left font-bold mb-5 text-white leading-tight">
-                    THE LAST DIGIT OF THE TRON BLOCKCHAIN HASH FROM A Active IS
-                    USED AS THE GAME RESULT
+                  <p className="text-sm text-align-left font-bold mb-5 text-white leading-tight">
+                    {t('hashgame.blockChainRule')}
                   </p>
                   <img
                     src="/icons/down-arrow.svg"
@@ -222,9 +222,9 @@ const TransferBettingLayout: React.FC = () => {
                   />
                   <div className="text-left">
                     <div className="flex items-center gap-6  px-8 rounded-xl justify-center  relative ">
-                      <span className="text-white font-bold text-[14px] tracking-wider flex text-left">
+                      <span className="text-white font-bold text-sm tracking-wider flex text-left">
                         EX:0000000 .... e
-                        <span className="text-[#FFB636] text-[14px] font-bold">
+                        <span className="text-[#FFB636] text-sm font-bold">
                           5
                         </span>
                         s
@@ -245,18 +245,18 @@ const TransferBettingLayout: React.FC = () => {
           </div>
           <div className="space-y-6 bg-[#FFFFFF0A]  t-[14px] p-4 rounded-xl font-bold">
             <h3 className="text-lg font-normal mb-3 text-white flex items-center gap-2">
-              Betting rules
+              {t('hashgame.bettingRules')}
             </h3>
-            <p className="text-white font-normal  leading-relaxed text-[14px] opacity-80">
+            <p className="text-white font-normal  leading-relaxed text-sm opacity-80">
               The last digit of the Active amount, 1,3,5,7,9 are placed on{' '}
               <span className="font-normal text-[#64B5F6]">odd</span>, 0,2,4,6,8
               are placed on{' '}
               <span className="font-normal text-[#64B5F6]">even</span>.
             </p>
             <h3 className="text-lg font-normal mb-3 text-white flex items-center gap-2">
-              Rules of the game
+              {t('hashgame.gameRules')}
             </h3>
-            <p className="text-white font-normal  leading-relaxed text-[14px] opacity-80">
+            <p className="text-white font-normal  leading-relaxed text-sm opacity-80">
               1,3,5,7,9 is{' '}
               <span className="font-normal text-[#64B5F6]">odd</span>, 0,2,4,6,8
               is <span className="font-normal text-[#64B5F6]">even</span>.
@@ -273,8 +273,7 @@ const TransferBettingLayout: React.FC = () => {
               {/* Left Column - Title, Hash Example, and Rules */}
               <div className="w-[60%]">
                 <p className="text-2xl text-align-left font-bold mb-5 text-white leading-tight">
-                  THE LAST DIGIT OF THE TRON BLOCKCHAIN HASH FROM A Active IS
-                  USED AS THE GAME RESULT
+                  {t('hashgame.blockChainRule')}
                 </p>
 
                 <div className="text-left mb-6">
@@ -299,18 +298,18 @@ const TransferBettingLayout: React.FC = () => {
 
                 <div className="space-y-6 bg-[#1119238A]  t-[14px] p-4 rounded-xl font-bold none [@media(max-width:768px)]:block">
                   <h3 className="text-lg font-normal mb-3 text-white flex items-center gap-2">
-                    Betting rules
+                    {t('hashgame.bettingRules')}
                   </h3>
-                  <p className="text-white font-normal  leading-relaxed text-[14px]">
+                  <p className="text-white font-normal  leading-relaxed text-sm">
                     The last digit of the Active amount, 1,3,5,7,9 are placed on{' '}
                     <span className="font-normal text-[#64B5F6]">odd</span>,
                     0,2,4,6,8 are placed on{' '}
                     <span className="font-normal text-[#64B5F6]">even</span>.
                   </p>
                   <h3 className="text-lg font-normal mb-3 text-white flex items-center gap-2">
-                    Rules of the game
+                    {t('hashgame.gameRules')}
                   </h3>
-                  <p className="text-white font-normal  leading-relaxed text-[14px]">
+                  <p className="text-white font-normal  leading-relaxed text-sm">
                     1,3,5,7,9 is{' '}
                     <span className="font-normal text-[#64B5F6]">odd</span>,
                     0,2,4,6,8 is{' '}
@@ -324,7 +323,7 @@ const TransferBettingLayout: React.FC = () => {
                 <h3 className=" font-bold mb-3 text-white flex items-center gap-2">
                   Example 1
                 </h3>
-                <p className="text-white  font-normal text-[14px]">
+                <p className="text-white  font-normal text-sm">
                   Your Active amount is:{' '}
                   <span className="text-[#64B5F6] font-normal">100.22</span>,
                   recognized as{' '}
@@ -339,7 +338,7 @@ const TransferBettingLayout: React.FC = () => {
                   System refund amount: 100*1.95=195.00
                 </p>
                 <h3 className="font-bold  text-white ">Example 2</h3>
-                <p className="text-white  font-normal text-[14px]">
+                <p className="text-white  font-normal text-sm">
                   Your Active amount is:{' '}
                   <span className="text-[#64B5F6] font-normal">9</span>, limit:
                   10 - 900 USDT, No Active amount{' '}
@@ -356,16 +355,16 @@ const TransferBettingLayout: React.FC = () => {
 
         {/* Bid Address and Wallet Section */}
         <div className="bg-[#111923] rounded-lg p-6 mb-6 shadow-xl [@media(max-width:768px)]:hidden">
-          <h2 className="text-lg font-bold mb-4 text-[#FFFFFF] text-[14px] flex items-center gap-2">
-            Bid address
-            <span className="font-bold text-[12px]">
-              Use a decentralized wallet
+          <h2 className="text-lg font-bold mb-4 text-[#FFFFFF] flex items-center gap-2">
+            {t('hashgame.bettingAddress')}
+            <span className="font-bold text-xs">
+              {t('hashgame.useDecWallet')}
             </span>
           </h2>
           <div className="flex items-center gap-4  ">
             <div className="flex opacity-80 justify-between w-[80%] bg-[#2a3546] p-3 border rounded-lg p-3Icon.svg border-[rgba(255,255,255,0.1)]">
               <div className="flex items-center">
-                <span className="text-gray-300 text-[12px] font-bold">
+                <span className="text-gray-300 text-xs font-bold">
                   <span className="text-[#2283F6]">TXS3</span>
                   <span className="text-[#FFFFFF]">
                     PfAUShemKkoBWRUFsUkGBSrZGagh6X
@@ -377,45 +376,40 @@ const TransferBettingLayout: React.FC = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-[#003a8a] rounded-[12px] translate-y-1"></div>
-              <div className="relative rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-[14px] font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg">
-                Activate wallet
+              <div className="relative rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] text-white px-8 py-3 text-sm font-bold hover:from-[#0a56e6] hover:to-[#2590e6] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg cursor-pointer">
+                {t('hashgame.activeAddress')}
               </div>
             </div>
           </div>
-          <h2 className="text-[14px] font-bold mt-5 mb-4 text-[#FFFFFF] flex items-center gap-2 [@media(max-width:768px)]:hidden">
-            Lottery rules
+          <h2 className="text-sm font-bold mt-5 mb-4 text-[#FFFFFF] items-center gap-2 hidden md:flex">
+            {t('hashgame.lotteryRule')}
           </h2>
-          <div className="border-2 border-[#0C60FF] rounded-lg  bg-[#2283F621] flex shadow-inner [@media(max-width:768px)]:hidden">
+          <div className="border-2 border-[#0C60FF] rounded-lg  bg-[#2283F621] shadow-inner hidden md:flex">
             <div className="flex items-center gap-3 w-[50%] justify-center border-r border-[#0C60FF] p-10 ">
-              <span className="text-white font-bold text-[14px]">Odds:</span>
+              <span className="text-white font-bold text-sm">Odds:</span>
               <div className="bg-[#111923] rounded-lg px-5 py-1.5">
-                <span className="text-[#0C60FF] font-bold text-[14px]">
-                  1:1.95
-                </span>
+                <span className="text-[#0C60FF] font-bold text-sm">1:1.95</span>
               </div>
             </div>
             <div className="w-[50%] flex justify-center items-center gap-3">
-              <span className="text-white font-bold text-[14px]">
-                limitation:
+              <span className="text-white font-bold text-sm">
+                {t('hashgame.limitation')}:
               </span>
               <div className="bg-[#111923] rounded-lg px-3 py-2 mt-2">
-                <p className="text-[#2283F6] text-[14px] font-medium">
+                <p className="text-[#2283F6] text-sm font-medium">
                   10-15000 <span className="text-white">USDT</span>
                 </p>
-                <p className="text-[#2283F6] text-[14px] font-medium">
+                <p className="text-[#2283F6] text-sm font-medium">
                   2-30000 <span className="text-white">TRX</span>
                 </p>
               </div>
             </div>
           </div>
-          <div className="text-[#2283F6] text-[14px] font-normal mt-5 opacity-80 [@media(max-width:768px)]:hidden">
-            Note: Odds will fluctuate automatically and all rights to
-            explanation belong to this platform.
+          <div className="text-[#2283F6] text-sm font-normal mt-5 opacity-80 [@media(max-width:768px)]:hidden">
+            {t('hashgame.notetitle')}
           </div>
-          <div className="mt-4 text-[#FFFFFF] text-[14px] font-normal opacity-80 [@media(max-width:768px)]:hidden">
-            Amounts below the limit are withdrawn by the platform; amounts above
-            the limit are considered invalid. The platform charges a 1%
-            commission and returns the balance. If you don't win, it's a loss.
+          <div className="mt-4 text-[#FFFFFF] text-sm font-normal opacity-80 [@media(max-width:768px)]:hidden">
+            {t('hashgame.notecontent')}
           </div>
         </div>
 
@@ -424,8 +418,8 @@ const TransferBettingLayout: React.FC = () => {
           <div className="flex justify-between items-center">
             <div>
               <div className="flex justify-between items-center mb-4 gap-4">
-                <h2 className="text-[14px] font-bold text-white flex items-center gap-2">
-                  Lottery trend
+                <h2 className="text-sm font-bold text-white flex items-center gap-2">
+                  {t('hashgame.lotteryTrend')}
                 </h2>
                 <div className="flex gap-4">
                   <div className="flex items-center gap-2">
@@ -444,16 +438,16 @@ const TransferBettingLayout: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center mb-4 mt-2 rounded-lg">
-              <div className="flex bg-[#FFFFFF0A] rounded-lg p-1">
+              <div className="flex bg-[#FFFFFF0A] rounded-lg p-2 gap-2">
                 <div
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)] cursor-pointer`}
                 >
-                  Block Trend
+                  {t('hashgame.blockTrend')}
                 </div>
                 <div
-                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+                  className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-sm border-none flex items-center gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)] cursor-pointer`}
                 >
-                  My Trend
+                  {t('hashgame.myTrend')}
                 </div>
               </div>
             </div>
@@ -461,25 +455,21 @@ const TransferBettingLayout: React.FC = () => {
           <GameBoard board={board} />
           <div className="flex items-center gap-2 text-sm text-gray-300 bg-[#FFFFFF0A] rounded-lg p-4">
             <img src="/icons/Vector.svg" alt="info" className="w-5 h-5" />
-            <p className="opacity-80">
-              The road map is automatically updated every 3 seconds. This road
-              order rule is composed of the TRON real-time block lottery
-              results.
-            </p>
+            <p className="opacity-80">{t('hashgame.roadMap')}</p>
           </div>
         </div>
 
         {/* Tutorial Video Section */}
         <div className="bg-[url('/images/game-video.png')] bg-cover bg-center rounded-lg p-6 mb-6 ">
-          <div className="rounded-lg p-8 relative overflow-none [@media(max-width:768px)]:p-2">
+          <div className="rounded-lg relative overflow-none md:p-4">
             {/* Left Side - Text and Button */}
             <div className="flex flex-col items-start justify-center h-full">
-              <h2 className="text-[18px] font-bold text-white mb-6 text-left [@media(max-width:768px)]:text-[14px] ">
-                Hash even and odd tutorial video
+              <h2 className="font-bold text-white mb-6 text-left text-sm md:text-lg">
+                Hash even and odd {t('help.video')}
               </h2>
               <div className="relative">
-                <div className=" text-[12px] relative bg-[#2283F6] text-white px-8 py-3 rounded-lg font-bold hover:bg-[linear-gradient(#0a56e6,#2590e6)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-                  Play
+                <div className=" text-xs relative bg-[#2283F6] text-white px-8 py-3 rounded-lg font-bold hover:bg-[linear-gradient(#0a56e6,#2590e6)] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                  {t('hashgame.viewPlay')}
                 </div>
               </div>
             </div>
@@ -487,27 +477,27 @@ const TransferBettingLayout: React.FC = () => {
         </div>
 
         {/* Betting Record Section */}
-        <div className="bg-[#111923] rounded-lg p-6 border border-[rgba(12,96,255,0.1)] shadow-xl [@media(max-width:768px)]:hidden">
+        <div className="bg-[#111923] rounded-lg p-6 border border-[rgba(12,96,255,0.1)] shadow-xl hidden md:block">
           <div className="flex justify-between items-center mb-4 ">
-            <h2 className="text-[18px] font-bold text-write flex items-center gap-2">
-              Betting record
+            <h2 className="text-[18px] font-bold text-white flex items-center gap-2">
+              {t('hashgame.bettingRecord')}
             </h2>
-            <div className="text-[#0C60FF] text-[14px] font-bold hover:text-[#64B5F6] transition-colors">
-              More
+            <div className="text-[#0C60FF] text-sm font-bold hover:text-[#64B5F6] transition-colors">
+              {t('app.showMore')}
             </div>
           </div>
           <div className="grid grid-cols-4 gap-4 items-center p-2 px-8">
-            <span className="text-[#55657E] font-bold text-[12px] opacity-80">
-              Currency
+            <span className="text-[#55657E] font-bold text-xs opacity-80">
+              {t('wallet.currency')}
             </span>
-            <span className="text-[#55657E] font-bold text-[12px] opacity-80">
-              Bets
+            <span className="text-[#55657E] font-bold text-xs opacity-80">
+              {t('hashgame.betLimit')}
             </span>
-            <span className="text-[#55657E] font-bold text-[12px] opacity-80">
-              Bets Amount
+            <span className="text-[#55657E] font-bold text-xs opacity-80">
+              {t('hashgame.betAmount')}
             </span>
-            <span className="text-[#55657E] font-bold text-[12px] opacity-80 text-right">
-              Today&apos;s win or loss...
+            <span className="text-[#55657E] font-bold text-xs opacity-80 text-right">
+              {t('hashgame.toDayWinOrLoss')}
             </span>
           </div>
           <div className="space-y-3">
@@ -520,7 +510,7 @@ const TransferBettingLayout: React.FC = () => {
                     alt="usdt"
                     className="w-5 h-5"
                   />
-                  <span className="text-white font-bold text-[12px] mt-1">
+                  <span className="text-white font-bold text-sm mt-1">
                     USDT
                   </span>
                 </div>
@@ -533,13 +523,13 @@ const TransferBettingLayout: React.FC = () => {
                   />
                   <span className="text-white">4.77000000</span>
                 </div>
-                <div className="flex items-center gap-1 text-[#ED1D49] ml-6 justify-end">
-                  <span>0</span>
+                <div className="flex items-center gap-1 text-crimson ml-6 justify-end font-medium">
                   <img
                     src="/icons/coin-icon/USDT.svg"
                     alt="tron"
                     className="w-5 h-5"
                   />
+                  <span>3214.789</span>
                 </div>
               </div>
             </div>
@@ -553,9 +543,7 @@ const TransferBettingLayout: React.FC = () => {
                     alt="tron"
                     className="w-5 h-5"
                   />
-                  <span className="text-white font-bold text-[12px] mt-1">
-                    TRX
-                  </span>
+                  <span className="text-white font-bold text-sm mt-1">TRX</span>
                 </div>
                 <div className="text-white">0</div>
                 <div className="flex items-center gap-2">
@@ -564,15 +552,15 @@ const TransferBettingLayout: React.FC = () => {
                     alt="tron"
                     className="w-5 h-5"
                   />
-                  <span className="text-white">7.60300000</span>
+                  <span className="text-white">7.60300</span>
                 </div>
-                <div className="flex items-center gap-1 text-[#ED1D49] justify-end">
-                  <span>0.00</span>
+                <div className="flex items-center gap-1 text-crimson justify-end font-medium">
                   <img
                     src="/icons/coin-icon/TRX.svg"
                     alt="tron"
                     className="w-5 h-5"
                   />
+                  <span>5785.685</span>
                 </div>
               </div>
             </div>
@@ -584,7 +572,7 @@ const TransferBettingLayout: React.FC = () => {
           <h3 className=" font-bold mb-3 text-white flex items-center gap-2">
             Example 1
           </h3>
-          <p className="text-white  font-normal text-[14px] opacity-80">
+          <p className="text-white  font-normal text-sm opacity-80">
             Your Active amount is:{' '}
             <span className="text-[#64B5F6] font-normal">100.22</span>,
             recognized as{' '}
@@ -597,7 +585,7 @@ const TransferBettingLayout: React.FC = () => {
             System refund amount: 100*1.95=195.00
           </p>
           <h3 className="font-bold  text-white ">Example 2</h3>
-          <p className="text-white  font-normal text-[14px] opacity-80">
+          <p className="text-white  font-normal text-sm opacity-80">
             Your Active amount is:{' '}
             <span className="text-[#64B5F6] font-normal">9</span>, limit: 10 -
             900 USDT, No Active amount{' '}
