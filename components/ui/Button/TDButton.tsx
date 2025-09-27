@@ -35,14 +35,20 @@ const TDButton: React.FC<TDButtonProps> = ({
       <div
         onClick={onClick}
         className={cn(
-          `pushable transition-filter duration-250 group relative cursor-pointer border-none bg-transparent p-0 outline-offset-1 after:absolute after:bottom-[-3px] after:z-0 after:h-full after:w-full after:rounded-lg after:content-[''] focus:outline-none focus-visible:outline`,
-          `after:${edge}`,
+          `pushable transition-filter duration-250 group relative cursor-pointer border-none bg-transparent p-0 outline-offset-1 focus:outline-none focus-visible:outline`,
           className
         )}
       >
         <span
           className={cn(
-            `front relative z-10 flex transform items-center justify-center rounded-lg font-medium text-white transition-transform will-change-transform group-hover:-translate-y-[2px] group-active:-translate-y-[-1px]`,
+            'absolute bottom-[-3px] left-0 h-full w-full rounded-lg',
+            edge,
+            className
+          )}
+        ></span>
+        <span
+          className={cn(
+            `front relative flex transform items-center justify-center rounded-lg font-bold text-white transition-transform will-change-transform group-hover:-translate-y-[2px] group-active:-translate-y-[-1px]`,
             className,
             Style
           )}

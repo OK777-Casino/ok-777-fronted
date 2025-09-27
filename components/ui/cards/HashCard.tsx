@@ -2,7 +2,7 @@
 // this is the game card
 import React from 'react'
 import { Copy, Info, ArrowLeftRight } from 'lucide-react'
-import { Button } from '..'
+import TDButton from '@/components/ui/Button/TDButton'
 import Link from 'next/link'
 import { useI18n } from '@/context/I18nProvider'
 
@@ -107,7 +107,7 @@ const HashCard: React.FC<TypeTwoProps> = ({
 
         {/* Action Buttons */}
         <div className="mt-auto flex gap-1.5 py-2 sm:gap-2">
-          <Button
+          {/* <Button
             variant="green"
             className="min-h-[28px] flex-1 sm:min-h-[32px]"
           >
@@ -131,7 +131,12 @@ const HashCard: React.FC<TypeTwoProps> = ({
             >
               <span className="text-xs font-medium sm:text-[11px]">Put</span>
             </Link>
-          </Button>
+          </Button> */}
+          <TDButton type="red" className="w-full">
+            <Link href={leftButtonLink}>
+              <span className="h-9 text-sm leading-9">进入游戏</span>
+            </Link>
+          </TDButton>
         </div>
       </div>
     </div>
