@@ -14,16 +14,16 @@ const StatusDropdownTrigger = React.forwardRef<
   <DropdownMenuPrimitive.Trigger
     ref={ref}
     className={cn(
-      'flex h-9 flex-col justify-center items-start gap-1 rounded-xl bg-ebony-clay hover:bg-ebony-clay/90 transition-colors focus:outline-none  data-[state=open]:bg-ebony-clay/90',
+      'hover:bg-ebony-clay/90 data-[state=open]:bg-ebony-clay/90 flex h-9 flex-col items-start justify-center gap-1 rounded-xl bg-ebony-clay transition-colors focus:outline-none',
       className
     )}
     {...props}
   >
-    <div className="flex h-6 px-4 pr-3 items-center gap-4 flex-shrink-0 self-stretch">
-      <div className="text-casper font-montserrat text-sm font-bold leading-none overflow-hidden text-ellipsis whitespace-nowrap">
+    <div className="flex h-6 flex-shrink-0 items-center gap-4 self-stretch px-4 pr-3">
+      <div className="overflow-hidden text-ellipsis whitespace-nowrap font-montserrat text-sm font-bold leading-none text-casper">
         {children || 'Up to date'}
       </div>
-      <ChevronDown className="h-6 w-6 text-casper flex-shrink-0" />
+      <ChevronDown className="h-6 w-6 flex-shrink-0 text-casper" />
     </div>
   </DropdownMenuPrimitive.Trigger>
 ))
@@ -54,7 +54,7 @@ const StatusDropdownItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-lg px-4 py-2 text-sm font-montserrat font-bold outline-none transition-colors hover:bg-white/10 focus:bg-white/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded-lg px-4 py-2 font-montserrat text-sm font-bold outline-none transition-colors hover:bg-white/10 focus:bg-white/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className
     )}
     {...props}

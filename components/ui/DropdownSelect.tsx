@@ -50,14 +50,14 @@ export function DropdownSelect({
         role="button"
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        className="flex h-12 flex-col justify-center items-start gap-1 flex-1 rounded-lg bg-white-4 cursor-pointer transition-all duration-200 hover:bg-opacity-60"
+        className="flex h-12 flex-1 cursor-pointer flex-col items-start justify-center gap-1 rounded-lg bg-white-4 transition-all duration-200 hover:bg-opacity-60"
         onClick={handleToggle}
       >
-        <div className="flex px-3 items-center gap-2 w-full">
+        <div className="flex w-full items-center gap-2 px-3">
           {/* Left icon reflects current selection */}
           {LeftIcon}
 
-          <div className="flex flex-col justify-center items-start flex-1 min-w-0">
+          <div className="flex min-w-0 flex-1 flex-col items-start justify-center">
             {label && (
               <div
                 className="text-[10px] font-normal leading-normal"
@@ -71,7 +71,7 @@ export function DropdownSelect({
               </div>
             )}
             <div
-              className="text-sm font-bold leading-normal truncate w-full text-left"
+              className="w-full truncate text-left text-sm font-bold leading-normal"
               style={{
                 color: '#A7B5CA',
                 fontFamily:
@@ -91,7 +91,7 @@ export function DropdownSelect({
       {isOpen && options.length > 0 && (
         <div
           role="listbox"
-          className="absolute top-full left-0 right-0 mt-1 rounded-lg border border-gray-600 shadow-lg z-50"
+          className="absolute left-0 right-0 top-full z-50 mt-1 rounded-lg border border-gray-600 shadow-lg"
           style={{ background: 'rgba(17, 25, 35, 0.95)' }}
         >
           {options.map(option => (
@@ -100,12 +100,12 @@ export function DropdownSelect({
               role="option"
               aria-selected={option.value === value}
               className={cn(
-                'flex px-3 py-2 items-center gap-2 cursor-pointer hover:bg-gray-700 hover:bg-opacity-50 first:rounded-t-lg last:rounded-b-lg transition-colors'
+                'flex cursor-pointer items-center gap-2 px-3 py-2 transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-gray-700 hover:bg-opacity-50'
               )}
               onClick={() => handleOptionSelect(option.value)}
             >
               {option.icon}
-              <div className="flex flex-col justify-center items-start flex-1">
+              <div className="flex flex-1 flex-col items-start justify-center">
                 <div
                   className="text-sm font-bold leading-normal"
                   style={{

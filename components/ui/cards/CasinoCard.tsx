@@ -27,19 +27,19 @@ const CasinoCard: React.FC<CasinoCardProps> = ({
   }
 
   return (
-    <div className=" rounded-[0.5rem]  overflow-hidden w-full">
-      <div className="relative rounded-[0.5rem] overflow-hidden">
-        <div className="rounded-[0.5rem]  relative overflow-hidden">
+    <div className="w-full overflow-hidden rounded-[0.5rem]">
+      <div className="relative overflow-hidden rounded-[0.5rem]">
+        <div className="relative overflow-hidden rounded-[0.5rem]">
           <img
             src={image}
             alt={`Casino game`}
             className="w-full object-cover transition-transform duration-300"
           />
-          <div className="absolute rounded-[0.5rem] w-full top-0 left-0 h-full hover:backdrop-blur-[0.1875rem] duration-300 "></div>
+          <div className="absolute left-0 top-0 h-full w-full rounded-[0.5rem] duration-300 hover:backdrop-blur-[0.1875rem]"></div>
         </div>
 
         <div
-          className={`absolute top-2 left-2 text-white text-[10px] lg:text-[12.24px] font-bold lg:px-2 px-[2px] py-[0.5px] rounded-full border-t border-[#ffffff30] ${getBadgeColor(
+          className={`absolute left-2 top-2 rounded-full border-t border-[#ffffff30] px-[2px] py-[0.5px] text-[10px] font-bold text-white lg:px-2 lg:text-[12.24px] ${getBadgeColor(
             badge
           )}`}
         >

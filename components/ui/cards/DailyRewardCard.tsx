@@ -15,13 +15,13 @@ const DailyRewardCard: React.FC<DailyRewardProps> = ({
 }) => {
   return (
     <>
-      <div className={cn('rounded-[12px] overflow-hidden', className)}>
-        <div className="py-[8px] font-bold w-full text-[14px] text-white flex justify-center items-center bg-white-8">
+      <div className={cn('overflow-hidden rounded-[12px]', className)}>
+        <div className="flex w-full items-center justify-center bg-white-8 py-[8px] text-[14px] font-bold text-white">
           <span>Day {date}</span>
         </div>
-        <div className="p-4 flex flex-col gap-4 bg-white-4 items-center">
+        <div className="flex flex-col items-center gap-4 bg-white-4 p-4">
           <img src="/images/coins.svg" alt="coins" />
-          <span className="uppercase text-dodger-blue  font-bold text-[14px]">
+          <span className="text-[14px] font-bold uppercase text-dodger-blue">
             {reward}
           </span>
         </div>

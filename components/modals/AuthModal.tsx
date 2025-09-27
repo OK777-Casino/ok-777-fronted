@@ -22,7 +22,7 @@ interface SocialButtonProps {
 const SocialButton = ({ icon, onClick }: SocialButtonProps) => (
   <div
     onClick={onClick}
-    className="flex h-9 w-9 items-center justify-center text-casper rounded-lg bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8 cursor-pointer"
+    className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-casper backdrop-blur-[32px] transition-colors hover:bg-white-8"
     style={{
       boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
     }}
@@ -102,21 +102,21 @@ export default function AuthModal() {
   if (!shouldRender) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 z-[9999] flex items-end justify-center overflow-hidden sm:items-center">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-mirage-73" />
 
       {/* Modal */}
       <div
         className={cn(
-          'relative w-full max-w-[740px] h-full max-h-screen flex justify-center items-center modal-content-scroll transform transition-all duration-300 ease-out',
+          'modal-content-scroll relative flex h-full max-h-screen w-full max-w-[740px] transform items-center justify-center transition-all duration-300 ease-out',
           isVisible ? 'translate-y-0' : 'translate-y-full sm:translate-y-8'
         )}
       >
         {/* Desktop Layout */}
-        <div className="hidden md:flex w-full h-[550px] rounded-xl overflow-hidden bg-mirage-54 backdrop-blur-[32px]">
+        <div className="hidden h-[550px] w-full overflow-hidden rounded-xl bg-mirage-54 backdrop-blur-[32px] md:flex">
           {/* Left Side - Branding */}
-          <div className="flex-1 relative">
+          <div className="relative flex-1">
             {/* Background Image with Gradient Overlay */}
             <div
               className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-mirage"
@@ -127,25 +127,25 @@ export default function AuthModal() {
                 backgroundPosition: 'center',
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-mirage/90" />
+            <div className="to-mirage/90 absolute inset-0 bg-gradient-to-b from-transparent via-transparent" />
 
             {/* Bull Character and Text */}
-            <div className="relative z-10 flex flex-col items-center justify-between h-full p-8 pt-16">
+            <div className="relative z-10 flex h-full flex-col items-center justify-between p-8 pt-16">
               {/* Logo/3D Character placeholder */}
-              <div className="w-[115px] h-14 rounded-lg flex items-center justify-center"></div>
+              <div className="flex h-14 w-[115px] items-center justify-center rounded-lg"></div>
 
               {/* Welcome Text */}
               <div className="text-center">
-                <h1 className="font-black text-[32px] text-gallery leading-none mb-2">
+                <h1 className="mb-2 text-[32px] font-black leading-none text-gallery">
                   WELCOME
                 </h1>
-                <h2 className="font-black text-[32px] text-gallery leading-none mb-2">
+                <h2 className="mb-2 text-[32px] font-black leading-none text-gallery">
                   BONUS
                 </h2>
-                <h3 className="font-black text-[32px] text-gallery leading-none mb-4">
+                <h3 className="mb-4 text-[32px] font-black leading-none text-gallery">
                   UP TO 590%
                 </h3>
-                <p className="text-casper text-base font-medium">
+                <p className="text-base font-medium text-casper">
                   + 225 Free Spins
                 </p>
               </div>
@@ -153,12 +153,12 @@ export default function AuthModal() {
           </div>
 
           {/* Right Side - Form */}
-          <div className="flex-1 flex flex-col p-6 overflow-y-auto modal-content-scroll">
+          <div className="modal-content-scroll flex flex-1 flex-col overflow-y-auto p-6">
             {/* Close Button */}
-            <div className="flex justify-end mb-6">
+            <div className="mb-6 flex justify-end">
               <div
                 onClick={toggleAuthModal}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] hover:bg-white-8 transition-colors cursor-pointer"
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8"
                 style={{
                   boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
                 }}
@@ -170,12 +170,12 @@ export default function AuthModal() {
             </div>
 
             {/* Tab Switcher */}
-            <div className="flex rounded-xl p-1 mb-6">
+            <div className="mb-6 flex rounded-xl p-1">
               <div
                 onClick={() => setIsLogin(true)}
-                className={`flex-1 py-4 px-3 text-sm font-bold text-center transition-colors cursor-pointer ${
+                className={`flex-1 cursor-pointer px-3 py-4 text-center text-sm font-bold transition-colors ${
                   isLogin
-                    ? 'text-gallery border-b-2 border-dodger-blue'
+                    ? 'border-b-2 border-dodger-blue text-gallery'
                     : 'text-casper'
                 }`}
               >
@@ -183,9 +183,9 @@ export default function AuthModal() {
               </div>
               <div
                 onClick={() => setIsLogin(false)}
-                className={`flex-1 py-4 px-3 text-center text-sm font-bold transition-colors cursor-pointer ${
+                className={`flex-1 cursor-pointer px-3 py-4 text-center text-sm font-bold transition-colors ${
                   !isLogin
-                    ? 'text-gallery border-b-2 border-dodger-blue'
+                    ? 'border-b-2 border-dodger-blue text-gallery'
                     : 'text-casper'
                 }`}
               >
@@ -194,11 +194,11 @@ export default function AuthModal() {
             </div>
 
             {/* Form */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex flex-1 flex-col">
               {/* Email Input */}
               <div className="mb-4">
                 <div className="relative">
-                  <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-mirage to-deep-blue">
+                  <div className="absolute -top-2 left-2 z-10 bg-gradient-to-b from-mirage to-deep-blue px-1">
                     <span className="text-xs text-polo-blue">
                       {t('auth.usernameEmail')}
                     </span>
@@ -208,7 +208,7 @@ export default function AuthModal() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder={t('auth.userEmailPlaceholder')}
-                    className="w-full h-12 px-4 pt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
+                    className="h-12 w-full rounded-xl border border-blue-bayoux bg-deep-blue px-4 pt-2 text-sm text-white placeholder-blue-bayoux focus:border-dodger-blue focus:outline-none"
                   />
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function AuthModal() {
               {/* Password Input */}
               <div className="mb-4">
                 <div className="relative">
-                  <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-mirage to-deep-blue">
+                  <div className="absolute -top-2 left-2 z-10 bg-gradient-to-b from-mirage to-deep-blue px-1">
                     <span className="text-xs text-polo-blue">
                       <span>{t('auth.password')}</span>
                     </span>
@@ -230,7 +230,7 @@ export default function AuthModal() {
                         ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
                         : t('auth.passPlaceholder')
                     }
-                    className={`w-full h-12 px-4 pt-2 pr-12 bg-deep-blue rounded-xl text-sm focus:outline-none ${
+                    className={`h-12 w-full rounded-xl bg-deep-blue px-4 pr-12 pt-2 text-sm focus:outline-none ${
                       !isLogin && password
                         ? 'border-2 border-dodger-blue text-white'
                         : 'border border-blue-bayoux text-white placeholder-blue-bayoux'
@@ -254,7 +254,7 @@ export default function AuthModal() {
               {/* Forgot Password / Referral Code */}
               {isLogin ? (
                 <div className="mb-6">
-                  <div className="text-dodger-blue text-sm font-bold cursor-pointer">
+                  <div className="cursor-pointer text-sm font-bold text-dodger-blue">
                     <span>{t('auth.forgotPassword')}</span>
                   </div>
                 </div>
@@ -262,7 +262,7 @@ export default function AuthModal() {
                 <div className="mb-4">
                   <div
                     onClick={() => setShowReferral(!showReferral)}
-                    className="flex items-center text-dodger-blue text-sm font-bold cursor-pointer"
+                    className="flex cursor-pointer items-center text-sm font-bold text-dodger-blue"
                   >
                     <span>{t('auth.referralPlaceholder')}</span>
                     <ChevronDown size={20} className="ml-1" />
@@ -273,7 +273,7 @@ export default function AuthModal() {
                       value={referralCode}
                       onChange={e => setReferralCode(e.target.value)}
                       placeholder={t('auth.referralPlaceholder')}
-                      className="w-full h-12 px-4 mt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
+                      className="mt-2 h-12 w-full rounded-xl border border-blue-bayoux bg-deep-blue px-4 text-sm text-white placeholder-blue-bayoux focus:border-dodger-blue focus:outline-none"
                     />
                   )}
                 </div>
@@ -282,7 +282,7 @@ export default function AuthModal() {
               {/* Registration Checkboxes */}
               {!isLogin && (
                 <div className="mb-6 space-y-2">
-                  <label className="flex items-center gap-3 cursor-pointer">
+                  <label className="flex cursor-pointer items-center gap-3">
                     <div className="relative mt-0.5">
                       <input
                         type="checkbox"
@@ -291,9 +291,9 @@ export default function AuthModal() {
                         className="sr-only"
                       />
                       <div
-                        className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
+                        className={`flex h-6 w-6 items-center justify-center rounded border-2 ${
                           agreedToTerms
-                            ? 'bg-dodger-blue border-dodger-blue'
+                            ? 'border-dodger-blue bg-dodger-blue'
                             : 'border-blue-bayoux bg-transparent'
                         }`}
                       >
@@ -320,7 +320,7 @@ export default function AuthModal() {
                     </span>
                   </label>
 
-                  <label className="flex items-center gap-3 cursor-pointer">
+                  <label className="flex cursor-pointer items-center gap-3">
                     <div className="relative mt-0.5">
                       <input
                         type="checkbox"
@@ -331,9 +331,9 @@ export default function AuthModal() {
                         className="sr-only"
                       />
                       <div
-                        className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
+                        className={`flex h-6 w-6 items-center justify-center rounded border-2 ${
                           agreedToNotifications
-                            ? 'bg-dodger-blue border-dodger-blue'
+                            ? 'border-dodger-blue bg-dodger-blue'
                             : 'border-blue-bayoux bg-transparent'
                         }`}
                       >
@@ -367,7 +367,7 @@ export default function AuthModal() {
               <TDButton
                 onClick={isLogin ? login : register}
                 type="red"
-                className="w-full h-11 text-[14px] font-bold text-white"
+                className="h-11 w-full text-[14px] font-bold text-white"
               >
                 {isLogin ? t('auth.signIn') : t('auth.signOut')}
               </TDButton>
@@ -377,12 +377,12 @@ export default function AuthModal() {
 
               {/* Social Login */}
               <div className="space-y-4">
-                <div className="flex items-center gap-3 cursor-pointer">
-                  <div className="flex-1 h-px bg-[#3C485C]" />
+                <div className="flex cursor-pointer items-center gap-3">
+                  <div className="h-px flex-1 bg-[#3C485C]" />
                   <span className="text-sm text-[#A7B5CA]">
                     <span>{t('auth.logInUsing')}</span>
                   </span>
-                  <div className="flex-1 h-px bg-[#3C485C]" />
+                  <div className="h-px flex-1 bg-[#3C485C]" />
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-4">
@@ -392,7 +392,7 @@ export default function AuthModal() {
                   <SocialButton icon={<TonIcon />} />
 
                   <SocialButton icon={<TrustWalletIcon />} />
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white-4 backdrop-blur-[32px] text-[#A7B5CA] text-xs font-bold cursor-pointer">
+                  <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-xs font-bold text-[#A7B5CA] backdrop-blur-[32px]">
                     <span>+3</span>
                   </div>
                 </div>
@@ -403,13 +403,13 @@ export default function AuthModal() {
 
         {/* Mobile Layout */}
         <div
-          className="md:hidden animation-fade-in absolute top-0 h-full w-full max-w-md mx-auto bg-[#111923] overflow-x-hidden overflow-y-auto modal-content-scroll"
+          className="animation-fade-in modal-content-scroll absolute top-0 mx-auto h-full w-full max-w-md overflow-y-auto overflow-x-hidden bg-[#111923] md:hidden"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {/* Blue Gradient Background */}
           <div className="relative">
             <div
-              className="w-full h-80 bg-gradient-to-b from-[#003A81] to-[#111923]"
+              className="h-80 w-full bg-gradient-to-b from-[#003A81] to-[#111923]"
               style={{
                 filter: 'blur(175px)',
                 position: 'absolute',
@@ -424,13 +424,13 @@ export default function AuthModal() {
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/e46eb9b989312e0dd83d423e4baeabe941ec23dd?width=804"
                 alt="Casino"
-                className="w-full h-full object-fill"
+                className="h-full w-full object-fill"
               />
 
               {/* Close Button */}
               <div
                 onClick={toggleAuthModal}
-                className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] hover:bg-white-8 transition-colors cursor-pointer"
+                className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8"
                 style={{
                   boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
                 }}
@@ -443,15 +443,15 @@ export default function AuthModal() {
           </div>
 
           {/* Form Section */}
-          <div className="px-4 pb-12 space-y-6 relative flex flex-col justify-between bg-[#111923]">
+          <div className="relative flex flex-col justify-between space-y-6 bg-[#111923] px-4 pb-12">
             <div className="flex flex-col gap-[24px]">
               {/* Tab Switcher */}
               <div className="flex rounded-xl p-1">
                 <div
                   onClick={() => setIsLogin(true)}
-                  className={`flex-1 py-4 px-3 text-sm font-bold transition-colors text-center cursor-pointer ${
+                  className={`flex-1 cursor-pointer px-3 py-4 text-center text-sm font-bold transition-colors ${
                     isLogin
-                      ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
+                      ? 'border-b-2 border-[#2283F6] text-[#EDEDED]'
                       : 'text-[#A7B5CA]'
                   }`}
                 >
@@ -459,9 +459,9 @@ export default function AuthModal() {
                 </div>
                 <div
                   onClick={() => setIsLogin(false)}
-                  className={`flex-1 py-4 px-3 text-sm font-bold transition-colors text-center cursor-pointer ${
+                  className={`flex-1 cursor-pointer px-3 py-4 text-center text-sm font-bold transition-colors ${
                     !isLogin
-                      ? 'text-[#EDEDED] border-b-2 border-[#2283F6]'
+                      ? 'border-b-2 border-[#2283F6] text-[#EDEDED]'
                       : 'text-[#A7B5CA]'
                   }`}
                 >
@@ -471,7 +471,7 @@ export default function AuthModal() {
 
               {/* Email Input */}
               <div className="relative">
-                <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
+                <div className="absolute -top-2 left-2 z-10 bg-gradient-to-b from-[#111923] to-[#0D131C] px-1">
                   <span className="text-xs text-[#93ACD3]">
                     <span>{t('auth.usernameEmail')}</span>
                   </span>
@@ -481,13 +481,13 @@ export default function AuthModal() {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder={t('auth.userEmailPlaceholder')}
-                  className="w-full h-12 px-4 pt-2 bg-[#0D131C] border border-[#55657E] rounded-xl text-white placeholder-[#55657E] text-sm focus:border-[#2283F6] focus:outline-none"
+                  className="h-12 w-full rounded-xl border border-[#55657E] bg-[#0D131C] px-4 pt-2 text-sm text-white placeholder-[#55657E] focus:border-[#2283F6] focus:outline-none"
                 />
               </div>
 
               {/* Password Input */}
               <div className="relative">
-                <div className="absolute -top-2 left-2 z-10 px-1 bg-gradient-to-b from-[#111923] to-[#0D131C]">
+                <div className="absolute -top-2 left-2 z-10 bg-gradient-to-b from-[#111923] to-[#0D131C] px-1">
                   <span className="text-xs text-[#93ACD3]">
                     {t('settings.password')}
                   </span>
@@ -501,7 +501,7 @@ export default function AuthModal() {
                       ? '✱ ✱ ✱ ✱ ✱ ✱ ✱ ✱'
                       : t('auth.passPlaceholder')
                   }
-                  className={`w-full h-12 px-4 pt-2 pr-12 bg-[#0D131C] rounded-xl text-sm focus:outline-none ${
+                  className={`h-12 w-full rounded-xl bg-[#0D131C] px-4 pr-12 pt-2 text-sm focus:outline-none ${
                     !isLogin && password
                       ? 'border-2 border-[#2283F6] text-white'
                       : 'border border-[#55657E] text-white placeholder-[#55657E]'
@@ -524,7 +524,7 @@ export default function AuthModal() {
                   {!showReferral && (
                     <div
                       onClick={() => setShowReferral(!showReferral)}
-                      className="flex items-center justify-between w-full text-[#2283F6] text-sm font-bold py-2 cursor-pointer"
+                      className="flex w-full cursor-pointer items-center justify-between py-2 text-sm font-bold text-[#2283F6]"
                     >
                       <span>{t('alliance.referralCode')}</span>
                       <ChevronDown size={20} />
@@ -536,13 +536,13 @@ export default function AuthModal() {
                       value={referralCode}
                       onChange={e => setReferralCode(e.target.value)}
                       placeholder={t('auth.referralPlaceholder')}
-                      className="w-full h-12 px-4 mt-2 bg-deep-blue border border-blue-bayoux rounded-xl text-white placeholder-blue-bayoux text-sm focus:border-dodger-blue focus:outline-none"
+                      className="mt-2 h-12 w-full rounded-xl border border-blue-bayoux bg-deep-blue px-4 text-sm text-white placeholder-blue-bayoux focus:border-dodger-blue focus:outline-none"
                     />
                   )}
 
                   {/* Submit Button */}
                   <TDButton
-                    className="!w-full h-11"
+                    className="h-11 !w-full"
                     type="red"
                     onClick={register}
                   >
@@ -551,7 +551,7 @@ export default function AuthModal() {
 
                   {/* Checkboxes */}
                   <div className="space-y-2">
-                    <label className="flex items-center gap-3 cursor-pointer">
+                    <label className="flex cursor-pointer items-center gap-3">
                       <div className="relative mt-0.5">
                         <input
                           type="checkbox"
@@ -560,9 +560,9 @@ export default function AuthModal() {
                           className="sr-only"
                         />
                         <div
-                          className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
+                          className={`flex h-6 w-6 items-center justify-center rounded border-2 ${
                             agreedToTerms
-                              ? 'bg-[#2283F6] border-[#2283F6]'
+                              ? 'border-[#2283F6] bg-[#2283F6]'
                               : 'border-[#55657E] bg-transparent'
                           }`}
                         >
@@ -589,7 +589,7 @@ export default function AuthModal() {
                       </span>
                     </label>
 
-                    <label className="flex items-center gap-3 cursor-pointer">
+                    <label className="flex cursor-pointer items-center gap-3">
                       <div className="relative mt-0.5">
                         <input
                           type="checkbox"
@@ -600,9 +600,9 @@ export default function AuthModal() {
                           className="sr-only"
                         />
                         <div
-                          className={`w-6 h-6 rounded border-2 flex items-center justify-center ${
+                          className={`flex h-6 w-6 items-center justify-center rounded border-2 ${
                             agreedToNotifications
-                              ? 'bg-[#2283F6] border-[#2283F6]'
+                              ? 'border-[#2283F6] bg-[#2283F6]'
                               : 'border-[#55657E] bg-transparent'
                           }`}
                         >
@@ -636,7 +636,7 @@ export default function AuthModal() {
               {/* Login Submit Button */}
               {isLogin && (
                 <>
-                  <TDButton className="!w-full h-11" type="red" onClick={login}>
+                  <TDButton className="h-11 !w-full" type="red" onClick={login}>
                     {t('auth.login')}
                   </TDButton>
                 </>
@@ -645,10 +645,10 @@ export default function AuthModal() {
 
             {/* Social Login */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <div className="flex-1 h-px bg-[#3C485C]" />
+              <div className="flex cursor-pointer items-center gap-3">
+                <div className="h-px flex-1 bg-[#3C485C]" />
                 <span className="text-sm text-[#A7B5CA]">Log in using</span>
-                <div className="flex-1 h-px bg-[#3C485C]" />
+                <div className="h-px flex-1 bg-[#3C485C]" />
               </div>
 
               <div className="flex flex-wrap justify-center gap-4">
@@ -657,7 +657,7 @@ export default function AuthModal() {
                 <SocialButton icon={<MetamaskIcon />} />
                 <SocialButton icon={<TonIcon />} />
                 <SocialButton icon={<TrustWalletIcon />} />
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white-4 backdrop-blur-[32px] text-[#A7B5CA] text-xs font-bold cursor-pointer">
+                <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-xs font-bold text-[#A7B5CA] backdrop-blur-[32px]">
                   <span>98</span>
                 </div>
               </div>

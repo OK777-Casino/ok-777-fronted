@@ -17,13 +17,13 @@ const GameProviderPage = () => {
   const id = pathname.split('/')[2].split('%20').join(' ')
 
   return (
-    <div className="flex flex-col gap-8 w-full mx-auto pt-[26px] md:pt-4 mb-16 max-w-7xl p-2 m-auto">
-      <h2 className="text-white text-[18px] font-bold hidden lg:block">{id}</h2>
+    <div className="m-auto mx-auto mb-16 flex w-full max-w-7xl flex-col gap-8 p-2 pt-[26px] md:pt-4">
+      <h2 className="hidden text-[18px] font-bold text-white lg:block">{id}</h2>
       {/* Content */}
       {/* Search Field */}
       <SearchInput placeholder="Manufacturer search" />
       {/* Game Providers Grid */}
-      <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 ">
+      <div className="grid grid-cols-3 gap-3 lg:grid-cols-6">
         {mainContentData.card3.map((item, index) => (
           <CasinoCard key={index} image={item.image} badge={item.badge} />
         ))}
@@ -33,22 +33,22 @@ const GameProviderPage = () => {
       <div className="flex flex-col gap-2.5">
         {/* Show More Button */}
         <div className="flex justify-center">
-          <div className="h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors">
+          <div className="hover:bg-ebony-clay/80 flex h-9 w-[157px] items-center justify-center gap-2 rounded-[8px] bg-ebony-clay font-montserrat text-[14px] font-bold text-casper transition-colors">
             Show 4 more
             <ChevronDownIcon className="text-casper" />
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-[158px] mx-auto">
-          <div className="h-1.5 bg-oxford-blue rounded-lg overflow-hidden">
-            <div className="h-full w-[73%] bg-dodger-blue rounded-lg"></div>
+        <div className="mx-auto w-[158px]">
+          <div className="bg-oxford-blue h-1.5 overflow-hidden rounded-lg">
+            <div className="h-full w-[73%] rounded-lg bg-dodger-blue"></div>
           </div>
         </div>
 
         {/* Progress Text */}
-        <div className="flex justify-center items-center">
-          <span className="text-polo-blue font-montserrat text-[10px] font-normal">
+        <div className="flex items-center justify-center">
+          <span className="font-montserrat text-[10px] font-normal text-polo-blue">
             Show 18 of 22 games
           </span>
         </div>

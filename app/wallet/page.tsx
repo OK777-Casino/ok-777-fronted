@@ -65,17 +65,17 @@ function WalletPageContent() {
   }
 
   const navigationItems = [
-    { name: 'Deposit', icon: <CurrencyNotesIcon className="w-6 h-6" /> },
-    { name: 'Withdraw', icon: <PrintDollarIcon className="w-6 h-6" /> },
-    { name: 'Swap', icon: <SwapDiagonalIcon className="w-6 h-6" /> },
-    { name: 'Transaction', icon: <ReceiptIcon className="w-6 h-6" /> },
+    { name: 'Deposit', icon: <CurrencyNotesIcon className="h-6 w-6" /> },
+    { name: 'Withdraw', icon: <PrintDollarIcon className="h-6 w-6" /> },
+    { name: 'Swap', icon: <SwapDiagonalIcon className="h-6 w-6" /> },
+    { name: 'Transaction', icon: <ReceiptIcon className="h-6 w-6" /> },
     {
       name: 'GameHistory',
-      icon: <MedalStarAlt2Icon className="w-6 h-6" />,
+      icon: <MedalStarAlt2Icon className="h-6 w-6" />,
     },
     {
       name: 'Datastatistics',
-      icon: <DoughnutChartIcon className="w-6 h-6" />,
+      icon: <DoughnutChartIcon className="h-6 w-6" />,
     },
   ]
 
@@ -100,10 +100,10 @@ function WalletPageContent() {
 
   return (
     <>
-      <div className="flex flex-col w-full justify-between max-w-7xl p-2 gap-8 lg:py-6 mx-auto pb-4 lg:pb-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-8 p-2 pb-4 lg:py-6 lg:pb-8">
         {/* Left Sidebar Navigation */}
-        <div className="bg-[#FFFFFF0A] rounded-lg h-full [@media(max-width:1024px)]:hidden w-full ">
-          <div className="flex p-3 gap-1 justify-between">
+        <div className="h-full w-full rounded-lg bg-[#FFFFFF0A] [@media(max-width:1024px)]:hidden">
+          <div className="flex justify-between gap-1 p-3">
             {navigationItems.map(item => (
               <div
                 key={item.name}
@@ -111,21 +111,21 @@ function WalletPageContent() {
                   setActiveTab(item.name)
                   updateQuery(item.name)
                 }}
-                className={`w-fit flex items-center gap-1 p-2 rounded-lg transition-all duration-200 cursor-pointer ${
+                className={`flex w-fit cursor-pointer items-center gap-1 rounded-lg p-2 transition-all duration-200 ${
                   activeTab === item.name
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
                 }`}
               >
                 {item.icon}
-                <span className="font-bold text-[0.875rem]">{item.name}</span>
+                <span className="text-[0.875rem] font-bold">{item.name}</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 lg:bg-white-4 p-2 rounded-[12px]">
+        <div className="flex-1 rounded-[12px] p-2 lg:bg-white-4">
           {renderContent()}
         </div>
       </div>

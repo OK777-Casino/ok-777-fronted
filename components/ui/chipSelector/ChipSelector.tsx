@@ -21,15 +21,15 @@ export function ChipSelector() {
   const [selectedChip, setSelectedChip] = useState<string>('1')
 
   return (
-    <div className="flex justify-center items-center w-full">
+    <div className="flex w-full items-center justify-center">
       <div
-        className="flex items-end gap-4 p-8 w-full rounded-xl"
+        className="flex w-full items-end gap-4 rounded-xl p-8"
         style={{ background: 'rgba(255, 255, 255, 0.04)' }}
       >
         {/* Undo button section */}
-        <div className="flex flex-col justify-center items-end gap-1 flex-1 min-w-0 px-4">
+        <div className="flex min-w-0 flex-1 flex-col items-end justify-center gap-1 px-4">
           <div
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-chip-casper"
+            className="text-chip-casper flex items-center gap-2 rounded-lg px-4 py-2 font-montserrat text-xs font-bold"
             style={{ background: 'rgba(0, 0, 0, 0.54)' }}
           >
             Undo
@@ -62,9 +62,9 @@ export function ChipSelector() {
         </div>
 
         {/* Confirm button section */}
-        <div className="flex flex-col justify-center items-start gap-1 flex-1 min-w-0 px-4">
+        <div className="flex min-w-0 flex-1 flex-col items-start justify-center gap-1 px-4">
           <div
-            className="flex items-center gap-2 px-4 py-2 rounded-lg font-montserrat font-bold text-xs text-chip-casper"
+            className="text-chip-casper flex items-center gap-2 rounded-lg px-4 py-2 font-montserrat text-xs font-bold"
             style={{ background: 'rgba(0, 0, 0, 0.54)' }}
           >
             <svg

@@ -109,61 +109,61 @@ const VipClubPage = () => {
   const swiperRef = useRef<SwiperType | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
-    <div className="flex flex-col gap-8 max-w-6xl p-2 m-auto">
-      <div className="bg-[linear-gradient(#003F70,#0078D6)] relative overflow-hidden rounded-[0.75rem] border-[0.0625rem] border-white-13 gap-6 py-8 px-6 flex items-center">
+    <div className="m-auto flex max-w-6xl flex-col gap-8 p-2">
+      <div className="relative flex items-center gap-6 overflow-hidden rounded-[0.75rem] border-[0.0625rem] border-white-13 bg-[linear-gradient(#003F70,#0078D6)] px-6 py-8">
         <img
           src="/images/awards/Silver.svg"
-          className="h-[7.25rem] lg:block hidden"
+          className="hidden h-[7.25rem] lg:block"
           alt="Silver"
         />
-        <div className="flex flex-col gap-6 w-full">
-          <div className="flex items-between gap-4">
-            <div className="lg:hidden w-full justify-center flex">
+        <div className="flex w-full flex-col gap-6">
+          <div className="items-between flex gap-4">
+            <div className="flex w-full justify-center lg:hidden">
               <img
                 src="/images/awards/Silver.svg"
-                className="h-[7.25rem] "
+                className="h-[7.25rem]"
                 alt="Silver"
               />
             </div>
 
-            <div className="w-full flex flex-col justify-center ">
-              <span className="text-casper text-[0.75rem] font-medium block">
+            <div className="flex w-full flex-col justify-center">
+              <span className="block text-[0.75rem] font-medium text-casper">
                 {t('vip.silver')}
               </span>
-              <span className="bg-[linear-gradient(#686150,#CFC8B5,#696150)] block text-[1.5rem] font-bold bg-clip-text text-transparent">
+              <span className="block bg-[linear-gradient(#686150,#CFC8B5,#696150)] bg-clip-text text-[1.5rem] font-bold text-transparent">
                 {t('vip.vip4')}
               </span>
               <span
-                className="font-medium text-[0.75rem] text-white flex items-center cursor-pointer"
+                className="flex cursor-pointer items-center text-[0.75rem] font-medium text-white"
                 onClick={() => setIsModalOpen(true)}
               >
                 <span>{t('vip.upgradeDetails')} </span>
                 <span>
-                  <ChevronRightIcon className="w-6 h-6" />
+                  <ChevronRightIcon className="h-6 w-6" />
                 </span>
               </span>
             </div>
           </div>
-          <div className="flex gap-4 w-full">
-            <div className="flex flex-col gap-2 w-full">
-              <span className="font-bold text-[0.875rem] text-white">
+          <div className="flex w-full gap-4">
+            <div className="flex w-full flex-col gap-2">
+              <span className="text-[0.875rem] font-bold text-white">
                 {t('vip.currentDeposits')}
               </span>
-              <div className="bg-white-4 rounded-full h-[0.375rem]">
-                <div className="w-[10%] bg-french-rose h-full rounded-full" />
+              <div className="h-[0.375rem] rounded-full bg-white-4">
+                <div className="h-full w-[10%] rounded-full bg-french-rose" />
               </div>
-              <span className="text-white text-[0.875rem] font-bold">
+              <span className="text-[0.875rem] font-bold text-white">
                 <span className="text-yellow-orange">25$</span> / 100$
               </span>
             </div>
-            <div className="flex flex-col gap-2 w-full">
-              <span className="font-bold text-[14px] text-white">
+            <div className="flex w-full flex-col gap-2">
+              <span className="text-[14px] font-bold text-white">
                 {t('vip.currentIncomes')}
               </span>
-              <div className="bg-white-4 rounded-full h-[6px]">
-                <div className="w-[10%] bg-french-rose h-full rounded-full" />
+              <div className="h-[6px] rounded-full bg-white-4">
+                <div className="h-full w-[10%] rounded-full bg-french-rose" />
               </div>
-              <span className="text-white text-[14px] font-bold">
+              <span className="text-[14px] font-bold text-white">
                 <span className="text-yellow-orange">25$</span> / 800$
               </span>
             </div>
@@ -171,24 +171,24 @@ const VipClubPage = () => {
         </div>
         <img
           src="/images/awards/badge.png"
-          className="absolute opacity-20  -right-5 -top-8 h-[105%] lg:h-[140%]"
+          className="absolute -right-5 -top-8 h-[105%] opacity-20 lg:h-[140%]"
           alt="badge"
         />
       </div>
       <div>
         <div className="flex items-center justify-between">
-          <h2 className="text-4.5 font-bold text-white mb-4 flex gap-2">
+          <h2 className="text-4.5 mb-4 flex gap-2 font-bold text-white">
             {t('vip.levelSystem')}
           </h2>
-          <div className="flex justify-end mb-4">
+          <div className="mb-4 flex justify-end">
             <div
-              className=" hover:bg-gray-600 active:bg-gray-600 w-9 h-9 flex items-center justify-center rounded-l-lg transition-colors cursor-pointer"
+              className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-l-lg transition-colors hover:bg-gray-600 active:bg-gray-600"
               onClick={() => swiperRef.current?.slidePrev()}
             >
               <ChevronLeftIcon className="text-white" />
             </div>
             <div
-              className="hover:bg-gray-600 active:bg-gray-600 w-9 h-9 flex items-center justify-center rounded-r-lg transition-colors cursor-pointer"
+              className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-r-lg transition-colors hover:bg-gray-600 active:bg-gray-600"
               onClick={() => swiperRef.current?.slideNext()}
             >
               <ChevronRightIcon className="text-white" />
@@ -201,10 +201,10 @@ const VipClubPage = () => {
             renderSlide={(manufacturer, index) => (
               <div
                 key={index}
-                className="rounded-[12px] overflow-hidden p-4 bg-white-4 hover:bg-white-8 flex flex-col gap-3"
+                className="flex flex-col gap-3 overflow-hidden rounded-[12px] bg-white-4 p-4 hover:bg-white-8"
               >
                 <div
-                  className="flex gap-4 items-start justify-center"
+                  className="flex items-start justify-center gap-4"
                   onClick={() => setIsModalOpen(true)}
                 >
                   <img
@@ -214,22 +214,22 @@ const VipClubPage = () => {
                   />
                   <div>
                     <div className="flex gap-2">
-                      <span className="uppercase font-bold text-[14px] text-white">
+                      <span className="text-[14px] font-bold uppercase text-white">
                         {t('vip.vip')}
                       </span>
-                      <span className="font-bold text-[14px] text-dodger-blue">
+                      <span className="text-[14px] font-bold text-dodger-blue">
                         1-3
                       </span>
                     </div>
-                    <span className="text-casper font-medium text-[14px]">
+                    <span className="text-[14px] font-medium text-casper">
                       {t('vip.bronze')}
                     </span>
                   </div>
-                  <div className="flex items-start h-full">
-                    <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue" />
+                  <div className="flex h-full items-start">
+                    <InfoCircleIcon className="h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                   </div>
                 </div>
-                <div className="rounded-[12px] hover:bg-white-8 p-4 bg-white-4 relative flex gap-4">
+                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
                   <img src="/images/awards/image.svg" className="h-10" alt="" />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-bold text-white">
@@ -237,9 +237,9 @@ const VipClubPage = () => {
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
-                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
+                  <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
-                <div className="rounded-[12px] hover:bg-white-8 p-4 bg-white-4 relative flex gap-4">
+                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
                   <img
                     src="/images/awards/image-1.svg"
                     className="h-10"
@@ -251,9 +251,9 @@ const VipClubPage = () => {
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
-                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
+                  <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
-                <div className="rounded-[12px] hover:bg-white-8 p-4 bg-white-4 relative flex gap-4">
+                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
                   <img
                     src="/images/awards/image-2.svg"
                     className="h-10"
@@ -265,9 +265,9 @@ const VipClubPage = () => {
                     </span>
                     <span className="text-[14px] text-casper">0.20%-0.40%</span>
                   </div>
-                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
+                  <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
-                <div className="rounded-[12px] hover:bg-white-8 p-4 bg-white-4 relative flex gap-4">
+                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
                   <img
                     src="/images/awards/image-3.svg"
                     className="h-10"
@@ -283,7 +283,7 @@ const VipClubPage = () => {
                       {t('vip.timesFree')}
                     </span>
                   </div>
-                  <InfoCircleIcon className="w-6 h-6 text-blue-bayoux hover:text-polo-blue absolute top-1 right-1" />
+                  <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
               </div>
             )}
@@ -302,70 +302,70 @@ const VipClubPage = () => {
           />
         </div>
       </div>
-      <div className="rounded-[12px] 2xl:h-[292.9px] 2xl:overflow-hidden  relative bg-center bg-cover">
+      <div className="relative rounded-[12px] bg-cover bg-center 2xl:h-[292.9px] 2xl:overflow-hidden">
         <img
           alt=""
           src="/images/block-coin.png"
-          className="w-full absolute 2xl:block hidden h-full z-[9] object-cover grayscale"
+          className="absolute z-[9] hidden h-full w-full object-cover grayscale 2xl:block"
         />
-        <div className="absolute bg-[linear-gradient(#2283f633,#111923)] 2xl:block hidden w-full z-[10] h-full top-0 left-0" />
+        <div className="absolute left-0 top-0 z-[10] hidden h-full w-full bg-[linear-gradient(#2283f633,#111923)] 2xl:block" />
 
-        <div className="relative w-full h-full flex-col lg:flex-row 2xl:p-8 gap-8 z-[99] items-center flex justify-between">
-          <div className="flex flex-col 2xl:w-[250px] gap-2 2xl:bg-mirage bg-white-4 p-4 rounded-[12px]">
+        <div className="relative z-[99] flex h-full w-full flex-col items-center justify-between gap-8 lg:flex-row 2xl:p-8">
+          <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4 2xl:w-[250px] 2xl:bg-mirage">
             <span className="text-[14px] font-bold text-white">
               {t('vip.stayConnected')}
             </span>
-            <p className="text-casper text-[14px]">
+            <p className="text-[14px] text-casper">
               {t('vip.stayConnectedDescription')}
             </p>
           </div>
           <img
             src="/images/headset.png"
             alt="headset"
-            className="hidden 2xl:block w-[246px]"
+            className="hidden w-[246px] 2xl:block"
           />
-          <div className="flex flex-col gap-px rounded-[8px] w-full 2xl:w-[330px] overflow-hidden">
-            <div className=" h-12 2xl:bg-mirage bg-white-4 flex items-center p-3 justify-between">
+          <div className="flex w-full flex-col gap-px overflow-hidden rounded-[8px] 2xl:w-[330px]">
+            <div className="flex h-12 items-center justify-between bg-white-4 p-3 2xl:bg-mirage">
               <div className="flex gap-2">
-                <div className="border-[1px] border-yellow-orange w-6 h-6 rounded-[8px] flex items-center justify-center text-yellow-orange">
-                  <HeadphoneMicIcon className="w-4 h-4" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-[8px] border-[1px] border-yellow-orange text-yellow-orange">
+                  <HeadphoneMicIcon className="h-4 w-4" />
                 </div>
-                <span className="text-casper font-bold text-[14px]">
+                <span className="text-[14px] font-bold text-casper">
                   24/7 {t('help.onlineService')}
                 </span>
               </div>
-              <ArrowUpRightStrokeIcon className="w-6 h-6 text-casper" />
+              <ArrowUpRightStrokeIcon className="h-6 w-6 text-casper" />
             </div>
-            <div className=" h-12 2xl:bg-mirage bg-white-4 flex items-center p-3 justify-between">
+            <div className="flex h-12 items-center justify-between bg-white-4 p-3 2xl:bg-mirage">
               <div className="flex gap-2">
-                <div className="border-[1px] border-dodger-blue w-6 h-6 rounded-[8px] flex items-center justify-center text-yellow-orange">
-                  <TelegramIcon className="w-4 h-4" color="#2283F6" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-[8px] border-[1px] border-dodger-blue text-yellow-orange">
+                  <TelegramIcon className="h-4 w-4" color="#2283F6" />
                 </div>
-                <span className="text-casper font-bold text-[14px]">
+                <span className="text-[14px] font-bold text-casper">
                   Telegram
                 </span>
               </div>
-              <ArrowUpRightStrokeIcon className="w-6 h-6 text-casper" />
+              <ArrowUpRightStrokeIcon className="h-6 w-6 text-casper" />
             </div>
-            <div className=" h-12 2xl:bg-mirage bg-white-4 flex items-center p-3 justify-between">
+            <div className="flex h-12 items-center justify-between bg-white-4 p-3 2xl:bg-mirage">
               <div className="flex gap-2">
-                <div className="border-[1px] border-malachite w-6 h-6 rounded-[8px] flex items-center justify-center text-yellow-orange">
-                  <WhatsAppIcon className="w-4 h-4" color="#1BB83D" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-[8px] border-[1px] border-malachite text-yellow-orange">
+                  <WhatsAppIcon className="h-4 w-4" color="#1BB83D" />
                 </div>
-                <span className="text-casper font-bold text-[14px]">
+                <span className="text-[14px] font-bold text-casper">
                   WhatsApp
                 </span>
               </div>
-              <ArrowUpRightStrokeIcon className="w-6 h-6 text-casper" />
+              <ArrowUpRightStrokeIcon className="h-6 w-6 text-casper" />
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <span className="text-white font-bold text-[18px]">
+        <span className="text-[18px] font-bold text-white">
           Questions to be answered
         </span>
-        <div className="flex flex-col 2xl:flex-row gap-4">
+        <div className="flex flex-col gap-4 2xl:flex-row">
           <FAQ faqs={faq} title={false} />
           <FAQ faqs={faq1} title={false} />
         </div>
@@ -375,9 +375,9 @@ const VipClubPage = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <div className="flex gap-4 flex-col">
+        <div className="flex flex-col gap-4">
           <div className="flex w-full flex-col gap-[6px]">
-            <div className="flex justify-center px-4 items-center bg-mirage-8a   font-bold text-[12px] rounded-t-[8px] h-10 text-blue-bayoux grid-cols-[auto_100px_90px_80px] gap-2">
+            <div className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-t-[8px] bg-mirage-8a px-4 text-[12px] font-bold text-blue-bayoux">
               <span>VIP level</span>
               <span>Promotional bonus</span>
               <span>Monthly bonus</span>
@@ -386,13 +386,13 @@ const VipClubPage = () => {
             {vips[1].map((vip, index) => (
               <div
                 key={index}
-                className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2"
+                className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-[8px] bg-white-4 px-4 text-[14px] font-bold text-white"
               >
-                <span className="flex gap-2 items-center">
+                <span className="flex items-center gap-2">
                   <img
                     src="/images/awards/Bronze.svg"
                     alt="bronze"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                   />
                   <span className="text-dodger-blue">{vip.level}</span>
                 </span>
@@ -402,17 +402,17 @@ const VipClubPage = () => {
               </div>
             ))}
           </div>
-          <div className="py-4 flex flex-col gap-2  text-[14px]">
+          <div className="flex flex-col gap-2 py-4 text-[14px]">
             <span className="font-bold text-white">
               VIP promotion requirements
             </span>
             <span className="text-casper">
               For users betting with TRX, the system will convert it at the rate
-              of <span className="text-dodger-blue font-bold">1U=25TRX.</span>
+              of <span className="font-bold text-dodger-blue">1U=25TRX.</span>
             </span>
           </div>
           <div className="flex w-full flex-col gap-[6px]">
-            <div className="flex justify-center items-center px-4 bg-mirage-8a font-bold text-[12px] rounded-t-[8px] h-10 text-blue-bayoux grid-cols-[auto_100px_90px_80px] gap-2">
+            <div className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-t-[8px] bg-mirage-8a px-4 text-[12px] font-bold text-blue-bayoux">
               <span>VIP level</span>
               <span>Accumulated deposits</span>
               <span>Accumu-lated income</span>
@@ -421,13 +421,13 @@ const VipClubPage = () => {
             {vips[2].map((vip, index) => (
               <div
                 key={index}
-                className="flex px-4 items-center bg-white-4 justify-center font-bold text-[14px] rounded-[8px] h-10 text-white grid-cols-[auto_100px_90px_80px] gap-2"
+                className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-[8px] bg-white-4 px-4 text-[14px] font-bold text-white"
               >
-                <span className="flex gap-2 items-center">
+                <span className="flex items-center gap-2">
                   <img
                     src="/images/awards/Bronze.svg"
                     alt="bronze"
-                    className="w-6 h-6"
+                    className="h-6 w-6"
                   />
                   <span className="text-dodger-blue">{vip.level}</span>
                 </span>

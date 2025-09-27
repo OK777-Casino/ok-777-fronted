@@ -90,10 +90,10 @@ function HelpCenterPageContent() {
 
   return (
     <>
-      <div className="flex flex-col max-w-6xl p-2 m-auto">
+      <div className="m-auto flex max-w-6xl flex-col p-2">
         {/* Top Tab Navigation */}
-        <div className="bg-[#FFFFFF0A] rounded-lg w-full mb-6 [@media(max-width:1024px)]:hidden">
-          <div className="flex p-3 gap-1 justify-between overflow-x-auto">
+        <div className="mb-6 w-full rounded-lg bg-[#FFFFFF0A] [@media(max-width:1024px)]:hidden">
+          <div className="flex justify-between gap-1 overflow-x-auto p-3">
             {navigationItems.map(item => (
               <div
                 key={item}
@@ -101,13 +101,13 @@ function HelpCenterPageContent() {
                   setActiveTab(item)
                   updateQuery(item)
                 }}
-                className={`flex-shrink-0 flex items-center gap-1 p-2 rounded-lg transition-all duration-200 cursor-pointer ${
+                className={`flex flex-shrink-0 cursor-pointer items-center gap-1 rounded-lg p-2 transition-all duration-200 ${
                   activeTab === item
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
                 }`}
               >
-                <span className="font-bold text-[0.875rem] whitespace-nowrap">
+                <span className="whitespace-nowrap text-[0.875rem] font-bold">
                   {item}
                 </span>
               </div>
@@ -116,20 +116,20 @@ function HelpCenterPageContent() {
         </div>
 
         {/* Mobile Search and Dropdown */}
-        <div className="flex flex-col gap-4 lg:hidden mb-6">
+        <div className="mb-6 flex flex-col gap-4 lg:hidden">
           <div className="relative">
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center">
               <SearchIcon className="h-6 w-6 text-blue-bayoux" />
             </div>
             <Input
               type="text"
               placeholder="Manufacturer search"
-              className="w-full pl-12 pr-4 py-3 bg-transparent border border-blue-bayoux rounded-lg text-blue-bayoux placeholder:text-blue-bayoux font-montserrat text-sm focus:ring-2 focus:ring-dodger-blue focus:border-dodger-blue"
+              className="w-full rounded-lg border border-blue-bayoux bg-transparent py-3 pl-12 pr-4 font-montserrat text-sm text-blue-bayoux placeholder:text-blue-bayoux focus:border-dodger-blue focus:ring-2 focus:ring-dodger-blue"
             />
           </div>
           <div
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex justify-between items-center text-casper bg-white-4 rounded-[8px] text-[14px] font-bold h-12 px-4"
+            className="flex h-12 items-center justify-between rounded-[8px] bg-white-4 px-4 text-[14px] font-bold text-casper"
           >
             <span>{activeTab}</span>
             <ChevronDownIcon />
@@ -147,7 +147,7 @@ function HelpCenterPageContent() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 lg:bg-white-4 rounded-[12px] min-h-0">
+        <div className="min-h-0 flex-1 rounded-[12px] lg:bg-white-4">
           {renderContent()}
         </div>
       </div>

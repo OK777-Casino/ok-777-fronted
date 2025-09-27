@@ -21,13 +21,13 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
   return (
     <div className={`lg:mb-8 ${className} `}>
       {title && (
-        <h3 className="text-lg font-bold pl-3 text-white mb-6">FAQs</h3>
+        <h3 className="mb-6 pl-3 text-lg font-bold text-white">FAQs</h3>
       )}
-      <div className="rounded-[8px] overflow-hidden">
+      <div className="overflow-hidden rounded-[8px]">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={` transition-all duration-300 ease-in-out transform ${
+            className={`transform transition-all duration-300 ease-in-out ${
               expandedFAQ === faq.question
                 ? 'bg-[#FFFFFF14] shadow-lg'
                 : 'bg-[#1119238A]'
@@ -35,10 +35,10 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
           >
             <div
               onClick={() => toggleFAQ(faq.question)}
-              className="w-full flex justify-between items-center p-4 text-left  transition-all duration-200 ease-in-out"
+              className="flex w-full items-center justify-between p-4 text-left transition-all duration-200 ease-in-out"
             >
               <span
-                className={`font-bold text-sm transition-all duration-200 ${
+                className={`text-sm font-bold transition-all duration-200 ${
                   expandedFAQ === faq.question ? 'text-white' : 'text-[#A7B5CA]'
                 }`}
               >
@@ -52,7 +52,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
                 <img
                   src="/icons/arrow-up.svg"
                   alt="arrow-down"
-                  className="w-4 h-4"
+                  className="h-4 w-4"
                 />
               </span>
             </div>
@@ -65,7 +65,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
             >
               {faq.answer && (
                 <div className="px-4 pb-4">
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed text-gray-300">
                     {faq.answer}
                   </p>
                 </div>

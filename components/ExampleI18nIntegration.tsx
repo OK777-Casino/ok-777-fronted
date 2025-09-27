@@ -9,8 +9,8 @@ export default function ExampleI18nIntegration() {
   const { currentLanguage } = useLanguage()
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <div className="flex justify-between items-center mb-4">
+    <div className="rounded-lg bg-white p-6 shadow-lg">
+      <div className="mb-4 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-800">
           {t('app.title')} - {t('settings.language')}
         </h2>
@@ -19,58 +19,58 @@ export default function ExampleI18nIntegration() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-blue-600">
+          <h3 className="mb-3 text-lg font-semibold text-blue-600">
             {t('navigation.games')}
           </h3>
           <div className="space-y-2">
-            <div className="w-full text-left px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+            <div className="w-full rounded-lg bg-blue-50 px-4 py-2 text-left transition-colors hover:bg-blue-100">
               {t('games.slots')}
             </div>
-            <div className="w-full text-left px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+            <div className="w-full rounded-lg bg-blue-50 px-4 py-2 text-left transition-colors hover:bg-blue-100">
               {t('games.live')}
             </div>
-            <div className="w-full text-left px-4 py-2 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+            <div className="w-full rounded-lg bg-blue-50 px-4 py-2 text-left transition-colors hover:bg-blue-100">
               {t('games.table')}
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-green-600">
+          <h3 className="mb-3 text-lg font-semibold text-green-600">
             {t('wallet.title')}
           </h3>
           <div className="space-y-2">
-            <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+            <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
               <span className="text-gray-700">{t('wallet.balance')}:</span>
               <span className="font-bold text-green-600">$1,234.56</span>
             </div>
-            <div className="w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+            <div className="w-full rounded-lg bg-green-600 px-4 py-2 text-white transition-colors hover:bg-green-700">
               {t('wallet.deposit')}
             </div>
-            <div className="w-full px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+            <div className="w-full rounded-lg bg-gray-600 px-4 py-2 text-white transition-colors hover:bg-gray-700">
               {t('wallet.withdraw')}
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-purple-600">
+          <h3 className="mb-3 text-lg font-semibold text-purple-600">
             {t('promotions.title')}
           </h3>
           <div className="space-y-2">
-            <div className="p-3 bg-purple-50 rounded-lg">
-              <div className="flex justify-between items-center mb-2">
+            <div className="rounded-lg bg-purple-50 p-3">
+              <div className="mb-2 flex items-center justify-between">
                 <span className="font-semibold">{t('promotions.welcome')}</span>
                 <span className="text-sm text-purple-600">
                   {t('status.active')}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="mb-2 text-sm text-gray-600">
                 {t('messages.bonusClaimed')}
               </p>
-              <div className="w-full px-3 py-1 bg-purple-600 text-white text-sm rounded hover:bg-purple-700 transition-colors">
+              <div className="w-full rounded bg-purple-600 px-3 py-1 text-sm text-white transition-colors hover:bg-purple-700">
                 {t('promotions.claim')}
               </div>
             </div>
@@ -78,25 +78,25 @@ export default function ExampleI18nIntegration() {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-3 text-orange-600">
+          <h3 className="mb-3 text-lg font-semibold text-orange-600">
             {t('help.title')}
           </h3>
           <div className="space-y-2">
-            <div className="w-full text-left px-4 py-2 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
+            <div className="w-full rounded-lg bg-orange-50 px-4 py-2 text-left transition-colors hover:bg-orange-100">
               {t('help.faq')}
             </div>
-            <div className="w-full text-left px-4 py-2 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
+            <div className="w-full rounded-lg bg-orange-50 px-4 py-2 text-left transition-colors hover:bg-orange-100">
               {t('help.liveChat')}
             </div>
-            <div className="w-full text-left px-4 py-2 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
+            <div className="w-full rounded-lg bg-orange-50 px-4 py-2 text-left transition-colors hover:bg-orange-100">
               {t('help.contact')}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-        <h4 className="font-semibold mb-2">{t('messages.info')}</h4>
+      <div className="mt-6 rounded-lg bg-gray-50 p-4">
+        <h4 className="mb-2 font-semibold">{t('messages.info')}</h4>
         <p className="text-sm text-gray-600">
           {t('messages.jackpotWon', { amount: '$1,000,000' })}
         </p>

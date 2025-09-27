@@ -8,7 +8,7 @@ interface PolicyFormProps {
 
 const PolicyForm: React.FC<PolicyFormProps> = ({ content }) => {
   return (
-    <div className="policy-form flex gap-4 items-center">
+    <div className="policy-form flex items-center gap-4">
       <input type="checkbox" />
       <p dangerouslySetInnerHTML={{ __html: content }}></p>
     </div>

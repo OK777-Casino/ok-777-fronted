@@ -119,26 +119,26 @@ const InstallAppPage = () => {
     <div className="overflow-hidden lg:mb-64">
       <div
         className={cn(
-          'h-[426px] justify-end items-center lg:justify-start lg:items-start w-full relative bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 flex flex-col  gap-8'
+          'relative flex h-[426px] w-full flex-col items-center justify-end gap-8 bg-[radial-gradient(at_top_right,#2283F6,#111923)] p-12 lg:items-start lg:justify-start'
         )}
       >
         <div className="hidden lg:block">
-          <span className="text-casper font-bold text-[18px] text-caper">
+          <span className="text-caper text-[18px] font-bold text-casper">
             Quick and convenient
           </span>
-          <h2 className="uppercase font-black text-white">Install OK777 app</h2>
-          <span className="font-medium text-[18px] text-casper">
+          <h2 className="font-black uppercase text-white">Install OK777 app</h2>
+          <span className="text-[18px] font-medium text-casper">
             Get fast access to OK777 from iOS, <br /> Android, Windows or MacOS
           </span>
         </div>
-        <FlatButton className="h-[3rem] w-[15rem] hidden lg:flex rounded-[12px] font-bold text-white uppercase bg-[linear-gradient(#0C60FF 40%,#2C9FFA 60%)] text-[1rem]">
+        <FlatButton className="bg-[linear-gradient(#0C60FF 40%,#2C9FFA 60%)] hidden h-[3rem] w-[15rem] rounded-[12px] text-[1rem] font-bold uppercase text-white lg:flex">
           How to Install App
         </FlatButton>
-        <div className="lg:flex gap-4 items-center hidden">
+        <div className="hidden items-center gap-4 lg:flex">
           {appDownloads.map(item => (
             <img
               src={item.icon}
-              className="w-6 h-6"
+              className="h-6 w-6"
               alt={item.alt}
               key={item.platform}
             />
@@ -147,37 +147,37 @@ const InstallAppPage = () => {
         <TDButton
           onClick={toggleModal}
           type="blue"
-          className="h-[41px] lg:hidden z-[2] w-[200px] text-white font-bold text-[14px]"
+          className="z-[2] h-[41px] w-[200px] text-[14px] font-bold text-white lg:hidden"
         >
           How to Install App
         </TDButton>
         <img
           src="/images/phone.png"
           alt="phone"
-          className="absolute bottom-0 w-[375px] right-0"
+          className="absolute bottom-0 right-0 w-[375px]"
         />
       </div>
-      <div className="flex flex-col gap-[96px] max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000] bg-white-4 p-4 pt-[86px] rounded-[12px] gap-[86px] ">
+      <div className="mx-auto flex max-w-6xl flex-col gap-[96px]">
+        <div className="grid gap-[86px] rounded-[12px] bg-white-4 p-4 pt-[86px] lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000]">
           {installApps.map(app => (
-            <div className="bg-white-4 rounded-[12px] p-8 pt-[73px] relative flex flex-col gap-4 items-center">
-              <h2 className="font-bold text-[14px] text-white ">{app.title}</h2>
-              <p className="text-[14px] flex justify-center items-center text-casper">
+            <div className="relative flex flex-col items-center gap-4 rounded-[12px] bg-white-4 p-8 pt-[73px]">
+              <h2 className="text-[14px] font-bold text-white">{app.title}</h2>
+              <p className="flex items-center justify-center text-[14px] text-casper">
                 {app.desc}
               </p>
               <img
                 src={app.icon}
                 alt="app"
-                className="w-[144px] h-[96px] absolute left-1/2 -top-[52px] transform -translate-x-1/2"
+                className="absolute -top-[52px] left-1/2 h-[96px] w-[144px] -translate-x-1/2 transform"
               />
             </div>
           ))}
         </div>
         <div>
-          <h2 className="font-bold text-white text-[18px] indent-[20px] pb-4">
+          <h2 className="pb-4 indent-[20px] text-[18px] font-bold text-white">
             How to download BetFury App?
           </h2>
-          <div className="flex lg:flex-row gap-4 flex-col">
+          <div className="flex flex-col gap-4 lg:flex-row">
             <FAQ faqs={faqs[1]} title={false} />
             <FAQ faqs={faqs[2]} title={false} />
           </div>
@@ -190,15 +190,15 @@ const InstallAppPage = () => {
         onClose={toggleModal}
         position="bottom"
       >
-        <div className="p-2 flex flex-col gap-6">
-          <div className="grid bg-white-4 rounded-[12px] p-1 grid-cols-2 gap-2">
+        <div className="flex flex-col gap-6 p-2">
+          <div className="grid grid-cols-2 gap-2 rounded-[12px] bg-white-4 p-1">
             {tabs.map(tab => (
               <div
                 key={tab.id}
                 onClick={() => setSelectedTab(tab.id)}
                 className={cn(
-                  'gap-2 h-9 rounded-[8px] text-[14px] flex justify-center items-center text-casper font-bold',
-                  selectedTab === tab.id ? 'bg-white-13 text-white   ' : ''
+                  'flex h-9 items-center justify-center gap-2 rounded-[8px] text-[14px] font-bold text-casper',
+                  selectedTab === tab.id ? 'bg-white-13 text-white' : ''
                 )}
               >
                 {tab.icon}
@@ -224,11 +224,11 @@ const InstallAppPage = () => {
                 <h2 className="text-[16px] font-bold text-white">
                   2. Tap The Share Icon
                 </h2>
-                <div className="bg-white-4 rounded-[12px] p-4 flex justify-center">
-                  <div className="bg-[#1a1a1a] rounded-[8px] p-3 flex items-center gap-4">
+                <div className="flex justify-center rounded-[12px] bg-white-4 p-4">
+                  <div className="flex items-center gap-4 rounded-[8px] bg-[#1a1a1a] p-3">
                     {/* Back/Forward arrows */}
                     <div className="flex gap-2">
-                      <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
+                      <div className="flex h-6 w-6 items-center justify-center rounded bg-[#333]">
                         <svg
                           width="12"
                           height="12"
@@ -244,7 +244,7 @@ const InstallAppPage = () => {
                           />
                         </svg>
                       </div>
-                      <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
+                      <div className="flex h-6 w-6 items-center justify-center rounded bg-[#333]">
                         <svg
                           width="12"
                           height="12"
@@ -263,7 +263,7 @@ const InstallAppPage = () => {
                     </div>
 
                     {/* Share icon (highlighted) */}
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center ring-2 ring-white ring-opacity-50">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white ring-2 ring-white ring-opacity-50">
                       <svg
                         width="16"
                         height="16"
@@ -281,7 +281,7 @@ const InstallAppPage = () => {
                     </div>
 
                     {/* Bookmarks icon */}
-                    <div className="w-6 h-6 bg-[#333] rounded flex items-center justify-center">
+                    <div className="flex h-6 w-6 items-center justify-center rounded bg-[#333]">
                       <svg
                         width="12"
                         height="12"
@@ -313,12 +313,12 @@ const InstallAppPage = () => {
                 <h2 className="text-[16px] font-bold text-white">
                   3. Select 'Add To Home Screen'
                 </h2>
-                <div className="bg-white-4 rounded-[12px] p-4 flex justify-center">
-                  <div className="bg-[#2a2a2a] rounded-[8px] p-3 flex items-center gap-3 min-w-[200px]">
-                    <span className="text-white text-[14px] font-medium">
+                <div className="flex justify-center rounded-[12px] bg-white-4 p-4">
+                  <div className="flex min-w-[200px] items-center gap-3 rounded-[8px] bg-[#2a2a2a] p-3">
+                    <span className="text-[14px] font-medium text-white">
                       Add To Home Screen
                     </span>
-                    <div className="w-6 h-6 bg-white rounded flex items-center justify-center ring-2 ring-white ring-opacity-50">
+                    <div className="flex h-6 w-6 items-center justify-center rounded bg-white ring-2 ring-white ring-opacity-50">
                       <svg
                         width="12"
                         height="12"
@@ -339,8 +339,8 @@ const InstallAppPage = () => {
               </div>
 
               {/* Additional info */}
-              <div className="bg-[#1a1a1a] rounded-[12px] p-4">
-                <p className="text-[14px] text-casper flex justify-center items-center">
+              <div className="rounded-[12px] bg-[#1a1a1a] p-4">
+                <p className="flex items-center justify-center text-[14px] text-casper">
                   After adding to lobby screen, you can move the app icon to any
                   convenient place on your device.
                 </p>
@@ -375,8 +375,8 @@ const InstallAppPage = () => {
                 </p>
               </div>
 
-              <div className="bg-[#1a1a1a] rounded-[12px] p-4">
-                <p className="text-[14px] text-casper flex justify-center items-center">
+              <div className="rounded-[12px] bg-[#1a1a1a] p-4">
+                <p className="flex items-center justify-center text-[14px] text-casper">
                   After adding to lobby screen, you can move the app icon to any
                   convenient place on your device.
                 </p>

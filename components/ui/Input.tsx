@@ -35,10 +35,10 @@ const Input: React.FC<InputProps> = ({
       {label && (
         <label
           htmlFor={id}
-          className="block text-sm font-medium text-gray-200 mb-2"
+          className="mb-2 block text-sm font-medium text-gray-200"
         >
           {label}
-          {required && <span className="text-red-500 ml-1">*</span>}
+          {required && <span className="ml-1 text-red-500">*</span>}
         </label>
       )}
       <input
@@ -51,11 +51,11 @@ const Input: React.FC<InputProps> = ({
         name={name}
         id={id}
         className={clsx(
-          'w-full px-4 py-3 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.1)] rounded-lg',
+          'w-full rounded-lg border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.04)] px-4 py-3',
           'text-white placeholder-gray-400',
-          'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+          'focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500',
           'transition-all duration-200',
-          'disabled:opacity-50 disabled:cursor-not-allowed',
+          'disabled:cursor-not-allowed disabled:opacity-50',
           error && 'border-red-500 focus:ring-red-500',
           className
         )}

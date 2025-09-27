@@ -56,14 +56,14 @@ const Dropdown: React.FC<DropdownProps> = ({
   }, [])
 
   return (
-    <div className="w-full relative" ref={dropdownRef}>
+    <div className="relative w-full" ref={dropdownRef}>
       {label && (
         <label
           htmlFor={id}
-          className="block text-sm font-medium text-gray-200 mb-2"
+          className="mb-2 block text-sm font-medium text-gray-200"
         >
           {label}
-          {required && <span className="text-red-500 ml-1">*</span>}
+          {required && <span className="ml-1 text-red-500">*</span>}
         </label>
       )}
       <div className="relative">
@@ -71,11 +71,11 @@ const Dropdown: React.FC<DropdownProps> = ({
           onClick={() => !disabled && setIsOpen(!isOpen)}
           disabled={disabled}
           className={clsx(
-            'w-full px-4 py-3 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.1)] rounded-lg',
+            'w-full rounded-lg border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.04)] px-4 py-3',
             'text-left text-white',
-            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+            'focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500',
             'transition-all duration-200',
-            'disabled:opacity-50 disabled:cursor-not-allowed',
+            'disabled:cursor-not-allowed disabled:opacity-50',
             error && 'border-red-500 focus:ring-red-500',
             className
           )}
@@ -86,7 +86,7 @@ const Dropdown: React.FC<DropdownProps> = ({
             </span>
             <svg
               className={clsx(
-                'w-5 h-5 transition-transform duration-200',
+                'h-5 w-5 transition-transform duration-200',
                 isOpen && 'rotate-180'
               )}
               fill="none"
@@ -104,7 +104,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         </button>
 
         {isOpen && (
-          <div className="absolute z-50 w-full mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg max-h-60 overflow-auto">
+          <div className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-gray-700 bg-gray-800 shadow-lg">
             {options.map(option => (
               <div
                 key={option.value}
@@ -113,7 +113,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                   setIsOpen(false)
                 }}
                 className={clsx(
-                  'w-full px-4 py-3 text-left text-white hover:bg-gray-700 transition-colors duration-150',
+                  'w-full px-4 py-3 text-left text-white transition-colors duration-150 hover:bg-gray-700',
                   'flex items-center gap-3',
                   option.value === value && 'bg-blue-600 hover:bg-blue-700'
                 )}

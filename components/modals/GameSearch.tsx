@@ -313,37 +313,37 @@ export default function GameSearchModal({
     >
       {/* Search and filters */}
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col lg:flex-row items-start gap-3 w-full">
+        <div className="flex w-full flex-col items-start gap-3 lg:flex-row">
           {/* Search Input */}
-          <div className="flex items-center gap-2 flex-1 w-full px-4 py-3 rounded-lg border border-gray-600 bg-transparent">
-            <Search className="h-6 w-6 text-white stroke-gray-400 flex-shrink-0" />
+          <div className="flex w-full flex-1 items-center gap-2 rounded-lg border border-gray-600 bg-transparent px-4 py-3">
+            <Search className="h-6 w-6 flex-shrink-0 stroke-gray-400 text-white" />
             <input
               type="text"
               placeholder={t('games.searchPlaceholder')}
-              className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
+              className="min-w-0 flex-1 border-none bg-transparent font-montserrat text-sm font-medium text-gray-300 outline-none placeholder:text-gray-400"
             />
           </div>
 
           {/* Dropdowns */}
-          <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
             {/* Game Provider Dropdown */}
             <div ref={providerRef} className="relative">
               <div
                 onClick={() => setIsProviderOpen(!isProviderOpen)}
-                className="flex items-center justify-between w-full sm:w-[200px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
+                className="hover:bg-white/12 flex h-12 w-full cursor-pointer items-center justify-between rounded-lg bg-white-8 px-4 transition-colors sm:w-[200px]"
               >
-                <span className="text-gray-300 text-sm font-bold font-montserrat hover:text-white transition-colors">
+                <span className="font-montserrat text-sm font-bold text-gray-300 transition-colors hover:text-white">
                   {selectedProvider.label}
                 </span>
                 <ChevronDown
-                  className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
+                  className={`h-6 w-6 stroke-gray-400 text-white transition-transform ${
                     isProviderOpen ? 'rotate-180' : ''
                   }`}
                 />
               </div>
 
               {isProviderOpen && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg z-50">
+                <div className="absolute left-0 right-0 top-full z-50 mt-1 rounded-lg border border-white-8 bg-[rgba(17,25,35,0.95)] shadow-lg backdrop-blur-[32px]">
                   {gameProviders.map(provider => (
                     <div
                       key={provider.id}
@@ -351,13 +351,13 @@ export default function GameSearchModal({
                         setSelectedProvider(provider)
                         setIsProviderOpen(false)
                       }}
-                      className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                      className={`w-full cursor-pointer px-4 py-3 text-left transition-colors hover:bg-white-8 ${
                         selectedProvider.id === provider.id
                           ? 'bg-blue-500/20'
                           : ''
                       }`}
                     >
-                      <span className="text-gray-300 text-sm font-medium font-montserrat">
+                      <span className="font-montserrat text-sm font-medium text-gray-300">
                         {provider.label}
                       </span>
                     </div>
@@ -370,20 +370,20 @@ export default function GameSearchModal({
             <div ref={typeRef} className="relative">
               <div
                 onClick={() => setIsTypeOpen(!isTypeOpen)}
-                className="flex items-center justify-between w-full sm:w-[200px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
+                className="hover:bg-white/12 flex h-12 w-full cursor-pointer items-center justify-between rounded-lg bg-white-8 px-4 transition-colors sm:w-[200px]"
               >
-                <span className="text-gray-300 text-sm font-bold font-montserrat hover:text-white transition-colors">
+                <span className="font-montserrat text-sm font-bold text-gray-300 transition-colors hover:text-white">
                   {selectedType.label}
                 </span>
                 <ChevronDown
-                  className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
+                  className={`h-6 w-6 stroke-gray-400 text-white transition-transform ${
                     isTypeOpen ? 'rotate-180' : ''
                   }`}
                 />
               </div>
 
               {isTypeOpen && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg z-50">
+                <div className="absolute left-0 right-0 top-full z-50 mt-1 rounded-lg border border-white-8 bg-[rgba(17,25,35,0.95)] shadow-lg backdrop-blur-[32px]">
                   {gameTypes.map(type => (
                     <div
                       key={type.id}
@@ -391,11 +391,11 @@ export default function GameSearchModal({
                         setSelectedType(type)
                         setIsTypeOpen(false)
                       }}
-                      className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                      className={`w-full cursor-pointer px-4 py-3 text-left transition-colors hover:bg-white-8 ${
                         selectedType.id === type.id ? 'bg-blue-500/20' : ''
                       }`}
                     >
-                      <span className="text-gray-300 text-sm font-medium font-montserrat">
+                      <span className="font-montserrat text-sm font-medium text-gray-300">
                         {type.label}
                       </span>
                     </div>
@@ -413,20 +413,20 @@ export default function GameSearchModal({
           <div
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
-            className={`flex h-9 items-center gap-2 px-2 sm:px-3 rounded-lg transition-all duration-300 flex-shrink-0 cursor-pointer ${
+            className={`flex h-9 flex-shrink-0 cursor-pointer items-center gap-2 rounded-lg px-2 transition-all duration-300 sm:px-3 ${
               activeCategory === category.id
                 ? 'bg-blue-500 text-white shadow-lg'
                 : 'text-gray-300 hover:bg-white-8 hover:text-white'
             }`}
           >
-            <div className="flex h-[26px] w-[26px] items-center justify-center flex-shrink-0">
+            <div className="flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center">
               <img
                 src={category.icon}
                 alt={category.label}
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="text-sm font-bold font-montserrat whitespace-nowrap hidden sm:inline">
+            <span className="hidden whitespace-nowrap font-montserrat text-sm font-bold sm:inline">
               {category.label}
             </span>
           </div>
@@ -434,7 +434,7 @@ export default function GameSearchModal({
       </div>
 
       {/* Game Grid using CasinoCard component */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2 sm:gap-3 w-full">
+      <div className="grid w-full grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
         {/* Repeat current games to fill the grid */}
         {Array.from({ length: 14 }, (_, index) => {
           const game = currentGames[index % currentGames.length]
@@ -443,9 +443,9 @@ export default function GameSearchModal({
               <CasinoCard badge={game.badge} image={game.image} />
 
               {/* Hover overlay with play button */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-[8px]">
-                <Button variant="red" className="w-12 h-12 p-0">
-                  <Play className="w-4 h-4" />
+              <div className="absolute inset-0 flex items-center justify-center rounded-[8px] bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <Button variant="red" className="h-12 w-12 p-0">
+                  <Play className="h-4 w-4" />
                 </Button>
               </div>
             </div>

@@ -29,29 +29,29 @@ export function MobileHeader({
   return (
     <div
       className={cn(
-        'fixed top-0 left-0 right-0 z-50',
-        'flex w-full justify-between items-center p-3 gap-3 sm:gap-4 sm:p4',
+        'fixed left-0 right-0 top-0 z-50',
+        'sm:p4 flex w-full items-center justify-between gap-3 p-3 sm:gap-4',
         'bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px]',
         'h-[56px]',
         className
       )}
       style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}
     >
-      <div className="flex gap-4 items-center">
+      <div className="flex items-center gap-4">
         {/* Back Button */}
         {showBackButton && (
           <BlackButton onClick={onBackClick}>
-            <ArrowLeftStrokeIcon className="w-4 h-4" />
+            <ArrowLeftStrokeIcon className="h-4 w-4" />
           </BlackButton>
         )}
 
         {/* Title */}
         <h1
           className={cn(
-            'flex-1 text-white font-montserrat text-base sm:text-lg font-bold',
+            'flex-1 font-montserrat text-base font-bold text-white sm:text-lg',
             showBackButton
-              ? 'flex justify-center items-center sm:text-left'
-              : 'flex justify-center items-center',
+              ? 'flex items-center justify-center sm:text-left'
+              : 'flex items-center justify-center',
             'truncate px-2 sm:px-0' // Handle long titles on small screens
           )}
         >
@@ -62,7 +62,7 @@ export function MobileHeader({
       {/* Support Button */}
       {isHeadSet && (
         <BlackButton onClick={onSupportClick}>
-          <HeadphoneMicIcon className="w-4 h-4" />
+          <HeadphoneMicIcon className="h-4 w-4" />
         </BlackButton>
       )}
     </div>

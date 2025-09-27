@@ -16,23 +16,23 @@ const EarningCard: React.FC<EarningCardProps> = ({
   image,
 }) => {
   return (
-    <div className=" rounded-[8px] overflow-hidden w-full">
-      <div className="relative rounded-[8px] overflow-hidden">
-        <div className="rounded-[8px]  relative overflow-hidden">
+    <div className="w-full overflow-hidden rounded-[8px]">
+      <div className="relative overflow-hidden rounded-[8px]">
+        <div className="relative overflow-hidden rounded-[8px]">
           <img
             src={image}
             alt={`Casino game`}
             className="w-full object-cover transition-transform duration-300"
           />
-          <div className="absolute rounded-[8px] w-full top-0 left-0 h-full hover:backdrop-blur-[3px] duration-300 "></div>
+          <div className="absolute left-0 top-0 h-full w-full rounded-[8px] duration-300 hover:backdrop-blur-[3px]"></div>
         </div>
-        <p className="text-crimson pt-1 lg:hidden text-[12px] font-bold">
+        <p className="pt-1 text-[12px] font-bold text-crimson lg:hidden">
           {price}$
         </p>
-        <p className="text-white pt-1 lg:hidden font-medium text-[10px]">
+        <p className="pt-1 text-[10px] font-medium text-white lg:hidden">
           {title}
         </p>
-        <p className="text-[#55657E] pt-1 lg:hidden font-medium text-[10px]">
+        <p className="pt-1 text-[10px] font-medium text-[#55657E] lg:hidden">
           ID:{id}
         </p>
       </div>

@@ -21,10 +21,7 @@ const TabBarButton = ({
   onClick,
 }: TabBarButtonProps) => (
   <div
-    className={`
-      flex h-12 px-0 py-2 flex-col justify-center items-center gap-2 flex-1 cursor-pointer
-      ${isActive ? 'relative' : ''}
-    `}
+    className={`flex h-12 flex-1 cursor-pointer flex-col items-center justify-center gap-2 px-0 py-2 ${isActive ? 'relative' : ''} `}
     style={
       isActive
         ? {
@@ -39,10 +36,7 @@ const TabBarButton = ({
       {icon}
     </span>
     <span
-      className={`
-        text-center text-[0.625rem] leading-none font-montserrat
-        ${isActive ? 'text-white' : 'text-[#A7B5CA]'}
-      `}
+      className={`text-center font-montserrat text-[0.625rem] leading-none ${isActive ? 'text-white' : 'text-[#A7B5CA]'} `}
       style={
         isActive
           ? {
@@ -80,7 +74,7 @@ function BottombarContent() {
           viewBox="0 0 18 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[1.05rem] h-[1.2rem] flex-shrink-0"
+          className="h-[1.2rem] w-[1.05rem] flex-shrink-0"
           onClick={toggleSidebar}
         >
           <g clipPath="url(#clip0_menu)">
@@ -117,7 +111,7 @@ function BottombarContent() {
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[1.2rem] h-[1.2rem] flex-shrink-0"
+          className="h-[1.2rem] w-[1.2rem] flex-shrink-0"
         >
           <g clipPath="url(#clip0_sport)">
             <path
@@ -153,7 +147,7 @@ function BottombarContent() {
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[1.2rem] h-[1.2rem] flex-shrink-0"
+          className="h-[1.2rem] w-[1.2rem] flex-shrink-0"
         >
           <g clipPath="url(#clip0_referrals)">
             <path
@@ -189,7 +183,7 @@ function BottombarContent() {
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[1.2rem] h-[1.2rem] flex-shrink-0"
+          className="h-[1.2rem] w-[1.2rem] flex-shrink-0"
         >
           <g clipPath="url(#clip0_activity)">
             <path
@@ -225,7 +219,7 @@ function BottombarContent() {
           viewBox="0 0 25 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-[1.2rem] flex-shrink-0"
+          className="h-[1.2rem] w-6 flex-shrink-0"
         >
           <g clipPath="url(#clip0_chat)">
             <path
@@ -261,7 +255,7 @@ function BottombarContent() {
         <img
           src="/icons/user-plus.svg"
           alt={t('alliance.inviteFriends')}
-          className="w-[1.2rem] h-[1.2rem]"
+          className="h-[1.2rem] w-[1.2rem]"
         />
       ),
     },
@@ -272,7 +266,7 @@ function BottombarContent() {
         <img
           src="/icons/group.svg"
           alt={t('alliance.management')}
-          className="w-[1.2rem] h-[1.2rem]"
+          className="h-[1.2rem] w-[1.2rem]"
         />
       ),
     },
@@ -283,7 +277,7 @@ function BottombarContent() {
         <img
           src="/icons/chart-network.svg"
           alt={t('alliance.performance')}
-          className="w-[1.2rem] h-[1.2rem]"
+          className="h-[1.2rem] w-[1.2rem]"
         />
       ),
     },
@@ -294,7 +288,7 @@ function BottombarContent() {
         <img
           src="/icons/file-report.svg"
           alt={t('alliance.report')}
-          className="w-[1.2rem] h-[1.2rem]"
+          className="h-[1.2rem] w-[1.2rem]"
         />
       ),
     },
@@ -305,7 +299,7 @@ function BottombarContent() {
         <img
           src="/icons/form.png"
           alt={t('alliance.introduction')}
-          className="w-[1.2rem] h-[1.2rem]"
+          className="h-[1.2rem] w-[1.2rem]"
         />
       ),
     },
@@ -349,14 +343,14 @@ function BottombarContent() {
       }}
     >
       <div
-        className="flex w-full px-4 pt-2 pb-0 flex-col items-center rounded-t-2xl border-t border-white-8"
+        className="flex w-full flex-col items-center rounded-t-2xl border-t border-white-8 px-4 pb-0 pt-2"
         style={{
           background: 'rgba(17, 25, 35, 0.54)',
           backdropFilter: 'blur(2rem)',
           height: '3.6875rem',
         }}
       >
-        <div className="flex justify-center items-start gap-2 w-full rounded-lg">
+        <div className="flex w-full items-start justify-center gap-2 rounded-lg">
           {isAlliance
             ? allianceTabs.map(tab => (
                 <TabBarButton

@@ -140,21 +140,21 @@ const GameImageCard: React.FC<{
   link: string
 }> = ({ image, title, link }) => (
   <Link href={link} className="block">
-    <div className="relative group cursor-pointer">
-      <div className="aspect-square rounded-lg overflow-hidden bg-gray-800">
+    <div className="group relative cursor-pointer">
+      <div className="aspect-square overflow-hidden rounded-lg bg-gray-800">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform group-hover:scale-105"
           onError={e => {
             // Fallback if image doesn't exist
             e.currentTarget.src = '/images/placeholder-game.jpg'
           }}
         />
       </div>
-      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">
+      <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-20">
+        <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="rounded-full bg-white px-3 py-1 text-sm font-bold text-black">
             {title}
           </div>
         </div>
@@ -169,14 +169,14 @@ const LatestBetsTable: React.FC = () => {
   const [selectedStatus, setSelectedStatus] = useState('Up to date')
   return (
     <>
-      <div className="text-4.5 font-bold flex items-center w-full justify-between text-white mb-4  gap-2">
+      <div className="text-4.5 mb-4 flex w-full items-center justify-between gap-2 font-bold text-white">
         <span>{t('app.latestBetting')}</span>
         <StatusDropdown>
-          <StatusDropdownTrigger className="bg-[#2A3546] border-none ring-0 focus:ring-0 outline-none">
+          <StatusDropdownTrigger className="border-none bg-[#2A3546] outline-none ring-0 focus:ring-0">
             {selectedStatus}
           </StatusDropdownTrigger>
           <StatusDropdownContent
-            className="bg-[#2A3546] border-none"
+            className="border-none bg-[#2A3546]"
             align="center"
           >
             {statusOptions.map(status => (
@@ -191,85 +191,85 @@ const LatestBetsTable: React.FC = () => {
         </StatusDropdown>
       </div>
       <div
-        className={` grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] gap-[6px] lg:px-8 px-[6px] ${
+        className={`grid grid-cols-[20%_20%_20%_40%] gap-[6px] px-[6px] lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] lg:px-8 ${
           selectedStatus !== 'Daily'
             ? 'grid-cols-[20%_20%_20%_40%]'
             : 'grid-cols-[30%_30%_40%]'
         } `}
       >
-        <div className="text-left text-sm font-bold py-2 text-white">
+        <div className="py-2 text-left text-sm font-bold text-white">
           {t('games.title')}
         </div>
-        <div className="text-left text-sm font-bold py-2 text-white">
+        <div className="py-2 text-left text-sm font-bold text-white">
           {t('games.player')}
         </div>
-        <div className="text-left text-sm hidden md:lg:block font-bold py-2 text-white">
+        <div className="hidden py-2 text-left text-sm font-bold text-white md:lg:block">
           {t('games.betTime')}
         </div>
-        <div className="text-left text-sm hidden md:lg:block font-bold py-2 truncate text-white">
+        <div className="hidden truncate py-2 text-left text-sm font-bold text-white md:lg:block">
           {t('games.betAmount')}
         </div>
-        <div className="text-left text-sm font-bold py-2 text-white">
+        <div className="py-2 text-left text-sm font-bold text-white">
           {t('games.multiplier')}
         </div>
         {selectedStatus !== 'Daily' && (
-          <div className="text-left text-sm font-bold py-2 text-white">
+          <div className="py-2 text-left text-sm font-bold text-white">
             {t('games.payout')}
           </div>
         )}
       </div>
-      <div className="w-full relative h-[462px] z-[-1] lg:mb-16 mb-8">
+      <div className="relative z-[-1] mb-8 h-[462px] w-full lg:mb-16">
         <SwiperSlider
           data={latestBets}
           allowTouchMove={false}
           renderSlide={(bet, index) => (
             <div
-              className={`bg-[#1C2532] lg:px-8 gap-[6px] px-[6px] w-full grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] grid-cols-[20%_20%_20%_40%] rounded-[16px] h-[48px] overflow-hidden mb-[6px] ${
+              className={`mb-[6px] grid h-[48px] w-full grid-cols-[20%_20%_20%_40%] gap-[6px] overflow-hidden rounded-[16px] bg-[#1C2532] px-[6px] lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] lg:px-8 ${
                 selectedStatus !== 'Daily'
                   ? 'grid-cols-[20%_20%_20%_40%]'
                   : 'grid-cols-[30%_30%_40%]'
               } items-center`}
               key={index}
             >
-              <div className="text-white flex text-[12px] font-bold truncate items-center gap-2">
+              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-white">
                 <img
                   src="/images/gameLogo.png"
                   alt="game"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 />
                 {bet.game}
               </div>
-              <div className="text-gray-300 text-[12px] font-bold truncate flex items-center gap-2">
+              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-gray-300">
                 <img
                   src="/images/avatar(1).png"
                   alt="avatar"
-                  className="w-6 h-6 hidden md:lg:block"
+                  className="hidden h-6 w-6 md:lg:block"
                 />
                 {bet.player}
               </div>
-              <div className="text-gray-300 text-[12px] hidden md:lg:flex items-center font-bold truncate">
+              <div className="hidden items-center truncate text-[12px] font-bold text-gray-300 md:lg:flex">
                 {bet.time}
               </div>
-              <div className="text-gray-300 text-[12px] hidden md:lg:flex font-bold truncate items-center gap-2">
+              <div className="hidden items-center gap-2 truncate text-[12px] font-bold text-gray-300 md:lg:flex">
                 <img
                   src="/icons/coin-icon/BTC.svg"
                   alt="coin"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 />
                 {bet.bet}
               </div>
               {selectedStatus !== 'Daily' && (
-                <div className="text-[#2283F6] text-[12px] font-bold truncate flex items-center">
+                <div className="flex items-center truncate text-[12px] font-bold text-[#2283F6]">
                   {bet.multiplier}
                 </div>
               )}
-              <div className="text-green-400 text-[12px] font-bold truncate flex items-center gap-2">
+              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-green-400">
                 {bet.payout}
-                <div className="rounded-[8px] overflow-hidden !w-6 !h-6">
+                <div className="!h-6 !w-6 overflow-hidden rounded-[8px]">
                   <img
                     src="/icons/coin-icon/BTC.svg"
                     alt="coin"
-                    className="w-full h-full"
+                    className="h-full w-full"
                   />
                 </div>
               </div>
@@ -281,7 +281,7 @@ const LatestBetsTable: React.FC = () => {
           autoplayDelay={1500}
           className="h-full"
         />
-        <div className="absolute bottom-0 left-0 w-full h-[254px] bg-gradient-to-b z-[30] from-transparent to-[#111923] pointer-events-none"></div>
+        <div className="pointer-events-none absolute bottom-0 left-0 z-[30] h-[254px] w-full bg-gradient-to-b from-transparent to-[#111923]"></div>
       </div>
     </>
   )
@@ -373,14 +373,14 @@ const MainContent: React.FC = () => {
     return (
       <div className="space-y-4">
         {/* Mobile: 3 cards per row, max 18 cards (6 rows) */}
-        <div className="grid grid-cols-3 md:hidden gap-3">
+        <div className="grid grid-cols-3 gap-3 md:hidden">
           {displayData
             .slice(0, mobileMaxCards)
             .map((item, index) => renderCard(item, index))}
         </div>
 
         {/* Desktop: 6 cards per row, max 24 cards (4 rows) */}
-        <div className="hidden md:grid grid-cols-6 gap-3 xl:grid-cols-8">
+        <div className="hidden grid-cols-6 gap-3 md:grid xl:grid-cols-8">
           {displayData.map((item, index) => renderCard(item, index))}
         </div>
 
@@ -389,7 +389,7 @@ const MainContent: React.FC = () => {
           <div className="flex justify-center">
             <Link
               href={viewAllLink}
-              className="h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors"
+              className="hover:bg-ebony-clay/80 flex h-9 w-[157px] items-center justify-center gap-2 rounded-[8px] bg-ebony-clay font-montserrat text-[14px] font-bold text-casper transition-colors"
             >
               {t('app.viewall')}
             </Link>
@@ -407,13 +407,13 @@ const MainContent: React.FC = () => {
     count?: number
   }> = ({ icon, title, alt, count }) => {
     return (
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-4.5 font-bold flex items-center text-white gap-2">
+      <div className="mb-4 flex items-center justify-between">
+        <h2 className="text-4.5 flex items-center gap-2 font-bold text-white">
           <img className="grayscale" src={icon} alt={alt} />
           {title}
         </h2>
         {count && (
-          <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
+          <span className="flex items-center text-[14px] font-bold text-[#2283F6]">
             <span>
               {t('app.all')} {count}
             </span>
@@ -500,13 +500,13 @@ const MainContent: React.FC = () => {
   // Render lobby view
   return (
     <div
-      className="w-full mx-auto overflow-x-hidden p-2 pt-6 lg:p-6"
+      className="mx-auto w-full overflow-x-hidden p-2 pt-6 lg:p-6"
       style={{ margin: 'auto' }}
     >
       <SuccessForm isOpen={false} />
 
       {/* Main Banner Section */}
-      <div className="lg:mb-16 mb-8 lg:mt-0 mt-[2rem]">
+      <div className="mb-8 mt-[2rem] lg:mb-16 lg:mt-0">
         <SwiperSlider
           key={`banner-swiper-${activeGameCategory}`}
           data={bannerCards}
@@ -540,7 +540,7 @@ const MainContent: React.FC = () => {
         <>
           {/* New Launches Section */}
           {shouldShowSection('new-launches') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Home.svg"
                 title={t('games.new')}
@@ -575,7 +575,7 @@ const MainContent: React.FC = () => {
           {/* Homepage Sections */}
           {/* Live Casino Section */}
           {shouldShowSection('live-casino') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Casino1.svg"
                 title={t('games.live')}
@@ -594,7 +594,7 @@ const MainContent: React.FC = () => {
 
           {/* Hash Section */}
           {shouldShowSection('hash') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Hash.svg"
                 title={t('games.hashgames')}
@@ -613,7 +613,7 @@ const MainContent: React.FC = () => {
 
           {/* Slots Section */}
           {shouldShowSection('slots') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Slots.svg"
                 title={t('games.slots')}
@@ -632,7 +632,7 @@ const MainContent: React.FC = () => {
 
           {/* P/F Futures Section */}
           {shouldShowSection('futures') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Futures1.svg"
                 title={t('games.pfFutures')}
@@ -652,7 +652,7 @@ const MainContent: React.FC = () => {
 
           {/* Cryptogra Section */}
           {shouldShowSection('crypto') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Cryptogra1.svg"
                 title={t('games.crypto')}
@@ -671,7 +671,7 @@ const MainContent: React.FC = () => {
 
           {/* Sport Section */}
           {shouldShowSection('sport') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/Sport.svg"
                 title={t('games.sports')}
@@ -690,7 +690,7 @@ const MainContent: React.FC = () => {
 
           {/* Chess and cards Section */}
           {shouldShowSection('table') && (
-            <div className="lg:mb-16 mb-8">
+            <div className="mb-8 lg:mb-16">
               <SectionHeader
                 icon="/icons/tablegame.svg"
                 title={t('games.table')}
@@ -714,7 +714,7 @@ const MainContent: React.FC = () => {
 
       {/* Game Manufacturers Section */}
       {shouldShowSection('game-manufacturers') && (
-        <div className="lg:mb-16 mb-8">
+        <div className="mb-8 lg:mb-16">
           <SectionHeader
             icon="/icons/game.svg"
             title={t('app.gameProvider')}
@@ -744,12 +744,12 @@ const MainContent: React.FC = () => {
 
       {/* Latest earnings Section */}
       {shouldShowSection('latest-earnings') && (
-        <div className="lg:mb-16 mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-4.5 font-bold flex items-center text-white ">
+        <div className="mb-8 lg:mb-16">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-4.5 flex items-center font-bold text-white">
               {t('app.latestEarining')}
             </h2>
-            <span className="font-bold flex items-center text-[14px] text-[#2283F6]">
+            <span className="flex items-center text-[14px] font-bold text-[#2283F6]">
               <span>{t('app.onlinePlayer')} 36</span>
             </span>
           </div>

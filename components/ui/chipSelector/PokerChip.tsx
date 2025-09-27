@@ -43,7 +43,7 @@ export function PokerChip({
       className={cn(
         'relative flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-200',
         isSelected &&
-          ' ring-chip-orange shadow-[0_0_13px_0_var(--yellow-orange)]',
+          'shadow-[0_0_13px_0_var(--yellow-orange)] ring-chip-orange',
         className
       )}
       onClick={onClick}
@@ -166,12 +166,12 @@ export function PokerChip({
       </svg>
 
       {/* Chip text */}
-      <div className="absolute inset-0 flex items-center justify-center ">
+      <div className="absolute inset-0 flex items-center justify-center">
         <span
           className={cn(
-            'font-montserrat font-bold text-white  flex justify-center items-center leading-none',
+            'flex items-center justify-center font-montserrat font-bold leading-none text-white',
             typeof value === 'string' && value.length > 3
-              ? 'text-[10px] px-1'
+              ? 'px-1 text-[10px]'
               : 'text-lg'
           )}
           style={{

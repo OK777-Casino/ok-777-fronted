@@ -17,16 +17,16 @@ const SidebarLanguageSection: React.FC<SidebarLanguageSectionProps> = ({
     languageData.cn
 
   return (
-    <div className="lg:hidden ">
+    <div className="lg:hidden">
       <div
         onClick={onLanguageClick}
-        className={`flex items-center gap-3 p-3 hover:bg-gray-700 active:bg-gray-700 rounded-lg cursor-pointer text-gray-300 transition-colors ${
+        className={`flex cursor-pointer items-center gap-3 rounded-lg p-3 text-gray-300 transition-colors hover:bg-gray-700 active:bg-gray-700 ${
           isCollapsed ? 'justify-center' : ''
         }`}
       >
         <img
           src={currentLanguageDisplay.flag}
-          className="w-5 h-5"
+          className="h-5 w-5"
           alt="language"
         />
         {!isCollapsed && (

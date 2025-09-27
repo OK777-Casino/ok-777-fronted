@@ -129,7 +129,7 @@ export default function GamingProviderModal({
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 flex items-end lg:items-center justify-center z-[9999]">
+    <div className="fixed inset-0 z-[9999] flex items-end justify-center lg:items-center">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -138,12 +138,12 @@ export default function GamingProviderModal({
 
       {/* Modal */}
       <div
-        className={`lg:relative w-[100vw] max-w-md transition-transform  duration-300 ease-out bg-black/60 ${
+        className={`w-[100vw] max-w-md bg-black/60 transition-transform duration-300 ease-out lg:relative ${
           isVisible ? 'translate-y-0' : 'translate-y-full lg:translate-y-0'
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between gap-4 rounded-t-[14px] bg-gradient-to-b from-[#002554] to-gaming-mirage-54 p-4 pl-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+        <div className="to-gaming-mirage-54 flex items-center justify-between gap-4 rounded-t-[14px] bg-gradient-to-b from-[#002554] p-4 pl-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
           <h2
             className="text-lg font-bold text-white"
             style={{
@@ -155,14 +155,14 @@ export default function GamingProviderModal({
           </h2>
           <div
             onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-gaming-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors hover:bg-gaming-white-8 cursor-pointer"
+            className="bg-gaming-white-4 hover:bg-gaming-white-8 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors"
           >
             <X className="h-4 w-4 text-[#A7B5CA]" />
           </div>
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-2 bg-gaming-mirage-54 p-6 backdrop-blur-[3rem] max-h-[60dvh] lg:max-h-none overflow-y-auto">
+        <div className="bg-gaming-mirage-54 flex max-h-[60dvh] flex-col gap-2 overflow-y-auto p-6 backdrop-blur-[3rem] lg:max-h-none">
           {providers.map(provider => (
             <div
               key={provider.id}
@@ -205,7 +205,7 @@ export default function GamingProviderModal({
                 </span>
 
                 {/* Count Badge */}
-                <div className="flex h-[19px] items-center justify-center rounded bg-gaming-mirage px-2 backdrop-blur-[32px]">
+                <div className="bg-gaming-mirage flex h-[19px] items-center justify-center rounded px-2 backdrop-blur-[32px]">
                   <span
                     className="text-xs font-bold text-[#A7B5CA]"
                     style={{
@@ -229,10 +229,10 @@ export default function GamingProviderModal({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-center gap-2 rounded-b-[14px] border-gaming-white-8 bg-gaming-mirage-54 p-4 backdrop-blur-[32px]">
+        <div className="border-gaming-white-8 bg-gaming-mirage-54 flex items-center justify-center gap-2 rounded-b-[14px] p-4 backdrop-blur-[32px]">
           <div
             onClick={clearAll}
-            className="flex items-center gap-2 rounded-lg px-4 py-2 transition-colors hover:bg-gaming-white-4"
+            className="hover:bg-gaming-white-4 flex items-center gap-2 rounded-lg px-4 py-2 transition-colors"
           >
             <span
               className="text-sm font-bold text-[#A7B5CA]"

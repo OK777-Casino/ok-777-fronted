@@ -24,10 +24,10 @@ const FormField: React.FC<FormFieldProps> = ({
     <div className={clsx('w-full', className)}>
       <label
         htmlFor={htmlFor}
-        className="block text-sm font-medium text-gray-200 mb-2"
+        className="mb-2 block text-sm font-medium text-gray-200"
       >
         {label}
-        {required && <span className="text-red-500 ml-1">*</span>}
+        {required && <span className="ml-1 text-red-500">*</span>}
       </label>
       {children}
       {error && <p className="mt-1 text-sm text-red-500">{error}</p>}

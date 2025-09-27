@@ -35,9 +35,7 @@ const TDButton: React.FC<TDButtonProps> = ({
       <div
         onClick={onClick}
         className={cn(
-          `pushable group relative border-none bg-transparent p-0 cursor-pointer outline-offset-1 transition-filter duration-250 
-          focus:outline-none 
-          focus-visible:outline`,
+          `pushable transition-filter duration-250 group relative cursor-pointer border-none bg-transparent p-0 outline-offset-1 focus:outline-none focus-visible:outline`,
           className
         )}
       >
@@ -46,17 +44,7 @@ const TDButton: React.FC<TDButtonProps> = ({
         ></span>
         <span
           className={cn(
-            `relative front rounded-xl 
-                  text-white will-change-transform
-                    inner-shadow-[#FFFFFF21]
-                    transform transition-transform 
-                    bottom-[3px]
-                    group-hover:-translate-y-[2px]   
-                    group-active:-translate-y-[-1px] 
-                    font-bold  
-                    flex 
-                    items-center 
-                    justify-center`,
+            `front inner-shadow-[#FFFFFF21] relative bottom-[3px] flex transform items-center justify-center rounded-xl font-bold text-white transition-transform will-change-transform group-hover:-translate-y-[2px] group-active:-translate-y-[-1px]`,
             className,
             Style
           )}

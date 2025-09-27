@@ -26,18 +26,18 @@ const PageLoader: React.FC<PageLoaderProps> = ({ message = 'Loading...' }) => {
   }, [])
 
   return (
-    <div className="fixed inset-0 loading-bg flex flex-col z-[9999]">
+    <div className="loading-bg fixed inset-0 z-[9999] flex flex-col">
       {/* Red Progress Bar at Top */}
-      <div className="w-full lg:h-4 h-2">
+      <div className="h-2 w-full lg:h-4">
         <div
-          className="h-full bg-crimson rounded-r-full transition-all duration-300 ease-out"
+          className="h-full rounded-r-full bg-crimson transition-all duration-300 ease-out"
           style={{ width: `${Math.min(loadingProgress, 100)}%` }}
         />
       </div>
 
       {/* Centered Logo */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="flex justify-center items-center">
+      <div className="flex flex-1 items-center justify-center">
+        <div className="flex items-center justify-center">
           {/* 777 Logo with Flaming Soccer Ball */}
           <img src="/images/logo.svg" className="h-[96px]" alt="logo" />
         </div>

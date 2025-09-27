@@ -54,7 +54,7 @@ export default function DropdownSelection({
       <Overlay
         isOpen={isOpen}
         onClose={handleOverlayClose}
-        className="fixed inset-0 z-50 flex items-start w-full justify-center p-4 pt-[142px]"
+        className="fixed inset-0 z-50 flex w-full items-start justify-center p-4 pt-[142px]"
         backdropClassName="bg-black-20"
         contentClassName="w-full p-6 border border-white-33 rounded-xl bg-mirage-8a backdrop-blur-[32px] shadow-xl"
         zIndex={50}
@@ -70,18 +70,15 @@ export default function DropdownSelection({
               <div
                 key={option.label}
                 onClick={() => handleOptionClick(option.label)}
-                className={`
-                  w-full flex group items-center justify-between h-12 px-4 rounded-lg font-montserrat text-sm font-bold transition-all duration-200 hover:bg-white-4/60
-                  ${isSelected ? 'bg-white-4 text-white' : 'text-casper'}
-                `}
+                className={`hover:bg-white-4/60 group flex h-12 w-full items-center justify-between rounded-lg px-4 font-montserrat text-sm font-bold transition-all duration-200 ${isSelected ? 'bg-white-4 text-white' : 'text-casper'} `}
               >
-                <span className="flex-1 group-hover:text-white text-left truncate">
+                <span className="flex-1 truncate text-left group-hover:text-white">
                   {option.label}
                 </span>
 
                 <div className="flex items-center">
                   {isSelected ? (
-                    <div className="w-6 h-6 flex items-center justify-center">
+                    <div className="flex h-6 w-6 items-center justify-center">
                       <svg
                         width="24"
                         height="24"
@@ -107,7 +104,7 @@ export default function DropdownSelection({
                       </svg>
                     </div>
                   ) : (
-                    <div className="w-6 h-6 flex items-center justify-center">
+                    <div className="flex h-6 w-6 items-center justify-center">
                       <svg
                         width="24"
                         height="24"

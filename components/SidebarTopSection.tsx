@@ -17,23 +17,23 @@ const SidebarTopSection: React.FC<SidebarTopSectionProps> = ({
           <div
             key={button.label}
             className={`${
-              isCollapsed ? 'w-full mb-2' : 'flex-1'
+              isCollapsed ? 'mb-2 w-full' : 'flex-1'
             } w-12 cursor-pointer ${
               button.active
                 ? 'bg-gray-700 text-white'
                 : 'bg-transparent text-gray-400 hover:bg-gray-700 active:bg-gray-700'
-            } rounded-lg p-3 flex items-center gap-2 justify-center font-medium transition-colors`}
+            } flex items-center justify-center gap-2 rounded-lg p-3 font-medium transition-colors`}
             style={button.active ? { background: '#374151' } : {}}
             onClick={button.onClick}
           >
-            <img src={button.icon} className="w-5 h-5" alt={button.label} />
+            <img src={button.icon} className="h-5 w-5" alt={button.label} />
             {!isCollapsed && (
               <span className="text-sm font-bold">{button.label}</span>
             )}
           </div>
         ))}
       </div>
-      <div className="w-full mx-auto h-[1px] relative bg-[linear-gradient(to_right,#1a2332,#6a7282,#1a2332)] mt-5"></div>
+      <div className="relative mx-auto mt-5 h-[1px] w-full bg-[linear-gradient(to_right,#1a2332,#6a7282,#1a2332)]"></div>
     </div>
   )
 }

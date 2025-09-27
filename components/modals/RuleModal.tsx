@@ -28,11 +28,11 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
         return (
           <div className="space-y-6">
             {/* Value rules section */}
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 {t('rules.valueRules')}
               </h3>
-              <div className="text-sm text-white space-y-2 leading-relaxed">
+              <div className="space-y-2 text-sm leading-relaxed text-white">
                 <p>
                   <span>
                     The game uses <span className="text-cyan-400">TRX</span>{' '}
@@ -54,8 +54,8 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
             </div>
 
             {/* Wallet A section */}
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Wallet A</span>
               </h3>
               <div className="flex gap-3">
@@ -63,7 +63,7 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
                   type="text"
                   value="TP4KGac4W7oKYuXgfUcZVm7..."
                   readOnly
-                  className="flex-1 px-4 py-3 bg-gray-800 rounded-lg text-white text-sm border border-gray-700"
+                  className="flex-1 rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-sm text-white"
                 />
 
                 <UnifiedButton variant="primary" className="h-12 px-4">
@@ -75,8 +75,8 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
             </div>
 
             {/* Wallet B section */}
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Wallet B</span>
               </h3>
               <div className="flex gap-3">
@@ -84,7 +84,7 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
                   type="text"
                   value="TP4KGac4W7oKYuXgfUcZVm7..."
                   readOnly
-                  className="flex-1 px-4 py-3 bg-gray-800 rounded-lg text-white text-sm border border-gray-700"
+                  className="flex-1 rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-sm text-white"
                 />
                 <UnifiedButton variant="primary" className="h-12 px-4">
                   <span className="text-xs font-bold">
@@ -95,11 +95,11 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
             </div>
 
             {/* Game rules section */}
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Game rules</span>
               </h3>
-              <div className="text-sm text-white space-y-2 leading-relaxed">
+              <div className="space-y-2 text-sm leading-relaxed text-white">
                 <p>
                   <span>
                     The game uses <span className="text-cyan-400">TRX</span>{' '}
@@ -117,13 +117,13 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
             </div>
 
             {/* Rules of the game section */}
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Rules of the game</span>
               </h3>
-              <div className="text-sm text-white space-y-2">
+              <div className="space-y-2 text-sm text-white">
                 <div className="flex gap-2">
-                  <span className="text-cyan-400 font-medium">1.</span>
+                  <span className="font-medium text-cyan-400">1.</span>
                   <p>
                     Numbers{' '}
                     <span className="text-cyan-400">0, 1, 2, 3, and 4</span> are
@@ -131,7 +131,7 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
                   </p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-cyan-400 font-medium">2.</span>
+                  <span className="font-medium text-cyan-400">2.</span>
                   <p>
                     Numbers{' '}
                     <span className="text-cyan-400">5, 6, 7, 8, and 9</span> are
@@ -142,13 +142,13 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
             </div>
 
             {/* Things to note section */}
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Things to note</span>
               </h3>
-              <div className="text-sm text-white space-y-2">
+              <div className="space-y-2 text-sm text-white">
                 <div className="flex gap-2">
-                  <span className="text-cyan-400 font-medium">1.</span>
+                  <span className="font-medium text-cyan-400">1.</span>
                   <p>
                     The game is based on the{' '}
                     <span className="text-cyan-400">TRON</span> blockchain
@@ -156,7 +156,7 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
                   </p>
                 </div>
                 <div className="flex gap-2">
-                  <span className="text-cyan-400 font-medium">2.</span>
+                  <span className="font-medium text-cyan-400">2.</span>
                   <p>
                     All results are verifiable on the blockchain and cannot be
                     manipulated.
@@ -170,11 +170,11 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
       case 'hash-odd-even':
         return (
           <div className="space-y-6">
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Hash Odd and Even Rules</span>
               </h3>
-              <div className="text-sm text-white space-y-2 leading-relaxed">
+              <div className="space-y-2 text-sm leading-relaxed text-white">
                 <p>
                   This game mode focuses on whether the extracted numbers from
                   the <span className="text-cyan-400">block hash</span> are odd
@@ -192,11 +192,11 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
       case 'lucky-hash':
         return (
           <div className="space-y-6">
-            <div className="bg-[#ffffff0a] p-4 rounded-xl">
-              <h3 className="text-lg font-bold text-white mb-3">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-3 text-lg font-bold text-white">
                 <span>Lucky Hash Rules</span>
               </h3>
-              <div className="text-sm text-white space-y-2 leading-relaxed">
+              <div className="space-y-2 text-sm leading-relaxed text-white">
                 <p>
                   Lucky Hash is a special game mode where players bet on
                   specific <span className="text-cyan-400">hash patterns</span>{' '}
@@ -229,13 +229,13 @@ export default function RuleModal({ isOpen, onClose }: RuleModalProps) {
       fullHeight={true}
     >
       {/* Tabs */}
-      <div className="flex gap-2 px-6 py-4 border-b border-gray-700">
-        <div className="flex gap-2 p-2 rounded-lg bg-[#ffffff0a]">
+      <div className="flex gap-2 border-b border-gray-700 px-6 py-4">
+        <div className="flex gap-2 rounded-lg bg-[#ffffff0a] p-2">
           {tabs.map(tab => (
             <div
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 activeTab === tab.id
                   ? 'bg-gray-600 text-gray-200'
                   : 'text-white hover:bg-gray-700'

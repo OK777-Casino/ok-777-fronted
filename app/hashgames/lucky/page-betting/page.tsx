@@ -20,16 +20,16 @@ const LuckyDefault: React.FC = () => {
   return (
     <PageBettingLayout>
       <div className="w-full">
-        <div className="bg-white-4 rounded-xl p-4 md:p-8 space-y-4">
+        <div className="space-y-4 rounded-xl bg-white-4 p-4 md:p-8">
           {/* Bull Ratios Grid */}
-          <div className="bg-white-4 rounded-lg p-2">
+          <div className="rounded-lg bg-white-4 p-2">
             <div className="grid grid-cols-10 gap-2">
               {bullItems.map((item, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-casper text-[10px] font-montserrat font-normal leading-none">
+                  <div className="font-montserrat text-[10px] font-normal leading-none text-casper">
                     {item.name}
                   </div>
-                  <div className="text-dodger-blue text-[10px] font-montserrat font-normal leading-none">
+                  <div className="font-montserrat text-[10px] font-normal leading-none text-dodger-blue">
                     {item.ratio}
                   </div>
                 </div>
@@ -38,14 +38,14 @@ const LuckyDefault: React.FC = () => {
           </div>
 
           {/* Main Content */}
-          <div className="px-4 space-y-4">
+          <div className="space-y-4 px-4">
             {/* Balance and User Info */}
             <div className="space-y-2">
               <div className="text-left">
-                <span className="text-casper text-base font-montserrat font-bold">
+                <span className="font-montserrat text-base font-bold text-casper">
                   $
                 </span>
-                <span className="text-white text-base font-montserrat font-bold">
+                <span className="font-montserrat text-base font-bold text-white">
                   10038
                 </span>
               </div>
@@ -63,7 +63,7 @@ const LuckyDefault: React.FC = () => {
                     fill="#A7B5CA"
                   />
                 </svg>
-                <span className="text-casper text-sm font-montserrat font-bold leading-none">
+                <span className="font-montserrat text-sm font-bold leading-none text-casper">
                   12
                 </span>
               </div>
@@ -72,8 +72,8 @@ const LuckyDefault: React.FC = () => {
 
           {/* $0 Button */}
           <div className="flex justify-center">
-            <button className="h-9 px-4 bg-mirage border border-white-8 rounded-lg shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px] flex items-center justify-center">
-              <span className="text-white text-sm font-montserrat font-bold">
+            <button className="flex h-9 items-center justify-center rounded-lg border border-white-8 bg-mirage px-4 shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]">
+              <span className="font-montserrat text-sm font-bold text-white">
                 $0
               </span>
             </button>
@@ -81,15 +81,15 @@ const LuckyDefault: React.FC = () => {
 
           {/* BULL PLAYER Title */}
           <div className="text-center">
-            <h1 className="text-yellow-orange text-2xl font-montserrat font-bold">
+            <h1 className="font-montserrat text-2xl font-bold text-yellow-orange">
               HASH
             </h1>
           </div>
 
           {/* 1:1.95 Button */}
           <div className="flex justify-center">
-            <button className="h-9 px-4 bg-mirage border border-white-8 rounded-lg shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px] flex items-center justify-center">
-              <span className="text-white text-sm font-montserrat font-bold">
+            <button className="flex h-9 items-center justify-center rounded-lg border border-white-8 bg-mirage px-4 shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]">
+              <span className="font-montserrat text-sm font-bold text-white">
                 1 : 1.95
               </span>
             </button>

@@ -32,17 +32,17 @@ export default function SettingsTabModal({
     {
       id: 'accountinfo',
       name: t('settings.accountInfo'),
-      icon: <UserSquareIcon className="w-6 h-6" />,
+      icon: <UserSquareIcon className="h-6 w-6" />,
     },
     {
       id: 'security',
       name: t('settings.security'),
-      icon: <FingerprintIcon className="w-6 h-6" />,
+      icon: <FingerprintIcon className="h-6 w-6" />,
     },
     {
       id: 'wallet',
       name: t('settings.walletAddress'),
-      icon: <WalletIcon className="w-6 h-6" />,
+      icon: <WalletIcon className="h-6 w-6" />,
     },
   ]
   const handleTabSelect = (tabName: string) => {
@@ -69,10 +69,7 @@ export default function SettingsTabModal({
             <div
               key={tab.id}
               onClick={() => handleTabSelect(tab.name)}
-              className={`
-                w-full flex items-center gap-4 px-4 py-4 rounded-lg font-montserrat text-sm font-bold transition-all duration-200 hover:bg-white-4/60
-                ${isSelected ? 'bg-white-4 text-white' : 'text-casper hover:text-white'}
-              `}
+              className={`hover:bg-white-4/60 flex w-full items-center gap-4 rounded-lg px-4 py-4 font-montserrat text-sm font-bold transition-all duration-200 ${isSelected ? 'bg-white-4 text-white' : 'text-casper hover:text-white'} `}
             >
               <div className="flex-shrink-0">{tab.icon}</div>
 
@@ -82,7 +79,7 @@ export default function SettingsTabModal({
 
               <div className="flex items-center">
                 {isSelected ? (
-                  <div className="w-6 h-6 flex items-center justify-center">
+                  <div className="flex h-6 w-6 items-center justify-center">
                     <svg
                       width="24"
                       height="24"
@@ -108,7 +105,7 @@ export default function SettingsTabModal({
                     </svg>
                   </div>
                 ) : (
-                  <div className="w-6 h-6 flex items-center justify-center">
+                  <div className="flex h-6 w-6 items-center justify-center">
                     <svg
                       width="24"
                       height="24"

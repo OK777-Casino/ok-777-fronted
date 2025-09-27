@@ -109,14 +109,14 @@ export default function CustomizeChipModal({
       title="Chip Settings"
       size="lg"
     >
-      <div className="flex flex-col  gap-6 pb-6">
+      <div className="flex flex-col gap-6 pb-6">
         {/* Selection Counter */}
-        <div className="flex justify-between items-center px-2">
-          <span className="text-white/70 text-sm font-montserrat">
+        <div className="flex items-center justify-between px-2">
+          <span className="font-montserrat text-sm text-white/70">
             Selected: {selectedChips.length}/5 chips
           </span>
           {selectedChips.length === 5 && (
-            <span className="text-orange-400 text-xs font-montserrat">
+            <span className="font-montserrat text-xs text-orange-400">
               Maximum reached
             </span>
           )}
@@ -132,7 +132,7 @@ export default function CustomizeChipModal({
                   className={`cursor-pointer transition-transform hover:scale-105 ${
                     !selectedChips.includes(chip.id) &&
                     selectedChips.length >= 5
-                      ? 'opacity-50 cursor-not-allowed'
+                      ? 'cursor-not-allowed opacity-50'
                       : ''
                   }`}
                 >
@@ -144,9 +144,9 @@ export default function CustomizeChipModal({
                 </div>
                 {/* Radio button indicator */}
                 <BlackButton>
-                  <div className="w-4 h-4 rounded-full border-2 border-white/30 flex items-center justify-center">
+                  <div className="flex h-4 w-4 items-center justify-center rounded-full border-2 border-white/30">
                     {selectedChips.includes(chip.id) && (
-                      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                      <div className="h-2 w-2 rounded-full bg-blue-500"></div>
                     )}
                   </div>
                 </BlackButton>
@@ -159,7 +159,7 @@ export default function CustomizeChipModal({
         <TDButton
           type="blue"
           onClick={handleConfirm}
-          className="w-full h-[41px]"
+          className="h-[41px] w-full"
         >
           Confirm
         </TDButton>

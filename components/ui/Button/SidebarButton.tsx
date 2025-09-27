@@ -57,7 +57,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   }
 
   const baseClasses = cn(
-    'flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors',
+    'flex cursor-pointer items-center gap-3 rounded-lg p-3 transition-colors',
     isCollapsed ? 'justify-center' : '',
     isActive
       ? 'bg-white/10 text-white'
@@ -66,7 +66,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 
   const content = (
     <>
-      <img src={icon} className="w-5 h-5" alt={label} />
+      <img src={icon} className="h-5 w-5" alt={label} />
       {!isCollapsed && (
         <div className="flex items-center gap-4">
           <span className="text-sm font-bold">{label}</span>
@@ -79,7 +79,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       )}
       {!isCollapsed && hasHover && (
         <svg
-          className="w-3 h-3 text-gray-500 ml-auto"
+          className="ml-auto h-3 w-3 text-gray-500"
           fill="currentColor"
           viewBox="0 0 20 20"
         >

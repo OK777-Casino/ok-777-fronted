@@ -101,7 +101,7 @@ export default function ModalContainer({
   const modalContent = (
     <div
       className={cn(
-        'fixed inset-0 h-[100vh] overflow-auto flex p-2 sm:p-4 backdrop-blur-[0.3125rem] justify-center bg-black/60',
+        'fixed inset-0 flex h-[100vh] justify-center overflow-auto bg-black/60 p-2 backdrop-blur-[0.3125rem] sm:p-4',
         positionClasses[position],
         backdropClassName
       )}
@@ -114,12 +114,12 @@ export default function ModalContainer({
           'relative z-[10001] mx-auto',
           // Position logic: responsive should be bottom on mobile, center on desktop
           position === 'responsive'
-            ? 'bottom-0 left-0 right-0 '
+            ? 'bottom-0 left-0 right-0'
             : position === 'bottom'
-              ? 'bottom-0 left-0 right-0 sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] sm:bottom-auto sm:right-auto h-fit sm:h-auto'
+              ? 'bottom-0 left-0 right-0 h-fit sm:bottom-auto sm:left-[50%] sm:right-auto sm:top-[50%] sm:h-auto sm:translate-x-[-50%] sm:translate-y-[-50%]'
               : position === 'top'
-                ? 'top-0 bottom-auto'
-                : 'top-1/2 bottom-auto',
+                ? 'bottom-auto top-0'
+                : 'bottom-auto top-1/2',
           // Transform logic - remove default transform since we're using specific positioning
           'transform transition-all duration-300 ease-out',
           // Animation states
@@ -145,7 +145,7 @@ export default function ModalContainer({
       >
         <div
           className={cn(
-            'flex flex-col items-start w-full mx-auto',
+            'mx-auto flex w-full flex-col items-start',
             // Mobile: rounded top corners, Desktop: rounded all corners
             position === 'responsive' || position === 'bottom'
               ? 'rounded-t-3xl sm:rounded-xl'
@@ -157,24 +157,24 @@ export default function ModalContainer({
           {showHeader && (
             <div
               className={cn(
-                'flex items-center gap-4 w-full px-4 py-4 sm:px-6',
+                'flex w-full items-center gap-4 px-4 py-4 sm:px-6',
                 // Mobile: rounded top corners, Desktop: rounded top corners
                 position === 'responsive' || position === 'bottom'
                   ? 'rounded-t-3xl sm:rounded-t-xl'
                   : 'rounded-t-xl',
-                'bg-gradient-to-b from-mirage-54 to-navy-dark border-t border-white-16 backdrop-blur-[2rem]',
+                'border-t border-white-16 bg-gradient-to-b from-mirage-54 to-navy-dark backdrop-blur-[2rem]',
                 headerClassName
               )}
             >
               {title && (
-                <h2 className="flex-1 text-white font-montserrat text-lg font-bold">
+                <h2 className="flex-1 font-montserrat text-lg font-bold text-white">
                   {title}
                 </h2>
               )}
               {showCloseButton && (
                 <div
                   onClick={onClose}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] hover:bg-white-8 transition-colors cursor-pointer"
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] transition-colors hover:bg-white-8"
                 >
                   <X className="h-4 w-4 text-[white]" />
                 </div>
@@ -185,12 +185,12 @@ export default function ModalContainer({
           {/* Content */}
           <div
             className={cn(
-              'flex flex-col gap-6 p-4 w-full',
+              'flex w-full flex-col gap-6 p-4',
               // Mobile: rounded bottom corners, Desktop: rounded bottom corners
               position === 'responsive' || position === 'bottom'
                 ? 'rounded-b-3xl sm:rounded-b-xl'
                 : 'rounded-b-xl',
-              'bg-mirage-54 backdrop-blur-[2rem] min-h-0',
+              'min-h-0 bg-mirage-54 backdrop-blur-[2rem]',
               contentClassName
             )}
           >

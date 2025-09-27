@@ -75,7 +75,7 @@ const Button: React.FC<ButtonProps> = ({
       <div
         onClick={onClick}
         className={clsx(
-          'flex items-center justify-center transition-colors cursor-pointer',
+          'flex cursor-pointer items-center justify-center transition-colors',
           base,
           className
         )}
@@ -94,7 +94,7 @@ const Button: React.FC<ButtonProps> = ({
     <div
       onClick={onClick}
       className={clsx(
-        'pushable group relative border-none bg-transparent cursor-pointer outline-offset-1 focus:outline-none focus-visible:outline',
+        'pushable group relative cursor-pointer border-none bg-transparent outline-offset-1 focus:outline-none focus-visible:outline',
         width,
         className
       )}
@@ -105,13 +105,13 @@ const Button: React.FC<ButtonProps> = ({
     >
       <span
         className={clsx(
-          'edge absolute translate-y-[3px] top-0 left-0 w-full h-full rounded-[8px]',
+          'edge absolute left-0 top-0 h-full w-full translate-y-[3px] rounded-[8px]',
           edge
         )}
       ></span>
       <span
         className={clsx(
-          'front relative w-full h-full rounded-[8px] hover:shadow-[0_3px_16px_transparent,inset_0_4px_3px_var(--white-25)] text-white font-bold flex items-center justify-center text-[12px] will-change-transform transform transition-transform duration-&lsqb;600ms&rsqb; ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1)&rsqb; group-hover:-translate-y-[3px] group-hover:duration-&lsqb;250ms&rsqb; group-hover:ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1.5)&rsqb; group-active:translate-y-[1px] group-active:duration-&lsqb;34ms&rsqb;',
+          'front duration-&lsqb;600ms&rsqb; ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1)&rsqb; group-hover:duration-&lsqb;250ms&rsqb; group-hover:ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1.5)&rsqb; group-active:duration-&lsqb;34ms&rsqb; relative flex h-full w-full transform items-center justify-center rounded-[8px] text-[12px] font-bold text-white transition-transform will-change-transform hover:shadow-[0_3px_16px_transparent,inset_0_4px_3px_var(--white-25)] group-hover:-translate-y-[3px] group-active:translate-y-[1px]',
           base
         )}
       >
@@ -139,21 +139,16 @@ const BlueButton: React.FC<BlueButtonProps> = ({
   // background: linear-gradient(3360deg, #F9476E .8%, #BD0139);
   return (
     <div
-      className="pushable group relative border-none bg-transparent p-0 cursor-pointer outline-offset-1 hover:brightness-110 transition-filter duration-250 focus:outline-none focus-visible:outline"
+      className="pushable transition-filter duration-250 group relative cursor-pointer border-none bg-transparent p-0 outline-offset-1 hover:brightness-110 focus:outline-none focus-visible:outline"
       onClick={onClick}
       style={{
         pointerEvents: disabled ? 'none' : 'auto',
         opacity: disabled ? 0.5 : 1,
       }}
     >
-      <span className="edge absolute translate-y-[3px] top-0 left-0 w-full px-[25.2px] h-full rounded-[12.6px] bg-[#003a8a]"></span>
+      <span className="edge absolute left-0 top-0 h-full w-full translate-y-[3px] rounded-[12.6px] bg-[#003a8a] px-[25.2px]"></span>
       <span
-        className="front relative lg:h-[51.97px] h-[37.73px] flex rounded-[12.6px] px-[25.2px] text-xl text-white bg-[linear-gradient(#0C60FF,#2C9FFA)] will-change-transform
-         shadow-inner shadow-gray-400            
-        transform transition-transform duration-&lsqb;600ms&rsqb; ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1)&rsqb;
-                    group-hover:-translate-y-[3px] group-hover:duration-&lsqb;250ms&rsqb; group-hover:ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1.5)&rsqb;
-                    border-[1px] border-[#55657E]
-                    group-active:translate-y-[1px] hover:shadow-[0_3px_28px_#2283f666] group-active:duration-&lsqb;34ms&rsqb; text-[12px] font-bold items-center justify-center lg:text-[18.9px]"
+        className="front duration-&lsqb;600ms&rsqb; ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1)&rsqb; group-hover:duration-&lsqb;250ms&rsqb; group-hover:ease-&lsqb;cubic-bezier(0.3,0.7,0.4,1.5)&rsqb; group-active:duration-&lsqb;34ms&rsqb; relative flex h-[37.73px] transform items-center justify-center rounded-[12.6px] border-[1px] border-[#55657E] bg-[linear-gradient(#0C60FF,#2C9FFA)] px-[25.2px] text-[12px] text-xl font-bold text-white shadow-inner shadow-gray-400 transition-transform will-change-transform hover:shadow-[0_3px_28px_#2283f666] group-hover:-translate-y-[3px] group-active:translate-y-[1px] lg:h-[51.97px] lg:text-[18.9px]"
         style={{
           boxShadow:
             '0 3px 28px #2283f666, inset 0 3px 3px rgba(255,255,255,0.21)',

@@ -33,10 +33,10 @@ const MenuButton: React.FC<{ onClick: () => void; isCollapsed: boolean }> = ({
   onClick,
   isCollapsed,
 }) => (
-  <div className="relative lg:flex hidden">
+  <div className="relative hidden lg:flex">
     <BlackButton onClick={onClick}>
       <ArrowToRightStrokeIcon
-        className={cn('w-4 h-4', isCollapsed ? 'rotate-180' : '')}
+        className={cn('h-4 w-4', isCollapsed ? 'rotate-180' : '')}
       />
     </BlackButton>
   </div>
@@ -51,7 +51,7 @@ const Logo: React.FC = () => (
 )
 
 const BonusesButton: React.FC = () => (
-  <div className="relative sm:block hidden">
+  <div className="relative hidden sm:block">
     <UnifiedButton
       variant="gradient"
       className="px-3 py-2"
@@ -61,13 +61,13 @@ const BonusesButton: React.FC = () => (
     >
       <div className="flex items-center gap-2">
         <img src="/images/awards/Chest-box.svg" className="h-8" alt="bonuses" />
-        <span className="text-white font-medium text-xs lg:block hidden">
+        <span className="hidden text-xs font-medium text-white lg:block">
           Bonuses
         </span>
       </div>
     </UnifiedButton>
     {/* Notification badge overlapping the button */}
-    <div className="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded w-5 flex items-center justify-center">
+    <div className="absolute -right-1 -top-1 flex w-5 items-center justify-center rounded bg-green-500 text-xs text-white">
       4
     </div>
   </div>
@@ -77,14 +77,14 @@ const SearchButton: React.FC = () => {
   const { openGameSearchModal } = useModal()
 
   return (
-    <BlackButton className="sm:flex hidden" onClick={openGameSearchModal}>
-      <SearchIcon className="w-4 h-4" />
+    <BlackButton className="hidden sm:flex" onClick={openGameSearchModal}>
+      <SearchIcon className="h-4 w-4" />
     </BlackButton>
   )
 }
 
 const NotificationBadge: React.FC = () => (
-  <div className="absolute -top-1 -right-1 bg-green-500 text-white text-xs rounded w-5 flex items-center justify-center">
+  <div className="absolute -right-1 -top-1 flex w-5 items-center justify-center rounded bg-green-500 text-xs text-white">
     4
   </div>
 )
@@ -116,14 +116,14 @@ const AuthSection: React.FC<{
         <>
           <div className="relative">
             <BlackButton className="w-[4.4375rem]" onClick={toggleAuthModal}>
-              <span className="text-white  font-medium text-xs">
+              <span className="text-xs font-medium text-white">
                 {t('auth.login')}
               </span>
             </BlackButton>
           </div>
           <TDButton
             type="red"
-            className="w-[5.3125rem] h-[2.0625rem] rounded-lg"
+            className="h-[2.0625rem] w-[5.3125rem] rounded-lg"
             onClick={toggleAuthModal}
           >
             <span className="text-[0.75rem]">{t('auth.register')}</span>
@@ -166,18 +166,18 @@ const UtilitySection: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
 
   return (
     <div className="flex items-center gap-2" ref={wrapperRef}>
-      <div className="relative lg:block hidden">
+      <div className="relative hidden lg:block">
         <BlackButton onClick={handleToggleLang}>
           <img
             src={`/icons/flag-icon/${
               currentLanguage.code === 'en' ? 'uk' : currentLanguage.code
             }.svg`}
-            className=" h-4"
+            className="h-4"
             alt="flag"
           />
         </BlackButton>
         {showLang && (
-          <div className="absolute right-0 top-full mt-2 z-[1000]">
+          <div className="absolute right-0 top-full z-[1000] mt-2">
             <LanguageSelect
               open
               triggerless
@@ -193,8 +193,8 @@ const UtilitySection: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
         )}
       </div>
       {isLoggedIn && <NotificationButton onClick={openNotifications} />}
-      <BlackButton className="lg:flex hidden">
-        <MessageDots2Icon className="w-4 h-4" />
+      <BlackButton className="hidden lg:flex">
+        <MessageDots2Icon className="h-4 w-4" />
       </BlackButton>
       {isLoggedIn && <ProfileButton />}
     </div>
@@ -205,29 +205,29 @@ const WalletSection: React.FC = () => {
   const router = useRouter()
   const { t } = useI18n()
   return (
-    <div className="flex items-center gap-1 sm:gap-2 bg-gray-700 pl-2 rounded-lg">
+    <div className="flex items-center gap-1 rounded-lg bg-gray-700 pl-2 sm:gap-2">
       <div className="flex items-center gap-1 sm:gap-2">
         <img
           src="/icons/coin-icon/USDT.svg"
           alt="USDT"
-          className="w-5 h-5 sm:w-6 sm:h-6"
+          className="h-5 w-5 sm:h-6 sm:w-6"
         />
-        <p className="text-white text-[0.75rem] sm:text-[0.875rem] font-bold">
+        <p className="text-[0.75rem] font-bold text-white sm:text-[0.875rem]">
           0.15
         </p>
       </div>
       <Button
         onClick={() => router.push('/wallet')}
         variant="Wallet"
-        className="!w-[2.0625rem] !h-[2.0625rem] sm:!w-[7.5rem]  md:!w-[9.125rem]"
+        className="!h-[2.0625rem] !w-[2.0625rem] sm:!w-[7.5rem] md:!w-[9.125rem]"
       >
         <div className="flex items-center gap-1 sm:gap-2">
           <img
             src="/icons/wallet.svg"
             alt="wallet"
-            className="w-3 h-3 sm:w-4 sm:h-4"
+            className="h-3 w-3 sm:h-4 sm:w-4"
           />
-          <span className="hidden sm:inline text-[0.625rem] sm:text-[0.75rem]">
+          <span className="hidden text-[0.625rem] sm:inline sm:text-[0.75rem]">
             {t('navigation.wallet')}
           </span>
         </div>
@@ -240,8 +240,8 @@ const NotificationButton: React.FC<{ onClick?: () => void }> = ({
   onClick,
 }) => (
   <div className="relative">
-    <BlackButton className="lg:flex hidden" onClick={onClick}>
-      <NotificationIcon className="w-4 h-4" />
+    <BlackButton className="hidden lg:flex" onClick={onClick}>
+      <NotificationIcon className="h-4 w-4" />
     </BlackButton>
   </div>
 )
@@ -284,18 +284,18 @@ const ProfileButton: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   return (
     <div className="relative" ref={containerRef}>
       <BlackButton
-        className="px-[0.125rem] bg-[conic-gradient(var(--malachite)_0_75%,transparent_75%_100%)] rounded-[0.625rem] hover:bg-[conic-gradient(var(--malachite)_0_75%,transparent_75%_100%)] "
+        className="rounded-[0.625rem] bg-[conic-gradient(var(--malachite)_0_75%,transparent_75%_100%)] px-[0.125rem] hover:bg-[conic-gradient(var(--malachite)_0_75%,transparent_75%_100%)]"
         onClick={handleButtonClick}
       >
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/381f33b8ee9dde920a0b2278348be945b8886b91?width=128"
-          className="w-[2.1875rem] h-[1.875rem] "
+          className="h-[1.875rem] w-[2.1875rem]"
           alt="frame"
         />
       </BlackButton>
       <NotificationBadge />
       {isProfileOpen && (
-        <div className="absolute -right-4 top-full mt-2 z-[1000] w-[98vw] lg:w-auto">
+        <div className="absolute -right-4 top-full z-[1000] mt-2 w-[98vw] lg:w-auto">
           <UserProfileDropdown onClose={() => setIsProfileOpen(false)} />
         </div>
       )}
@@ -379,7 +379,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   }, [activeTab, gameNavTabs])
 
   return (
-    <div className="lg:hidden px-2 py-1">
+    <div className="px-2 py-1 lg:hidden">
       <Swiper
         modules={[FreeMode]}
         freeMode={true}
@@ -397,9 +397,9 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
                 swiperRef.current?.slideTo(idx, 250)
               }}
               variant={activeTab === tab.id ? 'primary' : 'secondary'}
-              className="!h-8 py-4 px-2 whitespace-nowrap min-w-fit"
+              className="!h-8 min-w-fit whitespace-nowrap px-2 py-4"
             >
-              <img src={tab.icon} alt={tab.label} className="w-5 h-5" />
+              <img src={tab.icon} alt={tab.label} className="h-5 w-5" />
               <span className="text-[0.8rem] font-bold">{tab.label}</span>
             </UnifiedButton>
           </SwiperSlide>
@@ -509,7 +509,7 @@ const Header: React.FC = () => {
     <>
       <header
         id="app-header"
-        className="fixed top-0 left-0 right-0 z-50 flex flex-col"
+        className="fixed left-0 right-0 top-0 z-50 flex flex-col"
         style={{
           backdropFilter: 'blur(2rem)',
           background: 'var(--mirage-54)',

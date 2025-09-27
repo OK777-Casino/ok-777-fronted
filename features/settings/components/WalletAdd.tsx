@@ -73,13 +73,13 @@ const WalletAdd: React.FC = () => {
   }
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full">
-      <div className="w-full  flex flex-col gap-4">
+    <div className="[@media(max-width:660px)]:w-full">
+      <div className="flex w-full flex-col gap-4">
         {/* WalletAdd Header */}
-        <h1 className="text-lg sm:text-xl hidden lg:block font-bold text-white ">
+        <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
           Wallet Address
         </h1>
-        <div className="grid grid-cols-2 gap-4 rounded-[0.75rem] ">
+        <div className="grid grid-cols-2 gap-4 rounded-[0.75rem]">
           <DropdownSelect
             label="Currency"
             value={selectedValue}
@@ -93,8 +93,8 @@ const WalletAdd: React.FC = () => {
             onChange={setSelectedNetworkValue}
           />
         </div>
-        <div className="p-4 flex flex-col gap-4 items-center text-casper">
-          <WalletIcon className="w-[3.5rem] h-[3.5rem]" />
+        <div className="flex flex-col items-center gap-4 p-4 text-casper">
+          <WalletIcon className="h-[3.5rem] w-[3.5rem]" />
           <p className="text-[0.875rem]">
             You have not added a wallet address yet.
           </p>
@@ -102,12 +102,12 @@ const WalletAdd: React.FC = () => {
         <TDButton
           onClick={toggleModal}
           type="blue"
-          className="w-[14.8125rem] gap-3 mx-auto h-[2.5625rem] text-gallery text-[0.875rem] font-bold"
+          className="mx-auto h-[2.5625rem] w-[14.8125rem] gap-3 text-[0.875rem] font-bold text-gallery"
         >
           <PlusIcon />
           Add wallet address
         </TDButton>
-        <h2 className="uppercase indent-[1.25rem] text-white font-bold text-[1.125rem]">
+        <h2 className="indent-[1.25rem] text-[1.125rem] font-bold uppercase text-white">
           faqs
         </h2>
         <FAQ faqs={faqs} title={false} />
@@ -119,12 +119,12 @@ const WalletAdd: React.FC = () => {
         className="lg:w-[30%]"
       >
         <div className="flex flex-col gap-2">
-          <div className="p-1 rounded-[0.75rem] bg-white-4 gap-4 grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-4 rounded-[0.75rem] bg-white-4 p-1">
             {tabs.map(tab => (
               <div
                 onClick={() => setSelectedTab(tab.id)}
                 className={cn(
-                  'h-9 font-bold text-[0.875rem] flex justify-center items-center rounded-[0.5rem]',
+                  'flex h-9 items-center justify-center rounded-[0.5rem] text-[0.875rem] font-bold',
                   tab.id === selectedTab
                     ? 'bg-white-13 text-white'
                     : 'text-casper'
@@ -136,7 +136,7 @@ const WalletAdd: React.FC = () => {
           </div>
           {selectedTab === 'add' ? (
             <>
-              <div className="p-4 rounded-[0.75rem] bg-white-4 flex flex-col gap-4">
+              <div className="flex flex-col gap-4 rounded-[0.75rem] bg-white-4 p-4">
                 <h2 className="text-[0.875rem] font-bold text-white">
                   Your address
                 </h2>
@@ -149,14 +149,14 @@ const WalletAdd: React.FC = () => {
             </>
           ) : (
             <>
-              <div className="p-4 rounded-[0.75rem] bg-white-4 flex flex-col gap-4">
-                <h2 className="text-[0.875rem] font-bold text-white flex justify-between items-center ">
+              <div className="flex flex-col gap-4 rounded-[0.75rem] bg-white-4 p-4">
+                <h2 className="flex items-center justify-between text-[0.875rem] font-bold text-white">
                   Transfer activation amount{' '}
-                  <img src="/icons/coin-icon/USDT.svg" className="w-4 h-4" />
+                  <img src="/icons/coin-icon/USDT.svg" className="h-4 w-4" />
                 </h2>
                 <CopyBox className="bg-white-8">0.0888</CopyBox>
               </div>
-              <div className="p-4 rounded-[0.75rem] bg-white-4 flex flex-col gap-4">
+              <div className="flex flex-col gap-4 rounded-[0.75rem] bg-white-4 p-4">
                 <h2 className="text-[0.875rem] font-bold text-white">
                   Activate transfer address
                 </h2>
@@ -172,40 +172,40 @@ const WalletAdd: React.FC = () => {
             Activated address: <span className="text-dodger-blue">0</span>
           </h2>
           {collapsedAddress ? (
-            <div className="rounded-[0.5rem] overflow-hidden">
-              <div className="grid font-bold text-[12px] bg-mirage  border-b border-white-13 grid-cols-[20%_40%_40%] items-center h-[56px] text-blue-bayoux">
-                <span className="flex justify-center items-center">Type</span>
-                <span className="flex justify-center items-center">
+            <div className="overflow-hidden rounded-[0.5rem]">
+              <div className="grid h-[56px] grid-cols-[20%_40%_40%] items-center border-b border-white-13 bg-mirage text-[12px] font-bold text-blue-bayoux">
+                <span className="flex items-center justify-center">Type</span>
+                <span className="flex items-center justify-center">
                   Address
                 </span>
-                <span className="flex justify-center items-center">State</span>
+                <span className="flex items-center justify-center">State</span>
               </div>
-              <div className="grid font-bold text-[12px] bg-white-4   grid-cols-[20%_40%_40%] items-center h-[48px] text-white">
-                <span className="flex justify-center items-center">
+              <div className="grid h-[48px] grid-cols-[20%_40%_40%] items-center bg-white-4 text-[12px] font-bold text-white">
+                <span className="flex items-center justify-center">
                   <img
                     src="/icons/coin-icon/USDT.svg"
-                    className="w-6 h-6 mx-auto"
+                    className="mx-auto h-6 w-6"
                   />
                 </span>
-                <span className="flex justify-center items-center">
+                <span className="flex items-center justify-center">
                   TGFf7****ePvThd
                 </span>
-                <span className="flex justify-center items-center font-medium">
+                <span className="flex items-center justify-center font-medium">
                   To be activated
                 </span>
               </div>
             </div>
           ) : (
-            <div className="h-px bg-mirage-4 w-full" />
+            <div className="h-px w-full bg-mirage-4" />
           )}
           <div onClick={toggleAddress} className="mx-auto">
             {collapsedAddress ? (
               <ChevronsUpIcon
-                className="w-[26px] h-[26px] mx-auto"
+                className="mx-auto h-[26px] w-[26px]"
                 color="#A7B5CA"
               />
             ) : (
-              <ChevronsDownIcon className="w-[26px] h-[26px]" color="#A7B5CA" />
+              <ChevronsDownIcon className="h-[26px] w-[26px]" color="#A7B5CA" />
             )}
           </div>
         </div>

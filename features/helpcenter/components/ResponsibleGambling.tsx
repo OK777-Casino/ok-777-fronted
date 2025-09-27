@@ -2,11 +2,11 @@ import React from 'react'
 
 const ResponsibleGambling: React.FC = () => {
   return (
-    <div className=" md:w-full p-4 rounded-[12px] flex flex-col gap-2 bg-mirage-1-8A">
+    <div className="bg-mirage-1-8A flex flex-col gap-2 rounded-[12px] p-4 md:w-full">
       <h2 className="text-[14px] font-bold text-gallery">
         Gambling Awareness and Protecting Minors
       </h2>
-      <div className="text-casper font-normal text-[14px] word-break">
+      <div className="word-break text-[14px] font-normal text-casper">
         Betting in online casinos is primarily for entertainment purposes.
         However, a small percentage of people lose control when gambling. Before
         you start playing games, it's important to understand that gaming should
@@ -24,7 +24,7 @@ const ResponsibleGambling: React.FC = () => {
         with this situation. For more information, please visit the websites
         listed below.
       </div>
-      <div className="text-dodger-blue underline cursor-pointer pt-4 font-normal text-[14px] word-break">
+      <div className="word-break cursor-pointer pt-4 text-[14px] font-normal text-dodger-blue underline">
         http://www.cyberpatrol.com
       </div>
     </div>

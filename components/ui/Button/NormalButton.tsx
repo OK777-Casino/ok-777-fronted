@@ -16,7 +16,7 @@ const NormalButton: React.FC<NormalButtonProps> = ({
   return (
     <div
       className={
-        'flex text-casper active:text-white h-[2.25rem]  bg-transparent hover:bg-ebony-clay hover:text-white  items-center justify-center rounded-[0.5rem] gap-[0.5rem] font-bold cursor-pointer ' +
+        'flex h-[2.25rem] cursor-pointer items-center justify-center gap-[0.5rem] rounded-[0.5rem] bg-transparent font-bold text-casper hover:bg-ebony-clay hover:text-white active:text-white ' +
         className
       }
       onClick={onClick}

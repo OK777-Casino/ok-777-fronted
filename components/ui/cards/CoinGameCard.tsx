@@ -32,18 +32,18 @@ const CoinGameCard: React.FC<CoinGameCardProps> = ({
   return (
     <Link href={link} className="block">
       <div
-        className={`${getCoinColorClasses(coinColor)} rounded-lg p-4 h-24 flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200 cursor-pointer`}
+        className={`${getCoinColorClasses(coinColor)} flex h-24 cursor-pointer flex-col items-center justify-center rounded-lg p-4 transition-transform duration-200 hover:scale-105`}
       >
         {/* Coin Icon with Bull */}
-        <div className="flex items-center justify-center mb-2">
+        <div className="mb-2 flex items-center justify-center">
           <div
-            className={`w-8 h-8 ${getCoinColorClasses(coinColor)} rounded-full flex items-center justify-center border-2 border-gray-400`}
+            className={`h-8 w-8 ${getCoinColorClasses(coinColor)} flex items-center justify-center rounded-full border-2 border-gray-400`}
           >
             <span className="text-lg">🐂</span>
           </div>
         </div>
-        <div className="text-sm font-bold text-center">{title}</div>
-        <div className="text-xs text-center leading-tight">{subtitle}</div>
+        <div className="text-center text-sm font-bold">{title}</div>
+        <div className="text-center text-xs leading-tight">{subtitle}</div>
       </div>
     </Link>
   )

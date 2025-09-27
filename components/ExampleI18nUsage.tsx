@@ -7,14 +7,14 @@ export default function ExampleI18nUsage() {
   const t = useT()
 
   return (
-    <div className="p-4 bg-gray-100 rounded-lg">
-      <h2 className="text-xl font-bold mb-4">{t('app.title')}</h2>
+    <div className="rounded-lg bg-gray-100 p-4">
+      <h2 className="mb-4 text-xl font-bold">{t('app.title')}</h2>
 
       <div className="space-y-2">
         <p>
           <strong>Navigation:</strong>
         </p>
-        <ul className="list-disc list-inside ml-4">
+        <ul className="ml-4 list-inside list-disc">
           <li>{t('navigation.lobby')}</li>
           <li>{t('navigation.games')}</li>
           <li>{t('navigation.wallet')}</li>
@@ -24,7 +24,7 @@ export default function ExampleI18nUsage() {
         <p>
           <strong>Games:</strong>
         </p>
-        <ul className="list-disc list-inside ml-4">
+        <ul className="ml-4 list-inside list-disc">
           <li>{t('games.play')}</li>
           <li>{t('games.bet')}</li>
           <li>{t('games.balance')}</li>

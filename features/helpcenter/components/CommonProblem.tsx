@@ -70,25 +70,25 @@ const CommonProblem: React.FC = () => {
   }
 
   return (
-    <div className=" lg:w-full ">
-      <div className="flex flex-col gap-px rounded-[12px] overflow-hidden ">
+    <div className="lg:w-full">
+      <div className="flex flex-col gap-px overflow-hidden rounded-[12px]">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="flex flex-col  gap-px cursor-pointer"
+            className="flex cursor-pointer flex-col gap-px"
             onClick={() => updateFaq(index)}
           >
-            <div className="text-[14px] font-bold bg-ebony-clay h-12 flex px-4 items-center justify-between text-gallery">
+            <div className="flex h-12 items-center justify-between bg-ebony-clay px-4 text-[14px] font-bold text-gallery">
               <span className="w-[90%]">{faq.question}</span>
               {activeFaq === index ? (
-                <ChevronDownIcon className="!w-6 !h-6" />
+                <ChevronDownIcon className="!h-6 !w-6" />
               ) : (
-                <ChevronUpIcon className="!w-6 !h-6" />
+                <ChevronUpIcon className="!h-6 !w-6" />
               )}
             </div>
             {activeFaq === index && (
               <>
-                <div className=" bg-mirage-8a gap-2 flex flex-col text-casper font-normal p-4 rounded-[12px] text-[14px] word-break">
+                <div className="word-break flex flex-col gap-2 rounded-[12px] bg-mirage-8a p-4 text-[14px] font-normal text-casper">
                   {faq.answer.map((answer, index) => (
                     <div key={index}>{answer}</div>
                   ))}

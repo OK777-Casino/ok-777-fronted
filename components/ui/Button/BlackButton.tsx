@@ -17,26 +17,12 @@ const BlackButton: React.FC<BlackButtonProps> = ({
   return (
     <div
       className={cn(
-        `flex h-9 w-9 
-        items-center 
-        justify-center 
-        rounded-lg 
-        cursor-pointer 
-        bg-no-repeat 
-        hover:bg-[radial-gradient(ellipse_80%_50%_at_bottom_center,#ED1D49_0,#ED1D4900_50%)] 
-        hover:bg-[linear-gradient(#FFFFFF54, #919191)] 
-        font-bold 
-        text-white 
-        border 
-        bg-white-4 
-        border-white-4 
-        shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] 
-        transition-colors`,
+        `hover:bg-[linear-gradient(#FFFFFF54, #919191)] flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 bg-no-repeat font-bold text-white shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] transition-colors hover:bg-[radial-gradient(ellipse_80%_50%_at_bottom_center,#ED1D49_0,#ED1D4900_50%)]`,
         className
       )}
       onClick={onClick}
     >
-      <span className="flex justify-center items-center text-center">
+      <span className="flex items-center justify-center text-center">
         {children}
       </span>
     </div>

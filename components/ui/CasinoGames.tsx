@@ -16,26 +16,26 @@ const GameItem = ({ src, href, name, timeLabel, timeColor }: GameItemProps) => {
     <Link
       href={'/hashgames/' + href + '/transfer-betting'}
       className={cn(
-        'flex h-[50px] items-center gap-2 rounded-xl px-2 py-0 cursor-pointer transition-all duration-200',
-        'hover:bg-white/10 hover:scale-105 active:scale-95'
+        'flex h-[50px] cursor-pointer items-center gap-2 rounded-xl px-2 py-0 transition-all duration-200',
+        'hover:scale-105 hover:bg-white/10 active:scale-95'
       )}
     >
       <Image
         src={src}
         alt={name}
-        className="h-9 w-9 object-contain flex-shrink-0"
+        className="h-9 w-9 flex-shrink-0 object-contain"
         width={72}
         height={72}
       />
-      <div className="flex h-9 flex-1 items-center gap-2 rounded-lg px-3 py-0 min-w-0">
-        <span className="font-montserrat text-sm font-bold text-white whitespace-nowrap">
+      <div className="flex h-9 min-w-0 flex-1 items-center gap-2 rounded-lg px-3 py-0">
+        <span className="whitespace-nowrap font-montserrat text-sm font-bold text-white">
           {name}
         </span>
         {timeLabel && (
-          <div className="flex h-[19px] items-center justify-center rounded-[4px] bg-[#111923] px-2 py-0.5 backdrop-blur-[32px] flex-shrink-0 ml-auto">
+          <div className="ml-auto flex h-[19px] flex-shrink-0 items-center justify-center rounded-[4px] bg-[#111923] px-2 py-0.5 backdrop-blur-[32px]">
             <span
               className={cn(
-                'font-montserrat text-xs font-bold whitespace-nowrap',
+                'whitespace-nowrap font-montserrat text-xs font-bold',
                 timeColor === 'red' && 'text-[#ED1D49]',
                 timeColor === 'blue' && 'text-[#2283F6]'
               )}
@@ -153,7 +153,7 @@ export default function CasinoGames() {
   ]
 
   return (
-    <div className="inline-flex items-start absolute justify-center bg-mirage-54 p-6 backdrop-blur-[32px] rounded-xl">
+    <div className="absolute inline-flex items-start justify-center rounded-xl bg-mirage-54 p-6 backdrop-blur-[32px]">
       <div className="flex w-full gap-6">
         {/* Left Column */}
         <div className="flex flex-col items-start gap-0">

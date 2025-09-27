@@ -32,18 +32,18 @@ export default function LoadingScreen() {
   }
 
   return (
-    <div className="fixed inset-0 z-[9999] h-screen w-screen bg-[radial-gradient(circle_at_50%_50%,_#003A81_0%,_#0D131C_30%)] flex flex-col">
+    <div className="fixed inset-0 z-[9999] flex h-screen w-screen flex-col bg-[radial-gradient(circle_at_50%_50%,_#003A81_0%,_#0D131C_30%)]">
       {/* Red Progress Bar at Top */}
-      <div className="w-full lg:h-4 h-2 ">
+      <div className="h-2 w-full lg:h-4">
         <div
-          className="h-full bg-crimson rounded-r-full transition-all duration-300 ease-out"
+          className="h-full rounded-r-full bg-crimson transition-all duration-300 ease-out"
           style={{ width: `${loadingProgress}%` }}
         />
       </div>
 
       {/* Centered Logo and Progress */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="flex justify-center items-center">
+      <div className="flex flex-1 items-center justify-center">
+        <div className="flex items-center justify-center">
           {/* 777 Logo with Flaming Soccer Ball */}
           <img src="/images/logo.svg" className="h-[6rem]" alt="logo" />
 

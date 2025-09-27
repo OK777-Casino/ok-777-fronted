@@ -57,14 +57,14 @@ const Sidebar: React.FC = () => {
   const services = [
     {
       icon: (
-        <HeadphoneMicIcon color="var(--yellow-orange)" className="w-4 h-4" />
+        <HeadphoneMicIcon color="var(--yellow-orange)" className="h-4 w-4" />
       ),
       title: t('help.onlineService'),
       desc: t('help.serviceDescription'),
       color: 'var(--yellow-orange)',
     },
     {
-      icon: <TelegramIcon color="var(--dodger-blue)" className="w-4 h-4" />,
+      icon: <TelegramIcon color="var(--dodger-blue)" className="h-4 w-4" />,
       title: 'Telegram',
       desc: t('help.telegramDescription'),
       color: 'var(--dodger-blue)',
@@ -88,8 +88,8 @@ const Sidebar: React.FC = () => {
     <>
       <aside
         ref={sidebarRef}
-        className={`sidebar bg-[var(--mirage)]/54 backdrop-blur-[2rem] fixed lg:block transition-all duration-300 z-40 overflow-y-auto overflow-x-visible h-[calc(100dvh-9.9375rem)] lg:top-[3.5rem] top-[6.25rem] lg:h-[calc(100dvh-3.5rem)] ${
-          isCollapsed ? 'close ' : 'open'
+        className={`sidebar bg-[var(--mirage)]/54 fixed top-[6.25rem] z-40 h-[calc(100dvh-9.9375rem)] overflow-y-auto overflow-x-visible backdrop-blur-[2rem] transition-all duration-300 lg:top-[3.5rem] lg:block lg:h-[calc(100dvh-3.5rem)] ${
+          isCollapsed ? 'close' : 'open'
         }`}
         style={{
           borderRight: '1px solid var(--white-4)',
@@ -107,7 +107,7 @@ const Sidebar: React.FC = () => {
           e.stopPropagation()
         }}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex h-full flex-col">
           {/* Top Section - Casino/Sport buttons */}
           <SidebarTopSection
             isCollapsed={isCollapsed}
@@ -116,7 +116,7 @@ const Sidebar: React.FC = () => {
 
           {/* Main Content Sections */}
           <div
-            className={`p-4 pt-0 ${isCollapsed ? 'px-0' : ''} space-y-1 flex-1`}
+            className={`p-4 pt-0 ${isCollapsed ? 'px-0' : ''} flex-1 space-y-1`}
           >
             <div className=" ">
               <SidebarSections
@@ -136,12 +136,12 @@ const Sidebar: React.FC = () => {
             </div>
             <Link
               href={'/install-app'}
-              className="py-2 justify-center lg:hidden flex flex-col gap-2 rounded-[0.5rem] h-[5.1875rem] px-4 bg-[linear-gradient(45deg,#111923,#002554)]"
+              className="flex h-[5.1875rem] flex-col justify-center gap-2 rounded-[0.5rem] bg-[linear-gradient(45deg,#111923,#002554)] px-4 py-2 lg:hidden"
             >
-              <span className="text-[0.875rem] text-white font-bold">
+              <span className="text-[0.875rem] font-bold text-white">
                 {t('app.title')}
               </span>
-              <span className="text-casper text-[0.625rem]">
+              <span className="text-[0.625rem] text-casper">
                 {t('app.subtitle')}
               </span>
             </Link>
@@ -168,7 +168,7 @@ const Sidebar: React.FC = () => {
       <Overlay
         isOpen={!isCollapsed}
         onClose={toggleSidebar}
-        className="lg:hidden fixed left-0 right-0 z-[9]"
+        className="fixed left-0 right-0 z-[9] lg:hidden"
         backdropClassName="h-[calc(100dvh-7.1rem)] bg-[var(--mirage-73)] backdrop-blur-[0.1875rem]"
         contentClassName=""
         zIndex={9}
@@ -202,27 +202,27 @@ const Sidebar: React.FC = () => {
         title={t('help.onlineService')}
         className="!w-[46.25rem]"
       >
-        <div className="h-[14.875rem] w-[calc(100%+1.875rem)] overflow-hidden -mt-[0.9375rem] -ml-[0.9375rem] relative">
+        <div className="relative -ml-[0.9375rem] -mt-[0.9375rem] h-[14.875rem] w-[calc(100%+1.875rem)] overflow-hidden">
           <img
             src="/images/block-coin.png"
             alt="blockcoin"
-            className="object-cover absolute grayscale z-[1] w-full h-full"
+            className="absolute z-[1] h-full w-full object-cover grayscale"
           />
-          <div className="bg-[linear-gradient(#2283F6,#2283F600)] w-full h-full absolute top-0 left-0 z-[2]"></div>
+          <div className="absolute left-0 top-0 z-[2] h-full w-full bg-[linear-gradient(#2283F6,#2283F600)]"></div>
           <img
             src="/images/calf/mascot14.png"
-            className="absolute z-[3] w-[18.75rem] top-[20%] -right-[3.125rem] lg:right-[1.875rem]"
+            className="absolute -right-[3.125rem] top-[20%] z-[3] w-[18.75rem] lg:right-[1.875rem]"
             alt="mascot"
           />
-          <div className="relative z-[3] flex flex-col items-start justify-center pl-[1.875rem] lg:pl-[3.75rem] h-full gap-1">
+          <div className="relative z-[3] flex h-full flex-col items-start justify-center gap-1 pl-[1.875rem] lg:pl-[3.75rem]">
             <img src="/images/logo.svg" className="h-9" alt="" />
-            <span className="font-bold text-dodger-blue text-[1rem]">
+            <span className="text-[1rem] font-bold text-dodger-blue">
               {t('help.onlineService')}
             </span>
-            <span className="font-medium text-yellow-orange text-[0.875rem]">
+            <span className="text-[0.875rem] font-medium text-yellow-orange">
               {t('help.hours24')}
             </span>
-            <span className="font-medium text-white text-[0.875rem]">
+            <span className="text-[0.875rem] font-medium text-white">
               {t('help.dedicatedService')}
             </span>
           </div>
@@ -231,12 +231,12 @@ const Sidebar: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white-4 rounded-[0.75rem] p-4 flex flex-col gap-2"
+              className="flex flex-col gap-2 rounded-[0.75rem] bg-white-4 p-4"
             >
-              <div className="flex justify-between items-center">
-                <div className="font-bold text-white text-[0.875rem] flex gap-2">
+              <div className="flex items-center justify-between">
+                <div className="flex gap-2 text-[0.875rem] font-bold text-white">
                   <div
-                    className="rounded-[0.5rem]  w-6 h-6 border flex justify-center items-center"
+                    className="flex h-6 w-6 items-center justify-center rounded-[0.5rem] border"
                     style={{ borderColor: service.color }}
                   >
                     {service.icon}
@@ -244,11 +244,11 @@ const Sidebar: React.FC = () => {
                   {service.title}
                 </div>
                 <ArrowUpRightStrokeIcon
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   color="var(--casper)"
                 />
               </div>
-              <div className="text-casper text-[0.875rem]">{service.desc}</div>
+              <div className="text-[0.875rem] text-casper">{service.desc}</div>
             </div>
           ))}
         </div>

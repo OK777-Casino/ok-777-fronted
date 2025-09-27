@@ -44,18 +44,18 @@ const GameHistoryTable = () => {
   }
   return (
     <>
-      <div className="flex items-start gap-px w-full relative">
-        <div className="flex gap-px overflow-x-hidden relative">
+      <div className="relative flex w-full items-start gap-px">
+        <div className="relative flex gap-px overflow-x-hidden">
           {/* Row Labels */}
-          <div className="grid grid-flow-col grid-rows-6 gap-px ">
+          <div className="grid grid-flow-col grid-rows-6 gap-px">
             {historydata.map((label, i) => (
               <div
                 key={i}
-                className="flex w-6 h-[25px] justify-center items-center bg-mirage"
+                className="flex h-[25px] w-6 items-center justify-center bg-mirage"
               >
                 <div
                   className={cn(
-                    'w-3 h-3 md:w-4 md:h-4 rounded-full flex items-center justify-center',
+                    'flex h-3 w-3 items-center justify-center rounded-full md:h-4 md:w-4',
                     label === 'O'
                       ? 'bg-crimson'
                       : label === 'E'
@@ -63,7 +63,7 @@ const GameHistoryTable = () => {
                         : ''
                   )}
                 >
-                  <span className="text-[10px] md:text-xs font-bold text-bunker">
+                  <span className="text-bunker text-[10px] font-bold md:text-xs">
                     {label}
                   </span>
                 </div>
@@ -71,26 +71,26 @@ const GameHistoryTable = () => {
             ))}
             <div
               onClick={toggleZoomOne}
-              className="ml-2 flex-shrink-0 absolute top-0 right-0 cursor-pointer bg-mirage p-1"
+              className="absolute right-0 top-0 ml-2 flex-shrink-0 cursor-pointer bg-mirage p-1"
             >
               {zoomOneState ? (
-                <ZoomOut className="w-5 md:w-6 h-5 md:h-6 text-white" />
+                <ZoomOut className="h-5 w-5 text-white md:h-6 md:w-6" />
               ) : (
-                <ZoomIn className="w-5 md:w-6 h-5 md:h-6 text-white" />
+                <ZoomIn className="h-5 w-5 text-white md:h-6 md:w-6" />
               )}
             </div>
           </div>
         </div>
 
-        <div className="flex gap-px overflow-hidden relative">
+        <div className="relative flex gap-px overflow-hidden">
           {/* Right side detailed grid */}
           <div className="grid grid-flow-col grid-rows-12 gap-px">
             {history_data.map((item, rowIndex) => (
               <div key={rowIndex} className="flex gap-px">
-                <div className="w-3 h-3 bg-mirage flex items-center justify-center">
+                <div className="flex h-3 w-3 items-center justify-center bg-mirage">
                   <div
                     className={cn(
-                      'w-2 h-2 rounded-full border border-',
+                      'border- h-2 w-2 rounded-full border',
                       item === 'r'
                         ? 'border-crimson'
                         : item === 'y'
@@ -103,26 +103,26 @@ const GameHistoryTable = () => {
             ))}
             <div
               onClick={toggleZoomTwo}
-              className="ml-2 flex-shrink-0 absolute top-0 right-0 cursor-pointer bg-mirage p-1"
+              className="absolute right-0 top-0 ml-2 flex-shrink-0 cursor-pointer bg-mirage p-1"
             >
               {zoomTwoState ? (
-                <ZoomOut className="w-5 md:w-6 h-5 md:h-6 text-white" />
+                <ZoomOut className="h-5 w-5 text-white md:h-6 md:w-6" />
               ) : (
-                <ZoomIn className="w-5 md:w-6 h-5 md:h-6 text-white" />
+                <ZoomIn className="h-5 w-5 text-white md:h-6 md:w-6" />
               )}
             </div>
           </div>
         </div>
         {zoomOneState && (
-          <div className="grid absolute w-[40%] overflow-x-hidden bottom-0 bg-[#171d25] grid-flow-col grid-rows-6 gap-px ">
+          <div className="absolute bottom-0 grid w-[40%] grid-flow-col grid-rows-6 gap-px overflow-x-hidden bg-[#171d25]">
             {historydata.map((label, i) => (
               <div
                 key={i}
-                className="flex w-[30px] h-[30px] md:h-[35px] justify-center items-center bg-mirage"
+                className="flex h-[30px] w-[30px] items-center justify-center bg-mirage md:h-[35px]"
               >
                 <div
                   className={cn(
-                    'w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center',
+                    'flex h-5 w-5 items-center justify-center rounded-full md:h-6 md:w-6',
                     label === 'O'
                       ? 'bg-crimson'
                       : label === 'E'
@@ -130,7 +130,7 @@ const GameHistoryTable = () => {
                         : ''
                   )}
                 >
-                  <span className="text-[10px] md:text-xs font-bold text-bunker">
+                  <span className="text-bunker text-[10px] font-bold md:text-xs">
                     {label}
                   </span>
                 </div>
@@ -139,13 +139,13 @@ const GameHistoryTable = () => {
           </div>
         )}
         {zoomTwoState && (
-          <div className="grid absolute w-[40%] overflow-x-hidden left-[45%] bottom-0 bg-[#171d25] grid-flow-col grid-rows-12 gap-px ">
+          <div className="absolute bottom-0 left-[45%] grid w-[40%] grid-flow-col grid-rows-12 gap-px overflow-x-hidden bg-[#171d25]">
             {history_data.map((item, rowIndex) => (
               <div key={rowIndex} className="flex gap-px">
-                <div className="w-4 h-4 bg-mirage flex items-center justify-center">
+                <div className="flex h-4 w-4 items-center justify-center bg-mirage">
                   <div
                     className={cn(
-                      'w-3 h-3 rounded-full border border-',
+                      'border- h-3 w-3 rounded-full border',
                       item === 'r'
                         ? 'border-crimson'
                         : item === 'y'

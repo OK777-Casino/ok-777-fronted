@@ -59,7 +59,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
                 swiperRef.current?.slideTo(idx, 250)
               }}
               variant={activeTab === tab.id ? 'primary' : 'secondary'}
-              className="px-2 py-1 whitespace-nowrap min-w-fit"
+              className="min-w-fit whitespace-nowrap px-2 py-1"
             >
               <span className="text-[0.75rem] font-bold">{tab.title}</span>
             </UnifiedButton>
@@ -194,28 +194,28 @@ const BeginnerTutorialPage = () => {
 
   return (
     <>
-      <div className="flex flex-col max-w-6xl mx-auto gap-6">
-        <div className="rounded-[0.75rem] h-[14.49375rem] overflow-hidden 2xl:mt-4 relative bg-center bg-cover">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6">
+        <div className="relative h-[14.49375rem] overflow-hidden rounded-[0.75rem] bg-cover bg-center 2xl:mt-4">
           <img
             src="/images/block-coin.png"
-            className="w-full absolute   h-full z-[1] object-cover grayscale"
+            className="absolute z-[1] h-full w-full object-cover grayscale"
             alt=""
           />
-          <div className="w-full absolute bg-[radial-gradient(circle,_#f2f2f2_0.125rem,_transparent_0.125rem)] [background-size:1.875rem_1.875rem]  h-full z-[2] " />
+          <div className="absolute z-[2] h-full w-full bg-[radial-gradient(circle,_#f2f2f2_0.125rem,_transparent_0.125rem)] [background-size:1.875rem_1.875rem]" />
 
-          <div className="absolute bg-[linear-gradient(#2283f633,#111923)] w-full z-[2] h-full top-0 left-0" />
+          <div className="absolute left-0 top-0 z-[2] h-full w-full bg-[linear-gradient(#2283f633,#111923)]" />
 
           <img
             src="/images/help-34344.png"
-            className="absolute lg:hidden z-[3] top-1/3 left-1/2 transform -translate-y-1/2 w-[18.75rem] -translate-x-1/2"
+            className="absolute left-1/2 top-1/3 z-[3] w-[18.75rem] -translate-x-1/2 -translate-y-1/2 transform lg:hidden"
             alt="image"
           />
           <div
             id="Use a wallet"
-            className="relative w-full items-start h-full flex-col 2xl:p-8 p-4 gap-8 z-[3] flex justify-end"
+            className="relative z-[3] flex h-full w-full flex-col items-start justify-end gap-8 p-4 2xl:p-8"
           >
-            <div className="flex flex-col gap-2 ">
-              <span className="text-white font-bold text-[1.125rem]">
+            <div className="flex flex-col gap-2">
+              <span className="text-[1.125rem] font-bold text-white">
                 Beginner's Tutorial
               </span>
               <div className="flex">
@@ -227,9 +227,9 @@ const BeginnerTutorialPage = () => {
                         scrollToSection(item)
                       }}
                       className={cn(
-                        'font-bold text-[0.75rem] h-9 w-[8.25rem] cursor-pointer rounded-[0.5rem] overflow-hidden flex items-center justify-center transition-all duration-300',
+                        'flex h-9 w-[8.25rem] cursor-pointer items-center justify-center overflow-hidden rounded-[0.5rem] text-[0.75rem] font-bold transition-all duration-300',
                         tab === item
-                          ? 'text-white bg-dodger-blue'
+                          ? 'bg-dodger-blue text-white'
                           : 'text-casper hover:bg-white-4'
                       )}
                     >
@@ -241,37 +241,37 @@ const BeginnerTutorialPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col p-2 2xl:gap-16 gap-4">
+        <div className="flex flex-col gap-4 p-2 2xl:gap-16">
           <div>
             <div className="grid grid-cols-3 gap-3">
               {wallets.map((item, index) => (
                 <>
-                  <div className="bg-mirage-4 h-[3.5rem]  rounded-[0.5rem] overflow-hidden flex justify-center items-center">
+                  <div className="flex h-[3.5rem] items-center justify-center overflow-hidden rounded-[0.5rem] bg-mirage-4">
                     <img src={item.icon} className="" />
                   </div>
                 </>
               ))}
             </div>
-            <div className="grid lg:grid-cols-3 gap-2 mt-4">
+            <div className="mt-4 grid gap-2 lg:grid-cols-3">
               <FlatButton
                 onClick={toggleWalletModal}
                 className="h-9 gap-2 text-[0.75rem]"
               >
-                <WalletIcon className="w-4 h-4" />
+                <WalletIcon className="h-4 w-4" />
                 Wallet Install
               </FlatButton>
               <FlatButton
                 onClick={toggleSoftwareModal}
                 className="h-9 gap-2 text-[12px]"
               >
-                <DesktopIcon className="w-4 h-4" />
+                <DesktopIcon className="h-4 w-4" />
                 Useful Software
               </FlatButton>
               <FlatButton
                 onClick={toggleTutorialModal}
-                className="h-9 gap-2 text-[12px] truncate"
+                className="h-9 gap-2 truncate text-[12px]"
               >
-                <CartIcon className="w-4 h-4" />
+                <CartIcon className="h-4 w-4" />
                 Currency Purchase Tutorial
               </FlatButton>
               {/* <FlatButton onClick={toggleServiceModal} className="h-9 gap-2 text-[12px] truncate" >
@@ -280,51 +280,51 @@ const BeginnerTutorialPage = () => {
                             </FlatButton> */}
             </div>
           </div>
-          <div id="Start the game" className="flex flex-col gap-4 ">
+          <div id="Start the game" className="flex flex-col gap-4">
             <h2 className="text-[14px] text-white">
               2.Transfer to the following address to start
             </h2>
-            <div className="flex justify-end text-white items-center">
-              <span className="font-medium text-[12px] text-dodger-blue">
+            <div className="flex items-center justify-end text-white">
+              <span className="text-[12px] font-medium text-dodger-blue">
                 Graphic Tutorial
               </span>
-              <ArrowUpRightStrokeIcon className="w-6 h-6" />
+              <ArrowUpRightStrokeIcon className="h-6 w-6" />
             </div>
-            <div className="grid xl:grid-cols-2 grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
               {hashCards.map((data, index) => {
                 return (
                   <div
                     key={index}
-                    className="px-3 relative py-4 rounded-[12px] overflow-hidden  bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center"
+                    className="relative overflow-hidden rounded-[12px] bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center px-3 py-4"
                     style={{ backgroundColor: '#0D131C' }}
                   >
-                    <div className="absolute w-full z-[1] h-full bg-[#0D131CC2] top-0 left-0" />
+                    <div className="absolute left-0 top-0 z-[1] h-full w-full bg-[#0D131CC2]" />
                     <div className="relative z-[2]">
-                      <div className="flex justify-between items-center">
+                      <div className="flex items-center justify-between">
                         <span className="text-[14px] font-bold text-white">
                           Hash:{data.gameName}
                         </span>
-                        <div className="flex justify-end text-white items-center">
-                          <span className="font-medium text-[12px] text-dodger-blue">
+                        <div className="flex items-center justify-end text-white">
+                          <span className="text-[12px] font-medium text-dodger-blue">
                             Graphic Tutorial
                           </span>
-                          <ArrowUpRightStrokeIcon className="w-6 h-6" />
+                          <ArrowUpRightStrokeIcon className="h-6 w-6" />
                         </div>
                       </div>
                       <div className="mt-2">
-                        <span className="text-[14px] text-white block">
+                        <span className="block text-[14px] text-white">
                           Odds:{data.odds}
                         </span>
-                        <span className="text-[14px] text-white block">
+                        <span className="block text-[14px] text-white">
                           Bet:{data.betRange}
                         </span>
                       </div>
-                      <div className="bg-white-4 flex flex-col gap-4 mt-4 rounded-[12px] overflow-hidden w-full py-2">
+                      <div className="mt-4 flex w-full flex-col gap-4 overflow-hidden rounded-[12px] bg-white-4 py-2">
                         <div className="indent-[20px]">
-                          <span className="text-white text-[12px] font-medium mr-2">
+                          <span className="mr-2 text-[12px] font-medium text-white">
                             Betting Address
                           </span>
-                          <span className="text-casper text-[12px] font-medium">
+                          <span className="text-[12px] font-medium text-casper">
                             Use a Decentralized Wallet
                           </span>
                         </div>
@@ -340,7 +340,7 @@ const BeginnerTutorialPage = () => {
           </div>
           <div className="flex flex-col gap-4 p-4" id="Refund">
             <div>
-              <h2 className="font-bold text-[14px] text-white">3.Payouts</h2>
+              <h2 className="text-[14px] font-bold text-white">3.Payouts</h2>
               <h3 className="text-casper">
                 Do not send bets from exchange accounts
               </h3>
@@ -382,25 +382,25 @@ const BeginnerTutorialPage = () => {
           title="Wallet registration"
         >
           <div className="flex flex-col gap-2 pt-2">
-            <h2 className="text-casper font-bold text-[14px] indent-[20px]">
+            <h2 className="indent-[20px] text-[14px] font-bold text-casper">
               Recommended wallet registration
             </h2>
             <div className="flex flex-col gap-2">
-              <div className="grid grid-cols-3 h-[56px] bg-mirage-8a font-bold text-[12px] items-center flex justify-center items-center text-casper rounded-[8px]">
+              <div className="flex grid h-[56px] grid-cols-3 items-center justify-center rounded-[8px] bg-mirage-8a text-[12px] font-bold text-casper">
                 <span>Wallet</span>
                 <span>Official website</span>
                 <span>Link</span>
               </div>
               {wallets.map(wallet => (
-                <div className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1">
+                <div className="grid grid-cols-3 items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6">
                   <span className="text-left">
                     <img src={wallet.icon} alt="wallet" />
                   </span>
-                  <span className="text-dodger-blue flex justify-center items-center text-[12px] font-medium">
+                  <span className="flex items-center justify-center text-[12px] font-medium text-dodger-blue">
                     {wallet.website}
                   </span>
                   <div className="text-right">
-                    <FlatButton className="w-[97px] h-9 text-gallery text-[12px]">
+                    <FlatButton className="h-9 w-[97px] text-[12px] text-gallery">
                       Download
                     </FlatButton>
                   </div>
@@ -416,19 +416,19 @@ const BeginnerTutorialPage = () => {
         >
           <div className="flex flex-col gap-4 pt-2">
             <div className="flex flex-col gap-4">
-              <h2 className="text-casper font-bold text-[14px] indent-[20px]">
+              <h2 className="indent-[20px] text-[14px] font-bold text-casper">
                 VPN Recommendations
               </h2>
               {vpns.map(vpn => (
                 <div
                   key={vpn}
-                  className="flex  bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1"
+                  className="flex items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6"
                 >
-                  <span className="text-left text-white font-bold text-[14px]">
+                  <span className="text-left text-[14px] font-bold text-white">
                     {vpn}
                   </span>
                   <div className="text-right">
-                    <FlatButton className="w-[97px] h-9 text-gallery text-[12px]">
+                    <FlatButton className="h-9 w-[97px] text-[12px] text-gallery">
                       Download
                     </FlatButton>
                   </div>
@@ -436,20 +436,20 @@ const BeginnerTutorialPage = () => {
               ))}
             </div>
             <div className="flex flex-col gap-4">
-              <h2 className="text-casper font-bold text-[14px] indent-[20px]">
+              <h2 className="indent-[20px] text-[14px] font-bold text-casper">
                 Recommended wallet registration
               </h2>
               <div className="flex flex-col gap-2">
                 {wallets.map(wallet => (
-                  <div className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1">
+                  <div className="grid grid-cols-3 items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6">
                     <span className="text-left">
                       <img src={wallet.icon} alt="wallet" />
                     </span>
-                    <span className="text-dodger-blue flex justify-center items-center text-[12px] font-medium">
+                    <span className="flex items-center justify-center text-[12px] font-medium text-dodger-blue">
                       {wallet.website}
                     </span>
                     <div className="text-right">
-                      <FlatButton className="w-[97px] h-9 text-gallery text-[12px]">
+                      <FlatButton className="h-9 w-[97px] text-[12px] text-gallery">
                         Download
                       </FlatButton>
                     </div>
@@ -458,20 +458,20 @@ const BeginnerTutorialPage = () => {
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              <h2 className="text-casper font-bold text-[14px] indent-[20px]">
+              <h2 className="indent-[20px] text-[14px] font-bold text-casper">
                 Other downloads
               </h2>
               {others.map(other => (
                 <div
                   key={other.title}
-                  className="flex  bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1"
+                  className="flex items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6"
                 >
-                  <span className="text-left flex gap-4 text-casper font-bold text-[14px]">
+                  <span className="flex gap-4 text-left text-[14px] font-bold text-casper">
                     {other.icon}
                     {other.title}
                   </span>
                   <div className="text-right">
-                    <FlatButton className="w-[97px] h-9 text-gallery text-[12px]">
+                    <FlatButton className="h-9 w-[97px] text-[12px] text-gallery">
                       Download
                     </FlatButton>
                   </div>
@@ -486,11 +486,11 @@ const BeginnerTutorialPage = () => {
           title="Currency Purchase Tutorial"
         >
           <div className="flex flex-col gap-2 pt-2">
-            <h2 className="text-casper font-bold text-[14px] indent-[20px]">
+            <h2 className="indent-[20px] text-[14px] font-bold text-casper">
               Recommended exchange
             </h2>
             <div className="flex flex-col gap-2">
-              <div className="grid grid-cols-3 h-[56px] bg-mirage-8a font-bold text-[12px] items-center flex justify-center items-center text-casper rounded-[8px]">
+              <div className="flex grid h-[56px] grid-cols-3 items-center justify-center rounded-[8px] bg-mirage-8a text-[12px] font-bold text-casper">
                 <span>Wallet</span>
                 <span>Official website</span>
                 <span>Link</span>
@@ -498,16 +498,16 @@ const BeginnerTutorialPage = () => {
               {tutorials.map((tutorial, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-3 bg-white-4 rounded-[12px] justify-between items-center p-[6px] pl-6 gap-1"
+                  className="grid grid-cols-3 items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6"
                 >
                   <span className="text-left">
                     <img src={tutorial.icon} alt="tutorial" />
                   </span>
-                  <span className="text-dodger-blue flex justify-center items-center text-[12px] font-medium">
+                  <span className="flex items-center justify-center text-[12px] font-medium text-dodger-blue">
                     {tutorial.website}
                   </span>
                   <div className="text-right">
-                    <FlatButton className="w-[97px] h-9 text-gallery text-[12px]">
+                    <FlatButton className="h-9 w-[97px] text-[12px] text-gallery">
                       Download
                     </FlatButton>
                   </div>

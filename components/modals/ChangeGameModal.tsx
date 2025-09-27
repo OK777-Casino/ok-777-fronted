@@ -33,7 +33,7 @@ export default function ChangeGameModal({
       {/* Game Grid */}
       <div className="grid grid-cols-3 gap-4">
         {mainContentData.card10.map((item, index) => (
-          <div className="rounded-lg overflow-hidden" key={index}>
+          <div className="overflow-hidden rounded-lg" key={index}>
             <Link href={item.link} onClick={onClose} className="cursor-pointer">
               <img
                 src={item.image}

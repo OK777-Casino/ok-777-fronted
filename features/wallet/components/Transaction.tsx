@@ -91,69 +91,69 @@ const Transaction: React.FC = () => {
   ]
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full flex flex-col gap-4">
-      <p className="text-[18px] font-bold  text-white [@media(max-width:660px)]:hidden">
+    <div className="flex flex-col gap-4 [@media(max-width:660px)]:w-full">
+      <p className="text-[18px] font-bold text-white [@media(max-width:660px)]:hidden">
         Transaction
       </p>
       <div className="grid grid-cols-2 gap-4">
         <Dropdown
           options={options1}
-          className="text-casper font-bold text-[14px] border-none"
+          className="border-none text-[14px] font-bold text-casper"
           value={selectedOption1}
           onChange={setSelectedOption1}
         />
         <Dropdown
           options={options2}
-          className="text-casper font-bold text-[14px] border-none"
+          className="border-none text-[14px] font-bold text-casper"
           value={selectedOption2}
           onChange={setSelectedOption2}
         />
         <Dropdown
           options={options3}
-          className="text-casper font-bold text-[14px] border-none"
+          className="border-none text-[14px] font-bold text-casper"
           value={selectedOption3}
           onChange={setSelectedOption3}
         />
         <Dropdown
           options={options4}
-          className="text-casper font-bold text-[14px] border-none"
+          className="border-none text-[14px] font-bold text-casper"
           value={selectedOption4}
           onChange={setSelectedOption4}
         />
       </div>
       <div>
-        <div className="grid h-[56px] border-b flex justify-center items-center   border-ebony-clay items-center grid-cols-4 gap-4 py-2 px-4 rounded-t-[8px] bg-mirage text-blue-bayoux text-[12px] font-bold">
+        <div className="flex grid h-[56px] grid-cols-4 items-center justify-center gap-4 rounded-t-[8px] border-b border-ebony-clay bg-mirage px-4 py-2 text-[12px] font-bold text-blue-bayoux">
           <span className="word-break">Time</span>
           <span className="word-break">Type</span>
-          <span className="word-break flex justify-center items-center">
+          <span className="word-break flex items-center justify-center">
             Quantity
           </span>
-          <span className="word-break flex justify-center items-center">
+          <span className="word-break flex items-center justify-center">
             State
           </span>
         </div>
-        <div className="flex flex-col rounded-[8px] overflow-hidden">
+        <div className="flex flex-col overflow-hidden rounded-[8px]">
           {history.map((item, index) => (
             <div
               key={index}
               className={cn(
-                'grid text-[12px] h-12 items-center grid-cols-4 gap-4 py-2 px-4 font-bold',
+                'grid h-12 grid-cols-4 items-center gap-4 px-4 py-2 text-[12px] font-bold',
                 index % 2 === 0 ? 'bg-white-4' : 'bg-white-8'
               )}
             >
-              <span className="text-white flex justify-center items-center font-bold ">
+              <span className="flex items-center justify-center font-bold text-white">
                 {item.time}
               </span>
-              <span className="text-white flex justify-center items-center font-medium ">
+              <span className="flex items-center justify-center font-medium text-white">
                 {item.type}
               </span>
-              <span className="text-white justify-center font-bold flex items-center gap-1">
+              <span className="flex items-center justify-center gap-1 font-bold text-white">
                 {item.quantity}{' '}
                 <img src="/icons/coin-icon/USDT.svg" className="h-4 w-4" />
               </span>
               <span
                 className={cn(
-                  'font-bold   ',
+                  'font-bold',
                   item.state.includes('success')
                     ? 'text-malachite'
                     : 'text-white'

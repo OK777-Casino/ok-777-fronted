@@ -38,22 +38,22 @@ const Report: React.FC = () => {
   return (
     <div className="">
       {/* Metrics Summary */}
-      <div className="flex flex-col gap-6 rounded-[12px] mb-6 p-4 border border-[#ffffff14] bg-[#FFFFFF0A] md:mb-10">
+      <div className="mb-6 flex flex-col gap-6 rounded-[12px] border border-[#ffffff14] bg-[#FFFFFF0A] p-4 md:mb-10">
         {metricPairs.map((pair, rowIdx) => (
           <div key={rowIdx} className={`grid grid-cols-2`}>
             <div className="flex flex-col pr-4">
-              <span className="text-white text-sm font-bold tracking-wide text-center">
+              <span className="text-center text-sm font-bold tracking-wide text-white">
                 {pair[0].value}
               </span>
-              <span className="text-[#A7B5CA] text-sm text-center">
+              <span className="text-center text-sm text-[#A7B5CA]">
                 {pair[0].label}
               </span>
             </div>
-            <div className="flex flex-col pl-4 border-l border-[#ffffff1a]">
-              <span className="text-white text-sm font-bold tracking-wide text-center">
+            <div className="flex flex-col border-l border-[#ffffff1a] pl-4">
+              <span className="text-center text-sm font-bold tracking-wide text-white">
                 {pair[1].value}
               </span>
-              <span className="text-[#A7B5CA] text-sm text-center">
+              <span className="text-center text-sm text-[#A7B5CA]">
                 {pair[1].label}
               </span>
             </div>

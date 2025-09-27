@@ -177,12 +177,12 @@ export default function MenuModal({ isOpen, onClose }: MenuModalProps) {
           <div
             key={item.id}
             onClick={item.onClick}
-            className="flex items-center w-full px-4 py-3 rounded-xl bg-white-4 hover:bg-white-8 transition-colors group"
+            className="group flex w-full items-center rounded-xl bg-white-4 px-4 py-3 transition-colors hover:bg-white-8"
           >
-            <div className="flex items-center justify-center w-6 h-6 mr-4">
+            <div className="mr-4 flex h-6 w-6 items-center justify-center">
               <IconComponent />
             </div>
-            <span className="text-sm font-bold text-white font-montserrat">
+            <span className="font-montserrat text-sm font-bold text-white">
               {item.label}
             </span>
           </div>

@@ -93,13 +93,13 @@ const tabs: Tab[] = [
   {
     id: 'all',
     label: 'All',
-    icon: <GiftIcon className="w-6 h-6" />,
+    icon: <GiftIcon className="h-6 w-6" />,
     count: 4,
   },
   {
     id: 'casino',
     label: 'Casino',
-    icon: <SpadeIcon className="w-6 h-6" />,
+    icon: <SpadeIcon className="h-6 w-6" />,
   },
   {
     id: 'sport',
@@ -116,8 +116,8 @@ const PromotionsPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 max-w-6xl mx-auto p-4 pt-[1.625rem] md:pt-4 mb-16">
-      <div className="grid grid-cols-3 items-start w-full md:w-[28.125rem]  p-1 bg-white-4 rounded-xl">
+    <div className="mx-auto mb-16 flex max-w-6xl flex-col gap-6 p-4 pt-[1.625rem] md:pt-4">
+      <div className="grid w-full grid-cols-3 items-start rounded-xl bg-white-4 p-1 md:w-[28.125rem]">
         {tabs.map(tab => {
           const isActive = activeTab === tab.id
 
@@ -130,8 +130,8 @@ const PromotionsPage = () => {
               {tab.icon}
               {tab.label}
               {tab.count && (
-                <div className="flex items-start justify-start h-5 px-1.5 bg-malachite  rounded-md shadow-[0_0.0625rem_0_0_var(--white-08)_inset]">
-                  <span className="text-white font-montserrat text-xs font-bold">
+                <div className="flex h-5 items-start justify-start rounded-md bg-malachite px-1.5 shadow-[0_0.0625rem_0_0_var(--white-08)_inset]">
+                  <span className="font-montserrat text-xs font-bold text-white">
                     {tab.count}
                   </span>
                 </div>
@@ -142,7 +142,7 @@ const PromotionsPage = () => {
       </div>
 
       {/* Game Providers Grid */}
-      <div className="flex gap-4 flex-wrap justify-center md:justify-start">
+      <div className="flex flex-wrap justify-center gap-4 md:justify-start">
         {bannerCards.map((card, index) => (
           <CasinoPromotionCard key={index} {...card} />
         ))}
@@ -152,22 +152,22 @@ const PromotionsPage = () => {
       <div className="flex flex-col gap-2.5">
         {/* Show More Button */}
         <div className="flex justify-center">
-          <div className="h-9 bg-ebony-clay w-[9.8125rem] gap-2 text-casper font-montserrat text-[0.875rem] flex items-center justify-center font-bold rounded-[0.5rem] hover:bg-ebony-clay/80 transition-colors">
+          <div className="hover:bg-ebony-clay/80 flex h-9 w-[9.8125rem] items-center justify-center gap-2 rounded-[0.5rem] bg-ebony-clay font-montserrat text-[0.875rem] font-bold text-casper transition-colors">
             Show 4 more
-            <ChevronDownIcon className=" text-casper" />
+            <ChevronDownIcon className="text-casper" />
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-[9.875rem] mx-auto">
-          <div className="h-1.5 bg-oxford-blue rounded-lg overflow-hidden">
-            <div className="h-full w-[73%] bg-dodger-blue rounded-lg"></div>
+        <div className="mx-auto w-[9.875rem]">
+          <div className="bg-oxford-blue h-1.5 overflow-hidden rounded-lg">
+            <div className="h-full w-[73%] rounded-lg bg-dodger-blue"></div>
           </div>
         </div>
 
         {/* Progress Text */}
         <div className="text-center">
-          <span className="text-polo-blue font-montserrat text-[0.625rem] font-normal">
+          <span className="font-montserrat text-[0.625rem] font-normal text-polo-blue">
             Show 18 of 22 games
           </span>
         </div>

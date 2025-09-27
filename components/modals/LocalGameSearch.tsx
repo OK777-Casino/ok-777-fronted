@@ -257,7 +257,7 @@ export default function LocalGameSearchModal({
     <Overlay
       isOpen={isOpen}
       onClose={onClose}
-      className="fixed inset-0 z-50 flex p-2 sm:p-4 justify-center items-center"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
       backdropClassName="bg-black/80"
       contentClassName="w-full max-w-4xl mx-auto h-full sm:h-auto sm:max-h-[90vh] overflow-y-auto modal-content-scroll transform transition-all duration-300 ease-out translate-y-0"
       zIndex={50}
@@ -265,15 +265,15 @@ export default function LocalGameSearchModal({
       closeOnEscape={true}
       preventScroll={true}
     >
-      <div className="flex flex-col w-full mx-auto h-full sm:h-auto">
+      <div className="mx-auto flex h-full w-full flex-col sm:h-auto">
         {/* Header */}
-        <div className="flex items-center gap-4 w-full px-6 py-4 rounded-t-[14px] bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] border-t border-white-16 backdrop-blur-[32px]">
-          <h2 className="flex-1 text-white font-montserrat text-lg font-bold">
+        <div className="flex w-full items-center gap-4 rounded-t-[14px] border-t border-white-16 bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554] px-6 py-4 backdrop-blur-[32px]">
+          <h2 className="flex-1 font-montserrat text-lg font-bold text-white">
             Search in {categoryLabel}
           </h2>
           <div
             onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] hover:bg-white-8 transition-colors cursor-pointer"
+            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors hover:bg-white-8"
           >
             <span>
               <X className="h-4 w-4 text-[white]" />
@@ -282,43 +282,43 @@ export default function LocalGameSearchModal({
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-6 p-4 w-full rounded-b-[14px] bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px] flex-1 sm:flex-none">
+        <div className="flex w-full flex-1 flex-col gap-6 rounded-b-[14px] bg-[rgba(17,25,35,0.54)] p-4 backdrop-blur-[32px] sm:flex-none">
           {/* Search and filters - only show for non-recent modals */}
           {category !== 'recent' && (
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col lg:flex-row items-start gap-3 w-full">
+              <div className="flex w-full flex-col items-start gap-3 lg:flex-row">
                 {/* Search Input */}
-                <div className="flex items-center gap-2 flex-1 w-full px-4 py-3 rounded-lg border border-gray-600 bg-transparent">
-                  <Search className="h-6 w-6 text-white stroke-gray-400 flex-shrink-0" />
+                <div className="flex w-full flex-1 items-center gap-2 rounded-lg border border-gray-600 bg-transparent px-4 py-3">
+                  <Search className="h-6 w-6 flex-shrink-0 stroke-gray-400 text-white" />
                   <input
                     type="text"
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
                     placeholder={`Search ${categoryLabel.toLowerCase()}...`}
-                    className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
+                    className="min-w-0 flex-1 border-none bg-transparent font-montserrat text-sm font-medium text-gray-300 outline-none placeholder:text-gray-400"
                   />
                 </div>
 
                 {/* Dropdowns */}
-                <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
                   {/* Game Provider Dropdown */}
                   <div ref={providerRef} className="relative">
                     <div
                       onClick={() => setIsProviderOpen(!isProviderOpen)}
-                      className="flex items-center justify-between w-full sm:w-[180px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
+                      className="hover:bg-white/12 flex h-12 w-full cursor-pointer items-center justify-between rounded-lg bg-white-8 px-4 transition-colors sm:w-[180px]"
                     >
-                      <span className="text-gray-300 text-sm font-bold font-montserrat hover:text-white transition-colors">
+                      <span className="font-montserrat text-sm font-bold text-gray-300 transition-colors hover:text-white">
                         {selectedProvider.label}
                       </span>
                       <ChevronDown
-                        className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
+                        className={`h-6 w-6 stroke-gray-400 text-white transition-transform ${
                           isProviderOpen ? 'rotate-180' : ''
                         }`}
                       />
                     </div>
 
                     {isProviderOpen && (
-                      <div className="absolute top-full left-0 right-0 mt-1 bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg z-50">
+                      <div className="absolute left-0 right-0 top-full z-50 mt-1 rounded-lg border border-white-8 bg-[rgba(17,25,35,0.95)] shadow-lg backdrop-blur-[32px]">
                         {gameProviders.map(provider => (
                           <div
                             key={provider.id}
@@ -326,13 +326,13 @@ export default function LocalGameSearchModal({
                               setSelectedProvider(provider)
                               setIsProviderOpen(false)
                             }}
-                            className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                            className={`w-full cursor-pointer px-4 py-3 text-left transition-colors hover:bg-white-8 ${
                               selectedProvider.id === provider.id
                                 ? 'bg-blue-500/20'
                                 : ''
                             }`}
                           >
-                            <span className="text-gray-300 text-sm font-medium font-montserrat">
+                            <span className="font-montserrat text-sm font-medium text-gray-300">
                               {provider.label}
                             </span>
                           </div>
@@ -345,20 +345,20 @@ export default function LocalGameSearchModal({
                   <div ref={typeRef} className="relative">
                     <div
                       onClick={() => setIsTypeOpen(!isTypeOpen)}
-                      className="flex items-center justify-between w-full sm:w-[150px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
+                      className="hover:bg-white/12 flex h-12 w-full cursor-pointer items-center justify-between rounded-lg bg-white-8 px-4 transition-colors sm:w-[150px]"
                     >
-                      <span className="text-gray-300 text-sm font-bold font-montserrat hover:text-white transition-colors">
+                      <span className="font-montserrat text-sm font-bold text-gray-300 transition-colors hover:text-white">
                         {selectedType.label}
                       </span>
                       <ChevronDown
-                        className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
+                        className={`h-6 w-6 stroke-gray-400 text-white transition-transform ${
                           isTypeOpen ? 'rotate-180' : ''
                         }`}
                       />
                     </div>
 
                     {isTypeOpen && (
-                      <div className="absolute top-full left-0 right-0 mt-1 bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg z-50">
+                      <div className="absolute left-0 right-0 top-full z-50 mt-1 rounded-lg border border-white-8 bg-[rgba(17,25,35,0.95)] shadow-lg backdrop-blur-[32px]">
                         {gameTypes.map(type => (
                           <div
                             key={type.id}
@@ -366,13 +366,13 @@ export default function LocalGameSearchModal({
                               setSelectedType(type)
                               setIsTypeOpen(false)
                             }}
-                            className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                            className={`w-full cursor-pointer px-4 py-3 text-left transition-colors hover:bg-white-8 ${
                               selectedType.id === type.id
                                 ? 'bg-blue-500/20'
                                 : ''
                             }`}
                           >
-                            <span className="text-gray-300 text-sm font-medium font-montserrat">
+                            <span className="font-montserrat text-sm font-medium text-gray-300">
                               {type.label}
                             </span>
                           </div>
@@ -388,7 +388,7 @@ export default function LocalGameSearchModal({
           {/* Results count - only show for non-recent modals */}
           {category !== 'recent' && (
             <div className="flex items-center justify-between">
-              <p className="text-gray-400 text-sm">
+              <p className="text-sm text-gray-400">
                 {filteredGames.length} games found in {categoryLabel}
               </p>
             </div>
@@ -397,45 +397,45 @@ export default function LocalGameSearchModal({
           {/* Game Grid or Empty State */}
           {category === 'recent' ? (
             // Recent modal - show empty state with image
-            <div className="flex flex-col items-center justify-center flex-1 min-h-0">
+            <div className="flex min-h-0 flex-1 flex-col items-center justify-center">
               <div className="flex flex-col items-center justify-center py-16">
                 <div className="relative mb-6">
                   <img
                     src="/images/login-into-banner.png"
                     alt="Empty state"
-                    className="w-32 h-32 object-contain"
+                    className="h-32 w-32 object-contain"
                   />
                 </div>
-                <h3 className="text-white text-xl font-bold mb-2">
+                <h3 className="mb-2 text-xl font-bold text-white">
                   You haven't played yet
                 </h3>
-                <p className="text-gray-400 text-center max-w-md">
+                <p className="max-w-md text-center text-gray-400">
                   The last games you've played will be displayed here
                 </p>
               </div>
             </div>
           ) : (
             // Other modals - show game grid
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 w-full">
+            <div className="grid w-full grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5 lg:grid-cols-6">
               {filteredGames.length > 0 ? (
                 filteredGames.map((game, index) => (
                   <div key={game.id} className="group relative">
                     <CasinoCard badge={game.badge} image={game.image} />
 
                     {/* Hover overlay with play button */}
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-[8px]">
-                      <Button variant="red" className="w-12 h-12 p-0">
-                        <Play className="w-4 h-4" />
+                    <div className="absolute inset-0 flex items-center justify-center rounded-[8px] bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <Button variant="red" className="h-12 w-12 p-0">
+                        <Play className="h-4 w-4" />
                       </Button>
                     </div>
                   </div>
                 ))
               ) : (
-                <div className="col-span-full text-center py-8">
-                  <p className="text-gray-400 text-lg">
+                <div className="col-span-full py-8 text-center">
+                  <p className="text-lg text-gray-400">
                     <span>No games found</span>
                   </p>
-                  <p className="text-gray-500 text-sm mt-2">
+                  <p className="mt-2 text-sm text-gray-500">
                     <span>Try adjusting your search terms</span>
                   </p>
                 </div>

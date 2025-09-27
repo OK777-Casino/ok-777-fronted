@@ -36,10 +36,10 @@ const DiceGameCard: React.FC<DiceGameCardProps> = ({
   return (
     <Link href={link} className="block">
       <div
-        className={`${getColorClasses(color)} rounded-lg p-4 h-24 flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200 cursor-pointer`}
+        className={`${getColorClasses(color)} flex h-24 cursor-pointer flex-col items-center justify-center rounded-lg p-4 transition-transform duration-200 hover:scale-105`}
       >
-        <div className="text-2xl font-bold mb-1">{title}</div>
-        <div className="text-sm text-center leading-tight">{subtitle}</div>
+        <div className="mb-1 text-2xl font-bold">{title}</div>
+        <div className="text-center text-sm leading-tight">{subtitle}</div>
       </div>
     </Link>
   )

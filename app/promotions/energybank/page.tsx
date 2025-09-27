@@ -33,82 +33,82 @@ const EnergyBankPage = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="flex flex-col 2xl:flex-row gap-4">
-        <div className="2xl:p-8 p-4 w-full rounded-[12px] overflow-hidden bg-white-4 flex items-center flex-col gap-4">
-          <span className="text-white font-bold text-[22px]">
+      <div className="flex flex-col gap-4 2xl:flex-row">
+        <div className="flex w-full flex-col items-center gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4 2xl:p-8">
+          <span className="text-[22px] font-bold text-white">
             Amount Per Bet <span className="text-yellow-orange">≥50U</span>
           </span>
-          <span className="text-casper text-[14px]">Award Tron Energy</span>
+          <span className="text-[14px] text-casper">Award Tron Energy</span>
         </div>
-        <div className="2xl:p-8 p-4  w-full rounded-[12px] overflow-hidden bg-white-4 flex items-center flex-col gap-4">
-          <span className="text-white font-bold text-[22px]">
+        <div className="flex w-full flex-col items-center gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4 2xl:p-8">
+          <span className="text-[22px] font-bold text-white">
             <span className="text-yellow-orange">≥50U </span> Free with every
             bet{' '}
           </span>
-          <span className="text-casper text-[14px]">Award Tron Energy</span>
+          <span className="text-[14px] text-casper">Award Tron Energy</span>
         </div>
       </div>
-      <div className="bg-white-4 rounded-[12px] p-4 flex flex-col gap-4 mt-4 ">
-        <div className="font-bold text-[18px] flex justify-center items-center text-white">
+      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <div className="flex items-center justify-center text-[18px] font-bold text-white">
           How to claim the bonus
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-1 gap-4">
-          <div className="p-8 flex flex-col gap-8  bg-white-4 rounded-[12px]">
+        <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
+          <div className="flex flex-col gap-8 rounded-[12px] bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
                 title="Step One"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="text-[14px] text-casper font-bold pt-4">
+              <span className="pt-4 text-[14px] font-bold text-casper">
                 Place a single ≥50 bet in the game. The system automatically
                 gives energy to offset the miner's fee required for the next
                 transaction
               </span>
             </div>
-            <div className="relative flex h-full justify-center items-center">
+            <div className="relative flex h-full items-center justify-center">
               <img src="/images/Frame5.png" alt="phone" className="h-[140px]" />
             </div>
           </div>
-          <div className="p-8 flex flex-col items-start gap-4 bg-white-4 rounded-[12px]">
+          <div className="flex flex-col items-start gap-4 rounded-[12px] bg-white-4 p-8">
             <TabButton
               type="one"
               title="Step Two"
               className="h-[23px] text-[12px] font-bold text-white"
             />
-            <span className="text-[14px] text-casper font-bold">
+            <span className="text-[14px] font-bold text-casper">
               When there is energy in the account, the next transfer
               automatically reduces the fee
             </span>
-            <div className="flex justify-center items-center flex items-center justify-center w-full relative">
+            <div className="relative flex w-full items-center justify-center">
               <img
                 src="/images/Device6.png"
                 className="h-[225px]"
                 alt="phone"
               />
-              <div className="flex w-[255px] absolute top-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2">
-                <div className="w-full h-[49px] rounded-[16px] border-l-[3px] border-t-[1px] shadow-[0_8px_16px_#3389FF40] bg-mirage flex items-center justify-center text-casper text-[14px] font-bold border-t-casper border-l-malachite">
+              <div className="absolute left-1/2 top-1/2 flex w-[255px] -translate-x-1/2 translate-y-1/2 transform">
+                <div className="flex h-[49px] w-full items-center justify-center rounded-[16px] border-l-[3px] border-t-[1px] border-l-malachite border-t-casper bg-mirage text-[14px] font-bold text-casper shadow-[0_8px_16px_#3389FF40]">
                   Fee exemption
                 </div>
                 <img
                   src="/images/percent.png"
                   alt="percent"
-                  className="w-[84.85px] ml-[-15px] h-[84.85px]"
+                  className="ml-[-15px] h-[84.85px] w-[84.85px]"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="rounded-[12px] p-4 flex flex-col gap-2 bg-white-4 rounded-[12px]">
+        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
           <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
           <div className="text-[14px] font-bold text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
-          <div className="px-4 ">
-            <ol className="text-casper text-[14px] list-decimal">
+          <div className="px-4">
+            <ol className="list-decimal text-[14px] text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.
@@ -133,23 +133,23 @@ const EnergyBankPage = () => {
                 qualification without notice.
               </li>
             </ol>
-            <div className="py-16 flex justify-center">
+            <div className="flex justify-center py-16">
               <BlackButton>
-                <CopyIcon className="w-4 g-4" />
+                <CopyIcon className="g-4 w-4" />
               </BlackButton>
             </div>
           </div>
         </div>
       </div>
-      <div className="rounded-[12px] mt-4 p-4 flex flex-col gap-2 bg-white-4 rounded-[12px]">
+      <div className="mt-4 flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
         <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
         <div className="text-[14px] font-bold text-white">
           <p>Event Venue: Live Game </p>
           <p>Eligible: All </p>
           <p>Promotion Period: Long-term activity</p>
         </div>
-        <div className="px-4 ">
-          <ol className="text-casper text-[14px] list-decimal">
+        <div className="px-4">
+          <ol className="list-decimal text-[14px] text-casper">
             <li className="pb-4">
               To receive the reward amount in this activity, you can withdraw
               money with only 3 times the turnover.
@@ -174,9 +174,9 @@ const EnergyBankPage = () => {
               qualification without notice.
             </li>
           </ol>
-          <div className="py-16 flex justify-center">
+          <div className="flex justify-center py-16">
             <BlackButton>
-              <CopyIcon className="w-4 g-4" />
+              <CopyIcon className="g-4 w-4" />
             </BlackButton>
           </div>
         </div>

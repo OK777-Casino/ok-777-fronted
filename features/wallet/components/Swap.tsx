@@ -22,82 +22,82 @@ const Swap: React.FC = () => {
   ]
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full flex flex-col gap-4">
+    <div className="flex flex-col gap-4 [@media(max-width:660px)]:w-full">
       <p className="text-[18px] font-bold text-white [@media(max-width:660px)]:hidden">
         Swap
       </p>
-      <div className="p-4 flex gap-4 rounded-[12px] bg-white-4 flex-col">
-        <h2 className="font-bold text-[14px] text-white flex items-center justify-between indent-[20px]">
+      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <h2 className="flex items-center justify-between indent-[20px] text-[14px] font-bold text-white">
           Send
           <span>
             Balance <span className="text-dodger-blue"> 0 USDT</span>
           </span>
         </h2>
-        <div className="px-4 h-[47px] flex items-center bg-white-8 rounded-[8px] text-casper font-bold text-[12px]">
+        <div className="flex h-[47px] items-center rounded-[8px] bg-white-8 px-4 text-[12px] font-bold text-casper">
           0
         </div>
-        <div className="grid grid-cols-4 h-[47px] items-center  gap-4 font-bold text-[12px]">
-          <div className=" text-casper text-[12px] font-bold h-full flex items-center justify-center  bg-white-8 rounded-[8px]">
+        <div className="grid h-[47px] grid-cols-4 items-center gap-4 text-[12px] font-bold">
+          <div className="flex h-full items-center justify-center rounded-[8px] bg-white-8 text-[12px] font-bold text-casper">
             Lowest
           </div>
-          <div className=" text-casper text-[12px] font-bold h-full flex items-center justify-center  bg-white-8 rounded-[8px]">
+          <div className="flex h-full items-center justify-center rounded-[8px] bg-white-8 text-[12px] font-bold text-casper">
             25%
           </div>
-          <div className=" text-casper text-[12px] font-bold h-full flex items-center justify-center  bg-white-8 rounded-[8px]">
+          <div className="flex h-full items-center justify-center rounded-[8px] bg-white-8 text-[12px] font-bold text-casper">
             50%
           </div>
-          <div className="text-casper text-[12px] font-bold  h-full flex items-center justify-center bg-white-8 rounded-[8px]">
+          <div className="flex h-full items-center justify-center rounded-[8px] bg-white-8 text-[12px] font-bold text-casper">
             Highest
           </div>
         </div>
       </div>
       <div className="flex justify-center">
-        <SwapDiagonalIcon className="w-8 h-8" color="#A7B5CA" />
+        <SwapDiagonalIcon className="h-8 w-8" color="#A7B5CA" />
       </div>
-      <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-4">
-        <h2 className="text-[14px] text-gallery font-bold">Get</h2>
-        <div className="rounded-[12px] overflow-hidden bg-white-8 p-1 flex gap-2">
-          <div className="h-9 px-3 bg-white-13 rounded-[12px] items-center gap-2 flex">
+      <div className="flex flex-col gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4">
+        <h2 className="text-[14px] font-bold text-gallery">Get</h2>
+        <div className="flex gap-2 overflow-hidden rounded-[12px] bg-white-8 p-1">
+          <div className="flex h-9 items-center gap-2 rounded-[12px] bg-white-13 px-3">
             <img
               src="/icons/coin-icon/USDT.svg"
               className="h-6 w-6"
               alt="usdt"
             />
-            <span className="text-[14px] font-bold text-gallery uppercase">
+            <span className="text-[14px] font-bold uppercase text-gallery">
               trx
             </span>
           </div>
-          <div className="flex justify-end  font-bold text-[14px] text-casper uppercase items-center">
+          <div className="flex items-center justify-end text-[14px] font-bold uppercase text-casper">
             0
           </div>
         </div>
       </div>
-      <div className="p-4 flex gap-4 rounded-[12px] bg-white-4 flex-col">
-        <h2 className="font-bold text-[14px] text-white flex items-center justify-between indent-[20px]">
+      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <h2 className="flex items-center justify-between indent-[20px] text-[14px] font-bold text-white">
           Exchange Address
         </h2>
         <CopyBox className="bg-white-8">
-          <span className="text-casper font-bold break-all p-4 text-[12px]">
+          <span className="break-all p-4 text-[12px] font-bold text-casper">
             <span className="text-dodger-blue">TXS3</span>
             PfAU9hemKkoBWRUfsUkGBSrZGa
             <span className="text-dodger-blue">gh6X</span>
           </span>
         </CopyBox>
       </div>
-      <div className="flex flex-col gap-4 py-4 border-t border-white-8">
-        <div className="flex justify-between items-center">
-          <span className="text-casper font-medium text-[12px] flex items-center gap-1">
+      <div className="flex flex-col gap-4 border-t border-white-8 py-4">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1 text-[12px] font-medium text-casper">
             Exchange rate:
           </span>
-          <span className="text-white font-bold text-[12px]">
+          <span className="text-[12px] font-bold text-white">
             1 USDT - NaN TRX
           </span>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-casper font-medium text-[12px] flex items-center gap-1">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1 text-[12px] font-medium text-casper">
             Exchange fee:
           </span>
-          <span className="text-white font-bold text-[12px]">0 USDT</span>
+          <span className="text-[12px] font-bold text-white">0 USDT</span>
         </div>
       </div>
     </div>

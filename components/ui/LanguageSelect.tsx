@@ -202,7 +202,7 @@ export default function LanguageDropdown({
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/66de423489519396011389fd3ef2bc92f4a166d2?width=48"
             alt="Portugal flag"
-            className="w-6 h-[18px] aspect-[4/3] rounded"
+            className="aspect-[4/3] h-[18px] w-6 rounded"
           />
         )
       case 'ua':
@@ -240,7 +240,7 @@ export default function LanguageDropdown({
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/4617f2553722a80a1a3ec1108536d85b409ead73?width=48"
             alt="Spain flag"
-            className="w-6 h-[18px] aspect-[4/3]"
+            className="aspect-[4/3] h-[18px] w-6"
           />
         )
       case 'br':
@@ -248,7 +248,7 @@ export default function LanguageDropdown({
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/bad7e8606b2aed3047fd250a48eb1cb58eafef8d?width=48"
             alt="Brazil flag"
-            className="w-6 h-[18px] aspect-[4/3] rounded"
+            className="aspect-[4/3] h-[18px] w-6 rounded"
           />
         )
       case 'zh':
@@ -343,17 +343,17 @@ export default function LanguageDropdown({
       {!triggerless && (
         <div
           onClick={() => setIsOpenState(!isOpen)}
-          className="flex items-center gap-3 px-4 py-3 bg-[#111923]/90 border border-white/13 rounded-xl backdrop-blur-[32px] hover:bg-[#111923]/95 transition-colors"
+          className="border-white/13 flex items-center gap-3 rounded-xl border bg-[#111923]/90 px-4 py-3 backdrop-blur-[32px] transition-colors hover:bg-[#111923]/95"
         >
           <FlagComponent
             code={selectedLanguage.code}
             name={selectedLanguage.name}
           />
-          <span className="text-[#55657E] font-medium text-sm font-montserrat">
+          <span className="font-montserrat text-sm font-medium text-[#55657E]">
             {selectedLanguage.name}
           </span>
           <svg
-            className={`w-4 h-4 text-[#55657E] transition-transform ${
+            className={`h-4 w-4 text-[#55657E] transition-transform ${
               isOpen ? 'rotate-180' : ''
             }`}
             fill="none"
@@ -374,15 +374,15 @@ export default function LanguageDropdown({
       {isOpen && (
         <div
           className={`${
-            inline ? 'static' : 'absolute top-full left-0 mt-2'
-          } w-[280px] p-4 rounded-[14px] border border-white/13 bg-[#111923]/90 backdrop-blur-[32px] z-50`}
+            inline ? 'static' : 'absolute left-0 top-full mt-2'
+          } border-white/13 z-50 w-[280px] rounded-[14px] border bg-[#111923]/90 p-4 backdrop-blur-[32px]`}
         >
           <div className="flex gap-2">
-            <div className="flex flex-col gap-2 flex-1">
+            <div className="flex flex-1 flex-col gap-2">
               {/* Search */}
-              <div className="flex items-center h-12 px-3 bg-[#0D131C] border border-[#55657E] rounded-lg">
+              <div className="flex h-12 items-center rounded-lg border border-[#55657E] bg-[#0D131C] px-3">
                 <Search
-                  className="w-6 h-6 text-[#55657E] mr-4"
+                  className="mr-4 h-6 w-6 text-[#55657E]"
                   strokeWidth={2}
                 />
                 <input
@@ -390,14 +390,14 @@ export default function LanguageDropdown({
                   placeholder="Default"
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  className="flex-1 bg-transparent text-[#55657E] placeholder-[#55657E] font-montserrat text-sm font-normal outline-none"
+                  className="flex-1 bg-transparent font-montserrat text-sm font-normal text-[#55657E] placeholder-[#55657E] outline-none"
                 />
               </div>
 
               {/* Language Options - Custom scrollbar hidden */}
               <div
                 ref={scrollContainerRef}
-                className="max-h-[300px] overflow-y-auto pr-2 scrollbar-hidden"
+                className="scrollbar-hidden max-h-[300px] overflow-y-auto pr-2"
                 onScroll={handleScroll}
               >
                 {filteredLanguages.map(lang => (
@@ -413,7 +413,7 @@ export default function LanguageDropdown({
                       }
                       setSearchQuery('')
                     }}
-                    className={`flex items-center gap-4 w-full h-12 px-3 rounded-lg transition-colors mb-1 ${
+                    className={`mb-1 flex h-12 w-full items-center gap-4 rounded-lg px-3 transition-colors ${
                       lang.code === 'zh'
                         ? 'bg-white/[0.04]'
                         : 'hover:bg-white/[0.04]'
@@ -421,7 +421,7 @@ export default function LanguageDropdown({
                   >
                     <FlagComponent code={lang.code} name={lang.name} />
                     <span
-                      className={`font-montserrat text-sm font-bold truncate ${
+                      className={`truncate font-montserrat text-sm font-bold ${
                         lang.code === 'zh' ? 'text-[#93ACD3]' : 'text-[#55657E]'
                       }`}
                     >
@@ -435,15 +435,15 @@ export default function LanguageDropdown({
             {/* Custom Scroll Indicator - Figma Style */}
             {scrollHeight > clientHeight && (
               <div
-                className="w-2 h-[300px] flex flex-col relative cursor-pointer"
+                className="relative flex h-[300px] w-2 cursor-pointer flex-col"
                 onClick={handleTrackClick}
               >
                 {/* Scroll Track */}
-                <div className="w-2 h-full bg-transparent relative">
+                <div className="relative h-full w-2 bg-transparent">
                   {/* Scroll Thumb */}
                   <div
                     ref={scrollThumbRef}
-                    className="w-2 bg-[#2A3546] rounded cursor-grab active:cursor-grabbing hover:bg-[#3a4556] transition-colors"
+                    className="w-2 cursor-grab rounded bg-[#2A3546] transition-colors hover:bg-[#3a4556] active:cursor-grabbing"
                     style={{
                       height: `${Math.max(scrollThumbHeight, 30)}px`,
                       transform: `translateY(${scrollThumbTop * 3}px)`,

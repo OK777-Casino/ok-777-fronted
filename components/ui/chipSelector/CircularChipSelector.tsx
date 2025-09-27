@@ -92,11 +92,11 @@ export function CircularChipSelector({
 
   return (
     <div
-      className="absolute  inset-0 flex justify-center items-center z-50 bg-black/[0.04] bg-opacity-20"
+      className="absolute inset-0 z-50 flex items-center justify-center bg-black/[0.04] bg-opacity-20"
       onClick={onClose}
     >
       <div
-        className="relative -top-11  flex justify-center items-center flex-shrink-0"
+        className="relative -top-11 flex flex-shrink-0 items-center justify-center"
         style={{
           width: '402px',
           height: '402px',
@@ -106,7 +106,7 @@ export function CircularChipSelector({
         }}
         onClick={e => e.stopPropagation()}
       >
-        <div className="relative w-[251px] h-[152px] flex-shrink-0">
+        <div className="relative h-[152px] w-[251px] flex-shrink-0">
           {/* Center chip "1" */}
 
           {/* Surrounding chips */}

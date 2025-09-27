@@ -46,11 +46,11 @@ const JoinCommunityPage = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="p-4 bg-white-4 rounded-[12px] flex flex-col gap-4">
-        <div className="text-[18px] font-bold text-white flex justify-center items-center">
+      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <div className="flex items-center justify-center text-[18px] font-bold text-white">
           Complete tasks every day and give bonuses every day!
         </div>
-        <div className="lg:w-[70%] w-full mx-auto flex justify-center items-center text-[14px] text-casper">
+        <div className="mx-auto flex w-full items-center justify-center text-[14px] text-casper lg:w-[70%]">
           Want to play around and make money? Now join the official community of
           OK777 to complete the designated 
           <span className="text-yellow-orange">
@@ -60,14 +60,14 @@ const JoinCommunityPage = () => {
           There are new tasks every day, with prizes, and you can also be on the
           “Task King List”! Click the social media link below to join the event.
         </div>
-        <div className=" rounded-[12px] flex justify-center items-center flex-wrap gap-2 flex justify-center items-center text-[14px] text-casper">
+        <div className="flex flex-wrap items-center justify-center gap-2 rounded-[12px] text-[14px] text-casper">
           {socials.map(item => (
             <div
               key={item}
-              className="flex justify-center items-center w-9 h-9 bg-white-4 rounded-[8px] border-t border-white-4"
+              className="flex h-9 w-9 items-center justify-center rounded-[8px] border-t border-white-4 bg-white-4"
             >
               <img
-                className="h-4 w-4 "
+                className="h-4 w-4"
                 src={'/icons/social-icon/' + item + '.svg'}
                 alt="social"
               />
@@ -76,26 +76,26 @@ const JoinCommunityPage = () => {
         </div>
       </div>
 
-      <div className="bg-white-4 rounded-[12px] p-4 flex flex-col gap-4 mt-4 ">
-        <div className="font-bold text-[14px] flex justify-center items-center text-white">
+      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <div className="flex items-center justify-center text-[14px] font-bold text-white">
           How to claim the bonus
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-1 gap-4">
-          <div className="p-8 flex flex-col gap-8 bg-white-4 rounded-[12px]">
+        <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
+          <div className="flex flex-col gap-8 rounded-[12px] bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
                 title="Super simple mission"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="text-[14px] text-casper font-bold pt-4">
+              <span className="pt-4 text-[14px] font-bold text-casper">
                 Leave a message, share, and invite friends
               </span>
             </div>
-            <div className="relative flex justify-center items-center">
+            <div className="relative flex items-center justify-center">
               <img
                 src="/images/Device3.png"
-                className="h-[330.49px] mx-auto"
+                className="mx-auto h-[330.49px]"
                 alt="phone"
               />
               <img
@@ -103,79 +103,79 @@ const JoinCommunityPage = () => {
                 alt="star"
                 className="absolute right-[15%] top-[30%]"
               />
-              <div className="absolute top-[70%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2">
+              <div className="absolute left-1/2 top-[70%] flex -translate-x-1/2 -translate-y-1/2 transform flex-col gap-2">
                 <FlatButton
                   onClick={() => {}}
-                  className="w-[242px] h-[41px] text-[12px]"
+                  className="h-[41px] w-[242px] text-[12px]"
                 >
                   Message
                 </FlatButton>
                 <FlatButton
                   onClick={() => {}}
-                  className="w-[242px] h-[41px] text-[12px]"
+                  className="h-[41px] w-[242px] text-[12px]"
                 >
                   Share
                 </FlatButton>
                 <FlatButton
                   onClick={() => {}}
-                  className="w-[242px] h-[41px] text-[12px] bg-cornflower-blue"
+                  className="h-[41px] w-[242px] bg-cornflower-blue text-[12px]"
                 >
                   Invite friends
                 </FlatButton>
                 <img
                   src="/icons/cursor.svg"
                   alt="cursor"
-                  className="rotate absolute -left-1/4 -bottom-1/3"
+                  className="rotate absolute -bottom-1/3 -left-1/4"
                 />
               </div>
             </div>
           </div>
-          <div className="p-8 flex flex-col gap-4  bg-white-4 rounded-[12px]">
-            <div className="flex flex-col gap-4 items-start">
+          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-8">
+            <div className="flex flex-col items-start gap-4">
               <TabButton
                 type="one"
                 title="There will be rewards when you finish"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="text-[14px] text-casper font-bold">
+              <span className="text-[14px] font-bold text-casper">
                 No new users are allowed, everyone can participate
               </span>
-              <span className="text-[14px] text-casper font-bold">
+              <span className="text-[14px] font-bold text-casper">
                 Continuous participation can still be limited 
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">
+              <span className="text-[14px] font-bold text-dodger-blue">
                 Headframe, lottery qualifications, ranking awards!
               </span>
             </div>
-            <div className="relative flex justify-center items-center relative">
+            <div className="relative flex items-center justify-center">
               <img
                 src="/images/giftbox.png"
                 alt="gift"
-                className="transform -rotate-[17.81deg] absolute z-[99] top-[10px] left-[-10px]  blur-[2px] h-[98.25px]"
+                className="absolute left-[-10px] top-[10px] z-[99] h-[98.25px] -rotate-[17.81deg] transform blur-[2px]"
               />
               <img
                 src="/images/giftbox.png"
                 alt="gift"
-                className="h-[250px] relative z-[999]"
+                className="relative z-[999] h-[250px]"
               />
               <img
                 src="/images/giftbox.png"
                 alt="gift"
-                className="h-[72.61px] blur-[2px] absolute z-[99] rotate-[12.02deg] bottom-[50px] right-[-10px]"
+                className="absolute bottom-[50px] right-[-10px] z-[99] h-[72.61px] rotate-[12.02deg] blur-[2px]"
               />
             </div>
           </div>
         </div>
 
-        <div className="rounded-[12px] p-4 flex flex-col gap-2 bg-white-4 rounded-[12px]">
+        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
           <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
           <div className="text-[14px] font-bold text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
-          <div className="px-4 ">
-            <ol className="text-casper text-[14px] list-decimal">
+          <div className="px-4">
+            <ol className="list-decimal text-[14px] text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.
@@ -200,9 +200,9 @@ const JoinCommunityPage = () => {
                 qualification without notice.
               </li>
             </ol>
-            <div className="py-16 flex justify-center">
+            <div className="flex justify-center py-16">
               <BlackButton>
-                <CopyIcon className="w-4 g-4" />
+                <CopyIcon className="g-4 w-4" />
               </BlackButton>
             </div>
           </div>

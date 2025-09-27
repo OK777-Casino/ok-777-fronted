@@ -20,7 +20,7 @@ const ProfileOverlay: React.FC<ProfileOverlayProps> = ({ onClose }) => {
       closeOnBackdropClick={true}
       closeOnEscape={true}
     >
-      <div className="lg:hidden w-full h-full">
+      <div className="h-full w-full lg:hidden">
         <UserProfileDropdown onClose={onClose} />
       </div>
     </Overlay>

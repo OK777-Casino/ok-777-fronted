@@ -33,7 +33,7 @@ export const LabeledInput = React.forwardRef<
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6"
+        className="h-6 w-6"
       >
         <path
           d="M13.6006 21.0761L19.0608 17.9236C19.6437 17.5871 19.9346 17.4188 20.1465 17.1834C20.3341 16.9751 20.4759 16.7297 20.5625 16.4632C20.6602 16.1626 20.6602 15.8267 20.6602 15.1568V8.84268C20.6602 8.17277 20.6602 7.83694 20.5625 7.53638C20.4759 7.26982 20.3341 7.02428 20.1465 6.816C19.9355 6.58161 19.6453 6.41405 19.0674 6.08043L13.5996 2.92359C13.0167 2.58706 12.7259 2.41913 12.416 2.35328C12.1419 2.295 11.8584 2.295 11.5843 2.35328C11.2744 2.41914 10.9826 2.58706 10.3997 2.92359L4.93843 6.07666C4.35623 6.41279 4.06535 6.58073 3.85352 6.816C3.66597 7.02428 3.52434 7.26982 3.43773 7.53638C3.33984 7.83765 3.33984 8.17436 3.33984 8.84742V15.1524C3.33984 15.8254 3.33984 16.1619 3.43773 16.4632C3.52434 16.7297 3.66597 16.9751 3.85352 17.1834C4.06548 17.4188 4.35657 17.5871 4.93945 17.9236L10.3997 21.0761C10.9826 21.4126 11.2744 21.5806 11.5843 21.6465C11.8584 21.7047 12.1419 21.7047 12.416 21.6465C12.7259 21.5806 13.0177 21.4126 13.6006 21.0761Z"
@@ -54,12 +54,12 @@ export const LabeledInput = React.forwardRef<
 
     return (
       <div className={cn('inline-flex items-center', className)}>
-        <div className="relative rounded-xl border border-blue-bayoux hover:border-polo-blue active:border-dodger-blue peer-not-placeholder-shown:border-dodger-blue bg-vulcan min-w-40 h-12">
+        <div className="peer-not-placeholder-shown:border-dodger-blue bg-vulcan relative h-12 min-w-40 rounded-xl border border-blue-bayoux hover:border-polo-blue active:border-dodger-blue">
           {/* Label positioned absolutely to not interfere with border */}
           <div className="absolute -top-2 left-2 z-10">
-            <div className="flex items-center px-1.5 py-0.5 rounded bg-gradient-to-b from-[#111923] to-vulcan">
+            <div className="to-vulcan flex items-center rounded bg-gradient-to-b from-[#111923] px-1.5 py-0.5">
               <span
-                className="text-polo-blue text-[10px] font-normal leading-normal"
+                className="text-[10px] font-normal leading-normal text-polo-blue"
                 style={{
                   fontFamily:
                     'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
@@ -71,7 +71,7 @@ export const LabeledInput = React.forwardRef<
           </div>
 
           {/* Input container */}
-          <div className="flex items-center gap-4 px-4 h-full w-full">
+          <div className="flex h-full w-full items-center gap-4 px-4">
             {icon || defaultIcon}
             <input
               ref={ref}
@@ -80,7 +80,7 @@ export const LabeledInput = React.forwardRef<
               placeholder={placeholder}
               onChange={e => onValueChange?.(e.target.value)}
               className={cn(
-                'flex-1 overflow-hidden text-ellipsis bg-transparent text-blue-bayoux text-sm font-normal outline-none',
+                'flex-1 overflow-hidden text-ellipsis bg-transparent text-sm font-normal text-blue-bayoux outline-none',
                 'placeholder:text-blue-bayoux',
                 'focus:outline-none focus:ring-0'
               )}

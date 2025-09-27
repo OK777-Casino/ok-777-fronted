@@ -120,7 +120,7 @@ const gameProviders = [
 
 const GameProviderPage = () => {
   return (
-    <div className="flex flex-col gap-8 pt-[26px] md:pt-4 mb-16 max-w-6xl p-2 m-auto">
+    <div className="m-auto mb-16 flex max-w-6xl flex-col gap-8 p-2 pt-[26px] md:pt-4">
       {/* <h2 className="text-white text-[18px] font-bold hidden lg:block">
         <span>Game Providers</span>
       </h2> */}
@@ -129,24 +129,24 @@ const GameProviderPage = () => {
       <SearchInput placeholder="Manufacturer search" />
 
       {/* Game Providers Grid */}
-      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3 ">
+      <div className="grid grid-cols-3 gap-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
         {gameProviders.map(provider => (
           <Link
             href={`/game-provider/${provider.alt}`}
             key={provider.id}
-            className="flex flex-col items-center overflow-hidden justify-center bg-white-4 rounded-xl aspect-[3/2] hover:bg-white-4/60 transition-colors cursor-pointer"
+            className="hover:bg-white-4/60 flex aspect-[3/2] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl bg-white-4 transition-colors"
           >
-            <div className="h-[60%] rounded-lg lg:rounded-t-lg overflow-hidden md:p-2">
+            <div className="h-[60%] overflow-hidden rounded-lg md:p-2 lg:rounded-t-lg">
               <Image
                 src={provider.image}
                 alt={provider.alt}
                 width={69}
                 height={45}
-                className="object-contain rounded-lg lg:rounded-t-lg"
+                className="rounded-lg object-contain lg:rounded-t-lg"
                 loading="lazy"
               />
             </div>
-            <div className="h-[40%] w-full hidden lg:flex text-white bg-white-14 font-bold text-[14px] justify-center items-center">
+            <div className="hidden h-[40%] w-full items-center justify-center bg-white-14 text-[14px] font-bold text-white lg:flex">
               {provider.alt}
             </div>
           </Link>
@@ -157,22 +157,22 @@ const GameProviderPage = () => {
       <div className="flex flex-col gap-2.5">
         {/* Show More Button */}
         <div className="flex justify-center">
-          <div className="cursor-pointer h-9 bg-ebony-clay w-[157px] gap-2 text-casper font-montserrat text-[14px] flex items-center justify-center font-bold rounded-[8px] hover:bg-ebony-clay/80 transition-colors">
+          <div className="hover:bg-ebony-clay/80 flex h-9 w-[157px] cursor-pointer items-center justify-center gap-2 rounded-[8px] bg-ebony-clay font-montserrat text-[14px] font-bold text-casper transition-colors">
             Show 4 more
-            <ChevronDownIcon className=" text-casper" />
+            <ChevronDownIcon className="text-casper" />
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-[158px] mx-auto">
-          <div className="h-1.5 bg-oxford-blue rounded-lg overflow-hidden">
-            <div className="h-full w-[73%] bg-dodger-blue rounded-lg"></div>
+        <div className="mx-auto w-[158px]">
+          <div className="bg-oxford-blue h-1.5 overflow-hidden rounded-lg">
+            <div className="h-full w-[73%] rounded-lg bg-dodger-blue"></div>
           </div>
         </div>
 
         {/* Progress Text */}
-        <div className="flex justify-center items-center">
-          <span className="text-polo-blue font-montserrat text-[10px] font-normal">
+        <div className="flex items-center justify-center">
+          <span className="font-montserrat text-[10px] font-normal text-polo-blue">
             Show 18 of 22 games
           </span>
         </div>

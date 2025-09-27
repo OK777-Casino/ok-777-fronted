@@ -12,7 +12,7 @@ interface SidebarSectionsProps {
 }
 
 const Divider = () => (
-  <div className="w-full mx-auto h-[1px] relative bg-[linear-gradient(to_right,#1a2332,#6a7282,#1a2332)]"></div>
+  <div className="relative mx-auto h-[1px] w-full bg-[linear-gradient(to_right,#1a2332,#6a7282,#1a2332)]"></div>
 )
 
 const SidebarSections: React.FC<SidebarSectionsProps> = ({
@@ -81,7 +81,7 @@ const SidebarSections: React.FC<SidebarSectionsProps> = ({
                         }
                       />
                       {item.hasHover && (
-                        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                        <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
                           {/* Floating panel is rendered globally in layout via HashHoverLayer */}
                         </div>
                       )}

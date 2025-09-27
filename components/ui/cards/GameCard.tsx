@@ -15,7 +15,7 @@ const GameCard: React.FC<GameCardProps> = ({
   sampleGames,
 }) => {
   return (
-    <div className="bg-gray-800 rounded-lg p-2 hover:bg-gray-700 transition-colors gap-2 cursor-pointer flex flex-col">
+    <div className="flex cursor-pointer flex-col gap-2 rounded-lg bg-gray-800 p-2 transition-colors hover:bg-gray-700">
       <div className="flex items-center">
         <div>
           <img
@@ -25,10 +25,10 @@ const GameCard: React.FC<GameCardProps> = ({
           />
         </div>
         <div className="">
-          <p className="text-base font-semibold text-white leading-tight">
+          <p className="text-base font-semibold leading-tight text-white">
             {name}
           </p>
-          <p className="text-base text-[#A7B5CA] leading-tight">{gameCount}</p>
+          <p className="text-base leading-tight text-[#A7B5CA]">{gameCount}</p>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ const GameCard: React.FC<GameCardProps> = ({
               key={gameIndex}
               src={`/images/brand/${game}`}
               alt={`${name} game sample ${gameIndex + 1}`}
-              className="w-full h-12 object-cover rounded hover:opacity-80 transition-opacity"
+              className="h-12 w-full rounded object-cover transition-opacity hover:opacity-80"
             />
           ))}
         </div>

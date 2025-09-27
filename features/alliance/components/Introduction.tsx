@@ -180,11 +180,11 @@ const Introduction: React.FC = () => {
   ]
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full">
+    <div className="[@media(max-width:660px)]:w-full">
       <div className="w-full">
         {/* Commission Rules */}
-        <div className="bg-[#ffffff0a] rounded-xl p-3 sm:p-4">
-          <h2 className="text-sm font-bold text-[#ededed] mb-2">
+        <div className="rounded-xl bg-[#ffffff0a] p-3 sm:p-4">
+          <h2 className="mb-2 text-sm font-bold text-[#ededed]">
             Commission Rules
           </h2>
           <p className="text-sm font-normal text-casper">
@@ -192,12 +192,12 @@ const Introduction: React.FC = () => {
           </p>
         </div>
         {/* Game Type Tabs */}
-        <div className="flex flex-wrap gap-1 my-4">
+        <div className="my-4 flex flex-wrap gap-1">
           {gameTypes.map((game, index) => (
             <div
               key={index}
               onClick={() => handleGameTypeClick(game.name)}
-              className={`flex items-center gap-2 px-3 py-1 rounded-lg text-sm font-bold transition-colors duration-200 hover:bg-white/10 hover:shadow-md cursor-pointer ${
+              className={`flex cursor-pointer items-center gap-2 rounded-lg px-3 py-1 text-sm font-bold transition-colors duration-200 hover:bg-white/10 hover:shadow-md ${
                 selectedGameType === game.name
                   ? 'bg-[#2283f6] text-white'
                   : 'bg-transparent text-casper hover:bg-[#ffffff0a]'
@@ -209,10 +209,10 @@ const Introduction: React.FC = () => {
           ))}
         </div>
         {/* Commission Table */}
-        <div className="bg-[#ffffff0a] rounded-xl overflow-hidden">
+        <div className="overflow-hidden rounded-xl bg-[#ffffff0a]">
           {/* Table Header */}
-          <div className="bg-[#11192389] border-b border-[#2a3546] p-4">
-            <div className="flex grid-cols-3 gap-4 justify-center items-center">
+          <div className="border-b border-[#2a3546] bg-[#11192389] p-4">
+            <div className="flex grid-cols-3 items-center justify-center gap-4">
               <div className="text-xs font-bold text-[#55657e]">
                 Agent level
               </div>
@@ -231,7 +231,7 @@ const Introduction: React.FC = () => {
                   index % 2 === 0 ? 'bg-[#ffffff14]' : 'bg-[#ffffff0a]'
                 }`}
               >
-                <div className="flex grid-cols-3 gap-4  justify-center items-center">
+                <div className="flex grid-cols-3 items-center justify-center gap-4">
                   <div className="text-xs font-bold text-casper">
                     {row.agentLevel}
                   </div>
@@ -247,65 +247,65 @@ const Introduction: React.FC = () => {
           </div>
         </div>
         {/* Affiliate Introduction */}
-        <div className=" rounded-xl">
-          <h2 className="text-xl font-bold text-white my-6 pl-4">
+        <div className="rounded-xl">
+          <h2 className="my-6 pl-4 text-xl font-bold text-white">
             Affiliate Introduction
           </h2>
 
           {/* Main Affiliate A - Responsive card matching design */}
           <div className="mb-6">
-            <div className="relative bg-[#1a2332]  rounded-xl p-4 sm:p-6 w-full border border-[#ffffff1a]">
+            <div className="relative w-full rounded-xl border border-[#ffffff1a] bg-[#1a2332] p-4 sm:p-6">
               {/* A badge */}
-              <div className="absolute top-0 left-0 h-5 px-2 rounded-[12px_0_12px_0] text-[11px] border-t border-[#ffffff38] font-bold bg-chip-orange text-white flex items-center shadow">
+              <div className="absolute left-0 top-0 flex h-5 items-center rounded-[12px_0_12px_0] border-t border-[#ffffff38] bg-chip-orange px-2 text-[11px] font-bold text-white shadow">
                 A
               </div>
 
               {/* Avatar / Title */}
 
-              <div className="flex items-start gap-3 mb-4">
+              <div className="mb-4 flex items-start gap-3">
                 {/* Details grid */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10  flex items-center justify-center">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center">
                     <img src="/images/img_frame.png" alt="Avatar" />
                   </div>
                   {/* No title next to avatar in the design */}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 text-xs">
-                  <div className="flex gap-1 items-end">
+                <div className="grid grid-cols-1 gap-x-12 gap-y-3 text-xs md:grid-cols-2">
+                  <div className="flex items-end gap-1">
                     <span className="text-casper">Team performance:</span>
-                    <span className="text-chip-orange font-bold">
+                    <span className="font-bold text-chip-orange">
                       {affiliateAData.teamPerformance}
                     </span>
                   </div>
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <span className="text-casper">Direct performance:</span>
-                    <span className="text-chip-orange font-bold">
+                    <span className="font-bold text-chip-orange">
                       {affiliateAData.directPerformance}
                     </span>
                   </div>
 
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <span className="text-casper">Rate per 10K:</span>
-                    <span className="text-chip-orange font-bold">
+                    <span className="font-bold text-chip-orange">
                       {affiliateAData.ratePerTenK}
                     </span>
                   </div>
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <span className="text-casper">Direct commission:</span>
-                    <span className="text-chip-orange font-bold">
+                    <span className="font-bold text-chip-orange">
                       {affiliateAData.directCommission}
                     </span>
                   </div>
 
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <span className="text-casper">Team commission:</span>
-                    <span className="text-chip-orange font-bold">
+                    <span className="font-bold text-chip-orange">
                       {affiliateAData.rewardEarned}
                     </span>
                   </div>
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <span className="text-casper">Subordinate commission:</span>
-                    <span className="text-chip-orange font-bold">
+                    <span className="font-bold text-chip-orange">
                       {affiliateAData.subordinateCommission}
                     </span>
                   </div>
@@ -313,9 +313,9 @@ const Introduction: React.FC = () => {
               </div>
 
               {/* Divider and total */}
-              <div className="mt-4 border-t border-[#ffffff1a] pt-3 flex justify-between">
-                <span className="text-white font-bold">Total Rewards:</span>
-                <span className="text-chip-orange font-bold">
+              <div className="mt-4 flex justify-between border-t border-[#ffffff1a] pt-3">
+                <span className="font-bold text-white">Total Rewards:</span>
+                <span className="font-bold text-chip-orange">
                   {affiliateAData.totalRewards}
                 </span>
               </div>
@@ -323,49 +323,49 @@ const Introduction: React.FC = () => {
           </div>
 
           {/* Connecting Arrow from A to B level - Mobile */}
-          <div className="flex justify-center items-end mb-4">
+          <div className="mb-4 flex items-end justify-center">
             <img src="/images/arrow(3).svg" className="w-[30%]" alt="arrow" />
             <img src="/images/arrow(1).svg" className="w-[16px]" alt="arrow" />
             <img src="/images/arrow(2).svg" className="w-[30%]" alt="arrow" />
           </div>
 
           {/* B Level Affiliates - Mobile Row Layout */}
-          <div className="grid grid-cols-3 gap-2 mb-6">
+          <div className="mb-6 grid grid-cols-3 gap-2">
             {affiliateBData.map((affiliate, index) => (
               <div
                 key={index}
-                className="bg-[#1a2332] relative  rounded-[12px] p-2 border border-[#ffffff1a]"
+                className="relative rounded-[12px] border border-[#ffffff1a] bg-[#1a2332] p-2"
               >
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <div className="w-8 h-8  flex items-center justify-center">
+                <div className="mb-3 flex items-center justify-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center">
                     <img src="/images/img_frame.png" alt="Avatar" />
                   </div>
-                  <div className="text-white absolute top-0 left-0 bg-[#1BB83D] border-t border-[#ffffff38] rounded-[12px_0_12px_0] w-[30px]  h-[19px] flex items-center justify-center font-bold text-[10px]">
+                  <div className="absolute left-0 top-0 flex h-[19px] w-[30px] items-center justify-center rounded-[12px_0_12px_0] border-t border-[#ffffff38] bg-[#1BB83D] text-[10px] font-bold text-white">
                     {affiliate.id}
                   </div>
                 </div>
                 <div className="space-y-2 text-xs">
-                  <div className="flex gap-1 flex-wrap items-end">
+                  <div className="flex flex-wrap items-end gap-1">
                     <p className="text-gray-400">Team performance:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.teamPerformance}
                     </p>
                   </div>
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <p className="text-gray-400">Rate per 10K:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.ratePerTenK}
                     </p>
                   </div>
-                  <div className="flex gap-1 items-end">
+                  <div className="flex items-end gap-1">
                     <p className="text-gray-400">Reward Earned:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.rewardEarned}
                     </p>
                   </div>
-                  <div className="border-t border-[#ffffff1a] pt-2 flex gap-1 items-end">
+                  <div className="flex items-end gap-1 border-t border-[#ffffff1a] pt-2">
                     <p className="text-gray-400">Valid Bet:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.validBet}
                     </p>
                   </div>
@@ -376,61 +376,57 @@ const Introduction: React.FC = () => {
 
           {/*  Arrow from B to C level - Mobile */}
           {/* ConnectiConnectingng Arrow from A to B level - Mobile */}
-          <div className="grid grid-cols-[15%_35%_31%_19%] justify-center items-end mb-4">
+          <div className="mb-4 grid grid-cols-[15%_35%_31%_19%] items-end justify-center">
             <div></div>
-            <div className="flex justify-start items-end">
+            <div className="flex items-end justify-start">
               <img
                 src="/images/arrow(1).svg"
                 className="w-[16px]"
                 alt="arrow"
               />
-              <img
-                src="/images/arrow(2).svg"
-                className="w-[87%] "
-                alt="arrow"
-              />
+              <img src="/images/arrow(2).svg" className="w-[87%]" alt="arrow" />
             </div>
             <div></div>
             <img src="/images/arrow(1).svg" className="w-[16px]" alt="arrow" />
           </div>
 
           {/* C Level Affiliates - Mobile Row Layout */}
-          <div className="grid grid-cols-3 gap-2 mb-8">
+          <div className="mb-8 grid grid-cols-3 gap-2">
             {affiliateCData.map((affiliate, index) => (
               <div
                 key={index}
-                className="bg-[#1a2332] rounded-[12px] relative p-3 border border-[#ffffff1a]"
+                className="relative rounded-[12px] border border-[#ffffff1a] bg-[#1a2332] p-3"
               >
-                <div className="flex items-center justify-center gap-2 mb-3">
-                  <div className="w-8 h-8 flex items-center justify-center">
+                <div className="mb-3 flex items-center justify-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center">
                     <img src="/images/img_frame.png" alt="Avatar" />
                   </div>
-                  <div className="text-white absolute top-0 left-0 bg-[#2283F6] border-t border-[#ffffff38] rounded-[12px_0_12px_0] w-[30px] h-[19px] flex items-center justify-center font-bold text-[10px]">
+                  <div className="absolute left-0 top-0 flex h-[19px] w-[30px] items-center justify-center rounded-[12px_0_12px_0] border-t border-[#ffffff38] bg-[#2283F6] text-[10px] font-bold text-white">
                     {affiliate.id}
                   </div>
                 </div>
                 <div className="space-y-2 text-xs">
-                  <div className="flex flex-wrap  gap-1">
+                  <div className="flex flex-wrap gap-1">
                     <p className="text-gray-400">Team performance:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.teamPerformance}
                     </p>
                   </div>
-                  <div className="flex gap-1 items-center">
+                  <div className="flex items-center gap-1">
                     <p className="text-gray-400">Rate per 10K:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.ratePerTenK}
                     </p>
                   </div>
-                  <div className="flex gap-1 items-center">
+                  <div className="flex items-center gap-1">
                     <p className="text-gray-400">Reward Earned:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.rewardEarned}
                     </p>
                   </div>
-                  <div className="border-t border-[#ffffff1a] flex gap-1 pt-2">
+                  <div className="flex gap-1 border-t border-[#ffffff1a] pt-2">
                     <p className="text-gray-400">Valid Bet:</p>
-                    <p className="text-chip-orange font-bold">
+                    <p className="font-bold text-chip-orange">
                       {affiliate.validBet}
                     </p>
                   </div>
@@ -441,17 +437,17 @@ const Introduction: React.FC = () => {
         </div>
         <div>
           {/* Commission Calculation */}
-          <div className="bg-[#ffffff0a] rounded-xl p-4 mb-4">
+          <div className="mb-4 rounded-xl bg-[#ffffff0a] p-4">
             <h2 className="text-lg font-bold text-white">
               Commission Calculation
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
-            <div className="bg-[#ffffff0a] rounded-xl p-4">
-              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+          <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-2 text-sm font-bold text-[#ededed]">
                 Commission Calculation
               </h3>
-              <p className="text-sm font-normal text-casper mb-2">
+              <p className="mb-2 text-sm font-normal text-casper">
                 Direct Subordinates' Effective Bets × Commission Ratio = Direct
                 Commission
               </p>
@@ -460,26 +456,26 @@ const Introduction: React.FC = () => {
                 = Agent Commission
               </p>
             </div>
-            <div className="bg-[#ffffff0a] rounded-xl p-4">
-              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-2 text-sm font-bold text-[#ededed]">
                 Team A total performance
               </h3>
-              <p className="text-sm font-normal text-casper mb-2">
+              <p className="mb-2 text-sm font-normal text-casper">
                 Team A Total Performance: 4.12 million (Direct Performance
                 720,000 + Sub-agent Performance 3.4 million)
               </p>
-              <p className="text-sm font-normal text-casper mb-2">
+              <p className="mb-2 text-sm font-normal text-casper">
                 Commission rate: 35 per ten thousand returns
               </p>
               <p className="text-sm font-normal text-casper">
                 Total commission earned by the team：412×35=14420 USDT
               </p>
             </div>
-            <div className="bg-[#ffffff0a] rounded-xl p-4">
-              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-2 text-sm font-bold text-[#ededed]">
                 Calculation of direct commission for A
               </h3>
-              <p className="text-sm font-normal text-casper mb-2">
+              <p className="mb-2 text-sm font-normal text-casper">
                 Performance of A's direct subordinates B1, B2, B3 is:
                 20+50+2=720,000.
               </p>
@@ -487,15 +483,15 @@ const Introduction: React.FC = () => {
                 Received direct commission: 72×35=2520 USDT.
               </p>
             </div>
-            <div className="bg-[#ffffff0a] rounded-xl p-4">
-              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-2 text-sm font-bold text-[#ededed]">
                 Commission from A's subordinate agents
               </h3>
-              <p className="text-sm font-normal text-casper mb-2">
+              <p className="mb-2 text-sm font-normal text-casper">
                 Direct agent B1: Team performance 400,000, commission rate per
                 ten thousand 32, received 40×32=1280 USDT.
               </p>
-              <p className="text-sm font-normal text-casper mb-2">
+              <p className="mb-2 text-sm font-normal text-casper">
                 Team performance 0, no commission generated.
               </p>
               <p className="text-sm font-normal text-casper">
@@ -503,16 +499,16 @@ const Introduction: React.FC = () => {
                 ten thousand 35, received 300×35=10,500 USDT.
               </p>
             </div>
-            <div className="bg-[#ffffff0a] rounded-xl p-4">
-              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-2 text-sm font-bold text-[#ededed]">
                 Commission calculation for A
               </h3>
               <p className="text-sm font-normal text-casper">
                 14420-2520-1280-0-10500= 120 USDT
               </p>
             </div>
-            <div className="bg-[#ffffff0a] rounded-xl p-4">
-              <h3 className="text-sm font-bold text-[#ededed] mb-2">
+            <div className="rounded-xl bg-[#ffffff0a] p-4">
+              <h3 className="mb-2 text-sm font-bold text-[#ededed]">
                 Total commission earned by A (Direct commission + Agent
                 commission):
               </h3>
@@ -523,8 +519,8 @@ const Introduction: React.FC = () => {
           </div>
         </div>
         {/* How to get commission rewards */}
-        <div className="bg-[#ffffff0a] rounded-xl p-4 mb-6">
-          <h2 className="text-lg font-bold text-white mb-4">
+        <div className="mb-6 rounded-xl bg-[#ffffff0a] p-4">
+          <h2 className="mb-4 text-lg font-bold text-white">
             How to get commission rewards?
           </h2>
           <div className="space-y-3">

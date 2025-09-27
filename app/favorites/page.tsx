@@ -145,32 +145,32 @@ export default function FavoritesPage() {
   })
 
   return (
-    <div className="max-w-7xl p-2 m-auto">
+    <div className="m-auto max-w-7xl p-2">
       {/* Header */}
-      <div className="bg-[#111923]/54 backdrop-blur-[2rem] border-b border-gray-700 py-4">
+      <div className="bg-[#111923]/54 border-b border-gray-700 py-4 backdrop-blur-[2rem]">
         <div className="mx-auto">
-          <h1 className="text-2xl font-bold mb-4 flex items-center gap-2">
+          <h1 className="mb-4 flex items-center gap-2 text-2xl font-bold">
             <span className="text-red-500">❤️</span>
             <span className="text-white">{t('games.favorites')}</span>
           </h1>
 
           {/* Search and filters */}
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col lg:flex-row items-start gap-3 w-full">
+            <div className="flex w-full flex-col items-start gap-3 lg:flex-row">
               {/* Search Input */}
-              <div className="flex items-center gap-2 flex-1 w-full px-4 py-3 rounded-lg border border-gray-600 bg-transparent">
-                <Search className="h-6 w-6 text-white stroke-gray-400 flex-shrink-0" />
+              <div className="flex w-full flex-1 items-center gap-2 rounded-lg border border-gray-600 bg-transparent px-4 py-3">
+                <Search className="h-6 w-6 flex-shrink-0 stroke-gray-400 text-white" />
                 <input
                   type="text"
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
                   placeholder={t('app.favoritesPlaceholder')}
-                  className="flex-1 bg-transparent text-gray-300 text-sm font-medium font-montserrat placeholder:text-gray-400 border-none outline-none min-w-0"
+                  className="min-w-0 flex-1 border-none bg-transparent font-montserrat text-sm font-medium text-gray-300 outline-none placeholder:text-gray-400"
                 />
               </div>
 
               {/* Dropdowns */}
-              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+              <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
                 {/* Game Provider Dropdown */}
                 <div ref={providerRef} className="relative">
                   <div
@@ -186,13 +186,13 @@ export default function FavoritesPage() {
                         setIsProviderOpen(!isProviderOpen)
                       }
                     }}
-                    className="flex items-center justify-between w-full sm:w-[180px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
+                    className="hover:bg-white/12 flex h-12 w-full cursor-pointer items-center justify-between rounded-lg bg-white-8 px-4 transition-colors sm:w-[180px]"
                   >
-                    <span className="text-gray-300 text-sm font-bold font-montserrat hover:text-white transition-colors">
+                    <span className="font-montserrat text-sm font-bold text-gray-300 transition-colors hover:text-white">
                       {selectedProvider.label}
                     </span>
                     <ChevronDown
-                      className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
+                      className={`h-6 w-6 stroke-gray-400 text-white transition-transform ${
                         isProviderOpen ? 'rotate-180' : ''
                       }`}
                     />
@@ -214,13 +214,13 @@ export default function FavoritesPage() {
                         setIsTypeOpen(!isTypeOpen)
                       }
                     }}
-                    className="flex items-center justify-between w-full sm:w-[150px] h-12 px-4 rounded-lg bg-white-8 hover:bg-white/12 transition-colors cursor-pointer"
+                    className="hover:bg-white/12 flex h-12 w-full cursor-pointer items-center justify-between rounded-lg bg-white-8 px-4 transition-colors sm:w-[150px]"
                   >
-                    <span className="text-gray-300 text-sm font-bold font-montserrat hover:text-white transition-colors">
+                    <span className="font-montserrat text-sm font-bold text-gray-300 transition-colors hover:text-white">
                       {selectedType.label}
                     </span>
                     <ChevronDown
-                      className={`h-6 w-6 text-white stroke-gray-400 transition-transform ${
+                      className={`h-6 w-6 stroke-gray-400 text-white transition-transform ${
                         isTypeOpen ? 'rotate-180' : ''
                       }`}
                     />
@@ -233,7 +233,7 @@ export default function FavoritesPage() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto py-4">
+      <div className="mx-auto max-w-7xl py-4">
         {/* Results count */}
         <div className="mb-6">
           <p className="text-gray-400">
@@ -244,15 +244,15 @@ export default function FavoritesPage() {
 
         {/* Games Grid */}
         {filteredGames.length > 0 ? (
-          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-4">
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8">
             {filteredGames.map(game => (
               <CasinoCard key={game.id} {...game} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-12">
-            <div className="text-6xl mb-4">❤️</div>
-            <h3 className="text-xl font-semibold mb-2">No favorites found</h3>
+          <div className="py-12 text-center">
+            <div className="mb-4 text-6xl">❤️</div>
+            <h3 className="mb-2 text-xl font-semibold">No favorites found</h3>
             <p className="text-gray-400">
               {searchTerm
                 ? 'Try adjusting your search terms'
@@ -267,7 +267,7 @@ export default function FavoritesPage() {
         typeof window !== 'undefined' &&
         createPortal(
           <div
-            className="fixed bg-[rgba(17,25,35,0.95)] border border-white-8 rounded-lg backdrop-blur-[32px] shadow-lg"
+            className="fixed rounded-lg border border-white-8 bg-[rgba(17,25,35,0.95)] shadow-lg backdrop-blur-[32px]"
             style={{
               top: dropdownPosition.top,
               left: dropdownPosition.left,
@@ -284,11 +284,11 @@ export default function FavoritesPage() {
                     setIsProviderOpen(false)
                     setActiveDropdown(null)
                   }}
-                  className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                  className={`w-full cursor-pointer px-4 py-3 text-left transition-colors hover:bg-white-8 ${
                     selectedProvider.id === provider.id ? 'bg-blue-500/20' : ''
                   }`}
                 >
-                  <span className="text-gray-300 text-sm font-medium font-montserrat">
+                  <span className="font-montserrat text-sm font-medium text-gray-300">
                     {provider.label}
                   </span>
                 </div>
@@ -302,11 +302,11 @@ export default function FavoritesPage() {
                     setIsTypeOpen(false)
                     setActiveDropdown(null)
                   }}
-                  className={`w-full px-4 py-3 text-left hover:bg-white-8 transition-colors cursor-pointer ${
+                  className={`w-full cursor-pointer px-4 py-3 text-left transition-colors hover:bg-white-8 ${
                     selectedType.id === type.id ? 'bg-blue-500/20' : ''
                   }`}
                 >
-                  <span className="text-gray-300 text-sm font-medium font-montserrat">
+                  <span className="font-montserrat text-sm font-medium text-gray-300">
                     {type.label}
                   </span>
                 </div>

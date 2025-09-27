@@ -13,28 +13,28 @@ const AccountInfo: React.FC = () => {
   }
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full">
-      <div className="w-full  flex flex-col gap-4">
+    <div className="[@media(max-width:660px)]:w-full">
+      <div className="flex w-full flex-col gap-4">
         {/* AccountInfo Header */}
-        <h1 className="text-lg sm:text-xl hidden lg:block font-bold text-white ">
+        <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
           User Information
         </h1>
-        <div className="rounded-[12px] bg-white-4 p-4 overflow-hidden flex gap-4 justify-between">
-          <div className="flex gap-4 items-center">
+        <div className="flex justify-between gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4">
+          <div className="flex items-center gap-4">
             <div className="relative flex flex-col items-center gap-[-10px]">
               <div className="relative">
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/381f33b8ee9dde920a0b2278348be945b8886b91?width=128"
                   alt="User avatar"
-                  className="w-16 h-16 rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
+                  className="h-16 w-16 rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
                 />
                 {/* VIP Badge - positioned to overlap the bottom of the avatar */}
-                <div className="absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="absolute -bottom-2.5 left-1/2 z-10 -translate-x-1/2 transform">
                   <div
-                    className="h-5 px-2 flex items-center justify-center rounded-2xl border border-white shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
+                    className="flex h-5 items-center justify-center rounded-2xl border border-white px-2 shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
                     style={{ backgroundColor: 'var(--malachite)' }}
                   >
-                    <span className="text-white text-xs font-bold whitespace-nowrap">
+                    <span className="whitespace-nowrap text-xs font-bold text-white">
                       VIP 1
                     </span>
                   </div>
@@ -42,7 +42,7 @@ const AccountInfo: React.FC = () => {
               </div>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="text-[14px text-white font-bold]">
+              <span className="text-[14px font-bold] text-white">
                 User8527682
               </span>
               <span className="text-[14px] text-casper">User ID: 59363996</span>
@@ -50,15 +50,15 @@ const AccountInfo: React.FC = () => {
           </div>
           <div
             onClick={toggleModal}
-            className="bg-mirage-4 cursor-pointer active:bg-mirage hover:bg-mirage flex gap-1 text-[14px] h-9 items-center px-3 text-casper font-bold rounded-[8px] overflow-hidden"
+            className="flex h-9 cursor-pointer items-center gap-1 overflow-hidden rounded-[8px] bg-mirage-4 px-3 text-[14px] font-bold text-casper hover:bg-mirage active:bg-mirage"
           >
-            <EditIcon className="w-6 h-6" />
+            <EditIcon className="h-6 w-6" />
             Edit
           </div>
         </div>
-        <div className="rounded-[12px] bg-white-4 p-4 lg:items-center justify-between flex lg:flex-row flex-col gap-4">
+        <div className="flex flex-col justify-between gap-4 rounded-[12px] bg-white-4 p-4 lg:flex-row lg:items-center">
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-white text-[14px]">Email Address</h2>
+            <h2 className="text-[14px] font-bold text-white">Email Address</h2>
             <p className="text-[14px] text-casper">
               Link your email to protect your account security and recover your
               password.
@@ -66,22 +66,22 @@ const AccountInfo: React.FC = () => {
           </div>
           <TDButton
             type="blue"
-            className="lg:w-[164px] w-full h-[41px] text-gallery font-bold text-[14px]"
+            className="h-[41px] w-full text-[14px] font-bold text-gallery lg:w-[164px]"
             onClick={() => {}}
           >
             Go to binding
           </TDButton>
         </div>
-        <div className="rounded-[12px] bg-white-4 p-4  flex flex-col gap-4">
-          <h2 className="font-bold text-[0.875rem] indent-[1.25rem] text-white">
+        <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+          <h2 className="indent-[1.25rem] text-[0.875rem] font-bold text-white">
             Telegram
           </h2>
-          <div className="p-[6px] gap-1 bg-white-8 justify-between flex items-center pl-4 rounded-[12px]">
-            <div className="flex text-casper text-[14px] font-bold gap-1">
-              <TelegramIcon color="var(--casper)" className="w-6 h-6" />
+          <div className="flex items-center justify-between gap-1 rounded-[12px] bg-white-8 p-[6px] pl-4">
+            <div className="flex gap-1 text-[14px] font-bold text-casper">
+              <TelegramIcon color="var(--casper)" className="h-6 w-6" />
               Not intertwined
             </div>
-            <FlatButton className="w-[82px] h-9 font-bold text-gallery text-[12px]">
+            <FlatButton className="h-9 w-[82px] text-[12px] font-bold text-gallery">
               Binding
             </FlatButton>
           </div>
@@ -93,18 +93,18 @@ const AccountInfo: React.FC = () => {
         isOpen={isModalOpen}
         title="Edit profile"
       >
-        <div className="flex gap-2 flex-col">
-          <div className="rounded-[14px] items-center bg-white-4 overflow-hidden p-4 gap-[10px] flex flex-col">
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col items-center gap-[10px] overflow-hidden rounded-[14px] bg-white-4 p-4">
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/381f33b8ee9dde920a0b2278348be945b8886b91?width=128"
               alt="User avatar"
-              className="w-16 h-16 rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
+              className="h-16 w-16 rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
             />
-            <span className="font-bold p-3 text-casper text-[12px]">
+            <span className="p-3 text-[12px] font-bold text-casper">
               Change avatar
             </span>
           </div>
-          <div className="flex flex-col gap-4 p-4 bg-white-4 rounded-[12px]">
+          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
             <div className="input-group">
               <label className="input-label">Pseudonym</label>
               <input
@@ -114,13 +114,13 @@ const AccountInfo: React.FC = () => {
                 value={'User8527681'}
               />
             </div>
-            <p className="w-[50%] text-casper text-[14px]">
+            <p className="w-[50%] text-[14px] text-casper">
               Do not use special characters, otherwise it may not be saved.
             </p>
             <TDButton
               onClick={toggleModal}
               type="blue"
-              className="w-full h-[41px] text-gallery font-bold text-[14px]"
+              className="h-[41px] w-full text-[14px] font-bold text-gallery"
             >
               Save
             </TDButton>

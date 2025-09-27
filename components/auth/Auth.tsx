@@ -29,7 +29,7 @@ const Auth: React.FC = () => {
     <>
       {isAuthModalOpen ? (
         <>
-          <div className={`auth-container `}>
+          <div className={`auth-container`}>
             <div className="auth-back"></div>
             <div className="auth-content">
               <div className="auth-modal flex">
@@ -59,10 +59,10 @@ const Auth: React.FC = () => {
                   </div>
                 </div>
                 <div className="auth-modal-form relative">
-                  <div className="auth-modal-form-content ">
+                  <div className="auth-modal-form-content">
                     <UnifiedButton
                       variant="custom"
-                      className="absolute top-6.5 right-6.5 w-9 text-[32px] bg-[#434444] hover:bg-[#111923]"
+                      className="top-6.5 right-6.5 absolute w-9 bg-[#434444] text-[32px] hover:bg-[#111923]"
                       onClick={toggleAuthModal}
                     >
                       &times;

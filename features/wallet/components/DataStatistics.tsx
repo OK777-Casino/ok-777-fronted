@@ -115,17 +115,17 @@ const DataStatistics: React.FC = () => {
   ]
 
   return (
-    <div className=" [@media(max-width:660px)]:w-full">
-      <div className="w-full flex flex-col gap-4 space-y-4">
+    <div className="[@media(max-width:660px)]:w-full">
+      <div className="flex w-full flex-col gap-4 space-y-4">
         {/* DataStatistics Header */}
-        <h1 className="text-lg sm:text-xl font-bold text-white hidden lg:block">
+        <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
           Statistics
         </h1>
-        <div className="grid grid-cols-2 gap-4 bg-white-4 rounded-[12px] overflow-hidden p-1 h-11">
+        <div className="grid h-11 grid-cols-2 gap-4 overflow-hidden rounded-[12px] bg-white-4 p-1">
           {['Game data', 'Betting data'].map((item, index) => (
             <div
               className={cn(
-                'text-[14px] font-bold rounded-[8px] overflow-hidden flex justify-center items-center',
+                'flex items-center justify-center overflow-hidden rounded-[8px] text-[14px] font-bold',
                 selectedCurrencyType === item
                   ? 'bg-white-13 text-gallery'
                   : 'text-casper'
@@ -139,7 +139,7 @@ const DataStatistics: React.FC = () => {
 
         {selectedCurrencyType === 'Game data' ? (
           <>
-            <div className="grid grid-cols-2 gap-4 rounded-[12px] ">
+            <div className="grid grid-cols-2 gap-4 rounded-[12px]">
               <DropdownSelect
                 value={selectedNetworkValue}
                 options={networkOptions}
@@ -152,36 +152,36 @@ const DataStatistics: React.FC = () => {
               />
             </div>
 
-            <div className="p-4 grid grid-cols-3 gap-4 rounded-[12px] bg-white-4">
-              <div className="flex items-center flex-col">
+            <div className="grid grid-cols-3 gap-4 rounded-[12px] bg-white-4 p-4">
+              <div className="flex flex-col items-center">
                 <span className="text-[10px] text-casper">Total bets</span>
-                <span className="text-[0.875rem] text-white font-bold">2</span>
+                <span className="text-[0.875rem] font-bold text-white">2</span>
               </div>
-              <div className="flex items-center flex-col border-l border-r border-white-13">
+              <div className="flex flex-col items-center border-l border-r border-white-13">
                 <span className="text-[10px] text-casper">Bet Amount</span>
-                <span className="text-[0.875rem] text-white font-bold">
+                <span className="text-[0.875rem] font-bold text-white">
                   0.2
                 </span>
               </div>
-              <div className="flex items-center flex-col">
+              <div className="flex flex-col items-center">
                 <span className="text-[10px] text-casper">
                   Total win or loss
                 </span>
-                <span className="text-[0.875rem] text-dodger-blue font-bold">
+                <span className="text-[0.875rem] font-bold text-dodger-blue">
                   -0.2
                 </span>
               </div>
             </div>
-            <div className="rounded-t-[8px] overflow-hidden">
-              <div className="grid gap-4 grid-cols-[auto_70px_70px_70px] p-4 bg-mirage  items-center text-casper font-bold text-[12px]">
+            <div className="overflow-hidden rounded-t-[8px]">
+              <div className="grid grid-cols-[auto_70px_70px_70px] items-center gap-4 bg-mirage p-4 text-[12px] font-bold text-casper">
                 <span>Game</span>
-                <span className="flex justify-center items-center">
+                <span className="flex items-center justify-center">
                   Number of Bets
                 </span>
-                <span className="flex justify-center items-center">
+                <span className="flex items-center justify-center">
                   Bet amount
                 </span>
-                <span className="flex justify-center items-center">
+                <span className="flex items-center justify-center">
                   Win or lose
                 </span>
               </div>
@@ -189,21 +189,21 @@ const DataStatistics: React.FC = () => {
                 <div
                   key={index}
                   className={cn(
-                    'grid h-12 gap-4 grid-cols-[auto_70px_70px_70px] px-4 py-2 items-center font-bold text-[12px]',
+                    'grid h-12 grid-cols-[auto_70px_70px_70px] items-center gap-4 px-4 py-2 text-[12px] font-bold',
                     index % 2 === 0 ? 'bg-white-4' : 'bg-white-8'
                   )}
                 >
-                  <div className="flex gap-2 items-center text-casper">
+                  <div className="flex items-center gap-2 text-casper">
                     <img src={game.icon} alt="game" />
                     {game.name}
                   </div>
-                  <div className="flex justify-center items-center text-white">
+                  <div className="flex items-center justify-center text-white">
                     {game.numberBet}
                   </div>
-                  <div className="flex justify-center items-center text-white">
+                  <div className="flex items-center justify-center text-white">
                     {game.betAmount}
                   </div>
-                  <div className="flex justify-center items-center text-dodger-blue">
+                  <div className="flex items-center justify-center text-dodger-blue">
                     {game.win}
                   </div>
                 </div>
@@ -218,28 +218,28 @@ const DataStatistics: React.FC = () => {
               options={currencyOptions1}
               onChange={setSelectedCurrencyValue}
             />
-            <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-4">
+            <div className="flex flex-col gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4">
               <h2 className="text-[14px] font-bold text-white">
                 Replenishment method
               </h2>
-              <div className="bg-mirage rounded-[12px] h-[48px] p-[6px] grid items-center  grid-cols-[auto_auto_56px] pl-2">
-                <div className="flex justify-center items-center">
+              <div className="grid h-[48px] grid-cols-[auto_auto_56px] items-center rounded-[12px] bg-mirage p-[6px] pl-2">
+                <div className="flex items-center justify-center">
                   <img
                     src="/images/wallets/transak.png"
                     alt="transak"
                     className="h-6"
                   />
                 </div>
-                <div className="font-medium text-[12px] text-dodger-blue">
+                <div className="text-[12px] font-medium text-dodger-blue">
                   Transak
                 </div>
-                <div className="text-polo-blue text-[12px] font-bold">
+                <div className="text-[12px] font-bold text-polo-blue">
                   10-99999
                 </div>
               </div>
             </div>
-            <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-2">
-              <h2 className="text-[14px] text-gallery font-bold">
+            <div className="flex flex-col gap-2 overflow-hidden rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[14px] font-bold text-gallery">
                 No Game datacurrency?
               </h2>
               <p className="text-[14px] text-casper">
@@ -247,10 +247,10 @@ const DataStatistics: React.FC = () => {
                 transferred to your wallet as shown below.
               </p>
             </div>
-            <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-4">
-              <h2 className="text-[14px] text-gallery font-bold">Networks</h2>
-              <div className="rounded-[12px] overflow-hidden bg-white-8 p-1 flex justify-between">
-                <div className="h-9 w-[148px] px-3 bg-white-13 rounded-[12px] items-center gap-2 flex">
+            <div className="flex flex-col gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[14px] font-bold text-gallery">Networks</h2>
+              <div className="flex justify-between overflow-hidden rounded-[12px] bg-white-8 p-1">
+                <div className="flex h-9 w-[148px] items-center gap-2 rounded-[12px] bg-white-13 px-3">
                   <img
                     src="/icons/coin-icon/USDT.svg"
                     className="h-6 w-6"
@@ -263,17 +263,17 @@ const DataStatistics: React.FC = () => {
                     USDT
                   </span>
                 </div>
-                <div className="flex justify-end  font-bold text-[14px] text-white uppercase items-center">
+                <div className="flex items-center justify-end text-[14px] font-bold uppercase text-white">
                   tron
                 </div>
               </div>
             </div>
-            <div className="rounded-[12px] overflow-hidden p-4 bg-white-4 flex flex-col gap-4">
-              <h2 className="text-[14px] text-gallery font-bold">
+            <div className="flex flex-col gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[14px] font-bold text-gallery">
                 Purchase amount
               </h2>
-              <div className="rounded-[12px] overflow-hidden bg-white-8 p-1 flex justify-between">
-                <div className="h-9  px-3 bg-white-13 rounded-[12px] items-center gap-2 flex">
+              <div className="flex justify-between overflow-hidden rounded-[12px] bg-white-8 p-1">
+                <div className="flex h-9 items-center gap-2 rounded-[12px] bg-white-13 px-3">
                   <img
                     src="/icons/coin-icon/USDT.svg"
                     className="h-6 w-6"
@@ -281,12 +281,12 @@ const DataStatistics: React.FC = () => {
                   />
                   <span className="text-[14px] font-bold text-gallery">0</span>
                 </div>
-                <div className="flex justify-end  font-bold text-[14px] text-white gap-1 items-center">
+                <div className="flex items-center justify-end gap-1 text-[14px] font-bold text-white">
                   pay <span className="text-malachite">+0</span>
                 </div>
               </div>
             </div>
-            <div className="flex gap-2 font-medium text-white text-[14px] py-4">
+            <div className="flex gap-2 py-4 text-[14px] font-medium text-white">
               Minimum purchase amount{' '}
               <span className="text-dodger-blue">10 USDT</span>
             </div>
@@ -297,11 +297,11 @@ const DataStatistics: React.FC = () => {
             >
               Top up now
             </TDButton>
-            <div className="flex gap-4 justify-center items-center">
+            <div className="flex items-center justify-center gap-4">
               {paymentMethods.map(paymentMethod => (
                 <img
                   src={paymentMethod.icon}
-                  className="lg:h-8 h-[25.5px]"
+                  className="h-[25.5px] lg:h-8"
                   alt="payment"
                 />
               ))}

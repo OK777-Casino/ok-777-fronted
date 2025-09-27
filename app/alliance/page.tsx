@@ -103,10 +103,10 @@ function AlliancePageContent() {
 
   return (
     <>
-      <div className="flex flex-col gap-4 justify-between pb-16 md:pb-0 max-w-6xl p-2 m-auto">
+      <div className="m-auto flex max-w-6xl flex-col justify-between gap-4 p-2 pb-16 md:pb-0">
         {/* Left Sidebar Navigation */}
-        <div className="bg-[#FFFFFF0A] rounded-lg h-full hidden lg:block w-full ">
-          <div className="grid grid-cols-5 p-3 gap-3">
+        <div className="hidden h-full w-full rounded-lg bg-[#FFFFFF0A] lg:block">
+          <div className="grid grid-cols-5 gap-3 p-3">
             {navigationItems.map(item => (
               <div
                 key={item.key}
@@ -114,14 +114,14 @@ function AlliancePageContent() {
                   setActiveTab(item.key)
                   updateQuery(item.key)
                 }}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 cursor-pointer ${
+                className={`flex w-full cursor-pointer items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 ${
                   activeTab === item.key
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
                 }`}
               >
                 <img src={item.icon} alt={item.key} />
-                <span className="font-medium text-sm">{item.name}</span>
+                <span className="text-sm font-medium">{item.name}</span>
               </div>
             ))}
           </div>

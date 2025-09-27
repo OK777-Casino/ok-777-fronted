@@ -93,10 +93,10 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
   ]
 
   return (
-    <div className="lg:w-[282px] md:w-[282px] w-full h-screen lg:h-auto lg:rounded-[14px] glass-bg p-0 text-white font-montserrat backdrop-blur-[32px] overflow-y-auto">
+    <div className="glass-bg h-screen w-full overflow-y-auto p-0 font-montserrat text-white backdrop-blur-[32px] md:w-[282px] lg:h-auto lg:w-[282px] lg:rounded-[14px]">
       <div
         onClick={onClose}
-        className="flex absolute right-4 top-4 h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] hover:bg-white-8 transition-colors lg:hidden z-10"
+        className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8 lg:hidden"
         style={{
           boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
         }}
@@ -104,23 +104,23 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
         <X size={16} className="text-[var(--casper)]" />
       </div>
       {/* User Profile Section */}
-      <div className="p-4 lg:p-4 pt-5 lg:pt-4 flex flex-col items-center lg:justify-start lg:min-h-0">
-        <div className="flex flex-col items-center gap-2 w-[88%] ">
+      <div className="flex flex-col items-center p-4 pt-5 lg:min-h-0 lg:justify-start lg:p-4 lg:pt-4">
+        <div className="flex w-[88%] flex-col items-center gap-2">
           {/* Avatar with VIP Badge */}
           <div className="relative flex flex-col items-center gap-[-10px]">
             <div className="relative">
               <img
                 src="https://api.builder.io/api/v1/image/assets/TEMP/381f33b8ee9dde920a0b2278348be945b8886b91?width=128"
                 alt="User avatar"
-                className="w-16 h-16 rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
+                className="h-16 w-16 rounded-2xl shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]"
               />
               {/* VIP Badge - positioned to overlap the bottom of the avatar */}
-              <div className="absolute -bottom-2.5 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="absolute -bottom-2.5 left-1/2 z-10 -translate-x-1/2 transform">
                 <div
-                  className="h-5 px-2 flex items-center justify-center rounded-2xl border border-white shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
+                  className="flex h-5 items-center justify-center rounded-2xl border border-white px-2 shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
                   style={{ backgroundColor: 'var(--malachite)' }}
                 >
-                  <span className="text-white text-xs font-bold whitespace-nowrap">
+                  <span className="whitespace-nowrap text-xs font-bold text-white">
                     VIP 1
                   </span>
                 </div>
@@ -129,38 +129,38 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           </div>
 
           {/* Username */}
-          <div className="flex items-center gap-1 mt-2">
-            <span className="text-white text-sm font-bold">
+          <div className="mt-2 flex items-center gap-1">
+            <span className="text-sm font-bold text-white">
               <span>User8527681</span>
             </span>
-            <EditIcon className="w-4 h-4" />
+            <EditIcon className="h-4 w-4" />
           </div>
 
           {/* VIP Progress */}
-          <div className="w-full flex flex-col gap-0.5">
-            <div className="flex justify-between items-center">
-              <span className="text-white text-[10px] font-bold">
+          <div className="flex w-full flex-col gap-0.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-bold text-white">
                 <span>VIP 1</span>
               </span>
-              <span className="text-white text-[10px] font-bold">
+              <span className="text-[10px] font-bold text-white">
                 <span>VIP 1</span>
               </span>
             </div>
 
             {/* Progress Bar */}
             <div className="glass-input rounded-lg p-0.5">
-              <div className="relative w-full h-2 rounded-lg">
+              <div className="relative h-2 w-full rounded-lg">
                 <div
-                  className="w-[116px] h-full border border-white-4 rounded-lg"
+                  className="h-full w-[116px] rounded-lg border border-white-4"
                   style={{ backgroundColor: 'var(--crimson)' }}
                 ></div>
-                <div className="absolute right-1 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
+                <div className="absolute right-1 top-1/2 flex -translate-y-1/2 transform items-center gap-1">
                   <img
                     src="https://api.builder.io/api/v1/image/assets/TEMP/b06c41ce5f767b8fe02cc82d8bf934e68565f90a?width=24"
                     alt="Chest"
-                    className="w-3 h-3"
+                    className="h-3 w-3"
                   />
-                  <span className="text-white text-[10px]">50%</span>
+                  <span className="text-[10px] text-white">50%</span>
                 </div>
               </div>
             </div>
@@ -170,10 +170,10 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
 
       {/* Bonus Code Section */}
       <div className="px-4 pb-4 lg:pb-2">
-        <div className="p-4 rounded-xl">
+        <div className="rounded-xl p-4">
           {/* Bonus Code Header */}
-          <div className="flex items-center gap-2 mb-4">
-            <PriceTagIcon className="w-4 h-4" />
+          <div className="mb-4 flex items-center gap-2">
+            <PriceTagIcon className="h-4 w-4" />
             <span
               className="text-sm font-bold"
               style={{ color: 'var(--casper)' }}
@@ -183,16 +183,16 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
           </div>
 
           {/* Input Field */}
-          <div className="flex glass-input rounded-xl p-1.5 gap-1">
+          <div className="glass-input flex gap-1 rounded-xl p-1.5">
             <input
               type="text"
               value={bonusCode}
               onChange={e => setBonusCode(e.target.value)}
               placeholder="Enter bonus code"
-              className="flex-1 text-gallery bg-transparent text-xs border-none outline-none px-3 w-[30px] placeholder:text-blue-bayoux"
+              className="w-[30px] flex-1 border-none bg-transparent px-3 text-xs text-gallery outline-none placeholder:text-blue-bayoux"
               style={{ color: 'var(--blue-bayoux)' }}
             />
-            <FlatButton className="text-xs font-bold h-9 px-4">
+            <FlatButton className="h-9 px-4 text-xs font-bold">
               <span>Send</span>
             </FlatButton>
           </div>
@@ -209,9 +209,9 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                 href={item.href}
                 onClick={item.event}
                 key={index}
-                className={`flex items-center gap-2 h-12 px-4 rounded-lg text-casper transition-colors group backdrop-blur-[32px] ${
+                className={`group flex h-12 items-center gap-2 rounded-lg px-4 text-casper backdrop-blur-[32px] transition-colors ${
                   isActive
-                    ? 'bg-[var(--chip-purple)]/20 border border-[var(--chip-purple)]/30'
+                    ? 'bg-[var(--chip-purple)]/20 border-[var(--chip-purple)]/30 border'
                     : 'hover:bg-white/5'
                 }`}
               >
@@ -220,7 +220,7 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                 {(item as any).flag && (
                   <img
                     src={`/icons/flag-icon/${(item as any).flag}.svg`}
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                     alt="language flag"
                   />
                 )}
@@ -234,12 +234,12 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
                   {item.label}
                   {item.count && (
                     <div
-                      className=" rounded-md px-1.5 py-0.5 shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
+                      className="rounded-md px-1.5 py-0.5 shadow-[0_1px_0_0_rgba(255,255,255,0.08)_inset]"
                       style={{
                         backgroundColor: 'var(--malachite)',
                       }}
                     >
-                      <span className="text-white text-xs font-bold">
+                      <span className="text-xs font-bold text-white">
                         {item.count}
                       </span>
                     </div>
@@ -258,11 +258,11 @@ const UserProfileDropdown = ({ onClose }: UserProfileDropdownProps) => {
             setAuthUser(null)
             onClose?.() // 🔥 close modal immediately
           }}
-          className="flex items-center text-casper gap-2 h-12 px-4 rounded-lg hover:bg-white/5 transition-colors group w-full backdrop-blur-[32px]"
+          className="group flex h-12 w-full items-center gap-2 rounded-lg px-4 text-casper backdrop-blur-[32px] transition-colors hover:bg-white/5"
         >
           <DockRightArrowIcon />
           <span
-            className="flex-1 text-left text-sm font-bold group-hover:text-white transition-colors"
+            className="flex-1 text-left text-sm font-bold transition-colors group-hover:text-white"
             style={{ color: 'var(--casper)' }}
           >
             Log out

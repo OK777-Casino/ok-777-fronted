@@ -12,18 +12,18 @@ const BankerPlayerDefault: React.FC = () => {
 
   return (
     <PageBettingLayout>
-      <div className="flex p-2 items-start gap-4 w-full rounded-xl bg-white/[0.04]">
+      <div className="flex w-full items-start gap-4 rounded-xl bg-white/[0.04] p-2">
         {/* bnaker Section */}
         {mockData.map(item => (
           <div
             key={item.type}
-            className="flex flex-col items-center gap-8 flex-1"
+            className="flex flex-1 flex-col items-center gap-8"
           >
-            <div className="flex justify-around sm:justify-center items-center w-full gap-1">
+            <div className="flex w-full items-center justify-around gap-1 sm:justify-center">
               {/* Progress Circle for banker */}
-              <div className="relative w-10 h-10">
+              <div className="relative h-10 w-10">
                 <svg
-                  className="w-10 h-10 transform -rotate-90"
+                  className="h-10 w-10 -rotate-90 transform"
                   viewBox="0 0 40 40"
                 >
                   <circle
@@ -54,23 +54,23 @@ const BankerPlayerDefault: React.FC = () => {
                 </div>
               </div>
               <div className="flex flex-col items-start">
-                <div className="text-base font-bold text-right">
+                <div className="text-right text-base font-bold">
                   <span className="text-casper">$</span>
                   <span className="text-white">7592</span>
                 </div>
                 <div className="flex items-center">
-                  <User className="w-4 h-4 text-casper" />
+                  <User className="h-4 w-4 text-casper" />
                   <span className="text-sm font-bold text-casper">11</span>
                 </div>
               </div>
             </div>
-            <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+            <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-white/[0.08] bg-mirage px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
               <span className="text-sm font-bold text-white">$0</span>
             </div>
             <div className={`text-lg font-bold text-${item.color}`}>
               {item.type.toUpperCase()}
             </div>
-            <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+            <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-white/[0.08] bg-mirage px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
               <span className="text-sm font-bold text-white">{item.ratio}</span>
             </div>
           </div>

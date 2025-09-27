@@ -39,24 +39,24 @@ export default function ChooseModal({
       {sortOptions.map(option => (
         <div
           key={option.value}
-          className={`flex h-[50px] px-3 pl-2 items-center gap-2 rounded-xl ${selectedOption === option.value ? 'bg-white/[0.04]' : ''}`}
+          className={`flex h-[50px] items-center gap-2 rounded-xl px-3 pl-2 ${selectedOption === option.value ? 'bg-white/[0.04]' : ''}`}
         >
-          <div className="flex h-9 px-2 pl-3 items-center gap-2 flex-1 rounded-lg">
-            <div className="text-white font-montserrat text-sm font-bold line-clamp-1">
+          <div className="flex h-9 flex-1 items-center gap-2 rounded-lg px-2 pl-3">
+            <div className="line-clamp-1 font-montserrat text-sm font-bold text-white">
               {option.label}
             </div>
           </div>
           <div className="flex items-center gap-2.5">
             <div
               onClick={() => onOptionChange(option.value)}
-              className="w-6 h-6 flex items-center justify-center"
+              className="flex h-6 w-6 items-center justify-center"
             >
               {selectedOption === option.value ? (
-                <div className="w-6 h-6 rounded-full bg-[#2283F6] border-2 border-[#2283F6] flex items-center justify-center">
-                  <Check className="w-3 h-3 text-white stroke-[2]" />
+                <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-[#2283F6] bg-[#2283F6]">
+                  <Check className="h-3 w-3 stroke-[2] text-white" />
                 </div>
               ) : (
-                <div className="w-6 h-6 rounded-full border-2 border-[#55657E]" />
+                <div className="h-6 w-6 rounded-full border-2 border-[#55657E]" />
               )}
             </div>
           </div>

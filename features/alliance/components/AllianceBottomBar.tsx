@@ -18,10 +18,7 @@ const AllianceTabButton = ({
   onClick,
 }: AllianceTabButtonProps) => (
   <div
-    className={`
-      flex h-12 px-0 py-2 flex-col justify-center items-center gap-2 flex-1 cursor-pointer
-      ${isActive ? 'relative' : ''}
-    `}
+    className={`flex h-12 flex-1 cursor-pointer flex-col items-center justify-center gap-2 px-0 py-2 ${isActive ? 'relative' : ''} `}
     style={
       isActive
         ? {
@@ -33,13 +30,10 @@ const AllianceTabButton = ({
     onClick={onClick}
   >
     <div className={isActive ? 'text-[#ED1D49]' : 'text-[#A7B5CA]'}>
-      <img src={icon} alt={label} className="w-[19.2px] h-[19.2px]" />
+      <img src={icon} alt={label} className="h-[19.2px] w-[19.2px]" />
     </div>
     <div
-      className={`
-        flex justify-center items-center text-[10px] leading-none font-montserrat
-        ${isActive ? 'text-white' : 'text-[#A7B5CA]'}
-      `}
+      className={`flex items-center justify-center font-montserrat text-[10px] leading-none ${isActive ? 'text-white' : 'text-[#A7B5CA]'} `}
       style={
         isActive
           ? {
@@ -96,16 +90,16 @@ export default function AllianceBottomBar() {
   }
 
   return (
-    <div className="fixed block lg:hidden bottom-0 left-0 right-0 z-50 bottom-bar">
+    <div className="bottom-bar fixed bottom-0 left-0 right-0 z-50 block lg:hidden">
       <div
-        className="flex w-full px-4 pt-2 pb-0 flex-col items-center rounded-t-2xl border-t border-white-8"
+        className="flex w-full flex-col items-center rounded-t-2xl border-t border-white-8 px-4 pb-0 pt-2"
         style={{
           background: 'rgba(17, 25, 35, 0.54)',
           backdropFilter: 'blur(32px)',
           height: '59px',
         }}
       >
-        <div className="flex justify-center items-start gap-2 w-full rounded-lg">
+        <div className="flex w-full items-start justify-center gap-2 rounded-lg">
           {allianceTabs.map(tab => (
             <AllianceTabButton
               key={tab.id}

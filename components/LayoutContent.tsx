@@ -83,9 +83,9 @@ export default function LayoutContent({ children }: LayoutContentProps) {
       <main
         className={`w-full ${
           isMobileHeader ? 'pt-[56px] sm:pt-[64px]' : 'pt-[56px]'
-        } relative z-60 transition-all duration-300`}
+        } z-60 relative transition-all duration-300`}
       >
-        <div className="w-full max-w-[100vw] min-h-[calc(100dvh-56px)]">
+        <div className="min-h-[calc(100dvh-56px)] w-full max-w-[100vw]">
           {shouldShowSidebar && <Sidebar />}
           <div
             className={`main-content ${
@@ -100,12 +100,12 @@ export default function LayoutContent({ children }: LayoutContentProps) {
                 : 'h-[calc(100dvh-56px)]'
             } ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}
           >
-            <div className="w-full max-w-[1920px] mx-auto">{children}</div>
+            <div className="mx-auto w-full max-w-[1920px]">{children}</div>
             {!isHashgamePage && !isAlliancePage && <Footer />}
           </div>
           {isNotificationsOpen && !isMobileHeader && (
             <div
-              className={`hidden lg:flex w-[420px] h-[calc(100dvh-56px-59px)] lg:h-[calc(100dvh-56px)] bg-[#0f141c] border-l border-gray-700 flex-shrink-0 fixed right-0 top-[56px] z-[60]`}
+              className={`fixed right-0 top-[56px] z-[60] hidden h-[calc(100dvh-56px-59px)] w-[420px] flex-shrink-0 border-l border-gray-700 bg-[#0f141c] lg:flex lg:h-[calc(100dvh-56px)]`}
             >
               <NotificationsPanel onClose={closeOverlay} />
             </div>

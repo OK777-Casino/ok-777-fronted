@@ -33,49 +33,49 @@ const BetTemplate: React.FC<BetTemplateProps> = ({
 }) => {
   return (
     <>
-      <div className="md:w-[70%] w-full mx-auto">
-        <div className="lg:flex hidden gap-4 items-center py-8">
+      <div className="mx-auto w-full md:w-[70%]">
+        <div className="hidden items-center gap-4 py-8 lg:flex">
           <BlackButton>
-            <ArrowLeftStrokeIcon className="w-4 h-4" />
+            <ArrowLeftStrokeIcon className="h-4 w-4" />
           </BlackButton>
-          <span className="font-bold text-[18px] text-white">{heading}</span>
+          <span className="text-[18px] font-bold text-white">{heading}</span>
         </div>
-        <div className="rounded-[12px] overflow-hidden lg:mb-64">
+        <div className="overflow-hidden rounded-[12px] lg:mb-64">
           <div
             className={cn(
-              'h-[426px] w-full  flex flex-col justify-around lg:justify-center  bg-right gap-10 bg-no-repeat bg-cover',
+              'flex h-[426px] w-full flex-col justify-around gap-10 bg-cover bg-right bg-no-repeat lg:justify-center',
               background
             )}
           >
-            <div className="text-white pl-10 hidden xl:block max-w-[50%] uppercase font-bold">
+            <div className="hidden max-w-[50%] pl-10 font-bold uppercase text-white xl:block">
               <div className="text-[40px]">{title.line1}</div>
               <div className="text-[32px]">{title.line2}</div>
             </div>
             <FlatButton
               onClick={onClick}
-              className="w-[371.52px] uppercase ml-10 h-[82px] hidden  xl:flex text-[29.82px] font-bold rounded-[19.88px] bg-[linear-gradient(#0C60FF,#2C9FFA)]"
+              className="ml-10 hidden h-[82px] w-[371.52px] rounded-[19.88px] bg-[linear-gradient(#0C60FF,#2C9FFA)] text-[29.82px] font-bold uppercase xl:flex"
             >
               {submit}
             </FlatButton>
             {button && (
-              <div className="flex lg:hidden itemes-end justify-center pt-[32px]">
+              <div className="itemes-end flex justify-center pt-[32px] lg:hidden">
                 <TDButton
                   onClick={() => onButtonClick?.()}
                   type="blue"
-                  className="w-[217px] h-[42px] text-[14px] "
+                  className="h-[42px] w-[217px] text-[14px]"
                 >
                   {button}
                 </TDButton>
               </div>
             )}
           </div>
-          <div className="px-4 bg-white-4 pt-8">
+          <div className="bg-white-4 px-4 pt-8">
             {button && (
-              <div className="lg:flex hidden justify-center pb-[32px]">
+              <div className="hidden justify-center pb-[32px] lg:flex">
                 <TDButton
                   onClick={() => onButtonClick}
                   type="blue"
-                  className="w-[217px] h-[42px] text-[14px] "
+                  className="h-[42px] w-[217px] text-[14px]"
                 >
                   {button}
                 </TDButton>

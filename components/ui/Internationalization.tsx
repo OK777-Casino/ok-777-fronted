@@ -360,16 +360,16 @@ export function LanguageSelector({
         <DialogPrimitive.Content
           className={cn(
             // Mobile: slide from bottom, full width
-            'fixed h-fit bottom-0 left-0 right-0 z-50',
+            'fixed bottom-0 left-0 right-0 z-50 h-fit',
             'w-full max-w-none rounded-t-3xl border-0',
-            'data-[state=open]:slide-in-from-bottom data-[state=closed]:slide-out-to-bottom',
+            'data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
             // Tablet and desktop: centered dialog
             'sm:fixed sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
             'sm:w-full sm:max-w-[402px] sm:rounded-xl',
             'sm:data-[state=open]:slide-in-from-left-1/2 sm:data-[state=open]:slide-in-from-top-[48%]',
             'sm:data-[state=closed]:slide-out-to-left-1/2 sm:data-[state=closed]:slide-out-to-top-[48%]',
             // Shared styles
-            'p-0 bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px]',
+            'bg-[rgba(17,25,35,0.54)] p-0 backdrop-blur-[32px]',
             'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset]',
             'duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out',
             'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
@@ -379,21 +379,21 @@ export function LanguageSelector({
           {/* Header */}
           <div
             className={cn(
-              'flex items-center justify-between px-4 py-4 rounded-t-3xl sm:px-6 sm:rounded-t-xl',
+              'flex items-center justify-between rounded-t-3xl px-4 py-4 sm:rounded-t-xl sm:px-6',
               'bg-gradient-to-b from-[rgba(17,25,35,0.54)] to-[#002554]',
               'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]'
             )}
           >
-            <DialogTitle className="text-white font-montserrat text-lg sm:text-xl font-bold">
+            <DialogTitle className="font-montserrat text-lg font-bold text-white sm:text-xl">
               {t('settings.language')}
             </DialogTitle>
             <div
               onClick={() => onOpenChange(false)}
               className={cn(
-                'flex h-10 w-10 sm:h-9 sm:w-9 items-center justify-center rounded-lg',
+                'flex h-10 w-10 items-center justify-center rounded-lg sm:h-9 sm:w-9',
                 'border border-[rgba(255,255,255,0.04)] bg-[rgba(255,255,255,0.04)]',
                 'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset] backdrop-blur-[32px]',
-                'hover:bg-[rgba(255,255,255,0.08)] transition-colors',
+                'transition-colors hover:bg-[rgba(255,255,255,0.08)]',
                 'touch-manipulation' // Better touch support on mobile
               )}
             >
@@ -413,7 +413,7 @@ export function LanguageSelector({
           </div>
 
           {/* Languages List */}
-          <div className="px-4 py-4 space-y-0 max-h-[60vh] overflow-y-auto sm:max-h-none sm:overflow-visible">
+          <div className="max-h-[60vh] space-y-0 overflow-y-auto px-4 py-4 sm:max-h-none sm:overflow-visible">
             {languages.map(language => {
               const isSelected = selectedLanguage === language.code
 
@@ -427,20 +427,20 @@ export function LanguageSelector({
                     }
                   }}
                   className={cn(
-                    'flex items-center justify-between w-full h-[52px] sm:h-[50px] px-4 rounded-xl',
-                    'hover:bg-[rgba(255,255,255,0.02)] active:bg-[rgba(255,255,255,0.04)] transition-colors',
+                    'flex h-[52px] w-full items-center justify-between rounded-xl px-4 sm:h-[50px]',
+                    'transition-colors hover:bg-[rgba(255,255,255,0.02)] active:bg-[rgba(255,255,255,0.04)]',
                     'touch-manipulation', // Better touch support
                     isSelected && 'bg-[#1C2532]'
                   )}
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-6 h-[18px] flex items-center justify-center flex-shrink-0">
+                    <div className="flex h-[18px] w-6 flex-shrink-0 items-center justify-center">
                       {language.flag}
                     </div>
                     <span
                       className={cn(
-                        'font-montserrat text-sm sm:text-sm font-bold',
-                        'text-left truncate', // Handle long language names
+                        'font-montserrat text-sm font-bold sm:text-sm',
+                        'truncate text-left', // Handle long language names
                         isSelected ? 'text-[#93ACD3]' : 'text-[#55657E]'
                       )}
                     >

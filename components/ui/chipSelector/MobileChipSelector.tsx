@@ -179,7 +179,7 @@ export function MobileChipSelector({
 
   return (
     <>
-      <div className="flex relative justify-center items-center w-full ">
+      <div className="relative flex w-full items-center justify-center">
         {showCircularView && (
           <CircularChipSelector
             onChipSelect={handleChipSelect}
@@ -187,7 +187,7 @@ export function MobileChipSelector({
           />
         )}
         <div
-          className="flex h-[52px] items-end justify-center w-full gap-2  px-2 py-2 rounded-xl"
+          className="flex h-[52px] w-full items-end justify-center gap-2 rounded-xl px-2 py-2"
           style={{ background: 'rgba(255, 255, 255, 0.04)' }}
         >
           {/* Grid/Menu Button */}
@@ -246,9 +246,9 @@ export function MobileChipSelector({
           </div>
 
           {/* Undo Button */}
-          <div className="flex flex-1 justify-center items-center gap-1">
+          <div className="flex flex-1 items-center justify-center gap-1">
             <div
-              className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-casper flex-1"
+              className="flex h-9 flex-1 items-center gap-2 rounded-lg px-2 py-0 font-montserrat text-xs font-bold text-casper"
               style={{ background: 'rgba(0, 0, 0, 0.54)' }}
             >
               Undo
@@ -280,9 +280,9 @@ export function MobileChipSelector({
           />
 
           {/* Confirm Button */}
-          <div className="flex flex-1 justify-center items-center gap-1">
+          <div className="flex flex-1 items-center justify-center gap-1">
             <div
-              className="flex h-9 items-center gap-2 rounded-lg px-2 py-0 font-montserrat font-bold text-xs text-casper flex-1"
+              className="flex h-9 flex-1 items-center gap-2 rounded-lg px-2 py-0 font-montserrat text-xs font-bold text-casper"
               style={{ background: 'rgba(0, 0, 0, 0.54)' }}
             >
               <svg

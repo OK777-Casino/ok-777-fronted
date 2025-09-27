@@ -57,16 +57,16 @@ const Performance: React.FC = () => {
 
   return (
     <div className="w-full lg:p-4">
-      <div className="flex bg-[#72707038] rounded-lg w-fit p-1 mb-4 w-67 [@media(max-width:660px)]:w-full">
+      <div className="w-67 mb-4 flex w-fit rounded-lg bg-[#72707038] p-1 [@media(max-width:660px)]:w-full">
         <div
           onClick={() => {
             setActiveTabOption('Default')
             setSubQuery('today')
           }}
-          className={`px-9 py-1.5 hover:bg-[rgba(255,255,255,0.08)] hover:shadow-lg hover:scale-[1.01] [@media(max-width:660px)]:w-[50%] cursor-pointer [@media(max-width:660px)]:flex [@media(max-width:660px)]:justify-center rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 ${
+          className={`flex cursor-pointer items-center gap-2 rounded-lg border-none px-9 py-1.5 text-[14px] font-bold transition-all duration-200 hover:scale-[1.01] hover:bg-[rgba(255,255,255,0.08)] hover:shadow-lg [@media(max-width:660px)]:flex [@media(max-width:660px)]:w-[50%] [@media(max-width:660px)]:justify-center ${
             activeTabOption === 'Active'
               ? 'bg-transparent text-white shadow-lg'
-              : 'bg-[rgba(255,255,255,0.13)] text-gray-300  border border-[rgba(255,255,255,0.1)]'
+              : 'border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.13)] text-gray-300'
           }`}
         >
           Today
@@ -76,10 +76,10 @@ const Performance: React.FC = () => {
             setActiveTabOption('Active')
             setSubQuery('yesterday')
           }}
-          className={`px-9 py-1.5 [@media(max-width:660px)]:w-[50%] hover:bg-[rgba(255,255,255,0.08)] hover:shadow-lg hover:scale-[1.01] cursor-pointer [@media(max-width:660px)]:flex [@media(max-width:660px)]:justify-center rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 ${
+          className={`flex cursor-pointer items-center gap-2 rounded-lg border-none px-9 py-1.5 text-[14px] font-bold transition-all duration-200 hover:scale-[1.01] hover:bg-[rgba(255,255,255,0.08)] hover:shadow-lg [@media(max-width:660px)]:flex [@media(max-width:660px)]:w-[50%] [@media(max-width:660px)]:justify-center ${
             activeTabOption === 'Default'
               ? 'bg-transparent text-white shadow-lg'
-              : 'bg-[rgba(255,255,255,0.13)] text-gray-300  border border-[rgba(255,255,255,0.1)]'
+              : 'border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.13)] text-gray-300'
           }`}
         >
           Yesterday
@@ -87,20 +87,20 @@ const Performance: React.FC = () => {
       </div>
 
       {/* Performance Table */}
-      <div className="overflow-x-auto rounded-lg mb-4">
+      <div className="mb-4 overflow-x-auto rounded-lg">
         <table className="w-full text-white">
           <thead>
-            <tr className="bg-gray-900 h-12">
-              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
+            <tr className="h-12 bg-gray-900">
+              <th className="px-4 text-center text-sm font-semibold text-[#FFFFFFCC]">
                 Game Type
               </th>
-              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
+              <th className="px-4 text-center text-sm font-semibold text-[#FFFFFFCC]">
                 Total performance
               </th>
-              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
+              <th className="px-4 text-center text-sm font-semibold text-[#FFFFFFCC]">
                 Direct performance
               </th>
-              <th className="font-semibold text-sm text-[#FFFFFFCC] text-center px-4">
+              <th className="px-4 text-center text-sm font-semibold text-[#FFFFFFCC]">
                 Agent performance
               </th>
             </tr>
@@ -108,29 +108,29 @@ const Performance: React.FC = () => {
           <tbody>
             {performanceData.map((row, index) => (
               <tr key={index}>
-                <td className="text-sm font-semibold text-center whitespace-nowrap text-casper">
+                <td className="whitespace-nowrap text-center text-sm font-semibold text-casper">
                   {row.gameType}
                 </td>
-                <td className="text-sm font-semibold text-center whitespace-nowrap text-white">
+                <td className="whitespace-nowrap text-center text-sm font-semibold text-white">
                   {row.total}
                 </td>
-                <td className="text-sm font-semibold text-center whitespace-nowrap text-white">
+                <td className="whitespace-nowrap text-center text-sm font-semibold text-white">
                   <div className="inline-flex items-center justify-center gap-2">
                     {row.direct}
                     <img
                       src="/icons/file-report.svg"
                       alt="report"
-                      className="w-4 h-4 opacity-60"
+                      className="h-4 w-4 opacity-60"
                     />
                   </div>
                 </td>
-                <td className="py-3 px-4 text-sm font-semibold text-center whitespace-nowrap text-white">
+                <td className="whitespace-nowrap px-4 py-3 text-center text-sm font-semibold text-white">
                   <div className="inline-flex items-center justify-center gap-2">
                     {row.agent}
                     <img
                       src="/icons/file-report.svg"
                       alt="report"
-                      className="w-4 h-4 opacity-60"
+                      className="h-4 w-4 opacity-60"
                     />
                   </div>
                 </td>
@@ -138,16 +138,16 @@ const Performance: React.FC = () => {
             ))}
             {/* Total Row */}
             <tr>
-              <td className="py-3 px-4 font-bold text-[.8rem] text-center whitespace-nowrap text-[#A7B5CA]">
+              <td className="whitespace-nowrap px-4 py-3 text-center text-[.8rem] font-bold text-[#A7B5CA]">
                 Total
               </td>
-              <td className="py-3 px-4 font-bold text-[.8rem] text-center whitespace-nowrap text-[#60A5FA]">
+              <td className="whitespace-nowrap px-4 py-3 text-center text-[.8rem] font-bold text-[#60A5FA]">
                 0
               </td>
-              <td className="py-3 px-4 font-bold text-[.8rem] text-center whitespace-nowrap text-[#60A5FA]">
+              <td className="whitespace-nowrap px-4 py-3 text-center text-[.8rem] font-bold text-[#60A5FA]">
                 0
               </td>
-              <td className="py-3 px-4 font-bold text-[.8rem] text-center whitespace-nowrap text-[#60A5FA]">
+              <td className="whitespace-nowrap px-4 py-3 text-center text-[.8rem] font-bold text-[#60A5FA]">
                 0
               </td>
             </tr>

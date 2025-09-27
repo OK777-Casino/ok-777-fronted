@@ -29,32 +29,29 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
   return (
     <>
       <div
-        className={`max-w-6xl flex flex-col items-center p-2 gap-4 md:gap-8 mx-auto ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`mx-auto flex max-w-6xl flex-col items-center gap-4 p-2 md:gap-8 ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header with Segmented Control */}
-        <div className="w-full flex flex-col items-center gap-4 p-0 ">
-          <div className=" justify-between  w-full items-center mb-8 bg-[#222d3d] pr-4 rounded-lg flex  [@media(max-width:768px)]:hidden">
-            <div className="flex bg-[#72707038] rounded-lg p-1 ">
+        <div className="flex w-full flex-col items-center gap-4 p-0">
+          <div className="mb-8 flex w-full items-center justify-between rounded-lg bg-[#222d3d] pr-4 [@media(max-width:768px)]:hidden">
+            <div className="flex rounded-lg bg-[#72707038] p-1">
               <Link
                 href="/hashgames/niuniu/transfer-betting"
-                className={` px-8  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2 
-                bg-color-[#FFFFFF] text-white shadow-lg hover:bg-[rgba(255,255,255,0.08)]`}
+                className={`bg-color-[#FFFFFF] flex items-center gap-2 rounded-lg border-none px-8 py-1.5 text-[14px] font-bold text-white shadow-lg transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
               >
                 {' '}
                 <img
                   src="/icons/swap-horizontal.svg"
                   alt="active"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 />
                 Transfer betting
               </Link>
               <div
-                className={`px-8 py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none flex items-center gap-2
-                bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]
-            `}
+                className={`flex items-center gap-2 rounded-lg border border-none border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.13)] px-8 py-1.5 text-[14px] font-bold text-gray-300 transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
               >
                 {' '}
-                <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
+                <img src="/icons/wallet.svg" alt="active" className="h-6 w-6" />
                 Page betting
               </div>
             </div>
@@ -62,7 +59,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
             <div className="flex items-center gap-4">
               <div
                 onClick={openChangeGameModal}
-                className="flex h-9 w-9 justify-center items-center rounded-lg border border-white/[0.04] bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] hover:bg-white-8 transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.04] bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors hover:bg-white-8"
               >
                 <svg
                   width="16"
@@ -111,44 +108,44 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
               </div>
               <div
                 onClick={handleMenuClick}
-                className="flex h-9 w-9 justify-center items-center rounded-lg border border-white/[0.04] bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] hover:bg-white-8 transition-colors"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.04] bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors hover:bg-white-8"
               >
-                <Menu className="w-4 h-4 text-casper" />
+                <Menu className="h-4 w-4 text-casper" />
               </div>
             </div>
           </div>
           {/* Mobile view Header Section*/}
-          <div className="bg-[#72707038] rounded-lg w-full  p-1 hidden [@media(max-width:768px)]:flex ">
+          <div className="hidden w-full rounded-lg bg-[#72707038] p-1 [@media(max-width:768px)]:flex">
             <Link
               href="/hashgames/bankerplayer/transfer-betting"
-              className={` w-[50%] justify-center flex items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none gap-2 hover:bg-[rgba(255,255,255,0.08)]`}
+              className={`flex w-[50%] items-center justify-center gap-2 rounded-lg border-none py-1.5 text-[14px] font-bold transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
               <img
                 src="/icons/swap-horizontal.svg"
                 alt="active"
-                className="w-6 h-6"
+                className="h-6 w-6"
               />
               Transfer betting
             </Link>
             <div
-              className={` w-[50%] justify-center flex items-center  py-1.5 rounded-lg font-bold transition-all duration-200 text-[14px] border-none gap-2 bg-[rgba(255,255,255,0.13)] text-gray-300 hover:bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.1)]`}
+              className={`flex w-[50%] items-center justify-center gap-2 rounded-lg border border-none border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.13)] py-1.5 text-[14px] font-bold text-gray-300 transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
-              <img src="/icons/wallet.svg" alt="active" className="w-6 h-6" />
+              <img src="/icons/wallet.svg" alt="active" className="h-6 w-6" />
               Page betting
             </div>
           </div>
 
           {/* Betting Limit and Toggle */}
-          <div className="flex flex-row lg:flex-col justify-between items-center w-full gap-2 sm:gap-0">
+          <div className="flex w-full flex-row items-center justify-between gap-2 sm:gap-0 lg:flex-col">
             <div className="text-sm font-bold">
               <span className="text-white">Limit </span>
               <span className="text-dodger-blue">1-15000</span>
             </div>
             <div className="flex h-6 items-center gap-2">
               <span
-                className={`text-xs sm:text-sm font-bold ${isBeginnerMode ? 'text-gray-400' : 'text-white'}`}
+                className={`text-xs font-bold sm:text-sm ${isBeginnerMode ? 'text-gray-400' : 'text-white'}`}
               >
                 Beginner
               </span>
@@ -156,21 +153,21 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
                 <div
                   onClick={() => setIsBeginnerMode(!isBeginnerMode)}
                   className={cn(
-                    'w-10 h-6 rounded-full transition-colors relative',
+                    'relative h-6 w-10 rounded-full transition-colors',
                     isBeginnerMode ? 'bg-[#2283F6]' : 'bg-[#3C485C]'
                   )}
                 >
                   <div
                     className={cn(
-                      'absolute top-0.5 w-5 h-5 rounded-full transition-transform duration-200',
+                      'absolute top-0.5 h-5 w-5 rounded-full transition-transform duration-200',
                       isBeginnerMode
                         ? 'translate-x-4 bg-white'
-                        : 'translate-x-0.5 bg-casper border-2 border-casper'
+                        : 'translate-x-0.5 border-2 border-casper bg-casper'
                     )}
                   >
                     {isBeginnerMode && (
                       <Check
-                        className="w-3 h-3 text-[#2283F6] absolute top-1 left-1"
+                        className="absolute left-1 top-1 h-3 w-3 text-[#2283F6]"
                         strokeWidth={3}
                       />
                     )}
@@ -178,7 +175,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
                 </div>
               </div>
               <span
-                className={`text-xs sm:text-sm font-bold ${!isBeginnerMode ? 'text-gray-400' : 'text-white'}`}
+                className={`text-xs font-bold sm:text-sm ${!isBeginnerMode ? 'text-gray-400' : 'text-white'}`}
               >
                 Intermediate
               </span>
@@ -187,7 +184,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
 
           {/* Block Information */}
           <div
-            className="flex min-h-[80px] md:h-[100px] relative p-4 justify-center items-center gap-2 md:gap-4 w-full  rounded-xl  overflow-hidden"
+            className="relative flex min-h-[80px] w-full items-center justify-center gap-2 overflow-hidden rounded-xl p-4 md:h-[100px] md:gap-4"
             style={{
               background:
                 "url('https://api.builder.io/api/v1/image/assets/TEMP/35f26e9aa061258b5e5f2783c73faff4c656c9a3?width=740') lightgray 50% / cover no-repeat, #111923",
@@ -196,26 +193,26 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
           >
             <img
               src="/images/hashgame.jpg"
-              className="absolute rounded-[14px] top-0 z-1 left-0 w-full h-full"
+              className="z-1 absolute left-0 top-0 h-full w-full rounded-[14px]"
             />
-            <div className="flex relative z-5 flex-col justify-center items-center gap-1  flex-1">
-              <span className="text-xs md:text-sm font-bold text-casper">
+            <div className="z-5 relative flex flex-1 flex-col items-center justify-center gap-1">
+              <span className="text-xs font-bold text-casper md:text-sm">
                 Current block
               </span>
-              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
-                <Copy className="w-4 h-4 text-casper" />
-                <span className="text-xs md:text-sm font-bold text-casper">
+              <div className="flex h-9 items-center justify-center gap-2 rounded-lg bg-black/[0.54] px-2 pr-3 md:px-3 md:pr-12">
+                <Copy className="h-4 w-4 text-casper" />
+                <span className="text-xs font-bold text-casper md:text-sm">
                   73852830
                 </span>
               </div>
             </div>
-            <div className="flex flex-col relative z-5 justify-center items-center gap-1 flex-1">
-              <span className="text-xs md:text-sm font-bold text-casper">
+            <div className="z-5 relative flex flex-1 flex-col items-center justify-center gap-1">
+              <span className="text-xs font-bold text-casper md:text-sm">
                 Next block
               </span>
-              <div className="flex h-9 px-2 md:px-3 pr-3 md:pr-12 justify-center items-center gap-2 rounded-lg bg-black/[0.54]">
-                <Copy className="w-4 h-4 text-dodger-blue" />
-                <span className="text-xs md:text-sm font-bold text-dodger-blue">
+              <div className="flex h-9 items-center justify-center gap-2 rounded-lg bg-black/[0.54] px-2 pr-3 md:px-3 md:pr-12">
+                <Copy className="h-4 w-4 text-dodger-blue" />
+                <span className="text-xs font-bold text-dodger-blue md:text-sm">
                   73872867
                 </span>
               </div>
@@ -227,41 +224,41 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
         <ResponsiveChipSelector />
 
         {/* Betting Grid */}
-        <div className="flex py-4 md:py-8 px-2 flex-col justify-end items-center gap-4 w-full rounded-xl bg-white/[0.04]">
+        <div className="flex w-full flex-col items-center justify-end gap-4 rounded-xl bg-white/[0.04] px-2 py-4 md:py-8">
           {/* Betting History Tags - Above Table */}
-          <div className="flex px-2 justify-between items-center w-full">
+          <div className="flex w-full items-center justify-between px-2">
             <div className="flex items-center gap-4 md:gap-8">
               <div className="flex h-6 items-center gap-2">
                 <span className="text-xs font-bold text-white">#3</span>
               </div>
               <div className="flex h-6 items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-crimson flex items-center justify-center">
-                  <span className="text-xs font-bold text-bunker">O</span>
+                <div className="flex h-4 w-4 items-center justify-center rounded-full bg-crimson">
+                  <span className="text-bunker text-xs font-bold">O</span>
                 </div>
                 <span className="text-xs font-bold text-white">1</span>
               </div>
               <div className="flex h-6 items-center gap-2">
-                <div className="w-4 h-4 rounded-full bg-yellow-orange flex items-center justify-center">
-                  <span className="text-xs font-bold text-bunker">E</span>
+                <div className="flex h-4 w-4 items-center justify-center rounded-full bg-yellow-orange">
+                  <span className="text-bunker text-xs font-bold">E</span>
                 </div>
                 <span className="text-xs font-bold text-white">2</span>
               </div>
             </div>
             <div className="flex items-center gap-4 md:gap-8">
               <div className="flex h-6 items-center gap-1">
-                <div className="h-4 px-1 rounded-full bg-crimson flex items-center gap-1">
-                  <span className="text-xs font-bold text-bunker">O</span>
-                  <div className="w-2 h-2 rounded-full border border-yellow-orange"></div>
-                  <div className="w-2 h-2 rounded-full bg-yellow-orange"></div>
-                  <div className="w-2 h-2 bg-yellow-orange transform rotate-45"></div>
+                <div className="flex h-4 items-center gap-1 rounded-full bg-crimson px-1">
+                  <span className="text-bunker text-xs font-bold">O</span>
+                  <div className="h-2 w-2 rounded-full border border-yellow-orange"></div>
+                  <div className="h-2 w-2 rounded-full bg-yellow-orange"></div>
+                  <div className="h-2 w-2 rotate-45 transform bg-yellow-orange"></div>
                 </div>
               </div>
               <div className="flex h-6 items-center gap-1">
-                <div className="h-4 px-1 rounded-full bg-yellow-orange flex items-center gap-1">
-                  <span className="text-xs font-bold text-bunker">E</span>
-                  <div className="w-2 h-2 rounded-full border border-crimson"></div>
-                  <div className="w-2 h-2 rounded-full bg-crimson"></div>
-                  <div className="w-2 h-2 bg-crimson transform rotate-45"></div>
+                <div className="flex h-4 items-center gap-1 rounded-full bg-yellow-orange px-1">
+                  <span className="text-bunker text-xs font-bold">E</span>
+                  <div className="h-2 w-2 rounded-full border border-crimson"></div>
+                  <div className="h-2 w-2 rounded-full bg-crimson"></div>
+                  <div className="h-2 w-2 rotate-45 transform bg-crimson"></div>
                 </div>
               </div>
             </div>

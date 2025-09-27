@@ -16,13 +16,13 @@ const SectionHeader: React.FC<{
 }> = ({ icon, title, alt, count }) => {
   const { t } = useI18n()
   return (
-    <div className="flex items-center justify-between mb-4">
-      <h2 className="text-4.5 font-bold flex items-center text-white gap-2">
+    <div className="mb-4 flex items-center justify-between">
+      <h2 className="text-4.5 flex items-center gap-2 font-bold text-white">
         <img className="grayscale" src={icon} alt={alt} />
         {title}
       </h2>
       {count && (
-        <span className="cursor-pointer font-bold flex items-center text-[14px] text-[#2283F6]">
+        <span className="flex cursor-pointer items-center text-[14px] font-bold text-[#2283F6]">
           <span>
             {t('app.all')} {count}
           </span>
@@ -115,7 +115,7 @@ export const HomepageSections: React.FC<{
   return (
     <>
       {/* New Launches Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Home.svg"
           title={t('games.new')}
@@ -135,7 +135,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* Live Casino Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Casino1.svg"
           title={t('games.live')}
@@ -158,7 +158,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* Hash Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Hash.svg"
           title={t('games.hashgames')}
@@ -180,7 +180,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* Slots Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Slots.svg"
           title={t('games.slots')}
@@ -203,7 +203,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* P/F Futures Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Futures1.svg"
           title={t('games.pfFutures')}
@@ -225,7 +225,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* Cryptogra Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Cryptogra1.svg"
           title={t('games.crypto')}
@@ -247,7 +247,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* Sport Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/Sport.svg"
           title={t('games.sports')}
@@ -269,7 +269,7 @@ export const HomepageSections: React.FC<{
       </div>
 
       {/* Chess and cards Section */}
-      <div className="lg:mb-16 mb-8">
+      <div className="mb-8 lg:mb-16">
         <SectionHeader
           icon="/icons/tablegame.svg"
           title={t('games.table')}

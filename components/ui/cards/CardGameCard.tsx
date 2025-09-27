@@ -47,13 +47,13 @@ const CardGameCard: React.FC<CardGameCardProps> = ({
   return (
     <Link href={link} className="block">
       <div
-        className={`${getCardColorClasses(cardColor)} rounded-lg p-4 h-24 flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200 cursor-pointer`}
+        className={`${getCardColorClasses(cardColor)} flex h-24 cursor-pointer flex-col items-center justify-center rounded-lg p-4 transition-transform duration-200 hover:scale-105`}
       >
         {/* Card Icon */}
-        <div className="flex items-center justify-center mb-2">
+        <div className="mb-2 flex items-center justify-center">
           <div className="flex">
             <div
-              className={`w-6 h-8 ${getCardColorClasses(cardColor)} border-2 border-gray-300 rounded-sm flex items-center justify-center mr-1`}
+              className={`h-8 w-6 ${getCardColorClasses(cardColor)} mr-1 flex items-center justify-center rounded-sm border-2 border-gray-300`}
             >
               <span
                 className={`text-lg font-bold ${getSymbolColorClasses(symbolColor)}`}
@@ -62,7 +62,7 @@ const CardGameCard: React.FC<CardGameCardProps> = ({
               </span>
             </div>
             <div
-              className={`w-6 h-8 ${getCardColorClasses(cardColor)} border-2 border-gray-300 rounded-sm flex items-center justify-center`}
+              className={`h-8 w-6 ${getCardColorClasses(cardColor)} flex items-center justify-center rounded-sm border-2 border-gray-300`}
             >
               <span
                 className={`text-lg font-bold ${getSymbolColorClasses(symbolColor)}`}
@@ -72,8 +72,8 @@ const CardGameCard: React.FC<CardGameCardProps> = ({
             </div>
           </div>
         </div>
-        <div className="text-sm font-bold text-center">{title}</div>
-        <div className="text-xs text-center leading-tight">{subtitle}</div>
+        <div className="text-center text-sm font-bold">{title}</div>
+        <div className="text-center text-xs leading-tight">{subtitle}</div>
       </div>
     </Link>
   )

@@ -80,55 +80,55 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
   const platformCount = notificationsList.filter(n => !n.isRead).length
 
   return (
-    <div className="w-full h-full flex flex-col bg-[#111923]/[0.54] lg:rounded-t-[30px] relative">
+    <div className="relative flex h-full w-full flex-col bg-[#111923]/[0.54] lg:rounded-t-[30px]">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 pl-6 bg-gradient-to-b from-[#002554] to-[rgba(17,25,35,0.54)] border-b border-gray-700 lg:rounded-t-[30px]">
-        <h1 className="text-white text-lg font-bold">Notifications</h1>
+      <div className="flex items-center justify-between border-b border-gray-700 bg-gradient-to-b from-[#002554] to-[rgba(17,25,35,0.54)] p-4 pl-6 lg:rounded-t-[30px]">
+        <h1 className="text-lg font-bold text-white">Notifications</h1>
         <div
           onClick={onClose}
-          className="flex items-center cursor-pointer justify-center w-9 h-9 bg-[#434444] hover:bg-[#111923] rounded-lg transition-colors lg:ml-0 ml-2"
+          className="ml-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-[#434444] transition-colors hover:bg-[#111923] lg:ml-0"
         >
           <span>
-            <X className="w-4 h-4 text-white" />
+            <X className="h-4 w-4 text-white" />
           </span>
         </div>
       </div>
 
       {/* Content Container */}
-      <div className="flex-1 flex flex-col p-4 pt-0 bg-[#111923] overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden bg-[#111923] p-4 pt-0">
         {/* Segmented Control */}
-        <div className="flex p-1 bg-gray-800 rounded-xl mb-4 mt-4">
+        <div className="mb-4 mt-4 flex rounded-xl bg-gray-800 p-1">
           <div
             onClick={() => setActiveTab('Platform')}
-            className={`flex items-center justify-center gap-2 flex-1 h-9 px-3 rounded-lg font-bold text-sm transition-colors cursor-pointer ${
+            className={`flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg px-3 text-sm font-bold transition-colors ${
               activeTab === 'Platform'
                 ? 'bg-gray-700 text-white'
-                : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                : 'hover:bg-gray-700/50 text-gray-400 hover:text-white'
             }`}
           >
             <span>Platform</span>
             {activeTab === 'Platform' && platformCount > 0 && (
-              <span className="flex items-center justify-center h-5 px-1.5 bg-green-500 border border-white rounded-md text-white text-xs font-bold">
+              <span className="flex h-5 items-center justify-center rounded-md border border-white bg-green-500 px-1.5 text-xs font-bold text-white">
                 {platformCount}
               </span>
             )}
           </div>
           <div
             onClick={() => setActiveTab('Events')}
-            className={`flex items-center justify-center gap-2 flex-1 h-9 px-3 rounded-lg font-bold text-sm transition-colors cursor-pointer ${
+            className={`flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg px-3 text-sm font-bold transition-colors ${
               activeTab === 'Events'
                 ? 'bg-gray-700 text-white'
-                : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                : 'hover:bg-gray-700/50 text-gray-400 hover:text-white'
             }`}
           >
             <span>Events</span>
           </div>
           <div
             onClick={() => setActiveTab('Personal')}
-            className={`flex items-center justify-center gap-2 flex-1 h-9 px-3 rounded-lg font-bold text-sm transition-colors cursor-pointer ${
+            className={`flex h-9 flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg px-3 text-sm font-bold transition-colors ${
               activeTab === 'Personal'
                 ? 'bg-gray-700 text-white'
-                : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+                : 'hover:bg-gray-700/50 text-gray-400 hover:text-white'
             }`}
           >
             <span>Personal</span>
@@ -137,22 +137,22 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
 
         {/* Content based on active tab */}
         <div
-          className={`flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent `}
+          className={`scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent flex-1 overflow-y-auto`}
         >
           {activeTab === 'Platform' && (
             <div className="space-y-3">
               {notificationsList.map(notification => (
                 <div
                   key={notification.id}
-                  className="p-4 bg-[#1A222E] rounded-xl"
+                  className="rounded-xl bg-[#1A222E] p-4"
                 >
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-2 gap-2">
-                    <span className="text-gray-400 text-sm font-normal">
+                  <div className="mb-2 flex items-start justify-between gap-2">
+                    <span className="text-sm font-normal text-gray-400">
                       {notification.date}
                     </span>
                     {notification.isNew && (
-                      <span className="flex items-center justify-center h-5 px-2 bg-green-500 border border-white rounded-2xl text-white text-xs font-bold shrink-0">
+                      <span className="flex h-5 shrink-0 items-center justify-center rounded-2xl border border-white bg-green-500 px-2 text-xs font-bold text-white">
                         New
                       </span>
                     )}
@@ -160,14 +160,14 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
 
                   {/* Title */}
                   <div className="mb-2">
-                    <h3 className="text-white text-base font-bold leading-normal">
+                    <h3 className="text-base font-bold leading-normal text-white">
                       {notification.title}
                     </h3>
                   </div>
 
                   {/* Content */}
                   <div className="mb-4">
-                    <p className="text-gray-400 text-sm font-normal leading-relaxed whitespace-pre-line">
+                    <p className="whitespace-pre-line text-sm font-normal leading-relaxed text-gray-400">
                       {notification.content}
                     </p>
                   </div>
@@ -175,19 +175,19 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
                   {/* Mark as read button */}
                   <div
                     onClick={() => markAsRead(notification.id)}
-                    className={`flex items-center gap-2 h-9 px-4 bg-gray-800 rounded-lg transition-opacity cursor-pointer ${
+                    className={`flex h-9 cursor-pointer items-center gap-2 rounded-lg bg-gray-800 px-4 transition-opacity ${
                       notification.isRead
-                        ? 'opacity-50 cursor-not-allowed'
+                        ? 'cursor-not-allowed opacity-50'
                         : 'hover:opacity-80'
                     }`}
                     style={{
                       pointerEvents: notification.isRead ? 'none' : 'auto',
                     }}
                   >
-                    <span className="text-white text-sm font-bold">
+                    <span className="text-sm font-bold text-white">
                       Mark as read
                     </span>
-                    <CheckCircle className="w-5 h-5 text-white" />
+                    <CheckCircle className="h-5 w-5 text-white" />
                   </div>
                 </div>
               ))}
@@ -196,11 +196,11 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
 
           {activeTab === 'Events' && (
             <div className="space-y-3">
-              <div className="p-4 bg-[#1A222E] rounded-xl">
-                <h3 className="text-white text-base font-bold mb-2">
+              <div className="rounded-xl bg-[#1A222E] p-4">
+                <h3 className="mb-2 text-base font-bold text-white">
                   Upcoming Events
                 </h3>
-                <p className="text-gray-400 text-sm">
+                <p className="text-sm text-gray-400">
                   No upcoming events at the moment.
                 </p>
               </div>
@@ -209,11 +209,11 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
 
           {activeTab === 'Personal' && (
             <div className="space-y-3">
-              <div className="p-4 bg-[#1A222E] rounded-xl">
-                <h3 className="text-white text-base font-bold mb-2">
+              <div className="rounded-xl bg-[#1A222E] p-4">
+                <h3 className="mb-2 text-base font-bold text-white">
                   Personal Notifications
                 </h3>
-                <p className="text-gray-400 text-sm">
+                <p className="text-sm text-gray-400">
                   No personal notifications available.
                 </p>
               </div>
@@ -223,15 +223,15 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
       </div>
 
       {/* Bottom Menu - Fixed at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 p-2 border-t border-gray-700 bg-[#111923] lg:rounded-b-[30px]">
+      <div className="absolute bottom-0 left-0 right-0 border-t border-gray-700 bg-[#111923] p-2 lg:rounded-b-[30px]">
         <div
           onClick={markAllAsRead}
-          className="flex items-center gap-2 h-9 px-4 hover:opacity-80 transition-opacity w-full justify-center cursor-pointer"
+          className="flex h-9 w-full cursor-pointer items-center justify-center gap-2 px-4 transition-opacity hover:opacity-80"
         >
-          <span className="text-gray-400 text-sm font-bold">
+          <span className="text-sm font-bold text-gray-400">
             Mark all as read
           </span>
-          <CheckCircle className="w-5 h-5 text-gray-400" />
+          <CheckCircle className="h-5 w-5 text-gray-400" />
         </div>
       </div>
     </div>

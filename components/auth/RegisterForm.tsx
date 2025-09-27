@@ -77,7 +77,7 @@ const RegisterForm: React.FC = () => {
       </div>
       <div className="discount-code-form flex flex-col gap-6">
         <div
-          className={`discount-code-form-label gap-4 flex ${
+          className={`discount-code-form-label flex gap-4 ${
             discountCodeState == true ? 'open' : 'close'
           }`}
           onClick={changeDiscountCodeState}

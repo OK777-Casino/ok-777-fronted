@@ -83,40 +83,40 @@ const Security: React.FC = () => {
   ]
 
   return (
-    <div className=" [@media(max-width:768px)]:w-full">
-      <div className="w-full  flex flex-col gap-4">
+    <div className="[@media(max-width:768px)]:w-full">
+      <div className="flex w-full flex-col gap-4">
         {/* Security Header */}
-        <h1 className="text-lg sm:text-xl hidden lg:block font-bold text-white ">
+        <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
           Security
         </h1>
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid gap-4 lg:grid-cols-2">
           {securityInfo.map(item => (
             <div
               key={item.title}
-              className="bg-white-4 justify-between rounded-[12px] p-4 gap-4 flex flex-col"
+              className="flex flex-col justify-between gap-4 rounded-[12px] bg-white-4 p-4"
             >
-              <div className="flex justify-between items-center">
-                <div className="flex gap-3 text-casper items-center text-[14px] font-bold">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3 text-[14px] font-bold text-casper">
                   {item.icon}
                   {item.title}
                 </div>
                 {item.state === 'ok' ? (
-                  <div className="flex gap-2 items-center text-malachite font-medium text-[14px]">
-                    <CheckIcon className="w-6 h-6" />
+                  <div className="flex items-center gap-2 text-[14px] font-medium text-malachite">
+                    <CheckIcon className="h-6 w-6" />
                     <span className="lg:hidden">Verified</span>
                   </div>
                 ) : (
-                  <div className="flex gap-2 items-center text-crimson font-medium text-[14px]">
-                    <XIcon className="w-6 h-6" />
+                  <div className="flex items-center gap-2 text-[14px] font-medium text-crimson">
+                    <XIcon className="h-6 w-6" />
                     <span className="lg:hidden">Not activated</span>
                   </div>
                 )}
               </div>
-              <div className="text-casper text-[14px]">{item.desc}</div>
+              <div className="text-[14px] text-casper">{item.desc}</div>
               <TDButton
                 onClick={item.onClick}
                 type="blue"
-                className="w-full h-[41px] text-gallery text-[14px]"
+                className="h-[41px] w-full text-[14px] text-gallery"
               >
                 {item.button}
               </TDButton>
@@ -131,8 +131,8 @@ const Security: React.FC = () => {
           onClose={togglePasswordModal}
         >
           <div className="flex flex-col gap-2">
-            <div className="p-4 rounded-[12px] gap-4 flex flex-col bg-white-4">
-              <h2 className="font-bold text-white text-[0.875rem]">
+            <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[0.875rem] font-bold text-white">
                 New login password
               </h2>
               <div className="password-input-container">
@@ -148,7 +148,7 @@ const Security: React.FC = () => {
                   {showPassword ? (
                     <EyeSlashIcon className="h-6 w-6" />
                   ) : (
-                    <EyeIcon className="w-6 h-6" />
+                    <EyeIcon className="h-6 w-6" />
                   )}
                 </div>
               </div>
@@ -165,11 +165,11 @@ const Security: React.FC = () => {
                   {showPassword ? (
                     <EyeSlashIcon className="h-6 w-6" />
                   ) : (
-                    <EyeIcon className="w-6 h-6" />
+                    <EyeIcon className="h-6 w-6" />
                   )}
                 </div>
               </div>
-              <h2 className="font-bold text-white text-[0.875rem]">
+              <h2 className="text-[0.875rem] font-bold text-white">
                 Confirm login password
               </h2>
 
@@ -186,7 +186,7 @@ const Security: React.FC = () => {
                   {showPassword ? (
                     <EyeSlashIcon className="h-6 w-6" />
                   ) : (
-                    <EyeIcon className="w-6 h-6" />
+                    <EyeIcon className="h-6 w-6" />
                   )}
                 </div>
               </div>
@@ -195,7 +195,7 @@ const Security: React.FC = () => {
           <TDButton
             type="blue"
             onClick={togglePasswordModal}
-            className="w-full h-[41px] text-gallery text-[14px]"
+            className="h-[41px] w-full text-[14px] text-gallery"
           >
             Submit
           </TDButton>
@@ -207,8 +207,8 @@ const Security: React.FC = () => {
           onClose={toggleWithdraw}
         >
           <div className="flex flex-col gap-2">
-            <div className="p-4 rounded-[12px] gap-4 flex flex-col bg-white-4">
-              <h2 className="font-bold text-white text-[0.875rem]">
+            <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[0.875rem] font-bold text-white">
                 Login Password
               </h2>
               <div className="password-input-container">
@@ -224,11 +224,11 @@ const Security: React.FC = () => {
                   {showPassword ? (
                     <EyeSlashIcon className="h-6 w-6" />
                   ) : (
-                    <EyeIcon className="w-6 h-6" />
+                    <EyeIcon className="h-6 w-6" />
                   )}
                 </div>
               </div>
-              <h2 className="font-bold text-white text-[0.875rem]">
+              <h2 className="text-[0.875rem] font-bold text-white">
                 Withdrawal Password
               </h2>
 
@@ -245,11 +245,11 @@ const Security: React.FC = () => {
                   {showPassword ? (
                     <EyeSlashIcon className="h-6 w-6" />
                   ) : (
-                    <EyeIcon className="w-6 h-6" />
+                    <EyeIcon className="h-6 w-6" />
                   )}
                 </div>
               </div>
-              <h2 className="font-bold text-white text-[0.875rem]">
+              <h2 className="text-[0.875rem] font-bold text-white">
                 Withdrawal Password
               </h2>
 
@@ -266,17 +266,17 @@ const Security: React.FC = () => {
                   {showPassword ? (
                     <EyeSlashIcon className="h-6 w-6" />
                   ) : (
-                    <EyeIcon className="w-6 h-6" />
+                    <EyeIcon className="h-6 w-6" />
                   )}
                 </div>
               </div>
             </div>
           </div>
-          <div className="p-4 bg-white-4 flex justify-between rounded-[8px] h-[56px] items-center">
-            <span className="text-dodger-blue font-bold text-[12px]">
+          <div className="flex h-[56px] items-center justify-between rounded-[8px] bg-white-4 p-4">
+            <span className="text-[12px] font-bold text-dodger-blue">
               q106316519@gmail.com
             </span>
-            <span className="text-malachite font-medium flex gap-2 items-center">
+            <span className="flex items-center gap-2 font-medium text-malachite">
               <CheckCircleIcon />
               Verified
             </span>
@@ -284,7 +284,7 @@ const Security: React.FC = () => {
           <TDButton
             type="blue"
             onClick={toggleWithdraw}
-            className="w-full h-[41px] text-gallery text-[14px]"
+            className="h-[41px] w-full text-[14px] text-gallery"
           >
             Submit
           </TDButton>
@@ -292,30 +292,30 @@ const Security: React.FC = () => {
         <ModalContainer
           isOpen={emailModal}
           title="Verify Email"
-          className="lg:w-[30%] "
+          className="lg:w-[30%]"
           onClose={toggleEmailModal}
         >
           <div className="flex flex-col gap-2">
-            <div className="rounded-[12px] flex flex-col gap-4 p-4 bg-white-4">
-              <h2 className="text-white text-[14px] font-bold">Email</h2>
-              <div className="rounded-[0.75rem] bg-white-8 p-2 flex justify-between items-center">
-                <span className="text-white font-medium text-[12px]">
+            <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[14px] font-bold text-white">Email</h2>
+              <div className="flex items-center justify-between rounded-[0.75rem] bg-white-8 p-2">
+                <span className="text-[12px] font-medium text-white">
                   q106316519@gmail.com
                 </span>
-                <FlatButton className="w-[64px] h-9  text-gallery font-bold text-[12px]">
+                <FlatButton className="h-9 w-[64px] text-[12px] font-bold text-gallery">
                   Send
                 </FlatButton>
               </div>
             </div>
-            <h2 className="text-[12px] text-white font-bold indent-[20px]">
+            <h2 className="indent-[20px] text-[12px] font-bold text-white">
               Change email to verify
             </h2>
-            <div className="p-4 rounded-[12px] bg-[#1BB83D21] font-medium text-[14px] text-white">
+            <div className="rounded-[12px] bg-[#1BB83D21] p-4 text-[14px] font-medium text-white">
               Changing it won't affect the original email, which remains usable
               for login.
             </div>
-            <div className="rounded-[12px] bg-white-4 p-4 flex flex-col gap-4">
-              <h2 className="text-white text-[14px] font-bold">
+            <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+              <h2 className="text-[14px] font-bold text-white">
                 Verification Code
               </h2>
               <input type="text" placeholder="" className="form-input" />
@@ -323,7 +323,7 @@ const Security: React.FC = () => {
             <TDButton
               type="blue"
               onClick={toggleEmailModal}
-              className="w-full h-[41px] text-gallery text-[14px]"
+              className="h-[41px] w-full text-[14px] text-gallery"
             >
               Bind
             </TDButton>

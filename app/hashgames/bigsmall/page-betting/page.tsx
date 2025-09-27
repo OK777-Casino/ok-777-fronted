@@ -27,24 +27,24 @@ const BigSmallDefault: React.FC = () => {
 
   return (
     <DefaultPageLayout>
-      <div className="flex p-2 md:p-8 items-start gap-2 md:gap-4 w-full rounded-xl bg-white/[0.04]">
+      <div className="flex w-full items-start gap-2 rounded-xl bg-white/[0.04] p-2 md:gap-4 md:p-8">
         {/* ODD Section */}
-        <div className="flex flex-col items-center gap-2 flex-1">
-          <div className="flex pb-4 justify-between items-center w-full">
+        <div className="flex flex-1 flex-col items-center gap-2">
+          <div className="flex w-full items-center justify-between pb-4">
             <div className="flex flex-col items-start">
               <div className="text-base font-bold">
                 <span className="text-casper">$</span>
                 <span className="text-white">10038</span>
               </div>
               <div className="flex items-center gap-1">
-                <User className="w-4 h-4 text-casper" />
+                <User className="h-4 w-4 text-casper" />
                 <span className="text-sm font-bold text-casper">12</span>
               </div>
             </div>
             {/* Progress Circle for ODD */}
-            <div className="relative w-10 h-10">
+            <div className="relative h-10 w-10">
               <svg
-                className="w-10 h-10 transform -rotate-90"
+                className="h-10 w-10 -rotate-90 transform"
                 viewBox="0 0 40 40"
               >
                 <circle
@@ -71,25 +71,25 @@ const BigSmallDefault: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+          <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-white/[0.08] bg-mirage px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
             <span className="text-sm font-bold text-white">$0</span>
           </div>
           <div className="text-2xl font-bold text-crimson">SMALL</div>
-          <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+          <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-white/[0.08] bg-mirage px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
             <span className="text-sm font-bold text-white">1 : 1.95</span>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="w-[1px] h-[188px]  bg-white/[0.04]"></div>
+        <div className="h-[188px] w-[1px] bg-white/[0.04]"></div>
 
         {/* EVEN Section */}
-        <div className="flex flex-col items-center gap-2 flex-1">
-          <div className="flex pb-4 justify-between items-center w-full">
+        <div className="flex flex-1 flex-col items-center gap-2">
+          <div className="flex w-full items-center justify-between pb-4">
             {/* Progress Circle for EVEN */}
-            <div className="relative w-10 h-10">
+            <div className="relative h-10 w-10">
               <svg
-                className="w-10 h-10 transform -rotate-90"
+                className="h-10 w-10 -rotate-90 transform"
                 viewBox="0 0 40 40"
               >
                 <circle
@@ -118,21 +118,21 @@ const BigSmallDefault: React.FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-end">
-              <div className="text-base font-bold text-right">
+              <div className="text-right text-base font-bold">
                 <span className="text-casper">$</span>
                 <span className="text-white">7592</span>
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-sm font-bold text-casper">11</span>
-                <User className="w-4 h-4 text-casper" />
+                <User className="h-4 w-4 text-casper" />
               </div>
             </div>
           </div>
-          <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+          <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-white/[0.08] bg-mirage px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
             <span className="text-sm font-bold text-white">$0</span>
           </div>
           <div className="text-2xl font-bold text-yellow-orange">BIG</div>
-          <div className="flex h-9 px-4 justify-center items-center gap-2 rounded-lg border border-white/[0.08] bg-mirage shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
+          <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-white/[0.08] bg-mirage px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]">
             <span className="text-sm font-bold text-white">1 : 1.95</span>
           </div>
         </div>

@@ -52,7 +52,7 @@ const UnifiedButton: React.FC<UnifiedButtonProps> = ({
         opacity: disabled ? 0.5 : 1,
       }}
     >
-      <span className="flex gap-2 items-center">{children}</span>
+      <span className="flex items-center gap-2">{children}</span>
     </div>
   )
 }

@@ -53,7 +53,7 @@ const TabButton: React.FC<TabButtonProps> = ({
   return (
     <div
       className={cn(
-        'flex group gap-2 text-casper active:text-white px-4 cursor-pointer hover:text-white  items-center justify-center rounded-[0.5rem]',
+        'group flex cursor-pointer items-center justify-center gap-2 rounded-[0.5rem] px-4 text-casper hover:text-white active:text-white',
         background,
         className,
         shape,
@@ -66,7 +66,7 @@ const TabButton: React.FC<TabButtonProps> = ({
       {badge && (
         <span
           className={cn(
-            'px-2 py-0.5 rounded-[0.375rem] text-[0.75rem] font-bold',
+            'rounded-[0.375rem] px-2 py-0.5 text-[0.75rem] font-bold',
             badgeStyle
           )}
         >

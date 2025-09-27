@@ -131,7 +131,7 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
     >
       <div
         ref={carouselRef}
-        className="w-[402px] h-[533px] flex flex-col items-end gap-4 p-6 rounded-[14px] bg-[rgba(17,25,35,0.54)] border border-[rgba(255,255,255,0.16)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] select-none"
+        className="flex h-[533px] w-[402px] select-none flex-col items-end gap-4 rounded-[14px] border border-[rgba(255,255,255,0.16)] bg-[rgba(17,25,35,0.54)] p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px]"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -146,7 +146,7 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
       >
         {/* Close Button */}
         <div
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-[rgba(255,255,255,0.16)] bg-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-opacity hover:opacity-80 z-10 cursor-pointer"
+          className="z-10 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-[rgba(255,255,255,0.16)] bg-white-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-opacity hover:opacity-80"
           onClick={toggleSuccessForm}
         >
           <span>
@@ -155,17 +155,17 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex flex-1 flex-col items-center justify-end gap-4 self-stretch pt-16 rounded-[12px] bg-gradient-to-b from-transparent to-[rgba(17,25,35,0.54)] relative overflow-hidden">
+        <div className="relative flex flex-1 flex-col items-center justify-end gap-4 self-stretch overflow-hidden rounded-[12px] bg-gradient-to-b from-transparent to-[rgba(17,25,35,0.54)] pt-16">
           {/* Background Image - 3D Character */}
           <div className="absolute inset-0 bg-[url('/images/auth/aee6e6923b28ad6cc9367ce71b7cf722f6a987d3.png')] bg-contain bg-center bg-no-repeat" />
 
           {/* Content Overlay */}
-          <div className="relative z-10 flex flex-col items-start gap-2.5 self-stretch p-4 rounded-[12px] bg-[#1119238A]">
+          <div className="relative z-10 flex flex-col items-start gap-2.5 self-stretch rounded-[12px] bg-[#1119238A] p-4">
             <div className="flex flex-col items-start gap-4 self-stretch">
-              <h2 className="self-stretch text-white font-montserrat text-lg font-bold leading-normal">
+              <h2 className="self-stretch font-montserrat text-lg font-bold leading-normal text-white">
                 Official announcement
               </h2>
-              <p className="self-stretch text-white font-montserrat text-sm font-medium leading-normal">
+              <p className="self-stretch font-montserrat text-sm font-medium leading-normal text-white">
                 Live Baccarat - The Journey of the Brave A grand debut! Real
                 games, strategic duels, embark on your own journey of the brave!
                 <br />
@@ -184,14 +184,14 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
                 <div
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${
+                  className={`h-2 w-2 cursor-pointer rounded-full transition-colors ${
                     index === currentSlide ? 'bg-[#ED1D49]' : 'bg-[#A7B5CA]'
                   }`}
                 />
               ))}
             </div>
             {/* Swipe hint for mobile */}
-            <div className="text-[#A7B5CA] text-xs font-medium">
+            <div className="text-xs font-medium text-[#A7B5CA]">
               Swipe left/right to navigate • {currentSlide + 1} of {totalSlides}
             </div>
           </div>
@@ -199,9 +199,9 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
           {/* I SEE Button */}
           <div
             onClick={toggleSuccessForm}
-            className="flex h-11 items-center justify-center gap-2 self-stretch rounded-[12px] border border-[rgba(255,255,255,0.13)] bg-gradient-to-b from-[#2C9FFA] to-[#0C60FF] px-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.13),0_5px_0_-2px_rgba(34,131,246,0.50)] transition-all duration-100 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.13),0_7px_0_-2px_rgba(34,131,246,0.50)] hover:translate-y-[-2px] active:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.13),0_1px_0_-2px_rgba(34,131,246,0.50)] active:translate-y-[4px] cursor-pointer"
+            className="flex h-11 cursor-pointer items-center justify-center gap-2 self-stretch rounded-[12px] border border-[rgba(255,255,255,0.13)] bg-gradient-to-b from-[#2C9FFA] to-[#0C60FF] px-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.13),0_5px_0_-2px_rgba(34,131,246,0.50)] transition-all duration-100 hover:translate-y-[-2px] hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.13),0_7px_0_-2px_rgba(34,131,246,0.50)] active:translate-y-[4px] active:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.13),0_1px_0_-2px_rgba(34,131,246,0.50)]"
           >
-            <span className="text-[#EDEDED] font-montserrat text-sm font-bold leading-normal">
+            <span className="font-montserrat text-sm font-bold leading-normal text-[#EDEDED]">
               I SEE
             </span>
           </div>

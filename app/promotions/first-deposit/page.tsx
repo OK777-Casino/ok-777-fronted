@@ -47,11 +47,11 @@ const FirstDeposit1Page = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="p-4 bg-white-4 rounded-[12px] flex flex-col gap-4">
-        <div className="text-[18px] font-bold text-white flex justify-center items-center">
+      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <div className="flex items-center justify-center text-[18px] font-bold text-white">
           Activity Fund Application
         </div>
-        <div className="pb-4 grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-6 justify-between items-center rounded-[12px]  gap-4">
+        <div className="grid grid-cols-1 items-center justify-between gap-4 rounded-[12px] pb-4 xl:grid-cols-3 2xl:grid-cols-6">
           <TXCard
             title="Additional rewards"
             fee="188U"
@@ -89,7 +89,7 @@ const FirstDeposit1Page = () => {
             desc={<>Cumulative number of invitees</>}
           />
         </div>
-        <div className="p-4 rounded-[12px] flex justify-between items-center bg-white-8 flex justify-center items-center text-[14px] text-casper">
+        <div className="flex items-center justify-center justify-between rounded-[12px] bg-white-8 p-4 text-[14px] text-casper">
           <div>
             Total number of invitees <b className="text-dodger-blue">0</b>
           </div>
@@ -99,33 +99,33 @@ const FirstDeposit1Page = () => {
         </div>
       </div>
 
-      <div className="bg-white-4 rounded-[12px] p-4 flex flex-col gap-4 mt-4 ">
-        <div className="font-bold text-[18px] flex justify-center items-center text-white">
+      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+        <div className="flex items-center justify-center text-[18px] font-bold text-white">
           How to claim the bonus
         </div>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-1 gap-4">
-          <div className="p-8 flex flex-col gap-4 bg-white-4 rounded-[12px]">
+        <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
+          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
                 title="Step One"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="text-[14px] text-casper font-bold pt-4">
+              <span className="pt-4 text-[14px] font-bold text-casper">
                 Copy the invitation link and recommendation code to your friends
               </span>
             </div>
             <CopyBox className="bg-white-8">
               https://ok777.casino/?AgentCode=330395
             </CopyBox>
-            <div className="flex justify-between flex-wrap gap-2">
+            <div className="flex flex-wrap justify-between gap-2">
               {socials.map(item => (
                 <div
                   key={item}
-                  className="flex justify-center items-center w-9 h-9 bg-white-4 rounded-[8px] border-t border-white-4"
+                  className="flex h-9 w-9 items-center justify-center rounded-[8px] border-t border-white-4 bg-white-4"
                 >
                   <img
-                    className="h-4 w-4 "
+                    className="h-4 w-4"
                     src={'/icons/social-icon/' + item + '.svg'}
                     alt="social"
                   />
@@ -133,26 +133,26 @@ const FirstDeposit1Page = () => {
               ))}
             </div>
           </div>
-          <div className="p-8 flex flex-col gap-4  bg-white-4 rounded-[12px]">
-            <div className="flex flex-col gap-4 items-start">
+          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-8">
+            <div className="flex flex-col items-start gap-4">
               <TabButton
                 type="one"
                 title="Step Two"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="text-[14px] text-casper font-bold">
+              <span className="text-[14px] font-bold text-casper">
                 (Assist) friends to complete registration and recharge
               </span>
             </div>
-            <div className="relative flex justify-center items-center">
+            <div className="relative flex items-center justify-center">
               <img
                 src="/images/Device1.png"
-                className="h-[224.03px] mx-auto"
+                className="mx-auto h-[224.03px]"
                 alt="phone"
               />
-              <div className="w-[320px] py-[10px] z-[999] pr-[9px] pl-[16px] bg-mirage absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 flex justify-between items-center shadow-[0_8px_16px_#3389FF40] w-[312px] rounded-[16px]">
+              <div className="absolute left-1/2 top-1/2 z-[999] flex w-[312px] w-[320px] -translate-x-1/2 -translate-y-1/3 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
                 <img src="/images/logo.svg" alt="" />
-                <div className="flex gap-2 relative">
+                <div className="relative flex gap-2">
                   <BlackButton
                     onClick={() => {}}
                     className="text-[12px] text-casper"
@@ -161,7 +161,7 @@ const FirstDeposit1Page = () => {
                   </BlackButton>
                   <TDButton
                     onClick={() => {}}
-                    className="w-[85px] h-[33px] rounded-[8px] text-[12px]"
+                    className="h-[33px] w-[85px] rounded-[8px] text-[12px]"
                     type="red"
                   >
                     Register
@@ -176,31 +176,31 @@ const FirstDeposit1Page = () => {
             </div>
           </div>
         </div>
-        <div className="p-8 grid 2xl:grid-cols-[40%_60%] items-center grid-cols-1 gap-8 justify-between bg-white-4 rounded-[12px]">
+        <div className="grid grid-cols-1 items-center justify-between gap-8 rounded-[12px] bg-white-4 p-8 2xl:grid-cols-[40%_60%]">
           <div>
             <TabButton
               type="one"
               title="Step Three"
               className="h-[23px] text-[12px] font-bold text-white"
             />
-            <span className="text-[14px] text-casper font-bold pt-4">
+            <span className="pt-4 text-[14px] font-bold text-casper">
               Unlock additional rewards and claim them to your account
             </span>
           </div>
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex items-center justify-center">
             <img src="/images/Frame4.png" alt="phone" className="w-full" />
           </div>
         </div>
 
-        <div className="rounded-[12px] p-4 flex flex-col gap-2 bg-white-4 rounded-[12px]">
+        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
           <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
           <div className="text-[14px] font-bold text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
-          <div className="px-4 ">
-            <ol className="text-casper text-[14px] list-decimal">
+          <div className="px-4">
+            <ol className="list-decimal text-[14px] text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.
@@ -225,9 +225,9 @@ const FirstDeposit1Page = () => {
                 qualification without notice.
               </li>
             </ol>
-            <div className="py-16 flex justify-center">
+            <div className="flex justify-center py-16">
               <BlackButton>
-                <CopyIcon className="w-4 g-4" />
+                <CopyIcon className="g-4 w-4" />
               </BlackButton>
             </div>
           </div>
