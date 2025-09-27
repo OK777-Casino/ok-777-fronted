@@ -7,6 +7,7 @@ import { useSidebar } from '@/context/SidebarProvider'
 import { CopyBox } from '@/components/ui/CopyBox'
 import { board } from './mockboard'
 import { useI18n } from '@/context/I18nProvider'
+import TDButton from '@/components/ui/Button/TDButton'
 
 const TransferBettingLayout: React.FC = () => {
   const { t } = useI18n()
@@ -183,10 +184,11 @@ const TransferBettingLayout: React.FC = () => {
           </CopyBox>
 
           <div className="relative mb-4">
-            <div className="absolute inset-0 translate-y-1 rounded-[12px] bg-[#003a8a]"></div>
-            <div className="relative w-full transform cursor-pointer rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] px-8 py-3 text-center text-sm font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:from-[#0a56e6] hover:to-[#2590e6] active:translate-y-0">
-              {t('hashgame.activeAddress')}
-            </div>
+            <TDButton type="red">
+              <span className="h-9 text-sm leading-9">
+                {t('hashgame.activeAddress')}
+              </span>
+            </TDButton>
           </div>
           <div className="mb-6 rounded-lg border border-[rgba(12,96,255,0.1)] bg-[#FFFFFF0A] p-3 shadow-xl">
             <p className="mb-2 text-sm font-bold text-white">
@@ -375,11 +377,12 @@ const TransferBettingLayout: React.FC = () => {
               </div>
               <img src="/icons/copy.svg" alt="copy" className="h-6 w-6" />
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 translate-y-1 rounded-[12px] bg-[#003a8a]"></div>
-              <div className="relative transform cursor-pointer rounded-[12px] bg-[linear-gradient(to_top,#0C60FF_70%,#2C9FFA_100%)] px-8 py-3 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:from-[#0a56e6] hover:to-[#2590e6] active:translate-y-0">
-                {t('hashgame.activeAddress')}
-              </div>
+            <div className="relative w-1/5">
+              <TDButton type="red" className="w-full">
+                <span className="h-9 text-sm leading-9">
+                  {t('hashgame.activeAddress')}
+                </span>
+              </TDButton>
             </div>
           </div>
           <h2 className="mb-4 mt-5 hidden items-center gap-2 text-sm font-bold text-[#FFFFFF] md:flex">
