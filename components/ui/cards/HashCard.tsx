@@ -132,11 +132,11 @@ const HashCard: React.FC<TypeTwoProps> = ({
               <span className="text-xs font-medium sm:text-[11px]">Put</span>
             </Link>
           </Button> */}
-          <TDButton type="red" className="w-full">
-            <Link href={leftButtonLink}>
+          <Link href={leftButtonLink}>
+            <TDButton type="red" className="w-full">
               <span className="h-9 text-sm leading-9">进入游戏</span>
-            </Link>
-          </TDButton>
+            </TDButton>
+          </Link>
         </div>
       </div>
     </div>
