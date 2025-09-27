@@ -114,7 +114,7 @@ export default function AuthModal() {
         )}
       >
         {/* Desktop Layout */}
-        <div className="hidden md:flex w-full h-[670px] rounded-[14px] overflow-hidden bg-mirage-54 backdrop-blur-[32px]">
+        <div className="hidden md:flex w-full h-[550px] rounded-xl overflow-hidden bg-mirage-54 backdrop-blur-[32px]">
           {/* Left Side - Branding */}
           <div className="flex-1 relative">
             {/* Background Image with Gradient Overlay */}
@@ -123,7 +123,6 @@ export default function AuthModal() {
               style={{
                 backgroundImage:
                   "url('https://api.builder.io/api/v1/image/assets/TEMP/1966099a1a2c23b6a4509e98b3ec5376765f2b13?width=740')",
-                backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
               }}

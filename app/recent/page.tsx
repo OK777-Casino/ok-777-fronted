@@ -255,7 +255,7 @@ export default function RecentPage() {
 
         {/* Games Grid */}
         {filteredGames.length > 0 ? (
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-4">
             {filteredGames.map(game => (
               <div key={game.id} className="relative">
                 <CasinoCard {...game} />
