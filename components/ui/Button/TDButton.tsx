@@ -16,36 +16,47 @@ const TDButton: React.FC<TDButtonProps> = ({
   children,
   onClick,
 }) => {
-  const redStyle =
-    'bg-[linear-gradient(#F9476E_0%,#BD0139_24%)] hover:bg-[linear-gradient(#FF7593,#C4003A,#F92956)]'
-  const blueStyle =
-    'bg-[linear-gradient(#2C9FFA_0%,#0C60FF_24%)] hover:bg-[linear-gradient(#47AEFF,#1868FF,#47AEFF)]'
+  const redStyle = `
+    bg-[linear-gradient(1turn,#c4003b_0.8%,#fb1949)]
+    shadow-[0_3px_16px_#ff234180,_inset_0_4px_3px_#ffffff4d]
+    
+    hover:bg-[linear-gradient(3360deg,#db0a49_0.8%,#fb2b57)]
+    hover:shadow-[0_3px_20px_#ff234199,_inset_0_4px_4px_#ffffff5e]
+    `
+  const blueStyle = `
+    bg-[linear-gradient(#2C9FFA_0%,#0C60FF_24%)] 
+    hover:bg-[linear-gradient(#47AEFF,#1868FF,#47AEFF)]
+    `
   const Style = type === 'red' ? redStyle : blueStyle
-  const edge = type === 'red' ? 'bg-[#ED1D4980]' : 'bg-[#2283F680]'
+  const edge = type === 'red' ? 'bg-[#61001d]' : 'bg-[#2283F680]'
 
   return (
     <>
       <div
         onClick={onClick}
         className={cn(
-          'pushable group relative border-none bg-transparent p-0 cursor-pointer outline-offset-1 transition-filter duration-250 focus:outline-none focus-visible:outline',
+          `pushable group relative border-none bg-transparent p-0 cursor-pointer outline-offset-1 transition-filter duration-250 
+          focus:outline-none 
+          focus-visible:outline`,
           className
         )}
       >
         <span
-          className={cn(
-            'edge absolute top-1 left-0 rounded-[0.75rem]',
-            edge,
-            className
-          )}
+          className={cn('edge absolute left-0 rounded-xl', edge, className)}
         ></span>
         <span
           className={cn(
-            `front relative rounded-[0.75rem] text-white will-change-transform
-                               inner-shadow-[#FFFFFF21]
+            `relative front rounded-xl 
+                  text-white will-change-transform
+                    inner-shadow-[#FFFFFF21]
                     transform transition-transform 
-                    group-hover:-translate-y-[0.1875rem]   
-                    group-active:translate-y-[0.0625rem] font-bold  flex items-center justify-center`,
+                    bottom-[3px]
+                    group-hover:-translate-y-[2px]   
+                    group-active:-translate-y-[-1px] 
+                    font-bold  
+                    flex 
+                    items-center 
+                    justify-center`,
             className,
             Style
           )}
