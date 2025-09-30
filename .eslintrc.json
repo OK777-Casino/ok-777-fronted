@@ -1,18 +1,23 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-unescaped-entities": "off",
-    "react/jsx-key": "off",
-    "jsx-a11y/alt-text": "off",
     "@next/next/no-img-element": "off",
-    "react-hooks/exhaustive-deps": "off",
-    "@typescript-eslint/no-empty-object-type": "off",
-    "@typescript-eslint/no-wrapper-object-types": "off",
-    "@typescript-eslint/no-unused-expressions": "off",
+    "react-hooks/exhaustive-deps": "warn",
+
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/jsx-key": "warn",
+    "jsx-a11y/alt-text": "warn",
     "prettier/prettier": ["error", { "endOfLine": "auto" }]
   }
 }

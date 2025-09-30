@@ -11,9 +11,15 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  { files: ['**/*.{js,jsx,ts,tsx}'] },
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...fixupConfigRules(pluginReactConfig),
   {
     rules: {
-      '@next/next/no-img-element': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ]
