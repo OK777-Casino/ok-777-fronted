@@ -88,11 +88,11 @@ function SettingsPageContent() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'Account information':
+      case 'account':
         return <AccountInfo />
-      case 'Security':
+      case 'security':
         return <Security />
-      case 'Wallet Address':
+      case 'walletAdd':
         return <WalletAdd />
       default:
         return <AccountInfo />
@@ -101,29 +101,29 @@ function SettingsPageContent() {
 
   return (
     <>
-      <div className="mx-auto flex flex-col justify-between gap-2 p-2 lg:py-6 lg:pb-8">
+      <div className="mx-auto max-w-6xl flex flex-col justify-between gap-2 p-2 lg:py-6 lg:pb-8">
         {/* Left Sidebar Navigation */}
         <div className="h-full w-full rounded-lg md:bg-[#FFFFFF0A]">
-          <div className="hidden grid-cols-3 gap-3 p-3 md:grid">
+          <div className="hidden grid-cols-3 gap-3 p-2 md:grid">
             {navigationItems.map(item => (
               <div
                 key={item.key}
                 onClick={() => handleTabSelect(item.key)}
-                className={`flex w-full items-center gap-3 rounded-lg transition-all duration-200 ${
+                className={`flex h-11 w-full items-center gap-3 rounded-lg transition-all duration-200 cursor-pointer px-4 ${
                   activeTab === item.key
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
                 }`}
               >
                 {item.icon}
-                <span className="text-sm font-bold">{item.name}</span>
+                <span className="text-sm font-semibold">{item.name}</span>
               </div>
             ))}
           </div>
           <div className="flex flex-col gap-4 md:hidden">
             <div
               onClick={() => setIsModalOpen(true)}
-              className="flex h-12 items-center justify-between rounded-lg bg-white-4 p-2 text-sm font-bold text-casper transition-colors hover:bg-white-8"
+              className="flex h-12 items-center justify-between rounded-lg bg-white-4 p-2 text-sm font-semibold text-casper transition-colors hover:bg-white-8"
             >
               <span>
                 <span>{activeTab}</span>

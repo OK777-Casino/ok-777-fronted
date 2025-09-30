@@ -13,10 +13,10 @@ const AccountInfo: React.FC = () => {
   }
 
   return (
-    <div className="[@media(max-width:660px)]:w-full">
-      <div className="flex w-full flex-col gap-4">
+    <div className="w-full">
+      <div className="flex w-full flex-col gap-4 md:p-2">
         {/* AccountInfo Header */}
-        <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
+        <h1 className="hidden text-lg font-semibold text-white sm:text-xl lg:block">
           User Information
         </h1>
         <div className="flex justify-between gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4">
