@@ -22,18 +22,18 @@
     "subtitle": "在旅途中获得无限乐趣",
     "showMore": "显示更多",
     "showLess": "显示更少",
+    "communityEntrance": "社群入口",
+    "supportedCurrencies": "支持的加密货币",
+    "gamblingLicense": "博彩牌照",
     "latestBetting": "最新投注",
     "latestEarining": "最新返奖",
     "onlinePlayer": "在线玩家",
     "gameProvider": "游戏提供商",
-    "communityEntrance": "社群入口",
-    "supportedCurrencies": "支持的加密货币",
-    "gamblingLicense": "博彩牌照",
     "viewall": "查看全部",
     "all": "全部",
     "recently": "最近浏览",
     "recentlyPlaceholder": "搜索最近的游戏...",
-    "favoritesPlaceholder": "搜索搜藏的游戏...",
+    "favoritesPlaceholder": "搜索收藏的游戏...",
     "allTime": "所有时间",
     "toDay": "今天",
     "thisWeek": "最近一周",
@@ -59,13 +59,8 @@
   },
   "games": {
     "title": "游戏",
-    "player": "玩家",
     "play": "开始游戏",
     "bet": "下注",
-    "betTime": "下注时间",
-    "betAmount": "下注金额",
-    "multiplier": "倍数",
-    "payout": "返奖",
     "win": "赢",
     "lose": "输",
     "balance": "余额",
@@ -78,7 +73,6 @@
     "new": "最新",
     "hot": "最热",
     "jackpot": "大奖池",
-    "lobby": "大厅",
     "live": "真人",
     "sports": "体育",
     "casino": "赌场",
@@ -88,22 +82,26 @@
     "lottery": "彩票",
     "virtual": "虚拟体育",
     "hashgames": "哈希游戏",
-    "pfFutures": "期货市场",
     "futures": "期货",
     "crypto": "加密游戏",
     "providers": "游戏供应商",
     "searchPlaceholder": "搜索需要至少3个字母。",
     "allProviders": "所有供应商",
-    "all": "全部",
     "featured": "精选",
-    "exclusive": "独家"
+    "exclusive": "独家",
+    "player": "玩家",
+    "betTime": "下注时间",
+    "betAmount": "下注金额",
+    "multiplier": "倍数",
+    "payout": "返奖",
+    "lobby": "大厅",
+    "pfFutures": "期货市场"
   },
   "wallet": {
     "title": "钱包",
     "balance": "余额",
     "deposit": "充值",
     "withdraw": "提现",
-    "swap": "兑换",
     "transfer": "转账",
     "history": "交易记录",
     "pending": "待处理",
@@ -111,7 +109,6 @@
     "failed": "失败",
     "amount": "金额",
     "currency": "币种",
-    "network": "网络",
     "method": "支付方式",
     "address": "钱包地址",
     "copy": "复制地址",
@@ -119,6 +116,8 @@
     "fees": "手续费",
     "minimum": "最小金额",
     "maximum": "最大金额",
+    "swap": "兑换",
+    "network": "网络",
     "crypto": "加密货币",
     "fiat": "法币",
     "relenishmentMethod": "充值方式",
@@ -127,20 +126,34 @@
     "noticeUsdt": "请仅向此地址发送 USDT。少于 1 USDT 的转账金额将不予接收。"
   },
   "promotions": {
+    "title": "活动",
+    "bonus": "奖励",
+    "welcome": "欢迎奖励",
+    "deposit": "充值奖励",
+    "free": "免费旋转",
+    "cashback": "现金返还",
+    "vip": "VIP 奖励",
+    "referral": "邀请",
+    "tournament": "锦标赛",
+    "leaderboard": "排行榜",
+    "prize": "奖品",
+    "terms": "条款与条件",
+    "expires": "到期",
+    "active": "进行中",
+    "inactive": "未启用",
+    "claim": "领取",
+    "claimed": "已领取",
     "all": "全部",
     "casino": "赌场",
     "sport": "体育",
-    "title": "活动",
-
     "joinnow": "马上加入",
     "get": "获取",
     "claimnow": "现在取款",
     "readmore": "查看详情",
-
     "title1": "每天完成任务，天天送彩金奖励！",
     "content1": "想边玩边赚？现在加入 OK777 官方社群，完成指定",
     "content2": "互动任务 下注挑战 邀友行动，",
-    "content3": "每天都有新任务，关关有奖，还嫩个登上【任务王榜单】！点击下方社媒链接就可加入活动",
+    "content3": "每天都有新任务，关关有奖，还能登上【任务王榜单】！点击下方社媒链接就可加入活动",
     "text1": "如何领取奖金？",
     "text2": "留言，分享，邀请好友通通算",
     "textbutton1": "留言",
@@ -158,24 +171,7 @@
     "text12": "完成每日任务即可获得彩金奖励，人人可参与，无需门槛。任务包含：留言，分享，邀请好友等简单操作，每日皆有新任务与挑战。",
     "text13": "所有 OK777 正式会员皆可参与此活动，完成指定任务即有彩金奖励。持续参与可获得：限定头像框，抽奖资格，任务王榜单排名奖励等。",
     "text14": "用户需加入官方社群（Telegram / IG / FB / Twitter）并完成指定互动任务。任务完成与奖励发放将以系统记录为准，违规或异常行为将不予发放。",
-    "text15": "OK777 保留对此活动做出更改，终止的权利，并享有最终解释权。",
-
-    "bonus": "奖励",
-    "welcome": "欢迎奖励",
-    "deposit": "充值奖励",
-    "free": "免费旋转",
-    "cashback": "现金返还",
-    "vip": "VIP 奖励",
-    "referral": "邀请",
-    "tournament": "锦标赛",
-    "leaderboard": "排行榜",
-    "prize": "奖品",
-    "terms": "条款与条件",
-    "expires": "到期",
-    "active": "进行中",
-    "inactive": "未启用",
-    "claim": "领取",
-    "claimed": "已领取"
+    "text15": "OK777 保留对此活动做出更改，终止的权利，并享有最终解释权。"
   },
   "settings": {
     "title": "设置",
@@ -250,15 +246,16 @@
     "changePassword": "修改密码",
     "verifyEmail": "验证邮箱",
     "verifyPhone": "验证手机号",
+    "referralCode": "邀请码/折扣码",
     "usernameEmail": "用户名 / 邮箱",
-    "userEmailPlaceholder": "请输入你的用户名或邮箱",
-    "passPlaceholder": "请输入你的密码",
-    "referralPlaceholder": "请输入你的邀请码，没有则不输入",
-    "logInUsing": "使用以下方式登录",
     "agreeTerms": "我同意《服务条款》和《隐私政策》",
     "agreeNotifications": "我同意接收促销通知",
     "agreeUserAgreement": "我同意《用户协议》并确认我已满18岁",
-    "agreePromotional": "我同意接收来自"
+    "agreePromotional": "我同意接收来自",
+    "userEmailPlaceholder": "请输入你的用户名或邮箱",
+    "passPlaceholder": "请输入你的密码",
+    "referralPlaceholder": "请输入你的邀请码，没有则不输入",
+    "logInUsing": "使用以下方式登录"
   },
   "messages": {
     "success": "成功",
@@ -369,6 +366,25 @@
     "ukrainian": "乌克兰语",
     "portugueseBR": "葡萄牙语 (巴西)"
   },
+  "licence": {
+    "company": "Ok777 赌场由 Nextech NV 拥有和运营，该公司在库拉索岛注册，公司编号为 162054，注册地址为：Zuikertuin Tower 2/ Kaya W.F.G. (Cito) Hellmund z/n 库拉索岛，由库拉索岛博彩管理局 (CGB) 授权，许可证号为365/JAZ，由 Antillephone 颁发。该许可证经库拉索岛政府批准和监管，确保平台的合法性和安全性。"
+  },
+  "generalInformation": {
+    "generalInformation": "一般信息",
+    "commonProblem": "常见问题",
+    "responsibleGambling": "负责任的博彩",
+    "honestlyAndFairly": "公平公正",
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策"
+  },
+  "aboutUs": {
+    "aboutUs": "关于我们"
+  },
+  "install": {
+    "install": "安装",
+    "onTheDesktop": "在桌面上",
+    "accept": "接受"
+  },
   "alliance": {
     "inviteFriends": "邀请好友",
     "management": "管理",
@@ -394,9 +410,6 @@
     "luckyHashRules": "幸运哈希规则"
   },
   "hashgame": {
-    "chances": "赔率",
-    "bettingAddress": "投注地址",
-    "useDecWallet": "使用去中心化钱包",
     "currentBlock": "当前区块",
     "nextBlock": "下一个区块",
     "limit": "限制",
@@ -408,6 +421,7 @@
     "default": "默认",
     "blockTrend": "区块走势",
     "myTrend": "我的走势",
+    "pageBetting": "页面投注",
     "betAmount": "投注金额",
     "multiplier": "倍数",
     "payout": "支付",
@@ -419,8 +433,10 @@
     "clearBets": "清除投注",
     "autoBet": "自动投注",
     "stopAuto": "停止自动",
+    "chances": "赔率",
+    "bettingAddress": "投注地址",
+    "useDecWallet": "使用去中心化钱包",
     "transferBetting": "转账投注",
-    "pageBetting": "页面投注",
     "activeAddress": "激活地址",
     "limitation": "限红",
     "notetitle": "注：赔率会自动浮动，所有解释权归本平台所有。",
@@ -453,25 +469,6 @@
     "timesFree": "次免费",
     "stayConnected": "保持联络",
     "stayConnectedDescription": "敬请关注特别优惠和最新消息。如有任何疑问，请联系我们的客服团队。"
-  },
-  "licence": {
-    "company": "Ok777 赌场由 Nextech NV 拥有和运营，该公司在库拉索岛注册，公司编号为 162054，注册地址为：Zuikertuin Tower 2/ Kaya W.F.G. (Cito) Hellmund z/n库拉索岛，由库拉索岛博彩管理局 (CGB) 授权，许可证号为365/JAZ，由 Antillephone 颁发。该许可证经库拉索岛政府批准和监管，确保平台的合法性和安全性。"
-  },
-  "generalInformation": {
-    "generalInformation": "一般信息",
-    "commonProblem": "常见问题",
-    "responsibleGambling": "负责任的博彩",
-    "honestlyAndFairly": "公平公正",
-    "termsOfService": "服务条款",
-    "privacyPolicy": "隐私政策"
-  },
-  "aboutUs": {
-    "aboutUs": "关于我们"
-  },
-  "install": {
-    "install": "安装",
-    "onTheDesktop": "在桌面上",
-    "accept": "接受"
   },
   "banner": {
     "firstDepost": {

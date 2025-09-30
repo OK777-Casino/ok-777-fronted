@@ -100,9 +100,9 @@ function WalletPageContent() {
 
   return (
     <>
-      <div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-8 p-2 pb-4 lg:py-6 lg:pb-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-4 pb-4 lg:py-6 lg:pb-8">
         {/* Left Sidebar Navigation */}
-        <div className="h-full w-full rounded-lg bg-[#FFFFFF0A] [@media(max-width:1024px)]:hidden">
+        <div className="h-full w-full rounded-lg bg-[#FFFFFF0A] hidden lg:block">
           <div className="flex justify-between gap-1 p-3">
             {navigationItems.map(item => (
               <div

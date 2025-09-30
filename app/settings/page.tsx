@@ -70,10 +70,20 @@ function SettingsPageContent() {
   const navigationItems = [
     {
       name: 'Account information',
+      key: 'account',
       icon: <UserSquareIcon className="h-6 w-6" />,
     },
-    { name: 'Security', icon: <FingerprintIcon className="h-6 w-6" /> },
-    { name: 'Wallet Address', icon: <WalletIcon className="h-6 w-6" /> },
+    {
+      name: 'Security',
+      key: 'security',
+      icon: <FingerprintIcon className="h-6 w-6" />,
+    },
+
+    {
+      name: 'Wallet Address',
+      key: 'walletAdd',
+      icon: <WalletIcon className="h-6 w-6" />,
+    },
   ]
 
   const renderContent = () => {
@@ -91,29 +101,29 @@ function SettingsPageContent() {
 
   return (
     <>
-      <div className="mx-auto flex w-[70%] max-w-[120rem] flex-col justify-between gap-16 pb-20 lg:py-6 lg:pb-8 [@media(max-width:1444px)]:w-[100%]">
+      <div className="mx-auto flex flex-col justify-between gap-2 p-2 lg:py-6 lg:pb-8">
         {/* Left Sidebar Navigation */}
-        <div className="h-full w-full rounded-lg px-4 py-1 md:bg-[#FFFFFF0A]">
+        <div className="h-full w-full rounded-lg md:bg-[#FFFFFF0A]">
           <div className="hidden grid-cols-3 gap-3 p-3 md:grid">
             {navigationItems.map(item => (
               <div
-                key={item.name}
-                onClick={() => handleTabSelect(item.name)}
-                className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 ${
-                  activeTab === item.name
+                key={item.key}
+                onClick={() => handleTabSelect(item.key)}
+                className={`flex w-full items-center gap-3 rounded-lg transition-all duration-200 ${
+                  activeTab === item.key
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'
                 }`}
               >
                 {item.icon}
-                <span className="text-[0.875rem] font-bold">{item.name}</span>
+                <span className="text-sm font-bold">{item.name}</span>
               </div>
             ))}
           </div>
           <div className="flex flex-col gap-4 md:hidden">
             <div
               onClick={() => setIsModalOpen(true)}
-              className="flex h-12 items-center justify-between rounded-[0.5rem] bg-white-4 px-4 text-[0.875rem] font-bold text-casper transition-colors hover:bg-white-8"
+              className="flex h-12 items-center justify-between rounded-lg bg-white-4 p-2 text-sm font-bold text-casper transition-colors hover:bg-white-8"
             >
               <span>
                 <span>{activeTab}</span>
@@ -124,10 +134,7 @@ function SettingsPageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div
-          key={activeTab}
-          className="flex-1 rounded-[0.75rem] p-4 pt-[1.375rem] lg:bg-white-4"
-        >
+        <div key={activeTab} className="flex-1 rounded-lg lg:bg-white-4">
           {renderContent()}
         </div>
       </div>

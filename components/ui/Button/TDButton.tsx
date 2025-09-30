@@ -24,8 +24,11 @@ const TDButton: React.FC<TDButtonProps> = ({
     hover:shadow-[0_3px_20px_#ff234199,_inset_0_4px_4px_#ffffff5e]
     `
   const blueStyle = `
-    bg-[linear-gradient(#2C9FFA_0%,#0C60FF_24%)] 
-    hover:bg-[linear-gradient(#47AEFF,#1868FF,#47AEFF)]
+    bg-[linear-gradient(1turn,#0c5eff_0.8%,#1398f9)]
+    shadow-[0_3px_28px_#2283f666,_inset_0_3px_3px #ffffff4d]
+    
+    hover:bg-[linear-gradient(3360deg,#236eff_0.8%,#34a7fb)]
+    hover:shadow-[0_3px_20px_#2283f699,_inset_0_4px_4px_#ffffff5e]
     `
   const Style = type === 'red' ? redStyle : blueStyle
   const edge = type === 'red' ? 'bg-[#61001d]' : 'bg-[#2283F680]'
@@ -48,7 +51,7 @@ const TDButton: React.FC<TDButtonProps> = ({
         ></span>
         <span
           className={cn(
-            `front relative flex transform items-center justify-center rounded-lg font-bold text-white transition-transform will-change-transform group-hover:-translate-y-[2px] group-active:-translate-y-[-1px]`,
+            `front relative flex transform items-center justify-center rounded-lg font-medium text-white transition-transform will-change-transform group-hover:-translate-y-[2px] group-active:-translate-y-[-1px]`,
             className,
             Style
           )}

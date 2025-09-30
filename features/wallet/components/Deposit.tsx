@@ -81,8 +81,8 @@ const Deposit: React.FC = () => {
   ]
 
   return (
-    <div className="[@media(max-width:660px)]:w-full">
-      <div className="flex w-full flex-col gap-4">
+    <div className="w-full">
+      <div className="flex w-full flex-col gap-2">
         {/* Deposit Header */}
         <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
           {selectedCurrencyType === 'Crypto' ? 'Deposit' : 'To replenish'}
@@ -124,7 +124,7 @@ const Deposit: React.FC = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-4 rounded-[12px] bg-white-4 p-2 sm:grid-cols-[150px_auto]">
+            <div className="grid grid-cols-1 gap-4 rounded-[12px] bg-white-4 p-2 sm:grid-cols-[150px_auto] align-bottom">
               <div className="mx-auto rounded-[8px] p-2">
                 <img
                   src="images/qr.png"
@@ -133,17 +133,17 @@ const Deposit: React.FC = () => {
                 />
               </div>
               <div className="flex w-full flex-col justify-between gap-2">
-                <h2 className="text-[1rem] font-bold text-white">
+                <h2 className="text-md font-bold text-white">
                   {t('wallet.address')}
                 </h2>
                 <div className="flex h-[62px] w-full items-center justify-center rounded-[8px] bg-white-8">
-                  <span className="break-all p-2 text-[.8rem] font-bold text-casper">
+                  <span className="break-all p-2 text-sm font-semibold text-casper">
                     <span className="text-dodger-blue">TXS3</span>
                     PfAU9hemKkoBWRUfsUkGBSrZGa
                     <span className="text-dodger-blue">gh6X</span>
                   </span>
                 </div>
-                <div className="flex h-[48px] w-full items-center justify-center gap-1 rounded-[12px] bg-white-13 text-[1rem] font-bold text-casper">
+                <div className="flex h-9 w-full items-center justify-center gap-1 rounded-[12px] bg-white-13 text-[1rem] font-bold text-casper">
                   <CopyIcon />
                   <span>{t('wallet.copy')}</span>
                 </div>
