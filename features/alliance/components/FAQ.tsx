@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useI18n } from '@/context/I18nProvider'
 
 interface FAQItem {
   question: string
@@ -12,6 +13,7 @@ interface FAQProps {
 }
 
 const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
+  const { t } = useI18n()
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null)
 
   const toggleFAQ = (question: string) => {
@@ -19,18 +21,20 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
   }
 
   return (
-    <div className={`lg:mb-8 ${className} `}>
+    <div className={`${className} `}>
       {title && (
-        <h3 className="mb-6 pl-3 text-lg font-bold text-white">FAQs</h3>
+        <h3 className="mb-6 pl-3 text-lg font-bold text-white">
+          {t('help.faq')}
+        </h3>
       )}
-      <div className="overflow-hidden rounded-[8px]">
+      <div className="rounded-xl">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`transform transition-all duration-300 ease-in-out ${
+            className={`mb-2 transform cursor-pointer transition-all duration-300 ease-in-out ${
               expandedFAQ === faq.question
                 ? 'bg-[#FFFFFF14] shadow-lg'
-                : 'bg-[#1119238A]'
+                : 'bg-mirage-8a'
             }`}
           >
             <div
@@ -39,7 +43,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
             >
               <span
                 className={`text-sm font-bold transition-all duration-200 ${
-                  expandedFAQ === faq.question ? 'text-white' : 'text-[#A7B5CA]'
+                  expandedFAQ === faq.question ? 'text-white' : 'text-gray-400'
                 }`}
               >
                 {faq.question}

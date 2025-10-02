@@ -20,28 +20,16 @@ function AlliancePageContent() {
   const tabSlugToName = useMemo(
     () =>
       ({
-        invite: 'Invite Friends',
-        management: 'Management',
-        performance: 'Performance',
-        report: 'Report',
-        introduction: 'Introduction',
+        invite: 'invite',
+        management: 'management',
+        performance: 'performance',
+        report: 'report',
+        introduction: 'introduction',
       }) as const,
     []
   )
 
-  const tabNameToSlug = useMemo(
-    () =>
-      ({
-        'Invite Friends': 'invite',
-        Management: 'management',
-        Performance: 'performance',
-        Report: 'report',
-        Introduction: 'introduction',
-      }) as const,
-    []
-  )
-
-  const [activeTab, setActiveTab] = useState<string>('Invite Friends')
+  const [activeTab, setActiveTab] = useState<string>('invite')
 
   useEffect(() => {
     const fromQuery = searchParams.get('tab')
@@ -52,49 +40,49 @@ function AlliancePageContent() {
 
   const updateQuery = (nextTabName: string) => {
     const params = new URLSearchParams(searchParams.toString())
-    params.set('tab', tabNameToSlug[nextTabName as keyof typeof tabNameToSlug])
+    params.set('tab', tabSlugToName[nextTabName as keyof typeof tabSlugToName])
     router.replace(`${pathname}?${params.toString()}`)
   }
 
   const navigationItems = [
     {
       name: t('alliance.inviteFriends'),
-      key: 'Invite Friends',
+      key: 'invite',
       icon: '/icons/user-plus.svg',
     },
     {
       name: t('alliance.management'),
-      key: 'Management',
+      key: 'management',
       icon: '/icons/group.svg',
     },
     {
       name: t('alliance.performance'),
-      key: 'Performance',
+      key: 'performance',
       icon: '/icons/chart-network.svg',
     },
     {
       name: t('alliance.report'),
-      key: 'Report',
+      key: 'report',
       icon: '/icons/file-report.svg',
     },
     {
       name: t('alliance.introduction'),
-      key: 'Introduction',
+      key: 'introduction',
       icon: '/icons/form.png',
     },
   ]
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'Invite Friends':
+      case 'invite':
         return <InviteFriends />
-      case 'Management':
+      case 'management':
         return <Management />
-      case 'Performance':
+      case 'performance':
         return <Performance />
-      case 'Report':
+      case 'report':
         return <Report />
-      case 'Introduction':
+      case 'introduction':
         return <Introduction />
       default:
         return <InviteFriends />

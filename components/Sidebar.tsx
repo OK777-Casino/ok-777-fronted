@@ -136,9 +136,9 @@ const Sidebar: React.FC = () => {
             </div>
             <Link
               href={'/install-app'}
-              className="flex h-[5.1875rem] flex-col justify-center gap-2 rounded-[0.5rem] bg-[linear-gradient(45deg,#111923,#002554)] px-4 py-2 lg:hidden"
+              className="flex h-[5.1875rem] flex-col justify-center gap-2 rounded-lg bg-[linear-gradient(45deg,#111923,#002554)] px-4 py-2 lg:hidden"
             >
-              <span className="text-[0.875rem] font-bold text-white">
+              <span className="text-sm font-bold text-white">
                 {t('app.title')}
               </span>
               <span className="text-[0.625rem] text-casper">
@@ -219,10 +219,10 @@ const Sidebar: React.FC = () => {
             <span className="text-[1rem] font-bold text-dodger-blue">
               {t('help.onlineService')}
             </span>
-            <span className="text-[0.875rem] font-medium text-yellow-orange">
+            <span className="text-sm font-medium text-yellow-orange">
               {t('help.hours24')}
             </span>
-            <span className="text-[0.875rem] font-medium text-white">
+            <span className="text-sm font-medium text-white">
               {t('help.dedicatedService')}
             </span>
           </div>
@@ -231,10 +231,10 @@ const Sidebar: React.FC = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col gap-2 rounded-[0.75rem] bg-white-4 p-4"
+              className="flex flex-col gap-2 rounded-xl bg-white-4 p-4"
             >
               <div className="flex items-center justify-between">
-                <div className="flex gap-2 text-[0.875rem] font-bold text-white">
+                <div className="flex gap-2 text-sm font-bold text-white">
                   <div
                     className="flex h-6 w-6 items-center justify-center rounded-[0.5rem] border"
                     style={{ borderColor: service.color }}
@@ -248,7 +248,7 @@ const Sidebar: React.FC = () => {
                   color="var(--casper)"
                 />
               </div>
-              <div className="text-[0.875rem] text-casper">{service.desc}</div>
+              <div className="text-sm text-casper">{service.desc}</div>
             </div>
           ))}
         </div>

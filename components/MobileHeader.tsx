@@ -29,15 +29,15 @@ export function MobileHeader({
   return (
     <div
       className={cn(
-        'fixed left-0 right-0 top-0 z-50',
+        'fixed left-0 right-0 top-0 z-[100]',
         'sm:p4 flex w-full items-center justify-between gap-3 p-3 sm:gap-4',
-        'bg-[rgba(17,25,35,0.54)] backdrop-blur-[32px]',
+        'bg-[rgba(17,25,35,0.54)] backdrop-blur-xl',
         'h-[56px]',
         className
       )}
       style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.04)' }}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         {/* Back Button */}
         {showBackButton && (
           <BlackButton onClick={onBackClick}>

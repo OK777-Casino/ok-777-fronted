@@ -15,51 +15,6 @@ import TelegramIcon from '@/components/ui/icons/TelegramIcon'
 import { useI18n } from '@/context/I18nProvider'
 
 const data = [1, 2, 3, 4, 5]
-const faq = [
-  {
-    question: 'What can I do to improve my VIP level?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-  {
-    question: 'What are the rules for upgrading to VIP level?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-  {
-    question: 'How can I claim the free VIP beauty bonus?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-  {
-    question: 'When is the monthly VIP bonus available and how can I claim it?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-]
-
-const faq1 = [
-  {
-    question: 'Explain the VIP bonus.',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-  {
-    question: 'What are the conditions for withdrawing bonuses?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-  {
-    question: 'Why did my VIP level drop?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-  {
-    question: 'How can I ensure that my VIP level does not decrease?',
-    answer:
-      'Upgrade bonuses can be applied on the VIP Activity page on a self-service basis after members reach a membership level. Each member can only receive one upgrade bonus for each level.',
-  },
-]
 
 const vips = {
   1: [
@@ -106,6 +61,31 @@ const vips = {
 
 const VipClubPage = () => {
   const { t } = useI18n()
+  const faq = [
+    {
+      question: t('faq.vip-club.level-up-q'),
+      answer: t('faq.vip-club.level-up-a'),
+    },{
+      question: t('faq.vip-club.promotion-rules-q'),
+      answer: t('faq.vip-club.promotion-rules-a'),
+    },{
+      question: t('faq.vip-club.promotion-bonus-q'),
+      answer: t('faq.vip-club.promotion-bonus-a'),
+    },{
+      question: t('faq.vip-club.distribution-time-q'),
+      answer: t('faq.vip-club.distribution-time-a'),
+    },{
+      question: t('faq.vip-club.rebate-q'),
+      answer: t('faq.vip-club.rebate-a'),
+    },{
+      question: t('faq.vip-club.demotion-q'),
+      answer: t('faq.vip-club.demotion-a'),
+    },{
+      question: t('faq.vip-club.retain-membership-rank-q'),
+      answer: t('faq.vip-club.retain-membership-rank-a'),
+    },
+   
+  ]
   const swiperRef = useRef<SwiperType | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
@@ -310,7 +290,7 @@ const VipClubPage = () => {
         />
         <div className="absolute left-0 top-0 z-[10] hidden h-full w-full bg-[linear-gradient(#2283f633,#111923)] 2xl:block" />
 
-        <div className="relative z-[99] flex h-full w-full flex-col items-center justify-between gap-8 lg:flex-row 2xl:p-8">
+        <div className="relative z-[10] flex h-full w-full flex-col items-center justify-between gap-8 lg:flex-row 2xl:p-8">
           <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4 2xl:w-[250px] 2xl:bg-mirage">
             <span className="text-[14px] font-bold text-white">
               {t('vip.stayConnected')}
@@ -363,11 +343,10 @@ const VipClubPage = () => {
       </div>
       <div className="flex flex-col gap-4">
         <span className="text-[18px] font-bold text-white">
-          Questions to be answered
+         {t('help.faq')}
         </span>
         <div className="flex flex-col gap-4 2xl:flex-row">
           <FAQ faqs={faq} title={false} />
-          <FAQ faqs={faq1} title={false} />
         </div>
       </div>
       <ModalContainer

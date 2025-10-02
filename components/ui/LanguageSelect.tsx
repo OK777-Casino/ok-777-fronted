@@ -375,7 +375,7 @@ export default function LanguageDropdown({
         <div
           className={`${
             inline ? 'static' : 'absolute left-0 top-full mt-2'
-          } border-white/13 z-50 w-[280px] rounded-[14px] border bg-[#111923]/90 p-4 backdrop-blur-[32px]`}
+          }  z-50 w-[280px] rounded-lg bg-[#111923]/90 p-4 backdrop-blur-xl`}
         >
           <div className="flex gap-2">
             <div className="flex flex-1 flex-col gap-2">

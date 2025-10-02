@@ -511,8 +511,17 @@ const MainContent: React.FC = () => {
           key={`banner-swiper-${activeGameCategory}`}
           data={bannerCards}
           renderSlide={(card, index) => <RewardCard {...card} />}
-          slidesPerView="auto"
-          slideClassName="!w-[min(486.76px,100%)]"
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            375: { slidesPerView: 1 },
+            425: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: {
+              slidesPerView: 2,
+            },
+            1440: { slidesPerView: 3 },
+          }}
+          // slideClassName="!w-[min(486.76px,100%)]"
           showProgressBars={true}
           customPagination={true}
           initialSlide={carouselState.mainBannerCurrentSlide}

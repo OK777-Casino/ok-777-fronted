@@ -61,7 +61,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     isCollapsed ? 'justify-center' : '',
     isActive
       ? 'bg-white/10 text-white'
-      : activeColor || 'text-gray-300 hover:bg-gray-700 active:bg-gray-700'
+      : activeColor || 'text-gray-400 hover:bg-gray-800 active:bg-gray-800'
   )
 
   const content = (

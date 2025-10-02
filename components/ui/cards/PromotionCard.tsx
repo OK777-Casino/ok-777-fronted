@@ -19,18 +19,28 @@ export default function CasinoPromotionCard({
   return (
     <div className="">
       {/* Card Container */}
-      <div className="bg-mirage-1-2 flex w-[21.166875rem] flex-col overflow-hidden rounded-xl shadow-lg">
+      <div className="bg-mirage-1-2 flex flex-col overflow-hidden rounded-xl shadow-lg">
         {/* Hero Section with Background Image */}
-        <div className="group relative h-[11.75rem] w-full overflow-hidden rounded-t-[0.875rem] px-6 py-8 text-white shadow-md transition-all duration-300">
+        {/* <div className="group relative h-[11.75rem] w-full overflow-hidden rounded-t-[0.875rem] px-6 py-8 text-white shadow-md transition-all duration-300"> */}
+        <div
+          className="w-full overflow-hidden rounded-t-lg text-white shadow-md transition-all duration-300"
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            paddingTop: '56%'
+          }}
+        >
           {/* Background image layer with hover zoom */}
-          <div
+          {/* <div
             className="absolute inset-0 bg-no-repeat transition-transform duration-500"
             style={{
               backgroundImage: `url(${image})`,
               backgroundSize: '100% 100%',
               backgroundPosition: 'center',
             }}
-          />
+          /> */}
 
           {/* subtle dark overlay for readability */}
           {/* <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/30" /> */}

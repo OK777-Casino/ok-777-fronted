@@ -23,18 +23,17 @@ const TypeOne: React.FC<TypeOneProps> = ({
 }) => {
   return (
     <div
-      className="group relative flex h-[196px] items-end overflow-hidden rounded-[14px] px-6 py-8 text-white shadow-md transition-all duration-300 lg:h-[270px] lg:px-8 lg:py-16"
-      style={{ width: '100%' }}
+      className="overflow-hidden rounded-xl p-6 text-white shadow-md transition-all duration-300"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        paddingTop: '35%',
+      }}
     >
       {/* Background image layer with hover zoom */}
-      <div
-        className="absolute inset-0 bg-no-repeat transition-transform duration-500"
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-        }}
-      />
+      <div className="absolute inset-0 bg-no-repeat transition-transform duration-500" />
       <div className="absolute left-[5%] top-[15%] w-3/5">
         <p>
           <span className="text-[1.4rem] font-bold md:text-[1.6]">
