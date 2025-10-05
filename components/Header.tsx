@@ -45,7 +45,7 @@ const MenuButton: React.FC<{ onClick: () => void; isCollapsed: boolean }> = ({
 const Logo: React.FC = () => (
   <div className="flex items-center">
     <Link href="/">
-      <img src="/images/logo.svg" alt="777 Gaming Logo" />
+      <img src="https://ok777.b-cdn.net/images/logo.svg" alt="777 Gaming Logo" />
     </Link>
   </div>
 )
@@ -60,7 +60,7 @@ const BonusesButton: React.FC = () => (
       }}
     >
       <div className="flex items-center gap-2">
-        <img src="/images/awards/Chest-box.svg" className="h-8" alt="bonuses" />
+        <img src="https://ok777.b-cdn.net/images/awards/Chest-box.svg" className="h-8" alt="bonuses" />
         <span className="hidden text-xs font-medium text-white lg:block">
           Bonuses
         </span>

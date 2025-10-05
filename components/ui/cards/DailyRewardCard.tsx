@@ -20,7 +20,7 @@ const DailyRewardCard: React.FC<DailyRewardProps> = ({
           <span>Day {date}</span>
         </div>
         <div className="flex flex-col items-center gap-4 bg-white-4 p-4">
-          <img src="/images/coins.svg" alt="coins" />
+          <img src="https://ok777.b-cdn.net/images/coins.svg" alt="coins" />
           <span className="text-[14px] font-bold uppercase text-dodger-blue">
             {reward}
           </span>

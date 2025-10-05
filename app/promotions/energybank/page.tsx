@@ -91,7 +91,7 @@ const EnergyBankPage = () => {
                   Fee exemption
                 </div>
                 <img
-                  src="/images/percent.png"
+                  src="https://ok777.b-cdn.net/images/percent.png"
                   alt="percent"
                   className="ml-[-15px] h-[84.85px] w-[84.85px]"
                 />
