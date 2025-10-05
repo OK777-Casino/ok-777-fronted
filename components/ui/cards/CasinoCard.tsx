@@ -18,7 +18,7 @@ const CasinoCard: React.FC<CasinoCardProps> = ({
   const getBadgeColor = (badgeType: string): string => {
     switch (badgeType) {
       case 'HOT':
-        return 'bg-[#ED1D49]'
+        return 'bg-crimson'
       case 'NEW':
         return 'bg-[#1BB83D]'
       default:

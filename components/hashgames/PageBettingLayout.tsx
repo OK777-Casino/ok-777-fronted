@@ -41,7 +41,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
               >
                 {' '}
                 <img
-                  src="/icons/swap-horizontal.svg"
+                  src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
                   alt="active"
                   className="h-6 w-6"
                 />
@@ -51,7 +51,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
                 className={`flex items-center gap-2 rounded-lg border border-none border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.13)] px-8 py-1.5 text-[14px] font-bold text-gray-300 transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
               >
                 {' '}
-                <img src="/icons/wallet.svg" alt="active" className="h-6 w-6" />
+                <img src="https://ok777.b-cdn.net/icons/wallet.svg" alt="active" className="h-6 w-6" />
                 Page betting
               </div>
             </div>
@@ -122,7 +122,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
             >
               {' '}
               <img
-                src="/icons/swap-horizontal.svg"
+                src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
                 alt="active"
                 className="h-6 w-6"
               />
@@ -132,7 +132,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
               className={`flex w-[50%] items-center justify-center gap-2 rounded-lg border border-none border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.13)] py-1.5 text-[14px] font-bold text-gray-300 transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
-              <img src="/icons/wallet.svg" alt="active" className="h-6 w-6" />
+              <img src="https://ok777.b-cdn.net/icons/wallet.svg" alt="active" className="h-6 w-6" />
               Page betting
             </div>
           </div>

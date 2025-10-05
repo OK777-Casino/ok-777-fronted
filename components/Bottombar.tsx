@@ -32,9 +32,9 @@ const TabBarButton = ({
     }
     onClick={onClick}
   >
-    <span className={isActive ? 'text-[#ED1D49]' : 'text-casper'}>{icon}</span>
+    <span className={isActive ? 'text-crimson' : 'text-casper'}>{icon}</span>
     <span
-      className={`text-center font-montserrat text-[0.625rem] leading-none ${isActive ? 'text-white' : 'text-casper'} `}
+      className={`text-center text-[0.65rem] font-medium leading-none ${isActive ? 'text-white' : 'text-casper'} `}
       style={
         isActive
           ? {
@@ -251,7 +251,7 @@ function BottombarContent() {
       label: t('alliance.inviteFriends'),
       icon: (
         <img
-          src="/icons/user-plus.svg"
+          src="https://ok777.b-cdn.net/icons/user-plus.svg"
           alt={t('alliance.inviteFriends')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -262,7 +262,7 @@ function BottombarContent() {
       label: t('alliance.management'),
       icon: (
         <img
-          src="/icons/group.svg"
+          src="https://ok777.b-cdn.net/icons/group.svg"
           alt={t('alliance.management')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -273,7 +273,7 @@ function BottombarContent() {
       label: t('alliance.performance'),
       icon: (
         <img
-          src="/icons/chart-network.svg"
+          src="https://ok777.b-cdn.net/icons/chart-network.svg"
           alt={t('alliance.performance')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -284,7 +284,7 @@ function BottombarContent() {
       label: t('alliance.report'),
       icon: (
         <img
-          src="/icons/file-report.svg"
+          src="https://ok777.b-cdn.net/icons/file-report.svg"
           alt={t('alliance.report')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -295,7 +295,7 @@ function BottombarContent() {
       label: t('alliance.introduction'),
       icon: (
         <img
-          src="/icons/form.png"
+          src="https://ok777.b-cdn.net/icons/form.png"
           alt={t('alliance.introduction')}
           className="h-[1.2rem] w-[1.2rem]"
         />

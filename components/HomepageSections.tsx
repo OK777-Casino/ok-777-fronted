@@ -117,7 +117,7 @@ export const HomepageSections: React.FC<{
       {/* New Launches Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Home.svg"
+          icon="https://ok777.b-cdn.net/icons/Home.svg"
           title={t('games.new')}
           alt="lobby"
           count={card1.length}
@@ -137,7 +137,7 @@ export const HomepageSections: React.FC<{
       {/* Live Casino Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Casino1.svg"
+          icon="https://ok777.b-cdn.net/icons/Casino1.svg"
           title={t('games.live')}
           alt="lobby"
           count={card2.length}
@@ -160,7 +160,7 @@ export const HomepageSections: React.FC<{
       {/* Hash Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Hash.svg"
+          icon="https://ok777.b-cdn.net/icons/Hash.svg"
           title={t('games.hashgames')}
           alt="hash"
           count={extendedHashGames.length}
@@ -182,7 +182,7 @@ export const HomepageSections: React.FC<{
       {/* Slots Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Slots.svg"
+          icon="https://ok777.b-cdn.net/icons/Slots.svg"
           title={t('games.slots')}
           alt="slots"
           count={card3.length}
@@ -205,7 +205,7 @@ export const HomepageSections: React.FC<{
       {/* P/F Futures Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Futures1.svg"
+          icon="https://ok777.b-cdn.net/icons/Futures1.svg"
           title={t('games.pfFutures')}
           alt="future"
           count={card4.length}
@@ -227,7 +227,7 @@ export const HomepageSections: React.FC<{
       {/* Cryptogra Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Cryptogra1.svg"
+          icon="https://ok777.b-cdn.net/icons/Cryptogra1.svg"
           title={t('games.crypto')}
           alt="cryptogra"
           count={cryptoCards.length}
@@ -249,7 +249,7 @@ export const HomepageSections: React.FC<{
       {/* Sport Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/Sport.svg"
+          icon="https://ok777.b-cdn.net/icons/Sport.svg"
           title={t('games.sports')}
           alt="Sport"
           count={card5.length}
@@ -271,7 +271,7 @@ export const HomepageSections: React.FC<{
       {/* Chess and cards Section */}
       <div className="mb-8 lg:mb-16">
         <SectionHeader
-          icon="/icons/tablegame.svg"
+          icon="https://ok777.b-cdn.net/icons/tablegame.svg"
           title={t('games.table')}
           alt="tablegame"
           count={card6.length}
