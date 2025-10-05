@@ -28,7 +28,7 @@ const PageLoader: React.FC<PageLoaderProps> = ({ message = 'Loading...' }) => {
   return (
     <div className="loading-bg fixed inset-0 z-[9999] flex flex-col">
       {/* Red Progress Bar at Top */}
-      <div className="h-2 w-full lg:h-4">
+      <div className="h-2 w-full">
         <div
           className="h-full rounded-r-full bg-crimson transition-all duration-300 ease-out"
           style={{ width: `${Math.min(loadingProgress, 100)}%` }}

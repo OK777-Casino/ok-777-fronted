@@ -161,6 +161,10 @@ html.circular-view-active::-webkit-scrollbar {
   height: 0 !important;
 }
 
+body {
+  background: var(--bg-gradient-end);
+}
+
 body::before {
   content: ' ';
   position: fixed;

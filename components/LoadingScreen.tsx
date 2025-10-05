@@ -34,7 +34,7 @@ export default function LoadingScreen() {
   return (
     <div className="fixed inset-0 z-[9999] flex h-screen w-screen flex-col bg-[radial-gradient(circle_at_50%_50%,_#003A81_0%,_#0D131C_30%)]">
       {/* Red Progress Bar at Top */}
-      <div className="h-2 w-full lg:h-4">
+      <div className="h-2 w-full">
         <div
           className="h-full rounded-r-full bg-crimson transition-all duration-300 ease-out"
           style={{ width: `${loadingProgress}%` }}
