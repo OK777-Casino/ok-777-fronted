@@ -147,50 +147,48 @@ const Footer: React.FC = () => {
             <span>Support/Legal support</span>
           </h4>
           <div className="flex flex-col gap-1 overflow-hidden rounded-[0.5rem]">
-            <div className="flex h-[3rem] items-center justify-between bg-[#2a3546] px-4">
-              <span className="text-[0.875rem] font-bold text-[#A7B5CA]">
+            <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
+              <span className="text-[0.875rem] font-bold text-casper">
                 Common Problem
               </span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
-            <div className="flex h-[3rem] items-center justify-between bg-[#2a3546] px-4">
-              <span className="text-[0.875rem] font-bold text-[#A7B5CA]">
+            <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
+              <span className="text-sm font-bold text-casper">
                 Responsible gambling
               </span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
-            <div className="flex h-[3rem] items-center justify-between bg-[#2a3546] px-4">
-              <span className="text-[0.875rem] font-bold text-[#A7B5CA]">
+            <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
+              <span className="text-sm font-bold text-casper">
                 Honestly and fairly
               </span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
-            <div className="flex h-[3rem] items-center justify-between bg-[#2a3546] px-4">
-              <span className="text-[0.875rem] font-bold text-[#A7B5CA]">
+            <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
+              <span className="text-sm font-bold text-casper">
                 Terms of Service
               </span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
-            <div className="flex h-[3rem] items-center justify-between bg-[#2a3546] px-4">
-              <span className="text-[0.875rem] font-bold text-[#A7B5CA]">
+            <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
+              <span className="text-sm font-bold text-casper">
                 Private Policy
               </span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
-            <div className="flex h-[3rem] items-center justify-between bg-[#2a3546] px-4">
-              <span className="text-[0.875rem] font-bold text-[#A7B5CA]">
-                About Us
-              </span>
+            <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
+              <span className="text-sm font-bold text-casper">About Us</span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
@@ -300,7 +298,7 @@ const Footer: React.FC = () => {
             <img src="/images/brand/cookie.svg" alt="cookie" />
           </div>
           <div>
-            <div className="flex text-sm font-medium text-[#A7B5CA]">
+            <div className="flex text-sm font-medium text-casper">
               <span>{t('install.install')}</span>
               <div>
                 <img

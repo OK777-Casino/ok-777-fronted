@@ -365,7 +365,7 @@ const TransferBettingLayout: React.FC = () => {
             </span>
           </h2>
           <div className="flex items-center gap-4">
-            <div className="p-3Icon.svg flex w-[80%] justify-between rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2a3546] p-3 opacity-80">
+            <div className="p-3Icon.svg flex w-[80%] justify-between rounded-lg border border-[rgba(255,255,255,0.1)] bg-ebony-clay p-3 opacity-80">
               <div className="flex items-center">
                 <span className="text-xs font-bold text-gray-300">
                   <span className="text-[#2283F6]">TXS3</span>

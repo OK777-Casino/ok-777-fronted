@@ -150,7 +150,7 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
           onClick={toggleSuccessForm}
         >
           <span>
-            <X className="h-4 w-4 text-[#A7B5CA]" />
+            <X className="h-4 w-4 text-casper" />
           </span>
         </div>
 
@@ -185,13 +185,13 @@ export function SuccessForm({ isOpen }: AnnouncementModalProps) {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-2 w-2 cursor-pointer rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-[#ED1D49]' : 'bg-[#A7B5CA]'
+                    index === currentSlide ? 'bg-crimson' : 'bg-casper'
                   }`}
                 />
               ))}
             </div>
             {/* Swipe hint for mobile */}
-            <div className="text-xs font-medium text-[#A7B5CA]">
+            <div className="text-xs font-medium text-casper">
               Swipe left/right to navigate • {currentSlide + 1} of {totalSlides}
             </div>
           </div>

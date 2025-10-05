@@ -375,7 +375,7 @@ export default function LanguageDropdown({
         <div
           className={`${
             inline ? 'static' : 'absolute left-0 top-full mt-2'
-          }  z-50 w-[280px] rounded-lg bg-[#111923]/90 p-4 backdrop-blur-xl`}
+          } z-50 w-[280px] rounded-lg bg-[#111923]/90 p-4 backdrop-blur-xl`}
         >
           <div className="flex gap-2">
             <div className="flex flex-1 flex-col gap-2">
@@ -443,7 +443,7 @@ export default function LanguageDropdown({
                   {/* Scroll Thumb */}
                   <div
                     ref={scrollThumbRef}
-                    className="w-2 cursor-grab rounded bg-[#2A3546] transition-colors hover:bg-[#3a4556] active:cursor-grabbing"
+                    className="w-2 cursor-grab rounded bg-ebony-clay transition-colors hover:bg-[#3a4556] active:cursor-grabbing"
                     style={{
                       height: `${Math.max(scrollThumbHeight, 30)}px`,
                       transform: `translateY(${scrollThumbTop * 3}px)`,

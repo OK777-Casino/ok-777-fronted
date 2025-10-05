@@ -379,7 +379,7 @@ export default function AuthModal() {
               <div className="space-y-4">
                 <div className="flex cursor-pointer items-center gap-3">
                   <div className="h-px flex-1 bg-[#3C485C]" />
-                  <span className="text-sm text-[#A7B5CA]">
+                  <span className="text-sm text-casper">
                     <span>{t('auth.logInUsing')}</span>
                   </span>
                   <div className="h-px flex-1 bg-[#3C485C]" />
@@ -392,7 +392,7 @@ export default function AuthModal() {
                   <SocialButton icon={<TonIcon />} />
 
                   <SocialButton icon={<TrustWalletIcon />} />
-                  <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-xs font-bold text-[#A7B5CA] backdrop-blur-[32px]">
+                  <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-xs font-bold text-casper backdrop-blur-[32px]">
                     <span>+3</span>
                   </div>
                 </div>
@@ -452,7 +452,7 @@ export default function AuthModal() {
                   className={`flex-1 cursor-pointer px-3 py-4 text-center text-sm font-bold transition-colors ${
                     isLogin
                       ? 'border-b-2 border-[#2283F6] text-[#EDEDED]'
-                      : 'text-[#A7B5CA]'
+                      : 'text-casper'
                   }`}
                 >
                   <span>{t('auth.login')}</span>
@@ -462,7 +462,7 @@ export default function AuthModal() {
                   className={`flex-1 cursor-pointer px-3 py-4 text-center text-sm font-bold transition-colors ${
                     !isLogin
                       ? 'border-b-2 border-[#2283F6] text-[#EDEDED]'
-                      : 'text-[#A7B5CA]'
+                      : 'text-casper'
                   }`}
                 >
                   <span>{t('auth.register')}</span>
@@ -647,7 +647,7 @@ export default function AuthModal() {
             <div className="space-y-4">
               <div className="flex cursor-pointer items-center gap-3">
                 <div className="h-px flex-1 bg-[#3C485C]" />
-                <span className="text-sm text-[#A7B5CA]">Log in using</span>
+                <span className="text-sm text-casper">Log in using</span>
                 <div className="h-px flex-1 bg-[#3C485C]" />
               </div>
 
@@ -657,7 +657,7 @@ export default function AuthModal() {
                 <SocialButton icon={<MetamaskIcon />} />
                 <SocialButton icon={<TonIcon />} />
                 <SocialButton icon={<TrustWalletIcon />} />
-                <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-xs font-bold text-[#A7B5CA] backdrop-blur-[32px]">
+                <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-white-4 text-xs font-bold text-casper backdrop-blur-[32px]">
                   <span>98</span>
                 </div>
               </div>

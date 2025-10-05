@@ -5,9 +5,6 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
   /* Border radius values */
   --radius: 0.5rem;
 
@@ -97,11 +94,11 @@
   --chip-lightblue: #87ceeb;
 
   /* Button Colors */
-  --button-blue-start: #0c60ff;
-  --button-blue-end: #2c9ffa;
+  --button-blue-start: #0c5eff;
+  --button-blue-end: #1398f9;
   --button-blue-edge: #003a8a;
-  --button-red-start: #f9476e;
-  --button-red-end: #bd0139;
+  --button-red-start: #fb1949;
+  --button-red-end: #c4003b;
   --button-red-edge: #61001d;
   --button-green-start: #31ff5e;
   --button-green-end: #1bb83d;
@@ -162,11 +159,6 @@ html.circular-view-active::-webkit-scrollbar {
   display: none !important; /* Chrome, Safari, Opera */
   width: 0 !important;
   height: 0 !important;
-}
-
-body {
-  background: var(--bg-gradient-end);
-  color: var(--foreground);
 }
 
 body::before {

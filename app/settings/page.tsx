@@ -101,7 +101,7 @@ function SettingsPageContent() {
 
   return (
     <>
-      <div className="mx-auto max-w-6xl flex flex-col justify-between gap-2 p-2 lg:py-6 lg:pb-8">
+      <div className="mx-auto flex max-w-6xl flex-col justify-between gap-2 p-2 lg:py-6 lg:pb-8">
         {/* Left Sidebar Navigation */}
         <div className="h-full w-full rounded-lg md:bg-[#FFFFFF0A]">
           <div className="hidden grid-cols-3 gap-3 p-2 md:grid">
@@ -109,7 +109,7 @@ function SettingsPageContent() {
               <div
                 key={item.key}
                 onClick={() => handleTabSelect(item.key)}
-                className={`flex h-11 w-full items-center gap-3 rounded-lg transition-all duration-200 cursor-pointer px-4 ${
+                className={`flex h-11 w-full cursor-pointer items-center gap-3 rounded-lg px-4 transition-all duration-200 ${
                   activeTab === item.key
                     ? 'bg-[#FFFFFF14] text-white shadow-lg'
                     : 'text-gray-300 hover:bg-[rgba(255,255,255,0.08)]'

@@ -32,11 +32,9 @@ const TabBarButton = ({
     }
     onClick={onClick}
   >
-    <span className={isActive ? 'text-[#ED1D49]' : 'text-[#A7B5CA]'}>
-      {icon}
-    </span>
+    <span className={isActive ? 'text-[#ED1D49]' : 'text-casper'}>{icon}</span>
     <span
-      className={`text-center font-montserrat text-[0.625rem] leading-none ${isActive ? 'text-white' : 'text-[#A7B5CA]'} `}
+      className={`text-center font-montserrat text-[0.625rem] leading-none ${isActive ? 'text-white' : 'text-casper'} `}
       style={
         isActive
           ? {

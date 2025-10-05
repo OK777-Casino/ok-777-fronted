@@ -1,116 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>高度自适应的响应式背景</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高度自适应的响应式背景</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: "Arial", sans-serif;
-      padding: 20px;
-    }
+      body {
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
 
-    .title {
-      text-align: center;
-      margin: 30px 0;
-      color: #333;
-    }
+      .title {
+        text-align: center;
+        margin: 30px 0;
+        color: #333;
+      }
 
-    /* 场景1：高度随内容自适应（内容越多，容器越高） */
-    .content-adaptive {
-      /* 容器宽度自适应（占满父容器80%） */
-      width: 80%;
-      max-width: 800px;
-      margin: 0 auto 50px; /* 居中，底部间距 */
-      
-      /* 不设置固定height，用padding和内容撑开高度 */
-      padding: 40px; /* 内边距增加基础高度 */
-      
-      /* 背景图核心属性 */
-      background-image: url("https://picsum.photos/id/1040/1200/800");
-      background-size: cover; /* 保比例覆盖容器 */
-      background-repeat: no-repeat;
-      background-position: center; /* 居中显示，避免裁剪关键内容 */
-      
-      border-radius: 8px;
-      color: white;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-    }
-
-    /* 场景2：高度随宽度按比例自适应（如16:9） */
-    .ratio-adaptive {
-      /* 宽度自适应（占满父容器） */
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      
-      /* 关键：用padding-top实现宽高比（16:9的比例 = 9/16 = 56.25%） */
-      padding-top: 56.25%; /* 高度 = 宽度的56.25%，保持16:9 */
-      
-      position: relative; /* 用于定位内部内容 */
-      
-      /* 背景图核心属性 */
-      background-image: url("https://picsum.photos/id/1059/1920/1080");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    /* 场景2的内部内容（需绝对定位，避免撑开额外高度） */
-    .ratio-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 30px;
-      color: white;
-      background: linear-gradient(rgba(0,0,0,0.5), transparent); /* 渐变遮罩增强可读性 */
-    }
-
-    /* 小屏幕适配 */
-    @media (max-width: 768px) {
+      /* 场景1：高度随内容自适应（内容越多，容器越高） */
       .content-adaptive {
-        width: 100%; /* 小屏幕占满宽度 */
-        padding: 20px; /* 减少内边距 */
+        /* 容器宽度自适应（占满父容器80%） */
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto 50px; /* 居中，底部间距 */
+
+        /* 不设置固定height，用padding和内容撑开高度 */
+        padding: 40px; /* 内边距增加基础高度 */
+
+        /* 背景图核心属性 */
+        background-image: url('https://picsum.photos/id/1040/1200/800');
+        background-size: cover; /* 保比例覆盖容器 */
+        background-repeat: no-repeat;
+        background-position: center; /* 居中显示，避免裁剪关键内容 */
+
+        border-radius: 8px;
+        color: white;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
       }
-      
+
+      /* 场景2：高度随宽度按比例自适应（如16:9） */
+      .ratio-adaptive {
+        /* 宽度自适应（占满父容器） */
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        /* 关键：用padding-top实现宽高比（16:9的比例 = 9/16 = 56.25%） */
+        padding-top: 56.25%; /* 高度 = 宽度的56.25%，保持16:9 */
+
+        position: relative; /* 用于定位内部内容 */
+
+        /* 背景图核心属性 */
+        background-image: url('https://picsum.photos/id/1059/1920/1080');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* 场景2的内部内容（需绝对定位，避免撑开额外高度） */
       .ratio-content {
-        padding: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 30px;
+        color: white;
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          transparent
+        ); /* 渐变遮罩增强可读性 */
       }
-    }
-  </style>
-</head>
-<body>
-  <h2 class="title">高度自适应的响应式背景图片</h2>
 
-  <!-- 场景1：高度随内容自适应 -->
-  <div class="content-adaptive">
-    <h3>内容自适应高度</h3>
-    <p>这个容器的高度会随内容多少自动变化：</p>
-    <ul style="margin: 15px 0 10px 20px;">
-      <li>添加更多文字，容器会变高</li>
-      <li>删除文字，容器会变矮</li>
-      <li>背景图始终铺满容器，保持比例</li>
-    </ul>
-    <p>尝试添加或删除这段文字，观察容器高度变化 → 背景图会自动调整显示区域，不拉伸变形。</p>
-  </div>
+      /* 小屏幕适配 */
+      @media (max-width: 768px) {
+        .content-adaptive {
+          width: 100%; /* 小屏幕占满宽度 */
+          padding: 20px; /* 减少内边距 */
+        }
 
-  <!-- 场景2：高度随宽度按比例自适应（16:9） -->
-  <div class="ratio-adaptive">
-    <div class="ratio-content">
-      <h3>比例自适应高度（16:9）</h3>
-      <p>缩放窗口时，容器高度会随宽度按16:9比例自动变化，背景图始终铺满且保持比例。</p>
+        .ratio-content {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="title">高度自适应的响应式背景图片</h2>
+
+    <!-- 场景1：高度随内容自适应 -->
+    <div class="content-adaptive">
+      <h3>内容自适应高度</h3>
+      <p>这个容器的高度会随内容多少自动变化：</p>
+      <ul style="margin: 15px 0 10px 20px">
+        <li>添加更多文字，容器会变高</li>
+        <li>删除文字，容器会变矮</li>
+        <li>背景图始终铺满容器，保持比例</li>
+      </ul>
+      <p>
+        尝试添加或删除这段文字，观察容器高度变化 →
+        背景图会自动调整显示区域，不拉伸变形。
+      </p>
     </div>
-  </div>
-</body>
+
+    <!-- 场景2：高度随宽度按比例自适应（16:9） -->
+    <div class="ratio-adaptive">
+      <div class="ratio-content">
+        <h3>比例自适应高度（16:9）</h3>
+        <p>
+          缩放窗口时，容器高度会随宽度按16:9比例自动变化，背景图始终铺满且保持比例。
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -185,6 +185,17 @@ module.exports = {
         'chip-gold': 'var(--chip-gold)',
         'chip-brown': 'var(--chip-brown)',
         'chip-lightblue': 'var(--chip-lightblue)',
+
+        /* Button Colors */
+        'button-blue-start': 'var(--button-blue-start)',
+        'button-blue-end': 'var(--button-blue-end)',
+        'button-blue-edge': 'var(--button-blue-edge)',
+        'button-red-start': 'var(--button-red-start)',
+        'button-red-end': 'var(--button-red-end)',
+        'button-red-edge': 'var(--button-red-edge)',
+        'button-green-start': 'var(--button-green-start)',
+        'button-green-end': 'var(--button-green-end)',
+        'button-green-edge': 'var(--button-green-edge)',
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],

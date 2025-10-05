@@ -29,7 +29,7 @@ export default function CasinoPromotionCard({
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            paddingTop: '56%'
+            paddingTop: '56%',
           }}
         >
           {/* Background image layer with hover zoom */}

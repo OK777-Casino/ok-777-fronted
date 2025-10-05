@@ -124,7 +124,7 @@ const Deposit: React.FC = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-4 rounded-[12px] bg-white-4 p-2 sm:grid-cols-[150px_auto] align-bottom">
+            <div className="grid grid-cols-1 gap-4 rounded-[12px] bg-white-4 p-2 align-bottom sm:grid-cols-[150px_auto]">
               <div className="mx-auto rounded-[8px] p-2">
                 <img
                   src="images/qr.png"

@@ -65,26 +65,31 @@ const VipClubPage = () => {
     {
       question: t('faq.vip-club.level-up-q'),
       answer: t('faq.vip-club.level-up-a'),
-    },{
+    },
+    {
       question: t('faq.vip-club.promotion-rules-q'),
       answer: t('faq.vip-club.promotion-rules-a'),
-    },{
+    },
+    {
       question: t('faq.vip-club.promotion-bonus-q'),
       answer: t('faq.vip-club.promotion-bonus-a'),
-    },{
+    },
+    {
       question: t('faq.vip-club.distribution-time-q'),
       answer: t('faq.vip-club.distribution-time-a'),
-    },{
+    },
+    {
       question: t('faq.vip-club.rebate-q'),
       answer: t('faq.vip-club.rebate-a'),
-    },{
+    },
+    {
       question: t('faq.vip-club.demotion-q'),
       answer: t('faq.vip-club.demotion-a'),
-    },{
+    },
+    {
       question: t('faq.vip-club.retain-membership-rank-q'),
       answer: t('faq.vip-club.retain-membership-rank-a'),
     },
-   
   ]
   const swiperRef = useRef<SwiperType | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -343,7 +348,7 @@ const VipClubPage = () => {
       </div>
       <div className="flex flex-col gap-4">
         <span className="text-[18px] font-bold text-white">
-         {t('help.faq')}
+          {t('help.faq')}
         </span>
         <div className="flex flex-col gap-4 2xl:flex-row">
           <FAQ faqs={faq} title={false} />

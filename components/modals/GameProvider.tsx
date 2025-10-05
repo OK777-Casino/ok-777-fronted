@@ -157,7 +157,7 @@ export default function GamingProviderModal({
             onClick={onClose}
             className="bg-gaming-white-4 hover:bg-gaming-white-8 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16)] backdrop-blur-[32px] transition-colors"
           >
-            <X className="h-4 w-4 text-[#A7B5CA]" />
+            <X className="h-4 w-4 text-casper" />
           </div>
         </div>
 
@@ -207,7 +207,7 @@ export default function GamingProviderModal({
                 {/* Count Badge */}
                 <div className="bg-gaming-mirage flex h-[19px] items-center justify-center rounded px-2 backdrop-blur-[32px]">
                   <span
-                    className="text-xs font-bold text-[#A7B5CA]"
+                    className="text-xs font-bold text-casper"
                     style={{
                       fontFamily:
                         'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
@@ -235,7 +235,7 @@ export default function GamingProviderModal({
             className="hover:bg-gaming-white-4 flex items-center gap-2 rounded-lg px-4 py-2 transition-colors"
           >
             <span
-              className="text-sm font-bold text-[#A7B5CA]"
+              className="text-sm font-bold text-casper"
               style={{
                 fontFamily:
                   'Montserrat, -apple-system, Roboto, Helvetica, sans-serif',
@@ -243,7 +243,7 @@ export default function GamingProviderModal({
             >
               Clear All
             </span>
-            <Trash2 className="h-6 w-6 text-[#A7B5CA]" />
+            <Trash2 className="h-6 w-6 text-casper" />
           </div>
         </div>
       </div>

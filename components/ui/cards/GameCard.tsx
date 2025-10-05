@@ -28,7 +28,7 @@ const GameCard: React.FC<GameCardProps> = ({
           <p className="text-base font-semibold leading-tight text-white">
             {name}
           </p>
-          <p className="text-base leading-tight text-[#A7B5CA]">{gameCount}</p>
+          <p className="text-base leading-tight text-casper">{gameCount}</p>
         </div>
       </div>
 

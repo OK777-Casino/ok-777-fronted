@@ -30,11 +30,11 @@ const TabButton: React.FC<TabButtonProps> = ({
     type === 'four'
       ? 'group-active:bg-[#111923] text-dodger-blue'
       : 'group-active:bg-white text-dodger-blue'
-  const bgFour = 'bg-mirage-4 hover:bg-[#2A3546]  '
+  const bgFour = 'bg-mirage-4 hover:bg-ebony-clay  '
   const bgTwo = 'hover:bg-[#FFFFFF14] active:bg-[#2283F6] '
   const bgThree = 'active:bg-[#FFFFFF14]'
   const bgFive =
-    'bg-mirage-4 hover:bg-transparent hover:bg-[#2A3546] active:bg-[#2A3546]  '
+    'bg-mirage-4 hover:bg-transparent hover:bg-ebony-clay active:bg-ebony-clay  '
   const bgOne =
     'hover:bg-[#FFFFFF21] bg-transparent active:bg-[#2283f6] hover:shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)]'
   const background =

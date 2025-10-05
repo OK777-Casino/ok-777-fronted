@@ -172,11 +172,11 @@ const LatestBetsTable: React.FC = () => {
       <div className="text-4.5 mb-4 flex w-full items-center justify-between gap-2 font-bold text-white">
         <span>{t('app.latestBetting')}</span>
         <StatusDropdown>
-          <StatusDropdownTrigger className="border-none bg-[#2A3546] outline-none ring-0 focus:ring-0">
+          <StatusDropdownTrigger className="border-none bg-ebony-clay outline-none ring-0 focus:ring-0">
             {selectedStatus}
           </StatusDropdownTrigger>
           <StatusDropdownContent
-            className="border-none bg-[#2A3546]"
+            className="border-none bg-ebony-clay"
             align="center"
           >
             {statusOptions.map(status => (
