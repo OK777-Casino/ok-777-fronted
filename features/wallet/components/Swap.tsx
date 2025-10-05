@@ -27,7 +27,7 @@ const Swap: React.FC = () => {
         Swap
       </p>
       <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
-        <h2 className="flex items-center justify-between indent-[20px] text-[14px] font-bold text-white">
+        <h2 className="flex items-center justify-between text-[14px] font-bold text-white">
           Send
           <span>
             Balance <span className="text-dodger-blue"> 0 USDT</span>

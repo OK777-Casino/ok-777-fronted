@@ -80,12 +80,12 @@ const Withdraw: React.FC = () => {
 
   return (
     <div className="[@media(max-width:660px)]:w-full">
-      <div className="flex w-full flex-col gap-4 space-y-4">
+      <div className="flex w-full flex-col gap-4">
         {/* Withdraw Header */}
         <h1 className="hidden text-lg font-bold text-white sm:text-xl lg:block">
           {selectedCurrencyType === 'Crypto' ? 'Crypto' : 'To replenish'}
         </h1>
-        <div className="grid h-11 grid-cols-2 gap-4 overflow-hidden rounded-[0.75rem] bg-white-4 p-1">
+        <div className="grid h-11 grid-cols-2 gap-4 overflow-hidden rounded-md bg-white-4 p-1">
           {['Crypto', 'Fiat'].map((item, index) => (
             <div
               className={cn(
@@ -103,7 +103,7 @@ const Withdraw: React.FC = () => {
 
         {selectedCurrencyType === 'Crypto' ? (
           <>
-            <div className="grid grid-cols-2 gap-4 rounded-[0.75rem]">
+            <div className="grid grid-cols-2 gap-4 rounded-md">
               <DropdownSelect
                 label="Currency"
                 value={selectedValue}
@@ -117,12 +117,12 @@ const Withdraw: React.FC = () => {
                 onChange={setSelectedNetworkValue}
               />
             </div>
-            <div className="flex flex-col gap-4 rounded-[0.75rem] bg-white-4">
+            <div className="flex flex-col gap-4 rounded-md bg-white-4">
               <div className="flex justify-between"></div>
             </div>
 
-            <div className="flex flex-col gap-4 rounded-[0.75rem] bg-white-4 p-4">
-              <h2 className="flex items-center justify-between indent-[1.25rem] text-[0.875rem] font-bold text-white">
+            <div className="flex flex-col gap-4 rounded-md bg-white-4 p-4">
+              <h2 className="flex items-center justify-between text-[0.875rem] font-bold text-white">
                 Wallet Address{' '}
                 <span className="text-dodger-blue">Address book</span>
               </h2>
@@ -135,8 +135,8 @@ const Withdraw: React.FC = () => {
               </CopyBox>
             </div>
 
-            <div className="flex flex-col gap-4 rounded-[0.75rem] bg-white-4 p-4">
-              <h2 className="flex items-center justify-between indent-[1.25rem] text-[0.875rem] font-bold text-white">
+            <div className="flex flex-col gap-4 rounded-md bg-white-4 p-4">
+              <h2 className="flex items-center justify-between text-[0.875rem] font-bold text-white">
                 Withdrawal account
                 <span>
                   Minimum <span className="text-crimson">1 USDT</span>
@@ -202,7 +202,7 @@ const Withdraw: React.FC = () => {
                 Please set a fund password
               </div>
 
-              <div className="items-center rounded-[0.75rem] bg-[var(--malachite)21] p-4 text-[0.875rem] font-medium text-white">
+              <div className="items-center rounded-md bg-[var(--malachite)21] p-4 text-[0.875rem] font-medium text-white">
                 For security reasons, larger or suspicious withdrawals may take
                 1-6 hours to review. Thank you for your patience!
               </div>
@@ -216,11 +216,11 @@ const Withdraw: React.FC = () => {
               options={currencyOptions1}
               onChange={setSelectedCurrencyValue}
             />
-            <div className="flex flex-col gap-4 overflow-hidden rounded-[0.75rem] bg-white-4 p-4">
+            <div className="flex flex-col gap-4 overflow-hidden rounded-md bg-white-4 p-4">
               <h2 className="text-[0.875rem] font-bold text-white">
                 Replenishment method
               </h2>
-              <div className="grid h-[48px] grid-cols-[auto_auto_56px] items-center rounded-[0.75rem] bg-mirage p-[6px] pl-2">
+              <div className="grid h-[48px] grid-cols-[auto_auto_56px] items-center rounded-md bg-mirage p-[6px] pl-2">
                 <div className="flex items-center justify-center">
                   <img
                     src="/images/wallets/transak.png"
@@ -236,7 +236,7 @@ const Withdraw: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2 overflow-hidden rounded-[0.75rem] bg-white-4 p-4">
+            <div className="flex flex-col gap-2 overflow-hidden rounded-md bg-white-4 p-4">
               <h2 className="text-[0.875rem] font-bold text-gallery">
                 No cryptocurrency?
               </h2>
@@ -245,12 +245,12 @@ const Withdraw: React.FC = () => {
                 transferred to your wallet as shown below.
               </p>
             </div>
-            <div className="flex flex-col gap-4 overflow-hidden rounded-[0.75rem] bg-white-4 p-4">
+            <div className="flex flex-col gap-4 overflow-hidden rounded-md bg-white-4 p-4">
               <h2 className="text-[0.875rem] font-bold text-gallery">
                 Networks
               </h2>
-              <div className="flex justify-between overflow-hidden rounded-[0.75rem] bg-white-8 p-1">
-                <div className="flex h-9 w-[148px] items-center gap-2 rounded-[0.75rem] bg-white-13 px-3">
+              <div className="flex justify-between overflow-hidden rounded-md bg-white-8 p-1">
+                <div className="flex h-9 w-[148px] items-center gap-2 rounded-md bg-white-13 px-3">
                   <img
                     src="/icons/coin-icon/USDT.svg"
                     className="h-6 w-6"
@@ -268,12 +268,12 @@ const Withdraw: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 overflow-hidden rounded-[0.75rem] bg-white-4 p-4">
+            <div className="flex flex-col gap-4 overflow-hidden rounded-md bg-white-4 p-4">
               <h2 className="text-[0.875rem] font-bold text-gallery">
                 Purchase amount
               </h2>
-              <div className="flex justify-between overflow-hidden rounded-[0.75rem] bg-white-8 p-1">
-                <div className="flex h-9 items-center gap-2 rounded-[0.75rem] bg-white-13 px-3">
+              <div className="flex justify-between overflow-hidden rounded-md bg-white-8 p-1">
+                <div className="flex h-9 items-center gap-2 rounded-md bg-white-13 px-3">
                   <img
                     src="/icons/coin-icon/USDT.svg"
                     className="h-6 w-6"

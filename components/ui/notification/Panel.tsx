@@ -84,13 +84,12 @@ const NotificationsPanel: React.FC<NotificationPanelProps> = ({ onClose }) => {
       {/* Header */}
       <div className="flex items-center justify-between border-b border-gray-700 bg-gradient-to-b from-[#002554] to-[rgba(17,25,35,0.54)] p-4 pl-6 lg:rounded-t-[30px]">
         <h1 className="text-lg font-bold text-white">Notifications</h1>
+        {/* Close Button */}
         <div
           onClick={onClose}
-          className="ml-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-[#434444] transition-colors hover:bg-[#111923] lg:ml-0"
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] transition-colors hover:bg-white-8"
         >
-          <span>
-            <X className="h-4 w-4 text-white" />
-          </span>
+          <X className="h-4 w-4 text-[white]" />
         </div>
       </div>
 

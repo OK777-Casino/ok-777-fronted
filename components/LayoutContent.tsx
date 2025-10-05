@@ -105,7 +105,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
           </div>
           {isNotificationsOpen && !isMobileHeader && (
             <div
-              className={`fixed right-0 top-[56px] z-[60] hidden h-[calc(100dvh-56px-59px)] w-[420px] flex-shrink-0 border-l border-gray-700 bg-[#0f141c] lg:flex lg:h-[calc(100dvh-56px)]`}
+              className={`fixed right-0 top-[56px] z-[60] hidden h-[calc(100dvh-56px-59px)] w-[420px] flex-shrink-0 border-gray-700 bg-[#0f141c] lg:flex lg:h-[calc(100dvh-56px)]`}
             >
               <NotificationsPanel onClose={closeOverlay} />
             </div>

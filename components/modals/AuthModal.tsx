@@ -156,16 +156,12 @@ export default function AuthModal() {
           <div className="modal-content-scroll flex flex-1 flex-col overflow-y-auto p-6">
             {/* Close Button */}
             <div className="mb-6 flex justify-end">
+              {/* Close Button */}
               <div
                 onClick={toggleAuthModal}
-                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8"
-                style={{
-                  boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
-                }}
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] transition-colors hover:bg-white-8"
               >
-                <span>
-                  <X size={16} className="text-casper" />
-                </span>
+                <X className="h-4 w-4 text-[white]" />
               </div>
             </div>
 
@@ -430,14 +426,9 @@ export default function AuthModal() {
               {/* Close Button */}
               <div
                 onClick={toggleAuthModal}
-                className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 backdrop-blur-[32px] transition-colors hover:bg-white-8"
-                style={{
-                  boxShadow: '0 1px 0 0 rgba(255, 255, 255, 0.16) inset',
-                }}
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] transition-colors hover:bg-white-8"
               >
-                <span>
-                  <X size={16} className="text-casper" />
-                </span>
+                <X className="h-4 w-4 text-[white]" />
               </div>
             </div>
           </div>
