@@ -424,11 +424,13 @@ export default function AuthModal() {
               />
 
               {/* Close Button */}
-              <div
-                onClick={toggleAuthModal}
-                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] transition-colors hover:bg-white-8"
-              >
-                <X className="h-4 w-4 text-[white]" />
+              <div className="absolute top-3 right-3 z-50 overflow-auto">
+                <div
+                  onClick={toggleAuthModal}
+                  className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-white-4 bg-white-4 shadow-[inset_0_0.0625rem_0_0_rgba(255,255,255,0.16)] backdrop-blur-[2rem] transition-colors hover:bg-white-8"
+                >
+                  <X className="h-4 w-4 text-[white]" />
+                </div>
               </div>
             </div>
           </div>
