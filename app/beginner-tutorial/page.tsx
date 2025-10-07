@@ -295,13 +295,13 @@ const BeginnerTutorialPage = () => {
                 return (
                   <div
                     key={index}
-                    className="relative overflow-hidden rounded-[12px] bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center px-3 py-4"
+                    className="relative overflow-hidden rounded-xl bg-[url('/images/games/dice-glass-1.png')] bg-cover bg-center px-3 py-4"
                     style={{ backgroundColor: '#0D131C' }}
                   >
                     <div className="absolute left-0 top-0 z-[1] h-full w-full bg-[#0D131CC2]" />
                     <div className="relative z-[2]">
                       <div className="flex items-center justify-between">
-                        <span className="text-[14px] font-bold text-white">
+                        <span className="text-base text-white">
                           Hash:{data.gameName}
                         </span>
                         <div className="flex items-center justify-end text-white">
@@ -319,7 +319,7 @@ const BeginnerTutorialPage = () => {
                           Bet:{data.betRange}
                         </span>
                       </div>
-                      <div className="mt-4 flex w-full flex-col gap-4 overflow-hidden rounded-[12px] bg-white-4 py-2">
+                      <div className="mt-4 flex w-full flex-col gap-4 overflow-hidden rounded-xl bg-white-4 py-2">
                         <div className="indent-[20px]">
                           <span className="mr-2 text-[12px] font-medium text-white">
                             Betting Address
@@ -340,7 +340,7 @@ const BeginnerTutorialPage = () => {
           </div>
           <div className="flex flex-col gap-4 p-4" id="Refund">
             <div>
-              <h2 className="text-[14px] font-bold text-white">3.Payouts</h2>
+              <h2 className="text-base text-white">3.Payouts</h2>
               <h3 className="text-casper">
                 Do not send bets from exchange accounts
               </h3>
@@ -386,13 +386,13 @@ const BeginnerTutorialPage = () => {
               Recommended wallet registration
             </h2>
             <div className="flex flex-col gap-2">
-              <div className="flex grid h-[56px] grid-cols-3 items-center justify-center rounded-[8px] bg-mirage-8a text-[12px] font-bold text-casper">
+              <div className="grid h-[56px] grid-cols-3 items-center justify-center rounded-[8px] bg-mirage-8a text-[12px] font-bold text-casper">
                 <span>Wallet</span>
                 <span>Official website</span>
                 <span>Link</span>
               </div>
               {wallets.map(wallet => (
-                <div className="grid grid-cols-3 items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6">
+                <div className="grid grid-cols-3 items-center justify-between gap-1 rounded-xl bg-white-4 p-[6px] pl-6">
                   <span className="text-left">
                     <img src={wallet.icon} alt="wallet" />
                   </span>
@@ -422,9 +422,9 @@ const BeginnerTutorialPage = () => {
               {vpns.map(vpn => (
                 <div
                   key={vpn}
-                  className="flex items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6"
+                  className="flex items-center justify-between gap-1 rounded-xl bg-white-4 p-[6px] pl-6"
                 >
-                  <span className="text-left text-[14px] font-bold text-white">
+                  <span className="text-left text-base text-white">
                     {vpn}
                   </span>
                   <div className="text-right">
@@ -441,7 +441,7 @@ const BeginnerTutorialPage = () => {
               </h2>
               <div className="flex flex-col gap-2">
                 {wallets.map(wallet => (
-                  <div className="grid grid-cols-3 items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6">
+                  <div className="grid grid-cols-3 items-center justify-between gap-1 rounded-xl bg-white-4 p-[6px] pl-6">
                     <span className="text-left">
                       <img src={wallet.icon} alt="wallet" />
                     </span>
@@ -464,7 +464,7 @@ const BeginnerTutorialPage = () => {
               {others.map(other => (
                 <div
                   key={other.title}
-                  className="flex items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6"
+                  className="flex items-center justify-between gap-1 rounded-xl bg-white-4 p-[6px] pl-6"
                 >
                   <span className="flex gap-4 text-left text-[14px] font-bold text-casper">
                     {other.icon}
@@ -498,7 +498,7 @@ const BeginnerTutorialPage = () => {
               {tutorials.map((tutorial, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-3 items-center justify-between gap-1 rounded-[12px] bg-white-4 p-[6px] pl-6"
+                  className="grid grid-cols-3 items-center justify-between gap-1 rounded-xl bg-white-4 p-[6px] pl-6"
                 >
                   <span className="text-left">
                     <img src={tutorial.icon} alt="tutorial" />

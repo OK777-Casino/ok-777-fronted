@@ -46,11 +46,11 @@ const JoinCommunityPage = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
-        <div className="flex items-center justify-center text-[18px] font-bold text-white">
+      <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-4 text-base text-casper">
+        <div className="flex items-center justify-center text-lg font-bold text-white">
           Complete tasks every day and give bonuses every day!
         </div>
-        <div className="mx-auto flex w-full items-center justify-center text-[14px] text-casper lg:w-[70%]">
+        <div className="mx-auto w-full items-center">
           Want to play around and make money? Now join the official community of
           OK777 to complete the designated 
           <span className="text-yellow-orange">
@@ -60,7 +60,7 @@ const JoinCommunityPage = () => {
           There are new tasks every day, with prizes, and you can also be on the
           “Task King List”! Click the social media link below to join the event.
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-2 rounded-[12px] text-[14px] text-casper">
+        <div className="flex flex-wrap items-center justify-center gap-2 rounded-xl text-base text-casper">
           {socials.map(item => (
             <div
               key={item}
@@ -76,19 +76,19 @@ const JoinCommunityPage = () => {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
-        <div className="flex items-center justify-center text-[14px] font-bold text-white">
+      <div className="mt-4 flex flex-col gap-4 rounded-xl bg-white-4 p-4">
+        <div className="flex items-center justify-center text-base text-white">
           How to claim the bonus
         </div>
         <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
-          <div className="flex flex-col gap-8 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col gap-8 rounded-xl bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
                 title="Super simple mission"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="pt-4 text-[14px] font-bold text-casper">
+              <span className="pt-4 text-base font-bold text-casper">
                 Leave a message, share, and invite friends
               </span>
             </div>
@@ -130,20 +130,20 @@ const JoinCommunityPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-8">
             <div className="flex flex-col items-start gap-4">
               <TabButton
                 type="one"
                 title="There will be rewards when you finish"
                 className="h-[23px] text-[12px] font-bold text-white"
               />
-              <span className="text-[14px] font-bold text-casper">
+              <span className="text-base font-bold text-casper">
                 No new users are allowed, everyone can participate
               </span>
-              <span className="text-[14px] font-bold text-casper">
+              <span className="text-base font-bold text-casper">
                 Continuous participation can still be limited 
               </span>
-              <span className="text-[14px] font-bold text-dodger-blue">
+              <span className="text-base font-bold text-dodger-blue">
                 Headframe, lottery qualifications, ranking awards!
               </span>
             </div>
@@ -167,15 +167,15 @@ const JoinCommunityPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-          <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-          <div className="text-[14px] font-bold text-white">
+        <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+          <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+          <div className="text-base text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
           <div className="px-4">
-            <ol className="list-decimal text-[14px] text-casper">
+            <ol className="list-decimal text-base text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.

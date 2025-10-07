@@ -49,16 +49,16 @@ const NonStopPage = () => {
         <table className="w-full text-white">
           <thead>
             <tr className="bg-mirage-8a">
-              <th className="px-2 py-4 text-[12px] font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
+              <th className="px-2 py-4 text-sm font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
                 Game Type
               </th>
-              <th className="px-2 py-4 text-[12px] font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
+              <th className="px-2 py-4 text-sm font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
                 Current Rebate Ratio
               </th>
-              <th className="px-2 py-4 text-[12px] font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
+              <th className="px-2 py-4 text-sm font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
                 Maximum rebate
               </th>
-              <th className="px-2 py-4 text-[12px] font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
+              <th className="px-2 py-4 text-sm font-bold text-[#FFFFFFCC] [@media(max-width:500px)]:px-0">
                 Yesterday's Rebate Amount
               </th>
             </tr>
@@ -69,18 +69,22 @@ const NonStopPage = () => {
                 key={index}
                 className={index % 2 === 0 ? 'bg-white-8' : 'bg-white-4'}
               >
-                <td className="flex items-center justify-center px-4 py-3 text-[10px] font-bold text-[#A7B5CA]">
-                  {row.gameType}
+                <td className="px-4 py-3 text-sm font-bold text-white">
+                  <div className="flex items-center justify-center gap-2">
+                    {row.gameType}
+                  </div>
                 </td>
-                <td className="flex items-center justify-center px-4 py-3 text-[12px] font-bold text-white">
-                  {row.total}
+                <td className="px-4 py-3 text-sm font-bold text-white">
+                  <div className="flex items-center justify-center gap-2">
+                    {row.total}
+                  </div>
                 </td>
-                <td className="px-4 py-3 text-[12px] font-bold text-white">
+                <td className="px-4 py-3 text-sm font-bold text-white">
                   <div className="flex items-center justify-center gap-2">
                     {row.direct}
                   </div>
                 </td>
-                <td className="px-4 py-3 text-[12px] font-bold text-white">
+                <td className="px-4 py-3 text-sm font-bold text-white">
                   <div className="flex items-center justify-center gap-2">
                     {row.agent}
                   </div>
@@ -89,27 +93,29 @@ const NonStopPage = () => {
             ))}
             {/* Total Row */}
             <tr className="bg-ebony-clay">
-              <td className="flex items-center justify-center px-4 py-3 text-[12px] font-bold text-[#A7B5CA]">
-                Yesterday's Total Rebate Amount
+              <td className="px-4 py-3 text-sm font-bold text-white">
+                <div className="flex items-center justify-center gap-2">
+                  Yesterday's Total Rebate Amount
+                </div>
               </td>
-              <td className="flex items-center justify-center px-4 py-3 text-[12px] font-bold text-[#60A5FA]"></td>
-              <td className="flex items-center justify-center px-4 py-3 text-[12px] font-bold text-[#60A5FA]"></td>
-              <td className="flex items-center justify-center px-4 py-3 text-[12px] font-bold text-[#60A5FA]">
-                0
+              <td></td>
+              <td></td>
+              <td className="px-4 py-3 text-sm font-bold text-white">
+                <div className="flex items-center justify-center gap-2">0</div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-        <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-        <div className="text-[14px] font-bold text-white">
+      <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+        <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+        <div className="text-base text-white">
           <p>Event Venue: Live Game </p>
           <p>Eligible: All </p>
           <p>Promotion Period: Long-term activity</p>
         </div>
         <div className="px-4">
-          <ol className="list-decimal text-[14px] text-casper">
+          <ol className="list-decimal text-sm text-casper">
             <li className="pb-4">
               To receive the reward amount in this activity, you can withdraw
               money with only 3 times the turnover.

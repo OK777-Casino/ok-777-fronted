@@ -131,7 +131,7 @@ const InstallAppPage = () => {
             Get fast access to OK777 from iOS, <br /> Android, Windows or MacOS
           </span>
         </div>
-        <FlatButton className="bg-[linear-gradient(#0C60FF 40%,#2C9FFA 60%)] hidden h-[3rem] w-[15rem] rounded-[12px] text-[1rem] font-bold uppercase text-white lg:flex">
+        <FlatButton className="bg-[linear-gradient(#0C60FF 40%,#2C9FFA 60%)] hidden h-[3rem] w-[15rem] rounded-xl text-[1rem] font-bold uppercase text-white lg:flex">
           How to Install App
         </FlatButton>
         <div className="hidden items-center gap-4 lg:flex">
@@ -147,7 +147,7 @@ const InstallAppPage = () => {
         <TDButton
           onClick={toggleModal}
           type="blue"
-          className="z-[2] h-[41px] w-[200px] text-[14px] font-bold text-white lg:hidden"
+          className="z-[2] h-[41px] w-[200px] text-base text-white lg:hidden"
         >
           How to Install App
         </TDButton>
@@ -158,10 +158,10 @@ const InstallAppPage = () => {
         />
       </div>
       <div className="mx-auto flex max-w-6xl flex-col gap-[96px]">
-        <div className="grid gap-[86px] rounded-[12px] bg-white-4 p-4 pt-[86px] lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000]">
+        <div className="grid gap-[86px] rounded-xl bg-white-4 p-4 pt-[86px] lg:grid-cols-3 lg:gap-8 lg:bg-[#00000000]">
           {installApps.map(app => (
-            <div className="relative flex flex-col items-center gap-4 rounded-[12px] bg-white-4 p-8 pt-[73px]">
-              <h2 className="text-[14px] font-bold text-white">{app.title}</h2>
+            <div className="relative flex flex-col items-center gap-4 rounded-xl bg-white-4 p-8 pt-[73px]">
+              <h2 className="text-base text-white">{app.title}</h2>
               <p className="flex items-center justify-center text-[14px] text-casper">
                 {app.desc}
               </p>
@@ -191,7 +191,7 @@ const InstallAppPage = () => {
         position="bottom"
       >
         <div className="flex flex-col gap-6 p-2">
-          <div className="grid grid-cols-2 gap-2 rounded-[12px] bg-white-4 p-1">
+          <div className="grid grid-cols-2 gap-2 rounded-xl bg-white-4 p-1">
             {tabs.map(tab => (
               <div
                 key={tab.id}
@@ -224,7 +224,7 @@ const InstallAppPage = () => {
                 <h2 className="text-[16px] font-bold text-white">
                   2. Tap The Share Icon
                 </h2>
-                <div className="flex justify-center rounded-[12px] bg-white-4 p-4">
+                <div className="flex justify-center rounded-xl bg-white-4 p-4">
                   <div className="flex items-center gap-4 rounded-[8px] bg-[#1a1a1a] p-3">
                     {/* Back/Forward arrows */}
                     <div className="flex gap-2">
@@ -313,7 +313,7 @@ const InstallAppPage = () => {
                 <h2 className="text-[16px] font-bold text-white">
                   3. Select 'Add To Home Screen'
                 </h2>
-                <div className="flex justify-center rounded-[12px] bg-white-4 p-4">
+                <div className="flex justify-center rounded-xl bg-white-4 p-4">
                   <div className="flex min-w-[200px] items-center gap-3 rounded-[8px] bg-[#2a2a2a] p-3">
                     <span className="text-[14px] font-medium text-white">
                       Add To Home Screen
@@ -339,7 +339,7 @@ const InstallAppPage = () => {
               </div>
 
               {/* Additional info */}
-              <div className="rounded-[12px] bg-[#1a1a1a] p-4">
+              <div className="rounded-xl bg-[#1a1a1a] p-4">
                 <p className="flex items-center justify-center text-[14px] text-casper">
                   After adding to lobby screen, you can move the app icon to any
                   convenient place on your device.
@@ -375,7 +375,7 @@ const InstallAppPage = () => {
                 </p>
               </div>
 
-              <div className="rounded-[12px] bg-[#1a1a1a] p-4">
+              <div className="rounded-xl bg-[#1a1a1a] p-4">
                 <p className="flex items-center justify-center text-[14px] text-casper">
                   After adding to lobby screen, you can move the app icon to any
                   convenient place on your device.

@@ -47,11 +47,11 @@ const FirstDeposit1Page = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+      <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-4">
         <div className="flex items-center justify-center text-[18px] font-bold text-white">
           Activity Fund Application
         </div>
-        <div className="grid grid-cols-1 items-center justify-between gap-4 rounded-[12px] pb-4 xl:grid-cols-3 2xl:grid-cols-6">
+        <div className="grid grid-cols-1 items-center justify-between gap-4 rounded-xl pb-4 xl:grid-cols-3 2xl:grid-cols-6">
           <TXCard
             title="Additional rewards"
             fee="188U"
@@ -89,7 +89,7 @@ const FirstDeposit1Page = () => {
             desc={<>Cumulative number of invitees</>}
           />
         </div>
-        <div className="flex items-center justify-center justify-between rounded-[12px] bg-white-8 p-4 text-[14px] text-casper">
+        <div className="flex items-center justify-center justify-between rounded-xl bg-white-8 p-4 text-[14px] text-casper">
           <div>
             Total number of invitees <b className="text-dodger-blue">0</b>
           </div>
@@ -99,12 +99,12 @@ const FirstDeposit1Page = () => {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+      <div className="mt-4 flex flex-col gap-4 rounded-xl bg-white-4 p-4">
         <div className="flex items-center justify-center text-[18px] font-bold text-white">
           How to claim the bonus
         </div>
         <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
-          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
@@ -133,7 +133,7 @@ const FirstDeposit1Page = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-8">
             <div className="flex flex-col items-start gap-4">
               <TabButton
                 type="one"
@@ -176,7 +176,7 @@ const FirstDeposit1Page = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 items-center justify-between gap-8 rounded-[12px] bg-white-4 p-8 2xl:grid-cols-[40%_60%]">
+        <div className="grid grid-cols-1 items-center justify-between gap-8 rounded-xl bg-white-4 p-8 2xl:grid-cols-[40%_60%]">
           <div>
             <TabButton
               type="one"
@@ -192,15 +192,15 @@ const FirstDeposit1Page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-          <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-          <div className="text-[14px] font-bold text-white">
+        <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+          <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+          <div className="text-base text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
           <div className="px-4">
-            <ol className="list-decimal text-[14px] text-casper">
+            <ol className="list-decimal text-sm text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.

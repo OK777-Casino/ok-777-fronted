@@ -146,7 +146,7 @@ const GameProviderPage = () => {
                 loading="lazy"
               />
             </div>
-            <div className="hidden h-[40%] w-full items-center justify-center bg-white-14 text-[14px] font-bold text-white lg:flex">
+            <div className="hidden h-[40%] w-full items-center justify-center bg-white-14 text-base text-white lg:flex">
               {provider.alt}
             </div>
           </Link>

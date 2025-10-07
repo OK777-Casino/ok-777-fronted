@@ -33,11 +33,11 @@ const DepositBonusPage = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+      <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-4">
         <div className="flex items-center justify-center text-[18px] font-bold text-white">
           Activity Fund Application
         </div>
-        <div className="grid grid-cols-1 gap-4 rounded-[12px] bg-white-4 p-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 rounded-xl bg-white-4 p-4 md:grid-cols-2 xl:grid-cols-4">
           <TXCard
             title="First single transaction≥50U"
             fee="20%"
@@ -79,19 +79,19 @@ const DepositBonusPage = () => {
             }
           />
         </div>
-        <div className="flex items-center justify-center rounded-[12px] bg-white-4 p-4 text-[14px] text-casper">
+        <div className="flex items-center justify-center rounded-xl bg-white-4 p-4 text-[14px] text-casper">
           This event cannot be repeated or claimed multiple times. Please check
           the turnover multiple and <br className="hidden lg:block" /> choose
           your largest reward proactively
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+      <div className="mt-4 flex flex-col gap-4 rounded-xl bg-white-4 p-4">
         <div className="flex items-center justify-center text-[18px] font-bold text-white">
           How to claim the bonus
         </div>
         <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
-          <div className="flex flex-col justify-between gap-8 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col justify-between gap-8 rounded-xl bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
@@ -124,7 +124,7 @@ const DepositBonusPage = () => {
               <div className="absolute left-1/2 top-[80%] z-[9] flex h-[58px] w-[239.56px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-between rounded-[16px] bg-mirage-8a py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]" />
             </div>
           </div>
-          <div className="flex flex-col items-start gap-4 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col items-start gap-4 rounded-xl bg-white-4 p-8">
             <TabButton
               type="one"
               title="Step Two"
@@ -138,7 +138,7 @@ const DepositBonusPage = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 items-center justify-between gap-8 rounded-[12px] bg-white-4 p-8 2xl:grid-cols-[60%_40%]">
+        <div className="grid grid-cols-1 items-center justify-between gap-8 rounded-xl bg-white-4 p-8 2xl:grid-cols-[60%_40%]">
           <div>
             <TabButton
               type="one"
@@ -167,15 +167,15 @@ const DepositBonusPage = () => {
             Go to recharge
           </TDButton>
         </div>
-        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-          <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-          <div className="text-[14px] font-bold text-white">
+        <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+          <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+          <div className="text-base text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
           <div className="px-4">
-            <ol className="list-decimal text-[14px] text-casper">
+            <ol className="list-decimal text-sm text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.

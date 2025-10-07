@@ -45,7 +45,7 @@ const LuckyDefault: React.FC = () => {
                 <span className="font-montserrat text-base font-bold text-casper">
                   $
                 </span>
-                <span className="font-montserrat text-base font-bold text-white">
+                <span className="font-montserrat text-base text-white">
                   10038
                 </span>
               </div>

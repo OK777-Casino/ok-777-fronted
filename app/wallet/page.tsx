@@ -125,7 +125,7 @@ function WalletPageContent() {
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 rounded-[12px] p-2 lg:bg-white-4">
+        <div className="flex-1 rounded-xl p-2 lg:bg-white-4">
           {renderContent()}
         </div>
       </div>

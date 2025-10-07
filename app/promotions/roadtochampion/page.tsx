@@ -27,20 +27,20 @@ const LoadToChampionPage = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="mb-8 grid grid-cols-1 gap-4 rounded-[12px] bg-white-4 p-4 lg:grid-cols-2">
+      <div className="mb-8 grid grid-cols-1 gap-4 rounded-xl bg-white-4 p-4 lg:grid-cols-2">
         {tasks.map((task, index) => (
           <TaskCard key={index} n={index + 1} price={task} />
         ))}
       </div>
-      <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-        <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-        <div className="text-[14px] font-bold text-white">
+      <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+        <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+        <div className="text-base text-white">
           <p>Event Venue: Live Game </p>
           <p>Eligible: All </p>
           <p>Promotion Period: Long-term activity</p>
         </div>
         <div className="px-4">
-          <ol className="list-decimal text-[14px] text-casper">
+          <ol className="list-decimal text-sm text-casper">
             <li className="pb-4">
               To receive the reward amount in this activity, you can withdraw
               money with only 3 times the turnover.

@@ -46,11 +46,11 @@ const CheckinRewardPage = () => {
   const rewards = ['1U', '2u', '5u', '5u', '5u', '5u', '24u + 18u']
   return (
     <BetTemplate {...data}>
-      <div className="flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
-        <div className="flex items-center justify-center text-[18px] font-bold text-white">
+      <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-4">
+        <div className="flex items-center justify-center text-lg font-bold text-white">
           <span>Activity Fund Application</span>
         </div>
-        <div className="grid grid-cols-10 items-center justify-between gap-4 rounded-[12px]">
+        <div className="grid grid-cols-10 items-center justify-between gap-4 rounded-xl">
           {rewards.map((reward, index) => (
             <DailyRewardCard
               className={index > 4 ? 'col-span-5' : 'col-span-2'}
@@ -62,38 +62,38 @@ const CheckinRewardPage = () => {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
-        <div className="mx-auto flex w-[70%] items-center justify-center text-[14px] text-casper">
+      <div className="mt-4 flex flex-col gap-4 rounded-xl bg-white-4 p-4">
+        <div className="mx-auto flex w-[70%] items-center justify-center text-base text-casper">
           <span>
             Sign in The seventh day continuously, and you can unlock additional
             rewards. After signing out, it will be recalculated from the first
             day
           </span>
         </div>
-        <div className="grid grid-cols-1 items-center justify-between gap-4 rounded-[12px] 2xl:grid-cols-3">
-          <div className="flex flex-col items-center gap-4 rounded-[12px] bg-white-4 p-4">
-            <span className="text-[14px] font-bold text-white">
+        <div className="grid grid-cols-1 items-center justify-between gap-4 rounded-xl 2xl:grid-cols-3">
+          <div className="flex flex-col items-center gap-4 rounded-xl bg-white-4 p-4">
+            <span className="text-base text-white">
               <span>0Day</span>
             </span>
-            <span className="text-[14px] font-bold text-dodger-blue">
+            <span className="text-base font-bold text-dodger-blue">
               <span>Continuous sign-ins this round</span>
             </span>
           </div>
-          <div className="flex flex-col items-center gap-4 rounded-[12px] bg-white-4 p-4">
-            <span className="text-[14px] font-bold text-white">
+          <div className="flex flex-col items-center gap-4 rounded-xl bg-white-4 p-4">
+            <span className="text-base text-white">
               <span>0U</span>
             </span>
-            <span className="text-[14px] font-bold text-dodger-blue">
+            <span className="text-base font-bold text-dodger-blue">
               <span>Reward received</span>
             </span>
           </div>
-          <div className="flex flex-col items-center gap-4 rounded-[12px] bg-white-4 p-4 2xl:flex-row">
+          <div className="flex flex-col items-center gap-4 rounded-xl bg-white-4 p-4 2xl:flex-row">
             <div>
               <img src="/images/coins.svg" alt="coins" />
             </div>
             <div className="flex flex-col items-center gap-4">
-              <span className="text-[14px] font-bold text-white">65U</span>
-              <span className="text-[14px] font-bold text-dodger-blue">
+              <span className="text-base text-white">65U</span>
+              <span className="text-base font-bold text-dodger-blue">
                 Rewards to be collected this round
               </span>
             </div>
@@ -101,15 +101,15 @@ const CheckinRewardPage = () => {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-        <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-        <div className="text-[14px] font-bold text-white">
+      <div className="mt-4 flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+        <h2 className="text-lg text text-gallery">Rules and Terms</h2>
+        <div className="text-base text-white">
           <p>Event Venue: Live Game </p>
           <p>Eligible: All </p>
           <p>Promotion Period: Long-term activity</p>
         </div>
         <div className="px-4">
-          <ol className="list-decimal text-[14px] text-casper">
+          <ol className="list-decimal text-base text-casper">
             <li className="pb-4">
               To receive the reward amount in this activity, you can withdraw
               money with only 3 times the turnover.

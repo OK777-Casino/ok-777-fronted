@@ -34,13 +34,13 @@ const EnergyBankPage = () => {
   return (
     <BetTemplate {...data}>
       <div className="flex flex-col gap-4 2xl:flex-row">
-        <div className="flex w-full flex-col items-center gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4 2xl:p-8">
+        <div className="flex w-full flex-col items-center gap-4 overflow-hidden rounded-xl bg-white-4 p-4 2xl:p-8">
           <span className="text-[22px] font-bold text-white">
             Amount Per Bet <span className="text-yellow-orange">≥50U</span>
           </span>
           <span className="text-[14px] text-casper">Award Tron Energy</span>
         </div>
-        <div className="flex w-full flex-col items-center gap-4 overflow-hidden rounded-[12px] bg-white-4 p-4 2xl:p-8">
+        <div className="flex w-full flex-col items-center gap-4 overflow-hidden rounded-xl bg-white-4 p-4 2xl:p-8">
           <span className="text-[22px] font-bold text-white">
             <span className="text-yellow-orange">≥50U </span> Free with every
             bet{' '}
@@ -48,12 +48,12 @@ const EnergyBankPage = () => {
           <span className="text-[14px] text-casper">Award Tron Energy</span>
         </div>
       </div>
-      <div className="mt-4 flex flex-col gap-4 rounded-[12px] bg-white-4 p-4">
+      <div className="mt-4 flex flex-col gap-4 rounded-xl bg-white-4 p-4">
         <div className="flex items-center justify-center text-[18px] font-bold text-white">
           How to claim the bonus
         </div>
         <div className="grid gap-4 lg:grid-cols-1 xl:grid-cols-2">
-          <div className="flex flex-col gap-8 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col gap-8 rounded-xl bg-white-4 p-8">
             <div>
               <TabButton
                 type="one"
@@ -70,7 +70,7 @@ const EnergyBankPage = () => {
               <img src="/images/Frame5.png" alt="phone" className="h-[140px]" />
             </div>
           </div>
-          <div className="flex flex-col items-start gap-4 rounded-[12px] bg-white-4 p-8">
+          <div className="flex flex-col items-start gap-4 rounded-xl bg-white-4 p-8">
             <TabButton
               type="one"
               title="Step Two"
@@ -100,15 +100,15 @@ const EnergyBankPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-          <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-          <div className="text-[14px] font-bold text-white">
+        <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+          <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+          <div className="text-base text-white">
             <p>Event Venue: Live Game </p>
             <p>Eligible: All </p>
             <p>Promotion Period: Long-term activity</p>
           </div>
           <div className="px-4">
-            <ol className="list-decimal text-[14px] text-casper">
+            <ol className="list-decimal text-sm text-casper">
               <li className="pb-4">
                 To receive the reward amount in this activity, you can withdraw
                 money with only 3 times the turnover.
@@ -141,15 +141,15 @@ const EnergyBankPage = () => {
           </div>
         </div>
       </div>
-      <div className="mt-4 flex flex-col gap-2 rounded-[12px] bg-white-4 p-4">
-        <h2 className="text-[18px] text-gallery">Rules and Terms</h2>
-        <div className="text-[14px] font-bold text-white">
+      <div className="mt-4 flex flex-col gap-2 rounded-xl bg-white-4 p-4">
+        <h2 className="text-lg font-bold text-gallery">Rules and Terms</h2>
+        <div className="text-base text-white">
           <p>Event Venue: Live Game </p>
           <p>Eligible: All </p>
           <p>Promotion Period: Long-term activity</p>
         </div>
         <div className="px-4">
-          <ol className="list-decimal text-[14px] text-casper">
+          <ol className="list-decimal text-sm text-casper">
             <li className="pb-4">
               To receive the reward amount in this activity, you can withdraw
               money with only 3 times the turnover.

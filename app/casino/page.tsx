@@ -111,7 +111,7 @@ const FilteredPageHeader: React.FC<{
     <div className="py-4">
       <div className="mb-4 flex items-center justify-between [@media(max-width:1024px)]:mt-[-4px]">
         <div className="rounded-lg bg-[rgba(255,255,255,0.08)] p-[7px]">
-          <h1 className="flex items-center gap-2 text-[14px] font-bold text-white">
+          <h1 className="flex items-center gap-2 text-base text-white">
             <img src={icon} className="hidden h-6 w-6 lg:block" alt="game" />
             {title}{' '}
             <span className="rounded-[4px] bg-[#111923] px-2 py-0.5 text-[12px] text-[#2283F6]">

@@ -147,7 +147,7 @@ function HelpCenterPageContent() {
         </div>
 
         {/* Content Area */}
-        <div className="min-h-0 flex-1 rounded-[12px] lg:bg-white-4">
+        <div className="min-h-0 flex-1 rounded-xl lg:bg-white-4">
           {renderContent()}
         </div>
       </div>

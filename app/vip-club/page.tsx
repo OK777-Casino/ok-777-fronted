@@ -142,13 +142,13 @@ const VipClubPage = () => {
               </span>
             </div>
             <div className="flex w-full flex-col gap-2">
-              <span className="text-[14px] font-bold text-white">
+              <span className="text-base text-white">
                 {t('vip.currentIncomes')}
               </span>
               <div className="h-[6px] rounded-full bg-white-4">
                 <div className="h-full w-[10%] rounded-full bg-french-rose" />
               </div>
-              <span className="text-[14px] font-bold text-white">
+              <span className="text-base text-white">
                 <span className="text-yellow-orange">25$</span> / 800$
               </span>
             </div>
@@ -186,7 +186,7 @@ const VipClubPage = () => {
             renderSlide={(manufacturer, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-3 overflow-hidden rounded-[12px] bg-white-4 p-4 hover:bg-white-8"
+                className="flex flex-col gap-3 overflow-hidden rounded-xl bg-white-4 p-4 hover:bg-white-8"
               >
                 <div
                   className="flex items-start justify-center gap-4"
@@ -214,7 +214,7 @@ const VipClubPage = () => {
                     <InfoCircleIcon className="h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                   </div>
                 </div>
-                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
+                <div className="relative flex gap-4 rounded-xl bg-white-4 p-4 hover:bg-white-8">
                   <img src="/images/awards/image.svg" className="h-10" alt="" />
                   <div className="flex flex-col">
                     <span className="text-[12px] font-bold text-white">
@@ -224,7 +224,7 @@ const VipClubPage = () => {
                   </div>
                   <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
-                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
+                <div className="relative flex gap-4 rounded-xl bg-white-4 p-4 hover:bg-white-8">
                   <img
                     src="/images/awards/image-1.svg"
                     className="h-10"
@@ -238,7 +238,7 @@ const VipClubPage = () => {
                   </div>
                   <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
-                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
+                <div className="relative flex gap-4 rounded-xl bg-white-4 p-4 hover:bg-white-8">
                   <img
                     src="/images/awards/image-2.svg"
                     className="h-10"
@@ -252,7 +252,7 @@ const VipClubPage = () => {
                   </div>
                   <InfoCircleIcon className="absolute right-1 top-1 h-6 w-6 text-blue-bayoux hover:text-polo-blue" />
                 </div>
-                <div className="relative flex gap-4 rounded-[12px] bg-white-4 p-4 hover:bg-white-8">
+                <div className="relative flex gap-4 rounded-xl bg-white-4 p-4 hover:bg-white-8">
                   <img
                     src="/images/awards/image-3.svg"
                     className="h-10"
@@ -287,7 +287,7 @@ const VipClubPage = () => {
           />
         </div>
       </div>
-      <div className="relative rounded-[12px] bg-cover bg-center 2xl:h-[292.9px] 2xl:overflow-hidden">
+      <div className="relative rounded-xl bg-cover bg-center 2xl:h-[292.9px] 2xl:overflow-hidden">
         <img
           alt=""
           src="/images/block-coin.png"
@@ -296,8 +296,8 @@ const VipClubPage = () => {
         <div className="absolute left-0 top-0 z-[10] hidden h-full w-full bg-[linear-gradient(#2283f633,#111923)] 2xl:block" />
 
         <div className="relative z-[10] flex h-full w-full flex-col items-center justify-between gap-8 lg:flex-row 2xl:p-8">
-          <div className="flex flex-col gap-2 rounded-[12px] bg-white-4 p-4 2xl:w-[250px] 2xl:bg-mirage">
-            <span className="text-[14px] font-bold text-white">
+          <div className="flex flex-col gap-2 rounded-xl bg-white-4 p-4 2xl:w-[250px] 2xl:bg-mirage">
+            <span className="text-base text-white">
               {t('vip.stayConnected')}
             </span>
             <p className="text-[14px] text-casper">
@@ -370,7 +370,7 @@ const VipClubPage = () => {
             {vips[1].map((vip, index) => (
               <div
                 key={index}
-                className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-[8px] bg-white-4 px-4 text-[14px] font-bold text-white"
+                className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-[8px] bg-white-4 px-4 text-base text-white"
               >
                 <span className="flex items-center gap-2">
                   <img
@@ -405,7 +405,7 @@ const VipClubPage = () => {
             {vips[2].map((vip, index) => (
               <div
                 key={index}
-                className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-[8px] bg-white-4 px-4 text-[14px] font-bold text-white"
+                className="flex h-10 grid-cols-[auto_100px_90px_80px] items-center justify-center gap-2 rounded-[8px] bg-white-4 px-4 text-base text-white"
               >
                 <span className="flex items-center gap-2">
                   <img
