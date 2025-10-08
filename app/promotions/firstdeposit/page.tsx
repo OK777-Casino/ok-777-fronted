@@ -37,14 +37,14 @@ const FirstDepositPage = () => {
           Activity Fund Application
         </div>
         <div className="grid grid-cols-1 items-center justify-center gap-4 rounded-xl pt-0 2xl:grid-cols-3">
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -60,14 +60,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -83,14 +83,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -106,14 +106,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -129,14 +129,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -152,14 +152,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -175,14 +175,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -198,14 +198,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -221,14 +221,14 @@ const FirstDepositPage = () => {
               </TDButton>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -245,14 +245,14 @@ const FirstDepositPage = () => {
             </div>
           </div>
           <div className="hidden 2xl:block" />
-          <div className="flex items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
-            <div className="relative flex w-full flex-col gap-4 p-4">
+          <div className="flex flex-col items-center justify-center gap-4 rounded-xl bg-white-4 p-4">
+            <div className="relative flex w-full flex-col gap-4 p-4 text-center">
               <InfoCircleIcon className="absolute right-0 top-0 h-6 w-6 text-blue-bayoux" />
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue">20%</span>
-              <div className="text-[24px] text-yellow-orange">20</div>
+              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
+              <div className="text-[24px] text-yellow-orange font-bold">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -300,7 +300,7 @@ const FirstDepositPage = () => {
                 alt="phone"
                 className="h-[224.03px]"
               />
-              <div className="absolute left-1/2 top-2/3 z-[999] flex w-[312px] w-[320px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
+              <div className="absolute left-1/2 top-2/3 z-[999] flex w-[320px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
                 <BlackButton className="">
                   <CurrencyNotes1Icon className="h-4 w-4" color="#1BB83D" />
                 </BlackButton>

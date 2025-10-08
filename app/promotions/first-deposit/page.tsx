@@ -89,7 +89,7 @@ const FirstDeposit1Page = () => {
             desc={<>Cumulative number of invitees</>}
           />
         </div>
-        <div className="flex items-center justify-center justify-between rounded-xl bg-white-8 p-4 text-[14px] text-casper">
+        <div className="flex items-center justify-between rounded-xl bg-white-8 p-4 text-[14px] text-casper">
           <div>
             Total number of invitees <b className="text-dodger-blue">0</b>
           </div>
@@ -150,7 +150,7 @@ const FirstDeposit1Page = () => {
                 className="mx-auto h-[224.03px]"
                 alt="phone"
               />
-              <div className="absolute left-1/2 top-1/2 z-[999] flex w-[312px] w-[320px] -translate-x-1/2 -translate-y-1/3 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
+              <div className="absolute left-1/2 top-1/2 z-[999] flex w-[320px] -translate-x-1/2 -translate-y-1/3 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
                 <img src="/images/logo.svg" alt="" />
                 <div className="relative flex gap-2">
                   <BlackButton
