@@ -73,7 +73,11 @@ const TransferBettingLayout: React.FC = () => {
               className={`bg-color-[#FFFFFF] flex items-center gap-2 rounded-lg border-none px-8 py-1.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:bg-[rgba(255,255,255,0.08)]`}
             >
               {' '}
-              <img src="https://ok777.b-cdn.net/icons/wallet.svg" alt="page" className="h-6 w-6" />
+              <img
+                src="https://ok777.b-cdn.net/icons/wallet.svg"
+                alt="page"
+                className="h-6 w-6"
+              />
               {t('hashgame.pageBetting')}
             </Link>
           </div>
@@ -375,7 +379,11 @@ const TransferBettingLayout: React.FC = () => {
                   <span className="text-[#2283F6]">gh6X</span>
                 </span>
               </div>
-              <img src="https://ok777.b-cdn.net/icons/copy.svg" alt="copy" className="h-6 w-6" />
+              <img
+                src="https://ok777.b-cdn.net/icons/copy.svg"
+                alt="copy"
+                className="h-6 w-6"
+              />
             </div>
             <div className="relative w-1/5">
               <TDButton type="red" className="w-full">
@@ -458,7 +466,11 @@ const TransferBettingLayout: React.FC = () => {
           </div>
           <GameBoard board={board} />
           <div className="flex items-center gap-2 rounded-lg bg-[#FFFFFF0A] p-4 text-sm text-gray-300">
-            <img src="https://ok777.b-cdn.net/icons/Vector.svg" alt="info" className="h-5 w-5" />
+            <img
+              src="https://ok777.b-cdn.net/icons/Vector.svg"
+              alt="info"
+              className="h-5 w-5"
+            />
             <p className="opacity-80">{t('hashgame.roadMap')}</p>
           </div>
         </div>

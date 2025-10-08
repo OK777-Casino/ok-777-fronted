@@ -25,7 +25,10 @@ const Footer: React.FC = () => {
           <div className="w-[50%] md:col-span-2">
             {/* Logo */}
             <div className="mb-4 flex items-center">
-              <img src="https://ok777.b-cdn.net/images/logo.svg" alt="777 Gaming Logo" />
+              <img
+                src="https://ok777.b-cdn.net/images/logo.svg"
+                alt="777 Gaming Logo"
+              />
             </div>
 
             {/* Company Description */}
@@ -152,7 +155,10 @@ const Footer: React.FC = () => {
                 Common Problem
               </span>
               <Link href="">
-                <img src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg" alt="arrow" />
+                <img
+                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  alt="arrow"
+                />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
@@ -160,7 +166,10 @@ const Footer: React.FC = () => {
                 Responsible gambling
               </span>
               <Link href="">
-                <img src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg" alt="arrow" />
+                <img
+                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  alt="arrow"
+                />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
@@ -168,7 +177,10 @@ const Footer: React.FC = () => {
                 Honestly and fairly
               </span>
               <Link href="">
-                <img src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg" alt="arrow" />
+                <img
+                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  alt="arrow"
+                />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
@@ -176,7 +188,10 @@ const Footer: React.FC = () => {
                 Terms of Service
               </span>
               <Link href="">
-                <img src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg" alt="arrow" />
+                <img
+                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  alt="arrow"
+                />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
@@ -184,13 +199,19 @@ const Footer: React.FC = () => {
                 Private Policy
               </span>
               <Link href="">
-                <img src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg" alt="arrow" />
+                <img
+                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  alt="arrow"
+                />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
               <span className="text-sm font-bold text-casper">About Us</span>
               <Link href="">
-                <img src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg" alt="arrow" />
+                <img
+                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  alt="arrow"
+                />
               </Link>
             </div>
           </div>
@@ -210,7 +231,11 @@ const Footer: React.FC = () => {
                 />
               </div>
               <div>
-                <img src="https://ok777.b-cdn.net/images/brand/18.svg" className="h-8" alt="18+" />
+                <img
+                  src="https://ok777.b-cdn.net/images/brand/18.svg"
+                  className="h-8"
+                  alt="18+"
+                />
               </div>
             </div>
           </div>
@@ -263,7 +288,10 @@ const Footer: React.FC = () => {
         <div className="block w-full md:col-span-2 lg:hidden">
           {/* Logo */}
           <div className="my-4 flex items-center">
-            <img src="https://ok777.b-cdn.net/images/logo.svg" alt="777 Gaming Logo" />
+            <img
+              src="https://ok777.b-cdn.net/images/logo.svg"
+              alt="777 Gaming Logo"
+            />
           </div>
 
           {/* Company Description */}
@@ -295,7 +323,10 @@ const Footer: React.FC = () => {
         {/* Install App Banner */}
         <div className="flex items-center justify-center gap-3 px-4 py-2">
           <div className="text-2xl">
-            <img src="https://ok777.b-cdn.net/images/brand/cookie.svg" alt="cookie" />
+            <img
+              src="https://ok777.b-cdn.net/images/brand/cookie.svg"
+              alt="cookie"
+            />
           </div>
           <div>
             <div className="flex text-sm font-medium text-casper">

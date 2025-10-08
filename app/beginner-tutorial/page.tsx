@@ -424,9 +424,7 @@ const BeginnerTutorialPage = () => {
                   key={vpn}
                   className="flex items-center justify-between gap-1 rounded-xl bg-white-4 p-[6px] pl-6"
                 >
-                  <span className="text-left text-base text-white">
-                    {vpn}
-                  </span>
+                  <span className="text-left text-base text-white">{vpn}</span>
                   <div className="text-right">
                     <FlatButton className="h-9 w-[97px] text-[12px] text-gallery">
                       Download

@@ -102,7 +102,7 @@ const CheckinRewardPage = () => {
       </div>
 
       <div className="mt-4 flex flex-col gap-2 rounded-xl bg-white-4 p-4">
-        <h2 className="text-lg text text-gallery">Rules and Terms</h2>
+        <h2 className="text text-lg text-gallery">Rules and Terms</h2>
         <div className="text-base text-white">
           <p>Event Venue: Live Game </p>
           <p>Eligible: All </p>

@@ -43,8 +43,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -66,8 +68,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -89,8 +93,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -112,8 +118,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -135,8 +143,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -158,8 +168,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -181,8 +193,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -204,8 +218,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -227,8 +243,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>
@@ -251,8 +269,10 @@ const FirstDepositPage = () => {
               <span className="text-[14px] font-normal text-white">
                 First single transaction≥50U
               </span>
-              <span className="text-[14px] text-dodger-blue font-bold">58U</span>
-              <div className="text-[24px] text-yellow-orange font-bold">20</div>
+              <span className="text-[14px] font-bold text-dodger-blue">
+                58U
+              </span>
+              <div className="text-[24px] font-bold text-yellow-orange">20</div>
               <span className="text-[14px] font-normal text-casper">
                 HighestGift Turnover Multiple <b className="text-white">10</b>
               </span>

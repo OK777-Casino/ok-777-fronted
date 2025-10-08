@@ -251,14 +251,38 @@ export const appDownloads: AppDownload[] = [
 // Language data
 export const languageData = {
   cn: { name: '中文', flag: 'https://ok777.b-cdn.net/icons/flag-icon/cn.svg' },
-  en: { name: 'English', flag: 'https://ok777.b-cdn.net/icons/flag-icon/uk.svg' },
-  de: { name: 'Deutsch', flag: 'https://ok777.b-cdn.net/icons/flag-icon/de.svg' },
-  pl: { name: 'Polish', flag: 'https://ok777.b-cdn.net/icons/flag-icon/pl.svg' },
-  pt: { name: 'Português', flag: 'https://ok777.b-cdn.net/icons/flag-icon/pt.svg' },
-  ua: { name: 'Ukraine', flag: 'https://ok777.b-cdn.net/icons/flag-icon/ua.svg' },
-  es: { name: 'Español', flag: 'https://ok777.b-cdn.net/icons/flag-icon/es.svg' },
-  'pt-br': { name: 'Português (BR)', flag: 'https://ok777.b-cdn.net/icons/flag-icon/br.svg' },
-  fr: { name: 'Français', flag: 'https://ok777.b-cdn.net/icons/flag-icon/fr.svg' },
+  en: {
+    name: 'English',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/uk.svg',
+  },
+  de: {
+    name: 'Deutsch',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/de.svg',
+  },
+  pl: {
+    name: 'Polish',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/pl.svg',
+  },
+  pt: {
+    name: 'Português',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/pt.svg',
+  },
+  ua: {
+    name: 'Ukraine',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/ua.svg',
+  },
+  es: {
+    name: 'Español',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/es.svg',
+  },
+  'pt-br': {
+    name: 'Português (BR)',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/br.svg',
+  },
+  fr: {
+    name: 'Français',
+    flag: 'https://ok777.b-cdn.net/icons/flag-icon/fr.svg',
+  },
 }
 
 // Complete sidebar sections structure

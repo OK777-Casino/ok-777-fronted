@@ -39,7 +39,11 @@ const PageLoader: React.FC<PageLoaderProps> = ({ message = 'Loading...' }) => {
       <div className="flex flex-1 items-center justify-center">
         <div className="flex items-center justify-center">
           {/* 777 Logo with Flaming Soccer Ball */}
-          <img src="https://ok777.b-cdn.net/images/logo.svg" className="h-[96px]" alt="logo" />
+          <img
+            src="https://ok777.b-cdn.net/images/logo.svg"
+            className="h-[96px]"
+            alt="logo"
+          />
         </div>
       </div>
     </div>
