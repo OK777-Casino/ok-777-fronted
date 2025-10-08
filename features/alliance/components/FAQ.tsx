@@ -31,7 +31,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs, className = '', title = true }) => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`mb-2 transform cursor-pointer transition-all duration-300 ease-in-out ${
+            className={`mb-1 transform cursor-pointer transition-all duration-300 ease-in-out ${
               expandedFAQ === faq.question
                 ? 'bg-[#FFFFFF14] shadow-lg'
                 : 'bg-mirage-8a'

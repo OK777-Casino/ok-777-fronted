@@ -109,7 +109,7 @@ const DepositBonusPage = () => {
                 alt="phone"
                 className="h-[224.03px]"
               />
-              <div className="absolute left-1/2 top-2/3 z-[999] flex w-[312px] w-[320px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
+              <div className="absolute left-1/2 top-2/3 z-[999] flex w-[320px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-between rounded-[16px] bg-mirage py-[10px] pl-[16px] pr-[9px] shadow-[0_8px_16px_#3389FF40]">
                 <BlackButton className="">
                   <CurrencyNotes1Icon className="h-4 w-4" color="#1BB83D" />
                 </BlackButton>

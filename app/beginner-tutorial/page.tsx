@@ -488,7 +488,7 @@ const BeginnerTutorialPage = () => {
               Recommended exchange
             </h2>
             <div className="flex flex-col gap-2">
-              <div className="flex grid h-[56px] grid-cols-3 items-center justify-center rounded-[8px] bg-mirage-8a text-[12px] font-bold text-casper">
+              <div className="grid h-[56px] grid-cols-3 items-center justify-center rounded-[8px] bg-mirage-8a text-[12px] font-bold text-casper">
                 <span>Wallet</span>
                 <span>Official website</span>
                 <span>Link</span>
