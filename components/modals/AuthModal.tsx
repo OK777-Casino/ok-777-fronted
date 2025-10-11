@@ -365,7 +365,7 @@ export default function AuthModal() {
                 type="red"
                 className="h-11 w-full text-[14px] font-bold text-white"
               >
-                {isLogin ? t('auth.signIn') : t('auth.signOut')}
+                {isLogin ? t('auth.signIn') : t('auth.signUp')}
               </TDButton>
 
               {/* Spacer */}

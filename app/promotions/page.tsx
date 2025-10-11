@@ -116,7 +116,7 @@ const PromotionsPage = () => {
   }
 
   return (
-    <div className="mx-auto mb-16 flex max-w-6xl flex-col gap-6 p-4 pt-[1.625rem] md:pt-4">
+    <div className="mx-auto flex max-w-6xl flex-col gap-6 p-4 pt-[1.625rem] md:pt-4">
       <div className="grid w-full grid-cols-3 items-start rounded-xl bg-white-4 p-1 md:w-[28.125rem]">
         {tabs.map(tab => {
           const isActive = activeTab === tab.id
@@ -152,7 +152,7 @@ const PromotionsPage = () => {
       {/* Bottom Section */}
       <div className="flex flex-col gap-2.5">
         {/* Show More Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center cursor-pointer">
           <div className="hover:bg-ebony-clay/80 flex h-9 w-[9.8125rem] items-center justify-center gap-2 rounded-[0.5rem] bg-ebony-clay font-montserrat text-[0.875rem] font-bold text-casper transition-colors">
             Show 4 more
             <ChevronDownIcon className="text-casper" />
@@ -161,14 +161,14 @@ const PromotionsPage = () => {
 
         {/* Progress Bar */}
         <div className="mx-auto w-[9.875rem]">
-          <div className="bg-oxford-blue h-1.5 overflow-hidden rounded-lg">
-            <div className="h-full w-[73%] rounded-lg bg-dodger-blue"></div>
+          <div className="bg-oxford-blue h-1.5 overflow-hidden rounded-lg bg-ebony-clay">
+            <div className="h-full w-[50%] rounded-lg bg-dodger-blue"></div>
           </div>
         </div>
 
         {/* Progress Text */}
         <div className="text-center">
-          <span className="font-montserrat text-[0.625rem] font-normal text-polo-blue">
+          <span className="font-montserrat text-xs font-normal text-polo-blue">
             Show 18 of 22 games
           </span>
         </div>

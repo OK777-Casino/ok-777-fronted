@@ -88,7 +88,7 @@ const Sidebar: React.FC = () => {
     <>
       <aside
         ref={sidebarRef}
-        className={`sidebar z-999 fixed top-[5.8rem] h-[calc(100dvh-9.5rem)] overflow-y-auto overflow-x-visible backdrop-blur-[2rem] transition-all duration-300 lg:top-[3.5rem] lg:block lg:h-[calc(100dvh-3.5rem)] ${
+        className={`sidebar z-999 fixed top-[5.8rem] h-[calc(100dvh-9.5rem)] overflow-y-auto overflow-x-visible backdrop-blur-[2rem] transition-all duration-300 lg:top-[3.5rem]  lg:block lg:h-[calc(100dvh-8rem)] ${
           isCollapsed ? 'close' : 'open'
         }`}
         style={{
