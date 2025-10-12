@@ -48,7 +48,7 @@ export interface AppDownload {
 // Top section buttons (Casino/Sport)
 export const topButtons: TopButton[] = [
   {
-    icon: 'https://ok777.b-cdn.net/icons/spade.svg',
+    icon: '/icons/spade.svg',
     label: 'Casino',
     active: true,
     onClick() {
@@ -56,7 +56,7 @@ export const topButtons: TopButton[] = [
     },
   },
   {
-    icon: 'https://ok777.b-cdn.net/icons/football.svg',
+    icon: '/icons/football.svg',
     label: 'Sport',
     active: false,
     onClick() {
@@ -69,19 +69,19 @@ export const topButtons: TopButton[] = [
 export const navigationItems: SidebarItem[] = [
   {
     id: 'search',
-    icon: 'https://ok777.b-cdn.net/icons/search.svg',
+    icon: '/icons/search.svg',
     label: 'Search',
     onClick() {},
   },
   {
     id: 'favorites',
-    icon: 'https://ok777.b-cdn.net/icons/heart.svg',
+    icon: '/icons/heart.svg',
     label: 'Favorites',
     href: '/favorites',
   },
   {
     id: 'recent',
-    icon: 'https://ok777.b-cdn.net/icons/history.svg',
+    icon: '/icons/history.svg',
     label: 'Recent',
     href: '/recent',
   },
@@ -91,44 +91,44 @@ export const navigationItems: SidebarItem[] = [
 export const gameCategories: SidebarItem[] = [
   {
     id: 'hash-games',
-    icon: 'https://ok777.b-cdn.net/icons/bitcoin.svg',
+    icon: '/icons/bitcoin.svg',
     label: 'Hash Games',
     href: '/?tab=hash',
     hasHover: true,
   },
   {
     id: 'slots',
-    icon: 'https://ok777.b-cdn.net/icons/dice.svg',
+    icon: '/icons/dice.svg',
     label: 'Slots',
     href: '/?tab=slots',
   },
   {
     id: 'live-casino',
-    icon: 'https://ok777.b-cdn.net/icons/casino.svg',
+    icon: '/icons/casino.svg',
     label: 'Live Casino',
     href: '/?tab=casino',
   },
   {
     id: 'futures',
-    icon: 'https://ok777.b-cdn.net/icons/Futures.svg',
+    icon: '/icons/Futures.svg',
     label: 'Futures',
     href: '/?tab=futures',
   },
   {
     id: 'crypto-games',
-    icon: 'https://ok777.b-cdn.net/icons/Cryptogra.svg',
+    icon: '/icons/Cryptogra.svg',
     label: 'Crypto Games',
     href: '/?tab=crypto',
   },
   {
     id: 'sport',
-    icon: 'https://ok777.b-cdn.net/icons/football.svg',
+    icon: '/icons/football.svg',
     label: 'Sport',
     href: '/?tab=sport',
   },
   {
     id: 'table-games',
-    icon: 'https://ok777.b-cdn.net/icons/tablegame.svg',
+    icon: '/icons/tablegame.svg',
     label: 'Table Games',
     href: '/?tab=table',
   },
@@ -138,13 +138,13 @@ export const gameCategories: SidebarItem[] = [
 export const membershipItems: SidebarItem[] = [
   {
     id: 'alliance-plan',
-    icon: 'https://ok777.b-cdn.net/icons/thumbsup.svg',
+    icon: '/icons/thumbsup.svg',
     label: 'Alliance Plan',
     href: '/alliance',
   },
   {
     id: 'vip-club',
-    icon: 'https://ok777.b-cdn.net/icons/king1.svg',
+    icon: '/icons/king1.svg',
     label: 'VIP Club',
     href: '/vip-club',
     badge: {
@@ -155,18 +155,18 @@ export const membershipItems: SidebarItem[] = [
   {
     id: 'game-providers',
     href: '/game-provider',
-    icon: 'https://ok777.b-cdn.net/icons/game.svg',
+    icon: '/icons/game.svg',
     label: 'Game Providers',
   },
   {
     id: 'promotions',
-    icon: 'https://ok777.b-cdn.net/icons/gift.svg',
+    icon: '/icons/gift.svg',
     label: 'Promotions',
     href: '/promotions',
   },
   {
     id: 'help-center',
-    icon: 'https://ok777.b-cdn.net/icons/info-circle.svg',
+    icon: '/icons/info-circle.svg',
     label: 'Help center',
     href: '/help-center',
   },
@@ -176,7 +176,7 @@ export const membershipItems: SidebarItem[] = [
 export const tutorialItems: SidebarItem[] = [
   {
     id: 'beginner-tutorial',
-    icon: 'https://ok777.b-cdn.net/icons/tutorial.svg',
+    icon: '/icons/tutorial.svg',
     label: "Beginner's Tutorial",
     href: '/beginner-tutorial',
   },
@@ -186,7 +186,7 @@ export const tutorialItems: SidebarItem[] = [
 export const serviceItems: SidebarItem[] = [
   {
     id: 'online-service',
-    icon: 'https://ok777.b-cdn.net/icons/headset.svg',
+    icon: '/icons/headset.svg',
     label: 'Online service',
   },
 ]
@@ -195,14 +195,14 @@ export const serviceItems: SidebarItem[] = [
 export const collapsedOnlyItems: SidebarItem[] = [
   {
     id: 'download',
-    icon: 'https://ok777.b-cdn.net/icons/archive-arrow-down.svg',
+    icon: '/icons/archive-arrow-down.svg',
     label: 'Download',
     href: '/install-app',
     isCollapsedOnly: true,
   },
   {
     id: 'wallet',
-    icon: 'https://ok777.b-cdn.net/icons/wallet.svg',
+    icon: '/icons/wallet.svg',
     label: 'Wallet',
     href: '/wallet',
     isCollapsedOnly: true,
@@ -212,19 +212,19 @@ export const collapsedOnlyItems: SidebarItem[] = [
 // Payment methods
 export const paymentMethods: PaymentMethod[] = [
   {
-    icon: 'https://ok777.b-cdn.net/icons/gpay.svg',
+    icon: '/icons/gpay.svg',
     alt: 'Google Pay',
   },
   {
-    icon: 'https://ok777.b-cdn.net/icons/apay.svg',
+    icon: '/icons/apay.svg',
     alt: 'Apple Pay',
   },
   {
-    icon: 'https://ok777.b-cdn.net/icons/pay.svg',
+    icon: '/icons/pay.svg',
     alt: 'PayPal',
   },
   {
-    icon: 'https://ok777.b-cdn.net/icons/visa.svg',
+    icon: '/icons/visa.svg',
     alt: 'Visa',
   },
 ]
@@ -232,17 +232,17 @@ export const paymentMethods: PaymentMethod[] = [
 // App download options
 export const appDownloads: AppDownload[] = [
   {
-    icon: 'https://ok777.b-cdn.net/icons/apple.svg',
+    icon: '/icons/apple.svg',
     alt: 'Apple',
     platform: 'iOS',
   },
   {
-    icon: 'https://ok777.b-cdn.net/icons/windows.svg',
+    icon: '/icons/windows.svg',
     alt: 'Windows',
     platform: 'Windows',
   },
   {
-    icon: 'https://ok777.b-cdn.net/icons/android.svg',
+    icon: '/icons/android.svg',
     alt: 'Android',
     platform: 'Android',
   },
@@ -250,38 +250,38 @@ export const appDownloads: AppDownload[] = [
 
 // Language data
 export const languageData = {
-  cn: { name: '中文', flag: 'https://ok777.b-cdn.net/icons/flag-icon/cn.svg' },
+  cn: { name: '中文', flag: '/icons/flag-icon/cn.svg' },
   en: {
     name: 'English',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/uk.svg',
+    flag: '/icons/flag-icon/uk.svg',
   },
   de: {
     name: 'Deutsch',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/de.svg',
+    flag: '/icons/flag-icon/de.svg',
   },
   pl: {
     name: 'Polish',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/pl.svg',
+    flag: '/icons/flag-icon/pl.svg',
   },
   pt: {
     name: 'Português',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/pt.svg',
+    flag: '/icons/flag-icon/pt.svg',
   },
   ua: {
     name: 'Ukraine',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/ua.svg',
+    flag: '/icons/flag-icon/ua.svg',
   },
   es: {
     name: 'Español',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/es.svg',
+    flag: '/icons/flag-icon/es.svg',
   },
   'pt-br': {
     name: 'Português (BR)',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/br.svg',
+    flag: '/icons/flag-icon/br.svg',
   },
   fr: {
     name: 'Français',
-    flag: 'https://ok777.b-cdn.net/icons/flag-icon/fr.svg',
+    flag: '/icons/flag-icon/fr.svg',
   },
 }
 

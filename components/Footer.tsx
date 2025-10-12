@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             {/* Logo */}
             <div className="mb-4 flex items-center">
               <img
-                src="https://ok777.b-cdn.net/images/logo.svg"
+                src="/images/logo.svg"
                 alt="777 Gaming Logo"
               />
             </div>
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
               </span>
               <Link href="">
                 <img
-                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  src="/icons/arrow-up-right-stroke.svg"
                   alt="arrow"
                 />
               </Link>
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
               </span>
               <Link href="">
                 <img
-                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  src="/icons/arrow-up-right-stroke.svg"
                   alt="arrow"
                 />
               </Link>
@@ -178,7 +178,7 @@ const Footer: React.FC = () => {
               </span>
               <Link href="">
                 <img
-                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  src="/icons/arrow-up-right-stroke.svg"
                   alt="arrow"
                 />
               </Link>
@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
               </span>
               <Link href="">
                 <img
-                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  src="/icons/arrow-up-right-stroke.svg"
                   alt="arrow"
                 />
               </Link>
@@ -200,7 +200,7 @@ const Footer: React.FC = () => {
               </span>
               <Link href="">
                 <img
-                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  src="/icons/arrow-up-right-stroke.svg"
                   alt="arrow"
                 />
               </Link>
@@ -209,7 +209,7 @@ const Footer: React.FC = () => {
               <span className="text-sm font-bold text-casper">About Us</span>
               <Link href="">
                 <img
-                  src="https://ok777.b-cdn.net/icons/arrow-up-right-stroke.svg"
+                  src="/icons/arrow-up-right-stroke.svg"
                   alt="arrow"
                 />
               </Link>
@@ -232,7 +232,7 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <img
-                  src="https://ok777.b-cdn.net/images/brand/18.svg"
+                  src="/images/brand/18.svg"
                   className="h-8"
                   alt="18+"
                 />
@@ -289,7 +289,7 @@ const Footer: React.FC = () => {
           {/* Logo */}
           <div className="my-4 flex items-center">
             <img
-              src="https://ok777.b-cdn.net/images/logo.svg"
+              src="/images/logo.svg"
               alt="777 Gaming Logo"
             />
           </div>
@@ -324,7 +324,7 @@ const Footer: React.FC = () => {
         <div className="flex items-center justify-center gap-3 px-4 py-2">
           <div className="text-2xl">
             <img
-              src="https://ok777.b-cdn.net/images/brand/cookie.svg"
+              src="/images/brand/cookie.svg"
               alt="cookie"
             />
           </div>

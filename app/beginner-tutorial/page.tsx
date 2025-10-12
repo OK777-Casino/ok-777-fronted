@@ -197,7 +197,7 @@ const BeginnerTutorialPage = () => {
       <div className="mx-auto flex max-w-6xl flex-col gap-6">
         <div className="relative h-[14.49375rem] overflow-hidden rounded-[0.75rem] bg-cover bg-center 2xl:mt-4">
           <img
-            src="https://ok777.b-cdn.net/images/block-coin.png"
+            src="/images/block-coin.png"
             className="absolute z-[1] h-full w-full object-cover grayscale"
             alt=""
           />
@@ -206,7 +206,7 @@ const BeginnerTutorialPage = () => {
           <div className="absolute left-0 top-0 z-[2] h-full w-full bg-[linear-gradient(#2283f633,#111923)]" />
 
           <img
-            src="https://ok777.b-cdn.net/images/help-34344.png"
+            src="/images/help-34344.png"
             className="absolute left-1/2 top-1/3 z-[3] w-[18.75rem] -translate-x-1/2 -translate-y-1/2 transform lg:hidden"
             alt="image"
           />

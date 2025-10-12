@@ -251,7 +251,7 @@ function BottombarContent() {
       label: t('alliance.inviteFriends'),
       icon: (
         <img
-          src="https://ok777.b-cdn.net/icons/user-plus.svg"
+          src="/icons/user-plus.svg"
           alt={t('alliance.inviteFriends')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -262,7 +262,7 @@ function BottombarContent() {
       label: t('alliance.management'),
       icon: (
         <img
-          src="https://ok777.b-cdn.net/icons/group.svg"
+          src="/icons/group.svg"
           alt={t('alliance.management')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -273,7 +273,7 @@ function BottombarContent() {
       label: t('alliance.performance'),
       icon: (
         <img
-          src="https://ok777.b-cdn.net/icons/chart-network.svg"
+          src="/icons/chart-network.svg"
           alt={t('alliance.performance')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -284,7 +284,7 @@ function BottombarContent() {
       label: t('alliance.report'),
       icon: (
         <img
-          src="https://ok777.b-cdn.net/icons/file-report.svg"
+          src="/icons/file-report.svg"
           alt={t('alliance.report')}
           className="h-[1.2rem] w-[1.2rem]"
         />
@@ -295,7 +295,7 @@ function BottombarContent() {
       label: t('alliance.introduction'),
       icon: (
         <img
-          src="https://ok777.b-cdn.net/icons/form.png"
+          src="/icons/form.png"
           alt={t('alliance.introduction')}
           className="h-[1.2rem] w-[1.2rem]"
         />

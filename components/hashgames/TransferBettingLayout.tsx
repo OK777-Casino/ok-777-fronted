@@ -62,7 +62,7 @@ const TransferBettingLayout: React.FC = () => {
             >
               {' '}
               <img
-                src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
+                src="/icons/swap-horizontal.svg"
                 alt="transfer"
                 className="h-6 w-6"
               />
@@ -74,7 +74,7 @@ const TransferBettingLayout: React.FC = () => {
             >
               {' '}
               <img
-                src="https://ok777.b-cdn.net/icons/wallet.svg"
+                src="/icons/wallet.svg"
                 alt="page"
                 className="h-6 w-6"
               />
@@ -122,7 +122,7 @@ const TransferBettingLayout: React.FC = () => {
           >
             {' '}
             <img
-              src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
+              src="/icons/swap-horizontal.svg"
               alt="transfer"
               className="h-6 w-6"
             />
@@ -134,7 +134,7 @@ const TransferBettingLayout: React.FC = () => {
           >
             {' '}
             <img
-              src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
+              src="/icons/swap-horizontal.svg"
               alt="page"
               className="h-6 w-6"
             />
@@ -223,7 +223,7 @@ const TransferBettingLayout: React.FC = () => {
                     {t('hashgame.blockChainRule')}
                   </p>
                   <img
-                    src="https://ok777.b-cdn.net/icons/down-arrow.svg"
+                    src="/icons/down-arrow.svg"
                     alt="down-arrow"
                     className="m-auto mb-2 h-4 w-6 opacity-40"
                   />
@@ -380,7 +380,7 @@ const TransferBettingLayout: React.FC = () => {
                 </span>
               </div>
               <img
-                src="https://ok777.b-cdn.net/icons/copy.svg"
+                src="/icons/copy.svg"
                 alt="copy"
                 className="h-6 w-6"
               />
@@ -467,7 +467,7 @@ const TransferBettingLayout: React.FC = () => {
           <GameBoard board={board} />
           <div className="flex items-center gap-2 rounded-lg bg-[#FFFFFF0A] p-4 text-sm text-gray-300">
             <img
-              src="https://ok777.b-cdn.net/icons/Vector.svg"
+              src="/icons/Vector.svg"
               alt="info"
               className="h-5 w-5"
             />
@@ -522,7 +522,7 @@ const TransferBettingLayout: React.FC = () => {
               <div className="grid grid-cols-4 items-center gap-4">
                 <div className="flex items-center gap-1">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/USDT.svg"
+                    src="/icons/coin-icon/USDT.svg"
                     alt="usdt"
                     className="h-5 w-5"
                   />
@@ -533,7 +533,7 @@ const TransferBettingLayout: React.FC = () => {
                 <div className="text-white">0</div>
                 <div className="flex items-center gap-1">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/USDT.svg"
+                    src="/icons/coin-icon/USDT.svg"
                     alt="tron"
                     className="h-5 w-5"
                   />
@@ -541,7 +541,7 @@ const TransferBettingLayout: React.FC = () => {
                 </div>
                 <div className="ml-6 flex items-center justify-end gap-1 font-medium text-crimson">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/USDT.svg"
+                    src="/icons/coin-icon/USDT.svg"
                     alt="tron"
                     className="h-5 w-5"
                   />
@@ -555,7 +555,7 @@ const TransferBettingLayout: React.FC = () => {
               <div className="grid grid-cols-4 items-center gap-4">
                 <div className="flex items-center gap-1">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/TRX.svg"
+                    src="/icons/coin-icon/TRX.svg"
                     alt="tron"
                     className="h-5 w-5"
                   />
@@ -564,7 +564,7 @@ const TransferBettingLayout: React.FC = () => {
                 <div className="text-white">0</div>
                 <div className="flex items-center gap-2">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/BTC.svg"
+                    src="/icons/coin-icon/BTC.svg"
                     alt="tron"
                     className="h-5 w-5"
                   />
@@ -572,7 +572,7 @@ const TransferBettingLayout: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-end gap-1 font-medium text-crimson">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/TRX.svg"
+                    src="/icons/coin-icon/TRX.svg"
                     alt="tron"
                     className="h-5 w-5"
                   />

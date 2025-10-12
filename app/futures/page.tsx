@@ -172,7 +172,7 @@ const LatestBetsTable: React.FC = () => {
             >
               <div className="flex items-center gap-2 truncate text-[12px] font-bold text-white">
                 <img
-                  src="https://ok777.b-cdn.net/images/gameLogo.png"
+                  src="/images/gameLogo.png"
                   alt="game"
                   className="h-6 w-6"
                 />
@@ -180,7 +180,7 @@ const LatestBetsTable: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 truncate text-[12px] font-bold text-gray-300">
                 <img
-                  src="https://ok777.b-cdn.net/images/avatar(1).png"
+                  src="/images/avatar(1).png"
                   alt="avatar"
                   className="hidden h-6 w-6 md:lg:block"
                 />
@@ -327,7 +327,7 @@ const FilteredPageHeader: React.FC<{
             <X className="h-[18px] w-[18px] text-white" />
           ) : (
             <img
-              src="https://ok777.b-cdn.net/icons/search.svg"
+              src="/icons/search.svg"
               alt="search"
               className="h-[18px] w-[18px]"
             />
@@ -379,7 +379,7 @@ const FilteredPageHeader: React.FC<{
             className="lg:w-50 flex items-center gap-1 rounded-lg bg-[#111923] p-[10px] transition-colors hover:bg-[rgba(255,255,255,0.08)] lg:bg-[rgba(255,255,255,0.04)]"
           >
             <img
-              src="https://ok777.b-cdn.net/icons/search.svg"
+              src="/icons/search.svg"
               alt="search"
               className="h-[18px] w-[18px]"
             />
@@ -439,7 +439,7 @@ const FilteredPageHeader: React.FC<{
           <>
             <div className="flex h-10 w-full items-center gap-2 rounded-lg bg-[rgba(255,255,255,0.04)] px-3 transition-colors hover:bg-[rgba(255,255,255,0.08)]">
               <img
-                src="https://ok777.b-cdn.net/icons/search.svg"
+                src="/icons/search.svg"
                 alt="search"
                 className="h-[18px] w-[18px] flex-shrink-0"
               />

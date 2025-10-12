@@ -216,7 +216,7 @@ const Sidebar: React.FC = () => {
           />
           <div className="relative z-[3] flex h-full flex-col items-start justify-center gap-1 pl-[1.875rem] lg:pl-[3.75rem]">
             <img
-              src="https://ok777.b-cdn.net/images/logo.svg"
+              src="/images/logo.svg"
               className="h-9"
               alt=""
             />

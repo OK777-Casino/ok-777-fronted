@@ -305,7 +305,7 @@ const VipClubPage = () => {
             </p>
           </div>
           <img
-            src="https://ok777.b-cdn.net/images/headset.png"
+            src="/images/headset.png"
             alt="headset"
             className="hidden w-[246px] 2xl:block"
           />

@@ -23,7 +23,7 @@ const FutureCard: React.FC<TypeFourProps> = ({
     <div className="rounded-lg border-t-2 border-[#FFFFFF29] bg-gray-800 p-2">
       <div className="mb-3 flex items-center space-x-2">
         <img
-          src={`https://ok777.b-cdn.net/icons/coin-icon/${symbol}.svg`}
+          src={`/icons/coin-icon/${symbol}.svg`}
           className="h-10 w-10"
           alt={`${symbol} icon`}
         />

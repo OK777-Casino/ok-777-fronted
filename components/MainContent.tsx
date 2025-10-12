@@ -231,7 +231,7 @@ const LatestBetsTable: React.FC = () => {
               } items-center`}
               key={index}
             >
-              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-white">
+              <div className="flex items-center gap-2 truncate text-xs font-bold text-white">
                 <img
                   src="/images/gameLogo.png"
                   alt="game"
@@ -239,7 +239,7 @@ const LatestBetsTable: React.FC = () => {
                 />
                 {bet.game}
               </div>
-              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-gray-300">
+              <div className="flex items-center gap-2 truncate text-xs font-bold text-gray-300">
                 <img
                   src="/images/avatar(1).png"
                   alt="avatar"
@@ -247,27 +247,27 @@ const LatestBetsTable: React.FC = () => {
                 />
                 {bet.player}
               </div>
-              <div className="hidden items-center truncate text-[12px] font-bold text-gray-300 md:lg:flex">
+              <div className="hidden items-center truncate text-xs font-bold text-gray-300 md:lg:flex">
                 {bet.time}
               </div>
-              <div className="hidden items-center gap-2 truncate text-[12px] font-bold text-gray-300 md:lg:flex">
+              <div className="hidden items-center gap-2 truncate text-xs font-bold text-gray-300 md:lg:flex">
                 <img
-                  src="https://ok777.b-cdn.net/icons/coin-icon/BTC.svg"
+                  src="/icons/coin-icon/BTC.svg"
                   alt="coin"
                   className="h-6 w-6"
                 />
                 {bet.bet}
               </div>
               {selectedStatus !== 'Daily' && (
-                <div className="flex items-center truncate text-[12px] font-bold text-[#2283F6]">
+                <div className="flex items-center truncate text-xs font-bold text-dodger-blue">
                   {bet.multiplier}
                 </div>
               )}
-              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-green-400">
+              <div className="flex items-center gap-2 truncate text-xs font-bold text-green-400">
                 {bet.payout}
                 <div className="!h-6 !w-6 overflow-hidden rounded-[8px]">
                   <img
-                    src="https://ok777.b-cdn.net/icons/coin-icon/BTC.svg"
+                    src="/icons/coin-icon/USDT.svg"
                     alt="coin"
                     className="h-full w-full"
                   />
@@ -425,7 +425,7 @@ const MainContent: React.FC = () => {
   const bannerCards = [
     {
       button: t('banner.firstDepost.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-first-depost.jpg',
+      image: '/images/banner/banner-first-depost.jpg',
       mainTitle: t('banner.firstDepost.mainTitle'),
       subTitle: t('banner.firstDepost.subTitle'),
       description: '',
@@ -433,7 +433,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.cryptoGame.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-crypto-game.jpg',
+      image: '/images/banner/banner-crypto-game.jpg',
       mainTitle: t('banner.cryptoGame.mainTitle'),
       subTitle: t('banner.cryptoGame.subTitle'),
       description: '',
@@ -441,7 +441,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.dailyDepost.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-daily-depost.jpg',
+      image: '/images/banner/banner-daily-depost.jpg',
       mainTitle: t('banner.dailyDepost.mainTitle'),
       subTitle: t('banner.dailyDepost.subTitle'),
       description: '',
@@ -449,7 +449,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.dailyQuests.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-daily-quests.jpg',
+      image: '/images/banner/banner-daily-quests.jpg',
       mainTitle: t('banner.dailyQuests.mainTitle'),
       subTitle: t('banner.dailyQuests.subTitle'),
       description: '',
@@ -457,7 +457,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.footerball.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-footerball.jpg',
+      image: '/images/banner/banner-footerball.jpg',
       mainTitle: t('banner.footerball.mainTitle'),
       subTitle: t('banner.footerball.subTitle'),
       description: '',
@@ -465,7 +465,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.hash.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-hash.jpg',
+      image: '/images/banner/banner-hash.jpg',
       mainTitle: t('banner.hash.mainTitle'),
       subTitle: t('banner.hash.subTitle'),
       description: '',
@@ -473,7 +473,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.live.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-live.jpg',
+      image: '/images/banner/banner-live.jpg',
       mainTitle: t('banner.live.mainTitle'),
       subTitle: t('banner.live.subTitle'),
       description: '',
@@ -481,7 +481,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.rebate.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-rebate.jpg',
+      image: '/images/banner/banner-rebate.jpg',
       mainTitle: t('banner.rebate.mainTitle'),
       subTitle: t('banner.rebate.subTitle'),
       description: '',
@@ -489,7 +489,7 @@ const MainContent: React.FC = () => {
     },
     {
       button: t('banner.solts.button'),
-      image: 'https://ok777.b-cdn.net/images/banner/banner-solts.jpg',
+      image: '/images/banner/banner-solts.jpg',
       mainTitle: t('banner.solts.mainTitle'),
       subTitle: t('banner.solts.subTitle'),
       description: '',
@@ -551,7 +551,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('new-launches') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Home.svg"
+                icon="/icons/Home.svg"
                 title={t('games.new')}
                 alt="lobby"
                 count={card1.length}
@@ -586,7 +586,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('live-casino') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Casino1.svg"
+                icon="/icons/Casino1.svg"
                 title={t('games.live')}
                 alt="lobby"
                 count={card2.length}
@@ -605,7 +605,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('hash') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Hash.svg"
+                icon="/icons/Hash.svg"
                 title={t('games.hashgames')}
                 alt="hash"
                 count={gameImages.length}
@@ -624,7 +624,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('slots') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Slots.svg"
+                icon="/icons/Slots.svg"
                 title={t('games.slots')}
                 alt="slots"
                 count={card3.length}
@@ -643,7 +643,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('futures') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Futures1.svg"
+                icon="/icons/Futures1.svg"
                 title={t('games.pfFutures')}
                 alt="future"
                 count={card4.length}
@@ -663,7 +663,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('crypto') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Cryptogra1.svg"
+                icon="/icons/Cryptogra1.svg"
                 title={t('games.crypto')}
                 alt="cryptogra"
                 count={cryptoCards.length}
@@ -682,7 +682,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('sport') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/Sport.svg"
+                icon="/icons/Sport.svg"
                 title={t('games.sports')}
                 alt="Sport"
                 count={card5.length}
@@ -701,7 +701,7 @@ const MainContent: React.FC = () => {
           {shouldShowSection('table') && (
             <div className="mb-8 lg:mb-16">
               <SectionHeader
-                icon="https://ok777.b-cdn.net/icons/tablegame.svg"
+                icon="/icons/tablegame.svg"
                 title={t('games.table')}
                 alt="tablegame"
                 count={card6.length}
@@ -725,7 +725,7 @@ const MainContent: React.FC = () => {
       {shouldShowSection('game-manufacturers') && (
         <div className="mb-8 lg:mb-16">
           <SectionHeader
-            icon="https://ok777.b-cdn.net/icons/game.svg"
+            icon="/icons/game.svg"
             title={t('app.gameProvider')}
             alt="gameProvider"
           />

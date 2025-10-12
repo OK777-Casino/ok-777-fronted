@@ -1,11 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
-
-import Link from 'next/link'
-
 import { useState } from 'react'
-
 import ChevronDownIcon from '@/components/ui/icons/chevron-down'
 import FootballIcon from '@/components/ui/icons/football'
 import GiftIcon from '@/components/ui/icons/gift'

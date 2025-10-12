@@ -46,7 +46,7 @@ export default function LoadingScreen() {
         <div className="flex items-center justify-center">
           {/* 777 Logo with Flaming Soccer Ball */}
           <img
-            src="https://ok777.b-cdn.net/images/logo.svg"
+            src="/images/logo.svg"
             className="h-[6rem]"
             alt="logo"
           />

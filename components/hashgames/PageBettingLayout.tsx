@@ -41,7 +41,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
               >
                 {' '}
                 <img
-                  src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
+                  src="/icons/swap-horizontal.svg"
                   alt="active"
                   className="h-6 w-6"
                 />
@@ -52,7 +52,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
               >
                 {' '}
                 <img
-                  src="https://ok777.b-cdn.net/icons/wallet.svg"
+                  src="/icons/wallet.svg"
                   alt="active"
                   className="h-6 w-6"
                 />
@@ -126,7 +126,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
             >
               {' '}
               <img
-                src="https://ok777.b-cdn.net/icons/swap-horizontal.svg"
+                src="/icons/swap-horizontal.svg"
                 alt="active"
                 className="h-6 w-6"
               />
@@ -137,7 +137,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
             >
               {' '}
               <img
-                src="https://ok777.b-cdn.net/icons/wallet.svg"
+                src="/icons/wallet.svg"
                 alt="active"
                 className="h-6 w-6"
               />

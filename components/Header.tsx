@@ -36,7 +36,7 @@ const MenuButton: React.FC<{ onClick: () => void; isCollapsed: boolean }> = ({
   <div className="relative hidden lg:flex">
     <BlackButton onClick={onClick}>
       <ArrowToRightStrokeIcon
-        className={cn('h-4 w-4', isCollapsed ? 'rotate-180' : '')}
+        className={cn('h-4 w-4', isCollapsed ? '' : 'rotate-180')}
       />
     </BlackButton>
   </div>
@@ -46,7 +46,7 @@ const Logo: React.FC = () => (
   <div className="flex items-center">
     <Link href="/">
       <img
-        src="https://ok777.b-cdn.net/images/logo.svg"
+        src="/images/logo.svg"
         alt="777 Gaming Logo"
       />
     </Link>
@@ -64,7 +64,7 @@ const BonusesButton: React.FC = () => (
     >
       <div className="flex items-center gap-2">
         <img
-          src="https://ok777.b-cdn.net/images/awards/Chest-box.svg"
+          src="/images/awards/Chest-box.svg"
           className="h-8"
           alt="bonuses"
         />
