@@ -18,40 +18,14 @@ import { Icon } from '@iconify/react'
 import { SuccessForm } from '../../components/auth/SuccessForm'
 import SwiperSlider from '../../components/ui/slider/SwiperSlider'
 import { X } from 'lucide-react'
-import {
-  StatusDropdown,
-  StatusDropdownTrigger,
-  StatusDropdownContent,
-  StatusDropdownItem,
-} from '@/components/ui/StatusDropdown'
 import LatestBetsTable from '@/components/LatestBetsTable'
 
 // Extract data from JSON
 const {
-  card1,
   card2,
-  card3,
-  card4,
-  card5,
-  card6,
   card7,
-  card9,
-  card10,
-  brand,
-  latestBets,
   gameManufacturers,
-  footerContent,
 } = mainContentData
-
-const statusOptions = [
-  'Up to date',
-  'Daily',
-  'Checking for updates...',
-  'Installing updates',
-  'Update failed',
-  'Connected',
-  'Disconnected',
-]
 
 // Game manufacturers section component
 const GameManufacturersSection: React.FC = () => {

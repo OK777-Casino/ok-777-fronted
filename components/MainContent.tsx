@@ -21,28 +21,9 @@ import GameCard from './ui/cards/GameCard'
 import { SuccessForm } from './auth/SuccessForm'
 import SwiperSlider from './ui/slider/SwiperSlider'
 import { HomepageSections } from './HomepageSections'
-
-import {
-  StatusDropdown,
-  StatusDropdownTrigger,
-  StatusDropdownContent,
-  StatusDropdownItem,
-} from '@/components/ui/StatusDropdown'
 import EarningCard from './ui/cards/EarningCard'
 import { GameBreakpoints } from '@/components/HomepageSections'
 import LatestBetsTable from '@/components/LatestBetsTable'
-
-const statusOptions = [
-  'Up to date',
-  'Daily',
-  'Checking for updates...',
-  'Installing updates',
-  'Update failed',
-  'Connected',
-  'Disconnected',
-  'Syncing...',
-  'Sync complete',
-]
 
 // Extract data from JSON
 const {
@@ -55,7 +36,6 @@ const {
   card6,
   card7,
   card9,
-  latestBets,
   gameManufacturers,
 } = mainContentData
 

@@ -19,74 +19,10 @@ import { Icon } from '@iconify/react'
 import { SuccessForm } from '../../components/auth/SuccessForm'
 import SwiperSlider from '../../components/ui/slider/SwiperSlider'
 import { X } from 'lucide-react'
-import {
-  StatusDropdown,
-  StatusDropdownTrigger,
-  StatusDropdownContent,
-  StatusDropdownItem,
-} from '@/components/ui/StatusDropdown'
 import LatestBetsTable from '@/components/LatestBetsTable'
 
 // Extract data from JSON
-const { card7, latestBets, gameManufacturers } = mainContentData
-
-const bannerCards = [
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-] as const
-
-const statusOptions = [
-  'Up to date',
-  'Daily',
-  'Checking for updates...',
-  'Installing updates',
-  'Update failed',
-  'Connected',
-  'Disconnected',
-]
+const { card7, gameManufacturers } = mainContentData
 
 // Game manufacturers section component
 const GameManufacturersSection: React.FC = () => {

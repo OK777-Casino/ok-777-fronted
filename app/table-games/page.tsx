@@ -40,7 +40,6 @@ const {
   card9,
   card10,
   brand,
-  latestBets,
   gameManufacturers,
   footerContent,
 } = mainContentData

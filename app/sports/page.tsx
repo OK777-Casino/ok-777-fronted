@@ -13,95 +13,20 @@ import {
   setGameManufacturersSlide,
 } from '../../store/slices/carouselSlice'
 import CasinoCard from '../../components/ui/cards/CasinoCard'
-import RewardCard from '../../components/ui/cards/RewardCard'
 import GameCard from '../../components/ui/cards/GameCard'
 import EarningCard from '../../components/ui/cards/EarningCard'
 import { Icon } from '@iconify/react'
 import { SuccessForm } from '../../components/auth/SuccessForm'
 import SwiperSlider from '../../components/ui/slider/SwiperSlider'
 import { X } from 'lucide-react'
-import {
-  StatusDropdown,
-  StatusDropdownTrigger,
-  StatusDropdownContent,
-  StatusDropdownItem,
-} from '@/components/ui/StatusDropdown'
 import LatestBetsTable from '@/components/LatestBetsTable'
 
 // Extract data from JSON
 const {
-  card1,
-  card2,
-  card3,
-  card4,
   card5,
-  card6,
   card7,
-  card9,
-  card10,
-  brand,
-  latestBets,
   gameManufacturers,
-  footerContent,
 } = mainContentData
-
-const bannerCards = [
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-  {
-    button: 'CLAIM NOW',
-    image: '/images/banner/Banner12.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner10.jpg',
-    link: '#',
-  },
-  {
-    button: 'JOIN NOW',
-    image: '/images/banner/Banner09.jpg',
-    link: '#',
-  },
-] as const
-
-const statusOptions = [
-  'Up to date',
-  'Daily',
-  'Checking for updates...',
-  'Installing updates',
-  'Update failed',
-  'Connected',
-  'Disconnected',
-]
 
 // Game manufacturers section component
 const GameManufacturersSection: React.FC = () => {

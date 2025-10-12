@@ -19,14 +19,6 @@ declare module '*/main-content-data.json' {
     card9: CardItem[]
     card10: CardItem[]
     brand: string[]
-    latestBets: Array<{
-      game: string
-      player: string
-      time: string
-      bet: string
-      multiplier: string
-      payout: string
-    }>
   }
 
   const data: MainContentData
