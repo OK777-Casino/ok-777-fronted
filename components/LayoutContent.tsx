@@ -103,7 +103,9 @@ export default function LayoutContent({ children }: LayoutContentProps) {
               WebkitOverflowScrolling: 'touch',
             }}
           >
-            <div className="mx-auto w-full max-w-screen-2xl">{children}</div>
+            <div className="mx-auto w-full max-w-screen-2xl px-2">
+              {children}
+            </div>
             {!isHashgamePage && !isAlliancePage && <Footer />}
           </div>
           {isNotificationsOpen && !isMobileHeader && (
