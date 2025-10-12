@@ -188,7 +188,10 @@ const Footer: React.FC = () => {
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
-              <span className="text-sm font-bold text-casper"> {t('aboutUs.aboutUs')}</span>
+              <span className="text-sm font-bold text-casper">
+                {' '}
+                {t('aboutUs.aboutUs')}
+              </span>
               <Link href="">
                 <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>

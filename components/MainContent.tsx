@@ -378,7 +378,6 @@ const MainContent: React.FC = () => {
             },
             1440: { slidesPerView: 3 },
           }}
-          // slideClassName="!w-[min(486.76px,100%)]"
           showProgressBars={true}
           customPagination={true}
           initialSlide={carouselState.mainBannerCurrentSlide}

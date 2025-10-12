@@ -256,7 +256,7 @@ const LatestBetsTable: React.FC = () => {
               } items-center`}
               key={index}
             >
-              <div className="flex items-center justify-center truncate text-xs font-bold text-white">
+              <div className="flex items-center justify-center gap-2 truncate text-xs font-bold text-white">
                 <img
                   src="/images/gameLogo.png"
                   alt="game"
@@ -308,12 +308,12 @@ const LatestBetsTable: React.FC = () => {
             </div>
           )}
           direction="vertical"
-          slidesPerView={9.1}
+          slidesPerView={10}
           spaceBetween={6}
-          autoplayDelay={1500}
+          autoplayDelay={1000}
           className="h-full"
         />
-        <div className="pointer-events-none absolute bottom-0 left-0 z-[30] h-[254px] w-full bg-gradient-to-b from-transparent to-[#111923]"></div>
+        <div className="pointer-events-none absolute bottom-0 left-0 z-[30] h-[20rem] w-full bg-gradient-to-b from-transparent to-[#111923]"></div>
       </div>
     </>
   )

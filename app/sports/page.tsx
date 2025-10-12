@@ -22,11 +22,7 @@ import { X } from 'lucide-react'
 import LatestBetsTable from '@/components/LatestBetsTable'
 
 // Extract data from JSON
-const {
-  card5,
-  card7,
-  gameManufacturers,
-} = mainContentData
+const { card5, card7, gameManufacturers } = mainContentData
 
 // Game manufacturers section component
 const GameManufacturersSection: React.FC = () => {
