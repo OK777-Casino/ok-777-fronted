@@ -88,19 +88,22 @@ export default function LayoutContent({ children }: LayoutContentProps) {
         <div className="min-h-[calc(100dvh-56px)] w-full max-w-[100vw]">
           {shouldShowSidebar && <Sidebar />}
           <div
-            className={`main-content ${
+            className={`${
               shouldShowSidebar
                 ? isCollapsed
-                  ? 'lg:ml-[70px]'
-                  : 'lg:ml-[248px]'
+                  ? 'lg:ml-[60px]'
+                  : 'lg:ml-[15.5rem]'
                 : 'w-full'
             } ${
               !isMobileHeader && !isAlliancePage && !isProfileOpen
                 ? 'h-[calc(100dvh-56px-59px)]'
                 : 'h-[calc(100dvh-56px)]'
-            } ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[420px]' : ''}`}
+            } ${isNotificationsOpen && !isMobileHeader ? 'lg:mr-[26.25rem]' : ''}`}
+            style={{
+              WebkitOverflowScrolling: 'touch',
+            }}
           >
-            <div className="mx-auto w-full max-w-[1920px]">{children}</div>
+            <div className="mx-auto w-full max-w-screen-2xl">{children}</div>
             {!isHashgamePage && !isAlliancePage && <Footer />}
           </div>
           {isNotificationsOpen && !isMobileHeader && (

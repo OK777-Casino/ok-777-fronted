@@ -17,7 +17,7 @@ const SidebarTopSection: React.FC<SidebarTopSectionProps> = ({
           <div
             key={button.label}
             className={`${
-              isCollapsed ? 'mb-2 w-full' : 'flex-1'
+              isCollapsed ? 'w-full' : 'flex-1'
             } w-12 cursor-pointer ${
               button.active
                 ? 'bg-gray-700 text-white'
@@ -26,7 +26,7 @@ const SidebarTopSection: React.FC<SidebarTopSectionProps> = ({
             style={button.active ? { background: '#374151' } : {}}
             onClick={button.onClick}
           >
-            <img src={button.icon} className="h-5 w-5" alt={button.label} />
+            <img src={button.icon} className="h-4 w-4" alt={button.label} />
             {!isCollapsed && (
               <span className="text-sm font-bold">{button.label}</span>
             )}
