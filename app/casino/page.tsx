@@ -114,7 +114,7 @@ const FilteredPageHeader: React.FC<{
           <h1 className="flex items-center gap-2 text-base text-white">
             <img src={icon} className="hidden h-6 w-6 lg:block" alt="game" />
             {title}{' '}
-            <span className="rounded-[4px] bg-[#111923] px-2 py-0.5 text-[12px] text-[#2283F6]">
+            <span className="rounded-[4px] bg-[#111923] px-2 py-0.5 text-[12px] text-dodger-blue">
               {count}
             </span>
           </h1>

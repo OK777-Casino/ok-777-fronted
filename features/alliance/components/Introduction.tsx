@@ -238,7 +238,7 @@ const Introduction: React.FC = () => {
                   <div className="text-xs font-bold text-white">
                     {row.performance}
                   </div>
-                  <div className="text-xs font-bold text-[#2283f6]">
+                  <div className="text-xs font-bold text-dodger-blue">
                     {row.rebate}
                   </div>
                 </div>

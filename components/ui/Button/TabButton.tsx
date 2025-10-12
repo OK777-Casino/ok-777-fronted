@@ -49,7 +49,7 @@ const TabButton: React.FC<TabButtonProps> = ({
             : type === 'three'
               ? bgThree
               : 'hover:bg-[#FFFFFF14] active:bg-[#2283F6] active:text-[#ffffff]'
-  const iconStyle = type === 'three' ? 'group-active:text-[#2283F6]' : ''
+  const iconStyle = type === 'three' ? 'group-active:text-dodger-blue' : ''
   return (
     <div
       className={cn(

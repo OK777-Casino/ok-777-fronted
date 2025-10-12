@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import mainContentData from '../main-content-data.json'
 import SwiperSlider from '@/components/ui/slider/SwiperSlider'
 import {
   StatusDropdown,
@@ -9,9 +8,6 @@ import {
   StatusDropdownContent,
   StatusDropdownItem,
 } from '@/components/ui/StatusDropdown'
-
-// Extract data from JSON
-const { latestBets } = mainContentData
 
 const statusOptions = [
   'Up to date',
@@ -24,17 +20,188 @@ const statusOptions = [
 ]
 
 const LatestBetsTable: React.FC = () => {
+  const latestBets = [
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '1',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '0.5',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '20',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '25',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '30',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '50',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '100',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '25',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '26',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '24.6',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '200',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '35',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '40',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '40',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '1000',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '1444',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '1520',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '124',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***123',
+      time: '2 min ago',
+      bet: '0.001 BTC',
+      multiplier: '2.5x',
+      payout: '36',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***456',
+      time: '5 min ago',
+      bet: '0.002 BTC',
+      multiplier: '1.8x',
+      payout: '80',
+    },
+    {
+      game: 'Cavesone',
+      player: 'User***789',
+      time: '8 min ago',
+      bet: '0.0005 BTC',
+      multiplier: '3.2x',
+      payout: '700',
+    },
+  ]
+
   const [selectedStatus, setSelectedStatus] = useState('Up to date')
   return (
     <>
       <div className="text-4.5 mb-4 flex w-full items-center justify-between gap-2 font-bold text-white">
         <span>Latest Bets</span>
         <StatusDropdown>
-          <StatusDropdownTrigger className="border-none bg-[#2A3546] outline-none ring-0 focus:ring-0">
+          <StatusDropdownTrigger className="border-none bg-ebony-clay outline-none ring-0 focus:ring-0">
             {selectedStatus}
           </StatusDropdownTrigger>
           <StatusDropdownContent
-            className="border-none bg-[#2A3546]"
+            className="border-none bg-ebony-clay"
             align="center"
           >
             {statusOptions.map(status => (
@@ -49,47 +216,46 @@ const LatestBetsTable: React.FC = () => {
         </StatusDropdown>
       </div>
       <div
-        className={`grid grid-cols-[20%_20%_20%_40%] gap-[6px] px-[6px] lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] lg:px-8 ${
+        className={`grid lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] ${
           selectedStatus !== 'Daily'
-            ? 'grid-cols-[20%_20%_20%_40%]'
+            ? 'grid-cols-[30%_25%_20%_30%]'
             : 'grid-cols-[30%_30%_40%]'
         } `}
       >
-        <div className="py-2 text-left text-[12px] font-bold text-white">
-          Game
-        </div>
-        <div className="py-2 text-left text-[12px] font-bold text-white">
+        <div className="py-2 text-center text-xs font-bold text-white">Game</div>
+        <div className="py-2 text-center text-xs font-bold text-white">
           Player
         </div>
-        <div className="hidden py-2 text-left text-[12px] font-bold text-white md:lg:block">
+        <div className="hidden py-2 text-center text-xs font-bold text-white md:lg:block">
           Time
         </div>
-        <div className="hidden truncate py-2 text-left text-[12px] font-bold text-white md:lg:block">
+        <div className="hidden truncate py-2 text-center text-xs font-bold text-white md:lg:block">
           Bet Amount
         </div>
-        <div className="py-2 text-left text-[12px] font-bold text-white">
+        <div className="py-2 text-center text-xs font-bold text-white">
           Multiplier
         </div>
         {selectedStatus !== 'Daily' && (
-          <div className="py-2 text-left text-[12px] font-bold text-white">
+          <div className="py-2 text-center text-xs font-bold text-white">
             Payout
           </div>
         )}
       </div>
-      <div className="relative z-[-1] mb-8 h-[462px] w-full lg:mb-16">
+      <div className="relative z-[-1] mb-8 h-[30rem] w-full lg:mb-16">
         <SwiperSlider
           data={latestBets}
           allowTouchMove={false}
+          autoplay={false}
           renderSlide={(bet, index) => (
             <div
-              className={`mb-[6px] grid h-[48px] w-full grid-cols-[20%_20%_20%_40%] gap-[6px] overflow-hidden rounded-[16px] bg-[#1C2532] px-[6px] lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] lg:px-8 ${
+              className={`grid h-10 w-full overflow-hidden rounded-[16px] bg-[#1C2532] lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] ${
                 selectedStatus !== 'Daily'
-                  ? 'grid-cols-[20%_20%_20%_40%]'
-                  : 'grid-cols-[30%_30%_40%]'
+                  ? 'grid-cols-[30%_25%_20%_30%]'
+                  : 'grid-cols-[33%_33%_33%]'
               } items-center`}
               key={index}
             >
-              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-white">
+              <div className="flex items-center justify-center truncate text-xs font-bold text-white">
                 <img
                   src="/images/gameLogo.png"
                   alt="game"
@@ -97,7 +263,7 @@ const LatestBetsTable: React.FC = () => {
                 />
                 {bet.game}
               </div>
-              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-gray-300">
+              <div className="flex items-center justify-center truncate text-xs font-bold text-gray-300">
                 <img
                   src="/images/avatar(1).png"
                   alt="avatar"
@@ -105,37 +271,38 @@ const LatestBetsTable: React.FC = () => {
                 />
                 {bet.player}
               </div>
-              <div className="hidden items-center truncate text-[12px] font-bold text-gray-300 md:lg:flex">
+              <div className="hidden items-center justify-center truncate text-xs font-bold text-gray-300 md:lg:flex">
                 {bet.time}
               </div>
-              <div className="hidden items-center gap-2 truncate text-[12px] font-bold text-gray-300 md:lg:flex">
+              <div className="hidden items-center justify-center truncate text-xs font-bold text-gray-300 md:lg:flex">
                 <img
-                  src="/icons/coin-icon/BTC.svg"
+                  src="/icons/coin-icon/USDT.svg"
                   alt="coin"
                   className="h-6 w-6"
                 />
                 {bet.bet}
               </div>
+
               {selectedStatus !== 'Daily' && (
-                <div className="flex items-center truncate text-[12px] font-bold text-[#2283F6]">
+                <div className="flex items-center justify-center truncate text-xs font-bold text-dodger-blue">
                   {bet.multiplier}
                 </div>
               )}
-              <div className="flex items-center gap-2 truncate text-[12px] font-bold text-green-400">
-                {bet.payout}
-                <div className="!h-6 !w-6 overflow-hidden rounded-[8px]">
+              <div className="flex items-center justify-end truncate text-xs font-bold text-green-400 gap-2">
+                <div>
+                  <span>{bet.payout}</span>
+                </div>
+                <div className="overflow-hidden rounded-[8px]">
                   <img
-                    src="/icons/coin-icon/BTC.svg"
+                    src="/icons/coin-icon/USDT.svg"
                     alt="coin"
-                    className="h-full w-full"
+                    className="h-6 w-6"
                   />
                 </div>
               </div>
             </div>
           )}
           direction="vertical"
-          slidesPerView={9.1}
-          spaceBetween={6}
           autoplayDelay={1000}
           className="h-full"
         />

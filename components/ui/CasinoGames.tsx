@@ -37,7 +37,7 @@ const GameItem = ({ src, href, name, timeLabel, timeColor }: GameItemProps) => {
               className={cn(
                 'whitespace-nowrap font-montserrat text-xs font-bold',
                 timeColor === 'red' && 'text-crimson',
-                timeColor === 'blue' && 'text-[#2283F6]'
+                timeColor === 'blue' && 'text-dodger-blue'
               )}
             >
               {timeLabel}

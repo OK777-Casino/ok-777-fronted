@@ -353,7 +353,7 @@ export default function AuthModal() {
                     </div>
                     <span className="text-xs text-casper">
                       {t('auth.agreePromotional')}{' '}
-                      <span className="text-[#2283F6]">ok777.casino</span>
+                      <span className="text-dodger-blue">ok777.casino</span>
                     </span>
                   </label>
                 </div>
@@ -517,7 +517,7 @@ export default function AuthModal() {
                   {!showReferral && (
                     <div
                       onClick={() => setShowReferral(!showReferral)}
-                      className="flex w-full cursor-pointer items-center justify-between py-2 text-sm font-bold text-[#2283F6]"
+                      className="flex w-full cursor-pointer items-center justify-between py-2 text-sm font-bold text-dodger-blue"
                     >
                       <span>{t('alliance.referralCode')}</span>
                       <ChevronDown size={20} />
@@ -619,7 +619,7 @@ export default function AuthModal() {
                       </div>
                       <span className="text-xs text-casper">
                         {t('auth.agreePromotional')}{' '}
-                        <span className="text-[#2283F6]">ok777.casino</span>
+                        <span className="text-dodger-blue">ok777.casino</span>
                       </span>
                     </label>
                   </div>

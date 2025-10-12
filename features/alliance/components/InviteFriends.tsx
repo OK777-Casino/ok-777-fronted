@@ -152,7 +152,7 @@ const InviteFriends: React.FC = () => {
           <h3 className="text-white">{t('alliance.commissionRewards')}</h3>
           <a
             href="#"
-            className="text-sm font-bold text-[#2283F6] hover:underline"
+            className="text-sm font-bold text-dodger-blue hover:underline"
           >
             {t('alliance.details')}
           </a>

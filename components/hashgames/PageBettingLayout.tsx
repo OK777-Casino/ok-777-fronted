@@ -167,7 +167,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
                   >
                     {isBeginnerMode && (
                       <Check
-                        className="absolute left-1 top-1 h-3 w-3 text-[#2283F6]"
+                        className="absolute left-1 top-1 h-3 w-3 text-dodger-blue"
                         strokeWidth={3}
                       />
                     )}

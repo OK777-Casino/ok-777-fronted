@@ -368,11 +368,11 @@ const TransferBettingLayout: React.FC = () => {
             <div className="p-3Icon.svg flex w-[80%] justify-between rounded-lg border border-[rgba(255,255,255,0.1)] bg-ebony-clay p-3 opacity-80">
               <div className="flex items-center">
                 <span className="text-xs font-bold text-gray-300">
-                  <span className="text-[#2283F6]">TXS3</span>
+                  <span className="text-dodger-blue">TXS3</span>
                   <span className="text-[#FFFFFF]">
                     PfAUShemKkoBWRUFsUkGBSrZGagh6X
                   </span>
-                  <span className="text-[#2283F6]">gh6X</span>
+                  <span className="text-dodger-blue">gh6X</span>
                 </span>
               </div>
               <img src="/icons/copy.svg" alt="copy" className="h-6 w-6" />
@@ -400,16 +400,16 @@ const TransferBettingLayout: React.FC = () => {
                 {t('hashgame.limitation')}:
               </span>
               <div className="mt-2 rounded-lg bg-[#111923] px-3 py-2">
-                <p className="text-sm font-medium text-[#2283F6]">
+                <p className="text-sm font-medium text-dodger-blue">
                   10-15000 <span className="text-white">USDT</span>
                 </p>
-                <p className="text-sm font-medium text-[#2283F6]">
+                <p className="text-sm font-medium text-dodger-blue">
                   2-30000 <span className="text-white">TRX</span>
                 </p>
               </div>
             </div>
           </div>
-          <div className="mt-5 text-sm font-normal text-[#2283F6] opacity-80 [@media(max-width:768px)]:hidden">
+          <div className="mt-5 text-sm font-normal text-dodger-blue opacity-80 [@media(max-width:768px)]:hidden">
             {t('hashgame.notetitle')}
           </div>
           <div className="mt-4 text-sm font-normal text-[#FFFFFF] opacity-80 [@media(max-width:768px)]:hidden">
