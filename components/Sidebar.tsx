@@ -88,7 +88,7 @@ const Sidebar: React.FC = () => {
     <>
       <aside
         ref={sidebarRef}
-        className={`sidebar z-999 fixed top-[5.8rem] h-[calc(100dvh-9.5rem)] overflow-y-auto overflow-x-visible backdrop-blur-[2rem] transition-all duration-300 lg:top-[3.5rem]  lg:block lg:h-[calc(100dvh-8rem)] ${
+        className={`sidebar z-999 fixed top-[5.8rem] h-[calc(100dvh-9.5rem)] overflow-y-auto overflow-x-visible backdrop-blur-[2rem] transition-all duration-300 lg:top-[3.5rem] lg:block lg:h-[calc(100dvh-8rem)] ${
           isCollapsed ? 'close' : 'open'
         }`}
         style={{
@@ -215,11 +215,7 @@ const Sidebar: React.FC = () => {
             alt="mascot"
           />
           <div className="relative z-[3] flex h-full flex-col items-start justify-center gap-1 pl-[1.875rem] lg:pl-[3.75rem]">
-            <img
-              src="/images/logo.svg"
-              className="h-9"
-              alt=""
-            />
+            <img src="/images/logo.svg" className="h-9" alt="" />
             <span className="text-[1rem] font-bold text-dodger-blue">
               {t('help.onlineService')}
             </span>

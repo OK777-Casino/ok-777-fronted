@@ -147,7 +147,7 @@ const PromotionsPage = () => {
       {/* Bottom Section */}
       <div className="flex flex-col gap-2.5">
         {/* Show More Button */}
-        <div className="flex justify-center cursor-pointer">
+        <div className="flex cursor-pointer justify-center">
           <div className="hover:bg-ebony-clay/80 flex h-9 w-[9.8125rem] items-center justify-center gap-2 rounded-[0.5rem] bg-ebony-clay font-montserrat text-[0.875rem] font-bold text-casper transition-colors">
             Show 4 more
             <ChevronDownIcon className="text-casper" />

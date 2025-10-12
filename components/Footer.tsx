@@ -25,10 +25,7 @@ const Footer: React.FC = () => {
           <div className="w-[50%] md:col-span-2">
             {/* Logo */}
             <div className="mb-4 flex items-center">
-              <img
-                src="/images/logo.svg"
-                alt="777 Gaming Logo"
-              />
+              <img src="/images/logo.svg" alt="777 Gaming Logo" />
             </div>
 
             {/* Company Description */}
@@ -147,71 +144,53 @@ const Footer: React.FC = () => {
         </div>
         <div className="block w-full lg:hidden">
           <h4 className="mb-3 font-medium text-white">
-            <span>Support/Legal support</span>
+            <span>{t('help.support')}</span>
           </h4>
           <div className="flex flex-col gap-1 overflow-hidden rounded-[0.5rem]">
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
               <span className="text-[0.875rem] font-bold text-casper">
-                Common Problem
+                {t('help.faq')}
               </span>
               <Link href="">
-                <img
-                  src="/icons/arrow-up-right-stroke.svg"
-                  alt="arrow"
-                />
+                <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
               <span className="text-sm font-bold text-casper">
-                Responsible gambling
+                {t('generalInformation.responsibleGambling')}
               </span>
               <Link href="">
-                <img
-                  src="/icons/arrow-up-right-stroke.svg"
-                  alt="arrow"
-                />
+                <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
               <span className="text-sm font-bold text-casper">
-                Honestly and fairly
+                {t('generalInformation.honestlyAndFairly')}
               </span>
               <Link href="">
-                <img
-                  src="/icons/arrow-up-right-stroke.svg"
-                  alt="arrow"
-                />
+                <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
               <span className="text-sm font-bold text-casper">
-                Terms of Service
+                {t('generalInformation.termsOfService')}
               </span>
               <Link href="">
-                <img
-                  src="/icons/arrow-up-right-stroke.svg"
-                  alt="arrow"
-                />
+                <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
               <span className="text-sm font-bold text-casper">
-                Private Policy
+                {t('generalInformation.privacyPolicy')}
               </span>
               <Link href="">
-                <img
-                  src="/icons/arrow-up-right-stroke.svg"
-                  alt="arrow"
-                />
+                <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
             <div className="flex h-[3rem] items-center justify-between bg-ebony-clay px-4">
-              <span className="text-sm font-bold text-casper">About Us</span>
+              <span className="text-sm font-bold text-casper"> {t('aboutUs.aboutUs')}</span>
               <Link href="">
-                <img
-                  src="/icons/arrow-up-right-stroke.svg"
-                  alt="arrow"
-                />
+                <img src="/icons/arrow-up-right-stroke.svg" alt="arrow" />
               </Link>
             </div>
           </div>
@@ -231,11 +210,7 @@ const Footer: React.FC = () => {
                 />
               </div>
               <div>
-                <img
-                  src="/images/brand/18.svg"
-                  className="h-8"
-                  alt="18+"
-                />
+                <img src="/images/brand/18.svg" className="h-8" alt="18+" />
               </div>
             </div>
           </div>
@@ -288,10 +263,7 @@ const Footer: React.FC = () => {
         <div className="block w-full md:col-span-2 lg:hidden">
           {/* Logo */}
           <div className="my-4 flex items-center">
-            <img
-              src="/images/logo.svg"
-              alt="777 Gaming Logo"
-            />
+            <img src="/images/logo.svg" alt="777 Gaming Logo" />
           </div>
 
           {/* Company Description */}
@@ -323,10 +295,7 @@ const Footer: React.FC = () => {
         {/* Install App Banner */}
         <div className="flex items-center justify-center gap-3 px-4 py-2">
           <div className="text-2xl">
-            <img
-              src="/images/brand/cookie.svg"
-              alt="cookie"
-            />
+            <img src="/images/brand/cookie.svg" alt="cookie" />
           </div>
           <div>
             <div className="flex text-sm font-medium text-casper">
@@ -350,11 +319,6 @@ const Footer: React.FC = () => {
           >
             <span className="text-[0.85rem]">{t('install.accept')}</span>
           </TDButton>
-          {/* <BlackButton>
-            <span className="px-2.5">
-              <span>X</span>
-            </span>
-          </BlackButton> */}
         </div>
       </div>
     </footer>
