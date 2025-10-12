@@ -222,7 +222,9 @@ const LatestBetsTable: React.FC = () => {
             : 'grid-cols-[30%_30%_40%]'
         } `}
       >
-        <div className="py-2 text-center text-xs font-bold text-white">Game</div>
+        <div className="py-2 text-center text-xs font-bold text-white">
+          Game
+        </div>
         <div className="py-2 text-center text-xs font-bold text-white">
           Player
         </div>
@@ -241,11 +243,10 @@ const LatestBetsTable: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="relative z-[-1] mb-8 h-[30rem] w-full lg:mb-16">
+      <div className="relative z-[-1] mb-8 h-[30rem] lg:mb-16">
         <SwiperSlider
           data={latestBets}
           allowTouchMove={false}
-          autoplay={false}
           renderSlide={(bet, index) => (
             <div
               className={`grid h-10 w-full overflow-hidden rounded-[16px] bg-[#1C2532] lg:md:grid-cols-[15%_15%_20%_15%_25%_10%] ${
@@ -274,13 +275,17 @@ const LatestBetsTable: React.FC = () => {
               <div className="hidden items-center justify-center truncate text-xs font-bold text-gray-300 md:lg:flex">
                 {bet.time}
               </div>
-              <div className="hidden items-center justify-center truncate text-xs font-bold text-gray-300 md:lg:flex">
-                <img
-                  src="/icons/coin-icon/USDT.svg"
-                  alt="coin"
-                  className="h-6 w-6"
-                />
-                {bet.bet}
+              <div className="hidden items-center justify-end truncate pr-8 text-xs font-bold text-gray-300 md:flex md:gap-2">
+                <div>
+                  <span>{bet.bet}</span>
+                </div>
+                <div>
+                  <img
+                    src="/icons/coin-icon/USDT.svg"
+                    alt="coin"
+                    className="h-6 w-6"
+                  />
+                </div>
               </div>
 
               {selectedStatus !== 'Daily' && (
@@ -288,7 +293,7 @@ const LatestBetsTable: React.FC = () => {
                   {bet.multiplier}
                 </div>
               )}
-              <div className="flex items-center justify-end truncate text-xs font-bold text-green-400 gap-2">
+              <div className="flex items-center justify-end gap-2 truncate pr-8 text-xs font-bold text-green-400">
                 <div>
                   <span>{bet.payout}</span>
                 </div>
@@ -303,7 +308,9 @@ const LatestBetsTable: React.FC = () => {
             </div>
           )}
           direction="vertical"
-          autoplayDelay={1000}
+          slidesPerView={9.1}
+          spaceBetween={6}
+          autoplayDelay={1500}
           className="h-full"
         />
         <div className="pointer-events-none absolute bottom-0 left-0 z-[30] h-[254px] w-full bg-gradient-to-b from-transparent to-[#111923]"></div>
