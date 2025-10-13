@@ -116,7 +116,7 @@ const AuthSection: React.FC<{
         <>
           <div className="relative">
             <BlackButton className="w-[4.4375rem]" onClick={toggleAuthModal}>
-              <span className="text-xs text-white">{t('auth.login')}</span>
+              <span className="text-sm text-white">{t('auth.login')}</span>
             </BlackButton>
           </div>
           <TDButton
@@ -124,7 +124,7 @@ const AuthSection: React.FC<{
             className="h-[2.0625rem] w-[5.3125rem]"
             onClick={toggleAuthModal}
           >
-            <span className="text-xs">{t('auth.register')}</span>
+            <span className="text-sm">{t('auth.register')}</span>
           </TDButton>
         </>
       )}
@@ -377,7 +377,7 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
   }, [activeTab, gameNavTabs])
 
   return (
-    <div className="px-2 py-1 lg:hidden">
+    <div className="p-1 lg:hidden">
       <Swiper
         modules={[FreeMode]}
         freeMode={true}
@@ -395,10 +395,10 @@ const MobileGameNav: React.FC<MobileGameNavProps> = ({
                 swiperRef.current?.slideTo(idx, 250)
               }}
               variant={activeTab === tab.id ? 'primary' : 'secondary'}
-              className="!h-8 min-w-fit whitespace-nowrap px-2 py-4"
+              className="min-w-fit whitespace-nowrap px-2"
             >
               <img src={tab.icon} alt={tab.label} className="h-5 w-5" />
-              <span className="text-[0.8rem] font-bold">{tab.label}</span>
+              <span className="text-sm font-medium">{tab.label}</span>
             </UnifiedButton>
           </SwiperSlide>
         ))}
