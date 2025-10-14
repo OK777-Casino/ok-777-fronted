@@ -116,7 +116,7 @@ const AuthSection: React.FC<{
         <>
           <div className="relative">
             <BlackButton className="w-[4.4375rem]" onClick={toggleAuthModal}>
-              <span className="text-sm font-bold text-white">
+              <span className="text-xs font-bold text-white">
                 {t('auth.login')}
               </span>
             </BlackButton>
@@ -126,7 +126,7 @@ const AuthSection: React.FC<{
             className="h-[2.0625rem] w-[5.3125rem]"
             onClick={toggleAuthModal}
           >
-            <span className="text-sm font-bold">{t('auth.register')}</span>
+            <span className="text-xs font-bold">{t('auth.register')}</span>
           </TDButton>
         </>
       )}
