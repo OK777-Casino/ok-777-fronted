@@ -365,7 +365,6 @@ const FirstDepositPage = () => {
             <img
               src="/images/Frame3.png"
               alt="phone"
-              className="h-[224.03px]"
             />
           </div>
         </div>

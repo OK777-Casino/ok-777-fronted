@@ -3,10 +3,10 @@
 // this is the first carousel card
 
 import React from 'react'
-import { Button } from '..'
 import FlatButton from '../Button/FlatButton'
+import Link from 'next/link'
 
-interface TypeOneProps {
+export interface RewardCardProps {
   button: string
   image: string // image URL from /public
   link?: string
@@ -14,7 +14,7 @@ interface TypeOneProps {
   subTitle: string
 }
 
-const TypeOne: React.FC<TypeOneProps> = ({
+const RewardCard: React.FC<RewardCardProps> = ({
   button,
   image,
   link,
@@ -23,7 +23,7 @@ const TypeOne: React.FC<TypeOneProps> = ({
 }) => {
   return (
     <div
-      className="overflow-hidden rounded-xl p-6 text-white shadow-md transition-all duration-300"
+      className="relative overflow-hidden rounded-xl p-6 text-white shadow-md transition-all duration-300"
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
@@ -54,14 +54,14 @@ const TypeOne: React.FC<TypeOneProps> = ({
       {/* <div className="pointer-events-none absolute inset-y-0 left-[-40%] w-[40%] skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:left-[140%]" /> */}
 
       <div>
-        <a href={`/promotions/${link}`}>
+        <Link href={`/promotions/${link}`}>
           <FlatButton className="h-[33.73px] w-[125.58px] rounded-[9.15px] bg-[linear-gradient(#0C60FF,#2C9FFA)] text-[13.72px] font-bold lg:h-[52px] lg:w-[173px] lg:rounded-[12.6px] lg:text-[18.9px]">
             {button}
           </FlatButton>
-        </a>
+        </Link>
       </div>
     </div>
   )
 }
 
-export default TypeOne
+export default RewardCard
