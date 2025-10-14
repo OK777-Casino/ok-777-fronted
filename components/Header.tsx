@@ -212,9 +212,7 @@ const WalletSection: React.FC = () => {
           alt="USDT"
           className="h-5 w-5 sm:h-6 sm:w-6"
         />
-        <p className="text-[0.75rem] font-bold text-white sm:text-[0.875rem]">
-          0.15
-        </p>
+        <p className="text-xs font-bold text-white sm:text-[0.875rem]">0.15</p>
       </div>
       <Button
         onClick={() => router.push('/wallet')}
@@ -227,7 +225,7 @@ const WalletSection: React.FC = () => {
             alt="wallet"
             className="h-3 w-3 sm:h-4 sm:w-4"
           />
-          <span className="hidden text-[0.625rem] sm:inline sm:text-[0.75rem]">
+          <span className="hidden text-[0.625rem] sm:inline sm:text-xs">
             {t('navigation.wallet')}
           </span>
         </div>
