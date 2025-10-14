@@ -96,22 +96,85 @@ const generateHashGames = () => {
 
 const extendedHashGames = generateHashGames()
 
-// Generate game data with images
-const generateGameImages = () => {
-  const gameImages = []
-  for (let i = 1; i <= 15; i++) {
-    const gameNumber = i.toString().padStart(2, '0')
-    gameImages.push({
-      id: `game-${gameNumber}`,
-      image: `/images/games/Game${gameNumber}.jpg`,
-      title: `Game ${gameNumber}`,
-      link: `/hashgames/game${gameNumber}`,
-    })
-  }
-  return gameImages
-}
-
-const gameImages = generateGameImages()
+// Generate hashGame data with images
+const hashGameImages = [
+  {
+    id: '1',
+    image: '/images/games/hashgames/big_small.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/big_small_1m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/big_small_3m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/odd_even.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/odd_even_1m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/odd_even_3m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/lucky.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/lucky_1m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/lucky_3m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/niuniu.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/niuniu_1m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/niuniu_3m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/banker.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/banker_1m.png',
+    title: `Game`,
+    link: '#',
+  },{
+    id: '1',
+    image: '/images/games/hashgames/banker_3m.png',
+    title: `Game`,
+    link: '#',
+  },
+]
 
 // Game Image Card Component
 const GameImageCard: React.FC<{
@@ -461,10 +524,10 @@ const MainContent: React.FC = () => {
                 icon="/icons/Hash.svg"
                 title={t('games.hashgames')}
                 alt="hash"
-                count={gameImages.length}
+                count={hashGameImages.length}
               />
               <GameGrid
-                data={gameImages}
+                data={hashGameImages}
                 renderCard={(card: any) => (
                   <GameImageCard key={card.id} {...card} />
                 )}

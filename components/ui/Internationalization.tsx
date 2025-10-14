@@ -361,7 +361,7 @@ export function LanguageSelector({
           className={cn(
             // Mobile: slide from bottom, full width
             'fixed bottom-0 left-0 right-0 z-50 h-fit',
-            'w-full max-w-none rounded-t-3xl border-0',
+            'w-full max-w-none rounded-t-3xl',
             'data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
             // Tablet and desktop: centered dialog
             'sm:fixed sm:left-[50%] sm:top-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%]',
@@ -369,8 +369,7 @@ export function LanguageSelector({
             'sm:data-[state=open]:slide-in-from-left-1/2 sm:data-[state=open]:slide-in-from-top-[48%]',
             'sm:data-[state=closed]:slide-out-to-left-1/2 sm:data-[state=closed]:slide-out-to-top-[48%]',
             // Shared styles
-            'bg-[rgba(17,25,35,0.54)] p-0 backdrop-blur-[32px]',
-            'shadow-[0_1px_0_0_rgba(255,255,255,0.16)_inset]',
+            'bg-[rgba(17,25,35,0.54)] p-0 backdrop-blur-[32px] focus:outline-none focus-visible:outline',
             'duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out',
             'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
             'sm:data-[state=closed]:zoom-out-95 sm:data-[state=open]:zoom-in-95'

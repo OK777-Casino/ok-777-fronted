@@ -362,10 +362,7 @@ const FirstDepositPage = () => {
             </span>
           </div>
           <div className="relative flex items-center justify-center">
-            <img
-              src="/images/Frame3.png"
-              alt="phone"
-            />
+            <img src="/images/Frame3.png" alt="phone" />
           </div>
         </div>
         <div className="flex justify-center">
