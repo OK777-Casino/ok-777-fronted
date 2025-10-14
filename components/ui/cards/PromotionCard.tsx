@@ -29,7 +29,7 @@ export default function CasinoPromotionCard({
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            paddingTop: '56%',
+            paddingTop: '45%',
           }}
         >
           {/* Background image layer with hover zoom */}
@@ -64,7 +64,7 @@ export default function CasinoPromotionCard({
         </div>
 
         {/* Bottom Content Section */}
-        <div className="rounded-b-xl bg-mirage-2 p-4">
+        <div className="rounded-b-xl bg-mirage p-4">
           <div className="space-y-2">
             {/* Top Row - Date and Casino Badge */}
             <div className="flex items-center justify-between">

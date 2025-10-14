@@ -2,7 +2,7 @@
 
 // this is the first carousel card
 
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import { Button } from '..'
 import FlatButton from '../Button/FlatButton'
 
@@ -17,7 +17,7 @@ interface TypeOneProps {
 const TypeOne: React.FC<TypeOneProps> = ({
   button,
   image,
-  link = '#',
+  link,
   mainTitle,
   subTitle,
 }) => {
@@ -54,7 +54,7 @@ const TypeOne: React.FC<TypeOneProps> = ({
       {/* <div className="pointer-events-none absolute inset-y-0 left-[-40%] w-[40%] skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:left-[140%]" /> */}
 
       <div>
-        <a href={link}>
+        <a href={`/promotions/${link}`}>
           <FlatButton className="h-[33.73px] w-[125.58px] rounded-[9.15px] bg-[linear-gradient(#0C60FF,#2C9FFA)] text-[13.72px] font-bold lg:h-[52px] lg:w-[173px] lg:rounded-[12.6px] lg:text-[18.9px]">
             {button}
           </FlatButton>

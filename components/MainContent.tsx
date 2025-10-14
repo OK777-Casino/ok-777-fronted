@@ -286,7 +286,7 @@ const MainContent: React.FC = () => {
       mainTitle: t('banner.firstDepost.mainTitle'),
       subTitle: t('banner.firstDepost.subTitle'),
       description: '',
-      link: '#',
+      link: 'firstdeposit',
     },
     {
       button: t('banner.cryptoGame.button'),

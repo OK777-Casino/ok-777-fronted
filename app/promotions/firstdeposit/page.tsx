@@ -32,7 +32,7 @@ const FirstDepositPage = () => {
   const tasks = [2500, 3000, 400, 345300, 23400, 5670, 345300, 23400, 5670]
   return (
     <BetTemplate {...data}>
-      <div className="flex flex-col gap-4 rounded-xl bg-white-4 p-4">
+      <div className="">
         <div className="flex items-center justify-center text-[18px] font-bold text-white">
           Activity Fund Application
         </div>

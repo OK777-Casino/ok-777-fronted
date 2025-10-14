@@ -5,9 +5,9 @@ import ChevronDownIcon from '@/components/ui/icons/chevron-down'
 import FootballIcon from '@/components/ui/icons/football'
 import GiftIcon from '@/components/ui/icons/gift'
 import SpadeIcon from '@/components/ui/icons/spade'
-import ChevronsDownIcon from '@/components/ui/icons/chevrons-down'
 import CasinoPromotionCard from '@/components/ui/cards/PromotionCard'
 import NormalButton from '@/components/ui/Button/NormalButton'
+import { useI18n } from '@/context/I18nProvider'
 
 interface Tab {
   id: string
@@ -15,74 +15,6 @@ interface Tab {
   icon: React.ReactNode
   count?: number
 }
-
-const bannerCards = [
-  {
-    button: 'join now',
-    image: '/images/banner/Banner01.jpg',
-    link: '/joincommunity',
-  },
-  {
-    button: 'get $588',
-    image: '/images/banner/Banner10.jpg',
-    link: '/livecasino',
-  },
-  {
-    button: 'claim now',
-    image: '/images/banner/Banner03.jpg',
-    link: '/firstdeposit',
-  },
-  {
-    button: 'claim now',
-    image: '/images/banner/Banner12.jpg',
-    link: '/first-deposit',
-  },
-  {
-    button: 'get $588',
-    image: '/images/banner/Banner02.jpg',
-    link: '/hashchallenge ',
-  },
-  {
-    button: 'get $1588',
-    image: '/images/banner/Banner08.jpg',
-    link: '/electronicsubmit',
-  },
-  {
-    button: 'claim now',
-    image: '/images/banner/Banner03.jpg',
-    link: '/firstdeposit',
-  },
-  {
-    button: 'claim now',
-    image: '/images/banner/Banner06.jpg',
-    link: '/checkinrewards',
-  },
-  {
-    button: 'get $588',
-    image: '/images/banner/Banner05.jpg',
-    link: '/roadtochampion ',
-  },
-  {
-    button: 'get $1588',
-    image: '/images/banner/Banner04.jpg',
-    link: '/minigame',
-  },
-  {
-    button: 'claim now',
-    image: '/images/banner/Banner09.jpg',
-    link: '/nonstop',
-  },
-  {
-    button: 'get $588',
-    image: '/images/banner/Banner11.jpg',
-    link: '/depositbonus ',
-  },
-  {
-    button: 'get $1588',
-    image: '/images/banner/Banner07.jpg',
-    link: '/energybank',
-  },
-] as const
 
 const tabs: Tab[] = [
   {
@@ -104,6 +36,82 @@ const tabs: Tab[] = [
 ]
 
 const PromotionsPage = () => {
+  const { t } = useI18n()
+  const bannerCards = [
+    {
+      button: t('banner.firstDepost.button'),
+      image: '/images/banner/banner-first-depost.jpg',
+      mainTitle: t('banner.firstDepost.mainTitle'),
+      subTitle: t('banner.firstDepost.subTitle'),
+      description: '',
+      link: 'firstdeposit',
+    },
+    {
+      button: t('banner.cryptoGame.button'),
+      image: '/images/banner/banner-crypto-game.jpg',
+      mainTitle: t('banner.cryptoGame.mainTitle'),
+      subTitle: t('banner.cryptoGame.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.dailyDepost.button'),
+      image: '/images/banner/banner-daily-depost.jpg',
+      mainTitle: t('banner.dailyDepost.mainTitle'),
+      subTitle: t('banner.dailyDepost.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.dailyQuests.button'),
+      image: '/images/banner/banner-daily-quests.jpg',
+      mainTitle: t('banner.dailyQuests.mainTitle'),
+      subTitle: t('banner.dailyQuests.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.footerball.button'),
+      image: '/images/banner/banner-footerball.jpg',
+      mainTitle: t('banner.footerball.mainTitle'),
+      subTitle: t('banner.footerball.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.hash.button'),
+      image: '/images/banner/banner-hash.jpg',
+      mainTitle: t('banner.hash.mainTitle'),
+      subTitle: t('banner.hash.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.live.button'),
+      image: '/images/banner/banner-live.jpg',
+      mainTitle: t('banner.live.mainTitle'),
+      subTitle: t('banner.live.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.rebate.button'),
+      image: '/images/banner/banner-rebate.jpg',
+      mainTitle: t('banner.rebate.mainTitle'),
+      subTitle: t('banner.rebate.subTitle'),
+      description: '',
+      link: '#',
+    },
+    {
+      button: t('banner.solts.button'),
+      image: '/images/banner/banner-solts.jpg',
+      mainTitle: t('banner.solts.mainTitle'),
+      subTitle: t('banner.solts.subTitle'),
+      description: '',
+      link: '#',
+    },
+  ] as const
+
   const [activeTab, setActiveTab] = useState('all')
 
   const handleTabClick = (tabId: string) => {
@@ -111,11 +119,10 @@ const PromotionsPage = () => {
   }
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-6 p-4 pt-[1.625rem] md:pt-4">
+    <div className="mx-auto flex max-w-6xl flex-col gap-6 pt-[1.625rem] md:pt-4">
       <div className="grid w-full grid-cols-3 items-start rounded-xl bg-white-4 p-1 md:w-[28.125rem]">
         {tabs.map(tab => {
           const isActive = activeTab === tab.id
-
           return (
             <NormalButton
               key={tab.id}
