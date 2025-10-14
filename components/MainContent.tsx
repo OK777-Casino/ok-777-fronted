@@ -22,8 +22,12 @@ import { SuccessForm } from './auth/SuccessForm'
 import SwiperSlider from './ui/slider/SwiperSlider'
 import { HomepageSections } from './HomepageSections'
 import EarningCard from './ui/cards/EarningCard'
-import { GameBreakpoints } from '@/components/HomepageSections'
 import LatestBetsTable from '@/components/LatestBetsTable'
+import {
+  bannerBreakpoints,
+  ThirdPartyGameCardBreakPoints,
+  gameManufacturersBreakPoints,
+} from '@/lib/consts/break-points'
 
 // Extract data from JSON
 const {
@@ -103,72 +107,86 @@ const hashGameImages = [
     image: '/images/games/hashgames/big_small.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/big_small_1m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/big_small_3m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/odd_even.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/odd_even_1m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/odd_even_3m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/lucky.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/lucky_1m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/lucky_3m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/niuniu.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/niuniu_1m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/niuniu_3m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/banker.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/banker_1m.png',
     title: `Game`,
     link: '#',
-  },{
+  },
+  {
     id: '1',
     image: '/images/games/hashgames/banker_3m.png',
     title: `Game`,
@@ -428,16 +446,7 @@ const MainContent: React.FC = () => {
           key={`banner-swiper-${activeGameCategory}`}
           data={bannerCards}
           renderSlide={(card, index) => <RewardCard {...card} />}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            375: { slidesPerView: 1 },
-            425: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: {
-              slidesPerView: 2,
-            },
-            1440: { slidesPerView: 3 },
-          }}
+          breakpoints={bannerBreakpoints}
           showProgressBars={true}
           customPagination={true}
           initialSlide={carouselState.mainBannerCurrentSlide}
@@ -477,19 +486,7 @@ const MainContent: React.FC = () => {
                 autoplay={false}
                 data={card1}
                 renderSlide={(card, index) => <CasinoCard {...card} />}
-                slidesPerView={7}
-                spaceBetween={12}
-                breakpoints={{
-                  320: { slidesPerView: 3.3 },
-                  375: { slidesPerView: 3.5 },
-                  425: { slidesPerView: 4.1 },
-                  768: { slidesPerView: 4.3 },
-                  1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 20,
-                  },
-                  1440: { slidesPerView: 7.3 },
-                }}
+                breakpoints={ThirdPartyGameCardBreakPoints}
                 showProgressBars={true}
                 initialSlide={carouselState.newLaunchesCurrentSlide}
                 onSlideChange={handleNewLaunchesSlideChange}
@@ -652,14 +649,7 @@ const MainContent: React.FC = () => {
             renderSlide={(card, index) => <GameCard key={index} {...card} />}
             spaceBetween={12}
             slidesPerView={6}
-            breakpoints={{
-              320: { slidesPerView: 1.3 },
-              375: { slidesPerView: 1.5 },
-              425: { slidesPerView: 2.3 },
-              768: { slidesPerView: 3.3 },
-              1024: { slidesPerView: 3.3 },
-              1440: { slidesPerView: 4.5 },
-            }}
+            breakpoints={gameManufacturersBreakPoints}
             initialSlide={carouselState.gameManufacturersCurrentSlide}
             onSlideChange={handleGameManufacturersSlideChange}
             carouselId="game-manufacturers"
@@ -684,7 +674,7 @@ const MainContent: React.FC = () => {
             renderSlide={(card, index) => <EarningCard {...card} />}
             slidesPerView={7}
             spaceBetween={12}
-            breakpoints={GameBreakpoints}
+            breakpoints={ThirdPartyGameCardBreakPoints}
             initialSlide={carouselState.latestEarningsCurrentSlide}
             onSlideChange={handleLatestEarningsSlideChange}
             carouselId="latest-earnings"

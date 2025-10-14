@@ -6,6 +6,12 @@ import CasinoCard from './ui/cards/CasinoCard'
 import HashCard from './ui/cards/HashCard'
 import FutureCard from './ui/cards/FutureCard'
 import SwiperSlider from './ui/slider/SwiperSlider'
+import {
+  ThirdPartyGameCardBreakPoints,
+  ThirdPartyGameCardBreakPointsTwoRows,
+  HashBreakpoints,
+  FutureBreakpoints,
+} from '@/lib/consts/break-points'
 
 // Section header component
 const SectionHeader: React.FC<{
@@ -30,59 +36,6 @@ const SectionHeader: React.FC<{
       )}
     </div>
   )
-}
-
-type GameBreakpointsProps = {
-  [width: number]: { slidesPerView: number }
-}
-
-type GameBreakpointsTwoRows = {
-  [width: number]: {
-    slidesPerView: number
-    grid: {
-      rows: 2
-      fill: 'row'
-    }
-  }
-}
-
-export const GameBreakpoints: GameBreakpointsProps = {
-  320: { slidesPerView: 3.3 },
-  375: { slidesPerView: 3.3 },
-  425: { slidesPerView: 3.3 },
-  768: { slidesPerView: 6.3 },
-  1024: { slidesPerView: 6.3 },
-  1440: { slidesPerView: 8.3 },
-  1640: { slidesPerView: 9.3 },
-}
-
-const GameBreakpointsTwoRows: GameBreakpointsTwoRows = {
-  320: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
-  375: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
-  425: { slidesPerView: 3.3, grid: { rows: 2, fill: 'row' } },
-  768: { slidesPerView: 6.3, grid: { rows: 2, fill: 'row' } },
-  1024: { slidesPerView: 6.3, grid: { rows: 2, fill: 'row' } },
-  1440: { slidesPerView: 8.3, grid: { rows: 2, fill: 'row' } },
-  1640: { slidesPerView: 9.3, grid: { rows: 2, fill: 'row' } },
-}
-
-const HashBreakpoints: GameBreakpointsProps = {
-  320: { slidesPerView: 1.1 },
-  375: { slidesPerView: 1.1 },
-  425: { slidesPerView: 1.2 },
-  768: { slidesPerView: 2.3 },
-  1024: { slidesPerView: 2.3 },
-  1440: { slidesPerView: 3.3 },
-  1640: { slidesPerView: 4.3 },
-}
-
-const FutureBreakpoints: GameBreakpointsProps = {
-  320: { slidesPerView: 2.3 },
-  375: { slidesPerView: 2.3 },
-  425: { slidesPerView: 3.8 },
-  768: { slidesPerView: 5.3 },
-  1024: { slidesPerView: 6.3 },
-  1440: { slidesPerView: 7.3 },
 }
 
 // Homepage sections with SwiperSlider
@@ -129,7 +82,7 @@ export const HomepageSections: React.FC<{
           renderSlide={(card, index) => <CasinoCard {...card} />}
           slidesPerView={7}
           spaceBetween={8}
-          breakpoints={GameBreakpoints}
+          breakpoints={ThirdPartyGameCardBreakPoints}
           showProgressBars={true}
         />
       </div>
@@ -151,7 +104,7 @@ export const HomepageSections: React.FC<{
           slidesPerView={7}
           spaceBetween={8}
           grid={{ rows: 2, fill: 'row' }}
-          breakpoints={GameBreakpointsTwoRows}
+          breakpoints={ThirdPartyGameCardBreakPointsTwoRows}
           showProgressBars={true}
           autoplay={false}
         />
@@ -196,7 +149,7 @@ export const HomepageSections: React.FC<{
           slidesPerView={7}
           spaceBetween={8}
           grid={{ rows: 2, fill: 'row' }}
-          breakpoints={GameBreakpointsTwoRows}
+          breakpoints={ThirdPartyGameCardBreakPointsTwoRows}
           showProgressBars={true}
           autoplay={false}
         />
@@ -240,7 +193,7 @@ export const HomepageSections: React.FC<{
           )}
           slidesPerView={7}
           spaceBetween={8}
-          breakpoints={GameBreakpoints}
+          breakpoints={ThirdPartyGameCardBreakPoints}
           showProgressBars={true}
           autoplay={false}
         />
@@ -262,7 +215,7 @@ export const HomepageSections: React.FC<{
           )}
           slidesPerView={7}
           spaceBetween={8}
-          breakpoints={GameBreakpoints}
+          breakpoints={ThirdPartyGameCardBreakPoints}
           showProgressBars={true}
           autoplay={false}
         />
@@ -284,7 +237,7 @@ export const HomepageSections: React.FC<{
           )}
           slidesPerView={7}
           spaceBetween={8}
-          breakpoints={GameBreakpoints}
+          breakpoints={ThirdPartyGameCardBreakPoints}
           showProgressBars={true}
           autoplay={false}
         />
