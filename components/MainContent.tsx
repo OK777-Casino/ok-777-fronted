@@ -437,7 +437,7 @@ const MainContent: React.FC = () => {
 
   // Render lobby view
   return (
-    <div className="mx-auto w-full pt-6 lg:p-4" style={{ margin: 'auto' }}>
+    <div className="mx-auto w-full pt-6 p-2 lg:p-4" style={{ margin: 'auto' }}>
       <SuccessForm isOpen={false} />
 
       {/* Main Banner Section */}
