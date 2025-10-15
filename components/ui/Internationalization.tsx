@@ -370,7 +370,7 @@ export function LanguageSelector({
             'sm:data-[state=closed]:slide-out-to-left-1/2 sm:data-[state=closed]:slide-out-to-top-[48%]',
             // Shared styles
             'bg-[rgba(17,25,35,0.54)] p-0 backdrop-blur-[32px] focus:outline-none focus-visible:outline',
-            'duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out',
+            'data-[state=open]:animate-in data-[state=closed]:animate-out !duration-1000',
             'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
             'sm:data-[state=closed]:zoom-out-95 sm:data-[state=open]:zoom-in-95'
           )}
