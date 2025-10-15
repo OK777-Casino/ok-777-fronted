@@ -81,9 +81,8 @@ export default function LayoutContent({ children }: LayoutContentProps) {
         <ResponsiveHeader onHeaderTypeChange={setIsMobileHeader} />
       </Suspense>
       <main
-        className={`w-full ${
-          isMobileHeader ? 'pt-[56px] sm:pt-[64px]' : 'pt-[56px]'
-        } z-60 relative transition-all duration-300`}
+        className={`w-full 
+          pt-[56px] z-60 relative transition-all duration-300`}
       >
         <div className="min-h-[calc(100dvh-56px)] w-full max-w-[100vw]">
           {shouldShowSidebar && <Sidebar />}
@@ -103,7 +102,7 @@ export default function LayoutContent({ children }: LayoutContentProps) {
               WebkitOverflowScrolling: 'touch',
             }}
           >
-            <div className="mx-auto w-full max-w-screen-2xl px-2">
+            <div className="mx-auto w-full max-w-screen-2xl">
               {children}
             </div>
             {!isHashgamePage && !isAlliancePage && <Footer />}

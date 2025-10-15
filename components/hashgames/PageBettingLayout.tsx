@@ -138,7 +138,7 @@ const PageBettingLayout: React.FC<PageBettingLayoutProps> = ({ children }) => {
           </div>
 
           {/* Betting Limit and Toggle */}
-          <div className="flex w-full flex-row items-center justify-between gap-2 sm:gap-0 lg:flex-col">
+          <div className="flex w-full flex-row items-center justify-between gap-2 sm:gap-0">
             <div className="text-sm font-bold">
               <span className="text-white">Limit </span>
               <span className="text-dodger-blue">1-15000</span>

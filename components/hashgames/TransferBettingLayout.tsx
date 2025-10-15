@@ -52,7 +52,7 @@ const TransferBettingLayout: React.FC = () => {
   return (
     <>
       <div
-        className={`mx-auto w-full max-w-6xl lg:px-0 ${isCollapsed ? 'sidebar-collapsed' : ''}`}
+        className={`mx-auto w-full max-w-6xl p-2 ${isCollapsed ? 'sidebar-collapsed' : ''}`}
       >
         {/* Header Section */}
         <div className="mb-8 flex items-center justify-between rounded-lg bg-[#222d3d] pr-4 [@media(max-width:768px)]:hidden">
